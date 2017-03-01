@@ -1,0 +1,26 @@
+2017.02.27.07:54:51:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.02.27.07:55:35:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.02.27.07:55:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore pms_tbl SET key="aMFCOhxdgv",name="新增权限"
+2017.02.27.08:16:03:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.02.27.08:16:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO operator_tbl SET name="acs",pwd="sds",creator="-1",md5="82d5984c2a2ad4c62caf1dd073b1c91c" on DUPLICATE KEY update name="acs",pwd="sds",creator="-1",md5="82d5984c2a2ad4c62caf1dd073b1c91c"
+2017.02.27.08:25:00:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.02.27.08:25:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore pms_tbl SET key="oUXGtFHXTJ",name="新增权限"
+2017.02.27.08:26:13:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"addTblVal":"1","tbl":"pms","pms":"system","value":{"key":"eCzgjMiGso","name":"\u65b0\u589e\u6743\u9650"},"onDuplicte":"ignore"}
+2017.02.27.08:26:13:D:\xampp\htdocs\gov_motion\admin\ajax_request.php80:add
+2017.02.27.08:26:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore pms_tbl SET key="eCzgjMiGso",name="新增权限"
+2017.02.27.09:07:57:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"addTblVal":"1","tbl":"pms","pms":"system","value":{"key_word":"vemfljmDYk","name":"\u65b0\u589e\u6743\u9650"},"onDuplicte":"ignore"}
+2017.02.27.09:07:57:D:\xampp\htdocs\gov_motion\admin\ajax_request.php80:add
+2017.02.27.09:07:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore pms_tbl SET key_word="vemfljmDYk",name="新增权限"
+2017.02.27.09:08:21:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"pms","col":"name","value":"\u6743\u9650\u7ba1\u7406","index":"id","id":"103","pms":"system"}
+2017.02.27.09:08:39:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"sub_menu","col":"parent_id","value":"103","index":"id","id":"7","pms":"system"}
+2017.02.27.09:08:40:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"sub_menu","col":"parent_id","value":"103","index":"id","id":"8","pms":"system"}
+2017.02.27.09:09:04:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"pms","col":"name","value":"\u9996\u9875\u8bbe\u7f6e","index":"id","id":"1","pms":"vemfljmDYk"}
+2017.02.27.09:09:09:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"pms","col":"name","value":"\u5546\u6237\u7ba1\u7406","index":"id","id":"3","pms":"vemfljmDYk"}
+2017.02.27.09:18:47:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.01.08:45:48:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.01.08:46:08:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.01.09:11:28:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.01.09:12:25:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.01.09:12:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore motion_attr_template_tbl SET motion_template="1",attr_name="新增属性",step="0"
+2017.03.01.09:13:59:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.01.09:14:08:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
