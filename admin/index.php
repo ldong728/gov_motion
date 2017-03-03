@@ -23,17 +23,9 @@ if (isset($_GET['logout'])) {//登出
 }
 if (isset($_SESSION['login']) && DOMAIN == $_SESSION['login']) {
     if (isset($_GET['menu']) && array_key_exists($_GET['menu'], $_SESSION['pms'])) {
-//        switch ($_GET['sub']) {
-//            case 'wx_config':
-//                printAdminView('wx_config.html.php','微信设置');
-//                break;
-//            default:
         $_GET['sub']();
-//                break;
-//        }
         exit;
     }
-
     printAdminView('blank.html.php', '提案议案管理系统后台');
     exit;
 } else {
@@ -99,23 +91,86 @@ function operator(){
 
 
 function motion_temp_edit(){
-    global $step;
+    if(!isset($_GET['id'])){
+        motion_temp_list();
+        exit;
+    }
+    global $attrList,$totalAttrList,$id;
+    $id=$_GET['id'];
+    $attrList=array();
+    $filter='';
     if($_SESSION['operator_id']==-1){
-        global $currentMotionTemp,$currentMotionTempValueList,$id;
-        if(isset($_GET['id'])){
-            $step=pdoQuery('step_tbl',null,null,null)->fetchAll();
-            $currentMotionTempValueList=pdoQuery('motion_attr_template_tbl',null,array('motion_template'=>$_GET['id']),null);
-            $currentMotionTemp=null;
-            printAdminView('motion_temp.html.php','模板编辑');
-        }else{
-//            $currentMotionTemp=null;
-//            printAdminView('motion_temp.html.php','模板编辑');
+        $query=pdoQuery('motion_attr_view',null,array('motion_template'=>$_GET['id']),null);
+        foreach ($query as $row) {
+               $values = $row;
+                $optionArray = json_decode($row['option'], true);
+                if (count($optionArray) > 0) {
+                    $values['option'] = $optionArray;
+                }
+//                mylog(json_encode($list, JSON_UNESCAPED_UNICODE));
+
+            $attrList[]=$values;
+            $filter.=','.$row['motion_attr_id'];
         }
+        $filter=''==$filter?'':' where attr_template_id not in('.trim($filter,',').')';
+        $totalAttrList=pdoQuery('attr_template_tbl',array('attr_template_id','attr_name'),null,$filter);
+
+//        global $currentMotionTemp,$currentMotionTempValueList,$id;
+//        if(isset($_GET['id'])){
+//            $step=pdoQuery('step_tbl',null,null,null)->fetchAll();
+//            $query=pdoQuery('attr_template_tbl',null,array('motion_template'=>$_GET['id']),null);
+//            foreach ($query as $row) {
+//                $values=$row;
+////                mylog($row['option']);
+//                $optionArray=json_decode($row['option'],true);
+//                if(count($optionArray)>0){
+////                    mylog('has array');
+////                    $values['option']=$optionArray;
+//                    $values['option']=$optionArray;
+//                }else{
+////                    $values['default_value']=array('content'=>$row['default_value']);
+//                }
+//                $currentMotionTempValueList[]=$values;
+//            }
+//
+//            $currentMotionTemp=null;
+            printAdminView('motion_temp.html.php','模板编辑');
+//        }else{
+////            $currentMotionTemp=null;
+////            printAdminView('motion_temp.html.php','模板编辑');
+//        }
     }else{
         printAdminView('blank.html.php', '提案议案管理系统后台');
     }
    
 }
+function attr_temp_edit(){
+    if($_SESSION['operator_id']==-1) {
+        global $getStr, $page, $num, $count, $orderIndex, $order, $list,$step;
+        $orderIndex = $orderIndex == 'id' ? 'attr_template_id' : $orderIndex;
+        $filter = ' order by ' . $orderIndex . ' ' . $order . ' ' . 'limit ' . $num * $page . ',' . $num;
+        $step=pdoQuery('step_tbl',null,null,null)->fetchAll();
+        $query = pdoQuery('attr_template_tbl', null, null, null);
+        foreach ($query as $row) {
+            $values = $row;
+            $optionArray = json_decode($row['option'], true);
+            if (count($optionArray) > 0) {
+                $values['option'] = $optionArray;
+            }
+            $list[] = $values;
+//            mylog(json_encode($list, JSON_UNESCAPED_UNICODE));
+        }
+        $count = pdoQuery('attr_template_tbl', array('count(*) as count'), null, null)->fetch()['count'];
+        printAdminView('attr_temp_edit.html.php', '议案提案管理系统后台');
+    }else{
+        printAdminView('blank.html.php','议案提案管理系统后台');
+    }
+}
+
+
+
+
+//非sub菜单方法
 function motion_temp_list(){
     global $list;
     if($_SESSION['operator_id']==-1){
@@ -127,6 +182,7 @@ function motion_temp_list(){
         printAdminView('blank.html.php','议案提案管理系统后台');
     }
 }
+
 function index_config(){
     global $getStr;
     $articleInf=pdoQuery('gd_article',array('art_id'),array('art_channel_id'=>-1),' limit 1');

@@ -1,26 +1,138 @@
-2017.02.27.07:54:51:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.02.27.07:55:35:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.02.27.07:55:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore pms_tbl SET key="aMFCOhxdgv",name="新增权限"
-2017.02.27.08:16:03:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.02.27.08:16:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO operator_tbl SET name="acs",pwd="sds",creator="-1",md5="82d5984c2a2ad4c62caf1dd073b1c91c" on DUPLICATE KEY update name="acs",pwd="sds",creator="-1",md5="82d5984c2a2ad4c62caf1dd073b1c91c"
-2017.02.27.08:25:00:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.02.27.08:25:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore pms_tbl SET key="oUXGtFHXTJ",name="新增权限"
-2017.02.27.08:26:13:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"addTblVal":"1","tbl":"pms","pms":"system","value":{"key":"eCzgjMiGso","name":"\u65b0\u589e\u6743\u9650"},"onDuplicte":"ignore"}
-2017.02.27.08:26:13:D:\xampp\htdocs\gov_motion\admin\ajax_request.php80:add
-2017.02.27.08:26:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore pms_tbl SET key="eCzgjMiGso",name="新增权限"
-2017.02.27.09:07:57:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"addTblVal":"1","tbl":"pms","pms":"system","value":{"key_word":"vemfljmDYk","name":"\u65b0\u589e\u6743\u9650"},"onDuplicte":"ignore"}
-2017.02.27.09:07:57:D:\xampp\htdocs\gov_motion\admin\ajax_request.php80:add
-2017.02.27.09:07:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore pms_tbl SET key_word="vemfljmDYk",name="新增权限"
-2017.02.27.09:08:21:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"pms","col":"name","value":"\u6743\u9650\u7ba1\u7406","index":"id","id":"103","pms":"system"}
-2017.02.27.09:08:39:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"sub_menu","col":"parent_id","value":"103","index":"id","id":"7","pms":"system"}
-2017.02.27.09:08:40:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"sub_menu","col":"parent_id","value":"103","index":"id","id":"8","pms":"system"}
-2017.02.27.09:09:04:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"pms","col":"name","value":"\u9996\u9875\u8bbe\u7f6e","index":"id","id":"1","pms":"vemfljmDYk"}
-2017.02.27.09:09:09:D:\xampp\htdocs\gov_motion\admin\ajax_request.php8:{"alteTblVal":"1","tbl":"pms","col":"name","value":"\u5546\u6237\u7ba1\u7406","index":"id","id":"3","pms":"vemfljmDYk"}
-2017.02.27.09:18:47:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.01.08:45:48:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.01.08:46:08:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.01.09:11:28:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.01.09:12:25:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.01.09:12:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT ignore motion_attr_template_tbl SET motion_template="1",attr_name="新增属性",step="0"
-2017.03.01.09:13:59:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.01.09:14:08:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.03.06:23:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:23:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:24:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:24:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:24:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_template_name FROM attr_template_tbl  where attr_template_id not in()
+2017.03.03.06:25:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:25:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_template_name FROM attr_template_tbl  where attr_template_id not in()
+2017.03.03.06:25:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:25:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:25:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:25:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_template_name FROM attr_template_tbl  where attr_template_id not in()
+2017.03.03.06:26:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:26:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_template_name FROM attr_template_tbl
+2017.03.03.06:27:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:27:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:28:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_view  order by f_id,s_id asc
+2017.03.03.06:28:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:28:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:28:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:29:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM sub_menu_view
+2017.03.03.06:29:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_tbl
+2017.03.03.06:29:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_tbl
+2017.03.03.06:29:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM op_pms_view
+2017.03.03.06:29:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:29:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:29:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:29:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_view  order by f_id,s_id asc
+2017.03.03.06:29:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:29:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:29:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:35:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template in("-1000000")
+2017.03.03.06:35:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:40:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:40:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:42:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_view  order by f_id,s_id asc
+2017.03.03.06:42:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"}]
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"}]
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"4","0":"4","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"发射点","4":"发射点","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"4","0":"4","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"发射点","4":"发射点","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"5","0":"5","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"4","0":"4","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"发射点","4":"发射点","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"5","0":"5","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"6","0":"6","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"4","0":"4","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"发射点","4":"发射点","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"5","0":"5","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"6","0":"6","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"7","0":"7","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
+2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.03.06:42:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.06:42:44:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:42:44:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:43:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:43:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:49:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:49:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:50:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:50:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:50:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:50:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:51:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:51:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:51:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:51:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:54:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:54:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:58:05:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.03.06:58:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:58:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.06:58:08:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.03.06:58:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.06:58:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.07:38:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.07:38:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.07:38:34:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.03.07:38:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.07:38:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.07:38:42:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.03.07:38:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.07:38:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.08:24:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:24:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.08:24:57:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.03.08:24:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:24:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.08:27:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:27:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.08:32:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:32:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.08:35:57:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.03.08:35:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:35:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
+2017.03.03.08:36:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:36:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
+2017.03.03.08:45:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:45:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.08:46:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:46:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.08:52:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.08:52:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:52:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.08:52:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.08:52:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:52:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.08:52:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.08:52:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.08:53:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.08:53:49:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.03.08:53:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.08:55:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2017.03.03.08:55:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.03.08:55:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.08:55:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.03.08:55:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.03.08:58:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.03.08:58:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.03.08:58:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.03.08:58:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.03.08:58:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.03.08:58:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.03.08:59:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.03.08:59:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.03.08:59:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.03.09:01:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.03.09:01:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.03.09:01:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.03.09:01:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.09:05:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.09:05:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.09:05:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.09:07:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.09:08:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.09:09:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.09:09:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.09:09:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.03.09:09:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.03.09:09:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.03.09:09:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.03.09:09:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.09:09:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.03.09:09:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.03.09:09:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)

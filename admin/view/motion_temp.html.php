@@ -1,7 +1,4 @@
-<?php global $currentMotionTemp,$currentMotionTempValueList,$id,$step;
-$motionTemp=isset($currentMotionTemp)?$currentMotionTemp : array();
-$currentValueList=isset($currentMotionTempValueList)?$currentMotionTempValueList : array();
-$id=$_GET['id'];
+<?php global $attrList, $totalAttrList, $id;
 
 ?>
 
@@ -12,43 +9,79 @@ $id=$_GET['id'];
             <table class="table sheet">
                 <tr class="h">
                     <td>属性名称</td>
-                    <td>属性可选项</td>
+                    <!--                    <td>属性可选项</td>-->
                     <td>属性默认值</td>
                     <td>所属流程</td>
                     <td>是否隐藏</td>
                     <td>操作</td>
                 </tr>
-                <?php foreach($currentValueList as $row):?>
-                <tr>
-                    <td><?php echo $row['attr_name']?></td>
-                    <td><?php echo $row['option']?></td>
-                    <td><?php echo $row['default']?></td>
-                    <td id="<?php echo $row['motion_attr_template_id']?>" data-col="step" data-index="motion_attr_template_id" data-tbl="motion_attr_template">
-                        <select class="select">
-                            <option value="0">所属流程</option>
-                            <?php foreach($step as $stepRow):?>
-                            <option value="<?php echo $stepRow['step_id']?>" <?php echo $stepRow['step_id']==$row['step']? 'selected="selected"':''?>><?php echo $stepRow['step_name']?></option>
-                            <?php endforeach?>
-                        </select>
-                    </td>
-                    <td><?php echo $row['hidden']?></td>
-                    <td><button class="button">操作</button></td>
-                </tr>
-                <?php endforeach?>
+                <?php foreach ($attrList as $row): ?>
+                    <tr>
+                        <td><?php htmlout($row['attr_name']) ?></td>
+                        <!--                    <td class="ipt-toggle" id="-->
+                        <?php //htmlout( $row['motion_attr_template_id'])?><!--" data-col="option" data-index="motion_attr_template_id" data-tbl="motion_attr_template">-->
+                        <?php //echo json_encode($row['option'],JSON_UNESCAPED_UNICODE)?><!--</td>-->
+                        <td  <?php echo is_array($row['option']) ? '' : 'class="ipt-toggle"' ?>
+                            id="<?php htmlout($row['motion_attr_id']) ?>" data-col="default_value"
+                            data-index="motion_attr_id" data-tbl="motion_attr">
+                            <?php if (is_array($row['option'])): ?>
+
+                                <select class="select">
+                                    <option value="">选择默认</option>
+                                    <?php foreach ($row['option'] as $cRow): ?>
+                                        <option
+                                            value="<?php htmlout($cRow) ?>" <?php echo $cRow == $row['default_value'] ? 'selected="selected"' : '' ?>><?php htmlout($cRow) ?></option>
+                                    <?php endforeach ?>
+                                </select>
+                            <?php else: ?>
+
+                            <?php endif ?>
+                        </td>
+                        <td id="<?php htmlout($row['attr_template_id']) ?>" data-col="step"
+                            data-index="attr_template_id" data-tbl="attr_template">
+                            <select class="select">
+                                <option value="0">所属流程</option>
+                                <?php foreach ($step as $stepRow): ?>
+                                    <option
+                                        value="<?php htmlout($stepRow['step_id']) ?>" <?php htmlout($stepRow['step_id'] == $row['step'] ? 'selected="selected"' : '') ?>><?php htmlout($stepRow['step_name']) ?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </td>
+                        <td><?php htmlout($row['hidden']) ?></td>
+                        <td>
+                            <button class="button">操作</button>
+                        </td>
+                    </tr>
+                <?php endforeach ?>
                 <tr>
                     <td colspan="6">
-                        <button class="button add-attr" >添加属性</button>
+                        <select class="candidate">
+                            <option value="-1">侯选属性</option>
+                            <?php foreach ($totalAttrList as $row): ?>
+                                <option
+                                    value="<?php echo $row['attr_template_id'] ?>"><?php echo $row['attr_name'] ?></option>
+                            <?php endforeach ?>
+                        </select>
+                        <button class="button add-attr">添加属性</button>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
     <script>
-        var templateId=<?php echo $id?>;
-        $('.add-attr').click(function(){
-           addRecord('motion_attr_template',{motion_template:templateId,attr_name:"新增属性",step:0},'ignore',function(){
-               location.reload(true);
-           })
+        var templateId =<?php htmlout( $id)?>;
+        $('.add-attr').click(function () {
+            var attrTempId = $('.candidate').val()
+            if (attrTempId > -1) {
+                addRecord('motion_attr', {
+                        motion_template: templateId,
+                        attr_template: attrTempId,
+                        default_value: ''
+                    }, 'ignore', function () {
+                        location.reload(true);
+                    }
+                )
+            }
         });
     </script>
 </div>

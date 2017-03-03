@@ -10,7 +10,7 @@
                 </tr>
                 <?php foreach($list as $row):?>
                     <tr id="<?php echo $row['motion_template_id']?>">
-                        <td><?php echo $row['motion_template_name']?></td>
+                        <td class="ipt-toggle" id="<?php echo $row['motion_template_id'] ?>" data-col="motion_template_name" data-tbl="motion_template" data-index="<?php echo $row['motion_template_id'] ?>"><?php echo $row['motion_template_name']?></td>
                         <td><button class="button edit-button" id="edt<?php echo $row['motion_template_id']?>">编辑</button></td>
                     </tr>
                 <?php endforeach?>

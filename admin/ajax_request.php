@@ -56,7 +56,7 @@ if (isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
             }
         }
         if (isset($_POST['alteTblVal'])) {//快速更改
-            $data = pdoUpdate($_POST['tbl'].'_tbl', array($_POST['col'] => $_POST['value']), array($_POST['index'] => $_POST['id']),' limit 1');
+            $data = pdoUpdate($_POST['tbl'].'_tbl', array($_POST['col'] => addslashes($_POST['value'])), array($_POST['index'] => $_POST['id']),' limit 1');
             if($data){
                 echo ajaxBack(array('id'=>$data));
             }else{
@@ -77,7 +77,10 @@ if (isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
         if (isset($_POST['addTblVal'])) {//快速插入
             try{
                 mylog('add');
-                $id=pdoInsert($_POST['tbl'].'_tbl', $_POST['value'], $_POST['onDuplicte']);
+                foreach ($_POST['value'] as $k=>$v) {
+                    $value[$k]=addslashes($v);
+                }
+                $id=pdoInsert($_POST['tbl'].'_tbl', $value, $_POST['onDuplicte']);
                 echo ajaxBack(array('id'=>$id));
             }catch(PDOException $e){
                 echo ajaxBack(null,1,'记录无法修改');

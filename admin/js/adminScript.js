@@ -105,15 +105,18 @@ function altConfig(name,key,value,success){
 $('.ipt-toggle').dblclick(function () {
     var id = $(this).attr('id');
     var value = $.trim($(this).text());
-
-    var content = '<input type="text" class="ipt"id="ipt' + id + '"value="' + value + '"/>';
-    $(this).html(content)
+    var content = '<input type="text" class="ipt"id="ipt' + id + '"/>';
+    $(this).html(content);
+    $('#ipt'+id).val(value);
+    //alert(content);
+    //$(this).html(content)
 });
 //例：<div class="ipt-area-toggle" id="row id" data-tbl="table name"data-col="col name" data-index="index col">
 $('.ipt-area-toggle').dblclick(function () {
     var id = $(this).attr('id');
     var value = $.trim($(this).text());
     var content = '<textarea class="ipt"id="ipt' + id + '">'+value+'</textarea>';
+
     $(this).html(content)
 });
 //例：外部元素：<div id="row id" data-tbl="table name"data-col="col name" data-index="index col">
