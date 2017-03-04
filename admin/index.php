@@ -95,11 +95,13 @@ function motion_temp_edit(){
         motion_temp_list();
         exit;
     }
-    global $attrList,$totalAttrList,$id;
+    global $attrList,$totalAttrList,$id,$step,$motionTempName;
     $id=$_GET['id'];
     $attrList=array();
     $filter='';
+    $motionTempName=null;
     if($_SESSION['operator_id']==-1){
+        $step=pdoQuery('step_tbl',null,null,null)->fetchAll();
         $query=pdoQuery('motion_attr_view',null,array('motion_template'=>$_GET['id']),null);
         foreach ($query as $row) {
                $values = $row;
@@ -107,38 +109,14 @@ function motion_temp_edit(){
                 if (count($optionArray) > 0) {
                     $values['option'] = $optionArray;
                 }
-//                mylog(json_encode($list, JSON_UNESCAPED_UNICODE));
-
             $attrList[]=$values;
-            $filter.=','.$row['motion_attr_id'];
+            $filter.=','.$row['attr_template'];
+            if(!$motionTempName)$motionTempName=$row['motion_template_name'];
         }
         $filter=''==$filter?'':' where attr_template_id not in('.trim($filter,',').')';
         $totalAttrList=pdoQuery('attr_template_tbl',array('attr_template_id','attr_name'),null,$filter);
 
-//        global $currentMotionTemp,$currentMotionTempValueList,$id;
-//        if(isset($_GET['id'])){
-//            $step=pdoQuery('step_tbl',null,null,null)->fetchAll();
-//            $query=pdoQuery('attr_template_tbl',null,array('motion_template'=>$_GET['id']),null);
-//            foreach ($query as $row) {
-//                $values=$row;
-////                mylog($row['option']);
-//                $optionArray=json_decode($row['option'],true);
-//                if(count($optionArray)>0){
-////                    mylog('has array');
-////                    $values['option']=$optionArray;
-//                    $values['option']=$optionArray;
-//                }else{
-////                    $values['default_value']=array('content'=>$row['default_value']);
-//                }
-//                $currentMotionTempValueList[]=$values;
-//            }
-//
-//            $currentMotionTemp=null;
             printAdminView('motion_temp.html.php','模板编辑');
-//        }else{
-////            $currentMotionTemp=null;
-////            printAdminView('motion_temp.html.php','模板编辑');
-//        }
     }else{
         printAdminView('blank.html.php', '提案议案管理系统后台');
     }
@@ -146,10 +124,10 @@ function motion_temp_edit(){
 }
 function attr_temp_edit(){
     if($_SESSION['operator_id']==-1) {
-        global $getStr, $page, $num, $count, $orderIndex, $order, $list,$step;
+        global $getStr, $page, $num, $count, $orderIndex, $order, $list;
         $orderIndex = $orderIndex == 'id' ? 'attr_template_id' : $orderIndex;
         $filter = ' order by ' . $orderIndex . ' ' . $order . ' ' . 'limit ' . $num * $page . ',' . $num;
-        $step=pdoQuery('step_tbl',null,null,null)->fetchAll();
+
         $query = pdoQuery('attr_template_tbl', null, null, null);
         foreach ($query as $row) {
             $values = $row;

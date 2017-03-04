@@ -1,10 +1,10 @@
-<?php global $attrList, $totalAttrList, $id;
+<?php global $attrList, $totalAttrList, $id,$step,$motionTempName;
 
 ?>
 
 <div id="core" style="height: 658px;">
     <div class="block">
-        <div class="head" style="width: 98%;"><span>模板属性</span></div>
+        <div class="head" style="width: 98%;"><span><?php htmlout($motionTempName)?></span></div>
         <div class="main">
             <table class="table sheet">
                 <tr class="h">
@@ -37,8 +37,8 @@
 
                             <?php endif ?>
                         </td>
-                        <td id="<?php htmlout($row['attr_template_id']) ?>" data-col="step"
-                            data-index="attr_template_id" data-tbl="attr_template">
+                        <td id="<?php htmlout($row['motion_attr_id']) ?>" data-col="step"
+                            data-index="motion_attr_id" data-tbl="motion_attr">
                             <select class="select">
                                 <option value="0">所属流程</option>
                                 <?php foreach ($step as $stepRow): ?>
@@ -50,6 +50,7 @@
                         <td><?php htmlout($row['hidden']) ?></td>
                         <td>
                             <button class="button">操作</button>
+                            <button class="button del-attr" id="del<?php echo $row['motion_attr_id']?>">删除</button>
                         </td>
                     </tr>
                 <?php endforeach ?>
@@ -81,7 +82,15 @@
                         location.reload(true);
                     }
                 )
+            }else{
+                showToast("请先选择一个属性")
             }
         });
+        $('.del-attr').click(function(){
+            var id=$(this).attr('id').slice(3);
+            deleteRecord('motion_attr',{motion_attr_id:id},function(){
+                location.reload(true);
+            })
+        })
     </script>
 </div>

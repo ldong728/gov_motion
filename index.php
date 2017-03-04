@@ -5,11 +5,21 @@
  * Date: 2016/10/27
  * Time: 9:58
  */
-//$data=file_get_contents('php://input');
-
-
-
 include_once 'includePackage.php';
+include_once 'functions.php';
 session_start();
-//pdoInsert('partner_tbl',array('p_code'=>'aaa','password'=>md5('aaa')),'update');
-header('location: console/index.php');
+
+//global $get,$post,$session;
+//$get=&$_GET;
+//$post=&$_POST;
+//$session=&$_SESSION;
+if(isset($_SESSION['logInf'])){
+
+
+}else{
+    if(isset($_POST['user'])&&isset($_POST['password'])){
+
+    }else{
+
+    }
+}

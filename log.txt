@@ -1,138 +1,88 @@
-2017.03.03.06:23:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:23:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:24:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:24:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:24:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_template_name FROM attr_template_tbl  where attr_template_id not in()
-2017.03.03.06:25:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:25:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_template_name FROM attr_template_tbl  where attr_template_id not in()
-2017.03.03.06:25:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:25:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:25:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:25:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_template_name FROM attr_template_tbl  where attr_template_id not in()
-2017.03.03.06:26:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:26:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_template_name FROM attr_template_tbl
-2017.03.03.06:27:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:27:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:28:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_view  order by f_id,s_id asc
-2017.03.03.06:28:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:28:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:28:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:29:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM sub_menu_view
-2017.03.03.06:29:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_tbl
-2017.03.03.06:29:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_tbl
-2017.03.03.06:29:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM op_pms_view
-2017.03.03.06:29:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:29:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:29:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:29:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_view  order by f_id,s_id asc
-2017.03.03.06:29:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:29:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:29:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:35:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template in("-1000000")
-2017.03.03.06:35:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:40:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:40:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:42:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM pms_view  order by f_id,s_id asc
-2017.03.03.06:42:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"}]
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"}]
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"4","0":"4","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"发射点","4":"发射点","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"4","0":"4","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"发射点","4":"发射点","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"5","0":"5","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"4","0":"4","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"发射点","4":"发射点","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"5","0":"5","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"6","0":"6","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\admin\index.php152:[{"attr_template_id":"1","0":"1","motion_template":"1","1":"1","attr_name":"是否公开","2":"是否公开","step":"1","3":"1","option":["不他妈公开","就他妈的公开"],"4":"[\"不他妈公开\",\"就他妈的公开\"]","default_value":"不他妈公开","5":"不他妈公开","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"2","0":"2","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"5","3":"5","option":"abc","4":"abc","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"3","0":"3","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"cde","4":"cde","default_value":"sdfg","5":"sdfg","hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"4","0":"4","motion_template":"1","1":"1","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":"发射点","4":"发射点","default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"5","0":"5","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"6","0":"6","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"},{"attr_template_id":"7","0":"7","motion_template":"0","1":"0","attr_name":"新增属性","2":"新增属性","step":"0","3":"0","option":null,"4":null,"default_value":null,"5":null,"hidden":"0","6":"0","sort":"0","7":"0"}]
-2017.03.03.06:42:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.03.06:42:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.06:42:44:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:42:44:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:43:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:43:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:49:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:49:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:50:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:50:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:50:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:50:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:51:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:51:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:51:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:51:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:54:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:54:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:58:05:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.03.06:58:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:58:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.06:58:08:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.03.06:58:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.06:58:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.07:38:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.07:38:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.07:38:34:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.03.07:38:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.07:38:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.07:38:42:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.03.07:38:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.07:38:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.08:24:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:24:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.08:24:57:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.03.08:24:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:24:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.08:27:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:27:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.08:32:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:32:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.08:35:57:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.03.08:35:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:35:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
-2017.03.03.08:36:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:36:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
-2017.03.03.08:45:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:45:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.08:46:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:46:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.08:52:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.08:52:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:52:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.08:52:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.08:52:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:52:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.08:52:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.08:52:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.08:53:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.08:53:49:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.03.08:53:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.08:55:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
-2017.03.03.08:55:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.03.08:55:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.08:55:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.03.08:55:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.03.08:58:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.03.08:58:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.03.08:58:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.03.08:58:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.03.08:58:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.03.08:58:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.03.08:59:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.03.08:59:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.03.08:59:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.03.09:01:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.03.09:01:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.03.09:01:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.03.09:01:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.09:05:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.09:05:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.09:05:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.09:07:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.09:08:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.09:09:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.09:09:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.09:09:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.03.09:09:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.03.09:09:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.03.09:09:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.03.09:09:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.09:09:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
-2017.03.03.09:09:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.03.09:09:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1)
+2017.03.04.02:21:14:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:21:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.02:21:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.02:21:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,4)
+2017.03.04.02:21:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.02:21:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.02:21:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
+2017.03.04.02:22:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:22:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:22:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.04.02:22:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.02:22:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2017.03.04.02:22:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.04.02:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.02:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2017.03.04.02:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
+2017.03.04.02:22:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.04.02:22:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.02:22:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.02:22:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
+2017.03.04.02:24:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.02:24:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.02:24:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
+2017.03.04.02:24:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:24:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:45:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:45:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:45:24:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:45:28:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:46:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:46:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:46:01:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:46:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:46:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:52:41:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:52:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:52:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:53:04:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:53:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:53:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:53:22:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:53:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:53:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:53:39:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:53:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:53:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:54:13:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:54:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:54:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:54:35:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:54:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:54:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.02:55:36:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.02:55:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.02:55:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.03:05:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.04.03:10:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.03:10:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.03:10:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
+2017.03.04.03:10:05:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.03:10:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.03:10:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.03:10:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3)
+2017.03.04.03:10:14:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.03:10:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.03:10:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.03:10:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4)
+2017.03.04.03:10:21:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.03:10:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.03:10:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.03:10:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4,5)
+2017.03.04.03:10:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.03:10:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.03:11:38:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.03:11:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
+2017.03.04.03:11:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.04.03:12:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
+2017.03.04.03:12:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.03:12:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.03:12:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4,5)
+2017.03.04.03:12:22:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.03:12:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.03:12:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.03:12:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4,5,10)
+2017.03.04.03:12:26:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
+2017.03.04.03:12:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
+2017.03.04.03:12:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2017.03.04.03:12:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4,5,10,11)
