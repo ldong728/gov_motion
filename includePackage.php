@@ -30,5 +30,5 @@ include_once $mypath . '/includes/magicquotes.inc.php';
 include_once $mypath . '/includes/db.inc.php';
 include_once $mypath . '/includes/helpers.inc.php';
 //include_once $mypath.'/includes/db.class.php';
-//include_once $mypath . '/includes/card_deal.php';
+include_once $mypath . '/includes'.DOMAIN.'.php';
 header("Content-Type:text/html; charset=utf-8");

@@ -8,18 +8,22 @@
 include_once 'includePackage.php';
 include_once 'functions.php';
 session_start();
+mylog('index');
+if(isset($_SESSION['login'])){
+    mylog();
+    if(isset($_POST['ajax'])){
+        mylog();
+        $_POST['ajax']($_POST['ajax_data']);
+        exit;
+    }
 
-//global $get,$post,$session;
-//$get=&$_GET;
-//$post=&$_POST;
-//$session=&$_SESSION;
-if(isset($_SESSION['logInf'])){
 
-
+    printView('index');
 }else{
     if(isset($_POST['user'])&&isset($_POST['password'])){
-
+        userAuth($_POST['user'],$_POST['password']);
+        exit;
     }else{
-
+        printView('login');
     }
 }

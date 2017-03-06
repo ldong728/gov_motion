@@ -1,88 +1,48 @@
-2017.03.04.02:21:14:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:21:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.02:21:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.02:21:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,4)
-2017.03.04.02:21:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.02:21:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.02:21:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
-2017.03.04.02:22:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:22:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:22:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.04.02:22:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.02:22:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
-2017.03.04.02:22:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.04.02:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.02:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
-2017.03.04.02:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl
-2017.03.04.02:22:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.04.02:22:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.02:22:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.02:22:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
-2017.03.04.02:24:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.02:24:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.02:24:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
-2017.03.04.02:24:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:24:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:45:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:45:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:45:24:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:45:28:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:46:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:46:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:46:01:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:46:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:46:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:52:41:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:52:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:52:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:53:04:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:53:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:53:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:53:22:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:53:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:53:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:53:39:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:53:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:53:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:54:13:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:54:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:54:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:54:35:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:54:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:54:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.02:55:36:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.02:55:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.02:55:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.03:05:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.04.03:10:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.03:10:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.03:10:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2)
-2017.03.04.03:10:05:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.03:10:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.03:10:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.03:10:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3)
-2017.03.04.03:10:14:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.03:10:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.03:10:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.03:10:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4)
-2017.03.04.03:10:21:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.03:10:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.03:10:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.03:10:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4,5)
-2017.03.04.03:10:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.03:10:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.03:11:38:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.03:11:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_template_tbl
-2017.03.04.03:11:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT count(*) as count FROM attr_template_tbl
-2017.03.04.03:12:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_template_tbl
-2017.03.04.03:12:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.03:12:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.03:12:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4,5)
-2017.03.04.03:12:22:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.03:12:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.03:12:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.03:12:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4,5,10)
-2017.03.04.03:12:26:D:\xampp\htdocs\gov_motion\admin\ajax_request.php79:add
-2017.03.04.03:12:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM step_tbl
-2017.03.04.03:12:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
-2017.03.04.03:12:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT attr_template_id,attr_name FROM attr_template_tbl  where attr_template_id not in(1,2,3,4,5,10,11)
+2017.03.06.09:04:38:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:04:38:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
+2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="dfgsd",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
+2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"6"}
+2017.03.06.09:10:48:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:10:48:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:13:11:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:13:11:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:16:00:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:16:00:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
+2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="测试提案6",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
+2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"7"}
+2017.03.06.09:19:11:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:19:11:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:20:50:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:20:50:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
+2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="asdfas",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
+2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"8"}
+2017.03.06.09:27:29:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:27:29:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
+2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="asdf",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
+2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"9"}
+2017.03.06.09:29:01:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:29:01:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
+2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="asdfas",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
+2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"10"}
+2017.03.06.09:29:42:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.06.09:29:42:D:\xampp\htdocs\gov_motion\index.php13:mark

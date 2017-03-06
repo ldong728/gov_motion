@@ -68,6 +68,7 @@ function mylog($str='mark'){
 function ajaxBack($data=null,$errcode=0,$errmsg='ok'){
     $back=array('errcode'=>$errcode,'errmsg'=>$errmsg);
     if($data)$back['data']=$data;
+    mylog(json_encode($back,JSON_UNESCAPED_UNICODE));
     return json_encode($back,JSON_UNESCAPED_UNICODE);
 }
 
