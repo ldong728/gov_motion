@@ -11,14 +11,14 @@
                     <td>属性可选项</td>
 <!--                    <td>属性默认值</td>-->
 <!--                    <td>所属流程</td>-->
-                    <td>是否隐藏</td>
+<!--                    <td>是否隐藏</td>-->
                     <td>操作</td>
                 </tr>
                 <?php foreach($list as $row):?>
                     <tr>
                         <td class="ipt-toggle" id="<?php htmlout( $row['attr_template_id'])?>" data-col="attr_name" data-index="attr_template_id" data-tbl="attr_template"><?php htmlout( $row['attr_name'])?></td>
                         <td class="ipt-toggle" id="<?php htmlout( $row['attr_template_id'])?>" data-col="option" data-index="attr_template_id" data-tbl="attr_template"><?php echo json_encode($row['option'],JSON_UNESCAPED_UNICODE)?></td>
-                        <td><?php htmlout( $row['hidden'])?></td>
+<!--                        <td>--><?php //htmlout( $row['hidden'])?><!--</td>-->
                         <td>
                             <button class="button">操作</button>
 

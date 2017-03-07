@@ -9,16 +9,21 @@ include_once 'includePackage.php';
 include_once 'functions.php';
 session_start();
 mylog('index');
-if(isset($_SESSION['login'])){
-    mylog();
+if(isset($_SESSION['staffLogin'])){
+    //处理ajax
     if(isset($_POST['ajax'])){
         mylog();
-        $_POST['ajax']($_POST['ajax_data']);
+        $ajaxData=isset($_POST['ajax_data'])?$_POST['ajax_data']:null;
+        $_POST['ajax']($ajaxData);
         exit;
     }
+//    if(isset($_GET['method'])){
+//        $method=$_GET['method'];
+//        if(in_array($method,array('')))
+//    }
 
 
-    printView('index');
+   getIndex();
 }else{
     if(isset($_POST['user'])&&isset($_POST['password'])){
         userAuth($_POST['user'],$_POST['password']);

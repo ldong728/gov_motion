@@ -1,4 +1,4 @@
-<?php global $attrList, $totalAttrList, $id,$step,$motionTempName;
+<?php global $attrList, $totalAttrList, $id,$step,$motionTempName,$valueTypes;
 
 ?>
 
@@ -13,6 +13,8 @@
                     <td>属性默认值</td>
                     <td>所属流程</td>
                     <td>是否隐藏</td>
+                    <td>值类型</td>
+                    <td>目标表</td>
                     <td>操作</td>
                 </tr>
                 <?php foreach ($attrList as $row): ?>
@@ -48,6 +50,19 @@
                             </select>
                         </td>
                         <td><?php htmlout($row['hidden']) ?></td>
+                        <td  id="<?php htmlout($row['motion_attr_id']) ?>" data-col="value_type"
+                             data-index="motion_attr_id" data-tbl="motion_attr">
+                            <select class="select value-type">
+                                <?php foreach($valueTypes as $vRow):?>
+                                <option value="<?php echo $vRow?>" <?php echo $vRow==$row['value_type']?'selected="selected"':''?>><?php echo $vRow?></option>
+                                <?php endforeach ?>
+                            </select>
+
+                        </td>
+                        <td class="ipt-toggle" id="<?php htmlout($row['motion_attr_id']) ?>" data-col="target"
+                            data-index="motion_attr_id" data-tbl="motion_attr">
+                            <?php echo $row['target']?>
+                        </td>
                         <td>
                             <button class="button">操作</button>
                             <button class="button del-attr" id="del<?php echo $row['motion_attr_id']?>">删除</button>

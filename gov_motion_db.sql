@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-04 09:31:26
+-- Generation Time: 2017-03-07 09:39:34
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -27,14 +27,24 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `attr_tbl` (
-  `motion_attr_id` int(11) NOT NULL,
+  `attr_id` int(11) NOT NULL,
   `motion` int(11) NOT NULL,
+  `motion_attr` int(11) NOT NULL,
   `attr_template` int(11) NOT NULL,
-  `content` varchar(500) NOT NULL,
-  `attachment` varchar(500) NOT NULL,
-  `staff` int(11) NOT NULL,
+  `content` varchar(500) DEFAULT NULL,
+  `content_int` int(11) NOT NULL DEFAULT '0',
+  `attachment` varchar(500) DEFAULT NULL,
+  `staff` int(11) DEFAULT NULL,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `attr_tbl`
+--
+
+INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `content`, `content_int`, `attachment`, `staff`, `update_time`) VALUES
+(1, 7, 14, 5, 'abc', 0, 'asd', 3, '2017-03-07 07:52:58'),
+(2, 7, 14, 5, 'def', 0, NULL, NULL, '2017-03-07 07:56:05');
 
 -- --------------------------------------------------------
 
@@ -112,12 +122,19 @@ CREATE TABLE `duty_tbl` (
 CREATE TABLE `meeting_tbl` (
   `meeting_id` int(11) NOT NULL,
   `meeting_name` varchar(50) NOT NULL,
-  `start_time` datetime NOT NULL,
-  `end_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `deadline_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `start_time` int(11) NOT NULL,
+  `end_time` int(11) NOT NULL,
+  `deadline_time` int(11) NOT NULL,
   `category` int(11) NOT NULL,
   `motion_template` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `meeting_tbl`
+--
+
+INSERT INTO `meeting_tbl` (`meeting_id`, `meeting_name`, `start_time`, `end_time`, `deadline_time`, `category`, `motion_template`) VALUES
+(1, '政协第X届第Y次会议', 123, 1234, 1490511241, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -131,6 +148,7 @@ CREATE TABLE `motion_attr_tbl` (
   `attr_template` int(11) NOT NULL,
   `default_value` varchar(500) NOT NULL,
   `value_type` varchar(10) NOT NULL DEFAULT 'string',
+  `target` varchar(30) DEFAULT NULL,
   `value_sort` int(11) NOT NULL DEFAULT '0',
   `step` int(11) NOT NULL DEFAULT '0',
   `hidden` tinyint(4) NOT NULL DEFAULT '0'
@@ -140,14 +158,25 @@ CREATE TABLE `motion_attr_tbl` (
 -- 转存表中的数据 `motion_attr_tbl`
 --
 
-INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_template`, `default_value`, `value_type`, `value_sort`, `step`, `hidden`) VALUES
-(1, 1, 1, '公开', 'string', 0, 2, 0),
-(4, 1, 2, '建议', 'string', 0, 1, 0),
-(5, 1, 3, '', 'string', 0, 2, 0),
-(6, 1, 4, '', 'string', 0, 2, 0),
-(7, 1, 5, '', 'string', 0, 2, 0),
-(8, 1, 10, '立案', 'string', 0, 3, 0),
-(9, 1, 11, '', 'string', 0, 3, 0);
+INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_template`, `default_value`, `value_type`, `target`, `value_sort`, `step`, `hidden`) VALUES
+(1, 1, 1, '公开', 'string', NULL, 0, 2, 0),
+(4, 1, 2, '建议', 'string', '', 0, 1, 0),
+(5, 1, 3, '', 'string', NULL, 0, 2, 0),
+(6, 1, 4, '', 'string', NULL, 0, 2, 0),
+(7, 1, 5, '', 'string', NULL, 0, 2, 0),
+(8, 1, 10, '立案', 'string', NULL, 0, 3, 0),
+(9, 1, 11, '', 'string', NULL, 0, 3, 0),
+(10, 2, 1, '公开', 'string', NULL, 0, 2, 0),
+(11, 2, 2, '提案', 'string', NULL, 0, 2, 0),
+(12, 2, 3, '', 'string', NULL, 0, 1, 0),
+(13, 2, 4, '', 'string', NULL, 0, 1, 0),
+(14, 2, 5, '', 'string', NULL, 0, 1, 0),
+(15, 2, 6, '', 'string', NULL, 0, 2, 0),
+(16, 2, 8, '', 'string', NULL, 0, 2, 0),
+(17, 2, 10, '立案', 'string', NULL, 0, 3, 0),
+(18, 2, 11, '', 'string', NULL, 0, 3, 0),
+(19, 2, 7, '', 'time', NULL, 0, 0, 0),
+(20, 2, 9, '', 'string', NULL, 0, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -155,6 +184,19 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 -- 替换视图以便查看 `motion_attr_view`
 --
 CREATE TABLE `motion_attr_view` (
+`attr_name` varchar(100)
+,`motion_template_name` varchar(50)
+,`step_name` varchar(50)
+,`motion_attr_id` int(11)
+,`motion_template` int(11)
+,`attr_template` int(11)
+,`default_value` varchar(500)
+,`hidden` tinyint(4)
+,`value_type` varchar(10)
+,`target` varchar(30)
+,`value_sort` int(11)
+,`option` varchar(500)
+,`step` int(11)
 );
 
 -- --------------------------------------------------------
@@ -184,6 +226,9 @@ CREATE TABLE `motion_handler_tbl` (
 
 CREATE TABLE `motion_tbl` (
   `motion_id` int(11) NOT NULL,
+  `meeting` int(11) NOT NULL,
+  `category` int(11) NOT NULL,
+  `motion_name` varchar(50) NOT NULL,
   `motion_template` int(11) NOT NULL,
   `user` int(11) NOT NULL,
   `document` varchar(400) NOT NULL,
@@ -191,6 +236,16 @@ CREATE TABLE `motion_tbl` (
   `document_sha` varchar(50) NOT NULL,
   `upload_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `motion_tbl`
+--
+
+INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `document`, `step`, `document_sha`, `upload_time`) VALUES
+(7, 1, 2, '测试提案6', 2, 1, 'none', 2, 'abas', '2017-03-06 08:16:17'),
+(8, 1, 2, 'asdfas', 2, 1, 'none', 2, 'abas', '2017-03-06 08:20:52'),
+(9, 1, 2, 'asdf', 2, 1, 'none', 2, 'abas', '2017-03-06 08:27:32'),
+(10, 1, 2, 'asdfas', 2, 1, 'none', 2, 'abas', '2017-03-06 08:29:03');
 
 -- --------------------------------------------------------
 
@@ -210,6 +265,38 @@ CREATE TABLE `motion_template_tbl` (
 INSERT INTO `motion_template_tbl` (`motion_template_id`, `motion_template_name`) VALUES
 (1, '人大建议模板'),
 (2, '政协提案模板');
+
+-- --------------------------------------------------------
+
+--
+-- 替换视图以便查看 `motion_view`
+--
+CREATE TABLE `motion_view` (
+`motion_id` int(11)
+,`meeting` int(11)
+,`category` int(11)
+,`motion_name` varchar(50)
+,`attr_id` int(11)
+,`motion_template` int(11)
+,`motion_attr` int(11)
+,`attr_template` int(11)
+,`user` int(11)
+,`document` varchar(400)
+,`step` int(11)
+,`attr_step` int(11)
+,`document_sha` varchar(50)
+,`upload_time` timestamp
+,`default_value` varchar(500)
+,`value_type` varchar(10)
+,`target` varchar(30)
+,`value_sort` int(11)
+,`hidden` tinyint(4)
+,`attr_name` varchar(100)
+,`option` varchar(500)
+,`content` varchar(500)
+,`content_int` int(11)
+,`attachment` varchar(500)
+);
 
 -- --------------------------------------------------------
 
@@ -320,8 +407,17 @@ CREATE TABLE `staff_tbl` (
   `staff_name` varchar(20) NOT NULL,
   `staff_phone` varchar(20) NOT NULL,
   `staff_email` varchar(50) NOT NULL,
-  `staff_password` varchar(50) NOT NULL
+  `staff_password` varchar(50) NOT NULL,
+  `steps` varchar(10) NOT NULL,
+  `category` tinyint(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `staff_tbl`
+--
+
+INSERT INTO `staff_tbl` (`staff_id`, `unit`, `staff_name`, `staff_phone`, `staff_email`, `staff_password`, `steps`, `category`) VALUES
+(1, 2, 'test', '123', 'abc@abc.abc', 'test', '12', 2);
 
 -- --------------------------------------------------------
 
@@ -393,12 +489,12 @@ CREATE TABLE `unit_detail_view` (
 `unit_id` int(11)
 ,`unit_group` int(11)
 ,`parent_unit` int(11)
+,`parent_unit_name` varchar(50)
 ,`category` int(11)
-,`step` int(11)
+,`steps` varchar(20)
 ,`unit_name` varchar(50)
 ,`unit_group_name` varchar(50)
 ,`category_name` varchar(10)
-,`step_name` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -434,7 +530,7 @@ CREATE TABLE `unit_tbl` (
   `unit_group` int(11) NOT NULL,
   `parent_unit` int(11) NOT NULL DEFAULT '0',
   `category` int(11) NOT NULL,
-  `step` int(11) NOT NULL,
+  `steps` varchar(20) NOT NULL,
   `unit_name` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -442,8 +538,9 @@ CREATE TABLE `unit_tbl` (
 -- 转存表中的数据 `unit_tbl`
 --
 
-INSERT INTO `unit_tbl` (`unit_id`, `unit_group`, `parent_unit`, `category`, `step`, `unit_name`) VALUES
-(1, 1, 0, 3, 3, '市科技局');
+INSERT INTO `unit_tbl` (`unit_id`, `unit_group`, `parent_unit`, `category`, `steps`, `unit_name`) VALUES
+(1, 1, 0, 3, '5', '市科技局'),
+(2, 4, 0, 2, '123', '市政协提案委');
 
 -- --------------------------------------------------------
 
@@ -473,6 +570,13 @@ CREATE TABLE `user_tbl` (
   `password` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- 转存表中的数据 `user_tbl`
+--
+
+INSERT INTO `user_tbl` (`user_id`, `user_name`, `user_phone`, `id_card`, `mail`, `address`, `password`) VALUES
+(1, '测试用户', '1234567', NULL, NULL, NULL, '123');
+
 -- --------------------------------------------------------
 
 --
@@ -480,7 +584,16 @@ CREATE TABLE `user_tbl` (
 --
 DROP TABLE IF EXISTS `motion_attr_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `motion_attr_view`  AS  select `b`.`attr_name` AS `attr_name`,`c`.`motion_template_name` AS `motion_template_name`,`d`.`step_name` AS `step_name`,`a`.`motion_attr_id` AS `motion_attr_id`,`a`.`motion_template` AS `motion_template`,`a`.`attr_template` AS `attr_template`,`a`.`default_value` AS `default_value`,`b`.`hidden` AS `hidden`,`a`.`value_type` AS `value_type`,`a`.`value_sort` AS `value_sort`,`b`.`option` AS `option`,`a`.`step` AS `step` from (((`motion_attr_tbl` `a` left join `attr_template_tbl` `b` on((`a`.`attr_template` = `b`.`attr_template_id`))) left join `motion_template_tbl` `c` on((`a`.`motion_template` = `c`.`motion_template_id`))) left join `step_tbl` `d` on((`a`.`step` = `d`.`step_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `motion_attr_view`  AS  select `b`.`attr_name` AS `attr_name`,`c`.`motion_template_name` AS `motion_template_name`,`d`.`step_name` AS `step_name`,`a`.`motion_attr_id` AS `motion_attr_id`,`a`.`motion_template` AS `motion_template`,`a`.`attr_template` AS `attr_template`,`a`.`default_value` AS `default_value`,`a`.`hidden` AS `hidden`,`a`.`value_type` AS `value_type`,`a`.`target` AS `target`,`a`.`value_sort` AS `value_sort`,`b`.`option` AS `option`,`a`.`step` AS `step` from (((`motion_attr_tbl` `a` left join `attr_template_tbl` `b` on((`a`.`attr_template` = `b`.`attr_template_id`))) left join `motion_template_tbl` `c` on((`a`.`motion_template` = `c`.`motion_template_id`))) left join `step_tbl` `d` on((`a`.`step` = `d`.`step_id`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- 视图结构 `motion_view`
+--
+DROP TABLE IF EXISTS `motion_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `motion_view`  AS  select `a`.`motion_id` AS `motion_id`,`a`.`meeting` AS `meeting`,`a`.`category` AS `category`,`a`.`motion_name` AS `motion_name`,`d`.`attr_id` AS `attr_id`,`a`.`motion_template` AS `motion_template`,`b`.`motion_attr_id` AS `motion_attr`,`c`.`attr_template_id` AS `attr_template`,`a`.`user` AS `user`,`a`.`document` AS `document`,`a`.`step` AS `step`,`b`.`step` AS `attr_step`,`a`.`document_sha` AS `document_sha`,`a`.`upload_time` AS `upload_time`,`b`.`default_value` AS `default_value`,`b`.`value_type` AS `value_type`,`b`.`target` AS `target`,`b`.`value_sort` AS `value_sort`,`b`.`hidden` AS `hidden`,`c`.`attr_name` AS `attr_name`,`c`.`option` AS `option`,`d`.`content` AS `content`,`d`.`content_int` AS `content_int`,`d`.`attachment` AS `attachment` from (((`motion_tbl` `a` left join `motion_attr_tbl` `b` on((`a`.`motion_template` = `b`.`motion_template`))) left join `attr_template_tbl` `c` on((`b`.`attr_template` = `c`.`attr_template_id`))) left join `attr_tbl` `d` on(((`a`.`motion_id` = `d`.`motion`) and (`b`.`motion_attr_id` = `d`.`motion_attr`)))) ;
 
 -- --------------------------------------------------------
 
@@ -516,7 +629,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `unit_detail_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `unit_detail_view`  AS  select `a`.`unit_id` AS `unit_id`,`a`.`unit_group` AS `unit_group`,`a`.`parent_unit` AS `parent_unit`,`a`.`category` AS `category`,`a`.`step` AS `step`,`a`.`unit_name` AS `unit_name`,`b`.`unit_group_name` AS `unit_group_name`,`c`.`category_name` AS `category_name`,`d`.`step_name` AS `step_name` from (((`unit_tbl` `a` left join `unit_group_tbl` `b` on((`a`.`unit_group` = `b`.`unit_group_id`))) left join `category_tbl` `c` on((`a`.`category` = `c`.`category_id`))) left join `step_tbl` `d` on((`a`.`step` = `d`.`step_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `unit_detail_view`  AS  select `a`.`unit_id` AS `unit_id`,`a`.`unit_group` AS `unit_group`,`a`.`parent_unit` AS `parent_unit`,`e`.`unit_name` AS `parent_unit_name`,`a`.`category` AS `category`,`a`.`steps` AS `steps`,`a`.`unit_name` AS `unit_name`,`b`.`unit_group_name` AS `unit_group_name`,`c`.`category_name` AS `category_name` from (((`unit_tbl` `a` left join `unit_group_tbl` `b` on((`a`.`unit_group` = `b`.`unit_group_id`))) left join `category_tbl` `c` on((`a`.`category` = `c`.`category_id`))) left join `unit_tbl` `e` on((`a`.`parent_unit` = `e`.`unit_id`))) ;
 
 --
 -- Indexes for dumped tables
@@ -526,7 +639,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- Indexes for table `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  ADD PRIMARY KEY (`motion_attr_id`),
+  ADD PRIMARY KEY (`attr_id`),
   ADD KEY `motion` (`motion`);
 
 --
@@ -653,7 +766,7 @@ ALTER TABLE `user_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
@@ -673,12 +786,12 @@ ALTER TABLE `duty_tbl`
 -- 使用表AUTO_INCREMENT `meeting_tbl`
 --
 ALTER TABLE `meeting_tbl`
-  MODIFY `meeting_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `meeting_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- 使用表AUTO_INCREMENT `motion_attr_tbl`
 --
 ALTER TABLE `motion_attr_tbl`
-  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --
@@ -688,7 +801,7 @@ ALTER TABLE `motion_handler_tbl`
 -- 使用表AUTO_INCREMENT `motion_tbl`
 --
 ALTER TABLE `motion_tbl`
-  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- 使用表AUTO_INCREMENT `motion_template_tbl`
 --
@@ -713,7 +826,7 @@ ALTER TABLE `response_area_tbl`
 -- 使用表AUTO_INCREMENT `staff_tbl`
 --
 ALTER TABLE `staff_tbl`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- 使用表AUTO_INCREMENT `step_tbl`
 --
@@ -733,7 +846,7 @@ ALTER TABLE `unit_group_tbl`
 -- 使用表AUTO_INCREMENT `unit_tbl`
 --
 ALTER TABLE `unit_tbl`
-  MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- 使用表AUTO_INCREMENT `user_group_tbl`
 --
@@ -743,7 +856,7 @@ ALTER TABLE `user_group_tbl`
 -- 使用表AUTO_INCREMENT `user_tbl`
 --
 ALTER TABLE `user_tbl`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

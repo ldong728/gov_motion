@@ -1,48 +1,32 @@
-2017.03.06.09:04:38:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:04:38:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\index.php15:mark
-2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
-2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="dfgsd",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
-2017.03.06.09:04:47:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"6"}
-2017.03.06.09:10:48:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:10:48:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:13:11:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:13:11:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:16:00:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:16:00:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\index.php15:mark
-2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
-2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="测试提案6",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
-2017.03.06.09:16:17:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"7"}
-2017.03.06.09:19:11:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:19:11:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:20:50:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:20:50:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\index.php15:mark
-2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
-2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="asdfas",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
-2017.03.06.09:20:52:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"8"}
-2017.03.06.09:27:29:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:27:29:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\index.php15:mark
-2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
-2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="asdf",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
-2017.03.06.09:27:32:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"9"}
-2017.03.06.09:29:01:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:29:01:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\index.php13:mark
-2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\index.php15:mark
-2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
-2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_tbl SET motion_name="asdfas",meeting="1",motion_template="2",user="1",document="none",step="2",document_sha="abas"
-2017.03.06.09:29:03:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":"10"}
-2017.03.06.09:29:42:D:\xampp\htdocs\gov_motion\index.php11:index
-2017.03.06.09:29:42:D:\xampp\htdocs\gov_motion\index.php13:mark
+2017.03.07.08:19:12:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.07.08:19:12:D:\xampp\htdocs\gov_motion\functions.php43:{login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}staffLogin: {steps: {0: 1,1: 2}category: 2}}
+2017.03.07.08:19:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE category="2" AND step in("1","2")  order by category asc limit 20
+2017.03.07.08:19:12:D:\xampp\htdocs\gov_motion\functions.php46:{0: {motion_id: 7,0: 7,meeting: 1,1: 1,category: 2,2: 2,motion_name: 测试提案6,3: 测试提案6,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:16:17,9: 2017-03-06 16:16:17}1: {motion_id: 8,0: 8,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdfas,3: asdfas,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:20:52,9: 2017-03-06 16:20:52}2: {motion_id: 9,0: 9,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdf,3: asdf,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:27:32,9: 2017-03-06 16:27:32}3: {motion_id: 10,0: 10,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdfas,3: asdfas,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:29:03,9: 2017-03-06 16:29:03}}
+2017.03.07.08:19:12:D:\xampp\htdocs\gov_motion\functions.php47:get list
+2017.03.07.08:19:16:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.07.08:19:16:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.07.08:19:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_view WHERE motion_id="10" AND attr_step in("1","2")
+2017.03.07.08:19:31:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.07.08:19:31:D:\xampp\htdocs\gov_motion\functions.php43:{login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}staffLogin: {steps: {0: 1,1: 2}category: 2}}
+2017.03.07.08:19:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE category="2" AND step in("1","2")  order by category asc limit 20
+2017.03.07.08:19:31:D:\xampp\htdocs\gov_motion\functions.php46:{0: {motion_id: 7,0: 7,meeting: 1,1: 1,category: 2,2: 2,motion_name: 测试提案6,3: 测试提案6,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:16:17,9: 2017-03-06 16:16:17}1: {motion_id: 8,0: 8,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdfas,3: asdfas,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:20:52,9: 2017-03-06 16:20:52}2: {motion_id: 9,0: 9,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdf,3: asdf,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:27:32,9: 2017-03-06 16:27:32}3: {motion_id: 10,0: 10,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdfas,3: asdfas,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:29:03,9: 2017-03-06 16:29:03}}
+2017.03.07.08:19:31:D:\xampp\htdocs\gov_motion\functions.php47:get list
+2017.03.07.08:19:32:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.07.08:19:32:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.07.08:19:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_view WHERE motion_id="9" AND attr_step in("1","2")
+2017.03.07.08:19:38:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.07.08:19:38:D:\xampp\htdocs\gov_motion\functions.php43:{login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}staffLogin: {steps: {0: 1,1: 2}category: 2}}
+2017.03.07.08:19:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE category="2" AND step in("1","2")  order by category asc limit 20
+2017.03.07.08:19:38:D:\xampp\htdocs\gov_motion\functions.php46:{0: {motion_id: 7,0: 7,meeting: 1,1: 1,category: 2,2: 2,motion_name: 测试提案6,3: 测试提案6,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:16:17,9: 2017-03-06 16:16:17}1: {motion_id: 8,0: 8,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdfas,3: asdfas,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:20:52,9: 2017-03-06 16:20:52}2: {motion_id: 9,0: 9,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdf,3: asdf,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:27:32,9: 2017-03-06 16:27:32}3: {motion_id: 10,0: 10,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdfas,3: asdfas,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:29:03,9: 2017-03-06 16:29:03}}
+2017.03.07.08:19:38:D:\xampp\htdocs\gov_motion\functions.php47:get list
+2017.03.07.08:19:43:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.07.08:19:43:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.07.08:19:43:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_view WHERE motion_id="10" AND attr_step in("1","2")
+2017.03.07.08:26:27:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.07.08:26:27:D:\xampp\htdocs\gov_motion\functions.php43:{login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}staffLogin: {steps: {0: 1,1: 2}category: 2}}
+2017.03.07.08:26:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE category="2" AND step in("1","2")  order by category asc limit 20
+2017.03.07.08:26:27:D:\xampp\htdocs\gov_motion\functions.php46:{0: {motion_id: 7,0: 7,meeting: 1,1: 1,category: 2,2: 2,motion_name: 测试提案6,3: 测试提案6,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:16:17,9: 2017-03-06 16:16:17}1: {motion_id: 8,0: 8,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdfas,3: asdfas,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:20:52,9: 2017-03-06 16:20:52}2: {motion_id: 9,0: 9,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdf,3: asdf,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:27:32,9: 2017-03-06 16:27:32}3: {motion_id: 10,0: 10,meeting: 1,1: 1,category: 2,2: 2,motion_name: asdfas,3: asdfas,motion_template: 2,4: 2,user: 1,5: 1,document: none,6: none,step: 2,7: 2,document_sha: abas,8: abas,upload_time: 2017-03-06 16:29:03,9: 2017-03-06 16:29:03}}
+2017.03.07.08:26:27:D:\xampp\htdocs\gov_motion\functions.php47:get list
+2017.03.07.08:26:29:D:\xampp\htdocs\gov_motion\index.php11:index
+2017.03.07.08:26:29:D:\xampp\htdocs\gov_motion\index.php15:mark
+2017.03.07.08:26:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_view WHERE motion_id="10" AND attr_step in("1","2")

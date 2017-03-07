@@ -95,7 +95,7 @@ function motion_temp_edit(){
         motion_temp_list();
         exit;
     }
-    global $attrList,$totalAttrList,$id,$step,$motionTempName;
+    global $attrList,$totalAttrList,$id,$step,$motionTempName,$valueTypes;
     $id=$_GET['id'];
     $attrList=array();
     $filter='';
@@ -115,6 +115,7 @@ function motion_temp_edit(){
         }
         $filter=''==$filter?'':' where attr_template_id not in('.trim($filter,',').')';
         $totalAttrList=pdoQuery('attr_template_tbl',array('attr_template_id','attr_name'),null,$filter);
+        $valueTypes=array('string','int','time','index');
 
             printAdminView('motion_temp.html.php','模板编辑');
     }else{
