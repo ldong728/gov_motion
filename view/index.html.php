@@ -47,7 +47,6 @@
     $('.handler-motion').click(function(){
         var id=$(this).get(0).id;
         ajaxPost('editMotion',{id:id},function(data){
-            alert(data);
             $('.edit-area').html(data);
         });
 

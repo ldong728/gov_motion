@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-07 09:39:34
+-- Generation Time: 2017-03-08 09:32:58
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 

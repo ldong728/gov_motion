@@ -8,11 +8,9 @@
 include_once 'includePackage.php';
 include_once 'functions.php';
 session_start();
-mylog('index');
 if(isset($_SESSION['staffLogin'])){
     //处理ajax
     if(isset($_POST['ajax'])){
-        mylog();
         $ajaxData=isset($_POST['ajax_data'])?$_POST['ajax_data']:null;
         $_POST['ajax']($ajaxData);
         exit;

@@ -26,7 +26,7 @@ function userAuth($userName,$password){
 
             mylog(getArrayInf($_SESSION));
 //            echo "ok";
-            printView('index');
+            getIndex();
         }else{//查询党政信息网
             echo "false";
         }
@@ -70,14 +70,37 @@ function editMotion($data){
     $id=$data['id'];
     $motionQuery=pdoQuery('motion_view',null,array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']),null);
     foreach ($motionQuery as $row) {
+
         $values = $row;
         $optionArray = json_decode($row['option'], true);
-        if (count($optionArray) > 0) {
-            $values['option'] = $optionArray;
+        $values['content']='string'==$row['value_type']?$row['content']:$row['content_int'];
+        if($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['step'])){//可修改的选项
+            if (count($optionArray) > 0) {
+                $values['option'] = $optionArray;
+//                $values['content']='<div class="input-handle" data-type="select" data-option="'.$row['option'].'"></div>';
+            }
+
+
+
+        }else{//不可修改的选项
+
+
         }
 
         $motion[]=$values;
+
     }
+    $currentStep=$motion[0]['step'];
+    switch($currentStep){
+        case 1:
+
+            break;
+        case 2:
+
+            break;
+    }
+
+
 
     include '/view/edit_motion.html.php';
 }
