@@ -79,12 +79,11 @@ function editMotion($data){
                 $values['option'] = $optionArray;
 //                $values['content']='<div class="input-handle" data-type="select" data-option="'.$row['option'].'"></div>';
             }
-
-
-
-        }else{//不可修改的选项
-
-
+            $content='<div class="input-handle" data-type="#type" data-target="#target" data-content="#content"></div>';
+                str_replace('#type',$row['value_type'],$content);
+            if(isset($row['target'])&&$row['target']!='')str_replace('#target',$row['target'],$content);
+            if(isset($values['content'])&&$values['content']!='')str_replace('#content',$values['content'],$content);
+            $values['content']=$content;
         }
 
         $motion[]=$values;

@@ -23,6 +23,8 @@
 <script>
     $('.input-handle').each(function (k, v) {
         var type = $(v).data('type');
+        var target=$(v).data('target')=='#target'?false:$(v).data('target');
+        var content=$(v).data('content')=='#content'?false:$(v).data('content');
         var parent = $(v).parent();
         switch (type) {
             case 'select':
