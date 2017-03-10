@@ -82,6 +82,22 @@ function timeMysqlToUnix($time){
     return strtotime($time);
 }
 
+function get($url){
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($curl, CURLOPT_TIMEOUT, 500);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_URL, $url);
+    $data = curl_exec($curl);
+    curl_close($curl);
+    return $data;
+}
+function decodeXml($file){
+    return simplexml_load_string($file, 'SimpleXMLElement', LIBXML_NOCDATA);
+}
+
+
 
 
 

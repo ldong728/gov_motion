@@ -14,23 +14,38 @@ function userAuth($userName,$password){
     $staffQuery=pdoQuery('staff_tbl',null,array('staff_name'=>$userName),' limit 1')->fetch();
 //    mylog(json_encode($staffQuery,JSON_UNESCAPED_UNICODE));
     if($staffQuery){
-        if($password==$staffQuery['staff_password']){//自创建用户
+        $metting=pdoQuery('meeting_tbl',null,array('category'=>$staffQuery['category']),' order by deadline_time limit 1')->fetch();
+        if($password==$staffQuery['staff_password']&&$staffQuery['staff_password']!=''){//自创建用户
             $_SESSION['staffLogin']=array();
                 for($i=0;$i<strlen($staffQuery['steps']);$i++){
                     $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
                 }
             $_SESSION['staffLogin']['category']=$staffQuery['category'];
-//            $_SESSION['']
-
-
-
-            mylog(getArrayInf($_SESSION));
-//            echo "ok";
+            $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
+            $_SESSION['staffLogin']['user_group']='all';
+//            mylog(getArrayInf($_SESSION));
             getIndex();
         }else{//查询党政信息网
+            $userVerify=file_get_contents("http://172.19.48.144:88/Verify?Username=$userName&Password=$password");
+            if('SUCCESS'==$userVerify){
+                $_SESSION['staffLogin']=array();
+                for($i=0;$i<strlen($staffQuery['steps']);$i++){
+                    $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
+                }
+                $_SESSION['staffLogin']['category']=$staffQuery['category'];
+                $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
+                $_SESSION['staffLogin']['user_group']=$staffQuery['unit'];
+
+            }
             echo "false";
         }
     }else{//非工作人员
+//        $meetingInf=pdoQuery('meeting_tbl',null,null,' order by deadline_time desc limi 1')->fetch();
+
+        $userInf=pdoQuery('user_tbl',null,array('user_phone'=>$userName,'password'=>$password),'limit 1')->fetch();
+        if($userInf){
+//            $duty=
+        }
 
     }
 }
@@ -40,11 +55,10 @@ function userAuth($userName,$password){
  * @param $steps
  */
 function getIndex(){
-    mylog(getArrayInf($_SESSION));
     global $motionList;
     $motionList=pdoQuery('motion_tbl',null,array('category'=>$_SESSION['staffLogin']['category'],'step'=>$_SESSION['staffLogin']['steps']),' order by category asc limit 20')->fetchAll();
-    mylog(getArrayInf($motionList));
-    mylog('get list');
+//    syncDept();
+//    syncUser();
     printView('index');
 
 
@@ -74,39 +88,33 @@ function editMotion($data){
         $values = $row;
         $optionArray = json_decode($row['option'], true);
         $values['content']='string'==$row['value_type']?$row['content']:$row['content_int'];
-        if($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['step'])){//可修改的选项
+        if($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step'])){//可修改的选项
             if (count($optionArray) > 0) {
                 $values['option'] = $optionArray;
 //                $values['content']='<div class="input-handle" data-type="select" data-option="'.$row['option'].'"></div>';
             }
             $content='<div class="input-handle" data-type="#type" data-target="#target" data-content="#content"></div>';
-                str_replace('#type',$row['value_type'],$content);
-            if(isset($row['target'])&&$row['target']!='')str_replace('#target',$row['target'],$content);
-            if(isset($values['content'])&&$values['content']!='')str_replace('#content',$values['content'],$content);
+            $content=str_replace('#type',$row['value_type'],$content);
+            if(isset($row['target'])&&$row['target']!='')$content=str_replace('#target',$row['target'],$content);
+            if(isset($values['content'])&&$values['content']!='')$content=str_replace('#content',$values['content'],$content);
             $values['content']=$content;
         }
-
         $motion[]=$values;
-
     }
     $currentStep=$motion[0]['step'];
     switch($currentStep){
         case 1:
-
             break;
         case 2:
 
             break;
     }
-
-
-
     include '/view/edit_motion.html.php';
 }
 
 
 function signOut($data){
     unset($_SESSION['staffLogin']);
-    mylog(getArrayInf($_SESSION));
+    mylog('unsetted:'.getArrayInf($_SESSION));
     echo ajaxBack('ok');
 }

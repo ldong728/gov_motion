@@ -24,3 +24,6 @@ function backHandle(data){
 function ajaxPost(method,ajaxData,callback){
     $.post('index.php',{ajax:method,ajax_data:ajaxData},callback);
 }
+function log(data){
+    console.log(data);
+}

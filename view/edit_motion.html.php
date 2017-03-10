@@ -24,17 +24,19 @@
     $('.input-handle').each(function (k, v) {
         var type = $(v).data('type');
         var target=$(v).data('target')=='#target'?false:$(v).data('target');
-        var content=$(v).data('content')=='#content'?false:$(v).data('content');
+        var content=$(v).data('content')=='#content'?'':$(v).data('content');
         var parent = $(v).parent();
-        switch (type) {
-            case 'select':
+        var htmlContent=''
 
-                break;
-
-            default :
-                break;
+        if(!target){
+            log(content)
+            htmlContent='<textarea>'+content+'</textarea>'
+        }else{
+            htmlContent='target:'+target;
         }
-        console.log($(v).data('type'));
-    })
+        parent.html(htmlContent);
+
+    });
+    function unitSelecter(jqueryObj,)
 
 </script>
