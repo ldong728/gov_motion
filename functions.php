@@ -11,41 +11,30 @@
  * @param $password 用户输入的密码
  */
 function userAuth($userName,$password){
-    $staffQuery=pdoQuery('staff_tbl',null,array('staff_name'=>$userName),' limit 1')->fetch();
-//    mylog(json_encode($staffQuery,JSON_UNESCAPED_UNICODE));
-    if($staffQuery){
+    $localStaff=false;
+    if($staffQuery=pdoQuery('staff_tbl',null,array('staff_name'=>$userName),' limit 1')->fetch()){
         $metting=pdoQuery('meeting_tbl',null,array('category'=>$staffQuery['category']),' order by deadline_time limit 1')->fetch();
         if($password==$staffQuery['staff_password']&&$staffQuery['staff_password']!=''){//自创建用户
-            $_SESSION['staffLogin']=array();
-                for($i=0;$i<strlen($staffQuery['steps']);$i++){
-                    $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
-                }
-            $_SESSION['staffLogin']['category']=$staffQuery['category'];
-            $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
-            $_SESSION['staffLogin']['user_group']='all';
-//            mylog(getArrayInf($_SESSION));
-            getIndex();
+           $localStaff=1;
         }else{//查询党政信息网
             $userVerify=file_get_contents("http://172.19.48.144:88/Verify?Username=$userName&Password=$password");
             if('SUCCESS'==$userVerify){
-                $_SESSION['staffLogin']=array();
-                for($i=0;$i<strlen($staffQuery['steps']);$i++){
-                    $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
-                }
-                $_SESSION['staffLogin']['category']=$staffQuery['category'];
-                $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
-                $_SESSION['staffLogin']['user_group']=$staffQuery['unit'];
-
+               $localStaff=2;
             }
-            echo "false";
         }
-    }else{//非工作人员
-//        $meetingInf=pdoQuery('meeting_tbl',null,null,' order by deadline_time desc limi 1')->fetch();
+    }
+    if($localStaff){
+        $_SESSION['staffLogin']=array();
+        for($i=0;$i<strlen($staffQuery['steps']);$i++){
+            $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
+        }
+        $_SESSION['staffLogin']['category']=$staffQuery['category'];
+        $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
+        $_SESSION['staffLogin']['unit']=$staffQuery['unit'];
+        $_SESSION['staffLogin']['userListType']=$localStaff;
 
-        $userInf=pdoQuery('user_tbl',null,array('user_phone'=>$userName,'password'=>$password),'limit 1')->fetch();
-        if($userInf){
-//            $duty=
-        }
+        getIndex();
+    }else{
 
     }
 }
@@ -102,8 +91,12 @@ function editMotion($data){
         $motion[]=$values;
     }
     $currentStep=$motion[0]['step'];
+    $groupId=pdoQuery('user_group_tbl',array('user_group_id'),array('unit'=>$_SESSION['staffLogin']['unit']),' limit 1')->fetch()['user_group_id'];
+//    $filter=$groupId?array('user_group')
+//    $useListQuery=pdoQuery('')
     switch($currentStep){
         case 1:
+
             break;
         case 2:
 
