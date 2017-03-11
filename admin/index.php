@@ -95,14 +95,14 @@ function motion_temp_edit(){
         motion_temp_list();
         exit;
     }
-    global $attrList,$totalAttrList,$id,$step,$motionTempName,$valueTypes;
+    global $attrList,$totalAttrList,$id,$step,$motionTempName,$valueTypes,$targetList;
     $id=$_GET['id'];
     $attrList=array();
     $filter='';
     $motionTempName=null;
     if($_SESSION['operator_id']==-1){
         $step=pdoQuery('step_tbl',null,null,null)->fetchAll();
-        $query=pdoQuery('motion_attr_view',null,array('motion_template'=>$_GET['id']),null);
+        $query=pdoQuery('motion_attr_view',null,array('motion_template'=>$_GET['id']),'order by value_sort desc,motion_attr_id asc');
         foreach ($query as $row) {
                $values = $row;
                 $optionArray = json_decode($row['option'], true);
@@ -115,7 +115,8 @@ function motion_temp_edit(){
         }
         $filter=''==$filter?'':' where attr_template_id not in('.trim($filter,',').')';
         $totalAttrList=pdoQuery('attr_template_tbl',array('attr_template_id','attr_name'),null,$filter);
-        $valueTypes=array('string','int','time','index');
+        $valueTypes=array('string','int','time','index','attachment','mix');
+        $targetList=array('duty','unit','staff','motion');
 
             printAdminView('motion_temp.html.php','模板编辑');
     }else{

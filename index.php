@@ -24,7 +24,8 @@ if(isset($_SESSION['staffLogin'])){
    getIndex();
 }else{
     if(isset($_POST['user'])&&isset($_POST['password'])){
-        userAuth($_POST['user'],$_POST['password']);
+        $category=$_POST['category'];
+        userAuth($_POST['user'],$_POST['password'],$category);
         exit;
     }else{
         printView('login');

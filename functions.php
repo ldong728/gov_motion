@@ -10,10 +10,11 @@
  * @param $userName 用户输入的用户名
  * @param $password 用户输入的密码
  */
-function userAuth($userName,$password){
+function userAuth($userName,$password,$category=3){
+
     $localStaff=false;
     if($staffQuery=pdoQuery('staff_tbl',null,array('staff_name'=>$userName),' limit 1')->fetch()){
-        $metting=pdoQuery('meeting_tbl',null,array('category'=>$staffQuery['category']),' order by deadline_time limit 1')->fetch();
+        $metting=pdoQuery('meeting_tbl',null,array('category'=>$staffQuery['category']),' order by deadline_time desc limit 1')->fetch();
         if($password==$staffQuery['staff_password']&&$staffQuery['staff_password']!=''){//自创建用户
            $localStaff=1;
         }else{//查询党政信息网
@@ -31,7 +32,10 @@ function userAuth($userName,$password){
         $_SESSION['staffLogin']['category']=$staffQuery['category'];
         $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
         $_SESSION['staffLogin']['unit']=$staffQuery['unit'];
-        $_SESSION['staffLogin']['userListType']=$localStaff;
+        $userAdmin=json_decode($staffQuery['user_admin']);
+        foreach ($userAdmin as $k => $v) {
+            $_SESSION['staffLogin']['userList'][$k]=$v;
+        }
 
         getIndex();
     }else{
@@ -79,8 +83,32 @@ function editMotion($data){
         $values['content']='string'==$row['value_type']?$row['content']:$row['content_int'];
         if($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step'])){//可修改的选项
             if (count($optionArray) > 0) {
-                $values['option'] = $optionArray;
-//                $values['content']='<div class="input-handle" data-type="select" data-option="'.$row['option'].'"></div>';
+                $values['option']=array();
+                foreach ($optionArray as $oRow) {
+                    $values['option'][$oRow]=$oRow;
+                }
+                $values['class']='select';
+            }
+
+            if($row['target']){
+                switch($row['target']){
+                    case 'duty':
+                        $values['option']=array();
+                        $userInf=getUserList();
+                        foreach ($userInf['list'] as $k=>$v) {
+//                    mylog($v);
+                            $values['option'][$k]=$v;
+                        }
+                        $values['class']=$userInf['class'];
+                        break;
+                    case 'unit';
+                        $values['option']=array();
+                        $unitInf=getUnitList();
+                        break;
+
+                }
+
+
             }
             $content='<div class="input-handle" data-type="#type" data-target="#target" data-content="#content"></div>';
             $content=str_replace('#type',$row['value_type'],$content);
@@ -91,9 +119,7 @@ function editMotion($data){
         $motion[]=$values;
     }
     $currentStep=$motion[0]['step'];
-    $groupId=pdoQuery('user_group_tbl',array('user_group_id'),array('unit'=>$_SESSION['staffLogin']['unit']),' limit 1')->fetch()['user_group_id'];
-//    $filter=$groupId?array('user_group')
-//    $useListQuery=pdoQuery('')
+    $userInf=getUserList();
     switch($currentStep){
         case 1:
 

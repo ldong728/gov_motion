@@ -28,6 +28,28 @@ function syncUser(){
     foreach ($xmldata as $row) {
         pdoInsert('staff_tbl',array('staff_id'=>$row->id,'staff_unid'=>$row->unid,'unit'=>$row->dept,'staff_name'=>$row->usid,'full_name'=>addslashes($row->name),'reorder'=>$row->reorder),'update');
     }
+}
+function getUserList(){
+    if($_SESSION['staffLogin']['meeting']=='all')return null;
+    if(isset($_SESSION['staffLogin']['userList'])){
+        $query=pdoQuery('duty_view',array('duty_id','user_name'),$_SESSION['staffLogin']['userList'],null);
+        $userList=array();
+        foreach ($query as $row) {
+            $userList[]=$row;
+        }
+        return array('class'=> 'duty-user','list'=>$userList);
+    }else{
+        return 1==$_SESSION['staffLogin']['category']?array('class'=>'duty-group','list'=>array('unit'=>'按所属单位','group'=>'按代表团')):array('class'=>'duty-group','list'=>array('unit'=>'按委组','group'=>'按界别'));
+    }
+}
+function getUnitList($parentId='all'){
+    $id='all'==$parentId?0:$parentId;
+    $class='all'==$parentId?'unit-super':'unit-sub';
+        $query=pdoQuery('unit_tbl',array('unit_id','unit_name'),array('parent_id'=>$id),null);
+        foreach ($query as $row) {
+            $list=$row;
+        }
+        return array('class'=>'unit-super','list'=>$list);
 
 }
 

@@ -2,14 +2,13 @@
     <?php foreach ($motion as $row): ?>
         <tr>
             <td><?php htmlout($row['attr_name']) ?></td>
-            <td><?php if (is_array($row['option'])): ?>
-                    <select class="select">
-                        <?php foreach ($row['option'] as $oRow): ?>
+            <td ><?php if (is_array($row['option'])): ?>
+                    <select class="<?php echo $row['class']?>">
+                        <?php foreach ($row['option'] as $k=>$v): ?>
                             <option
-                                value="<?php htmlout($sRow) ?>" <?php echo $oRow == $row['content'] ? 'selected="selected"' : '' ?>><?php htmlout($oRow) ?> </option>
+                                value="<?php htmlout($k) ?>" <?php echo $k == $row['content'] ? 'selected="selected"' : '' ?>><?php htmlout($v) ?> </option>
                         <?php endforeach ?>
                     </select>
-
                 <?php else: ?>
                     <?php echo $row['content'] ?>
                 <?php endif ?>
@@ -21,22 +20,9 @@
     <button>下一步</button>
 </div>
 <script>
-    $('.input-handle').each(function (k, v) {
-        var type = $(v).data('type');
-        var target=$(v).data('target')=='#target'?false:$(v).data('target');
-        var content=$(v).data('content')=='#content'?'':$(v).data('content');
-        var parent = $(v).parent();
-        var htmlContent=''
-
-        if(!target){
-            log(content)
-            htmlContent='<textarea>'+content+'</textarea>'
-        }else{
-            htmlContent='target:'+target;
-        }
-        parent.html(htmlContent);
-
-    });
-    function unitSelecter(jqueryObj,)
+    $('.duty-group').change(function(){
+        var col=$(this).get(0).value
+        alert(col)
+    })
 
 </script>

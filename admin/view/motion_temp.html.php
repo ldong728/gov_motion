@@ -1,4 +1,4 @@
-<?php global $attrList, $totalAttrList, $id,$step,$motionTempName,$valueTypes;
+<?php global $attrList, $totalAttrList, $id,$step,$motionTempName,$valueTypes,$targetList;
 
 ?>
 
@@ -15,7 +15,10 @@
                     <td>是否隐藏</td>
                     <td>值类型</td>
                     <td>目标表</td>
+                    <td>附件</td>
+                    <td>排序</td>
                     <td>操作</td>
+
                 </tr>
                 <?php foreach ($attrList as $row): ?>
                     <tr>
@@ -61,7 +64,19 @@
                         </td>
                         <td class="ipt-toggle" id="<?php htmlout($row['motion_attr_id']) ?>" data-col="target"
                             data-index="motion_attr_id" data-tbl="motion_attr">
-                            <?php echo $row['target']?>
+                            <select class="select">
+                                <option value="">无</option>
+                                <?php foreach($targetList as $tRow):?>
+                                <option value="<?php echo $tRow?>" <?php echo $tRow==$row['target']? 'selected="selected"':''?>><?php echo $tRow?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </td>
+                        <td>
+                            <?php echo $row['has_attachment']?>
+                        </td>
+                        <td class="ipt-toggle" id="<?php htmlout($row['motion_attr_id']) ?>" data-col="value_sort"
+                            data-index="motion_attr_id" data-tbl="motion_attr">
+                            <?php echo $row['value_sort']?>
                         </td>
                         <td>
                             <button class="button">操作</button>
