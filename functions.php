@@ -81,7 +81,9 @@ function editMotion($data){
         $values = $row;
         $optionArray = json_decode($row['option'], true);
         $values['content']='string'==$row['value_type']?$row['content']:$row['content_int'];
+
         if($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step'])){//可修改的选项
+            $values['edit']=true;
             if (count($optionArray) > 0) {
                 $values['option']=array();
                 foreach ($optionArray as $oRow) {
@@ -107,14 +109,18 @@ function editMotion($data){
                         break;
 
                 }
-
-
             }
             $content='<div class="input-handle" data-type="#type" data-target="#target" data-content="#content"></div>';
             $content=str_replace('#type',$row['value_type'],$content);
             if(isset($row['target'])&&$row['target']!='')$content=str_replace('#target',$row['target'],$content);
             if(isset($values['content'])&&$values['content']!='')$content=str_replace('#content',$values['content'],$content);
             $values['content']=$content;
+        }else{
+
+            $values['edit']=false;
+            if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
+                $values['content']=indexToValue($row['target'],$row['content_int']);
+            }
         }
         $motion[]=$values;
     }
@@ -129,7 +135,33 @@ function editMotion($data){
             break;
     }
     include '/view/edit_motion.html.php';
+    return;
 }
+
+function getUserGroup($data){
+    $type=$data['group_type'];
+    $groupList=array();
+    if('unit'==$type){
+        $query=pdoQuery('user_unit_tbl',array('user_unit_id as id','user_unit_name as name'),array('category'=>$_SESSION['staffLogin']['category']),null);
+    }elseif('group'==$type){
+        $query=pdoQuery('user_group_tbl',array('user_group_id as id','user_group_name as name'),array('category'=>$_SESSION['staffLogin']['category']),null);
+    }
+    foreach ($query as $row) {
+        $groupList[]=$row;
+    }
+    mylog(getArrayInf($groupList));
+    echo ajaxBack($groupList);
+}
+function getUser($data){
+    $where=array($data['col']=>$data['id']);
+    $list=pdoQuery('duty_view',array('duty_id as id','user_name as name'),$where,null);
+    foreach ($list as $row) {
+        $userList[]=$row;
+    }
+    echo ajaxBack($userList);
+
+}
+
 
 
 function signOut($data){

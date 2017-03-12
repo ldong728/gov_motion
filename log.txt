@@ -1,9 +1,10 @@
-
-2017.03.11.06:55:34:D:\xampp\htdocs\gov_motion\functions.php96:按委组
-2017.03.11.06:55:34:D:\xampp\htdocs\gov_motion\functions.php96:按界别
-2017.03.11.06:55:34:D:\xampp\htdocs\gov_motion\functions.php96:按委组
-2017.03.11.06:55:34:D:\xampp\htdocs\gov_motion\functions.php96:按界别
-2017.03.11.06:55:34:D:\xampp\htdocs\gov_motion\functions.php96:按委组
-2017.03.11.06:55:34:D:\xampp\htdocs\gov_motion\functions.php96:按界别
-2017.03.11.07:06:40:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":{"id":1}}
-2017.03.11.07:06:42:D:\xampp\htdocs\gov_motion\includes\helpers.inc.php71:{"errcode":0,"errmsg":"ok","data":{"id":1}}
+2017.03.12.08:40:27:C:\xampp\htdocs\gov_motion\functions.php143:周巷镇
+2017.03.12.08:40:27:C:\xampp\htdocs\gov_motion\functions.php147:{0: {id: 1,0: 1,name: 周巷镇,1: 周巷镇}}
+2017.03.12.08:40:32:C:\xampp\htdocs\gov_motion\functions.php157:{}
+2017.03.12.08:41:56:C:\xampp\htdocs\gov_motion\functions.php143:周巷镇
+2017.03.12.08:41:56:C:\xampp\htdocs\gov_motion\functions.php147:{0: {id: 1,0: 1,name: 周巷镇,1: 周巷镇}}
+2017.03.12.08:42:00:C:\xampp\htdocs\gov_motion\functions.php154:测试用户
+2017.03.12.08:42:00:C:\xampp\htdocs\gov_motion\functions.php157:{0: {duty_id: 1,0: 1,user_name: 测试用户,1: 测试用户}}
+2017.03.12.08:53:38:C:\xampp\htdocs\gov_motion\functions.php145:{0: {id: 1,0: 1,name: 周巷镇,1: 周巷镇}}
+2017.03.12.09:06:35:C:\xampp\htdocs\gov_motion\functions.php145:{0: {id: 1,0: 1,name: 周巷镇,1: 周巷镇}}
+2017.03.12.12:51:43:C:\xampp\htdocs\gov_motion\functions.php152:{0: {id: 1,0: 1,name: 周巷镇,1: 周巷镇}}

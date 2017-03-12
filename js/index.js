@@ -14,7 +14,7 @@ function backHandle(data){
     var re=eval('('+data+')');
     if(0==re.errcode){
         var state= null==re.data?true:re.data;
-        console.log(state);
+        //console.log(state);
         return state;
     }else{
         console.log('error: '+re.errmsg);
