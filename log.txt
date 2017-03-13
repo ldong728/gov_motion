@@ -1,0 +1,25 @@
+
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM staff_tbl WHERE staff_name="test"  limit 1
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php29:12
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php31:0
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php32:steps: 1
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php31:1
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php32:steps: 2
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php55:{steps: {0: 1,1: 2}category: 2,meeting: 1,unit: 2,staffId: 1}
+2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE category="2" AND step in("1","2")  order by category asc limit 20
+2017.03.13.15:48:32:C:\xampp\htdocs\gov_motion\functions.php236:unsetted:{login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}}
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM staff_tbl WHERE staff_name="test"  limit 1
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php29:123
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php31:0
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php32:steps: 1
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php31:1
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php32:steps: 2
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php31:2
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php32:steps: 3
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php55:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 2,staffId: 1}
+2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE category="2" AND step in("1","2","3")  order by category asc limit 20
+2017.03.13.15:48:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_view WHERE motion_id="7" AND attr_step in("1","2","3")  order by value_sort desc,motion_attr asc
+2017.03.13.15:48:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT user_name FROM duty_view WHERE duty_id="0"  limit 1
+2017.03.13.15:48:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT user_name FROM duty_view WHERE duty_id="0"  limit 1

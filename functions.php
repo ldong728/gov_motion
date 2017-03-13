@@ -26,7 +26,10 @@ function userAuth($userName,$password,$category=3){
     }
     if($localStaff){
         $_SESSION['staffLogin']=array();
+        mylog($staffQuery['steps']);
         for($i=0;$i<strlen($staffQuery['steps']);$i++){
+            mylog($i);
+            mylog('steps: '.$staffQuery['steps'][$i]);
             $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
         }
         $_SESSION['staffLogin']['category']=$staffQuery['category'];
@@ -49,6 +52,7 @@ function userAuth($userName,$password,$category=3){
  * @param $steps
  */
 function getIndex(){
+    mylog(getArrayInf($_SESSION['staffLogin']));
     global $motionList;
     $motionList=pdoQuery('motion_tbl',null,array('category'=>$_SESSION['staffLogin']['category'],'step'=>$_SESSION['staffLogin']['steps']),' order by category asc limit 20')->fetchAll();
 //    syncDept();
@@ -92,6 +96,7 @@ function editMotion($data){
                     $values['option'][$oRow]=$oRow;
                 }
                 $values['class']='select';
+                if(!$values['content'])$value['content']=$row['default_value'];
             }
 
             if($row['target']){
@@ -108,6 +113,11 @@ function editMotion($data){
                     case 'unit';
                         $values['option']=array();
                         $unitInf=getUnitList();
+                        foreach ($unitInf['list'] as $k=>$v) {
+//                    mylog($v);
+                            $values['option'][$k]=$v;
+                        }
+                        $values['class']=$unitInf['class'];
                         break;
 
                 }
@@ -156,13 +166,46 @@ function getUserGroup($data){
     echo ajaxBack($groupList);
 }
 
+/**填充议案属性
+ * @param $data {step:1,data:values}
+ */
 function updateAttr($data){
-    foreach ($data as $row) {
-        mylog(getArrayInf($row));
+    $step=$data['step'];
+    pdoTransReady();
+    try{
+        foreach ($data['data'] as $row) {
+            $value=array();
+            if(!$row['value']&&$row['attr_type']=='string')continue;
+            if($row['attr_id'])$value['attr_id']=$row['attr_id'];
+            $value['motion']=$_SESSION['staffLogin']['currentMotion'];
+            $value['staff']=$_SESSION['staffLogin']['staffId'];
+            $value['motion_attr']=$row['motion_attr'];
+            $value['attr_template']=$row['attr_template'];
+            if('index'==$row['attr_type']||'int'==$row['attr_type']){
+                $value['content_int']=$row['value'];
+            }elseif('time'==$row['attr_type']){
+                mylog('time');
+                $value['content_int']=timeMysqlToUnix($value['value']);
+            }else{
+                $value['content']=$row['value'];
+            }
+            pdoInsert('attr_tbl',$value,'update');
+        }
+        if($data['step'])exeNew('update motion_tbl set step=step+1 where motion_id='.$_SESSION['staffLogin']['currentMotion']);
+        pdoCommit();
+        echo ajaxBack('ok');
+    }catch(PDOException $e){
+        mylog($e->getMessage());
+        pdoRollBack();
     }
+
 
 }
 
+/**
+ * 通过ajax获取代表委员分组成员列表的方法
+ * @param $data：包含分组形式，group或unit，及对应id，例{"col":"group","id":5}
+ */
 function getUser($data){
     $where=array($data['col']=>$data['id']);
     $list=pdoQuery('duty_view',array('duty_id as id','user_name as name'),$where,null);
@@ -170,6 +213,19 @@ function getUser($data){
         $userList[]=$row;
     }
     echo ajaxBack($userList);
+}
+
+/**
+ * 通过ajax获取分组单位列表的方法
+ * @param $data 包含父id，例：{"id":6}
+ */
+function getUnit($data){
+    $where=array('parent_unit'=>$data['id']);
+    $list=pdoQuery('unit_tbl',array('unit_id as id','unit_name as name'),$where,null);
+    foreach ($list as $row) {
+        $unitList[]=$row;
+    }
+    echo ajaxBack($unitList);
 
 }
 

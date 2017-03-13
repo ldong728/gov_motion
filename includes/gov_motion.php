@@ -33,10 +33,10 @@ function getUserList(){
     if($_SESSION['staffLogin']['meeting']=='all')return null;
     if(isset($_SESSION['staffLogin']['userList'])){
 
-        $query=pdoQuery('duty_view',array('duty_id','user_name'),$_SESSION['staffLogin']['userList'],null);
+        $query=pdoQuery('duty_view',array('duty_id as id','user_name as name'),$_SESSION['staffLogin']['userList'],null);
         $userList=$_SESSION['staffLogin']['category']==1?array('0'=>'选择人大代表'):array('0'=>'选择政协委员');
         foreach ($query as $row) {
-            $userList[]=$row;
+            $userList[$row['id']]=$row['name'];
         }
         return array('class'=> 'attr-value user-selectr','list'=>$userList);
     }else{
@@ -46,10 +46,10 @@ function getUserList(){
 function getUnitList($parentId='all'){
     $id='all'==$parentId?0:$parentId;
     $class='all'==$parentId?'unit-super':'attr-value unit-sub';
-        $query=pdoQuery('unit_tbl',array('unit_id','unit_name'),array('parent_id'=>$id),null);
+        $query=pdoQuery('unit_tbl',array('unit_id as id','unit_name as name'),array('parent_unit'=>$id),null);
         $list=array('0'=>'选择单位');
         foreach ($query as $row) {
-            $list[]=$row;
+            $list[$row['id']]=$row['name'];
         }
         return array('class'=>$class,'list'=>$list);
 }

@@ -23,7 +23,7 @@
                         <input type="file" class="doc-file" id="file<?php echo $row['motion_attr']?>" name="file<?php echo $row['motion_attr']?>" style="display: none">
                         <a class="attachment-file" <?php echo $row['attachment']?'href="'.$row['attachment'].'"':''?>>附件</a>
                     <?php elseif('time'==$row['value_type']):?>
-                        <input type="datetime-local" class="attr-value" value="<?php echo $row['attr_id']?date("Y-m-d\\TH:i:s", strtotime($row['content'])):date("Y-m-d\\TH:i:s", time())?>">
+                        <input type="datetime-local" class="attr-value" value="<?php echo $row['attr_id']?date("Y-m-d\TH:i:s", strtotime($row['content'])):date("Y-m-d\TH:i:s", time())?>">
                     <?php else: ?>
                         <textarea class="attr-value"></textarea>
                     <?php endif ?>
@@ -76,6 +76,21 @@
 
         }
     });
+    $(document).on('change','.unit-super',function(){
+        var _=$(this)
+        var id= _.val();
+        if(id>0){
+            _.nextAll().remove
+            ajaxPost('getUnit',{id:id},function(data){
+                var value=backHandle(data);
+                var content='<select class="unit-select attr-value">';
+                $.each(value,function(k,v){
+                    content+='<option value="'+ v.id+'">'+ v.name+'</option>';
+                });
+                _.after(content);
+            })
+        }
+    })
     $(document).on('click','.choose-file',function(){
         if(!antiDouble){
             antiDouble=true;
@@ -124,8 +139,9 @@
     $(document).on('click','.next-step',function(){
        submitAtrrs();
     });
-    function submitAtrrs() {
-        var data=[];
+    function submitAtrrs(step) {
+        var sStep=step||1
+        var data={step:sStep,data:[]};
         $('.update-value').each(function (k, v) {
             var f = $(v);
             var s = f.find('.attr-value');
@@ -135,7 +151,7 @@
             var motionAttr= f.data('motionattr');
             var attrTemplate= f.data('attrtemplate');
             var value= s.val();
-            data.push({
+            data.data.push({
                 attr_id:attrId,
                 attr_type:attrType,
                 target:target,
