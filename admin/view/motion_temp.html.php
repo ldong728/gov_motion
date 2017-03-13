@@ -71,7 +71,8 @@
                                 <?php endforeach ?>
                             </select>
                         </td>
-                        <td>
+                        <td class="ipt-toggle" id="<?php htmlout($row['motion_attr_id']) ?>" data-col="has_attachment"
+                            data-index="motion_attr_id" data-tbl="motion_attr">
                             <?php echo $row['has_attachment']?>
                         </td>
                         <td class="ipt-toggle" id="<?php htmlout($row['motion_attr_id']) ?>" data-col="value_sort"

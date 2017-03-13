@@ -32,6 +32,7 @@ function userAuth($userName,$password,$category=3){
         $_SESSION['staffLogin']['category']=$staffQuery['category'];
         $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
         $_SESSION['staffLogin']['unit']=$staffQuery['unit'];
+        $_SESSION['staffLogin']['staffId']=$staffQuery['staff_id'];
         $userAdmin=json_decode($staffQuery['user_admin']);
         foreach ($userAdmin as $k => $v) {
             $_SESSION['staffLogin']['userList'][$k]=$v;
@@ -75,7 +76,8 @@ function createMotion($data){
  */
 function editMotion($data){
     $id=$data['id'];
-    $motionQuery=pdoQuery('motion_view',null,array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']),null);
+    $_SESSION['staffLogin']['currentMotion']=$id;
+    $motionQuery=pdoQuery('motion_view',null,array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']),' order by value_sort desc,motion_attr asc');
     foreach ($motionQuery as $row) {
 
         $values = $row;
@@ -134,6 +136,7 @@ function editMotion($data){
 
             break;
     }
+
     include '/view/edit_motion.html.php';
     return;
 }
@@ -152,6 +155,14 @@ function getUserGroup($data){
     mylog(getArrayInf($groupList));
     echo ajaxBack($groupList);
 }
+
+function updateAttr($data){
+    foreach ($data as $row) {
+        mylog(getArrayInf($row));
+    }
+
+}
+
 function getUser($data){
     $where=array($data['col']=>$data['id']);
     $list=pdoQuery('duty_view',array('duty_id as id','user_name as name'),$where,null);

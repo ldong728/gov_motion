@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-11 09:33:06
+-- Generation Time: 2017-03-13 08:59:56
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -44,7 +44,8 @@ CREATE TABLE `attr_tbl` (
 
 INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `content`, `content_int`, `attachment`, `staff`, `update_time`) VALUES
 (1, 7, 14, 5, 'abc', 0, 'asd', 3, '2017-03-07 07:52:58'),
-(2, 7, 14, 5, 'def', 0, NULL, NULL, '2017-03-07 07:56:05');
+(2, 7, 14, 5, 'def', 0, NULL, NULL, '2017-03-07 07:56:05'),
+(11, 7, 21, 2, NULL, 0, 'files/4208f88bce311187628a5af4b9c0def8.txt', 1, '2017-03-13 06:27:37');
 
 -- --------------------------------------------------------
 
@@ -74,7 +75,8 @@ INSERT INTO `attr_template_tbl` (`attr_template_id`, `motion_template`, `attr_na
 (8, 0, '状态', NULL),
 (9, 0, '性质', NULL),
 (10, 0, '审核', '["立案","不予立案"]'),
-(11, 0, '审核意见', NULL);
+(11, 0, '审核意见', NULL),
+(12, 0, '原文', NULL);
 
 -- --------------------------------------------------------
 
@@ -186,15 +188,17 @@ CREATE TABLE `meeting_tbl` (
   `end_time` int(11) NOT NULL,
   `deadline_time` int(11) NOT NULL,
   `category` int(11) NOT NULL,
-  `motion_template` int(11) NOT NULL
+  `motion_template` int(11) NOT NULL,
+  `jie` int(11) DEFAULT '0',
+  `ci` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- 转存表中的数据 `meeting_tbl`
 --
 
-INSERT INTO `meeting_tbl` (`meeting_id`, `meeting_name`, `start_time`, `end_time`, `deadline_time`, `category`, `motion_template`) VALUES
-(1, '政协第X届第Y次会议', 123, 1234, 1490511241, 2, 2);
+INSERT INTO `meeting_tbl` (`meeting_id`, `meeting_name`, `start_time`, `end_time`, `deadline_time`, `category`, `motion_template`, `jie`, `ci`) VALUES
+(1, '政协第X届第Y次会议', 123, 1234, 1490511241, 2, 2, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -237,7 +241,8 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (17, 2, 10, '立案', 'string', NULL, 0, 3, 0, 0),
 (18, 2, 11, '', 'string', NULL, 0, 3, 0, 0),
 (19, 2, 7, '', 'time', NULL, 0, 2, 0, 0),
-(20, 2, 9, '', 'string', NULL, 0, 2, 0, 0);
+(20, 2, 9, '', 'string', NULL, 0, 2, 0, 0),
+(21, 2, 12, '', 'attachment', NULL, 0, 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -307,7 +312,8 @@ INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `mo
 (7, 1, 2, '测试提案6', 2, 1, 'none', 2, 'abas', '2017-03-06 08:16:17'),
 (8, 1, 2, 'asdfas', 2, 1, 'none', 2, 'abas', '2017-03-06 08:20:52'),
 (9, 1, 2, 'asdf', 2, 1, 'none', 2, 'abas', '2017-03-06 08:27:32'),
-(10, 1, 2, 'asdfas', 2, 1, 'none', 2, 'abas', '2017-03-06 08:29:03');
+(10, 1, 2, 'asdfas', 2, 1, 'none', 2, 'abas', '2017-03-06 08:29:03'),
+(11, 1, 2, '', 2, 1, 'none', 2, 'abas', '2017-03-13 06:22:58');
 
 -- --------------------------------------------------------
 
@@ -4129,12 +4135,12 @@ ALTER TABLE `user_unit_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
 ALTER TABLE `attr_template_tbl`
-  MODIFY `attr_template_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `attr_template_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- 使用表AUTO_INCREMENT `category_tbl`
 --
@@ -4164,7 +4170,7 @@ ALTER TABLE `meeting_tbl`
 -- 使用表AUTO_INCREMENT `motion_attr_tbl`
 --
 ALTER TABLE `motion_attr_tbl`
-  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --
@@ -4174,7 +4180,7 @@ ALTER TABLE `motion_handler_tbl`
 -- 使用表AUTO_INCREMENT `motion_tbl`
 --
 ALTER TABLE `motion_tbl`
-  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- 使用表AUTO_INCREMENT `motion_template_tbl`
 --

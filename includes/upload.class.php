@@ -8,10 +8,9 @@
  */
 
 //wxlog('include uploadClass ok');
-include_once '../includePackage.php';
-define('imgPath','image');
-define('maxSize',1024);
-define('FILE_FIELD','upfile');
+define('filePath','files');
+define('maxSize',2000);
+define('FILE_FIELD','file-up');
 class uploader
 {
     private $md5;
@@ -54,9 +53,9 @@ class uploader
         $this->fileField = $fileField;
         if(!$config){
             $this->config = array(
-                "savePath" => imgPath ,             //存储文件夹
+                "savePath" => filePath ,             //存储文件夹
                 "maxSize" => maxSize,                   //允许的文件最大尺寸，单位KB
-                "allowFiles" => array( ".gif" , ".png" , ".jpg" , ".jpeg" , ".bmp" )  //允许的文件格式
+                "allowFiles" => array(".png" , ".jpg" , ".jpeg" , ".bmp",".docx",".doc",".txt" )  //允许的文件格式
             );
         }else{
             $this->config=$config;
@@ -124,7 +123,7 @@ class uploader
         $this->fullName = $folder . $this->getName();
 
         if ( $this->stateInfo == $this->stateMap[ 0 ] ) {
-            if ( !move_uploaded_file( $file[ "tmp_name" ] , '../'.$this->fullName ) ) {
+            if ( !move_uploaded_file( $file[ "tmp_name" ] ,$this->fullName ) ) {
                 $this->stateInfo = $this->getStateInfo( "MOVE" );
                 return;
             }
