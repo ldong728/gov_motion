@@ -34,10 +34,25 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
 
 //        mylog(getArrayInf($_GET));
 //        mylog(getArrayInf($_FILES));
-    }else{
-
     }
+    if(isset($_FILES)&&isset($_GET['handler_attachment']))
+        foreach ($_FILES as $k => $v) {
+            $uploader=new uploader($k);
+            $fileName=md5_file($_FILES[$k]['tmp_name']);
+            $uploader->upFile($fileName);
+            $inf=$uploader->getFileInfo();
+            $value=array('attachment'=>$inf['url']);
+            try{
+                $handlerId=$_GET['handler_attachment'];
+                pdoUpdate('motion_handler_tbl',$value,array('motion_handler_id'=>$handlerId),' limit 1');
+                echo json_encode($inf);
+            }catch(PDOException $e){
+                $inf['state']='fail';
+                echo json_encode($inf);
+            }
 
+
+        }
     exit;
 
 

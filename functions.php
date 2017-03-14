@@ -154,7 +154,13 @@ function editMotion($data){
             $handlerQuery=pdoQuery('motion_handler_tbl',null,array('motion'=>$id,),' limit 1');
             foreach ($handlerQuery as $row) {
                 if($row['unit']==$unit){
-                    $handler=array('签收时间'=>$row['receive_time'],'回复时间'=>$row['reply_time'],'联系人'=>$row['contact_name'],'联系电话'=>$row['contact_phone'],'电话'=>$row['phone'],'附件'=>$row['attachment']);
+                    $orignal=$row;
+                    $handler=array(array('name'=>'签收时间','col'=>'receive_time','value'=>$row['receive_time']),
+                                    array('name'=>'回复时间','col'=>'reply_time','value'=>$row['reply_time']),
+                                    array('name'=>'联系人','col'=>'contact_name','value'=>$row['contact_name']),
+                                    array('name'=>'联系电话','col'=>'contact_phone','value'=>$row['contact_phone']),
+                                    array('name'=>'电话','col'=>'phone','value'=>$row['phone']),
+                                    array('name'=>'附件','col'=>'attachment','value'=>$row['attachment']));
                     include '/view/handle_motion.html.php';
                     return;
                 }
@@ -204,7 +210,7 @@ function updateAttr($data){
             if('index'==$row['attr_type']||'int'==$row['attr_type']){
                 $value['content_int']=$row['value'];
             }elseif('time'==$row['attr_type']){
-                $value['content_int']=timeMysqlToUnix($value['value']);
+                $value['content_int']=time();
             }else{
                 $value['content']=$row['value'];
             }

@@ -25,7 +25,7 @@
                         <input type="file" class="doc-file" id="file<?php echo $row['motion_attr']?>" name="file<?php echo $row['motion_attr']?>" style="display: none">
                         <a class="attachment-file" <?php echo $row['attachment']?'href="'.$row['attachment'].'"':''?>>附件</a>
                     <?php elseif('time'==$row['value_type']):?>
-                        <input type="datetime-local" class="attr-value" value="<?php echo $row['attr_id']?date("Y-m-d\TH:i:s", strtotime($row['content'])):date("Y-m-d\TH:i:s", time())?>">
+                       <input type="hidden" class="attr-value" value="1"><span class="time-display"></span>
                     <?php else: ?>
                         <textarea class="attr-value"></textarea>
                     <?php endif ?>
@@ -48,6 +48,10 @@
 </div>
 <script>
     var antiDouble=false;
+    setInterval(function(){
+        var time=new Date();
+        $('.time-display').text(time.toLocaleString());
+    },1000);
     $('.duty-group').change(function(){
         var currentObj=$(this);
         var col=currentObj.get(0).value;
