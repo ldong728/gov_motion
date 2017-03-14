@@ -1,4 +1,5 @@
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000,9999)?>"></script>
+
 <table>
     <?php foreach ($motion as $row): ?>
         <tr>
@@ -10,12 +11,13 @@
                         data-type="<?php echo $row['value_type']?>"
                         data-target="<?php echo isset($row['target'])?$row['target']:''?>"
                         data-motionattr="<?php echo $row['motion_attr']?>"
-                        data-attrtemplate="<?php echo $row['motion_template']?>">
+                        data-attrtemplate="<?php echo $row['attr_template']?>">
                     <?php if (is_array($row['option'])): ?>
-                        <select class="<?php echo $row['class']?> attr-value">
+                        <select class="<?php echo $row['class']?> <?php echo $row['target']? '':'attr-value'?>">
                             <?php foreach ($row['option'] as $k=>$v): ?>
                                 <option
-                                    value="<?php htmlout($k) ?>" <?php echo $k == $row['content']||$k==$row['content_int'] ? 'selected="selected"' : '' ?>><?php htmlout($v) ?> </option>
+                                    value="<?php htmlout($k) ?>"
+                                    <?php echo $k == $row['content']||$k==$row['content_int'] ? 'selected="selected"' : '' ?>><?php htmlout($v) ?> </option>
                             <?php endforeach ?>
                         </select>
                     <?php elseif($row['has_attachment']): ?>
@@ -29,7 +31,13 @@
                     <?php endif ?>
                     </td>
                 <?php else: ?>
-                    <?php echo $row['content'] ?>
+                    <td>
+                        <?php if($row['has_attachment']):?>
+                            <a href="<?php echo $row['attachment'] ?>">附件</a>
+                            <?php else: ?>
+                            <?php echo $row['content'] ?>
+                        <?php endif?>
+                    </td>
                 <?php endif ?>
 
         </tr>
@@ -80,7 +88,7 @@
         var _=$(this)
         var id= _.val();
         if(id>0){
-            _.nextAll().remove
+            _.nextAll().remove();
             ajaxPost('getUnit',{id:id},function(data){
                 var value=backHandle(data);
                 var content='<select class="unit-select attr-value">';
@@ -95,6 +103,9 @@
         if(!antiDouble){
             antiDouble=true;
             $(this).next('.doc-file').click();
+            setTimeout(function(){
+                antiDouble=false;
+            },1000);
         }
 
     });

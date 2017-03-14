@@ -1,25 +1,28 @@
-
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM staff_tbl WHERE staff_name="test"  limit 1
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php29:12
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php31:0
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php32:steps: 1
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php31:1
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php32:steps: 2
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\functions.php55:{steps: {0: 1,1: 2}category: 2,meeting: 1,unit: 2,staffId: 1}
-2017.03.13.15:48:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE category="2" AND step in("1","2")  order by category asc limit 20
-2017.03.13.15:48:32:C:\xampp\htdocs\gov_motion\functions.php236:unsetted:{login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}}
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM staff_tbl WHERE staff_name="test"  limit 1
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php29:123
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php31:0
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php32:steps: 1
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php31:1
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php32:steps: 2
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php31:2
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php32:steps: 3
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\functions.php55:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 2,staffId: 1}
-2017.03.13.15:48:38:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE category="2" AND step in("1","2","3")  order by category asc limit 20
-2017.03.13.15:48:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_view WHERE motion_id="7" AND attr_step in("1","2","3")  order by value_sort desc,motion_attr asc
-2017.03.13.15:48:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT user_name FROM duty_view WHERE duty_id="0"  limit 1
-2017.03.13.15:48:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT user_name FROM duty_view WHERE duty_id="0"  limit 1
+2017.03.14.08:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE motion_id="7"  limit 1
+2017.03.14.08:32:25:D:\xampp\htdocs\gov_motion\functions.php191:{attr_id: 0,attr_type: index,target: unit,motion_attr: 22,attr_template: 13,value: 2}
+2017.03.14.08:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO attr_tbl SET motion="7",staff="3653",motion_attr="22",attr_template="13",content_int="2" on DUPLICATE KEY update motion="7",staff="3653",motion_attr="22",attr_template="13",content_int="2"
+2017.03.14.08:32:25:D:\xampp\htdocs\gov_motion\functions.php191:{attr_id: 0,attr_type: index,target: unit,motion_attr: 23,attr_template: 14,value: 157}
+2017.03.14.08:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO attr_tbl SET motion="7",staff="3653",motion_attr="23",attr_template="14",content_int="157" on DUPLICATE KEY update motion="7",staff="3653",motion_attr="23",attr_template="14",content_int="157"
+2017.03.14.08:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php174:UPDATE motion_tbl SET step="5" WHERE motion_id="7"
+2017.03.14.08:32:25:D:\xampp\htdocs\gov_motion\functions.php212:mark
+2017.03.14.08:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_view WHERE motion="7" AND attr_name="协办单位" null
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM motion_tbl WHERE motion_id="7"  limit 1
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\functions.php191:{attr_id: 0,attr_type: index,target: unit,motion_attr: 22,attr_template: 13,value: 2}
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO attr_tbl SET motion="7",staff="3653",motion_attr="22",attr_template="13",content_int="2" on DUPLICATE KEY update motion="7",staff="3653",motion_attr="22",attr_template="13",content_int="2"
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\functions.php191:{attr_id: 0,attr_type: index,target: unit,motion_attr: 23,attr_template: 14,value: 157}
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO attr_tbl SET motion="7",staff="3653",motion_attr="23",attr_template="14",content_int="157" on DUPLICATE KEY update motion="7",staff="3653",motion_attr="23",attr_template="14",content_int="157"
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php174:UPDATE motion_tbl SET step="5" WHERE motion_id="7"
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\functions.php212:mark
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php76:query:SELECT *  FROM attr_view WHERE motion="7" AND attr_name="协办单位"
+2017.03.14.08:32:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php127:INSERT INTO motion_handler_tbl SET motion="7",attr="122",unit="157"
+2017.03.14.08:34:13:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 4}category: 3,meeting: ,unit: 0,staffId: 3653,currentMotion: 7}
+2017.03.14.09:26:13:D:\xampp\htdocs\gov_motion\functions.php271:unsetted:{login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}}
+2017.03.14.09:26:25:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 156,staffId: 3654}
+2017.03.14.09:26:30:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 156,staffId: 3654}
+2017.03.14.09:27:21:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 156,staffId: 3654}
+2017.03.14.09:27:22:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 156,staffId: 3654}
+2017.03.14.09:27:25:D:\xampp\htdocs\gov_motion\functions.php271:unsetted:{login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}}
+2017.03.14.09:28:24:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 157,staffId: 3654}
+2017.03.14.09:29:04:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 157,staffId: 3654,currentMotion: 7}
+2017.03.14.09:29:24:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 157,staffId: 3654,currentMotion: 7}
+2017.03.14.09:35:58:D:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 157,staffId: 3654,currentMotion: 7}

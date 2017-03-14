@@ -73,7 +73,7 @@ function pdoQuery($tableName, $fields, $where, $append)
         $sql=$sql.' '.$append;
     }
     try {
-        mylog('query:'.$sql);
+//        mylog('query:'.$sql);
         $query = $GLOBALS['pdo']->query($sql);
         return $query;
     }catch (PDOException $e) {
@@ -124,7 +124,7 @@ function pdoInsert($tableName,$value,$str=''){
     }else{
         $sql=$sql.$data.$str;
     }
-    mylog($sql);
+//    mylog($sql);
     try {
         $GLOBALS['pdo']->exec($sql);
         return $GLOBALS['pdo']->lastInsertId();
