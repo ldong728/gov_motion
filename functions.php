@@ -13,7 +13,9 @@
 function userAuth($userName,$password,$category=3){
 
     $localStaff=false;
-    if($staffQuery=pdoQuery('staff_tbl',null,array('staff_name'=>$userName),' limit 1')->fetch()){
+    $staffFilter=array('staff_name'=>$userName);
+    if($category<3&&$category>0)$staffFilter['category']=$category;
+    if($staffQuery=pdoQuery('staff_tbl',null,$staffFilter,' limit 1')->fetch()){
         $metting=pdoQuery('meeting_tbl',null,array('category'=>$staffQuery['category']),' order by deadline_time desc limit 1')->fetch();
         if($password==$staffQuery['staff_password']&&$staffQuery['staff_password']!=''){//自创建用户
            $localStaff=1;
@@ -37,8 +39,8 @@ function userAuth($userName,$password,$category=3){
         foreach ($userAdmin as $k => $v) {
             $_SESSION['staffLogin']['userList'][$k]=$v;
         }
-
         getIndex();
+        exit;
     }else{
 
     }
@@ -48,7 +50,7 @@ function userAuth($userName,$password,$category=3){
  * 获取对应流程权限的提议案列表
  * @param $steps
  */
-function getIndex(){
+function getIndex($orderBy='default'){
     mylog(getArrayInf($_SESSION['staffLogin']));
     global $motionList;
     $motionList=array();
@@ -57,19 +59,59 @@ function getIndex(){
     $list=pdoQuery('motion_tbl',null,$where,' order by category asc limit 20');
     foreach ($list as $row) {
         $motionId[]=$row['motion_id'];
-        $motionList[]=$row;
+        $motionList[$row['category']][]=$row;
     }
+
     if(5==$_SESSION['staffLogin']['steps'][0]){
         $list=pdoQuery('motion_view',array('motion_id','motion_name','category'),array('motion_id'=>$motionId,'target'=>'unit','attr_step'=>'4','content_int'=>$_SESSION['staffLogin']['unit']),' group by motion_id order by category asc')->fetchAll();
         $motionList=$list;
     }
-
-//    syncDept();
-//    syncUser();
+    getMotionList(array());
     printView('index');
+}
 
 
-//    $list=pdoQuery('motion_tbl',null,array())
+
+
+/**
+ * ajax访问获取提议案列表
+ * @param $data
+ */
+function getMotionList($data){
+    $count=20;
+    $category=isset($data['category'])?$data['category']:$_SESSION['staffLogin']['category'];
+    $meeting=isset($data['meeting'])?$data['meeting']:$_SESSION['staffLogin']['meeting'];
+    $attrOrderBy=isset($data['attr_order_by'])?$data['attr_order_by']:'当前环节';
+    $attrOrder=isset($data['attr_order'])? $data['attr_order']:'desc';
+    $orderStr='order by content_int '.$attrOrder.',content '.$attrOrder;
+    $sortFilter=array('meeting'=>$meeting,'category'=>$category,'attr_name'=>$attrOrderBy);
+    if('当前环节'==$attrOrderBy){
+        $orderStr='order by step '.$attrOrder;
+        unset($sortFilter['attr_name']);
+    }
+//    $orderBy=isset($data['order_by'])?$data['order_by']:'step';
+//    $order=isset($data['order'])?$data['order']:'desc';
+    $page=isset($data['page'])?$data['page']:0;
+    $field=isset($data['field'])?$data['field']:array('案号','领衔人','案别','案由','性质类别','全文','当前环节','办理单位');
+    $sortList=array();
+    $motionfilter=array();
+    $sortQuery=pdoQuery('motion_view',array('motion_id'),$sortFilter,'group by motion_id '.$orderStr.' limit '.$page*$count.','.$count);
+    foreach ($sortQuery as $row) {
+        $sortList[$row['motion_id']]=array();
+        $motionfilter[]=$row['motion_id'];
+    }
+    mylog(getArrayInf($sortList));
+    $motionDetail=pdoQuery('motion_view',null,array('motion_id'=>$motionfilter,'attr_name'=>$field),null);
+    foreach ($motionDetail as $row) {
+        $content='string'==$row['value_type']?$row['content']:$row['content_int'];
+        $content='attachment'==$row['value_type']?$row['attachment']:$content;
+        if('index'==$row['value_type'])$content=indexToValue($row['target'],$content);
+        $sortList[$row['motion_id']][$row['attr_name']]=$content;
+    }
+    mylog(getArrayInf($sortList));
+    return $sortList;
+
+
 }
 
 /**
@@ -154,7 +196,7 @@ function editMotion($data){
             $handlerQuery=pdoQuery('motion_handler_tbl',null,array('motion'=>$id,),' limit 1');
             foreach ($handlerQuery as $row) {
                 if($row['unit']==$unit){
-                    $orignal=$row;
+                    $original=$row;
                     $handler=array(array('name'=>'签收时间','col'=>'receive_time','value'=>$row['receive_time']),
                                     array('name'=>'回复时间','col'=>'reply_time','value'=>$row['reply_time']),
                                     array('name'=>'联系人','col'=>'contact_name','value'=>$row['contact_name']),

@@ -1,6 +1,7 @@
 <?php
 /*20160512 支持事务操作
  *20161220
+ * 20170315 修复空数组查询报错
  *
  */
 
@@ -56,12 +57,16 @@ function pdoQuery($tableName, $fields, $where, $append)
             }
 
             if(is_array($v)){
-                $sql.=$k.' in(';
-                foreach ($v as $d) {
-                    $sql.='"'.$d.'",';
+                if(count($v)>0){
+                    $sql.=$k.' in(';
+                    foreach ($v as $d) {
+                        $sql.='"'.$d.'",';
+                    }
+                    $sql=trim($sql,',');
+                    $sql.=')';
+                }else{
+                    $sql.=$k.' in("-1000000")';
                 }
-                $sql=trim($sql,',');
-                $sql.=')';
             }else{
                 $sql = $sql . $k . '=' . '"' . $v . '"';
             }
@@ -73,7 +78,7 @@ function pdoQuery($tableName, $fields, $where, $append)
         $sql=$sql.' '.$append;
     }
     try {
-//        mylog('query:'.$sql);
+        mylog('query:'.$sql);
         $query = $GLOBALS['pdo']->query($sql);
         return $query;
     }catch (PDOException $e) {

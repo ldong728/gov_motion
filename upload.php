@@ -9,6 +9,7 @@ include_once 'includePackage.php';
 include_once $mypath . '/includes/upload.class.php';
 session_start();
 mylog(getArrayInf($_SESSION));
+mylog(getArrayInf($_GET));
 if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
     if(isset($_FILES)&&isset($_GET['attachment'])){
         foreach ($_FILES as $k => $v) {
@@ -36,6 +37,7 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
 //        mylog(getArrayInf($_FILES));
     }
     if(isset($_FILES)&&isset($_GET['handler_attachment']))
+        mylog();
         foreach ($_FILES as $k => $v) {
             $uploader=new uploader($k);
             $fileName=md5_file($_FILES[$k]['tmp_name']);
@@ -44,7 +46,7 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
             $value=array('attachment'=>$inf['url']);
             try{
                 $handlerId=$_GET['handler_attachment'];
-                pdoUpdate('motion_handler_tbl',$value,array('motion_handler_id'=>$handlerId),' limit 1');
+                pdoUpdate('motion_handler_tbl',$value,array('motion_handler_id'=>$handlerId,'motion'=>$_SESSION['staffLogin']['currentMotion']),' limit 1');
                 echo json_encode($inf);
             }catch(PDOException $e){
                 $inf['state']='fail';

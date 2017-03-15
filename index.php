@@ -15,19 +15,33 @@ if(isset($_SESSION['staffLogin'])){
         $_POST['ajax']($ajaxData);
         exit;
     }
-//    if(isset($_GET['method'])){
-//        $method=$_GET['method'];
-//        if(in_array($method,array('')))
-//    }
+    if(isset($_GET)){
 
-
+    }
    getIndex();
 }else{
     if(isset($_POST['user'])&&isset($_POST['password'])){
         $category=$_POST['category'];
         userAuth($_POST['user'],$_POST['password'],$category);
+        header('location:index.php?c='.$category.'&error=password');
         exit;
     }else{
-        printView('login');
+        global $category;
+        $category =$_GET['c'];
+        switch($category){
+            case 1:
+                printView('p-con','人大登入-慈溪市人大代表议案建议系统');
+                break;
+            case 2:
+                printView('p-mem','政协登入-慈溪市政协提案办理系统');
+                break;
+            case 3:
+                printView('p-pro','登入-慈溪市人大政协议案提案办理系统');
+                break;
+            default:
+                printView('login'.$category);
+                break;
+        }
+
     }
 }

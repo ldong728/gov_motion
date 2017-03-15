@@ -48,10 +48,7 @@
 </div>
 <script>
     var antiDouble=false;
-    setInterval(function(){
-        var time=new Date();
-        $('.time-display').text(time.toLocaleString());
-    },1000);
+    var timeSet=setTime();
     $('.duty-group').change(function(){
         var currentObj=$(this);
         var col=currentObj.get(0).value;
@@ -176,8 +173,15 @@
             });
         });
         ajaxPost('updateAttr',data,function(){
-
         });
+    }
+    function setTime(){
+        $('.time-display').text(new Date().toLocaleString());
+        var time=setInterval(function(){
+            var time=new Date();
+            $('.time-display').text(time.toLocaleString());
+        },1000);
+        return time;
     }
 
 //    function getUserGroup()

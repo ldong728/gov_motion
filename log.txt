@@ -1,4 +1,18 @@
-2017.03.14.11:21:40:C:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 157,staffId: 3654}
-2017.03.14.15:01:58:C:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 5}category: 3,meeting: ,unit: 157,staffId: 3654,currentMotion: 7}
-2017.03.14.15:02:02:C:\xampp\htdocs\gov_motion\functions.php277:unsetted:{}
-2017.03.14.15:02:12:C:\xampp\htdocs\gov_motion\functions.php52:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 2,staffId: 1}
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\functions.php54:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 2,staffId: 1}
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_tbl WHERE step in("1","2","3") AND category="2"  order by category asc limit 20
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND category="2" group by motion_id order by step desc limit 0,20
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\functions.php103:{7: {}8: {}9: {}}
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("7","8","9") AND attr_name in("案号","领衔人","案别","案由","性质类别","全文","当前环节","办理单位")
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_name FROM duty_view WHERE duty_id="1"  limit 1
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_name FROM duty_view WHERE duty_id in("-1000000")  limit 1
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_name FROM duty_view WHERE duty_id in("-1000000")  limit 1
+2017.03.15.09:00:31:D:\xampp\htdocs\gov_motion\functions.php111:{7: {案由: 案由,领衔人: 测试用户,性质类别: 性质类别}8: {案由: ,领衔人: ,性质类别: }9: {案由: ,领衔人: ,性质类别: }}
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\functions.php54:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 2,staffId: 1}
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_tbl WHERE step in("1","2","3") AND category="2"  order by category asc limit 20
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND category="2" group by motion_id order by step desc limit 0,20
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\functions.php103:{7: {}8: {}9: {}}
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("7","8","9") AND attr_name in("案号","领衔人","案别","案由","性质类别","全文","当前环节","办理单位")
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_name FROM duty_view WHERE duty_id="1"  limit 1
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_name FROM duty_view WHERE duty_id in("-1000000")  limit 1
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_name FROM duty_view WHERE duty_id in("-1000000")  limit 1
+2017.03.15.09:00:36:D:\xampp\htdocs\gov_motion\functions.php111:{7: {案由: 案由,领衔人: 测试用户,性质类别: 性质类别}8: {案由: ,领衔人: ,性质类别: }9: {案由: ,领衔人: ,性质类别: }}
