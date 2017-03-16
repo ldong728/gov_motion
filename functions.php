@@ -194,18 +194,26 @@ function editMotion($data){
                         break;
                 }
             }
+            if(1==$values['multiple']&&isset($motion[$row['motion_attr']])){
+                $motion[$row['motion_attr']]['multiple_value'][]=
+                    array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$row['content_int']));
+            }else{
+                $motion[$row['motion_attr']]=$values;
+                $motion[$row['motion_attr']]['multiple_value'][]=array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$row['content_int']));
+            }
         }else{
-
             $values['edit']=false;
             if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
                 $values['content']=indexToValue($row['target'],$row['content_int']);
             }
+            if(1==$values['multiple']&&isset($motion[$row['motion_attr']]))$motion[$row['motion_attr']]['content'].=','.$values['content'];
+            $motion[$row['motion_attr']]=$values;
         }
 //        mylog(getArrayInf($values));
-        $motion[]=$values;
+
     }
     mylog(getArrayInf($motion));
-    $currentStep=$motion[0]['step'];
+    $currentStep=current($motion)['step'];
     $userInf=getUserList();
     switch($currentStep){
         case 1:

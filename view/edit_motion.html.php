@@ -13,7 +13,14 @@
                         data-motionattr="<?php echo $row['motion_attr']?>"
                         data-attrtemplate="<?php echo $row['attr_template']?>"
                         data-mutiple="<?php echo $row['multiple']?>">
+
                     <?php if (is_array($row['option'])): ?>
+                        <?php if(1==$row['multiple']&&count($row['multiple_value'])>1):?>
+                        <?php foreach($row['multiple_value'] as $mvRow):?>
+                                <span class="pre-delete attr-value" id="<?php echo $mvRow['attr_id'] ?>"><?php echo $mvRow['content']?></span>
+                                <?php endforeach?>
+
+                        <?php endif ?>
                         <select class="<?php echo $row['class']?> <?php echo $row['target']? '':'attr-value'?>">
                             <?php foreach ($row['option'] as $k=>$v): ?>
                                 <option
@@ -162,7 +169,7 @@
         $('.update-value').each(function (k, v) {
             var f = $(v);
             var s = f.find('.attr-value');
-            var attrId = f.data('attr');
+            var attrId = s.attr('id')||f.data('attr');
             var attrType = f.data('type');
             var target = f.data('target');
             var motionAttr= f.data('motionattr');

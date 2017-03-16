@@ -40,6 +40,7 @@ if(isset($_SESSION['staffLogin'])){
                 break;
             default:
                 $title='登入-慈溪市人大政协议案提案办理系统';
+                printView('login3',$title);
                 break;
 
         }
