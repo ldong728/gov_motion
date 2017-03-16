@@ -35,6 +35,8 @@ function userAuth($userName,$password,$category=3){
         $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
         $_SESSION['staffLogin']['unit']=$staffQuery['unit'];
         $_SESSION['staffLogin']['staffId']=$staffQuery['staff_id'];
+        $_SESSION['staffLogin']['staffName']=$staffQuery['full_name'];
+        $_SESSION['staffLogin']['outId']=$staffQuery['out_id'];
         $userAdmin=json_decode($staffQuery['user_admin']);
         foreach ($userAdmin as $k => $v) {
             $_SESSION['staffLogin']['userList'][$k]=$v;
@@ -51,22 +53,43 @@ function userAuth($userName,$password,$category=3){
  * @param $steps
  */
 function getIndex($orderBy='default'){
-    mylog(getArrayInf($_SESSION['staffLogin']));
-    global $motionList;
+    $staff=$_SESSION['staffLogin'];
+    mylog(getArrayInf($staff));
+    global $motionList,$meetingList,$category;
+    $meetingList=array();
     $motionList=array();
-    $where=array('step'=>$_SESSION['staffLogin']['steps']);
-    if($_SESSION['staffLogin']['category']<3)$where['category']=$_SESSION['staffLogin']['category'];
-    $list=pdoQuery('motion_tbl',null,$where,' order by category asc limit 20');
+    $category=$staff['category'];
+    $motionListFilter=array('step'=>$staff['steps']);
+    $meetingListFilter=null;
+    if($staff['category']<3){
+        $motionListFilter['category']=$category;
+        $meetingListFilter['category']=$category;
+    }
+    $list=pdoQuery('motion_for_index_view',null,$motionListFilter,' order by category asc limit 20');
     foreach ($list as $row) {
         $motionId[]=$row['motion_id'];
         $motionList[$row['category']][]=$row;
     }
+    $meeting=pdoQuery('meeting_tbl',null,$meetingListFilter,'order by start_time asc');
+    foreach ($meeting as $row) {
+        $meetingList[$row['category']][$row['meeting_id']]=$row;
+    }
 
-    if(5==$_SESSION['staffLogin']['steps'][0]){
-        $list=pdoQuery('motion_view',array('motion_id','motion_name','category'),array('motion_id'=>$motionId,'target'=>'unit','attr_step'=>'4','content_int'=>$_SESSION['staffLogin']['unit']),' group by motion_id order by category asc')->fetchAll();
+    if(4==$staff['steps'][0]&&isset($staff['outId'])&&null!=$staff['outId']){
+        $unitQuery=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('step'=>4,'motion_id'=>$motionId,'attr_name'=>'交办单位'),' group by motion_id');
+        foreach ($unitQuery as $row) {
+            if($staff['unit']!=$row['content_int']){
+                unset($meetingList[$row['category']][$row['motion_id']]);
+            }
+        }
+
+    }
+
+    if(in_array(5,$staff['steps'])){
+        $list=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category'),array('motion_id'=>$motionId,'target'=>'unit','attr_step'=>'4','content_int'=>$staff['unit']),' group by motion_id order by category asc')->fetchAll();
         $motionList=$list;
     }
-    getMotionList(array());
+//    getMotionList(array());
     printView('index');
 }
 
@@ -77,7 +100,7 @@ function getIndex($orderBy='default'){
  * ajax访问获取提议案列表
  * @param $data
  */
-function getMotionList($data){
+function ajaxMotionList($data){
     $count=20;
     $category=isset($data['category'])?$data['category']:$_SESSION['staffLogin']['category'];
     $meeting=isset($data['meeting'])?$data['meeting']:$_SESSION['staffLogin']['meeting'];
@@ -108,7 +131,7 @@ function getMotionList($data){
         if('index'==$row['value_type'])$content=indexToValue($row['target'],$content);
         $sortList[$row['motion_id']][$row['attr_name']]=$content;
     }
-    mylog(getArrayInf($sortList));
+//    mylog(getArrayInf($sortList));
     return $sortList;
 
 
@@ -181,7 +204,7 @@ function editMotion($data){
 //        mylog(getArrayInf($values));
         $motion[]=$values;
     }
-//    mylog(getArrayInf($motion));
+    mylog(getArrayInf($motion));
     $currentStep=$motion[0]['step'];
     $userInf=getUserList();
     switch($currentStep){
@@ -314,8 +337,12 @@ function getUnit($data){
 
 
 
+/**
+ * 登出
+ * @param $data
+ */
 function signOut($data){
-    unset($_SESSION['staffLogin']);
+    session_unset();
     mylog('unsetted:'.getArrayInf($_SESSION));
     echo ajaxBack('ok');
 }

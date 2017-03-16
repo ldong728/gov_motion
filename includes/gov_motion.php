@@ -26,7 +26,7 @@ function syncUser(){
 //    $data=file_get_contents('http://172.19.48.144:88/GetUser');
     $xmldata=decodeXml($data);
     foreach ($xmldata as $row) {
-        pdoInsert('staff_tbl',array('staff_id'=>$row->id,'staff_unid'=>$row->unid,'unit'=>$row->dept,'staff_name'=>$row->usid,'full_name'=>addslashes($row->name),'reorder'=>$row->reorder),'update');
+        pdoInsert('staff_tbl',array('out_id'=>$row->id,'staff_unid'=>$row->unid,'unit'=>$row->dept,'staff_name'=>$row->usid,'full_name'=>addslashes($row->name),'reorder'=>$row->reorder),'update');
     }
 }
 function getUserList(){

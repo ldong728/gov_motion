@@ -7,7 +7,7 @@
 	<div class="container">
 		<div class="header-l"><p>欢迎来到慈溪市政协提案办理系统</p></div>
 		<div class="header-r"><a href="#">加入收藏</a><span class="sep">|</span><a href="#">设为主页</a></div>
-		<div class="header-m"><p>2017年3月11日</p></div>
+		<div class="header-m"><p class="date"></p></div>
 	</div>
 </div>
 <div class="main">

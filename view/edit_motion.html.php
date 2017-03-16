@@ -1,9 +1,9 @@
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000,9999)?>"></script>
 
-<table>
+<table class="table-list">
     <?php foreach ($motion as $row): ?>
         <tr>
-            <td><?php htmlout($row['attr_name']) ?></td>
+            <th><?php htmlout($row['attr_name']) ?></th>
 
                 <?php if($row['edit']):?>
                     <td class="update-value"
@@ -11,7 +11,8 @@
                         data-type="<?php echo $row['value_type']?>"
                         data-target="<?php echo isset($row['target'])?$row['target']:''?>"
                         data-motionattr="<?php echo $row['motion_attr']?>"
-                        data-attrtemplate="<?php echo $row['attr_template']?>">
+                        data-attrtemplate="<?php echo $row['attr_template']?>"
+                        data-mutiple="<?php echo $row['multiple']?>">
                     <?php if (is_array($row['option'])): ?>
                         <select class="<?php echo $row['class']?> <?php echo $row['target']? '':'attr-value'?>">
                             <?php foreach ($row['option'] as $k=>$v): ?>
@@ -20,6 +21,8 @@
                                     <?php echo $k == $row['content']||$k==$row['content_int'] ? 'selected="selected"' : '' ?>><?php htmlout($v) ?> </option>
                             <?php endforeach ?>
                         </select>
+
+
                     <?php elseif($row['has_attachment']): ?>
                         <button class="button choose-file">选择附件</button>
                         <input type="file" class="doc-file" id="file<?php echo $row['motion_attr']?>" name="file<?php echo $row['motion_attr']?>" style="display: none">
@@ -69,21 +72,23 @@
     });
 
     $(document).on('change','.duty-sub',function(){
-       var currentObj=$(this);
+        var currentObj=$(this);
         var col=currentObj.data('col');
         var value=currentObj.get(0).value;
         if(0!=value){
             currentObj.nextAll().remove();
             ajaxPost('getUser',{col:col,id:value},function(data){
                 var value=backHandle(data);
-                var content='<select class="user-select attr-value">';
+                var content='<select class="duty-select attr-value">';
                 $.each(value,function(k,v){
                     content+='<option value="'+ v.id+'">'+ v.name+'</option>';
                 });
                 currentObj.after(content);
             });
-
         }
+    });
+    $(document).on('change','.duty-select',function(){
+
     });
     $(document).on('change','.unit-super',function(){
         var _=$(this)
@@ -162,6 +167,7 @@
             var target = f.data('target');
             var motionAttr= f.data('motionattr');
             var attrTemplate= f.data('attrtemplate');
+            var multiple= 1==f.data('multiple');
             var value= s.val();
             data.data.push({
                 attr_id:attrId,
