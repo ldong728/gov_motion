@@ -93,6 +93,12 @@ function getIndex($orderBy='default'){
     printView('index');
 }
 
+function getMeetingView($id){
+
+
+    printView('meeting');
+}
+
 
 
 
@@ -194,20 +200,20 @@ function editMotion($data){
                         break;
                 }
             }
-            if(1==$values['multiple']&&isset($motion[$row['motion_attr']])){
-                $motion[$row['motion_attr']]['multiple_value'][]=
+            if(1==$values['multiple']&&isset($motion[$row['attr_name']])){
+                $motion[$row['attr_name']]['multiple_value'][]=
                     array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
             }else{
-                $motion[$row['motion_attr']]=$values;
-                $motion[$row['motion_attr']]['multiple_value'][]=array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
+                $motion[$row['attr_name']]=$values;
+                $motion[$row['attr_name']]['multiple_value'][]=array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
             }
         }else{
             $values['edit']=false;
             if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
                 $values['content']=indexToValue($row['target'],$row['content_int']);
             }
-            if(1==$values['multiple']&&isset($motion[$row['motion_attr']]))$motion[$row['motion_attr']]['content'].=','.$values['content'];
-            $motion[$row['motion_attr']]=$values;
+            if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['motion_attr']]['content'].=','.$values['content'];
+            $motion[$row['attr_name']]=$values;
         }
 //        mylog(getArrayInf($values));
 

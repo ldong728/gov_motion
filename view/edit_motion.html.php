@@ -24,114 +24,61 @@
             <div class="table-list ">
                 <table width="760" height="296" border="1" bordercolor="#f08300" cellpadding="0" cellspacing="0" style="">
                     <tbody style="font-size: 14px">
-                    <?php $count=1;$tr=1?>
-                    <?php foreach ($motion as $row): ?>
-                        <?php echo in_array($count,array(1,4,7,9,10,11,12,13,14,15))?'<tr id="tr'.$tr++.'" class="class'.$count.'">':''?>
-                            <th><?php htmlout($row['attr_name']) ?></th>
-
-                            <?php if($row['edit']):?>
-                                <td class="update-value"
-                                    data-attr="<?php echo $row['attr_id']?$row['attr_id']:'0'?>"
-                                    data-type="<?php echo $row['value_type']?>"
-                                    data-target="<?php echo isset($row['target'])?$row['target']:''?>"
-                                    data-motionattr="<?php echo $row['motion_attr']?>"
-                                    data-attrtemplate="<?php echo $row['attr_template']?>"
-                                    data-mutiple="<?php echo $row['multiple']?>">
-
-                                    <?php if (is_array($row['option'])): ?>
-                                        <?php if(1==$row['multiple']&&count($row['multiple_value'])>1):?>
-                                            <?php foreach($row['multiple_value'] as $mvRow):?>
-                                                <span class="pre-delete attr-value" id="<?php echo $mvRow['attr_id'] ?>"><?php echo $mvRow['content']?></span>
-                                            <?php endforeach?>
-
-                                        <?php endif ?>
-                                        <select class="<?php echo $row['class']?> <?php echo $row['target']? '':'attr-value'?>">
-                                            <?php foreach ($row['option'] as $k=>$v): ?>
-                                                <option
-                                                    value="<?php htmlout($k) ?>"
-                                                    <?php echo $k == $row['content']||$k==$row['content_int'] ? 'selected="selected"' : '' ?>><?php htmlout($v) ?> </option>
-                                            <?php endforeach ?>
-                                        </select>
-
-
-                                    <?php elseif($row['has_attachment']): ?>
-                                        <button class="button choose-file">选择附件</button>
-                                        <input type="file" class="doc-file" id="file<?php echo $row['motion_attr']?>" name="file<?php echo $row['motion_attr']?>" style="display: none">
-                                        <a class="attachment-file" <?php echo $row['attachment']?'href="'.$row['attachment'].'"':''?>>附件</a>
-                                    <?php elseif('time'==$row['value_type']):?>
-                                        <input type="hidden" class="attr-value" value="1"><span class="time-display"></span>
-                                    <?php else: ?>
-                                        <textarea class="attr-value"></textarea>
-                                    <?php endif ?>
-                                </td>
-                            <?php else: ?>
-                                <td>
-                                    <?php if($row['has_attachment']):?>
-                                        <a href="<?php echo $row['attachment'] ?>">附件</a>
-                                    <?php else: ?>
-                                        <?php echo $row['content'] ?>
-                                    <?php endif?>
-                                </td>
-                            <?php endif ?>
-
-                        <?php echo in_array($count,array(3,6,8,9,10,11,12,13,14))?'</tr>':''?>
-                        <?php $count++?>
-                    <?php endforeach ?>
-<!--                    <tr>-->
-<!--                        <th><p> 会议名称</p></th>-->
-<!--                        <td><p>慈溪市第二十七届</p>-->
-<!--                            <p>人大第一次会议</p></td>-->
-<!--                        <th>登记时间</th>-->
-<!--                        <td colspan="2">2017-3-16</td>-->
-<!--                        <th>状态</th>-->
-<!--                        <td colspan="2">大会期间</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>案别</th>-->
-<!--                        <td>&nbsp;</td>-->
-<!--                        <th>案号</th>-->
-<!--                        <td colspan="2">1</td>-->
-<!--                        <th>是否公开</th>-->
-<!--                        <td colspan="2">公开</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>性质类别</th>-->
-<!--                        <td>政治法律</td>-->
-<!--                        <th>性质</th>-->
-<!--                        <td>当年</td>-->
-<!--                        <th>代表团</th>-->
-<!--                        <td colspan="3">第二代表团</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>领衔人</th>-->
-<!--                        <td colspan="7">xxx</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>复议人</th>-->
-<!--                        <td colspan="5">&nbsp;</td>-->
-<!--                        <th>复议人数</th>-->
-<!--                        <td>&nbsp;</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>案由</th>-->
-<!--                        <td colspan="7"> 关于进一步提高</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>全文</th>-->
-<!--                        <td colspan="7">宗汉001xxx关于进一步提高</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>摘要</th>-->
-<!--                        <td colspan="7">&nbsp;</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>审核意见</th>-->
-<!--                        <td colspan="7">立案</td>-->
-<!--                    </tr>-->
-<!--                    <tr>-->
-<!--                        <th>主办单位</th>-->
-<!--                        <td colspan="7">&nbsp;</td>-->
-<!--                    </tr>-->
+                    <tr>
+                        <th><p> 会议名称</p></th>
+                        <td><p>慈溪市第二十七届</p>
+                            <p>人大第一次会议</p></td>
+                        <th>登记时间</th>
+                        <td colspan="2">2017-3-16</td>
+                        <th>状态</th>
+                        <td colspan="2">大会期间</td>
+                    </tr>
+                    <tr>
+                        <th>案别</th>
+                        <td>&nbsp;</td>
+                        <th>案号</th>
+                        <td colspan="2">1</td>
+                        <th>是否公开</th>
+                        <td colspan="2">公开</td>
+                    </tr>
+                    <tr>
+                        <th>性质类别</th>
+                        <td>政治法律</td>
+                        <th>性质</th>
+                        <td>当年</td>
+                        <th>代表团</th>
+                        <td colspan="3">第二代表团</td>
+                    </tr>
+                    <tr>
+                        <th>领衔人</th>
+                        <td colspan="7">xxx</td>
+                    </tr>
+                    <tr>
+                        <th>复议人</th>
+                        <td colspan="5">&nbsp;</td>
+                        <th>复议人数</th>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th>案由</th>
+                        <td colspan="7"> 关于进一步提高</td>
+                    </tr>
+                    <tr>
+                        <th>全文</th>
+                        <td colspan="7">宗汉001xxx关于进一步提高</td>
+                    </tr>
+                    <tr>
+                        <th>摘要</th>
+                        <td colspan="7">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <th>审核意见</th>
+                        <td colspan="7">立案</td>
+                    </tr>
+                    <tr>
+                        <th>主办单位</th>
+                        <td colspan="7">&nbsp;</td>
+                    </tr>
                     </tbody>
                 </table>
             </div>
@@ -147,7 +94,8 @@
 <script>
     var antiDouble=false;
     var timeSet=setTime();
-    $('.duty-group').change(function(){
+    decodeDate( $('.encoded-data'));
+    $(document).on('change','.duty-group',function(){
         var currentObj=$(this);
         var col=currentObj.get(0).value;
 //        alert(col);
@@ -159,13 +107,12 @@
                 var value=backHandle(data);
                 $.each(value,function(k,v){
                     content+='<option value="'+ v.id+'">'+ v.name+'</option>'
-                })
+                });
                 content+='</select>';
-                currentObj.after(content)
+                currentObj.after(content);
             })
         }
     });
-
     $(document).on('change','.duty-sub',function(){
         var currentObj=$(this);
         var col=currentObj.data('col');
@@ -199,7 +146,7 @@
                 _.after(content);
             })
         }
-    })
+    });
     $(document).on('click','.choose-file',function(){
         if(!antiDouble){
             antiDouble=true;
@@ -251,6 +198,54 @@
     $(document).on('click','.next-step',function(){
        submitAtrrs();
     });
+    function decodeDate(element) {
+        element.each(function (key, subElement) {
+            var _ = $(subElement);
+            var parent = _.parent();
+            var data = eval('(' + _.text() + ')');//将数据转化为JS对象
+            var attr= data.attr_id||0;
+            var content='';
+            parent.empty();
+            if (data.edit) {//选项可编辑
+                parent.addClass('update-value');
+                parent.attr('data-attr',attr);
+                parent.attr('data-type',data.value_type);
+                parent.attr('data-motionattr',data.motion_attr);
+                parent.attr('data-attrtemplate',data.attr_template);
+                parent.attr('data-multiple',data.multiple);
+                if (data.option) {
+                    if (1 == data.multiple && data.multiple_value.length > 1) {
+                        $.each(data.multiple_value, function(id, value){
+                            content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
+                        });
+                    }
+                    var isValue= data.target?'':'attr-value';
+                    content+='<select class="'+ data.class+' '+ isValue+'">';
+                    $.each(data.option,function(k,v){
+                       content+='<option value="'+ k+'">'+v+'</option>';
+                    });
+                    content+='</select>'
+                } else if(data.has_attachment>0){
+                    content+='<button class="button choose-file">选择附件</button>'+
+                    '<input type="file" class="doc-file" id="file'+data.motion_attr+'" name="file'+data.motion_attr+'" style="display: none">';
+                    if(data.attachment)content+='<a class="attachment-file" href="'+data.attachment+'">附件</a>'
+                }else if('time'==data.value_type){
+                    content+='<input type="hidden" class="attr-value" value="1"><span class="time-display"></span>';
+                }else{
+                    content+='<textarea class="attr-value">'+(data.content||'')+'</textarea>'
+                }
+            } else {//选项不可编辑
+                if(data.attachment){
+                    content+='<a href="'+data.attachment+'">附件</a>'
+                }else{
+                    content+=data.content;
+                }
+            }
+            parent.append(content);
+
+            console.log(data);
+        });
+    }
     function submitAtrrs(step) {
         var sStep=step||1
         var data={step:sStep,data:[]};
@@ -259,7 +254,6 @@
             var s = f.find('.attr-value');
             var attrId = s.attr('id')||f.data('attr');
             var attrType = f.data('type');
-            var target = f.data('target');
             var motionAttr= f.data('motionattr');
             var attrTemplate= f.data('attrtemplate');
             var multiple= 1==f.data('multiple');
@@ -267,7 +261,6 @@
             data.data.push({
                 attr_id:attrId,
                 attr_type:attrType,
-                target:target,
                 motion_attr:motionAttr,
                 attr_template:attrTemplate,
                 value:value

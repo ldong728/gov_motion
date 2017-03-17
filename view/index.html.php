@@ -66,7 +66,7 @@
 
 	</div>
 
-    <div class="m-popup clearfix" >
+    <div class="m-popup clearfix" style="display: none" >
         <div class="mask"></div>
         <div class="suggest cont">
             <div class="sug-head clearfix">

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-16 09:33:25
+-- Generation Time: 2017-03-17 09:27:52
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -273,7 +273,6 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (8, 1, 10, '立案', 'string', NULL, 0, 3, 0, 0, 0),
 (9, 1, 11, '', 'string', NULL, 0, 3, 0, 0, 0),
 (10, 2, 1, '公开', 'string', NULL, 0, 2, 0, 0, 0),
-(11, 2, 2, '提案', 'string', NULL, 0, 2, 0, 0, 0),
 (12, 2, 3, '', 'string', NULL, 0, 1, 0, 0, 0),
 (13, 2, 4, '', 'index', 'duty', 0, 1, 0, 0, 0),
 (14, 2, 5, '', 'index', 'duty', 0, 1, 0, 0, 1),
@@ -369,10 +368,11 @@ CREATE TABLE `motion_tbl` (
   `category` int(11) NOT NULL,
   `motion_name` varchar(50) NOT NULL,
   `motion_template` int(11) NOT NULL,
-  `user` int(11) NOT NULL,
-  `document` varchar(400) NOT NULL,
+  `user` int(11) DEFAULT NULL,
+  `duty` int(11) DEFAULT NULL,
+  `document` varchar(400) DEFAULT NULL,
   `step` int(11) NOT NULL,
-  `document_sha` varchar(50) NOT NULL,
+  `document_sha` varchar(50) DEFAULT NULL,
   `upload_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -380,10 +380,10 @@ CREATE TABLE `motion_tbl` (
 -- 转存表中的数据 `motion_tbl`
 --
 
-INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `document`, `step`, `document_sha`, `upload_time`) VALUES
-(7, 1, 2, '测试提案6', 2, 1, 'none', 5, 'abas', '2017-03-06 08:16:17'),
-(8, 1, 2, 'asdfas', 2, 1, 'none', 2, 'abas', '2017-03-06 08:20:52'),
-(9, 1, 2, 'asdf', 2, 1, 'none', 2, 'abas', '2017-03-06 08:27:32');
+INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `duty`, `document`, `step`, `document_sha`, `upload_time`) VALUES
+(7, 1, 2, '测试提案6', 2, 1, NULL, 'none', 5, 'abas', '2017-03-06 08:16:17'),
+(8, 1, 2, 'asdfas', 2, 1, NULL, 'none', 2, 'abas', '2017-03-06 08:20:52'),
+(9, 1, 2, 'asdf', 2, 1, NULL, 'none', 2, 'abas', '2017-03-06 08:27:32');
 
 -- --------------------------------------------------------
 

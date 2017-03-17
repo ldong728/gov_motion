@@ -17,7 +17,8 @@ if(isset($_SESSION['staffLogin'])){
         exit;
     }
     if(isset($_GET['get_meeting'])){
-
+        getMeetingView($_GET['get_meeting']);
+        exit;
     }
    getIndex();
 }else{

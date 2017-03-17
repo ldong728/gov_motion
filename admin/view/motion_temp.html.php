@@ -18,7 +18,7 @@
                     <td>附件</td>
                     <td>排序</td>
                     <td>多值</td>
-<!--                    <td>操作</td>-->
+                    <td>操作</td>
 
                 </tr>
                 <?php foreach ($attrList as $row): ?>
@@ -84,10 +84,9 @@
                             data-index="motion_attr_id" data-tbl="motion_attr">
                             <?php echo $row['multiple']?>
                         </td>
-<!--                        <td >-->
-<!--                            <button class="button">操作</button>-->
-<!--                            <button class="button del-attr" id="del--><?php //echo $row['motion_attr_id']?><!--">删除</button>-->
-<!--                        </td>-->
+                        <td >
+                            <button class="button del-attr" id="del<?php echo $row['motion_attr_id']?>">删除</button>
+                        </td>
                     </tr>
                 <?php endforeach ?>
                 <tr>
