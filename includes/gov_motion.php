@@ -54,13 +54,18 @@ function getUnitList($parentId='all'){
         return array('class'=>$class,'list'=>$list);
 }
 function indexToValue($target,$index){
-    switch($target){
-        case 'duty':
-            return pdoQuery('duty_view',array('user_name'),array('duty_id'=>$index),' limit 1')->fetch()['user_name'];
-            break;
-        default:
-            return pdoQuery($target.'_tbl',array($target.'_name'),array($target.'_id'=>$index),' limit 1')->fetch()[$target.'_name'];
-            break;
+    if(isset($index)&&$index!=null){
+        switch($target){
+            case 'duty':
+                return pdoQuery('duty_view',array('user_name'),array('duty_id'=>$index),' limit 1')->fetch()['user_name'];
+                break;
+            default:
+                return pdoQuery($target.'_tbl',array($target.'_name'),array($target.'_id'=>$index),' limit 1')->fetch()[$target.'_name'];
+                break;
+        }
+    }else{
+        return null;
     }
+
 }
 

@@ -66,7 +66,7 @@
 
 	</div>
 
-    <div class="m-popup clearfix" style="display: none">
+    <div class="m-popup clearfix" >
         <div class="mask"></div>
         <div class="suggest cont">
             <div class="sug-head clearfix">
@@ -172,8 +172,8 @@
     $('.motion').click(function(){
         var id=$(this).attr('id').slice(3);
         ajaxPost('editMotion',{id:id},function(data){
-            alert(data);
-            $('.edit-area').html(data);
+//            alert(data);
+            $('.m-popup').html(data);
             $('.m-popup').show();
         });
 

@@ -196,10 +196,10 @@ function editMotion($data){
             }
             if(1==$values['multiple']&&isset($motion[$row['motion_attr']])){
                 $motion[$row['motion_attr']]['multiple_value'][]=
-                    array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$row['content_int']));
+                    array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
             }else{
                 $motion[$row['motion_attr']]=$values;
-                $motion[$row['motion_attr']]['multiple_value'][]=array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$row['content_int']));
+                $motion[$row['motion_attr']]['multiple_value'][]=array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
             }
         }else{
             $values['edit']=false;
