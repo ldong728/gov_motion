@@ -132,13 +132,20 @@
 	</div>
 </div>
 <script type="text/javascript">
-	$(document).ready(function(){
-		var bHeight = $(document.body).height();
-		var wHeight = $(window).height();
-		var bWeight = $(document.body).width();
-		var weight = bWeight - 239;
-		$('.home-r').css('width',weight);			
-	});
+    resizeWindow();
+    $(window).resize(function(){
+        resizeWindow();
+    });
+    function resizeWindow(){
+        var bHeight = $(document.body).height();
+        var wHeight = $(window).height();
+        var bWeight = $(document.body).width();
+        var weight = bWeight - 239;
+        $('.home-r').css('width',weight);
+    }
+    function reflashList(config){
+        var
+    }
 </script>
 </body>
 </html>

@@ -113,7 +113,7 @@ function ajaxMotionList($data){
     $attrOrderBy=isset($data['attr_order_by'])?$data['attr_order_by']:'当前环节';
     $attrOrder=isset($data['attr_order'])? $data['attr_order']:'desc';
     $orderStr='order by content_int '.$attrOrder.',content '.$attrOrder;
-    $sortFilter=array('meeting'=>$meeting,'category'=>$category,'attr_name'=>$attrOrderBy);
+    $sortFilter=array('meeting'=>$meeting,'attr_name'=>$attrOrderBy);
     if('当前环节'==$attrOrderBy){
         $orderStr='order by step '.$attrOrder;
         unset($sortFilter['attr_name']);

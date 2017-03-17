@@ -186,3 +186,9 @@
 2017.03.17.09:21:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="2"  order by category asc limit 20
 2017.03.17.09:21:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE category="2" order by start_time asc
 2017.03.17.09:23:17:D:\xampp\htdocs\gov_motion\index.php12:{staffLogin: {steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 2,staffId: 1,staffName: 市政协提案委,outId: ,currentMotion: 8}login: /gov_motion,operator_id: -1,pms: {vemfljmDYk: {key: vemfljmDYk,name: 权限管理,sub: {operator: {id: 7,key: operator,name: 操作员}options: {id: 8,key: options,name: 控制选项}}}HwUVAMBMpr: {key: HwUVAMBMpr,name: 模板管理,sub: {motion_temp_edit: {id: 10,key: motion_temp_edit,name: 模板编辑}attr_temp_edit: {id: 11,key: attr_temp_edit,name: 选项编辑}}}}}
+2017.03.17.12:47:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_tbl WHERE staff_name="test"  limit 1
+2017.03.17.12:47:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE category="2"  order by deadline_time desc limit 1
+2017.03.17.12:47:31:C:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 2,staffId: 1,staffName: 市政协提案委,outId: }
+2017.03.17.12:47:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="2"  order by category asc limit 20
+2017.03.17.12:47:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE category="2" order by start_time asc
+2017.03.17.12:47:33:C:\xampp\htdocs\gov_motion\index.php12:{staffLogin: {steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 2,staffId: 1,staffName: 市政协提案委,outId: }}
