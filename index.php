@@ -30,7 +30,7 @@ if(isset($_SESSION['staffLogin'])){
         exit;
     }else{
         global $category;
-        $category =$_GET['c'];
+        $category =isset($_GET['c'])?$_GET['c']:3;
         $title='';
         switch($category){
             case 1:

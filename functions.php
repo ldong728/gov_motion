@@ -108,12 +108,13 @@ function getMeetingView($id){
  */
 function ajaxMotionList($data){
     $count=20;
-    $category=isset($data['category'])?$data['category']:$_SESSION['staffLogin']['category'];
+//    $category=isset($data['category'])?$data['category']:$_SESSION['staffLogin']['category'];
     $meeting=isset($data['meeting'])?$data['meeting']:$_SESSION['staffLogin']['meeting'];
     $attrOrderBy=isset($data['attr_order_by'])?$data['attr_order_by']:'当前环节';
     $attrOrder=isset($data['attr_order'])? $data['attr_order']:'desc';
     $orderStr='order by content_int '.$attrOrder.',content '.$attrOrder;
     $sortFilter=array('meeting'=>$meeting,'attr_name'=>$attrOrderBy);
+
     if('当前环节'==$attrOrderBy){
         $orderStr='order by step '.$attrOrder;
         unset($sortFilter['attr_name']);
@@ -121,26 +122,43 @@ function ajaxMotionList($data){
 //    $orderBy=isset($data['order_by'])?$data['order_by']:'step';
 //    $order=isset($data['order'])?$data['order']:'desc';
     $page=isset($data['page'])?$data['page']:0;
-    $field=isset($data['field'])?$data['field']:array('案号','领衔人','案别','案由','性质类别','全文','当前环节','办理单位');
+    $field=isset($data['field'])?$data['field']:array('案号','领衔人','案别','案由','性质类别','原文','当前环节','交办单位');
     $sortList=array();
     $motionfilter=array();
+    $dutyList=array();
+    $dutyQuery=pdoQuery('duty_view',array('duty_id','user_name','user_unit_name','user_group_name'),array('meeting'=>$meeting),null);
+    foreach ($dutyQuery as $row) {
+        $dutyList[$row['duty_id']]=$row;
+    }
+    mylog(getArrayInf($dutyList));
+
     $sortQuery=pdoQuery('motion_view',array('motion_id'),$sortFilter,'group by motion_id '.$orderStr.' limit '.$page*$count.','.$count);
     foreach ($sortQuery as $row) {
         $sortList[$row['motion_id']]=array();
         $motionfilter[]=$row['motion_id'];
     }
-    mylog(getArrayInf($sortList));
     $motionDetail=pdoQuery('motion_view',null,array('motion_id'=>$motionfilter,'attr_name'=>$field),null);
     foreach ($motionDetail as $row) {
         $content='string'==$row['value_type']?$row['content']:$row['content_int'];
         $content='attachment'==$row['value_type']?$row['attachment']:$content;
-        if('index'==$row['value_type'])$content=indexToValue($row['target'],$content);
+        if('index'==$row['value_type']){
+            if('duty'==$row['target']&&$content){
+                $content=$dutyList[$content]['user_name'];
+            }else{
+                $content=indexToValue($row['target'],$content);
+            }
+        }
         $sortList[$row['motion_id']][$row['attr_name']]=$content;
+        $sortList[$row['motion_id']]['案由']=$row['motion_name'];
+        $sortList[$row['motion_id']]['案别']=1==$row['category']?'建议':'提案';
+        $sortList[$row['motion_id']]['当前环节']=$row['step_name'];
+//        $sortList[$row['motion_id']]['']
+//        $sortList[$row['motion_id']]['']
     }
 //    mylog(getArrayInf($sortList));
+    echo ajaxBack(array('list'=>$sortList));
+//    mylog(getArrayInf($sortList));
     return $sortList;
-
-
 }
 
 /**
@@ -163,6 +181,7 @@ function editMotion($data){
     $_SESSION['staffLogin']['currentMotion']=$id;
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
     $attrFilter=array('motion_id'=>$id);
+    $meetingInf=pdoQuery('motion_inf_view',null,array('motion_id'=>$id),' limit 1')->fetch();
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
     foreach ($motionQuery as $row) {
         if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content'])continue;
@@ -178,7 +197,7 @@ function editMotion($data){
                     $values['option'][$oRow]=$oRow;
                 }
                 $values['class']='select';
-                if(!$values['content'])$value['content']=$row['default_value'];
+                if(!$values['content'])$values['content']=$row['default_value'];
             }
             if($row['target']){//数据库内容
                 switch($row['target']){
@@ -215,6 +234,7 @@ function editMotion($data){
             if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['motion_attr']]['content'].=','.$values['content'];
             $motion[$row['attr_name']]=$values;
         }
+        mylog($values['content']);
 //        mylog(getArrayInf($values));
 
     }
@@ -248,7 +268,7 @@ function editMotion($data){
             break;
     }
 
-    include '/view/edit_motion.html.php';
+    include '/view/edit_motion1.html.php';
     return;
 }
 
@@ -326,6 +346,7 @@ function updateAttr($data){
 function getUser($data){
     $where=array($data['col']=>$data['id']);
     $list=pdoQuery('duty_view',array('duty_id as id','user_name as name'),$where,null);
+    $userList=null;
     foreach ($list as $row) {
         $userList[]=$row;
     }

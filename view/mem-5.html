@@ -1,3 +1,18 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>首页-慈溪市政协委员提案办理系统</title>
+<link type="text/css" href="stylesheet/main.css" rel="stylesheet">
+<style type="text/css">
+body,td,th {
+	font-size: 14px;
+}
+</style>
+<script type="text/javascript" src="../document/jquery.js"></script>
+
+</head>
+
 <body>
 <div class="m-header">
 	<div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua.jpg" alt="Huabiao"></div>
@@ -50,71 +65,7 @@
 			</div>
 			<div class="home-r-content clearfix">
 				<div class="home-table">
-				<table width="100%" border="1" cellspacing="0" cellpadding="0">
-					  <tbody>
-						<tr>
-						  <th width="3%">序号</th>
-						  <th width="2%"><input type="checkbox"></th>
-						  <th width="4%"> 案号</th>
-						  <th width="9%">领衔人</th>
-						  <th width="8%">案别</th>
-						  <th width="28%">案由</th>
-						  <th width="10%">性质类别</th>
-						  <th width="15%">全文</th>
-						  <th width="8%">当前环节</th>
-						  <th width="13%">办理单位</th>
-						</tr>
-						<tr>
-						  <td>1</td>
-						  <td><input type="checkbox"></td>
-						  <td>1</td>
-						  <td>陈百祥</td>
-						  <td>建议</td>
-						  <td>关于进一步提高环卫工人工资待遇的建议</td>
-						  <td>政治法律</td>
-						  <td>全文</td>
-						  <td>交办</td>
-						  <td>市政府督查室</td>
-						</tr>
-						<tr>
-						  <td>2</td>
-						  <td><input type="checkbox"></td>
-						  <td>2</td>
-						  <td>陈百祥</td>
-						  <td>建议</td>
-						  <td>关于进一步提高环卫工人工资待遇的建议</td>
-						  <td>政治法律</td>
-						  <td>全文</td>
-						  <td>交办</td>
-						  <td>市政府督查室</td>
-						</tr>
-						<tr>
-						  <td>3</td>
-						  <td><input type="checkbox"></td>
-						  <td>3</td>
-						  <td>陈百祥</td>
-						  <td>建议</td>
-						  <td>关于进一步提高环卫工人工资待遇的建议</td>
-						  <td>政治法律</td>
-						  <td>全文</td>
-						  <td>交办</td>
-						  <td>市政府督查室</td>
-						</tr>
-						<tr>
-						  <td>4</td>
-						  <td><input type="checkbox"></td>
-						  <td>4</td>
-						  <td>陈百祥</td>
-						  <td>建议</td>
-						  <td>关于进一步提高环卫工人工资待遇的建议</td>
-						  <td>政治法律</td>
-						  <td>全文</td>
-						  <td>交办</td>
-						  <td>市政府督查室</td>
-						</tr>
-					  </tbody>
-					</table>
-					<table align="center" width="100%" style="overflow: hidden;" class="list-table">
+					<table align="center" width="100%" style="overflow: hidden;">
 						<tbody>
 							<tr align="center" style="background-color: #ff8712">
 								<td width="8%"><input type="checkbox"><span>案号</span></td>
@@ -126,8 +77,21 @@
 								<td width="8%">当前环节</td>
 								<td width="13%">办理单位</td>
 							</tr>
-
-							<tr align="center" valign="middle" class="list-content">
+							<tr align="center" valign="middle">
+								<td width="9%" class="clearfix" >
+									<strong style="float: left;padding-left: 10px;">1</strong>
+									<input type="checkbox" class="check">
+									<span style="padding-left: 30px">1</span>
+								</td>
+								<td width="8%">陈百享</td>
+								<td width="6%">建议</td>
+								<td width="28%">关于进一步提高环卫工人工资福利待遇的建议</td>
+								<td width="10%">政治法律</td>
+								<td width="15%">全文</td>
+								<td width="8%">交办</td>
+								<td width="13%">市政府督查室</td>
+							</tr>
+							<tr align="center" valign="middle">
 								<td width="9%" class="clearfix" >
 									<strong style="float: left;padding-left: 10px;">1</strong>
 									<input type="checkbox" class="check">
@@ -157,15 +121,68 @@
 			</div>
 		</div>
 	</div>
-	<div class="home-prev icon icon-angle-double-left"></div>
-<!--
-	<div class="home-last">
-		<div class="last-t"></div>
-		
-	</div>
--->
 	<div class="last-b"></div>
-</div>
+	<div class="m-popup clearfix">
+		<div class="mask"></div>
+		<div class="flow cont">
+			<div class="flow-head clearfix">
+				<div class="flow-head-l"><h1>流程信息显示</h1></div>
+				<div class="x"></div> 
+			</div>
+			<div class="flow-main-content">
+				<div class="table-flow">
+					<div class="flow-icon "></div>
+					<table width="715" border="1" bordercolor="#ff8712" cellspacing="0" cellpadding="0">
+					  <tbody>
+					  	<tr >
+						  <td><p><img src="stylesheet/images/flow-1.png"></p><p>环节名称</p></td>
+						  <td><p><img src="stylesheet/images/flow-2.png"></p><p>环节处理人员</p></td>
+						  <td><p><img src="stylesheet/images/flow-3.png"></p><p>环节传阅人员</p></td>
+						  <td><p><img src="stylesheet/images/flow-4.png"></p><p>处理时间</p></td>
+						</tr>
+						<tr>
+						  <th>登记</th>
+						  <td>代表工委</td>
+						  <td>无</td>
+						  <td>2017.2.10</td>
+						</tr>
+						<tr class="icon icicon-caret-right">
+						  <th>审核</th>
+						  <td>代表工委</td>
+						  <td>无</td>
+						  <td>2017.3.16</td>
+						</tr>
+						<tr>
+						  <th>交办</th>
+						  <td>代表工委</td>
+						  <td>无</td>
+						  <td>2017.3.16</td>
+						</tr>
+						<tr>
+						  <th>办理</th>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						</tr>
+						<tr>
+						  <th>反馈意见录入</th>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						  <td>&nbsp;</td>
+						</tr>
+						<tr>
+						  <th>完成</th>
+						  <td colspan="3">&nbsp;</td>
+						</tr>
+					  </tbody>
+					</table>
+				</div>
+		</div>
+	</div>
+	       
+</div>        <!-- 弹出层-->
+</div><!--右边内容-->
+
 <div class="m-footer m-f-magin">
 <!--	<div class="m-footer-t"></div>-->
 	<div class="container">
@@ -173,53 +190,13 @@
 	</div>
 </div>
 <script type="text/javascript">
-    var meetingId=<?php echo $_GET['get_meeting']?>;
-    var orderby='案号';
-    var page=0;
-    resizeWindow();
-    reflashList();
-    $(window).resize(function(){
-        resizeWindow();
-    });
-    function resizeWindow(){
-        var bHeight = $(document.body).height();
-        var wHeight = $(window).height();
-        var bWeight = $(document.body).width();
-        var weight = bWeight - 239;
-        $('.home-r').css('width',weight);
-    }
-    function reflashList(sOrderby,sPage,sOrder){
-        var data={
-            meeting:meetingId,
-            orderby:sOrderby||orderby,
-            order:sOrder||'asc',
-            page:sPage||page
-        }
-        ajaxPost('ajaxMotionList',data,function(back){
-            var value=backHandle(back);
-            $('.list-content').remove();
-            var count=1;
-            $.each(value.list,function(k,v){
-                var listContent='<tr align="center" valign="middle" class="list-content">'+
-                    '<td width="9%" class="clearfix" >'+
-                '<strong style="float: left;padding-left: 10px;">'+(count++)+'</strong>'+
-                '<input type="checkbox" class="check">'+
-                '<span style="padding-left: 30px">'+v['案号']+'</span>'+
-                '</td>'+
-                '<td width="8%">'+v['领衔人']+'</td>'+
-                '<td width="6%">'+v['案别']+'</td>'+
-                '<td width="28%">'+v['案由']+'</td>'+
-                '<td width="10%">'+v['性质类别']+'</td>'+
-                '<td width="15%">'+v['全文']+'</td>'+
-                '<td width="8%">'+v['当前环节']+'</td>'+
-                '<td width="13%">'+v['交办单位']+'</td>'+
-                '</tr>'
-                $('.list-table').append(listContent);
-
-            });
-
-        })
-    }
+	$(document).ready(function(){
+		var bHeight = $(document.body).height();
+		var wHeight = $(window).height();
+		var bWeight = $(document.body).width();
+		var weight = bWeight - 240;
+		$('.home-r').css('width',weight);			
+	});
 </script>
 </body>
 </html>
