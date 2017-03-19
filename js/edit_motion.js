@@ -1,6 +1,6 @@
 var antiDouble=false;
 var timeSet=setTime();
-
+decodeDate( $('.encoded-data'));
 $(document).on('change','.duty-group',function(){
     var currentObj=$(this);
     var col=currentObj.get(0).value;
@@ -76,6 +76,21 @@ $(document).on('click','unit-select',function(){
         _.prevAll('.unit-super').before('<input type="hidden" class="added-value attr-value" value="'+attrValue+'"><span class="pre-delete">' + text + '</span>');
     }
 });
+$(document).on('click','.pre-delete',function(){
+   var _=$(this);
+    var id= _.attr('id');
+    if(id){
+        ajaxPost('ajaxDeleteAttr',{id:id},function(data){
+            var value=backHandle(data);
+            console.log(value);
+            if(value)_.remove();
+        });
+    }else{
+        _.prev('.added-value').remove();
+        _.remove();
+    }
+   //alert(_.attr('id'));
+});
 $(document).on('click','.choose-file',function(){
     if(!antiDouble){
         antiDouble=true;
@@ -136,7 +151,7 @@ function decodeDate(element) {
         var attr= data.attr_id||0;
         var content='';
         parent.empty();
-        console.log(data);
+        //console.log(data);
         if (data.edit) {//选项可编辑
             parent.addClass('update-value');
             parent.attr('data-attr',attr);
@@ -145,7 +160,7 @@ function decodeDate(element) {
             parent.attr('data-attrtemplate',data.attr_template);
             parent.attr('data-multiple',data.multiple);
             if (data.option) {
-                if (1 == data.multiple && data.multiple_value.length > 1) {
+                if (1 == data.multiple && data.multiple_value && data.multiple_value.length > 0) {
                     $.each(data.multiple_value, function(id, value){
                         content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
                     });
@@ -164,7 +179,12 @@ function decodeDate(element) {
             }else if('time'==data.value_type){
                 content+='<input type="hidden" class="attr-value" value="1"><span class="time-display"></span>';
             }else{
-                content+='<textarea class="attr-value">'+(data.content||'')+'</textarea>'
+                if('string'==data.value_type){
+                    content+='<textarea class="attr-value">'+(data.content||'')+'</textarea>';
+                }else{
+                    content+='<input type="text" class="attr-value" value="'+(data.content||'')+'" width="20px">';
+                }
+
             }
         } else {//选项不可编辑
             if(data.attachment){
@@ -174,21 +194,24 @@ function decodeDate(element) {
             }
         }
         parent.append(content);
-
-        //console.log(data);
     });
 }
-function submitAtrrs(step) {
-    var sStep=step||1
+function submitAtrrs(step,callback) {
+    var sStep=step||0;
     var data={step:sStep,data:[]};
+    //console.log($('.update-value'));
     $('.update-value').each(function (k, v) {
         var f = $(v);
-        var s = f.find('.attr-value');
-        var attrId = s.attr('id')||f.data('attr');
+        var multiple= 1==f.data('multiple');
         var attrType = f.data('type');
         var motionAttr= f.data('motionattr');
         var attrTemplate= f.data('attrtemplate');
-        var multiple= 1==f.data('multiple');
+        if(multiple){
+            var attrId = s.attr('id');
+        }else{
+            var attrId=f.data('attr')
+            var s = f.find('.attr-value');
+        }
         var value= s.val();
         data.data.push({
             attr_id:attrId,
@@ -198,14 +221,14 @@ function submitAtrrs(step) {
             value:value
         });
     });
-    ajaxPost('updateAttr',data,function(){
-    });
+    //console.log(data);
+    //ajaxPost('updateAttr',data,callback);
 }
 function setTime(){
     $('.time-display').text(new Date().toLocaleString());
-    var time=setInterval(function(){
+    var sTime=setInterval(function(){
         var time=new Date();
         $('.time-display').text(time.toLocaleString());
     },1000);
-    return time;
+    return sTime;
 }

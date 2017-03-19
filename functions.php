@@ -162,6 +162,15 @@ function ajaxMotionList($data){
 }
 
 /**
+ * 删除提议案属性
+ * @param $data：包含属性ID
+ */
+function ajaxDeleteAttr($data){
+    $id=pdoDelete('attr_tbl',array('attr_id'=>$data['id']),' limit 1');
+    echo ajaxBack($id);
+}
+
+/**
  * 创建提议案
  * @param $data
  */
@@ -219,12 +228,22 @@ function editMotion($data){
                         break;
                 }
             }
-            if(1==$values['multiple']&&isset($motion[$row['attr_name']])){
-                $motion[$row['attr_name']]['multiple_value'][]=
-                    array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
+            if(1==$values['multiple']){
+                if(isset($motion[$row['attr_name']])&&$values['content']){
+                    $motion[$row['attr_name']]['multiple_value'][]=
+                        array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
+                }elseif($values['content']){
+                    $motion[$row['attr_name']]=$values;
+                    $motion[$row['attr_name']]['multiple_value'][]=
+                        array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
+                }else{
+                    $motion[$row['attr_name']]=$values;
+                }
+                mylog($values['content']);
+
             }else{
                 $motion[$row['attr_name']]=$values;
-                $motion[$row['attr_name']]['multiple_value'][]=array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
+//                $motion[$row['attr_name']]['multiple_value'][]=array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
             }
         }else{
             $values['edit']=false;
@@ -234,7 +253,7 @@ function editMotion($data){
             if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['motion_attr']]['content'].=','.$values['content'];
             $motion[$row['attr_name']]=$values;
         }
-        mylog($values['content']);
+//        mylog($values['content']);
 //        mylog(getArrayInf($values));
 
     }
@@ -300,7 +319,14 @@ function updateAttr($data){
         foreach ($data['data'] as $row) {
             mylog(getArrayInf($row));
             $value=array();
-            if((!$row['value']&&$row['attr_type']=='string')||'attachment'==$row['attr_type'])continue;
+            if((!isset($row['value'])||!$row['value'])&&$row['attr_type']!='attachment'){//过滤非附件的空值
+//                mylog('continue');
+                continue;
+            }
+//            mylog(getArrayInf($row));
+//            if(!$row['value']&&in_array($row['attr_type'],array('string','int')))continue;
+            if('attachment'==$row['attr_type'])continue;
+//            if(((!isset($row['value'])||!$row['value'])&&$row['attr_type']=='string')||'attachment'==$row['attr_type'])continue;
             if($row['attr_id'])$value['attr_id']=$row['attr_id'];
             $value['motion']=$motionId;
             $value['staff']=$_SESSION['staffLogin']['staffId'];

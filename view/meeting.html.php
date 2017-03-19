@@ -7,14 +7,14 @@
 		<div class="header-b-m"><p>修改密码</p></div>
 	</div>
 </div>
-<div class="m-home clearfix">	
-	<div class="home-l">          <!--左边-->	
+<div class="m-home clearfix">
+	<div class="home-l">          <!--左边-->
 		<div class="home-nav h-border"><p>人大议案建议<span>》</span></p></div>
 		<div class="home-nav h-border"><p>政协提案<span>》</span></p></div>
 		<div class="home-nav h-border"><p>查询<span>》</span></p></div>
 		<div class="home-nav h-border"><p>统计<span>》</span></p></div>
 		<div class="home-nav h-border"><p>历届数据<span>》</span></p></div>
-		<div class="home-nav h-border"><p>人大议案建议<span>》</span></p></div>		
+		<div class="home-nav h-border"><p>人大议案建议<span>》</span></p></div>
 	</div>                     <!--左边-->
 	<div class="home-r h-last">
 		<div class="magin">
@@ -50,7 +50,7 @@
 			</div>
 			<div class="home-r-content clearfix">
 				<div class="home-table">
-				<table width="100%" border="1" cellspacing="0" cellpadding="0">
+				<table width="100%" border="1" cellspacing="0" cellpadding="0" class="list-table">
 					  <tbody>
 						<tr>
 						  <th width="3%">序号</th>
@@ -64,7 +64,7 @@
 						  <th width="8%">当前环节</th>
 						  <th width="13%">办理单位</th>
 						</tr>
-						<tr>
+						<tr class="list-content">
 						  <td>1</td>
 						  <td><input type="checkbox"></td>
 						  <td>1</td>
@@ -76,74 +76,10 @@
 						  <td>交办</td>
 						  <td>市政府督查室</td>
 						</tr>
-						<tr>
-						  <td>2</td>
-						  <td><input type="checkbox"></td>
-						  <td>2</td>
-						  <td>陈百祥</td>
-						  <td>建议</td>
-						  <td>关于进一步提高环卫工人工资待遇的建议</td>
-						  <td>政治法律</td>
-						  <td>全文</td>
-						  <td>交办</td>
-						  <td>市政府督查室</td>
-						</tr>
-						<tr>
-						  <td>3</td>
-						  <td><input type="checkbox"></td>
-						  <td>3</td>
-						  <td>陈百祥</td>
-						  <td>建议</td>
-						  <td>关于进一步提高环卫工人工资待遇的建议</td>
-						  <td>政治法律</td>
-						  <td>全文</td>
-						  <td>交办</td>
-						  <td>市政府督查室</td>
-						</tr>
-						<tr>
-						  <td>4</td>
-						  <td><input type="checkbox"></td>
-						  <td>4</td>
-						  <td>陈百祥</td>
-						  <td>建议</td>
-						  <td>关于进一步提高环卫工人工资待遇的建议</td>
-						  <td>政治法律</td>
-						  <td>全文</td>
-						  <td>交办</td>
-						  <td>市政府督查室</td>
-						</tr>
+
 					  </tbody>
 					</table>
-					<table align="center" width="100%" style="overflow: hidden;" class="list-table">
-						<tbody>
-							<tr align="center" style="background-color: #ff8712">
-								<td width="8%"><input type="checkbox"><span>案号</span></td>
-								<td width="8%">领衔人</td>
-								<td width="6%">案别</td>
-								<td width="28%">案由</td>
-								<td width="10%">性质类别</td>
-								<td width="15%">全文</td>
-								<td width="8%">当前环节</td>
-								<td width="13%">办理单位</td>
-							</tr>
 
-							<tr align="center" valign="middle" class="list-content">
-								<td width="9%" class="clearfix" >
-									<strong style="float: left;padding-left: 10px;">1</strong>
-									<input type="checkbox" class="check">
-									<span style="padding-left: 30px">1</span>
-								</td>
-								<td width="8%">陈百享</td>
-								<td width="6%">建议</td>
-								<td width="28%">关于进一步提高环卫工人工资福利待遇的建议</td>
-								<td width="10%">政治法律</td>
-								<td width="15%">全文</td>
-								<td width="8%">交办</td>
-								<td width="13%">市政府督查室</td>
-							</tr>
-						</tbody>
-					</table>
-					
 				</div>
 				<div class="home-page-l">
 					<a class="page-num">20v</a>
@@ -161,7 +97,7 @@
 <!--
 	<div class="home-last">
 		<div class="last-t"></div>
-		
+
 	</div>
 -->
 	<div class="last-b"></div>
@@ -200,20 +136,18 @@
             $('.list-content').remove();
             var count=1;
             $.each(value.list,function(k,v){
-                var listContent='<tr align="center" valign="middle" class="list-content">'+
-                    '<td width="9%" class="clearfix" >'+
-                '<strong style="float: left;padding-left: 10px;">'+(count++)+'</strong>'+
-                '<input type="checkbox" class="check">'+
-                '<span style="padding-left: 30px">'+v['案号']+'</span>'+
-                '</td>'+
-                '<td width="8%">'+v['领衔人']+'</td>'+
-                '<td width="6%">'+v['案别']+'</td>'+
-                '<td width="28%">'+v['案由']+'</td>'+
-                '<td width="10%">'+v['性质类别']+'</td>'+
-                '<td width="15%">'+v['全文']+'</td>'+
-                '<td width="8%">'+v['当前环节']+'</td>'+
-                '<td width="13%">'+v['交办单位']+'</td>'+
-                '</tr>'
+                var listContent='<tr class="list-content">'+
+                    '<td>'+(count++)+
+                    '<td><input type="checkbox" class="check"></td>'+
+                '<td>'+v['案号']+'</td>'+
+                '<td>'+v['领衔人']+'</td>'+
+                '<td>'+v['案别']+'</td>'+
+                '<td>'+v['案由']+'</td>'+
+                '<td>'+v['性质类别']+'</td>'+
+                '<td><a href="'+v['原文']+'">附件</a></td>'+
+                '<td>'+v['当前环节']+'</td>'+
+                '<td>'+v['交办单位']+'</td>'+
+                '</tr>';
                 $('.list-table').append(listContent);
 
             });

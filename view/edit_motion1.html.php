@@ -9,7 +9,7 @@
         <div class="sug-main-nav clearfix">
             <a href="#">保存</a>
             <a href="#">上一步</a>
-            <a href="#">下一步</a>
+            <a href="#" class="submit-attr">下一步</a>
             <a href="#">查看信息</a>
             <a href="#">办理单打印</a>
             <a href="#">建议议案打印</a>
@@ -106,5 +106,9 @@
 </div>
 <script src="js/edit_motion.js?t=<?php echo rand(1,9999)?>"></script>
 <script>
-    decodeDate( $('.encoded-data'));
+    $('.submit-attr').click(function(){
+       submitAtrrs(0,function(data){
+           console.log(data)
+       })
+    });
 </script>
