@@ -45,19 +45,28 @@
                         <th>性质类别</th>
                         <td><span class="encoded-data"><?php echo json_encode($motion['性质类别'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th>性质</th>
-                        <td><span class="encoded-data"><?php echo json_encode($motion['性质'],JSON_UNESCAPED_UNICODE)?></span></td>
-                        <th>代表团</th>
-                        <td colspan="3"></td>
+                        <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['性质'],JSON_UNESCAPED_UNICODE)?></span></td>
+                        <th><?php echo 1==$meetingInf['category']?'代表团':'属性'?></th>
+                        <td colspan="2"></td>
                     </tr>
+                    <?php if(2==$meetingInf['category']):?>
+                    <tr>
+                        <th>委组</th>
+                        <td></td>
+                        <th>提案分类</th>
+                        <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['提案分类'],JSON_UNESCAPED_UNICODE)?></span></td>
+                        <th>附议人数</th>
+                        <td colspan="2">&nbsp;</td>
+                    </tr>
+                    <?php endif ?>
                     <tr>
                         <th>领衔人</th>
                         <td colspan="7"><span class="encoded-data"><?php echo json_encode($motion['领衔人'],JSON_UNESCAPED_UNICODE)?></td>
                     </tr>
                     <tr>
-                        <th>复议人</th>
-                        <td colspan="5"><span class="encoded-data"><?php echo json_encode($motion['附议人'],JSON_UNESCAPED_UNICODE)?></td>
-                        <th>复议人数</th>
-                        <td>&nbsp;</td>
+                        <th>附议人</th>
+                        <td colspan="7"><span class="encoded-data"><?php echo json_encode($motion['附议人'],JSON_UNESCAPED_UNICODE)?></td>
+
                     </tr>
                     <tr>
                         <th>案由</th>
@@ -107,7 +116,7 @@
 <script src="js/edit_motion.js?t=<?php echo rand(1,9999)?>"></script>
 <script>
     $('.submit-attr').click(function(){
-       submitAtrrs(0,function(data){
+       submitAtrrs(1,function(data){
            console.log(data)
        })
     });

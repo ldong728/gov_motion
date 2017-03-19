@@ -9,7 +9,7 @@ include_once 'includePackage.php';
 include_once 'functions.php';
 session_start();
 if(isset($_SESSION['staffLogin'])){
-    mylog(getArrayInf($_SESSION));
+//    mylog(getArrayInf($_SESSION));
     //处理ajax
     if(isset($_POST['ajax'])){
         $ajaxData=isset($_POST['ajax_data'])?$_POST['ajax_data']:null;

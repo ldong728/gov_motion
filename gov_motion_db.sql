@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-18 09:49:47
+-- Generation Time: 2017-03-19 04:34:19
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -43,7 +43,22 @@ CREATE TABLE `attr_tbl` (
 --
 
 INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `content`, `content_int`, `attachment`, `staff`, `update_time`) VALUES
-(123, 7, 21, 12, NULL, 0, 'files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx', 1, '2017-03-18 07:12:58');
+(123, 7, 21, 12, NULL, 0, 'files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx', 1, '2017-03-18 07:12:58'),
+(124, 7, 19, 7, NULL, 1489887464, NULL, 1, '2017-03-19 01:05:27'),
+(125, 7, 16, 8, '大会期间', 0, NULL, 1, '2017-03-19 01:05:27'),
+(126, 7, 26, 17, NULL, 5, NULL, 1, '2017-03-19 01:05:27'),
+(127, 7, 10, 1, '公开', 0, NULL, 1, '2017-03-19 01:05:27'),
+(128, 7, 15, 6, '财贸金融', 0, NULL, 1, '2017-03-19 01:05:27'),
+(129, 7, 20, 9, '当年', 0, NULL, 1, '2017-03-19 01:05:27'),
+(130, 7, 13, 4, NULL, 1, NULL, 1, '2017-03-19 01:05:27'),
+(131, 7, 14, 5, NULL, 2, NULL, 1, '2017-03-19 01:05:27'),
+(132, 7, 14, 5, NULL, 1, NULL, 1, '2017-03-19 01:05:27'),
+(133, 7, 35, 18, 'abcdefg', 0, NULL, 1, '2017-03-19 01:05:27'),
+(134, 7, 25, 16, '委员', 0, NULL, 1, '2017-03-19 01:37:44'),
+(135, 7, 17, 10, '立案', 0, NULL, 1, '2017-03-19 01:45:30'),
+(136, 7, 22, 13, NULL, 5, NULL, 3653, '2017-03-19 02:15:12'),
+(137, 7, 23, 14, NULL, 11, NULL, 3653, '2017-03-19 02:15:12'),
+(138, 7, 23, 14, NULL, 212, NULL, 3653, '2017-03-19 02:15:12');
 
 -- --------------------------------------------------------
 
@@ -78,9 +93,31 @@ INSERT INTO `attr_template_tbl` (`attr_template_id`, `attr_name`, `option`, `sys
 (13, '主办单位', NULL, 1),
 (14, '协办单位', NULL, 1),
 (15, '交办单位', NULL, 1),
-(16, '提案类别', '["委员","党派团体","联合提案"]', 0),
+(16, '提案分类', '["委员","党派团体","联合提案"]', 0),
 (17, '案号', '', 0),
-(18, '摘要', NULL, 0);
+(18, '摘要', NULL, 0),
+(19, '主办答复时间', NULL, 0),
+(20, '文号', NULL, 0),
+(21, '类别标记', '["A","B","C"]', 0),
+(22, '主办签发人', NULL, 0),
+(23, '主办联系人', NULL, 0),
+(24, '主办联系电话', NULL, 0),
+(25, '已落实事项', NULL, 0),
+(26, '计划落实事项', NULL, 0),
+(27, '落实时限', NULL, 0),
+(28, '未采纳或未落实理由', NULL, 0),
+(29, '主办答复全文', NULL, 0),
+(30, '反馈签收人', NULL, 0),
+(31, '反馈时间', NULL, 0),
+(32, '反馈联系电话', NULL, 0),
+(33, '反馈手机', NULL, 0),
+(34, '办理工作', '["满意","基本满意","不满意","未表态"]', 0),
+(35, '办理结果', '["满意","基本满意","不满意","未表态"]', 0),
+(36, '面商形式', '["登门走访","其他"]', 0),
+(37, '面商人', NULL, 0),
+(38, '采纳情况', NULL, 0),
+(39, '落实情况', NULL, 0),
+(40, '反馈意见全文', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -284,7 +321,54 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (32, 1, 13, '', 'index', 'unit', 0, 4, 0, 0, 0),
 (33, 1, 14, '', 'index', 'unit', 0, 4, 0, 0, 1),
 (34, 1, 17, '', 'int', NULL, 100, 0, 0, 0, 0),
-(35, 2, 18, '', 'string', NULL, 0, 2, 0, 0, 0);
+(35, 2, 18, '', 'string', NULL, 0, 2, 0, 0, 0),
+(36, 2, 3, '', 'string', NULL, 95, 1, 0, 0, 0),
+(37, 2, 19, '', 'time', NULL, 0, 5, 0, 0, 0),
+(38, 2, 20, '', 'string', NULL, 0, 5, 0, 0, 0),
+(39, 2, 21, 'A', 'string', NULL, 0, 5, 0, 0, 0),
+(40, 2, 22, '', 'string', NULL, 0, 5, 0, 0, 0),
+(41, 2, 23, '', 'string', NULL, 0, 5, 0, 0, 0),
+(42, 2, 24, '', 'string', NULL, 0, 5, 0, 0, 0),
+(43, 2, 25, '', 'string', NULL, 0, 5, 0, 0, 0),
+(44, 2, 26, '', 'string', NULL, 0, 5, 0, 0, 0),
+(45, 2, 27, '', 'time', NULL, 0, 5, 0, 0, 0),
+(46, 2, 28, '', 'string', NULL, 0, 5, 0, 0, 0),
+(47, 2, 29, '', 'attachment', NULL, 0, 5, 0, 0, 0),
+(48, 2, 30, '', 'string', NULL, 0, 6, 0, 0, 0),
+(49, 2, 31, '', 'time', NULL, 0, 6, 0, 0, 0),
+(50, 2, 32, '', 'string', NULL, 0, 6, 0, 0, 0),
+(51, 2, 33, '', 'string', NULL, 0, 6, 0, 0, 0),
+(52, 2, 34, '满意', 'string', NULL, 0, 6, 0, 0, 0),
+(53, 2, 35, '满意', 'string', NULL, 0, 6, 0, 0, 0),
+(54, 2, 36, '登门走访', 'string', NULL, 0, 6, 0, 0, 0),
+(55, 2, 37, '', 'string', NULL, 0, 6, 0, 0, 0),
+(56, 2, 38, '', 'string', NULL, 0, 6, 0, 0, 0),
+(57, 2, 39, '', 'string', NULL, 0, 6, 0, 0, 0),
+(58, 2, 40, '', 'attachment', NULL, 0, 6, 0, 0, 0),
+(59, 1, 18, '', 'string', NULL, 0, 2, 0, 0, 0),
+(60, 1, 19, '', 'string', NULL, 0, 5, 0, 0, 0),
+(61, 1, 3, '', 'string', NULL, 95, 1, 0, 0, 0),
+(62, 1, 20, '', 'string', NULL, 0, 5, 0, 0, 0),
+(63, 1, 21, 'B', 'string', NULL, 0, 5, 0, 0, 0),
+(64, 1, 22, '', 'string', NULL, 0, 5, 0, 0, 0),
+(65, 1, 23, '', 'string', NULL, 0, 5, 0, 0, 0),
+(66, 1, 24, '', 'string', NULL, 0, 5, 0, 0, 0),
+(67, 1, 25, '', 'string', NULL, 0, 5, 0, 0, 0),
+(68, 1, 26, '', 'string', NULL, 0, 5, 0, 0, 0),
+(69, 1, 27, '', 'time', NULL, 0, 5, 0, 0, 0),
+(70, 1, 28, '', 'string', NULL, 0, 5, 0, 0, 0),
+(71, 1, 29, '', 'attachment', NULL, 0, 5, 0, 0, 0),
+(72, 1, 30, '', 'string', NULL, 0, 6, 0, 0, 0),
+(73, 1, 31, '', 'time', NULL, 0, 6, 0, 0, 0),
+(74, 1, 32, '', 'string', NULL, 0, 6, 0, 0, 0),
+(75, 1, 33, '', 'string', NULL, 0, 6, 0, 0, 0),
+(76, 1, 34, '满意', 'string', NULL, 0, 6, 0, 0, 0),
+(77, 1, 35, '满意', 'string', NULL, 0, 6, 0, 0, 0),
+(78, 1, 36, '登门走访', 'string', NULL, 0, 6, 0, 0, 0),
+(79, 1, 37, '', 'string', NULL, 0, 6, 0, 0, 0),
+(80, 1, 38, '', 'string', NULL, 0, 6, 0, 0, 0),
+(81, 1, 39, '', 'string', NULL, 0, 6, 0, 0, 0),
+(82, 1, 40, '', 'attachment', NULL, 0, 6, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -353,7 +437,8 @@ CREATE TABLE `motion_handler_tbl` (
 --
 
 INSERT INTO `motion_handler_tbl` (`motion_handler_id`, `motion`, `attr`, `unit`, `staff`, `receive_time`, `reply_time`, `contact_name`, `contact_phone`, `phone`, `attachment`) VALUES
-(1, 7, 122, 157, NULL, NULL, NULL, NULL, NULL, NULL, '');
+(2, 7, 137, 11, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(3, 7, 138, 212, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -403,7 +488,7 @@ CREATE TABLE `motion_tbl` (
 --
 
 INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `duty`, `document`, `step`, `document_sha`, `upload_time`) VALUES
-(7, 1, 2, '测试提案6', 2, 1, 1, 'none', 2, 'abas', '2017-03-06 08:16:17'),
+(7, 1, 2, '测试提案6', 2, 1, 1, 'none', 5, 'abas', '2017-03-06 08:16:17'),
 (8, 1, 2, 'asdfas', 2, 1, 1, 'none', 2, 'abas', '2017-03-06 08:20:52'),
 (9, 1, 2, 'asdf', 2, 1, 1, 'none', 2, 'abas', '2017-03-06 08:27:32');
 
@@ -3649,7 +3734,8 @@ INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name
 (6718, 3649, '4C78E6B1DC23EED5482580D7000548EC', 152, 'kyzzhzhs', '匡堰镇综合指挥室', NULL, NULL, NULL, '', 3, '{}', 88),
 (6719, 3650, '81FE55ECE9608806482580D7000FC0D2', 5, 'szxwyn', '市政协王益女', NULL, NULL, NULL, '', 3, '{}', 88),
 (6720, 3651, '0BA4A10118EC7504482580D800228D7E', 153, 'hhzxczzhzzb', '横河镇小城镇综合整治办', NULL, NULL, NULL, '', 3, '{}', 88),
-(6721, 3652, '6A6DF58FEE902471482580DB000640AC', 45, 'sgajcqzd', '市公安局交警大队城区中队', NULL, NULL, NULL, '', 3, '{}', 88);
+(6721, 3652, '6A6DF58FEE902471482580DB000640AC', 45, 'sgajcqzd', '市公安局交警大队城区中队', NULL, NULL, NULL, '', 3, '{}', 88),
+(6723, NULL, NULL, 212, 'hsb1', NULL, NULL, NULL, 'hsb1', '5', 3, '{}', 0);
 
 -- --------------------------------------------------------
 
@@ -3960,7 +4046,7 @@ INSERT INTO `unit_tbl` (`unit_id`, `unid`, `unit_group`, `parent_unit`, `categor
 (209, 'DCF9FC8241ABF19F48257D7B0014A963', 0, 100, 3, NULL, '市调处办', 641, 5),
 (210, 'B9773B9D10814E6948257DBD000C2664', 0, 100, 3, NULL, '市合用场所整治办', 641, 1),
 (211, '53B560CA93F4EDDD48257DBE002B0B75', 0, 109, 3, NULL, '工商银行杭州湾新区支行', 521, 1),
-(212, 'EA7871C9ADFC7A3348257E04000D4CDA', 0, 100, 3, NULL, '海事办', 641, 1),
+(212, 'EA7871C9ADFC7A3348257E04000D4CDA', 0, 100, 3, '5', '海事办', 641, 1),
 (213, 'A37273C9CCFE341448257E7D002B67F4', 0, 100, 3, NULL, '市污水纳管和超标排放整治办', 641, 1),
 (214, '5EF5D3463C2B545A48257EC40026AE42', 0, 109, 3, NULL, '恒丰银行宁波慈溪支行', 521, 1),
 (215, 'EA2F42C03C32B50D48257F5E00084561', 0, 100, 3, NULL, '市创卫办', 641, 0),
@@ -4303,12 +4389,12 @@ ALTER TABLE `user_unit_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
 ALTER TABLE `attr_template_tbl`
-  MODIFY `attr_template_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `attr_template_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- 使用表AUTO_INCREMENT `category_tbl`
 --
@@ -4338,12 +4424,12 @@ ALTER TABLE `meeting_tbl`
 -- 使用表AUTO_INCREMENT `motion_attr_tbl`
 --
 ALTER TABLE `motion_attr_tbl`
-  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 --
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --
 ALTER TABLE `motion_handler_tbl`
-  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用表AUTO_INCREMENT `motion_tbl`
 --
@@ -4368,7 +4454,7 @@ ALTER TABLE `pms_tbl`
 -- 使用表AUTO_INCREMENT `staff_tbl`
 --
 ALTER TABLE `staff_tbl`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6722;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6724;
 --
 -- 使用表AUTO_INCREMENT `step_tbl`
 --

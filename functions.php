@@ -87,7 +87,11 @@ function getIndex($orderBy='default'){
 
     if(in_array(5,$staff['steps'])){
         $list=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category'),array('motion_id'=>$motionId,'target'=>'unit','attr_step'=>'4','content_int'=>$staff['unit']),' group by motion_id order by category asc')->fetchAll();
-        $motionList=$list;
+        foreach ($list as $row) {
+            $motionList[$row['category']]=$row;
+        }
+
+        mylog(getArrayInf($motionList));
     }
 //    getMotionList(array());
     printView('index');
@@ -250,8 +254,8 @@ function editMotion($data){
             if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
                 $values['content']=indexToValue($row['target'],$row['content_int']);
             }
-            if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['motion_attr']]['content'].=','.$values['content'];
-            $motion[$row['attr_name']]=$values;
+            if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['attr_name']]['content'].=','.$values['content'];
+            else $motion[$row['attr_name']]=$values;
         }
 //        mylog($values['content']);
 //        mylog(getArrayInf($values));
@@ -317,7 +321,7 @@ function updateAttr($data){
     pdoTransReady();
     try{
         foreach ($data['data'] as $row) {
-            mylog(getArrayInf($row));
+//            mylog(getArrayInf($row));
             $value=array();
             if((!isset($row['value'])||!$row['value'])&&$row['attr_type']!='attachment'){//过滤非附件的空值
 //                mylog('continue');

@@ -54,24 +54,30 @@ $(document).on('change','.duty-select',function(){
 
 $(document).on('change','.unit-super',function(){
     var _=$(this);
+    var multiple= _.parent().data('multiple');
     var id= _.val();
     if(id>0){
         _.nextAll().remove();
         ajaxPost('getUnit',{id:id},function(data){
             var value=backHandle(data);
             var content='<select class="unit-select attr-value">';
+
             $.each(value,function(k,v){
                 content+='<option value="'+ v.id+'">'+ v.name+'</option>';
             });
             _.after(content);
+            if(1==multiple&&1==value.length){
+                _.before('<input type="hidden" class="added-value attr-value" value="'+value[0].id+'"><span class="pre-delete">' + value[0].name + '</span>')
+            }
         })
     }
 });
-$(document).on('click','unit-select',function(){
+$(document).on('change','.unit-select',function(){
     var _=$(this);
     var attrValue= _.get(0).value;
     var text= _.find('option:selected').text();
     var parent= _.parent();
+    alert('what');
     if(parent.data('multiple')){
         _.prevAll('.unit-super').before('<input type="hidden" class="added-value attr-value" value="'+attrValue+'"><span class="pre-delete">' + text + '</span>');
     }
@@ -202,27 +208,39 @@ function submitAtrrs(step,callback) {
     //console.log($('.update-value'));
     $('.update-value').each(function (k, v) {
         var f = $(v);
+        var s = f.find('.attr-value');
         var multiple= 1==f.data('multiple');
         var attrType = f.data('type');
         var motionAttr= f.data('motionattr');
         var attrTemplate= f.data('attrtemplate');
         if(multiple){
-            var attrId = s.attr('id');
+            $.each(s,function(sk,sv){
+                if($(sv).hasClass('duty-select')||$(sv).hasClass('unit-select'))return;
+                var attrId = sv.id;
+                var value= sv.value;
+                data.data.push({
+                    attr_id:attrId,
+                    attr_type:attrType,
+                    motion_attr:motionAttr,
+                    attr_template:attrTemplate,
+                    value:value
+                });
+            });
         }else{
             var attrId=f.data('attr')
-            var s = f.find('.attr-value');
+            var value= s.val();
+            data.data.push({
+                attr_id:attrId,
+                attr_type:attrType,
+                motion_attr:motionAttr,
+                attr_template:attrTemplate,
+                value:value
+            });
         }
-        var value= s.val();
-        data.data.push({
-            attr_id:attrId,
-            attr_type:attrType,
-            motion_attr:motionAttr,
-            attr_template:attrTemplate,
-            value:value
-        });
+
     });
-    //console.log(data);
-    //ajaxPost('updateAttr',data,callback);
+    console.log(data);
+    ajaxPost('updateAttr',data,callback);
 }
 function setTime(){
     $('.time-display').text(new Date().toLocaleString());
