@@ -100,6 +100,45 @@
                             <td colspan="7"><span class="encoded-data"><?php echo json_encode($motion['协办单位'],JSON_UNESCAPED_UNICODE)?></td>
                         </tr>
                     <?php endif ?>
+                    <?php if($meetingInf['step']>4):?>
+                        <?php if($canMainHandler):?>
+                            <tr>
+                                <th>答复时间</th>
+                                <td><span class="encoded-data"><?php echo json_encode($motion['主办答复时间'],JSON_UNESCAPED_UNICODE)?></td>
+                            </tr>
+                            <tr>
+
+                            </tr>
+                        <?php endif ?>
+                        <?php foreach($handlerDisplay as $row):?>
+
+                        <?php endforeach ?>
+                        <?php if(isset($handlerEdit)):?>
+                                <tr>
+                                    <th>签收时间</th>
+                                    <td><input type="hidden" class="motion_handler_id" id="<?php echo $handlerEdit['motion_handler_id']?>"><span class="time-display" id="receive-time"></span></td>
+                                    <th>联系人</th>
+                                    <td><input type="text" class="handle-value" id="contact_name" value="<?php echo $handlerEdit['contact_name']?>"></td>
+                                    <th>回复时间</th>
+                                    <td><span class="time-display" id="reply_time"></span></td>
+
+                                </tr>
+                                <tr>
+                                    <th>联系电话</th>
+                                    <td><input type="tel" class="handle-value" id="contact_phone" value="<?php echo $handlerEdit['contact_phone']?>"></td>
+                                    <th>电话</th>
+                                    <td><input type="tel" class="handle-value" id="phone" value="<?php echo $handlerEdit['contact_phone']?>"></td>
+                                </tr>
+                                <tr>
+                                    <th>协办意见全文</th>
+                                    <td id="att<?php echo $handlerEdit['motion_handler_id']?>">
+                                        <button class="upload-file">上传</button>
+                                        <input type="file" class id="handler-attachment" name="handler-attachment" style="display: none">
+                                        <a class="attachment-file" <?php echo $handlerEdit['attachment']? 'href="'.$handlerEdit['attachment'].'"':'' ?>>查看文件</a>
+                                    </td>
+                                </tr>
+                        <?php endif ?>
+                    <?php endif ?>
 
                     </tbody>
                 </table>
@@ -120,4 +159,38 @@
            console.log(data)
        })
     });
+    var antiDouble=false
+    $('.upload-handler-file').click(function(){
+        antiDouble=true;
+        $('#handler-attachment').click();
+        setTimeout(function(){
+            antiDouble=false;
+        },1000)
+    });
+    $('#handler-attachment').change(function(){
+        var _=$(this);
+        var handlerId= _.parent().attr('id').slice(3);
+        var url='upload.php?handler_attachment='+handlerId;
+        fileElementId= _.attr('id')
+        var uploadConfig= {
+            url: url,
+            secureuri: false,
+            fileElementId: fileElementId, //文件上传域的ID
+            dataType: 'json', //返回值类型 一般设置为json
+            success: function (v, status) {
+                if ('SUCCESS' == v.state) {
+                    $('.attachment-file').attr('href', v.url);
+                    antiDouble = false;
+                    console.log(v);
+                } else {
+                    showToast(v.state);
+                }
+            },//服务器成功响应处理函数
+            error: function (d) {
+                alert('error');
+            }
+        };
+        $.ajaxFileUpload(uploadConfig);
+    })
+
 </script>

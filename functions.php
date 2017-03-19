@@ -79,17 +79,35 @@ function getIndex($orderBy='default'){
         $unitQuery=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('step'=>4,'motion_id'=>$motionId,'attr_name'=>'交办单位'),' group by motion_id');
         foreach ($unitQuery as $row) {
             if($staff['unit']!=$row['content_int']){
-                unset($meetingList[$row['category']][$row['motion_id']]);
+                unset($motionList[$row['category']][$row['motion_id']]);
             }
         }
 
     }
 
-    if(in_array(5,$staff['steps'])){
-        $list=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category'),array('motion_id'=>$motionId,'target'=>'unit','attr_step'=>'4','content_int'=>$staff['unit']),' group by motion_id order by category asc')->fetchAll();
-        foreach ($list as $row) {
-            $motionList[$row['category']]=$row;
+    if(in_array(5,$staff['steps'])&&1==count($staff['steps'])&&isset($motionId)){
+        $mainHandleMotion=array();
+        $canMainHandleMotion=array();
+        $handleMotion=array();
+        $mainHandleListQuery=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$motionId,'attr_name'=>'主办单位','content_int'=>$staff['unit']),null);
+        foreach ($mainHandleListQuery as $row) {
+            $mainHandleMotion[]=$row['motion_id'];
         }
+        $canMainHandleQuery=pdoQuery('motion_handler_tbl',array('motion'),array('motion'=>$mainHandleMotion),' and reply_time is not null');
+        foreach ($canMainHandleQuery as $row) {
+            $canMainHandleMotion[]=$row['motion'];
+        }
+        $handleListQuery=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$motionId,'attr_name'=>'协办单位','content_int'=>$staff['unit']),null);
+        foreach ($handleListQuery as $row) {
+            $handleMotion[]=$row['motion_id'];
+        }
+        $motionId=array_merge($canMainHandleMotion,$handleMotion);
+        $list=pdoQuery('motion_for_index_view',null,array('motion_id'=>$motionId),' order by category asc limit 20');
+        $motionList=array();
+        foreach ($list as $row) {
+            $motionList[$row['category']][]=$row;
+        }
+
 
         mylog(getArrayInf($motionList));
     }
@@ -180,7 +198,20 @@ function ajaxDeleteAttr($data){
  */
 function createMotion($data){
     $sessionInf=$_SESSION['staffLogin'];
+    $dutyId=$data['duty_id'];
+    $motionName=['duty_name'];
     $meetingInf=pdoQuery('meeting_tbl',null,array('category'=>$sessionInf['category']),' order by deadline_time desc limit 1')->fetch();
+    pdoTransReady();
+    try{
+        $motionId=pdoInsert('motion_tbl',array('motion_name'=>$motionName,'meeting'=>$meetingInf['meeting_id'],'category'=>$sessionInf['category'],'motion_template'=>$meetingInf['motion_template'],'duty'=>$dutyId,'document'=>'none','step'=>2,'document_sha'=>'none'));
+        $attrInf=pdoQuery('motion_view',array('motion_attr','attr_template'),array('motion_id'=>$motionId,'attr_name'=>"案由"),' limit 1')->fetch();
+        pdoInsert('attr_tbl',array('motion'=>$motionId,'motion_attr'=>$attrInf['motion_attr'],'attr_template'=>$attrInf['attr_template'],'content'=>$motionName));
+        pdoCommit();
+        echo ajaxBack("ok");
+    }catch(PDOException $e){
+        pdoRollBack();
+        mylog($e->getMessage());
+    }
     $id=pdoInsert('motion_tbl',array('motion_name'=>$data['motion_name'],'meeting'=>$meetingInf['meeting_id'],'category'=>$sessionInf['category'],'motion_template'=>$meetingInf['motion_template'],'user'=>1,'document'=>'none','step'=>2,'document_sha'=>'abas'));
     echo ajaxBack($id);
 }
@@ -197,11 +228,10 @@ function editMotion($data){
     $meetingInf=pdoQuery('motion_inf_view',null,array('motion_id'=>$id),' limit 1')->fetch();
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
     foreach ($motionQuery as $row) {
-        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content'])continue;
+        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;
         $values = $row;
         $optionArray = json_decode($row['option'], true);
         $values['content']='string'==$row['value_type']?$row['content']:$row['content_int'];
-
         if($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step'])){//如操作员流程权限与当前权限吻合，则可修改当前流程选项
             $values['edit']=true;
             if (count($optionArray) > 0) {//普通选项
@@ -232,6 +262,10 @@ function editMotion($data){
                         break;
                 }
             }
+            if(5==$row['attr_step']){//如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限
+                $mainHandler[$row['attr_name']]=$values;
+                continue;
+            }
             if(1==$values['multiple']){
                 if(isset($motion[$row['attr_name']])&&$values['content']){
                     $motion[$row['attr_name']]['multiple_value'][]=
@@ -257,11 +291,7 @@ function editMotion($data){
             if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['attr_name']]['content'].=','.$values['content'];
             else $motion[$row['attr_name']]=$values;
         }
-//        mylog($values['content']);
-//        mylog(getArrayInf($values));
-
     }
-    mylog(getArrayInf($motion));
     $currentStep=current($motion)['step'];
     $userInf=getUserList();
     switch($currentStep){
@@ -274,18 +304,19 @@ function editMotion($data){
         case 5:
             $unit=$_SESSION['staffLogin']['unit'];
             $handlerQuery=pdoQuery('motion_handler_tbl',null,array('motion'=>$id,),' limit 1');
+            $handlerDisplay=array();
+            $handlerEdit=array();
+            $canMainHandler=false;
             foreach ($handlerQuery as $row) {
                 if($row['unit']==$unit){
-                    $original=$row;
-                    $handler=array(array('name'=>'签收时间','col'=>'receive_time','value'=>$row['receive_time']),
-                                    array('name'=>'回复时间','col'=>'reply_time','value'=>$row['reply_time']),
-                                    array('name'=>'联系人','col'=>'contact_name','value'=>$row['contact_name']),
-                                    array('name'=>'联系电话','col'=>'contact_phone','value'=>$row['contact_phone']),
-                                    array('name'=>'电话','col'=>'phone','value'=>$row['phone']),
-                                    array('name'=>'附件','col'=>'attachment','value'=>$row['attachment']));
-                    include '/view/handle_motion.html.php';
-                    return;
+                    $handlerEdit=$row;
+                }else{
+                    $handlerDisplay[]=$row;
                 }
+            }
+            if($mainHandler['主办单位']['content_int']==$_SESSION['staffLogin']['unit']){
+                $canMainHandler=true;
+                $motion=array($motion,$mainHandler);
             }
 
             break;
@@ -353,7 +384,12 @@ function updateAttr($data){
                 foreach ($handlerList as $row) {
                     pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int']));
                 }
-
+            }
+            if(5==$motion['step']){
+                $handleDate=$data['handler'];
+                $handleDate['receive_time']=time();
+                $handleDate['reply_time']=time();
+                pdoInsert('motion_handler_tbl',$handleDate,'update');
             }
 
         }

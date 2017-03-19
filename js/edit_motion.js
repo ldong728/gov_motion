@@ -239,7 +239,15 @@ function submitAtrrs(step,callback) {
         }
 
     });
-    console.log(data);
+    if($('.handle-value').length>0){
+        var handlerMotionId=$('.motion_handler_id').attr('id');
+        var handlerData={motion_handler_id:handlerMotionId};
+        $('handle-value').each(function(k,v){
+            handlerData[v.id]= v.value;
+        });
+        data.handler=handlerData;
+    }
+    //console.log(data);
     ajaxPost('updateAttr',data,callback);
 }
 function setTime(){
