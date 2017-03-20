@@ -27,3 +27,10 @@ function ajaxPost(method,ajaxData,callback){
 function log(data){
     console.log(data);
 }
+function signOut(category){
+    ajaxPost('signOut',{},function(data){
+        var value=backHandle(data);
+        if('ok'==value)location.href='index.php?c='+category;
+        else console.log(value);
+    });
+}

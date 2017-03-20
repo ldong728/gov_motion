@@ -101,7 +101,7 @@
                         </tr>
                     <?php endif ?>
                     <?php if($meetingInf['step']>4):?>
-                        <?php if($canMainHandler):?>
+                        <?php if(isset($canMainHandler)&&$canMainHandler):?>
                             <tr>
                                 <th>答复时间</th>
                                 <td><span class="encoded-data"><?php echo json_encode($motion['主办答复时间'],JSON_UNESCAPED_UNICODE)?></td>
@@ -131,7 +131,7 @@
                                 <tr>
                                     <th>协办意见全文</th>
                                     <td colspan="7" id="att<?php echo $handlerEdit['motion_handler_id']?>">
-                                        <button class="upload-file">上传</button>
+                                        <button class="upload-handler-file">上传</button>
                                         <input type="file" class id="handler-attachment" name="handler-attachment" style="display: none">
                                         <a class="attachment-file" <?php echo $handlerEdit['attachment']? 'href="'.$handlerEdit['attachment'].'"':'' ?>>查看文件</a>
                                     </td>
@@ -153,7 +153,8 @@
 <script>
     $('.submit-attr').click(function(){
        submitAtrrs(1,function(data){
-           console.log(data)
+           closePopUp($('.m-popup'));
+           window.location.reload(true);
        })
     });
     var antiDouble=false

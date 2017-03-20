@@ -147,9 +147,6 @@ $(document).on('change','.doc-file',function(){
     console.log(uploadData);
     $.ajaxFileUpload(uploadData);
 });
-$(document).on('click','.next-step',function(){
-    submitAtrrs();
-});
 function decodeDate(element) {
     element.each(function (key, subElement) {
         var _ = $(subElement);
@@ -244,7 +241,7 @@ function submitAtrrs(step,callback) {
         data.step=0;
         var handlerMotionId=$('.motion_handler_id').attr('id');
         var handlerData={motion_handler_id:handlerMotionId};
-        $('handle-value').each(function(k,v){
+        $('.handle-value').each(function(k,v){
             handlerData[v.id]= v.value;
         });
         data.handler=handlerData;
@@ -252,6 +249,7 @@ function submitAtrrs(step,callback) {
     //console.log(data);
     ajaxPost('updateAttr',data,callback);
 }
+
 function setTime(){
     $('.time-display').text(new Date().toLocaleString());
     var sTime=setInterval(function(){

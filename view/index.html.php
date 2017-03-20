@@ -94,12 +94,8 @@
     })
 
     $('.sign-out').click(function(){
-        ajaxPost('signOut',{},function(data){
-            var value=backHandle(data);
-            if('ok'==value)location.href='index.php?c='+category;
-            else console.log(value);
-        })
-    })
+        signOut(category);
+    });
     function resizeWindow(){
         var bHeight = $(document.body).height();
         var wHeight = $(window).height();
