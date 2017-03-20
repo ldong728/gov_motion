@@ -74,7 +74,12 @@ function ajaxBack($data=null,$errcode=0,$errmsg='ok'){
 
 //mysql格式转换
 function timeUnixToMysql($time){
-    return date('Y-m-d H:i:s', $time);
+    if($time){
+        return date('Y-m-d H:i:s', $time);
+    }else{
+        return '';
+    }
+
 
 }
 

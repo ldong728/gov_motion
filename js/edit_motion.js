@@ -126,8 +126,9 @@ $(document).on('change','.doc-file',function(){
             if ('SUCCESS' == v.state) {
                 if(0==attrId){
                     attrId= v.attrId;
-                    parent.attr('data-attr', attrId)
+                    parent.attr('data-attr', attrId);
                     $('.attachment-file').attr('href',v.url);
+
                     antiDouble=false;
                 }else{
                     alert('not 0');
@@ -181,7 +182,7 @@ function decodeDate(element) {
             } else if(data.has_attachment>0){
                 content+='<button class="button choose-file">选择附件</button>'+
                 '<input type="file" class="doc-file" id="file'+data.motion_attr+'" name="file'+data.motion_attr+'" style="display: none">';
-                if(data.attachment)content+='<a class="attachment-file" href="'+data.attachment+'">附件</a>'
+                content+='<a class="attachment-file" href="'+data.attachment+'">附件</a>'
             }else if('time'==data.value_type){
                 content+='<input type="hidden" class="attr-value" value="1"><span class="time-display"></span>';
             }else{
@@ -240,6 +241,7 @@ function submitAtrrs(step,callback) {
 
     });
     if($('.handle-value').length>0){
+        data.step=0;
         var handlerMotionId=$('.motion_handler_id').attr('id');
         var handlerData={motion_handler_id:handlerMotionId};
         $('handle-value').each(function(k,v){
@@ -257,4 +259,7 @@ function setTime(){
         $('.time-display').text(time.toLocaleString());
     },1000);
     return sTime;
+}
+function closePopUp(element){
+    element.css('display','none');
 }

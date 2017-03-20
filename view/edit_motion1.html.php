@@ -15,18 +15,18 @@
             <a href="#">建议议案打印</a>
             <a href="#">全文原始稿</a>
             <a href="#">附件修改</a>
-            <a href="#">返回</a>
+            <a href="#" class="close-popup">返回</a>
         </div>
         <div class="sug-main-content edit-area">
             <div class="content-title">
                 <p style="height: 40px;" ><?php echo 1==current($motion)['category']?'慈溪市人大建议议案办理单':'慈溪市政协提案办理单'?></p>
             </div>
             <div class="table-list ">
-                <table width="760" height="296" border="1" bordercolor="#f08300" cellpadding="0" cellspacing="0" >
+                <table width="770" height="296" border="1" bordercolor="#f08300" cellpadding="0" cellspacing="0" >
                     <tbody style="font-size: 14px">
                     <tr>
                         <th><p> 会议名称</p></th>
-                        <td><p><?php echo substr($meetingInf['meeting_name'],0) ?></p>
+                        <td colspan="2"><p><?php echo substr($meetingInf['meeting_name'],0) ?></p>
                             </td>
                         <th>登记时间</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['登记时间'],JSON_UNESCAPED_UNICODE)?></span></td>
@@ -35,7 +35,7 @@
                     </tr>
                     <tr>
                         <th>案别</th>
-                        <td><span><?php echo 1==$meetingInf['category']?'建议':'提案'?></span></td>
+                        <td colspan="2"><span><?php echo 1==$meetingInf['category']?'建议':'提案'?></span></td>
                         <th>案号</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['案号'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th>是否公开</th>
@@ -43,7 +43,7 @@
                     </tr>
                     <tr>
                         <th>性质类别</th>
-                        <td><span class="encoded-data"><?php echo json_encode($motion['性质类别'],JSON_UNESCAPED_UNICODE)?></span></td>
+                        <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['性质类别'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th>性质</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['性质'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th><?php echo 1==$meetingInf['category']?'代表团':'属性'?></th>
@@ -52,7 +52,7 @@
                     <?php if(2==$meetingInf['category']):?>
                     <tr>
                         <th>委组</th>
-                        <td></td>
+                        <td colspan="2"></td>
                         <th>提案分类</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['提案分类'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th>附议人数</th>
@@ -70,7 +70,7 @@
                     </tr>
                     <tr>
                         <th>案由</th>
-                        <td colspan="7"><span><?php echo $meetingInf['motion_name']?></span></td>
+                        <td colspan="7"><span class="encoded-data"><?php echo json_encode($motion['案由'],JSON_UNESCAPED_UNICODE)?></td>
                     </tr>
                     <tr>
                         <th>全文</th>
@@ -113,25 +113,24 @@
                         <?php foreach($handlerDisplay as $row):?>
 
                         <?php endforeach ?>
-                        <?php if(isset($handlerEdit)):?>
+                        <?php if(isset($handlerEdit)&&count($handlerEdit)>0):?>
                                 <tr>
                                     <th>签收时间</th>
-                                    <td><input type="hidden" class="motion_handler_id" id="<?php echo $handlerEdit['motion_handler_id']?>"><span class="time-display" id="receive-time"></span></td>
+                                    <td colspan="2"><input type="hidden" class="motion_handler_id" id="<?php echo $handlerEdit['motion_handler_id']?>"><span class="time-display" id="receive-time"></span></td>
                                     <th>联系人</th>
-                                    <td><input type="text" class="handle-value" id="contact_name" value="<?php echo $handlerEdit['contact_name']?>"></td>
+                                    <td colspan="2"><input type="text" class="handle-value" id="contact_name" value="<?php echo $handlerEdit['contact_name']?>"></td>
                                     <th>回复时间</th>
                                     <td><span class="time-display" id="reply_time"></span></td>
-
                                 </tr>
                                 <tr>
                                     <th>联系电话</th>
-                                    <td><input type="tel" class="handle-value" id="contact_phone" value="<?php echo $handlerEdit['contact_phone']?>"></td>
+                                    <td colspan="2"><input type="tel" class="handle-value" id="contact_phone" value="<?php echo $handlerEdit['contact_phone']?>"></td>
                                     <th>电话</th>
-                                    <td><input type="tel" class="handle-value" id="phone" value="<?php echo $handlerEdit['contact_phone']?>"></td>
+                                    <td colspan="4"><input type="tel" class="handle-value" id="phone" value="<?php echo $handlerEdit['contact_phone']?>"></td>
                                 </tr>
                                 <tr>
                                     <th>协办意见全文</th>
-                                    <td id="att<?php echo $handlerEdit['motion_handler_id']?>">
+                                    <td colspan="7" id="att<?php echo $handlerEdit['motion_handler_id']?>">
                                         <button class="upload-file">上传</button>
                                         <input type="file" class id="handler-attachment" name="handler-attachment" style="display: none">
                                         <a class="attachment-file" <?php echo $handlerEdit['attachment']? 'href="'.$handlerEdit['attachment'].'"':'' ?>>查看文件</a>
@@ -149,9 +148,7 @@
 <table class="table-list">
 
 </table>
-<div class="confirm">
-    <button class="next-step">下一步</button>
-</div>
+
 <script src="js/edit_motion.js?t=<?php echo rand(1,9999)?>"></script>
 <script>
     $('.submit-attr').click(function(){
@@ -191,6 +188,9 @@
             }
         };
         $.ajaxFileUpload(uploadConfig);
-    })
+    });
+    $('.close-popup').click(function(){
+       closePopUp($('.m-popup'));
+    });
 
 </script>

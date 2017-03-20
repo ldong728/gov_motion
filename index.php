@@ -22,11 +22,14 @@ if(isset($_SESSION['staffLogin'])){
     }
    getIndex();
 }else{
-    if(isset($_POST['user'])&&isset($_POST['password'])){
+    if(isset($_POST['user'])&&isset($_POST['password'])&&isset($_POST['category'])){
+        mylog($_POST['category']);
         $category=$_POST['category'];
         userAuth($_POST['user'],$_POST['password'],$category);
         unset($_POST['password']);
-        header('location:index.php?c='.$category.'&error=password');
+//        mylog('login'.$category);
+//        printView('login3');
+        header('Location:index.php?c='.$category.'&error=password');
         exit;
     }else{
         global $category;
@@ -42,6 +45,7 @@ if(isset($_SESSION['staffLogin'])){
             default:
                 $title='登入-慈溪市人大政协议案提案办理系统';
                 printView('login3',$title);
+                exit;
                 break;
 
         }

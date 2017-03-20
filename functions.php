@@ -44,7 +44,7 @@ function userAuth($userName,$password,$category=3){
         getIndex();
         exit;
     }else{
-
+        return;
     }
 }
 
@@ -116,8 +116,6 @@ function getIndex($orderBy='default'){
 }
 
 function getMeetingView($id){
-
-
     printView('meeting');
 }
 
@@ -141,14 +139,13 @@ function ajaxMotionList($data){
         $orderStr='order by step '.$attrOrder;
         unset($sortFilter['attr_name']);
     }
-//    $orderBy=isset($data['order_by'])?$data['order_by']:'step';
-//    $order=isset($data['order'])?$data['order']:'desc';
     $page=isset($data['page'])?$data['page']:0;
     $field=isset($data['field'])?$data['field']:array('案号','领衔人','案别','案由','性质类别','原文','当前环节','交办单位');
+    $sort=array();
     $sortList=array();
     $motionfilter=array();
     $dutyList=array();
-    $dutyQuery=pdoQuery('duty_view',array('duty_id','user_name','user_unit_name','user_group_name'),array('meeting'=>$meeting),null);
+    $dutyQuery=pdoQuery('duty_view',array('duty_id','user_name','user_unit_name','user_group_name'),array('meeting'=>$meeting),null);//获取代表委员数据，用以替换数据中的索引值
     foreach ($dutyQuery as $row) {
         $dutyList[$row['duty_id']]=$row;
     }
@@ -156,6 +153,7 @@ function ajaxMotionList($data){
 
     $sortQuery=pdoQuery('motion_view',array('motion_id'),$sortFilter,'group by motion_id '.$orderStr.' limit '.$page*$count.','.$count);
     foreach ($sortQuery as $row) {
+        $sort[]=$row['motion_id'];
         $sortList[$row['motion_id']]=array();
         $motionfilter[]=$row['motion_id'];
     }
@@ -178,7 +176,7 @@ function ajaxMotionList($data){
 //        $sortList[$row['motion_id']]['']
     }
 //    mylog(getArrayInf($sortList));
-    echo ajaxBack(array('list'=>$sortList));
+    echo ajaxBack(array('list'=>$sortList,'sort'=>$sort));
 //    mylog(getArrayInf($sortList));
     return $sortList;
 }
@@ -195,8 +193,9 @@ function ajaxDeleteAttr($data){
 /**
  * 创建提议案
  * @param $data
+ * 已作废
  */
-function createMotion($data){
+function createMotion_temp($data){
     $sessionInf=$_SESSION['staffLogin'];
     $dutyId=$data['duty_id'];
     $motionName=['duty_name'];
@@ -217,6 +216,16 @@ function createMotion($data){
 }
 
 /**
+ * 内网提交新提议案
+ */
+function createMotion(){
+    $staff=$_SESSION['staffLogin'];
+    $meetingInf=pdoQuery('meeting_tbl',null,array('meeting_id'=>$staff['meeting']),' order by deadline_time desc limit 1')->fetch();
+    $id=pdoInsert('motion_tbl',array('meeting'=>$staff['meeting'],'category'=>$staff['category'],'motion_name'=>'新建','motion_template'=>$meetingInf['motion_template'],'step'=>1));
+    editMotion(array('id'=>$id));
+}
+
+/**
  *返回需要编辑的数据
  * @param $data array，包含motion_id
  */
@@ -228,10 +237,11 @@ function editMotion($data){
     $meetingInf=pdoQuery('motion_inf_view',null,array('motion_id'=>$id),' limit 1')->fetch();
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
     foreach ($motionQuery as $row) {
-        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;
+//        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;//提议案所有的属性取出后，剔除高于当前步骤，并且没有值的属性
         $values = $row;
         $optionArray = json_decode($row['option'], true);
         $values['content']='string'==$row['value_type']?$row['content']:$row['content_int'];
+        if(!$values['content'])$values['content']='';
         if($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step'])){//如操作员流程权限与当前权限吻合，则可修改当前流程选项
             $values['edit']=true;
             if (count($optionArray) > 0) {//普通选项
@@ -288,6 +298,7 @@ function editMotion($data){
             if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
                 $values['content']=indexToValue($row['target'],$row['content_int']);
             }
+            if('time'==$row['value_type'])$values['content']=timeUnixToMysql($values['content']);
             if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['attr_name']]['content'].=','.$values['content'];
             else $motion[$row['attr_name']]=$values;
         }
@@ -314,7 +325,9 @@ function editMotion($data){
                     $handlerDisplay[]=$row;
                 }
             }
-            if($mainHandler['主办单位']['content_int']==$_SESSION['staffLogin']['unit']){
+            mylog(getArrayInf($handlerEdit));
+            mylog(getArrayInf($mainHandler));
+            if($motion['主办单位']['content_int']==$_SESSION['staffLogin']['unit']){
                 $canMainHandler=true;
                 $motion=array($motion,$mainHandler);
             }
@@ -352,16 +365,11 @@ function updateAttr($data){
     pdoTransReady();
     try{
         foreach ($data['data'] as $row) {
-//            mylog(getArrayInf($row));
             $value=array();
             if((!isset($row['value'])||!$row['value'])&&$row['attr_type']!='attachment'){//过滤非附件的空值
-//                mylog('continue');
                 continue;
             }
-//            mylog(getArrayInf($row));
-//            if(!$row['value']&&in_array($row['attr_type'],array('string','int')))continue;
             if('attachment'==$row['attr_type'])continue;
-//            if(((!isset($row['value'])||!$row['value'])&&$row['attr_type']=='string')||'attachment'==$row['attr_type'])continue;
             if($row['attr_id'])$value['attr_id']=$row['attr_id'];
             $value['motion']=$motionId;
             $value['staff']=$_SESSION['staffLogin']['staffId'];
@@ -380,7 +388,7 @@ function updateAttr($data){
         if($isFoward){
             pdoUpdate('motion_tbl',array('step'=>$motion['step']+1),array('motion_id'=>$motionId));
             if(4==$motion['step']){
-                $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),null);
+                $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),'limit 1');
                 foreach ($handlerList as $row) {
                     pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int']));
                 }
@@ -390,6 +398,16 @@ function updateAttr($data){
                 $handleDate['receive_time']=time();
                 $handleDate['reply_time']=time();
                 pdoInsert('motion_handler_tbl',$handleDate,'update');
+            }
+            if(1==$motion['step']||2==$motion['step']){//将“案由”和“领衔人”属性与motion表中的motion_name,duty字段同步
+                $attr=pdoQuery('attr_view',array('content','content_int'),array('motion'=>$motionId,'attr_name'=>array('案由','领衔人')),' limit 2')->fetchAll();
+                $name='';
+                $duty='0';
+                foreach ($attr as $row) {
+                    if($row['content'])$name=$row['content'];
+                    else $duty=$row['content_int'];
+                }
+                pdoUpdate('motion_tbl',array('motion_name'=>$name,'duty'=>$duty),array('motion_id'=>$motionId),'limit 1');
             }
 
         }
