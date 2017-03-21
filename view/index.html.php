@@ -76,39 +76,56 @@
 		<div class="m-footer-tech"><p>技术支持：慈溪市谷多计算机网络技术有限公司</p></div>
 	</div>
 </div>
+<div class="mask"></div>
 <script type="text/javascript">
     var category='<?php echo $category?>';
 	resizeWindow();
     setTime($('.date-time'));
     $(window).resize(function(){
        resizeWindow();
+		mPopup();
     });
     $('.motion').click(function(){
+		var maskHeight = $(document.body).height();
         var id=$(this).attr('id').slice(3);
         ajaxPost('editMotion',{id:id},function(data){
 //            alert(data);
             $('.m-popup').html(data);
             $('.m-popup').show();
+			$('.mask').show();
+			$('.mask').css('height',maskHeight);
+			mPopup();   /*弹出窗口居中*/
         });
-
+		
     })
 
     $('.sign-out').click(function(){
         signOut(category);
     });
+	
     function resizeWindow(){
         var bHeight = $(document.body).height();
         var wHeight = $(window).height();
         var bWeight = $(document.body).width();
         var weight = bWeight - 240;
         $('.home-r').css('width',weight);
+		
     }
     function setTime(element){
         var week=['','一','二','三','四','五','六','日'];
         var sDate=new Date();
         element.text(sDate.getFullYear()+'年'+(sDate.getMonth()+1)+'月'+sDate.getDate()+'日'+' 星期'+week[sDate.getDay()]);
     }
-
+	
+	function mPopup(){
+		var bWidth = document.documentElement.clientWidth;
+		var bHeight = document.documentElement.clientHeight ;
+		var sWidth = (bWidth-837)/2;
+		var sHeight = (bHeight-580)/2;
+		$('.suggest').css('left',sWidth);
+		$('.suggest').css('top',sHeight);
+	}
+	
 </script>
 </body>
 </html>

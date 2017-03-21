@@ -1,5 +1,6 @@
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000,9999)?>"></script>
-<div class="mask"></div>
+
+
 <div class="suggest cont">
     <div class="sug-head clearfix">
         <div class="sug-head-l"><h1><?php echo 1==current($motion)['category']?'人大建议议案办理单':'政协提案办理单'?></h1></div>
@@ -89,6 +90,12 @@
                             <th>审核意见</th>
                             <td colspan="7"><span class="encoded-data"><?php echo json_encode($motion['审核意见'],JSON_UNESCAPED_UNICODE)?></td>
                         </tr>
+                        <?php if(2==$meetingInf['category']):?>
+                        <tr>
+                            <th>交办单位</th>
+                            <td colspan="7"><span class="encoded-data"><?php echo json_encode($motion['交办单位'],JSON_UNESCAPED_UNICODE)?></td>
+                        </tr>
+                        <?php endif?>
                     <?php endif?>
                     <?php if($meetingInf['step']>3):?>
                     <tr>
@@ -192,6 +199,8 @@
     });
     $('.close-popup').click(function(){
        closePopUp($('.m-popup'));
+        closePopUp($('.mask'));
+//		$('.mask').css('display','none');
     });
 
 </script>

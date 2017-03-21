@@ -24,7 +24,7 @@ function backHandle(data){
     var re=eval('('+data+')');
     if(0==re.errcode){
         var state= null==re.data?true:re.data;
-        console.log(state);
+        //console.log(state);
         return state;
     }else{
         console.log('error: '+re.errmsg);
@@ -99,6 +99,9 @@ function altConfig(name,key,value,success){
             return false;
         }
     })
+}
+function ajaxPost(method,ajaxData,callback){
+    $.post('ajax_request.php',{method:method,ajax_data:ajaxData,pms:pms},callback);
 }
 
 //例：<div class="ipt-toggle" id="row id" data-tbl="table name"data-col="col name" data-index="index col">

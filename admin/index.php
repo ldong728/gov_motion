@@ -67,7 +67,6 @@ function options(){
     $pmsList = pdoQuery('pms_tbl',null,null,null)->fetchAll();
     printAdminView('option.html.php','功能菜单');
 }
-
 function operator(){
     global $pmsList,$opList;
     $pms=pdoQuery('pms_tbl',null,null,null);
@@ -88,8 +87,6 @@ function operator(){
     printAdminView('operator.html.php','操作员管理');
 
 }
-
-
 function motion_temp_edit(){
     if(!isset($_GET['id'])){
         motion_temp_list();
@@ -146,6 +143,10 @@ function attr_temp_edit(){
         printAdminView('blank.html.php','议案提案管理系统后台');
     }
 }
+function unit_step(){
+    printAdminView('unit_step.html.php','单位流程权限控制');
+//    $unitQuery=pdoQuery('unit_tbl',null,)
+}
 
 
 
@@ -162,7 +163,6 @@ function motion_temp_list(){
         printAdminView('blank.html.php','议案提案管理系统后台');
     }
 }
-
 function index_config(){
     global $getStr;
     $articleInf=pdoQuery('gd_article',array('art_id'),array('art_channel_id'=>-1),' limit 1');

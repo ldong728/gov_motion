@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-20 09:35:04
+-- Generation Time: 2017-03-21 09:36:16
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -86,8 +86,18 @@ INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `co
 (171, 12, 36, 3, 'abcdefadfa', 0, NULL, 1, '2017-03-20 05:42:20'),
 (172, 18, 25, 16, '委员', 0, NULL, 1, '2017-03-20 07:26:17'),
 (173, 18, 13, 4, NULL, 1, NULL, 1, '2017-03-20 07:26:17'),
-(174, 18, 14, 5, NULL, 2, NULL, 1, '2017-03-20 07:26:17'),
-(175, 18, 36, 3, 'hahahaha', 0, NULL, 1, '2017-03-20 07:26:17');
+(175, 18, 36, 3, 'hahahaha', 0, NULL, 1, '2017-03-20 07:26:17'),
+(176, 9, 19, 7, NULL, 1490055320, NULL, 1, '2017-03-21 00:15:20'),
+(177, 9, 16, 8, '大会期间', 0, NULL, 1, '2017-03-21 00:15:20'),
+(178, 9, 26, 17, NULL, 9, NULL, 1, '2017-03-21 00:15:20'),
+(179, 9, 10, 1, '公开', 0, NULL, 1, '2017-03-21 00:15:20'),
+(180, 9, 15, 6, '城建管理', 0, NULL, 1, '2017-03-21 00:15:20'),
+(181, 9, 20, 9, '当年', 0, NULL, 1, '2017-03-21 00:15:20'),
+(182, 9, 25, 16, '委员', 0, NULL, 1, '2017-03-21 00:15:20'),
+(183, 9, 13, 4, NULL, 1, NULL, 1, '2017-03-21 00:15:20'),
+(184, 9, 14, 5, NULL, 2, NULL, 1, '2017-03-21 00:15:20'),
+(185, 9, 36, 3, '新提案测试', 0, NULL, 1, '2017-03-21 00:15:20'),
+(186, 9, 17, 10, '立案', 0, NULL, 1, '2017-03-21 00:15:56');
 
 -- --------------------------------------------------------
 
@@ -522,7 +532,7 @@ CREATE TABLE `motion_tbl` (
 INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `duty`, `document`, `step`, `document_sha`, `upload_time`) VALUES
 (7, 1, 2, '测试提案6', 2, 1, 1, 'none', 6, 'abas', '2017-03-06 08:16:17'),
 (8, 1, 2, 'asdfas', 2, 1, 1, 'none', 5, 'abas', '2017-03-06 08:20:52'),
-(9, 1, 2, 'asdf', 2, 1, 1, 'none', 2, 'abas', '2017-03-06 08:27:32'),
+(9, 1, 2, '新提案测试', 2, 1, 1, 'none', 4, 'abas', '2017-03-06 08:27:32'),
 (10, 2, 1, '测试建议1', 1, NULL, NULL, NULL, 2, NULL, '2017-03-20 02:04:55'),
 (12, 1, 2, 'abcdefadfa', 2, NULL, 2, NULL, 3, NULL, '2017-03-20 05:37:46'),
 (18, 1, 2, 'hahahaha', 2, NULL, 1, NULL, 2, NULL, '2017-03-20 07:26:01');
@@ -651,7 +661,8 @@ CREATE TABLE `pms_tbl` (
 
 INSERT INTO `pms_tbl` (`id`, `key_word`, `name`, `remark`) VALUES
 (103, 'vemfljmDYk', '权限管理', NULL),
-(104, 'HwUVAMBMpr', '模板管理', NULL);
+(104, 'HwUVAMBMpr', '模板管理', NULL),
+(105, 'tyNYcGfxbV', '流程权限', NULL);
 
 -- --------------------------------------------------------
 
@@ -3818,7 +3829,8 @@ INSERT INTO `sub_menu_tbl` (`id`, `parent_id`, `key_word`, `name`) VALUES
 (7, 103, 'operator', '管理员'),
 (8, 103, 'options', '控制选项'),
 (10, 104, 'motion_temp_edit', '模板编辑'),
-(11, 104, 'attr_temp_edit', '选项编辑');
+(11, 104, 'attr_temp_edit', '选项编辑'),
+(12, 105, 'unit_step', '单位流程权限');
 
 -- --------------------------------------------------------
 
@@ -4425,7 +4437,7 @@ ALTER TABLE `user_unit_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
@@ -4485,7 +4497,7 @@ ALTER TABLE `operator_tbl`
 -- 使用表AUTO_INCREMENT `pms_tbl`
 --
 ALTER TABLE `pms_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 --
 -- 使用表AUTO_INCREMENT `staff_tbl`
 --
@@ -4500,7 +4512,7 @@ ALTER TABLE `step_tbl`
 -- 使用表AUTO_INCREMENT `sub_menu_tbl`
 --
 ALTER TABLE `sub_menu_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- 使用表AUTO_INCREMENT `unit_group_tbl`
 --

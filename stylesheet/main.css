@@ -4,7 +4,7 @@
 
 
 /*登录界面*/
-body{width: 100%;height: 100%;font:  14px/1.5 Helvetica,Arial,"Microsoft YaHei",sans-serif;background: #f0f0f0;}
+body{width: 100%;min-width: 1260px;height: 100%;font:  14px/1.5 Helvetica,Arial,"Microsoft YaHei",sans-serif;background: #f0f0f0;}
 a{color: inherit;text-decoration: none;}
 
 .container{position: relative; width: 1200px;margin: 0 auto;}
@@ -44,7 +44,7 @@ a{color: inherit;text-decoration: none;}
 .m-header .header-b-r{ margin-right: 3.5%;}
 .m-header .header-b-r .r-btn{width: 116px; height: 26px;font-size: 14px;line-height: 1;color: #fff;border: 1px solid #de621e;box-sizing: border-box;border-radius:13.5px;background: url(images/bg-img3.png) center;}
 
-.m-home{position: relative; width: 100%;min-width: 1260px; min-height: 760px;_height: 760px; background: #fff;border-top: 2px solid #3a3a3a;box-sizing: border-box;}
+.m-home{ width: 100%;min-width: 1260px; min-height: 760px;_height: 760px; background: #fff;border-top: 2px solid #3a3a3a;box-sizing: border-box;}
 
 .m-home .home-l{float: left; width: 239px;min-height: 760px; background: #3a3a3a;color: #fff;font-size: 16px;overflow: hidden;_zoom:1;}
 .m-home .home-nav{width: 100%; height: 41px;z-index: 20;line-height: 41px;}
@@ -102,11 +102,12 @@ a{color: inherit;text-decoration: none;}
 input, select, button, textarea, table {vertical-align: middle;}
 
 
+
 /*建议议案显示*/
 
-.m-popup {position: absolute;z-index: 188;width: 100%;height: 100%;}
-.mask{display: block;position: absolute;left: 0;top: 0;height: 100%; background: #000;opacity: 0.6;filter: alpha(opacity=60); IEheight: 100%;width: 100%;}
-.suggest{position: fixed;width:837px;left: 20%;height: 580px;background: #fff;border: 1px solid #4a4a4a;z-index: 199;}
+.m-popup {position: absolute;z-index: 188;width: 100%;height: auto;}
+.mask{display: none;position: absolute;left: 0;top: 0;height: 100%; background: #000;opacity: 0.6;filter: alpha(opacity=60); IEheight: 100%;width: 100%;}
+.suggest{position: fixed;width:837px;height: 580px;background: #fff;border: 1px solid #4a4a4a;z-index: 199;}
 .m-popup .sug-head{position: relative; font-size: 16px;background-color: #4a4a4a;height: 53px;line-height: 53px;color: #fff;}
 .m-popup .sug-head-l{float: left;width: 50%;}
 .m-popup .sug-head-l h1{font-size: 16px;margin: 0 25px;}
@@ -129,10 +130,10 @@ input, select, button, textarea, table {vertical-align: middle;}
 /*.m-popup .table-list tr th:first-child{text-align: left; padding-left: 10px;}*/
 
 .icon-map-marker::before{padding-right: 15px;font-size: 16px;line-height: 53px;}
+.pre-delete{display: inline-block;background: #EFED13;border: 1px solid #efed13;border-radius: 3px;margin: 4px 5px 2px 0;text-align: center;line-height: 18px;box-sizing: border-box;}
 
 
 /*信息流程显示*/
-.m-popup {position: absolute;z-index: 188;width: 100%;height: 100%;}
 .flow{position: fixed;width:764px;left: 22%;top: 180px; height: 600px;background: #fff;border: 1px solid #4a4a4a;z-index: 199;}
 .m-popup .flow-head{position: relative; font-size: 16px;background-color: #4a4a4a;height: 53px;line-height: 53px;color: #fff;}
 .m-popup .flow-head-l h1{font-size: 16px;margin: 0 25px;}

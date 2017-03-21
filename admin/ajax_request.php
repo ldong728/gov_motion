@@ -7,51 +7,10 @@ if (isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
     if(isset($_POST['pms'])&&array_key_exists($_POST['pms'],$_SESSION['pms'])){
         if(isset($_POST['method'])){
             switch ($_POST['method']) {
-                case 'add_dealer':
-                    mylog('reach');
-                    foreach ($_POST['data'] as $k=>$v) {
-                        if('use_password'==$k){
-                            $value[$k]=md5($v);
-                        }else{
-                            $value[$k]=addslashes($v);
-                        }
-                    }
-                    if(isset($_SESSION['dealer_id'])){
-                        $value['use_parent_id']=$_SESSION['dealer_id'];
-                        $value['use_grade']=$_SESSION['dealer_grade']+1;
-                        $value['use_note']=0==$_SESSION['dealer_grade']?'pass':'audit';
-//                        $value['use_note']=0==$_SESSION['dealer_grade']?'pass':'pass';
-                    }
-                    $id=pdoInsert('gd_users', $value,'ignore');
-                    if($id){
-//                        $back['id']=$id;
-                        echo ajaxBack(array('id'=>$id));
-                    }else{
-//                        $back['erro']
-                        echo ajaxBack(null,1,'记录无法保存');
-                    }
 
-                    break;
-                case 'audit':
-                    $auditId=$_POST['id'];
-                    $id=pdoUpdate('gd_users',array('use_note'=>'pass'),array('use_id'=>$auditId));
-                    if($id){
-                        echo ajaxBack();
-                    }else{
-                        ajaxBack(null,1,'操作失败');
-                    }
-                    break;
-                case 'delete_audit':
-                    $deleteId=$_POST['id'];
-                    $id=pdoDelete('gd_users',array('use_id'=>$deleteId,'use_note'=>'audit'));
-                    if($id){
-                        echo ajaxBack();
-                    }else{
-                        echo ajaxBack(null,1,'操作失败');
-                    }
-                    break;
                 default:
-                    $_POST['method']();
+                    $method=trim($_POST['method']);
+                    $method($_POST['ajax_data']);
                     break;
             }
         }
@@ -104,4 +63,35 @@ if (isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
         echo ajaxBack(null,9,'无权限');
         exit;
     }
+}
+function reflashUnitList($data){
+    $number=15;
+    $orderby=$data['orderby'];
+    $order=$data['order'];
+    $start=$data['page']*$number;
+    $filter="order by $orderby $order limit $start,$number";
+    $where=null;
+    if(isset($data['where'])&&$data['where']){
+
+        $stepStr='';
+        foreach ($data['where'] as $k=>$v) {
+            if('steps'==$k){
+                $stepStr='steps like "%';
+                for($i=0;$i<strlen($v);$i++){
+                    $stepStr.=$v[$i];
+                }
+                $stepStr.='%"';
+            }else{
+                if(!$where)$where=array($k=>$v);
+                else $where[$k]=$v;
+            }
+        }
+        if($where&&count($where)>0)$filter='and '.$stepStr.$filter;
+        else if($stepStr)$filter='where '.$stepStr.$filter;
+    }
+    $query=pdoQuery('unit_tbl',null,$where,$filter)->fetchAll();
+
+
+    echo ajaxBack($query);
+
 }
