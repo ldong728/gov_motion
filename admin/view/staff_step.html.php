@@ -1,3 +1,4 @@
+
 <div id="core" style="height: 658px;">
     <div class="block">
         <div class="head" style="width: 98%;"><span>单位流程权限控制</span></div>
@@ -34,8 +35,8 @@
                                 <span>共<span class="page-total"></span>页</span>
                                 <span>当前第<span class="page-now" id="next"></span>页</span>
                                 <a href="#" class="page-change" id="next">下一页</a>
-<!--                                <input class="text" type="text" style="width:30px" name="page" value="1">-->
-<!--                                <input class="button" type="button" value="跳转">-->
+                                <!--                                <input class="text" type="text" style="width:30px" name="page" value="1">-->
+                                <!--                                <input class="button" type="button" value="跳转">-->
                             </div>
                         </div>
                         <!-- GOODUO -->
@@ -101,8 +102,8 @@
                 }
             });
             $('.step-filter').change(function(){
-               var _=$(this);
-               var step= _.get(0).value;
+                var _=$(this);
+                var step= _.get(0).value;
                 if(step>0){
                     page=0;
                     where={steps:step};
@@ -148,7 +149,7 @@
             console.log(value);
             if(value>0){
                 altTable('unit','category',value,'unit_id',unitId,function(data){
-                   showToast('修改完成');
+                    showToast('修改完成');
                 });
             }
 
@@ -159,7 +160,7 @@
             var orderStr=order?'asc':'desc';
             var whereValue=where||null;
             ajaxPost('reflashUnitList',{orderby:orderby,order:orderStr,page:page,where:whereValue},function(data){
-               var backInf=backHandle(data);
+                var backInf=backHandle(data);
 //                console.log(backInf.page);
                 $('.list-row').remove();
                 $.each(backInf.list,function(k,v){
@@ -188,6 +189,6 @@
         function reflashInf(){
 
         }
-//        function pageChange()
+        //        function pageChange()
     </script>
 </div>

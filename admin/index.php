@@ -147,8 +147,10 @@ function unit_step(){
     printAdminView('unit_step.html.php','单位流程权限控制');
 //    $unitQuery=pdoQuery('unit_tbl',null,)
 }
+function staff_step(){
 
-
+    printAdminView('staff_step.html.php','操作员流程权限');
+}
 
 
 //非sub菜单方法

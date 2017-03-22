@@ -69,9 +69,10 @@ function reflashUnitList($data){
     $orderby=$data['orderby'];
     $order=$data['order'];
     $start=$data['page']*$number;
-    $filter="order by $orderby $order limit $start,$number";
+    $filter="order by $orderby $order";
+    $limit=" limit $start,$number";
     $where=null;
-    if(isset($data['where'])&&$data['where']){
+    if(isset($data['where'])&&$data['where']){//包含搜索限制条件
 
         $stepStr='';
         foreach ($data['where'] as $k=>$v) {
@@ -81,17 +82,22 @@ function reflashUnitList($data){
                     $stepStr.=$v[$i];
                 }
                 $stepStr.='%"';
+            }elseif('unit_name'==$k){
+                $stepStr='unit_name like "%'.$v.'%"';
             }else{
                 if(!$where)$where=array($k=>$v);
                 else $where[$k]=$v;
             }
         }
-        if($where&&count($where)>0)$filter='and '.$stepStr.$filter;
+        if($where&&count($where)>0&&$stepStr)$filter='and '.$stepStr.$filter;
         else if($stepStr)$filter='where '.$stepStr.$filter;
     }
-    $query=pdoQuery('unit_tbl',null,$where,$filter)->fetchAll();
+    $count=pdoQuery('unit_tbl',array('count(*) as count'),$where,$filter)->fetch()['count'];
+    $query=pdoQuery('unit_tbl',null,$where,$filter.$limit)->fetchAll();
+    $back['list']=$query;
+    $back['count']=$count;
+    $back['page']=ceil($count/$number);
 
-
-    echo ajaxBack($query);
+    echo ajaxBack($back);
 
 }

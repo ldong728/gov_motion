@@ -155,7 +155,7 @@ function decodeDate(element) {
         var attr= data.attr_id||0;
         var content='';
         parent.empty();
-        //console.log(data);
+        //console.mylog(data);
         if (data.edit) {//选项可编辑
             parent.addClass('update-value');
             parent.attr('data-attr',attr);
@@ -203,7 +203,7 @@ function decodeDate(element) {
 function submitAtrrs(step,callback) {
     var sStep=step||0;
     var data={step:sStep,data:[]};
-    //console.log($('.update-value'));
+    //console.mylog($('.update-value'));
     $('.update-value').each(function (k, v) {
         var f = $(v);
         var s = f.find('.attr-value');
@@ -246,7 +246,7 @@ function submitAtrrs(step,callback) {
         });
         data.handler=handlerData;
     }
-    //console.log(data);
+    //console.mylog(data);
     ajaxPost('updateAttr',data,callback);
 }
 

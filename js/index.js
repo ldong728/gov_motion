@@ -14,7 +14,7 @@ function backHandle(data){
     var re=eval('('+data+')');
     if(0==re.errcode){
         var state= null==re.data?true:re.data;
-        //console.log(state);
+        //console.mylog(state);
         return state;
     }else{
         console.log('error: '+re.errmsg);
@@ -24,7 +24,7 @@ function backHandle(data){
 function ajaxPost(method,ajaxData,callback){
     $.post('index.php',{ajax:method,ajax_data:ajaxData},callback);
 }
-function log(data){
+function mylog(data){
     console.log(data);
 }
 function signOut(category){

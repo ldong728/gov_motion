@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-21 09:36:16
+-- Generation Time: 2017-03-22 09:33:29
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -676,6 +676,31 @@ CREATE TABLE `pms_view` (
 ,`s_id` int(11)
 ,`s_key` varchar(30)
 ,`s_name` varchar(30)
+);
+
+-- --------------------------------------------------------
+
+--
+-- 替换视图以便查看 `staff_admin_view`
+--
+CREATE TABLE `staff_admin_view` (
+`staff_id` int(11)
+,`out_id` int(11)
+,`staff_unid` varchar(35)
+,`unit` int(11)
+,`staff_name` varchar(20)
+,`full_name` varchar(30)
+,`staff_phone` varchar(20)
+,`staff_email` varchar(50)
+,`staff_password` varchar(50)
+,`steps` varchar(10)
+,`category` tinyint(1)
+,`user_admin` varchar(80)
+,`reorder` int(11)
+,`staff_unit` varchar(50)
+,`parent_unit` int(11)
+,`unit_group` int(11)
+,`parent_unit_name` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -3830,7 +3855,8 @@ INSERT INTO `sub_menu_tbl` (`id`, `parent_id`, `key_word`, `name`) VALUES
 (8, 103, 'options', '控制选项'),
 (10, 104, 'motion_temp_edit', '模板编辑'),
 (11, 104, 'attr_temp_edit', '选项编辑'),
-(12, 105, 'unit_step', '单位流程权限');
+(12, 105, 'unit_step', '单位流程权限'),
+(13, -1, 'staff_step', '操作员流程权限');
 
 -- --------------------------------------------------------
 
@@ -3908,21 +3934,21 @@ CREATE TABLE `unit_tbl` (
 --
 
 INSERT INTO `unit_tbl` (`unit_id`, `unid`, `unit_group`, `parent_unit`, `category`, `steps`, `unit_name`, `reorder`, `member`) VALUES
-(2, 'CF526D833579B57A48256B350004479B', 4, 0, 3, '123', '市委', 999, 18),
-(3, '2130C38256F9A2C148256B3500044B78', 0, 0, 3, NULL, '市人大', 995, 11),
-(4, 'E62E93CB19F0697148256B33001EFBBF', 0, 0, 3, NULL, '市政府', 990, 20),
-(5, '49267039E9D79F5E48256B3500044E59', 0, 0, 3, NULL, '市政协', 985, 10),
-(6, '03122FDE5FC2ACC848256B38000E37E2', 0, 0, 3, NULL, '开发区管委会', 983, 66),
-(7, 'CF2B3867AA1A4E6A48256B380041F93F', 0, 0, 3, NULL, '市人武部', 980, 2),
-(8, '9A4876520F27D7BF48256B380041BAED', 0, 0, 3, NULL, '市委办', 975, 73),
-(9, 'CDE42145B76E64FA48256B380045BD15', 0, 0, 3, NULL, '市人大办', 970, 43),
-(10, '6BEC2EB75030204448256B330021ABB0', 0, 0, 3, NULL, '市府办', 965, 88),
-(11, 'F7588B139F2A3DF248256B380045C978', 0, 0, 3, NULL, '市政协办', 960, 28),
-(12, 'FF0B3F3933577D8448256B3800100663', 0, 0, 3, NULL, '市检察院', 955, 13),
-(13, 'DE05918B113DE28D48256B3800101332', 0, 0, 3, NULL, '市法院', 950, 25),
-(14, '26A3ECA4B5D6D4EA48256B9000349E9E', 0, 0, 3, NULL, '市委部门（群团）', 947, 0),
-(15, '301F217E57A1DF3148256B380045AEF4', 0, 14, 3, NULL, '市纪委（监察局）', 945, 62),
-(16, '31C27BFFB49FD82048256B38000F25F8', 0, 14, 3, NULL, '市委组织部', 940, 31),
+(2, 'CF526D833579B57A48256B350004479B', 4, 0, 3, '5', '市委', 999, 18),
+(3, '2130C38256F9A2C148256B3500044B78', 0, 0, 1, '1235', '市人大', 995, 11),
+(4, 'E62E93CB19F0697148256B33001EFBBF', 0, 0, 3, '5', '市政府', 990, 20),
+(5, '49267039E9D79F5E48256B3500044E59', 0, 0, 2, '1235', '市政协', 985, 10),
+(6, '03122FDE5FC2ACC848256B38000E37E2', 0, 0, 3, '5', '开发区管委会', 983, 66),
+(7, 'CF2B3867AA1A4E6A48256B380041F93F', 0, 0, 3, '5', '市人武部', 980, 2),
+(8, '9A4876520F27D7BF48256B380041BAED', 0, 0, 3, '5', '市委办', 975, 73),
+(9, 'CDE42145B76E64FA48256B380045BD15', 0, 0, 3, '5', '市人大办', 970, 43),
+(10, '6BEC2EB75030204448256B330021ABB0', 0, 0, 3, '5', '市府办', 965, 88),
+(11, 'F7588B139F2A3DF248256B380045C978', 0, 0, 3, '5', '市政协办', 960, 28),
+(12, 'FF0B3F3933577D8448256B3800100663', 0, 0, 3, '5', '市检察院', 955, 13),
+(13, 'DE05918B113DE28D48256B3800101332', 0, 0, 3, '5', '市法院', 950, 25),
+(14, '26A3ECA4B5D6D4EA48256B9000349E9E', 0, 0, 3, '5', '市委部门（群团）', 947, 0),
+(15, '301F217E57A1DF3148256B380045AEF4', 0, 14, 3, '5', '市纪委（监察局）', 945, 62),
+(16, '31C27BFFB49FD82048256B38000F25F8', 0, 14, 3, '5', '市委组织部', 940, 31),
 (17, '63E5B5BC87443F0948256B38000FA7A6', 0, 14, 3, NULL, '市委宣传部', 935, 30),
 (18, '960C0E4406089C5248256B380045D29E', 0, 14, 3, NULL, '市委统战部（侨办、台办）', 930, 18),
 (19, '4A0A248E3D870DD048256D79000DB10C', 0, 37, 3, NULL, '市民族宗教局', 838, 7),
@@ -3989,7 +4015,7 @@ INSERT INTO `unit_tbl` (`unit_id`, `unid`, `unit_group`, `parent_unit`, `categor
 (90, '06189EE33378877E48256B380010B23A', 0, 37, 3, NULL, '市盐务局', 666, 1),
 (91, '172FAFCEB2B13E7E48256B38000DA3CE', 0, 37, 3, NULL, '市供电局', 665, 2),
 (92, '30260D251D4C9F8548256B380024738D', 0, 37, 3, NULL, '市农合联执委会（市供销社)', 664, 16),
-(93, '32280270CF1B655E48256B3800249101', 0, 37, 3, NULL, '市人民银行', 663, 1),
+(93, '32280270CF1B655E48256B3800249101', 0, 37, 3, '5', '市人民银行', 663, 1),
 (94, 'C98D529A2FE33FC848256B380010C5C2', 0, 37, 3, NULL, '市邮政局', 661, 2),
 (95, '5ADB17264AC1F1EA48256B38000D95AB', 0, 37, 3, NULL, '市电信局', 660, 2),
 (96, '6BA6FD732EE3FEC148256B3800246AD5', 0, 37, 3, NULL, '市烟草局', 659, 1),
@@ -4000,21 +4026,21 @@ INSERT INTO `unit_tbl` (`unit_id`, `unid`, `unit_group`, `parent_unit`, `categor
 (109, '872E3FECABACA56048256B900034EF45', 0, 0, 3, NULL, '其他单位', 640, 0),
 (110, '7F697C2BAF8CA4A048256BA8002B7312', 0, 109, 3, NULL, '市移动分公司', 615, 1),
 (111, 'B08FE6DC5251B27248256EF300260391', 0, 109, 3, NULL, '联通慈溪分公司', 613, 1),
-(114, 'E91E8283525AD94548256B3800249885', 0, 109, 3, NULL, '市工商银行', 580, 1),
-(115, 'DFE03BCAABAD38CA48256B3800249F5E', 0, 109, 3, NULL, '市农业银行', 575, 1),
-(116, '9183B60D6D750EA448256B380024A8DA', 0, 109, 3, NULL, '市农发银行', 570, 1),
-(117, 'FDD97E22151AEAE048256B380024B223', 0, 109, 3, NULL, '市建设银行', 565, 2),
-(118, 'A57342F8251DCDA948256C290030BE84', 0, 109, 3, NULL, '市交通银行', 560, 1),
-(119, '8BA476F52352455B4825736F002CE047', 0, 109, 3, NULL, '市交通银行新城支行', 559, 1),
-(120, 'D16ED45C3284CF6448256B380024B955', 0, 109, 3, NULL, '市中国银行', 555, 1),
-(121, '38227E152462D50848256E8F000D555F', 0, 109, 3, NULL, '市中信实业银行', 553, 2),
-(122, '7A294E7C6846C08E48256B380024D0C9', 0, 109, 3, NULL, '慈溪农村商业银行', 545, 1),
+(114, 'E91E8283525AD94548256B3800249885', 0, 109, 3, '5', '市工商银行', 580, 1),
+(115, 'DFE03BCAABAD38CA48256B3800249F5E', 0, 109, 3, '5', '市农业银行', 575, 1),
+(116, '9183B60D6D750EA448256B380024A8DA', 0, 109, 3, '5', '市农发银行', 570, 1),
+(117, 'FDD97E22151AEAE048256B380024B223', 0, 109, 3, '5', '市建设银行', 565, 2),
+(118, 'A57342F8251DCDA948256C290030BE84', 0, 109, 3, '5', '市交通银行', 560, 1),
+(119, '8BA476F52352455B4825736F002CE047', 0, 109, 3, '5', '市交通银行新城支行', 559, 1),
+(120, 'D16ED45C3284CF6448256B380024B955', 0, 109, 3, '5', '市中国银行', 555, 1),
+(121, '38227E152462D50848256E8F000D555F', 0, 109, 3, '5', '市中信实业银行', 553, 2),
+(122, '7A294E7C6846C08E48256B380024D0C9', 0, 109, 3, '5', '慈溪农村商业银行', 545, 1),
 (123, '529CFE874ECDDEBE48256B380024D8BC', 0, 109, 3, NULL, '浦发行支行', 540, 1),
-(124, '1E40BCDEF08F95F248256EA6002BA154', 0, 109, 3, NULL, '市深发银行', 537, 1),
-(125, 'EF2CE54F397A804F48256BA8002B864D', 0, 109, 3, NULL, '宁波银行慈溪支行', 536, 1),
-(126, '68BF4B1D9F43CC634825735D00096028', 0, 109, 3, NULL, '市民生银行', 534, 1),
-(127, '7E308DBD2ADEA5084825736400117F76', 0, 109, 3, NULL, '浙商银行', 533, 1),
-(128, '18016D93B365A2DF482573DA00219943', 0, 109, 3, NULL, '市招商银行', 532, 1),
+(124, '1E40BCDEF08F95F248256EA6002BA154', 0, 109, 3, '5', '市深发银行', 537, 1),
+(125, 'EF2CE54F397A804F48256BA8002B864D', 0, 109, 3, '5', '宁波银行慈溪支行', 536, 1),
+(126, '68BF4B1D9F43CC634825735D00096028', 0, 109, 3, '5', '市民生银行', 534, 1),
+(127, '7E308DBD2ADEA5084825736400117F76', 0, 109, 3, '5', '浙商银行', 533, 1),
+(128, '18016D93B365A2DF482573DA00219943', 0, 109, 3, '5', '市招商银行', 532, 1),
 (129, '44E4EE5D7002E41E482573F00024A88D', 0, 109, 3, NULL, '市兴业银行', 531, 1),
 (130, '7BA70DBAD6E55F2B4825741A000A1018', 0, 109, 3, NULL, '慈溪邮政储蓄银行', 530, 1),
 (131, 'B2880C0C4E909363482575620010AB17', 0, 109, 3, NULL, '上海银行', 529, 1),
@@ -4073,9 +4099,9 @@ INSERT INTO `unit_tbl` (`unit_id`, `unid`, `unit_group`, `parent_unit`, `categor
 (188, '1B9224F267F7036C482579DE002F1E4E', 0, 37, 3, NULL, '市建设集团', 654, 12),
 (189, 'AA12BDCD8DC8273248257A5900319656', 0, 37, 3, NULL, '慈溪市银行业协会', 661, 0),
 (190, '998D64EED976BF1148257A64000DA880', 0, 14, 3, NULL, '市关工委', 908, 1),
-(191, 'F474F99106241E4A48257A67002B1B4F', 0, 0, 3, NULL, '市决策咨询委', 984, 6),
-(192, 'FA40A3CEEB27C48748257A6A00065A2B', 0, 37, 3, NULL, '市商品市场物流园区管委会', 654, 8),
-(193, '5F6FAABB0627907748257ADB00091DEA', 0, 14, 3, NULL, '市红十字会', 863, 3),
+(191, 'F474F99106241E4A48257A67002B1B4F', 0, 0, 3, '5', '市决策咨询委', 984, 6),
+(192, 'FA40A3CEEB27C48748257A6A00065A2B', 0, 37, 3, '5', '市商品市场物流园区管委会', 654, 8),
+(193, '5F6FAABB0627907748257ADB00091DEA', 0, 14, 3, '5', '市红十字会', 863, 3),
 (194, 'AA725B96AE8C912E48257AE90030F9B4', 0, 37, 3, NULL, '市水务集团有限公司', 654, 22),
 (195, '329B359E0AEB920D48257AFD00300FAD', 0, 37, 3, NULL, '市新城河区块改造建设指挥部', 654, 7),
 (196, 'C4B1ECD713E274F548257B0300052B71', 0, 37, 3, NULL, '市海涂综合开发有限公司', 653, 7),
@@ -4268,6 +4294,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `pms_view`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `pms_view`  AS  select `f`.`id` AS `f_id`,`f`.`key_word` AS `f_key`,`f`.`name` AS `f_name`,`s`.`id` AS `s_id`,`s`.`key_word` AS `s_key`,`s`.`name` AS `s_name` from (`pms_tbl` `f` left join `sub_menu_tbl` `s` on((`s`.`parent_id` = `f`.`id`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- 视图结构 `staff_admin_view`
+--
+DROP TABLE IF EXISTS `staff_admin_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `staff_admin_view`  AS  select `a`.`staff_id` AS `staff_id`,`a`.`out_id` AS `out_id`,`a`.`staff_unid` AS `staff_unid`,`a`.`unit` AS `unit`,`a`.`staff_name` AS `staff_name`,`a`.`full_name` AS `full_name`,`a`.`staff_phone` AS `staff_phone`,`a`.`staff_email` AS `staff_email`,`a`.`staff_password` AS `staff_password`,`a`.`steps` AS `steps`,`a`.`category` AS `category`,`a`.`user_admin` AS `user_admin`,`a`.`reorder` AS `reorder`,`b`.`unit_name` AS `staff_unit`,`c`.`unit_id` AS `parent_unit`,`c`.`unit_group` AS `unit_group`,`c`.`unit_name` AS `parent_unit_name` from ((`staff_tbl` `a` left join `unit_tbl` `b` on((`a`.`unit` = `b`.`unit_id`))) left join `unit_tbl` `c` on((`b`.`parent_unit` = `c`.`unit_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -4497,7 +4532,7 @@ ALTER TABLE `operator_tbl`
 -- 使用表AUTO_INCREMENT `pms_tbl`
 --
 ALTER TABLE `pms_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 --
 -- 使用表AUTO_INCREMENT `staff_tbl`
 --
@@ -4512,7 +4547,7 @@ ALTER TABLE `step_tbl`
 -- 使用表AUTO_INCREMENT `sub_menu_tbl`
 --
 ALTER TABLE `sub_menu_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- 使用表AUTO_INCREMENT `unit_group_tbl`
 --

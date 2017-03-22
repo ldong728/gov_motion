@@ -11,6 +11,9 @@ function loading(){
 function stopLoading(){
     $('.loading').hide();
 }
+function mylog(data){
+    console.log(data);
+}
 function getRandStr(length){
     var defLengh=length||16;
     var randomStr='';
@@ -24,7 +27,7 @@ function backHandle(data){
     var re=eval('('+data+')');
     if(0==re.errcode){
         var state= null==re.data?true:re.data;
-        //console.log(state);
+        //console.mylog(state);
         return state;
     }else{
         console.log('error: '+re.errmsg);
