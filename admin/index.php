@@ -148,6 +148,12 @@ function unit_step(){
 //    $unitQuery=pdoQuery('unit_tbl',null,)
 }
 function staff_step(){
+    global $unitParent,$unit;
+    $query=pdoQuery('unit_tbl',null,array('parent_unit'=>0),null);
+    foreach ($query as $row) {
+        $unitParent[]=$row;
+    }
+
 
     printAdminView('staff_step.html.php','操作员流程权限');
 }

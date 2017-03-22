@@ -1,11 +1,13 @@
-
+<?php global $unitParent;?>
 <div id="core" style="height: 658px;">
+
     <div class="block">
-        <div class="head" style="width: 98%;"><span>单位流程权限控制</span></div>
+        <div class="head" style="width: 98%;"><span>操作员流程权限控制</span></div>
         <div class="main">
             <table class="table sheet unit-table">
                 <tr class="h">
-                    <td rowspan="2">单位名称</td>
+                    <td rowspan="2">名称</td>
+                    <td rowspan="2">所属单位</td>
                     <td colspan="6">流程权限</td>
                     <td rowspan="2">类别</td>
                 </tr>

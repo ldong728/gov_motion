@@ -121,3 +121,7 @@
 2017.03.22.08:16:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
 2017.03.22.08:31:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
 2017.03.22.08:31:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.22.12:26:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_view order by f_id,s_id asc
+2017.03.22.12:27:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_view order by f_id,s_id asc
+2017.03.22.12:27:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.22.12:27:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
