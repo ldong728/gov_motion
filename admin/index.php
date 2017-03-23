@@ -144,18 +144,20 @@ function attr_temp_edit(){
     }
 }
 function unit_step(){
+    global $superUnit;
+    $superUnit=pdoQuery('unit_admin_view',array('parent_unit as id','parent_name as name'),null,'where parent_unit!=0 group by parent_unit')->fetchAll();
     printAdminView('unit_step.html.php','单位流程权限控制');
 //    $unitQuery=pdoQuery('unit_tbl',null,)
 }
 function staff_step(){
-    global $unitParent,$unit;
-    $query=pdoQuery('unit_tbl',null,array('parent_unit'=>0),null);
-    foreach ($query as $row) {
-        $unitParent[]=$row;
-    }
-
-
+    global $superUnit;
+    $superUnit=pdoQuery('unit_tbl',array('unit_id as id','unit_name as name'),array('parent_unit'=>0),null)->fetchAll();
     printAdminView('staff_step.html.php','操作员流程权限');
+}
+function add_steff(){
+    global $superUnit;
+    $superUnit=pdoQuery('unit_tbl',array('unit_id as id','unit_name as name'),array('parent_unit'=>0),null)->fetchAll();
+    printAdminView('add_staff.html.php','添加操作员');
 }
 
 

@@ -2,7 +2,7 @@
 /*20160512 支持事务操作
  *20161220
  * 20170315 修复空数组查询报错
- *
+ * 20160323 修改记录是输入空数组则返回空值
  */
 
 
@@ -146,6 +146,7 @@ function pdoUpdate($tableName,array $value,array $where,$str=''){
     $sql='UPDATE '.$tableName.' SET ';
     $j = 0;
     $valueCount=count($value);
+    if($valueCount<1)return null;
     foreach ($value as $k => $v) {
         $sql = $sql . $k . '=' . '"' . $v . '"';
         if ($j < $valueCount - 1) $sql = $sql . ',';

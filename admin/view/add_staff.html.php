@@ -2,91 +2,42 @@
 
 <div id="core" style="height: 658px;">
     <div class="block">
-        <div class="head" style="width: 98%;"><span>操作员流程权限控制</span></div>
+        <div class="head" style="width: 98%;"><span>新建操作员</span></div>
         <div class="main">
             <table class="table sheet unit-table">
-                <tr class="h">
-                    <td rowspan="2">id</td>
-                    <td rowspan="2">全名</td>
-                    <td rowspan="2">单位</td>
-                    <td rowspan="2">来源</td>
-                    <td colspan="6">流程权限</td>
-                    <td rowspan="2">分组</td>
-                    <td rowspan="2">操作</td>
+                <tr>
+                    <td class="h">id：</td>
+                    <td><input type="text" class="staff-inf" data-col="staff_name" placeholder="登陆用，请用英文字母" width="250px"></td>
+                    <td class="h">全名：</td>
+                    <td><input type="text" class="staff-inf" data-col="full_name" placeholder="请用中文"></td>
                 </tr>
                 <tr>
-                    <td>提交</td>
-                    <td>登记</td>
-                    <td>审核</td>
-                    <td>交办</td>
-                    <td>办理</td>
-                    <td>反馈</td>
+                    <td>密码：</td>
+                    <td><input type="text" class="staff-inf" data-col="staff_password" placeholder="请输入密码"></td>
+                    <td>分类：</td>
+                    <td> <select class="category-filter staff-inf" data-col="category">
+                            <option value="0">选择类别</option>
+                            <option value="1">人大</option>
+                            <option value="2">政协</option>
+                            <option value="3">综合</option>
+                        </select></td>
                 </tr>
-                <tr class="list-row">
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
+                <tr>
+                    <td>权限：</td>
+                    <td colspan="3">提交：<input class="step-checkbox" type="checkbox" value="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;登记：<input class="step-checkbox" type="checkbox" value="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;审核：<input class="step-checkbox" type="checkbox" value="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;交办：<input class="step-checkbox" type="checkbox" value="4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;办理：<input class="step-checkbox" type="checkbox" value="5" checked="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;反馈：<input class="step-checkbox" type="checkbox" value="6"></td>
                 </tr>
-                <tr class="unit-table-foot">
-                    <td colspan="12">
-                        <div class="page_link">
-                            <div class="in">
-                                <a href="#" class="page-change" id="prev">上一页</a>
-                                <span>共<span class="page-total"></span>页</span>
-                                <span>当前第<span class="page-now" id="next"></span>页</span>
-                                <a href="#" class="page-change" id="next">下一页</a>
-                                <!--                                <input class="text" type="text" style="width:30px" name="page" value="1">-->
-                                <!--                                <input class="button" type="button" value="跳转">-->
-                            </div>
-                        </div>
-                        <!-- GOODUO -->
-                    </td>
+                <tr>
+                    <td>单位：</td>
+                    <td colspan="3"><select class="super-unit"><option value="0">选择单位</option>
+                            <?php foreach($superUnit as $row):?>
+                                <option value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
+                            <?php endforeach ?>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td colspan="4"><input type="button" class="create-button" value="新建操作员"></td>
                 </tr>
             </table>
-        </div>
-
-    </div>
-    <div class="main">
-        <table class="table sheet">
-            <tr>
-                <td>筛选：</td>
-                <td><input type="text" class="search-input"><button class="search-button">按名称搜索</button> </td>
-                <td>按单位筛选：<select class="super-unit"><option value="0">选择单位</option>
-                    <?php foreach($superUnit as $row):?>
-                        <option value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
-                        <?php endforeach ?>
-                    </select></td>
-                <td>
-                    按流程筛选：
-                    <select class="step-filter">
-                        <option value="0">选择流程</option>
-                        <option value="1">提交</option>
-                        <option value="2">登记</option>
-                        <option value="3">审核</option>
-                        <option value="4">交办</option>
-                        <option value="5">办理</option>
-                        <option value="6">反馈</option>
-                    </select>
-                </td>
-                <td>
-                    按类别筛选：
-                    <select class="category-filter">
-                        <option value="0">选择类别</option>
-                        <option value="1">人大</option>
-                        <option value="2">政协</option>
-                        <option value="3">综合</option>
-                    </select>
-                </td>
-            </tr>
-        </table>
     </div>
 
 </div>
@@ -98,7 +49,7 @@ var order = true;
 var where = null;
 var totalPage = 0;
 $(document).ready(function () {
-    getStaffList();
+//    getStaffList();
     $('.page-change').click(function () {
         if ('prev' == $(this).attr('id') && page > 0) {
             page--;
