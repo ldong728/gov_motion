@@ -121,3 +121,738 @@
 2017.03.22.08:16:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
 2017.03.22.08:31:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
 2017.03.22.08:31:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.01:43:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_view order by f_id,s_id asc
+2017.03.23.01:43:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM sub_menu_view
+2017.03.23.01:43:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_tbl
+2017.03.23.01:43:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_view order by f_id,s_id asc
+2017.03.23.01:43:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.01:43:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.01:44:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.01:54:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.01:54:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by unit_id asc
+2017.03.23.01:54:56:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.01:54:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.01:54:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.01:56:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.01:56:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.01:56:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.01:58:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.01:58:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.01:58:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:05:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:05:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:05:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:05:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:05:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:05:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:07:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:07:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:07:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:13:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:13:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:13:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:13:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:13:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:13:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:17:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:17:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:17:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:17:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:18:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:18:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:18:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:18:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:18:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:18:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:18:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.02:18:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.02:19:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl where unit_name like "%庵东%"order by unit_id asc
+2017.03.23.02:19:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl where unit_name like "%庵东%"order by unit_id asc limit 0,15
+2017.03.23.02:19:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.02:19:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.02:19:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:19:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:19:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:20:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:20:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:20:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:21:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:21:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:21:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:22:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:22:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:22:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 15,15
+2017.03.23.02:22:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 30,15
+2017.03.23.02:22:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 45,15
+2017.03.23.02:22:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 60,15
+2017.03.23.02:22:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 75,15
+2017.03.23.02:22:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 90,15
+2017.03.23.02:22:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 105,15
+2017.03.23.02:22:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 120,15
+2017.03.23.02:22:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:22:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 135,15
+2017.03.23.02:23:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:23:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:23:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:23:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where staff_name like "%庵东%"order by staff_id asc
+2017.03.23.02:23:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where staff_name like "%庵东%"order by staff_id asc limit 0,15
+2017.03.23.02:25:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:25:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:25:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:25:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%庵东%"order by staff_id asc
+2017.03.23.02:25:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%庵东%"order by staff_id asc limit 0,15
+2017.03.23.02:25:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%庵东%"order by staff_id asc
+2017.03.23.02:25:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%庵东%"order by staff_id asc limit 15,15
+2017.03.23.02:25:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%庵东%"order by staff_id asc
+2017.03.23.02:25:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%庵东%"order by staff_id asc limit 0,15
+2017.03.23.02:26:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where steps like "%1%"order by staff_id asc
+2017.03.23.02:26:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where steps like "%1%"order by staff_id asc limit 0,15
+2017.03.23.02:26:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where steps like "%5%"order by staff_id asc
+2017.03.23.02:26:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where steps like "%5%"order by staff_id asc limit 0,15
+2017.03.23.02:26:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:26:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:29:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:29:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:29:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:31:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:31:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:31:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:42:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:42:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:42:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:45:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.02:45:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.02:45:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.02:57:36:D:\xampp\htdocs\gov_motion\index.php26:1
+2017.03.23.02:57:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_tbl WHERE staff_name="srd" AND category="1" limit 1
+2017.03.23.02:57:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE category="1" order by deadline_time desc limit 1
+2017.03.23.02:57:36:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 5,staffId: 3656,staffName: 市人大办,outId: }
+2017.03.23.02:57:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="1" order by category asc limit 20
+2017.03.23.02:57:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE category="1" order by start_time asc
+2017.03.23.02:57:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="10" limit 1
+2017.03.23.02:57:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="10" order by value_sort desc,motion_attr asc
+2017.03.23.02:57:38:D:\xampp\htdocs\gov_motion\functions.php292:
+2017.03.23.02:58:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE category="1"
+2017.03.23.02:58:14:D:\xampp\htdocs\gov_motion\functions.php362:{0: {id: 2,0: 2,name: 白沙街道,1: 白沙街道}}
+2017.03.23.02:58:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE user_unit="2"
+2017.03.23.02:58:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_group_id as id,user_group_name as name FROM user_group_tbl WHERE category="1"
+2017.03.23.02:58:19:D:\xampp\htdocs\gov_motion\functions.php362:{0: {id: 20,0: 20,name: 第一代表团,1: 第一代表团}1: {id: 21,0: 21,name: 第二代表团,1: 第二代表团}2: {id: 22,0: 22,name: 第三代表团,1: 第三代表团}3: {id: 23,0: 23,name: 第四代表团,1: 第四代表团}4: {id: 24,0: 24,name: 第五代表团,1: 第五代表团}5: {id: 25,0: 25,name: 第六代表团,1: 第六代表团}6: {id: 26,0: 26,name: 第七代表团,1: 第七代表团}7: {id: 27,0: 27,name: 第八代表团,1: 第八代表团}}
+2017.03.23.02:58:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE user_group="20"
+2017.03.23.02:58:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE user_group="23"
+2017.03.23.02:58:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE category="1"
+2017.03.23.02:58:23:D:\xampp\htdocs\gov_motion\functions.php362:{0: {id: 2,0: 2,name: 白沙街道,1: 白沙街道}}
+2017.03.23.02:58:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE category="1"
+2017.03.23.02:58:25:D:\xampp\htdocs\gov_motion\functions.php362:{0: {id: 2,0: 2,name: 白沙街道,1: 白沙街道}}
+2017.03.23.02:58:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE user_unit="2"
+2017.03.23.02:58:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_tbl WHERE motion_id="10" limit 1
+2017.03.23.02:58:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT content,content_int FROM attr_view WHERE motion="10" AND attr_name in("案由","领衔人") limit 2
+2017.03.23.02:58:28:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 5,staffId: 3656,staffName: 市人大办,outId: ,currentMotion: 10}
+2017.03.23.02:58:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="1" order by category asc limit 20
+2017.03.23.02:58:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE category="1" order by start_time asc
+2017.03.23.02:58:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="10" limit 1
+2017.03.23.02:58:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="10" order by value_sort desc,motion_attr asc
+2017.03.23.03:00:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="10" limit 1
+2017.03.23.03:00:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="10" order by value_sort desc,motion_attr asc
+2017.03.23.03:00:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE meeting_id="2" limit 1
+2017.03.23.03:00:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:00:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" group by motion_id order by content_int asc,content asc limit 0,20
+2017.03.23.03:00:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:01:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:01:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" group by motion_id order by content_int asc,content asc limit 0,20
+2017.03.23.03:01:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:01:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:01:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="领衔人" group by motion_id order by content_int asc,content asc limit 0,20
+2017.03.23.03:01:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:01:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:01:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案由" group by motion_id order by content_int asc,content asc limit 0,20
+2017.03.23.03:01:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:01:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:01:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案由" group by motion_id order by content_int desc,content desc limit 0,20
+2017.03.23.03:01:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:01:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:01:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案由" group by motion_id order by content_int asc,content asc limit 0,20
+2017.03.23.03:01:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:01:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:01:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案由" group by motion_id order by content_int desc,content desc limit 0,20
+2017.03.23.03:01:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:01:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE meeting_id="2" order by deadline_time desc limit 1
+2017.03.23.03:01:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="19" limit 1
+2017.03.23.03:01:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="19" order by value_sort desc,motion_attr asc
+2017.03.23.03:01:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE meeting_id="2" limit 1
+2017.03.23.03:01:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:01:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" group by motion_id order by content_int asc,content asc limit 0,20
+2017.03.23.03:01:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("19","10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:01:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="10" limit 1
+2017.03.23.03:01:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="10" order by value_sort desc,motion_attr asc
+2017.03.23.03:02:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.03:02:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.03:02:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.03:02:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.03:02:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.03:02:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.03:05:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.03:05:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.03:05:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl where unit_name like "%市人大%"order by unit_id asc
+2017.03.23.03:05:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl where unit_name like "%市人大%"order by unit_id asc limit 0,15
+2017.03.23.03:05:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.03:05:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.03:05:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl where unit_name like "%政协%"order by unit_id asc
+2017.03.23.03:05:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl where unit_name like "%政协%"order by unit_id asc limit 0,15
+2017.03.23.03:06:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.03:06:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.03:06:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.03:06:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="19" limit 1
+2017.03.23.03:06:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="19" order by value_sort desc,motion_attr asc
+2017.03.23.03:06:56:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="19" limit 1
+2017.03.23.03:06:56:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="19" order by value_sort desc,motion_attr asc
+2017.03.23.03:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_tbl WHERE motion_id="19" limit 1
+2017.03.23.03:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT content,content_int FROM attr_view WHERE motion="19" AND attr_name in("案由","领衔人") limit 2
+2017.03.23.03:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE meeting_id="2" limit 1
+2017.03.23.03:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_group_name FROM duty_view WHERE meeting="2"
+2017.03.23.03:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" group by motion_id order by content_int asc,content asc limit 0,20
+2017.03.23.03:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("19","10") AND attr_name in("案号","领衔人","案别","案由","性质类别","原文","当前环节","交办单位")
+2017.03.23.03:07:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="19" limit 1
+2017.03.23.03:07:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="19" order by value_sort desc,motion_attr asc
+2017.03.23.03:07:12:D:\xampp\htdocs\gov_motion\functions.php292:
+2017.03.23.03:13:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.03:13:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.03:13:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.03:21:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.03:21:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.03:21:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl where unit_name like "%联络%"order by unit_id asc
+2017.03.23.03:21:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl where unit_name like "%联络%"order by unit_id asc limit 0,15
+2017.03.23.03:22:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.03:49:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.03:49:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.03:49:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.03:49:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.04:01:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.04:01:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.04:01:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:01:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:01:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:01:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:01:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:01:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:01:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:01:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:01:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:06:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:06:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:06:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:07:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:07:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:07:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:07:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:20:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:20:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:20:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:20:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.04:20:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.04:20:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl where unit_name like "%庵东镇%"order by unit_id asc
+2017.03.23.04:20:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl where unit_name like "%庵东镇%"order by unit_id asc limit 0,15
+2017.03.23.04:20:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:20:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:20:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:21:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:21:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 15,15
+2017.03.23.04:29:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:29:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:29:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:29:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:29:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 15,15
+2017.03.23.04:29:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:29:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.04:29:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:29:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 15,15
+2017.03.23.04:29:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:29:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 30,15
+2017.03.23.04:29:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:29:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 15,15
+2017.03.23.04:37:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.04:37:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.04:37:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.05:22:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.05:22:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.05:22:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.05:22:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.05:22:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.05:22:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.06:10:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:10:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.06:12:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:12:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.06:13:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:13:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 15,15
+2017.03.23.06:13:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:13:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 30,15
+2017.03.23.06:13:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:13:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 15,15
+2017.03.23.06:13:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:13:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 30,15
+2017.03.23.06:13:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:13:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 15,15
+2017.03.23.06:13:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:13:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 30,15
+2017.03.23.06:13:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl where steps like "%1%"order by unit_id asc
+2017.03.23.06:13:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl where steps like "%1%"order by unit_id asc limit 0,15
+2017.03.23.06:13:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:13:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.06:13:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl where steps like "%5%"order by unit_id asc
+2017.03.23.06:13:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl where steps like "%5%"order by unit_id asc limit 0,15
+2017.03.23.06:13:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl where steps like "%4%"order by unit_id asc
+2017.03.23.06:13:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl where steps like "%4%"order by unit_id asc limit 0,15
+2017.03.23.06:13:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:13:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.06:26:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:26:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.06:26:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.06:26:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.06:26:37:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.06:26:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.06:26:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.06:26:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_group_id as id,user_group_name as name FROM user_group_tbl WHERE user_group_id="1"
+2017.03.23.06:27:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.06:27:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.06:27:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.06:27:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE user_unit_id="1"
+2017.03.23.06:27:56:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_group_id as id,user_group_name as name FROM user_group_tbl WHERE user_group_id="1"
+2017.03.23.06:28:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_group_id as id,user_group_name as name FROM user_group_tbl WHERE user_group_id="2"
+2017.03.23.06:28:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE user_unit_id="2"
+2017.03.23.06:29:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.06:29:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.06:29:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.06:29:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.06:29:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 15,15
+2017.03.23.06:29:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_group_id as id,user_group_name as name FROM user_group_tbl WHERE category="2"
+2017.03.23.06:29:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE category="2"
+2017.03.23.06:29:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_group_id as id,user_group_name as name FROM user_group_tbl WHERE category="2"
+2017.03.23.06:29:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE category="1"
+2017.03.23.06:29:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_group_id as id,user_group_name as name FROM user_group_tbl WHERE category="1"
+2017.03.23.06:47:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.06:48:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_template_tbl
+2017.03.23.06:48:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM step_tbl
+2017.03.23.06:48:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_attr_view WHERE motion_template="1" order by value_sort desc,motion_attr_id asc
+2017.03.23.06:48:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT attr_template_id,attr_name FROM attr_template_tbl where attr_template_id not in(17,3,1,4,5,10,11,7,6,9,8,12,13,14,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40)
+2017.03.23.06:48:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.06:48:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.06:49:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.06:49:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.06:49:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:02:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:02:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:02:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:02:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:02:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 15,15
+2017.03.23.07:02:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE category="2"
+2017.03.23.07:05:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:05:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:05:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:05:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:05:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 15,15
+2017.03.23.07:05:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE category="2"
+2017.03.23.07:08:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:08:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:08:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:09:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT user_unit_id as id,user_unit_name as name FROM user_unit_tbl WHERE category="2"
+2017.03.23.07:09:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:09:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:09:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:09:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙街道%"order by staff_id asc
+2017.03.23.07:09:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙街道%"order by staff_id asc limit 0,15
+2017.03.23.07:09:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:09:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 0,15
+2017.03.23.07:09:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:09:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 15,15
+2017.03.23.07:09:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:09:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 30,15
+2017.03.23.07:10:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:10:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 45,15
+2017.03.23.07:10:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:10:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 30,15
+2017.03.23.07:10:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:10:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 15,15
+2017.03.23.07:10:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:10:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 0,15
+2017.03.23.07:10:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:10:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 15,15
+2017.03.23.07:10:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc
+2017.03.23.07:10:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view where full_name like "%白沙%"order by staff_id asc limit 30,15
+2017.03.23.07:11:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.07:11:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.07:11:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:11:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:11:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:31:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:31:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:31:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:55:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:55:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:55:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:55:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parenet_unit="14"
+2017.03.23.07:55:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.07:55:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.07:56:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:56:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:56:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:56:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.07:56:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.07:56:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.07:57:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.07:57:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:57:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:57:43:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.07:59:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:59:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.07:59:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="2"
+2017.03.23.07:59:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.07:59:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:04:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:04:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:04:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:04:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="11"
+2017.03.23.08:04:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="12"
+2017.03.23.08:04:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="191"
+2017.03.23.08:04:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="109"
+2017.03.23.08:05:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:05:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:05:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:05:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="8" or unit_id="8"
+2017.03.23.08:05:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:05:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 0,15
+2017.03.23.08:05:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:05:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 0,15
+2017.03.23.08:05:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="10" or unit_id="10"
+2017.03.23.08:05:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="10" order by staff_id asc
+2017.03.23.08:05:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="10" order by staff_id asc limit 0,15
+2017.03.23.08:06:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="10" order by staff_id asc
+2017.03.23.08:06:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="10" order by staff_id asc limit 0,15
+2017.03.23.08:06:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:06:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:09:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:09:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:09:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:09:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="3"
+2017.03.23.08:09:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="3" order by staff_id asc
+2017.03.23.08:09:48:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="3" order by staff_id asc limit 0,15
+2017.03.23.08:09:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="8"
+2017.03.23.08:09:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:09:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 0,15
+2017.03.23.08:09:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:09:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 15,15
+2017.03.23.08:09:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:09:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 30,15
+2017.03.23.08:10:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:10:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 45,15
+2017.03.23.08:10:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:10:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 60,15
+2017.03.23.08:10:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:10:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 45,15
+2017.03.23.08:10:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:10:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 30,15
+2017.03.23.08:10:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="8" order by staff_id asc
+2017.03.23.08:10:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="8" order by staff_id asc limit 15,15
+2017.03.23.08:10:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="11"
+2017.03.23.08:10:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="11" order by staff_id asc
+2017.03.23.08:10:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="11" order by staff_id asc limit 15,15
+2017.03.23.08:10:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="11" order by staff_id asc
+2017.03.23.08:10:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="11" order by staff_id asc limit 0,15
+2017.03.23.08:11:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:11:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:11:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:11:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="9"
+2017.03.23.08:11:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="9" order by staff_id asc
+2017.03.23.08:11:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="9" order by staff_id asc limit 0,15
+2017.03.23.08:12:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:12:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:12:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:12:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="2"
+2017.03.23.08:12:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="2" order by staff_id asc
+2017.03.23.08:12:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="2" order by staff_id asc limit 0,15
+2017.03.23.08:13:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:13:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:13:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:13:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="2"
+2017.03.23.08:13:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="2" order by staff_id asc
+2017.03.23.08:13:15:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="2" order by staff_id asc limit 0,15
+2017.03.23.08:13:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:13:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:13:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:16:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:16:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:16:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:16:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="2"
+2017.03.23.08:16:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="2" order by staff_id asc
+2017.03.23.08:16:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="2" order by staff_id asc limit 0,15
+2017.03.23.08:17:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:17:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:17:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:17:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="2"
+2017.03.23.08:17:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="2" order by staff_id asc
+2017.03.23.08:17:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="2" order by staff_id asc limit 0,15
+2017.03.23.08:17:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="2" order by staff_id asc
+2017.03.23.08:17:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="2" order by staff_id asc limit 0,15
+2017.03.23.08:17:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="3"
+2017.03.23.08:17:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="3" order by staff_id asc
+2017.03.23.08:17:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="3" order by staff_id asc limit 0,15
+2017.03.23.08:17:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="3" order by staff_id asc
+2017.03.23.08:17:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="3" order by staff_id asc limit 0,15
+2017.03.23.08:17:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="6"
+2017.03.23.08:17:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="6" order by staff_id asc
+2017.03.23.08:17:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="6" order by staff_id asc limit 0,15
+2017.03.23.08:17:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="6" order by staff_id asc
+2017.03.23.08:17:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="6" order by staff_id asc limit 0,15
+2017.03.23.08:17:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:17:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:17:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:18:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:18:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:18:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:18:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:18:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:18:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:18:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="15" order by staff_id asc
+2017.03.23.08:18:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="15" order by staff_id asc limit 0,15
+2017.03.23.08:18:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="15" order by staff_id asc
+2017.03.23.08:18:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="15" order by staff_id asc limit 15,15
+2017.03.23.08:19:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="15" order by staff_id asc
+2017.03.23.08:19:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="15" order by staff_id asc limit 30,15
+2017.03.23.08:19:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="15" order by staff_id asc
+2017.03.23.08:19:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="15" order by staff_id asc limit 45,15
+2017.03.23.08:19:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="37"
+2017.03.23.08:19:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="37" order by staff_id asc
+2017.03.23.08:19:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="37" order by staff_id asc limit 0,15
+2017.03.23.08:19:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="38" order by staff_id asc
+2017.03.23.08:19:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="38" order by staff_id asc limit 0,15
+2017.03.23.08:19:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="38" order by staff_id asc
+2017.03.23.08:19:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="38" order by staff_id asc limit 15,15
+2017.03.23.08:19:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="38" order by staff_id asc
+2017.03.23.08:19:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="38" order by staff_id asc limit 30,15
+2017.03.23.08:19:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="38" order by staff_id asc
+2017.03.23.08:19:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="38" order by staff_id asc limit 15,15
+2017.03.23.08:19:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="38" order by staff_id asc
+2017.03.23.08:19:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="38" order by staff_id asc limit 0,15
+2017.03.23.08:19:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:19:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:19:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:20:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:20:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:20:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:20:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:20:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:20:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:20:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:20:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:20:55:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:20:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:21:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:21:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:21:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:21:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:21:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:21:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:21:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:21:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:21:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="18" order by staff_id asc
+2017.03.23.08:21:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="18" order by staff_id asc limit 0,15
+2017.03.23.08:21:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:21:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:21:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:21:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:21:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:21:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:21:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:21:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:21:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:22:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:23:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:23:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:23:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:23:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:23:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:23:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:23:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:23:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:23:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:23:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="16" order by staff_id asc
+2017.03.23.08:23:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="16" order by staff_id asc limit 0,15
+2017.03.23.08:24:43:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:24:43:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:24:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="30" order by staff_id asc
+2017.03.23.08:24:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="30" order by staff_id asc limit 0,15
+2017.03.23.08:24:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="32" order by staff_id asc
+2017.03.23.08:24:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="32" order by staff_id asc limit 0,15
+2017.03.23.08:24:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="34" order by staff_id asc
+2017.03.23.08:24:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="34" order by staff_id asc limit 0,15
+2017.03.23.08:25:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="28" order by staff_id asc
+2017.03.23.08:25:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="28" order by staff_id asc limit 0,15
+2017.03.23.08:25:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:25:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:25:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:25:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:25:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:25:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:25:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="15" order by staff_id asc
+2017.03.23.08:25:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="15" order by staff_id asc limit 0,15
+2017.03.23.08:25:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="37" order by staff_id asc
+2017.03.23.08:25:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="37" order by staff_id asc limit 0,15
+2017.03.23.08:25:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="37"
+2017.03.23.08:26:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:26:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:26:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:26:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:26:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:26:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:34:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="15" order by staff_id asc
+2017.03.23.08:34:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="15" order by staff_id asc limit 0,15
+2017.03.23.08:35:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:35:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:35:20:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:35:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:35:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="14" order by staff_id asc
+2017.03.23.08:35:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="14" order by staff_id asc limit 0,15
+2017.03.23.08:39:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:39:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:39:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:39:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:39:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="31" order by staff_id asc
+2017.03.23.08:39:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="31" order by staff_id asc limit 0,15
+2017.03.23.08:39:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="33" order by staff_id asc
+2017.03.23.08:39:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="33" order by staff_id asc limit 0,15
+2017.03.23.08:39:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.08:39:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.08:39:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:39:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.08:39:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.08:48:45:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:48:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.08:48:46:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.08:48:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="2"
+2017.03.23.08:48:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="8"
+2017.03.23.08:48:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="12"
+2017.03.23.08:49:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="14"
+2017.03.23.08:49:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE unit_id="14" AND unit="29" order by unit_id asc
+2017.03.23.08:49:58:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:49:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.08:49:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.08:52:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.08:52:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.08:52:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.08:52:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE parent_unit="3" order by unit_id asc
+2017.03.23.08:52:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="3" order by unit_id asc limit 0,15
+2017.03.23.08:52:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE parent_unit="4" order by unit_id asc
+2017.03.23.08:52:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="4" order by unit_id asc limit 0,15
+2017.03.23.08:52:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE parent_unit="14" order by unit_id asc
+2017.03.23.08:52:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="14" order by unit_id asc limit 0,15
+2017.03.23.08:55:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE parent_unit="2" order by unit_id asc
+2017.03.23.08:55:50:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="2" order by unit_id asc limit 0,15
+2017.03.23.08:55:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.08:55:51:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.09:02:56:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT parent_id as id,parent_name as name FROM unit_admin_view where parent_unit is not 0 group by parent_id
+2017.03.23.09:06:00:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT parent_unit as id,parent_name as name FROM unit_admin_view where parent_unit is not 0 group by parent_unit
+2017.03.23.09:06:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT parent_unit as id,parent_name as name FROM unit_admin_view where parent_unit!=0 group by parent_unit
+2017.03.23.09:06:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.09:06:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.09:06:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE parent_unit="14" order by unit_id asc
+2017.03.23.09:06:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="14" order by unit_id asc limit 0,15
+2017.03.23.09:06:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE parent_unit="37" order by unit_id asc
+2017.03.23.09:06:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="37" order by unit_id asc limit 0,15
+2017.03.23.09:06:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE parent_unit="37" order by unit_id asc
+2017.03.23.09:06:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="37" order by unit_id asc limit 15,15
+2017.03.23.09:06:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl WHERE parent_unit="37" order by unit_id asc
+2017.03.23.09:06:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl WHERE parent_unit="37" order by unit_id asc limit 30,15
+2017.03.23.09:06:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.09:06:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,15
+2017.03.23.09:06:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.09:06:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:06:35:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.09:08:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="100"
+2017.03.23.09:08:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="215" order by staff_id asc
+2017.03.23.09:08:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="215" order by staff_id asc limit 0,15
+2017.03.23.09:08:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="213" order by staff_id asc
+2017.03.23.09:08:59:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="213" order by staff_id asc limit 0,15
+2017.03.23.09:09:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="210" order by staff_id asc
+2017.03.23.09:09:01:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="210" order by staff_id asc limit 0,15
+2017.03.23.09:09:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="209" order by staff_id asc
+2017.03.23.09:09:02:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="209" order by staff_id asc limit 0,15
+2017.03.23.09:09:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="105" order by staff_id asc
+2017.03.23.09:09:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="105" order by staff_id asc limit 0,15
+2017.03.23.09:09:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="222" order by staff_id asc
+2017.03.23.09:09:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="222" order by staff_id asc limit 0,15
+2017.03.23.09:09:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="202" order by staff_id asc
+2017.03.23.09:09:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="202" order by staff_id asc limit 0,15
+2017.03.23.09:09:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.09:09:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:09:42:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,15
+2017.03.23.09:11:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.09:11:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:13:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,12
+2017.03.23.09:11:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.09:11:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,12
+2017.03.23.09:11:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT parent_unit as id,parent_name as name FROM unit_admin_view where parent_unit!=0 group by parent_unit
+2017.03.23.09:11:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.09:11:22:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,12
+2017.03.23.09:11:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.09:11:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 0,12
+2017.03.23.09:11:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 12,12
+2017.03.23.09:11:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:26:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 24,12
+2017.03.23.09:11:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 36,12
+2017.03.23.09:11:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:27:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 48,12
+2017.03.23.09:11:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 60,12
+2017.03.23.09:11:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 72,12
+2017.03.23.09:11:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:28:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 84,12
+2017.03.23.09:11:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view order by staff_id asc
+2017.03.23.09:11:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view order by staff_id asc limit 72,12
+2017.03.23.10:02:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM sub_menu_view
+2017.03.23.10:02:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_tbl
+2017.03.23.10:02:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_tbl
+2017.03.23.10:02:49:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM op_pms_view
+2017.03.23.10:03:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_view order by f_id,s_id asc
+2017.03.23.10:03:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM attr_template_tbl
+2017.03.23.10:03:06:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM attr_template_tbl
+2017.03.23.10:03:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM sub_menu_view
+2017.03.23.10:03:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM pms_tbl
+2017.03.23.10:03:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT parent_unit as id,parent_name as name FROM unit_admin_view where parent_unit!=0 group by parent_unit
+2017.03.23.10:03:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.10:03:14:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,12
+2017.03.23.10:22:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT parent_unit as id,parent_name as name FROM unit_admin_view where parent_unit!=0 group by parent_unit
+2017.03.23.10:22:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.10:22:57:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,12
+2017.03.23.10:23:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT parent_unit as id,parent_name as name FROM unit_admin_view where parent_unit!=0 group by parent_unit
+2017.03.23.10:23:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.10:23:07:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,12
+2017.03.23.10:44:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT parent_unit as id,parent_name as name FROM unit_admin_view where parent_unit!=0 group by parent_unit
+2017.03.23.10:44:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM unit_tbl order by unit_id asc
+2017.03.23.10:44:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM unit_tbl order by unit_id asc limit 0,12
+2017.03.23.10:44:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.10:44:36:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="6"
+2017.03.23.10:45:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.10:47:30:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.10:48:31:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.10:50:04:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.10:51:03:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="0"
+2017.03.23.10:51:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl WHERE parent_unit="5"
+2017.03.23.10:51:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM staff_admin_view WHERE unit="5" AND category="2" order by staff_id asc
+2017.03.23.10:51:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM staff_admin_view WHERE unit="5" AND category="2" order by staff_id asc limit 0,12

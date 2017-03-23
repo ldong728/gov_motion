@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-22 09:33:29
+-- Generation Time: 2017-03-23 10:52:55
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -37,67 +37,6 @@ CREATE TABLE `attr_tbl` (
   `staff` int(11) DEFAULT NULL,
   `update_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `attr_tbl`
---
-
-INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `content`, `content_int`, `attachment`, `staff`, `update_time`) VALUES
-(123, 7, 21, 12, NULL, 0, 'files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx', 1, '2017-03-18 07:12:58'),
-(124, 7, 19, 7, NULL, 1489887464, NULL, 1, '2017-03-19 01:05:27'),
-(125, 7, 16, 8, '大会期间', 0, NULL, 1, '2017-03-19 01:05:27'),
-(126, 7, 26, 17, NULL, 5, NULL, 1, '2017-03-19 01:05:27'),
-(127, 7, 10, 1, '公开', 0, NULL, 1, '2017-03-19 01:05:27'),
-(128, 7, 15, 6, '财贸金融', 0, NULL, 1, '2017-03-19 01:05:27'),
-(129, 7, 20, 9, '当年', 0, NULL, 1, '2017-03-19 01:05:27'),
-(130, 7, 13, 4, NULL, 1, NULL, 1, '2017-03-19 01:05:27'),
-(131, 7, 14, 5, NULL, 2, NULL, 1, '2017-03-19 01:05:27'),
-(132, 7, 14, 5, NULL, 1, NULL, 1, '2017-03-19 01:05:27'),
-(133, 7, 35, 18, 'abcdefg', 0, NULL, 1, '2017-03-19 01:05:27'),
-(134, 7, 25, 16, '委员', 0, NULL, 1, '2017-03-19 01:37:44'),
-(135, 7, 17, 10, '立案', 0, NULL, 1, '2017-03-19 01:45:30'),
-(136, 7, 22, 13, NULL, 5, NULL, 3653, '2017-03-19 02:15:12'),
-(137, 7, 23, 14, NULL, 11, NULL, 3653, '2017-03-19 02:15:12'),
-(138, 7, 23, 14, NULL, 212, NULL, 3653, '2017-03-19 02:15:12'),
-(139, 8, 21, 12, NULL, 0, 'files/879a0493babbcc8330ac4b8004d16811.docx', 1, '2017-03-20 00:42:08'),
-(140, 8, 19, 7, NULL, 1489970565, NULL, 1, '2017-03-20 00:42:45'),
-(141, 8, 16, 8, '大会期间', 0, NULL, 1, '2017-03-20 00:42:45'),
-(142, 8, 26, 17, NULL, 7, NULL, 1, '2017-03-20 00:42:45'),
-(143, 8, 10, 1, '公开', 0, NULL, 1, '2017-03-20 00:42:45'),
-(144, 8, 15, 6, '其他', 0, NULL, 1, '2017-03-20 00:42:45'),
-(145, 8, 20, 9, '当年', 0, NULL, 1, '2017-03-20 00:42:45'),
-(146, 8, 25, 16, '委员', 0, NULL, 1, '2017-03-20 00:42:45'),
-(147, 8, 13, 4, NULL, 1, NULL, 1, '2017-03-20 00:42:45'),
-(148, 8, 14, 5, NULL, 2, NULL, 1, '2017-03-20 00:42:45'),
-(149, 8, 35, 18, 'ceshi', 0, NULL, 1, '2017-03-20 00:42:45'),
-(150, 8, 17, 10, '立案', 0, NULL, 1, '2017-03-20 00:43:13'),
-(151, 8, 18, 11, '同意立案', 0, NULL, 1, '2017-03-20 00:43:13'),
-(152, 8, 22, 13, NULL, 10, NULL, 3653, '2017-03-20 00:44:30'),
-(153, 8, 23, 14, NULL, 212, NULL, 3653, '2017-03-20 00:44:30'),
-(154, 8, 23, 14, NULL, 215, NULL, 3653, '2017-03-20 00:44:30'),
-(155, 9, 21, 12, NULL, 0, 'files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc', 1, '2017-03-20 01:23:37'),
-(164, 12, 19, 7, NULL, 1489988540, NULL, 1, '2017-03-20 05:42:20'),
-(165, 12, 16, 8, '大会期间', 0, NULL, 1, '2017-03-20 05:42:20'),
-(166, 12, 10, 1, '公开', 0, NULL, 1, '2017-03-20 05:42:20'),
-(167, 12, 15, 6, '其他', 0, NULL, 1, '2017-03-20 05:42:20'),
-(168, 12, 20, 9, '当年', 0, NULL, 1, '2017-03-20 05:42:20'),
-(169, 12, 25, 16, '委员', 0, NULL, 1, '2017-03-20 05:42:20'),
-(170, 12, 13, 4, NULL, 2, NULL, 1, '2017-03-20 05:42:20'),
-(171, 12, 36, 3, 'abcdefadfa', 0, NULL, 1, '2017-03-20 05:42:20'),
-(172, 18, 25, 16, '委员', 0, NULL, 1, '2017-03-20 07:26:17'),
-(173, 18, 13, 4, NULL, 1, NULL, 1, '2017-03-20 07:26:17'),
-(175, 18, 36, 3, 'hahahaha', 0, NULL, 1, '2017-03-20 07:26:17'),
-(176, 9, 19, 7, NULL, 1490055320, NULL, 1, '2017-03-21 00:15:20'),
-(177, 9, 16, 8, '大会期间', 0, NULL, 1, '2017-03-21 00:15:20'),
-(178, 9, 26, 17, NULL, 9, NULL, 1, '2017-03-21 00:15:20'),
-(179, 9, 10, 1, '公开', 0, NULL, 1, '2017-03-21 00:15:20'),
-(180, 9, 15, 6, '城建管理', 0, NULL, 1, '2017-03-21 00:15:20'),
-(181, 9, 20, 9, '当年', 0, NULL, 1, '2017-03-21 00:15:20'),
-(182, 9, 25, 16, '委员', 0, NULL, 1, '2017-03-21 00:15:20'),
-(183, 9, 13, 4, NULL, 1, NULL, 1, '2017-03-21 00:15:20'),
-(184, 9, 14, 5, NULL, 2, NULL, 1, '2017-03-21 00:15:20'),
-(185, 9, 36, 3, '新提案测试', 0, NULL, 1, '2017-03-21 00:15:20'),
-(186, 9, 17, 10, '立案', 0, NULL, 1, '2017-03-21 00:15:56');
 
 -- --------------------------------------------------------
 
@@ -333,8 +272,8 @@ CREATE TABLE `motion_attr_tbl` (
 
 INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_template`, `default_value`, `value_type`, `target`, `value_sort`, `step`, `hidden`, `has_attachment`, `multiple`) VALUES
 (1, 1, 1, '公开', 'string', NULL, 0, 2, 0, 0, 0),
-(6, 1, 4, '', 'index', 'duty', 0, 2, 0, 0, 0),
-(7, 1, 5, '', 'index', 'duty', 0, 2, 0, 0, 1),
+(6, 1, 4, '', 'index', 'duty', 0, 1, 0, 0, 0),
+(7, 1, 5, '', 'index', 'duty', 0, 1, 0, 0, 1),
 (8, 1, 10, '立案', 'string', NULL, 0, 3, 0, 0, 0),
 (9, 1, 11, '', 'string', NULL, 0, 3, 0, 0, 0),
 (10, 2, 1, '公开', 'string', NULL, 80, 2, 0, 0, 0),
@@ -525,18 +464,6 @@ CREATE TABLE `motion_tbl` (
   `upload_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `motion_tbl`
---
-
-INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `duty`, `document`, `step`, `document_sha`, `upload_time`) VALUES
-(7, 1, 2, '测试提案6', 2, 1, 1, 'none', 6, 'abas', '2017-03-06 08:16:17'),
-(8, 1, 2, 'asdfas', 2, 1, 1, 'none', 5, 'abas', '2017-03-06 08:20:52'),
-(9, 1, 2, '新提案测试', 2, 1, 1, 'none', 4, 'abas', '2017-03-06 08:27:32'),
-(10, 2, 1, '测试建议1', 1, NULL, NULL, NULL, 2, NULL, '2017-03-20 02:04:55'),
-(12, 1, 2, 'abcdefadfa', 2, NULL, 2, NULL, 3, NULL, '2017-03-20 05:37:46'),
-(18, 1, 2, 'hahahaha', 2, NULL, 1, NULL, 2, NULL, '2017-03-20 07:26:01');
-
 -- --------------------------------------------------------
 
 --
@@ -694,10 +621,11 @@ CREATE TABLE `staff_admin_view` (
 ,`staff_email` varchar(50)
 ,`staff_password` varchar(50)
 ,`steps` varchar(10)
+,`unit_steps` varchar(20)
 ,`category` tinyint(1)
 ,`user_admin` varchar(80)
 ,`reorder` int(11)
-,`staff_unit` varchar(50)
+,`unit_name` varchar(50)
 ,`parent_unit` int(11)
 ,`unit_group` int(11)
 ,`parent_unit_name` varchar(50)
@@ -732,7 +660,7 @@ CREATE TABLE `staff_tbl` (
 INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name`, `full_name`, `staff_phone`, `staff_email`, `staff_password`, `steps`, `category`, `user_admin`, `reorder`) VALUES
 (1, NULL, NULL, 2, 'test', '市政协提案委', '123', 'abc@abc.abc', 'test', '123', 2, '{}', 0),
 (3653, NULL, NULL, 0, 'dcb', NULL, NULL, NULL, 'dcb', '4', 3, '{}', 0),
-(3654, NULL, NULL, 157, 'bl', NULL, NULL, NULL, 'bl', '5', 3, '{}', 0),
+(3654, NULL, NULL, 157, 'bl', NULL, NULL, NULL, 'bl', '45', 3, '{}', 0),
 (3655, NULL, NULL, 155, 'bl1', NULL, NULL, NULL, 'bl1', '5', 3, '{}', 0),
 (3656, NULL, NULL, 5, 'srd', '市人大办', NULL, NULL, 'srd', '123', 1, '{}', 0),
 (3657, 2, '49C681109A3FAB1948257380000E74D5', 157, 'adzcl', '庵东镇残联', NULL, NULL, NULL, '', 3, '{}', 88),
@@ -744,7 +672,7 @@ INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name
 (3663, 8, '2E197C8C13BB9BF948257559001BFA44', 157, 'adzfl', '庵东镇妇联', NULL, NULL, NULL, '', 3, '{}', 88),
 (3664, 9, 'EF16D926586CE6D54825705200042BD4', 157, 'adzgh', '庵东镇工会', NULL, NULL, NULL, '', 3, '{}', 88),
 (3665, 10, '82A50FE55F636A1448256DA6000CAEA4', 157, 'adzhzb', '庵东镇环治办', NULL, NULL, NULL, '', 3, '{}', 88),
-(3666, 11, 'F5881836B59EE7BE48256CB4000B94A8', 157, 'adzjfb', '庵东镇经发办', NULL, NULL, NULL, '', 3, '{}', 88),
+(3666, 11, 'F5881836B59EE7BE48256CB4000B94A8', 157, 'adzjfb', '庵东镇经发办', NULL, NULL, NULL, '5', 3, '{}', 88),
 (3667, 12, '8F7DCF124508718348256EF400044177', 157, 'adzjpb', '庵东镇经普办', NULL, NULL, NULL, '', 3, '{}', 88),
 (3668, 13, 'A340750DA7E7D05D48256B38002AADED', 157, 'adzjsb', '庵东镇计生办', NULL, NULL, NULL, '', 3, '{}', 88),
 (3669, 14, '800CC47F58F3A96348256CB4000B98C0', 157, 'adzjwb', '庵东镇教卫办', NULL, NULL, NULL, '', 3, '{}', 88),
@@ -759,7 +687,7 @@ INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name
 (3678, 23, '87C8547329C4C67A48256CB4000BA466', 157, 'adzws', '庵东镇人武部', NULL, NULL, NULL, '', 3, '{}', 88),
 (3679, 24, '4C560848B754704948256CB4000B84CF', 157, 'adzxcwy', '庵东镇宣传委员', NULL, NULL, NULL, '', 3, '{}', 88),
 (3680, 25, 'EE73E4904B68A64548256CB4000B788C', 157, 'adzzfsj', '庵东镇政法书记', NULL, NULL, NULL, '', 3, '{}', 88),
-(3681, 26, 'BC56CE3CCC3613494825722F002F34CB', 157, 'adzzxllw', '庵东镇政协联络委', NULL, NULL, NULL, '', 3, '{}', 88),
+(3681, 26, 'BC56CE3CCC3613494825722F002F34CB', 157, 'adzzxllw', '庵东镇政协联络委', NULL, NULL, NULL, '1', 2, '{"unit":4}', 88),
 (3682, 27, '2F26D7E380F6E66E48256CB4000B7032', 157, 'adzzz', '庵东镇镇长', NULL, NULL, NULL, '', 3, '{}', 88),
 (3683, 28, '6C07ACB030FEA55248256CB4000BA077', 157, 'adzzzb', '庵东镇综治办', NULL, NULL, NULL, '', 3, '{}', 88),
 (3684, 29, '1ADC17FD8B20E57948256CB4000B8096', 157, 'adzzzwy', '庵东镇组织委员', NULL, NULL, NULL, '', 3, '{}', 88),
@@ -3856,7 +3784,8 @@ INSERT INTO `sub_menu_tbl` (`id`, `parent_id`, `key_word`, `name`) VALUES
 (10, 104, 'motion_temp_edit', '模板编辑'),
 (11, 104, 'attr_temp_edit', '选项编辑'),
 (12, 105, 'unit_step', '单位流程权限'),
-(13, -1, 'staff_step', '操作员流程权限');
+(13, 105, 'staff_step', '操作员流程权限'),
+(14, 105, 'add_steff', '添加操作员');
 
 -- --------------------------------------------------------
 
@@ -3870,6 +3799,25 @@ CREATE TABLE `sub_menu_view` (
 ,`s_id` int(11)
 ,`s_key` varchar(30)
 ,`s_name` varchar(30)
+);
+
+-- --------------------------------------------------------
+
+--
+-- 替换视图以便查看 `unit_admin_view`
+--
+CREATE TABLE `unit_admin_view` (
+`unit_id` int(11)
+,`unid` varchar(35)
+,`unit_group` int(11)
+,`parent_unit` int(11)
+,`category` int(11)
+,`steps` varchar(20)
+,`unit_name` varchar(50)
+,`reorder` int(11)
+,`member` int(11)
+,`parent_name` varchar(50)
+,`unit_group_name` varchar(50)
 );
 
 -- --------------------------------------------------------
@@ -3941,9 +3889,9 @@ INSERT INTO `unit_tbl` (`unit_id`, `unid`, `unit_group`, `parent_unit`, `categor
 (6, '03122FDE5FC2ACC848256B38000E37E2', 0, 0, 3, '5', '开发区管委会', 983, 66),
 (7, 'CF2B3867AA1A4E6A48256B380041F93F', 0, 0, 3, '5', '市人武部', 980, 2),
 (8, '9A4876520F27D7BF48256B380041BAED', 0, 0, 3, '5', '市委办', 975, 73),
-(9, 'CDE42145B76E64FA48256B380045BD15', 0, 0, 3, '5', '市人大办', 970, 43),
+(9, 'CDE42145B76E64FA48256B380045BD15', 0, 0, 1, '5', '市人大办', 970, 43),
 (10, '6BEC2EB75030204448256B330021ABB0', 0, 0, 3, '5', '市府办', 965, 88),
-(11, 'F7588B139F2A3DF248256B380045C978', 0, 0, 3, '5', '市政协办', 960, 28),
+(11, 'F7588B139F2A3DF248256B380045C978', 0, 0, 2, '1235', '市政协办', 960, 28),
 (12, 'FF0B3F3933577D8448256B3800100663', 0, 0, 3, '5', '市检察院', 955, 13),
 (13, 'DE05918B113DE28D48256B3800101332', 0, 0, 3, '5', '市法院', 950, 25),
 (14, '26A3ECA4B5D6D4EA48256B9000349E9E', 0, 0, 3, '5', '市委部门（群团）', 947, 0),
@@ -4068,7 +4016,7 @@ INSERT INTO `unit_tbl` (`unit_id`, `unid`, `unit_group`, `parent_unit`, `categor
 (153, '9D86FFEEC0CFE97248256B380040DF58', 0, 143, 3, NULL, '横河镇', 455, 59),
 (154, '8CE25D78DA76172C48256B380040E7ED', 0, 143, 3, NULL, '崇寿镇', 450, 62),
 (156, 'EF0ACC94A197FC7248256B380040F84A', 0, 143, 3, NULL, '长河镇', 440, 41),
-(157, 'C553E6B90C6A74F948256B3800410886', 0, 143, 3, NULL, '庵东镇', 435, 28),
+(157, 'C553E6B90C6A74F948256B3800410886', 0, 143, 3, '15', '庵东镇', 435, 28),
 (158, 'C72FE29700A118D748256B3800411060', 0, 143, 3, NULL, '周巷镇', 430, 51),
 (159, 'D32E1863B316FFA2482574740029531A', 0, 143, 3, NULL, '古塘街道', 428, 45),
 (160, '7438DAE13E93E76848256B38004118BB', 0, 143, 3, NULL, '浒山街道', 425, 38),
@@ -4221,7 +4169,9 @@ CREATE TABLE `user_unit_tbl` (
 
 INSERT INTO `user_unit_tbl` (`user_unit_id`, `category`, `user_unit_name`, `unit`) VALUES
 (1, 2, '白沙街道', NULL),
-(2, 1, '白沙街道', NULL);
+(2, 1, '白沙街道', NULL),
+(3, 1, '庵东镇', NULL),
+(4, 2, '庵东镇', NULL);
 
 -- --------------------------------------------------------
 
@@ -4302,7 +4252,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `staff_admin_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `staff_admin_view`  AS  select `a`.`staff_id` AS `staff_id`,`a`.`out_id` AS `out_id`,`a`.`staff_unid` AS `staff_unid`,`a`.`unit` AS `unit`,`a`.`staff_name` AS `staff_name`,`a`.`full_name` AS `full_name`,`a`.`staff_phone` AS `staff_phone`,`a`.`staff_email` AS `staff_email`,`a`.`staff_password` AS `staff_password`,`a`.`steps` AS `steps`,`a`.`category` AS `category`,`a`.`user_admin` AS `user_admin`,`a`.`reorder` AS `reorder`,`b`.`unit_name` AS `staff_unit`,`c`.`unit_id` AS `parent_unit`,`c`.`unit_group` AS `unit_group`,`c`.`unit_name` AS `parent_unit_name` from ((`staff_tbl` `a` left join `unit_tbl` `b` on((`a`.`unit` = `b`.`unit_id`))) left join `unit_tbl` `c` on((`b`.`parent_unit` = `c`.`unit_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `staff_admin_view`  AS  select `a`.`staff_id` AS `staff_id`,`a`.`out_id` AS `out_id`,`a`.`staff_unid` AS `staff_unid`,`a`.`unit` AS `unit`,`a`.`staff_name` AS `staff_name`,`a`.`full_name` AS `full_name`,`a`.`staff_phone` AS `staff_phone`,`a`.`staff_email` AS `staff_email`,`a`.`staff_password` AS `staff_password`,`a`.`steps` AS `steps`,`b`.`steps` AS `unit_steps`,`a`.`category` AS `category`,`a`.`user_admin` AS `user_admin`,`a`.`reorder` AS `reorder`,`b`.`unit_name` AS `unit_name`,`c`.`unit_id` AS `parent_unit`,`c`.`unit_group` AS `unit_group`,`c`.`unit_name` AS `parent_unit_name` from ((`staff_tbl` `a` left join `unit_tbl` `b` on((`a`.`unit` = `b`.`unit_id`))) left join `unit_tbl` `c` on((`b`.`parent_unit` = `c`.`unit_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -4312,6 +4262,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `sub_menu_view`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `sub_menu_view`  AS  select `f`.`id` AS `f_id`,`f`.`key_word` AS `f_key`,`f`.`name` AS `f_name`,`s`.`id` AS `s_id`,`s`.`key_word` AS `s_key`,`s`.`name` AS `s_name` from (`sub_menu_tbl` `s` left join `pms_tbl` `f` on((`s`.`parent_id` = `f`.`id`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- 视图结构 `unit_admin_view`
+--
+DROP TABLE IF EXISTS `unit_admin_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `unit_admin_view`  AS  select `a`.`unit_id` AS `unit_id`,`a`.`unid` AS `unid`,`a`.`unit_group` AS `unit_group`,`a`.`parent_unit` AS `parent_unit`,`a`.`category` AS `category`,`a`.`steps` AS `steps`,`a`.`unit_name` AS `unit_name`,`a`.`reorder` AS `reorder`,`a`.`member` AS `member`,`b`.`unit_name` AS `parent_name`,`c`.`unit_group_name` AS `unit_group_name` from ((`unit_tbl` `a` left join `unit_tbl` `b` on((`a`.`parent_unit` = `b`.`unit_id`))) left join `unit_group_tbl` `c` on((`a`.`unit_group` = `c`.`unit_group_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -4472,7 +4431,7 @@ ALTER TABLE `user_unit_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=187;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=194;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
@@ -4517,7 +4476,7 @@ ALTER TABLE `motion_handler_tbl`
 -- 使用表AUTO_INCREMENT `motion_tbl`
 --
 ALTER TABLE `motion_tbl`
-  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- 使用表AUTO_INCREMENT `motion_template_tbl`
 --
@@ -4547,7 +4506,7 @@ ALTER TABLE `step_tbl`
 -- 使用表AUTO_INCREMENT `sub_menu_tbl`
 --
 ALTER TABLE `sub_menu_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- 使用表AUTO_INCREMENT `unit_group_tbl`
 --
@@ -4572,7 +4531,7 @@ ALTER TABLE `user_tbl`
 -- 使用表AUTO_INCREMENT `user_unit_tbl`
 --
 ALTER TABLE `user_unit_tbl`
-  MODIFY `user_unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

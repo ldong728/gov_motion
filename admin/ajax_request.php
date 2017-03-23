@@ -15,7 +15,11 @@ if (isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
             }
         }
         if (isset($_POST['alteTblVal'])) {//快速更改
-            $data = pdoUpdate($_POST['tbl'].'_tbl', array($_POST['col'] => addslashes($_POST['value'])), array($_POST['index'] => $_POST['id']),' limit 1');
+            $altValues=array();
+            foreach ($_POST['col_value'] as $k => $v) {
+                $altValues[$k]=addslashes($v);
+            }
+            $data = pdoUpdate($_POST['tbl'].'_tbl', $altValues, array($_POST['index'] => $_POST['id']),' limit 1');
             if($data){
                 echo ajaxBack(array('id'=>$data));
             }else{
@@ -64,8 +68,19 @@ if (isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
         exit;
     }
 }
+function getSubUnit($data){
+    $id=$data['id'];
+    $query=pdoQuery('unit_tbl',array('unit_id as id','unit_name as name'),array('parent_unit'=>$id),null)->fetchAll();
+    echo ajaxBack($query);
+}
+function userGroupUnit($data){
+    $category=$data['category'];
+    $name=$data['name'];
+    $query=pdoQuery('user_'.$name.'_tbl',array('user_'.$name.'_id as id','user_'.$name.'_name as name'),array('category'=>$category),null)->fetchAll();
+    echo ajaxBack($query);
+}
 function reflashUnitList($data){
-    $number=15;
+    $number=12;
     $orderby=$data['orderby'];
     $order=$data['order'];
     $start=$data['page']*$number;
@@ -99,5 +114,40 @@ function reflashUnitList($data){
     $back['page']=ceil($count/$number);
 
     echo ajaxBack($back);
+}
+function reflashStaffList($data){
+    $number=12;
+    $orderby=$data['orderby'];
+    $order=$data['order'];
+    $start=$data['page']*$number;
+    $filter="order by $orderby $order";
+    $limit=" limit $start,$number";
+    $where=null;
+    if(isset($data['where'])&&$data['where']){//包含搜索限制条件
 
+        $stepStr='';
+        foreach ($data['where'] as $k=>$v) {
+            if('steps'==$k){
+                $stepStr='steps like "%';
+                for($i=0;$i<strlen($v);$i++){
+                    $stepStr.=$v[$i];
+                }
+                $stepStr.='%"';
+            }elseif('full_name'==$k){
+                $stepStr='full_name like "%'.$v.'%"';
+            }else{
+                if(!$where)$where=array($k=>$v);
+                else $where[$k]=$v;
+            }
+        }
+        if($where&&count($where)>0&&$stepStr)$filter='and '.$stepStr.$filter;
+        else if($stepStr)$filter='where '.$stepStr.$filter;
+    }
+    $count=pdoQuery('staff_admin_view',array('count(*) as count'),$where,$filter)->fetch()['count'];
+    $query=pdoQuery('staff_admin_view',null,$where,$filter.$limit)->fetchAll();
+    $back['list']=$query;
+    $back['count']=$count;
+    $back['page']=ceil($count/$number);
+
+    echo ajaxBack($back);
 }

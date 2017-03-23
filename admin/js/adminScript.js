@@ -35,11 +35,15 @@ function backHandle(data){
     }
 }
 function altTable(tablename,colname,colvalue,indexname,indexvalue,success){
+    var colValuePare={};
+    colValuePare[colname]=colvalue;
+    altTableBatch(tablename,colValuePare,indexname,indexvalue,success);
+}
+function altTableBatch(tablename,colValuePare,indexname,indexvalue,success){
     var altValue={
         alteTblVal: 1,
         tbl: tablename,
-        col: colname,
-        value: colvalue,
+        col_value:colValuePare,
         index: indexname,
         id: indexvalue,
         pms:pms
@@ -47,9 +51,9 @@ function altTable(tablename,colname,colvalue,indexname,indexvalue,success){
     $.post('ajax_request.php',altValue , function (data) {
         if(data)data=eval('('+data+')');
         if (data.errcode == 0) {
-           success(data);
+            success(data);
         }else{
-          return false;
+            return false;
         }
     })
 }

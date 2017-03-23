@@ -1,3 +1,4 @@
+<?php global $superUnit?>
 <div id="core" style="height: 658px;">
     <div class="block">
         <div class="head" style="width: 98%;"><span>单位流程权限控制</span></div>
@@ -16,16 +17,16 @@
                     <td>办理</td>
                     <td>反馈</td>
                 </tr>
-                <tr class="list-row">
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                    <td>abc</td>
-                </tr>
+<!--                <tr class="list-row">-->
+<!--                    <td>abc</td>-->
+<!--                    <td>abc</td>-->
+<!--                    <td>abc</td>-->
+<!--                    <td>abc</td>-->
+<!--                    <td>abc</td>-->
+<!--                    <td>abc</td>-->
+<!--                    <td>abc</td>-->
+<!--                    <td>abc</td>-->
+<!--                </tr>-->
                 <tr class="unit-table-foot">
                     <td colspan="8">
                         <div class="page_link">
@@ -50,6 +51,12 @@
             <tr>
                 <td>筛选：</td>
                 <td><input type="text" class="search-input"><button class="search-button">搜索</button> </td>
+                <td>按单位筛选：<select class="super-unit"><option value="0">选择单位</option>
+                        <?php foreach($superUnit as $row):?>
+                            <option value="<?php echo $row['id']?>"><?php echo $row['name']?></option>
+                        <?php endforeach ?>
+                    </select></td>
+                <td>
                 <td>
                     按流程筛选：
                     <select class="step-filter">
@@ -126,6 +133,19 @@
                     if(where)delete where.category;
                     getUnitList();
                 }
+            });
+            $('.super-unit').change(function(){
+                var _=$(this);
+                var id= _.val();
+                page=0;
+                if(0!=id){
+                    if(null!=where)where['parent_unit']=id;
+                    else where={parent_unit:id};
+                }else{
+                    if(null!=where)delete(where.parent_unit);
+                }
+                getUnitList();
+
             });
         });
         $(document).on('change','.step-checkbox',function(){
