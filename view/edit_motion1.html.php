@@ -112,13 +112,43 @@
                             <tr>
                                 <th>答复时间</th>
                                 <td><span class="encoded-data"><?php echo json_encode($motion['主办答复时间'],JSON_UNESCAPED_UNICODE)?></td>
+                                <th>文号</th>
+                                <td><span class="encoded-data"><?php echo json_encode($motion['文号'],JSON_UNESCAPED_UNICODE)?></td>
+                                <th>类别标记</th>
+                                <td><span class="encoded-data"><?php echo json_encode($motion['类别标记'],JSON_UNESCAPED_UNICODE)?></td>
+                                <th>签发人</th>
+                                <td><span class="encoded-data"><?php echo json_encode($motion['主办签发人'],JSON_UNESCAPED_UNICODE)?></td>
                             </tr>
                             <tr>
-
+                                <th>已落实事项</th>
+                                <td colspan="7"><span class="encoded-data"><?php echo json_encode($motion['已落实事项'],JSON_UNESCAPED_UNICODE)?></td>
+                            </tr>
+                            <tr>
+                                <th>计划落实事项</th>
+                                <td colspan="7"><span class="encoded-data"><?php echo json_encode($motion['计划落实事项'],JSON_UNESCAPED_UNICODE)?></td>
                             </tr>
                         <?php endif ?>
                         <?php foreach($handlerDisplay as $row):?>
-
+                            <tr>
+                                <th>签收时间</th>
+                                <td colspan="2"><?php echo timeUnixToMysql($row['receive_time'])?></td>
+                                <th>联系人</th>
+                                <td colspan="2"><?php echo $row['contact_name']?></td>
+                                <th>回复时间</th>
+                                <td><?php echo timeUnixToMysql($row['reply_time'])?></td>
+                            </tr>
+                            <tr>
+                                <th>联系电话</th>
+                                <td colspan="2"><?php echo $row['contact_phone']?></td>
+                                <th>电话</th>
+                                <td colspan="4"><?php echo $row['contact_phone']?></td>
+                            </tr>
+                            <tr>
+                                <th>协办意见全文</th>
+                                <td colspan="7">
+                                    <a class="attachment-file" <?php echo $row['attachment']? 'href="'.$row['attachment'].'"':'' ?>>查看文件</a>
+                                </td>
+                            </tr>
                         <?php endforeach ?>
                         <?php if(isset($handlerEdit)&&count($handlerEdit)>0):?>
                                 <tr>

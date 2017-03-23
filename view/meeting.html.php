@@ -109,6 +109,7 @@
     reflashList(orderby,page,order);
     $(window).resize(function(){
         resizeWindow();
+        mPopup();
     });
     $('.order-by-attr').click(function(){
         var newOrderby=($(this).text())
@@ -124,17 +125,25 @@
         $('.order-disply').text(newOrderby+orderText);
     });
     $('.create-motion').click(function(){
+        var maskHeight = $(document.body).height();
         ajaxPost('createMotion',{},function(data){
             $('.m-popup').html(data);
             $('.m-popup').show();
+            $('.mask').show();
+            $('.mask').css('height',maskHeight);
+            mPopup();
         })
     });
     $(document).on('click','.motion-select',function(){
+        var maskHeight = $(document.body).height();
         var id=$(this).attr('id');
         ajaxPost('editMotion',{id:id},function(data){
 //            alert(data);
             $('.m-popup').html(data);
             $('.m-popup').show();
+            $('.mask').show();
+            $('.mask').css('height',maskHeight);
+            mPopup();
         });
     });
     $(document).on('click','.sign-out',function(){
@@ -177,6 +186,14 @@
             });
 
         })
+    }
+    function mPopup(){
+        var bWidth = document.documentElement.clientWidth;
+        var bHeight = document.documentElement.clientHeight ;
+        var sWidth = (bWidth-837)/2;
+        var sHeight = (bHeight-580)/2;
+        $('.suggest').css('left',sWidth);
+        $('.suggest').css('top',sHeight);
     }
 </script>
 </html>

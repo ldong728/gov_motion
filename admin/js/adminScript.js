@@ -26,7 +26,7 @@ function getRandStr(length){
 function backHandle(data){
     var re=eval('('+data+')');
     if(0==re.errcode){
-        var state= null==re.data?true:re.data;
+        var state= null==re.data?0:re.data;
         //console.mylog(state);
         return state;
     }else{

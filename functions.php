@@ -338,12 +338,16 @@ function editMotion($data){
 //            mylog(getArrayInf($mainHandler));
             if($motion['主办单位']['content_int']==$_SESSION['staffLogin']['unit']){
                 $canMainHandler=true;
-                $motion=array($motion,$mainHandler);
+//                foreach ($mainHandler as $k => $v) {
+//                    $motion[$k]=$v;
+//                }
+
+                $motion=array_merge($motion,$mainHandler);
             }
 
             break;
     }
-
+//    mylog(getArrayInf($motion));
     include '/view/edit_motion1.html.php';
     return;
 }
@@ -397,7 +401,7 @@ function updateAttr($data){
         if($isFoward){
             pdoUpdate('motion_tbl',array('step'=>$motion['step']+1),array('motion_id'=>$motionId));
             if(4==$motion['step']){
-                $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),'limit 1');
+                $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),null);
                 foreach ($handlerList as $row) {
                     pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int']));
                 }

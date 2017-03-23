@@ -89,6 +89,7 @@
 		var maskHeight = $(document.body).height();
         var id=$(this).attr('id').slice(3);
         ajaxPost('editMotion',{id:id},function(data){
+//            console.log(data);
 //            alert(data);
             $('.m-popup').html(data);
             $('.m-popup').show();

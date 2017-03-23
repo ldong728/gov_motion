@@ -77,7 +77,7 @@ $(document).on('change','.unit-select',function(){
     var attrValue= _.get(0).value;
     var text= _.find('option:selected').text();
     var parent= _.parent();
-    alert('what');
+    //alert('what');
     if(parent.data('multiple')){
         _.prevAll('.unit-super').before('<input type="hidden" class="added-value attr-value" value="'+attrValue+'"><span class="pre-delete">' + text + '</span>');
     }
@@ -247,6 +247,7 @@ function submitAtrrs(step,callback) {
         data.handler=handlerData;
     }
     //console.mylog(data);
+
     ajaxPost('updateAttr',data,callback);
 }
 
