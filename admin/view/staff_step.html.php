@@ -9,7 +9,7 @@
                     <td rowspan="2">id</td>
                     <td rowspan="2">全名</td>
                     <td rowspan="2">单位</td>
-                    <td rowspan="2">来源</td>
+                    <td rowspan="2" class="order" data-orderby="out_id">来源</td>
                     <td colspan="6">流程权限</td>
                     <td rowspan="2">分组</td>
                     <td rowspan="2">操作</td>
@@ -175,6 +175,11 @@ $(document).ready(function () {
         }
 
     });
+    $('.order').click(function(){
+        orderby=$(this).data('orderby');
+        order=!order;
+        getStaffList();
+    });
 });
 $(document).on('change', '.step-checkbox', function () {
     var _ = $(this);
@@ -245,7 +250,11 @@ $(document).on('change', '.group-unit-select', function () {
 });
 $(document).on('click', '.delete-staff', function () {
     if (confirm('警告：此操作可能导致不可恢复的严重系统错误，确定删除？')) {
-        console.log('ok');
+        var id=$(this).attr('id').slice(3);
+        deleteRecord('staff',{staff_id:id},function(data){
+            getStaffList();
+        });
+//        console.log('ok');
     }
 });
 $(document).on('change', '.unit-filter', function () {

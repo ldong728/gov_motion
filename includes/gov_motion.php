@@ -43,10 +43,10 @@ function getUserList(){
         return 1==$_SESSION['staffLogin']['category']?array('class'=>'duty-group','list'=>array('0'=>'选择人大代表','unit'=>'按所属单位','group'=>'按代表团')):array('class'=>'duty-group','list'=>array('0'=>'选择政协委员','unit'=>'按委组','group'=>'按界别'));
     }
 }
-function getUnitList($parentId='all'){
+function getUnitList($parentId='all',$step=''){
     $id='all'==$parentId?0:$parentId;
     $class='all'==$parentId?'unit-super':'attr-value unit-sub';
-        $query=pdoQuery('unit_tbl',array('unit_id as id','unit_name as name'),array('parent_unit'=>$id),null);
+        $query=pdoQuery('unit_tbl',array('unit_id as id','unit_name as name'),array('parent_unit'=>$id),' and steps like "%'.$step.'%"');
         $list=array('0'=>'选择单位');
         foreach ($query as $row) {
             $list[$row['id']]=$row['name'];

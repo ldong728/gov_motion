@@ -67,7 +67,7 @@ $(document).ready(function () {
                     });
                 }
                 subSelect += '</select>';
-                _.next('.unit-filter').remove();
+                _.next('.unit-select').remove();
                 _.after(subSelect);
             });
         } else {

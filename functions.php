@@ -68,17 +68,20 @@ function getIndex($orderBy='default'){
     $list=pdoQuery('motion_for_index_view',null,$motionListFilter,' order by category asc limit 20');
     foreach ($list as $row) {
         $motionId[]=$row['motion_id'];
-        $motionList[$row['category']][]=$row;
+        $motionList[$row['category']][$row['motion_id']]=$row;
     }
     $meeting=pdoQuery('meeting_tbl',null,$meetingListFilter,'order by start_time asc');
     foreach ($meeting as $row) {
         $meetingList[$row['category']][$row['meeting_id']]=$row;
     }
 
-    if(4==$staff['steps'][0]&&isset($staff['outId'])&&null!=$staff['outId']){
-        $unitQuery=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('step'=>4,'motion_id'=>$motionId,'attr_name'=>'交办单位'),' group by motion_id');
+    if(4==$staff['steps'][0]){
+        $unitQuery=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('step'=>4,'motion_id'=>$motionId,'attr_name'=>'交办单位','category'=>2),' group by motion_id');
         foreach ($unitQuery as $row) {
             if($staff['unit']!=$row['content_int']){
+                mylog('not my job');
+                mylog(getArrayInf($motionList[$row['category']]));
+                mylog($row['motion_id']);
                 unset($motionList[$row['category']][$row['motion_id']]);
             }
         }
@@ -136,7 +139,6 @@ function ajaxMotionList($data){
     $attrOrder=isset($data['attr_order'])? $data['attr_order']:'desc';
     $orderStr='order by content_int '.$attrOrder.',content '.$attrOrder;
     $sortFilter=array('meeting'=>$meeting,'attr_name'=>trim($attrOrderBy));
-
     if('当前环节'==$attrOrderBy){
         $orderStr='order by step '.$attrOrder;
         unset($sortFilter['attr_name']);
@@ -223,8 +225,21 @@ function createMotion_temp($data){
 function createMotion(){
     $staff=$_SESSION['staffLogin'];
     $meetingInf=pdoQuery('meeting_tbl',null,array('meeting_id'=>$staff['meeting']),' order by deadline_time desc limit 1')->fetch();
-    $id=pdoInsert('motion_tbl',array('meeting'=>$staff['meeting'],'category'=>$staff['category'],'motion_name'=>'新建','motion_template'=>$meetingInf['motion_template'],'step'=>1));
-    editMotion(array('id'=>$id));
+    pdoTransReady();
+    try{
+        $id=pdoInsert('motion_tbl',array('meeting'=>$staff['meeting'],'category'=>$staff['category'],'motion_name'=>'新建','motion_template'=>$meetingInf['motion_template'],'step'=>1));
+        if(2==$staff['category']){
+            pdoInsert('zx_motion_tbl',array('motion'=>$id));
+        }
+        pdoCommit();
+        editMotion(array('id'=>$id));
+    }catch(PDOException $e){
+        mylog($e->getMessage());
+        pdoRollBack();
+    }
+
+
+
 }
 
 /**
@@ -237,6 +252,14 @@ function editMotion($data){
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
     $attrFilter=array('motion_id'=>$id);
     $meetingInf=pdoQuery('motion_inf_view',null,array('motion_id'=>$id),' limit 1')->fetch();
+    $step4CanEdit=true;
+    if(4==$meetingInf['step']&&2==$meetingInf['category']){
+        $staffUnit=$_SESSION['staffLogin']['unit'];
+        $stepPermition=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$id,'content_int'=>$staffUnit,'attr_name'=>'交办单位'),'limit 1')->fetch();
+        if(!$stepPermition){
+            $step4CanEdit=false;
+        }
+    }
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
     foreach ($motionQuery as $row) {
 //        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;//提议案所有的属性取出后，剔除高于当前步骤，并且没有值的属性
@@ -244,7 +267,7 @@ function editMotion($data){
         $optionArray = json_decode($row['option'], true);
         $values['content']='string'==$row['value_type']?$row['content']:$row['content_int'];
         if(!$values['content'])$values['content']='';
-        if(($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])){//如操作员流程权限与当前权限吻合，则可修改当前流程选项
+        if(($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])&&$step4CanEdit){//如操作员流程权限与当前权限吻合，则可修改当前流程选项
             $values['edit']=true;
             if (count($optionArray) > 0) {//普通选项
                 $values['option']=array();
@@ -266,7 +289,7 @@ function editMotion($data){
                         break;
                     case 'unit';
                         $values['option']=array();
-                        $unitInf=getUnitList();
+                        $unitInf=getUnitList('all',$row['step']+1);
                         foreach ($unitInf['list'] as $k=>$v) {
                             $values['option'][$k]=$v;
                         }
@@ -274,6 +297,7 @@ function editMotion($data){
                         break;
                 }
             }
+
             if(5==$row['attr_step']){//如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限
                 $mainHandler[$row['attr_name']]=$values;
                 continue;
@@ -323,7 +347,7 @@ function editMotion($data){
             break;
         default:
             $unit=$_SESSION['staffLogin']['unit'];
-            $handlerQuery=pdoQuery('motion_handler_tbl',null,array('motion'=>$id,),' limit 1');
+            $handlerQuery=pdoQuery('motion_handler_view',null,array('motion'=>$id,),null);
             $handlerDisplay=array();
             $handlerEdit=array();
             $canMainHandler=false;
@@ -407,7 +431,7 @@ function updateAttr($data){
                 }
             }
             if(1==$motion['step']||2==$motion['step']){//将“案由”和“领衔人”属性与motion表中的motion_name,duty字段同步
-                $attr=pdoQuery('attr_view',array('content','content_int'),array('motion'=>$motionId,'attr_name'=>array('案由','领衔人')),' limit 2')->fetchAll();
+                $attr=pdoQuery('attr_view',array('content','content_int'),array('motion'=>$motionId,'attr_name'=>array('案由','领衔人','提案人')),' limit 2')->fetchAll();
                 $name='';
                 $duty='0';
                 foreach ($attr as $row) {
