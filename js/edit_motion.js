@@ -147,6 +147,15 @@ $(document).on('change','.doc-file',function(){
     console.log(uploadData);
     $.ajaxFileUpload(uploadData);
 });
+$(document).on('click','.attachment-file',function(){
+    var protocol=window.location.protocol;
+    var host=window.location.host;
+    //console.log(window.location.host);
+    //console.log(window.location);
+    var href=$(this).data('href');
+    var openDocObj=new ActiveXObject("sharePoint.OpenDocuments.2");
+    openDocObj.EditDocument(protocol+'//'+host+'/'+href);
+});
 function decodeDate(element) {
     element.each(function (key, subElement) {
         var _ = $(subElement);
@@ -179,7 +188,7 @@ function decodeDate(element) {
             } else if(data.has_attachment>0){
                 content+='<button class="button choose-file">选择附件</button>'+
                 '<input type="file" class="doc-file" id="file'+data.motion_attr+'" name="file'+data.motion_attr+'" style="display: none">';
-                content+='<a class="attachment-file" href="'+data.attachment+'">附件</a>'
+                content+='<a class="attachment-file" href="#" data-href="'+data.attachment+'">附件</a>'
             }else if('time'==data.value_type){
                 content+='<input type="hidden" class="attr-value" value="1"><span class="time-display"></span>';
             }else{

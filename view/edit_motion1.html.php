@@ -23,11 +23,11 @@
                 <p style="height: 40px;" ><?php echo 1==current($motion)['category']?'慈溪市人大建议议案办理单':'慈溪市政协提案办理单'?></p>
             </div>
             <div class="table-list ">
-                <table width="770" height="296" border="1" bordercolor="#f08300" cellpadding="0" cellspacing="0" >
+                <table width="768" height="296" border="1" bordercolor="#f08300" cellpadding="0" cellspacing="0" >
                     <tbody style="font-size: 14px">
                     <tr>
                         <th><p> 会议名称</p></th>
-                        <td colspan="2"><p><?php echo substr($meetingInf['meeting_name'],0) ?></p>
+                        <td colspan="2" style="text-align: center;padding-left: 0;"><p><?php echo substr($meetingInf['meeting_name'],0) ?></p>
                             </td>
                         <th>登记时间</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['登记时间'],JSON_UNESCAPED_UNICODE)?></span></td>
@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <th>案别</th>
-                        <td colspan="2"><span><?php echo 1==$meetingInf['category']?'建议':'提案'?></span></td>
+                        <td colspan="2" style="text-align: center;padding-left: 0;"><span><?php echo 1==$meetingInf['category']?'建议':'提案'?></span></td>
                         <th>案号</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['案号'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th>是否公开</th>
@@ -44,7 +44,7 @@
                     </tr>
                     <tr>
                         <th>性质类别</th>
-                        <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['性质类别'],JSON_UNESCAPED_UNICODE)?></span></td>
+                        <td colspan="2" style="text-align: center;padding-left: 0;"><span class="encoded-data"><?php echo json_encode($motion['性质类别'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th>性质</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['性质'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th><?php echo 1==$meetingInf['category']?'代表团':'属性'?></th>
@@ -53,7 +53,7 @@
                     <?php if(2==$meetingInf['category']):?>
                     <tr>
                         <th>委组</th>
-                        <td colspan="2"></td>
+                        <td colspan="2" style="text-align: center;padding-left: 0;"></td>
                         <th>提案分类</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['提案分类'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th>附议人数</th>
