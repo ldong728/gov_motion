@@ -71,7 +71,7 @@ class uploader
      * @param $base64
      * @return mixed
      */
-    public function upFile( $fileName ,  $base64=false )
+    public function upFile( $fileName = '',  $base64=false )
     {
         //处理base64上传
         if ( "base64" == $base64 ) {
@@ -81,8 +81,10 @@ class uploader
         }
 
         //处理普通上传
-        $this->fileName=$fileName;
+
         $file = $this->file = $_FILES[ $this->fileField ];
+        $currentName=''==$fileName?time().$file['name']:$fileName;
+        $this->fileName=$currentName;
 //        mylog(getArrayInf($file));
 //        mylog($file['tmp_name']);
         if ( !$file ) {

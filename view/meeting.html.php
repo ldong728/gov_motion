@@ -158,6 +158,7 @@
     }
     function reflashList(sOrderby,sPage,sOrder){
         var data={
+            category:category,
             meeting:meetingId,
             attr_order_by:sOrderby||orderby,
             attr_order:sOrder?'asc':'desc',

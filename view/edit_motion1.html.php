@@ -23,7 +23,7 @@
                 <p style="height: 40px;" ><?php echo 1==current($motion)['category']?'慈溪市人大建议议案办理单':'慈溪市政协提案办理单'?></p>
             </div>
             <div class="table-list ">
-                <table width="768" height="296" border="1" bordercolor="#f08300" cellpadding="0" cellspacing="0" >
+                <table width="769" height="296" border="1" bordercolor="#f08300" cellpadding="0" cellspacing="0" >
                     <tbody style="font-size: 14px">
                     <tr>
                         <th><p> 会议名称</p></th>

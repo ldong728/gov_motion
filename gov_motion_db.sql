@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-25 09:30:19
+-- Generation Time: 2017-03-27 10:26:48
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -55,7 +55,10 @@ INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `co
 (24, 2, 15, 6, '其他', 0, NULL, 6725, '2017-03-25 06:32:51'),
 (25, 2, 20, 9, '当年', 0, NULL, 6725, '2017-03-25 06:32:51'),
 (26, 2, 17, 10, '立案', 0, NULL, 6725, '2017-03-25 06:34:52'),
-(27, 2, 24, 15, NULL, 8, NULL, 6725, '2017-03-25 06:34:52');
+(27, 2, 24, 15, NULL, 8, NULL, 6725, '2017-03-25 06:34:52'),
+(28, 3, 21, 12, NULL, 0, 'files/47fa3d6560a1683d76005df2a566a308.doc', 6725, '2017-03-27 01:09:11'),
+(29, 3, 25, 16, '委员', 0, NULL, 6725, '2017-03-27 01:10:25'),
+(30, 3, 36, 3, '测试提案1', 0, NULL, 6725, '2017-03-27 01:10:25');
 
 -- --------------------------------------------------------
 
@@ -464,7 +467,8 @@ CREATE TABLE `motion_tbl` (
 --
 
 INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `duty`, `document`, `step`, `document_sha`, `upload_time`) VALUES
-(2, 1, 2, '测试提案', 2, NULL, 1, NULL, 4, NULL, '2017-03-25 06:32:06');
+(2, 1, 2, '测试提案', 2, NULL, 1, NULL, 4, NULL, '2017-03-25 06:32:06'),
+(3, 1, 2, '测试提案1', 2, NULL, 0, NULL, 2, NULL, '2017-03-27 01:09:01');
 
 -- --------------------------------------------------------
 
@@ -4188,7 +4192,8 @@ CREATE TABLE `zx_motion_tbl` (
 --
 
 INSERT INTO `zx_motion_tbl` (`zx_motion`, `motion`) VALUES
-(1, 2);
+(1, 2),
+(2, 3);
 
 -- --------------------------------------------------------
 
@@ -4452,7 +4457,7 @@ ALTER TABLE `zx_motion_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
@@ -4482,12 +4487,12 @@ ALTER TABLE `motion_attr_tbl`
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --
 ALTER TABLE `motion_handler_tbl`
-  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用表AUTO_INCREMENT `motion_tbl`
 --
 ALTER TABLE `motion_tbl`
-  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- 使用表AUTO_INCREMENT `motion_template_tbl`
 --
@@ -4547,7 +4552,7 @@ ALTER TABLE `user_unit_tbl`
 -- 使用表AUTO_INCREMENT `zx_motion_tbl`
 --
 ALTER TABLE `zx_motion_tbl`
-  MODIFY `zx_motion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `zx_motion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

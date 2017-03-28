@@ -84,7 +84,7 @@ function pdoQuery($tableName, $fields, $where, $append)
     }catch (PDOException $e) {
         $error = 'Unable to PDOquery to the database server.' . $e->getMessage();
         include 'error.html.php';
-        exit();
+        return null;
     }
 }
 

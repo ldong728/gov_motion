@@ -89,23 +89,40 @@ function getIndex($orderBy='default'){
     }
 
     if(in_array(5,$staff['steps'])&&1==count($staff['steps'])&&isset($motionId)){
+
         $mainHandleMotion=array();
-        $canMainHandleMotion=array();
         $handleMotion=array();
         $mainHandleListQuery=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$motionId,'attr_name'=>'主办单位','content_int'=>$staff['unit']),null);
         foreach ($mainHandleListQuery as $row) {
             $mainHandleMotion[]=$row['motion_id'];
         }
-        $canMainHandleQuery=pdoQuery('motion_handler_tbl',array('motion'),array('motion'=>$mainHandleMotion),' and reply_time is not null');
-        foreach ($canMainHandleQuery as $row) {
-            $canMainHandleMotion[]=$row['motion'];
-        }
+        //筛选待主办项目
+//        $canMainHandleQuery=pdoQuery('motion_handler_tbl',array('motion as motion_id'),array('motion'=>$mainHandleMotion),' and reply_time is not null');
+//        foreach ($canMainHandleQuery as $row) {
+//            $canMainHandleMotion[]=$row['motion_id'];
+//        }
         $handleListQuery=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$motionId,'attr_name'=>'协办单位','content_int'=>$staff['unit']),null);
         foreach ($handleListQuery as $row) {
             $handleMotion[]=$row['motion_id'];
         }
-        $motionId=array_merge($canMainHandleMotion,$handleMotion);
-        $list=pdoQuery('motion_for_index_view',null,array('motion_id'=>$motionId),' order by category asc limit 20');
+        if(count($mainHandleMotion)>0){
+            $mainHandleList=pdoQuery('motion_for_index_view',null,array('motion_id'=>$mainHandleMotion),null);
+            foreach ($mainHandleList as $row) {
+                $motionList[$row['category']]['main'][]=$row;
+            }
+        }
+        if(count($handleMotion)>0){
+            $handleList=pdoQuery('motion_for_index_view',null,array('motion_id'=>$handleMotion),null);
+            foreach ($handleList as $row) {
+                $motionList[$row['category']]['coop'][]=$row;
+            }
+
+        }
+
+
+
+//        $motionId=array_merge($mainHandleMotion,$handleMotion);
+//        $list=pdoQuery('motion_for_index_view',null,array('motion_id'=>$motionId),' order by category asc limit 20');
         $motionList=array();
         foreach ($list as $row) {
             $motionList[$row['category']][]=$row;
@@ -113,6 +130,8 @@ function getIndex($orderBy='default'){
 
 
         mylog(getArrayInf($motionList));
+        print('handle_index');
+        exit();
     }
 //    getMotionList(array());
     printView('index');
@@ -133,17 +152,19 @@ function getMeetingView($id){
  */
 function ajaxMotionList($data){
     $count=20;
-//    $category=isset($data['category'])?$data['category']:$_SESSION['staffLogin']['category'];
+    $category=isset($data['category'])?$data['category']:$_SESSION['staffLogin']['category'];
     $meeting=isset($data['meeting'])?$data['meeting']:$_SESSION['staffLogin']['meeting'];
     $attrOrderBy=isset($data['attr_order_by'])?$data['attr_order_by']:'当前环节';
     $attrOrder=isset($data['attr_order'])? $data['attr_order']:'desc';
+    $page=isset($data['page'])?$data['page']:0;
+
+
     $orderStr='order by content_int '.$attrOrder.',content '.$attrOrder;
     $sortFilter=array('meeting'=>$meeting,'attr_name'=>trim($attrOrderBy));
     if('当前环节'==$attrOrderBy){
         $orderStr='order by step '.$attrOrder;
         unset($sortFilter['attr_name']);
     }
-    $page=isset($data['page'])?$data['page']:0;
     $field=isset($data['field'])?$data['field']:array('案号','领衔人','案别','案由','性质类别','原文','当前环节','交办单位');
     $sort=array();
     $sortList=array();
@@ -153,6 +174,7 @@ function ajaxMotionList($data){
     foreach ($dutyQuery as $row) {
         $dutyList[$row['duty_id']]=$row;
     }
+
 //    mylog(getArrayInf($dutyList));
 
     $sortQuery=pdoQuery('motion_view',array('motion_id'),$sortFilter,'group by motion_id '.$orderStr.' limit '.$page*$count.','.$count);
@@ -502,4 +524,11 @@ function signOut($data){
     session_unset();
     mylog('unsetted:'.getArrayInf($_SESSION));
     echo ajaxBack('ok');
+}
+
+/**
+ * 使用phpEcxel解析excel文件
+ */
+function encodeExcel(){
+
 }

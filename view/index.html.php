@@ -53,16 +53,6 @@
                 </ul>
             </div>
         <?php endif ?>
-<!--		<div class="home-title"><p>政协提案待办</p></div>-->
-<!--		<div class="home-content">-->
-<!--			<ul class="content-list">-->
-<!--				<li><a href="#">请办理【交办】—— 关于森林公园建设成为慈溪市植物园的建设<span class="hour">2017-11-11 11.11</span></a></li>-->
-<!--				<li><a href="#">慈溪市第一届xxx<span class="hour">2017-11-11 11.11</span></a></li>-->
-<!--				<li><a href="#">慈溪市第一届xxx<span class="hour">2017-11-11 11.11</span></a></li>-->
-<!--				<li><a href="#">慈溪市第一届xxx<span class="hour">2017-11-11 11.11</span></a></li>-->
-<!--				<li><a href="#">慈溪市第一届xxx<span class="hour">2017-11-11 11.11</span></a></li>-->
-<!--			</ul>-->
-<!--		</div>-->
 
 	</div>
 

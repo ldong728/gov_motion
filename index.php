@@ -20,6 +20,13 @@ if(isset($_SESSION['staffLogin'])){
         getMeetingView($_GET['get_meeting']);
         exit;
     }
+    if(isset($_FILES)){
+        if(isset($_POST['file_type'])&&'excel'==$_POST['file_type']){
+            encodeExcel();
+        }
+
+        exit;
+    }
    getIndex();
 }else{
     if(isset($_POST['user'])&&isset($_POST['password'])&&isset($_POST['category'])){

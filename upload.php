@@ -30,10 +30,7 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
                 $inf['state']='fail';
                 echo json_encode($inf);
             }
-
-
         }
-
     }
 }
 if(isset($_FILES)&&isset($_GET['handler_attachment'])){
@@ -52,9 +49,8 @@ if(isset($_FILES)&&isset($_GET['handler_attachment'])){
             $inf['state']='fail';
             echo json_encode($inf);
         }
-
-
     }
 }
+//if(isset($_FILES)&&isset($_GET['handler_attachment']))
 
 //exit;
