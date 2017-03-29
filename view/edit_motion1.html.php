@@ -23,7 +23,7 @@
                 <p style="height: 40px;" ><?php echo 1==current($motion)['category']?'慈溪市人大建议议案办理单':'慈溪市政协提案办理单'?></p>
             </div>
             <div class="table-list ">
-                <table width="769" height="296" border="1" bordercolor="#f08300" cellpadding="0" cellspacing="0" >
+                <table width="768" height="296" border="0" bordercolor="#f08300" cellpadding="0" cellspacing="0" >
                     <tbody style="font-size: 14px">
                     <tr>
                         <th><p> 会议名称</p></th>
@@ -44,7 +44,7 @@
                     </tr>
                     <tr>
                         <th>性质类别</th>
-                        <td colspan="2" style="text-align: center;padding-left: 0;"><span class="encoded-data"><?php echo json_encode($motion['性质类别'],JSON_UNESCAPED_UNICODE)?></span></td>
+                        <td colspan="2" style="text-align: center;padding-left: 0;"><span class="encoded-data"><?php echo json_encode($motion['性质类别'.$meetingInf['category']],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th>性质</th>
                         <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['性质'],JSON_UNESCAPED_UNICODE)?></span></td>
                         <th><?php echo 1==$meetingInf['category']?'代表团':'属性'?></th>

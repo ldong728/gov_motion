@@ -128,7 +128,7 @@ jQuery.extend({
                 } catch(e)
 				{
                     status = "error";
-                    //console.mylog({a:e,b:s,c:xml});
+                    console.log({a:e,b:s,c:xml});
                     //alert(e.message);
                     jQuery.handleError(s, xml, status, e);
                 }

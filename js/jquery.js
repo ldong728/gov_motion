@@ -334,6 +334,7 @@ jQuery.extend({
 			// We use execScript on Internet Explorer
 			// We use an anonymous function so that context is window
 			// rather than jQuery in Firefox
+            //console.log(data);
 			( window.execScript || function( data ) {
 				window[ "eval" ].call( window, data );
 			} )( data );

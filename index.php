@@ -21,16 +21,16 @@ if(isset($_SESSION['staffLogin'])){
         exit;
     }
     if(isset($_FILES)){
+        mylog();
         if(isset($_POST['file_type'])&&'excel'==$_POST['file_type']){
             encodeExcel();
         }
 
-        exit;
     }
    getIndex();
 }else{
     if(isset($_POST['user'])&&isset($_POST['password'])&&isset($_POST['category'])){
-        mylog($_POST['category']);
+//        mylog($_POST['category']);
         $category=$_POST['category'];
         userAuth($_POST['user'],$_POST['password'],$category);
         unset($_POST['password']);

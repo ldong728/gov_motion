@@ -198,8 +198,6 @@ function ajaxMotionList($data){
         $sortList[$row['motion_id']]['案由']=$row['motion_name'];
         $sortList[$row['motion_id']]['案别']=1==$row['category']?'建议':'提案';
         $sortList[$row['motion_id']]['当前环节']=$row['step_name'];
-//        $sortList[$row['motion_id']]['']
-//        $sortList[$row['motion_id']]['']
     }
 //    mylog(getArrayInf($sortList));
     echo ajaxBack(array('list'=>$sortList,'sort'=>$sort));
@@ -335,7 +333,7 @@ function editMotion($data){
                 }else{
                     $motion[$row['attr_name']]=$values;
                 }
-                mylog($values['content']);
+//                mylog($values['content']);
 
             }else{
                 $motion[$row['attr_name']]=$values;
@@ -531,4 +529,5 @@ function signOut($data){
  */
 function encodeExcel(){
 
+    exit;
 }

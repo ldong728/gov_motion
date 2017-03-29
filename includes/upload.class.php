@@ -83,7 +83,7 @@ class uploader
         //处理普通上传
 
         $file = $this->file = $_FILES[ $this->fileField ];
-        $currentName=''==$fileName?time().$file['name']:$fileName;
+        $currentName=''==$fileName?time().$this->getFileName():$fileName;
         $this->fileName=$currentName;
 //        mylog(getArrayInf($file));
 //        mylog($file['tmp_name']);
@@ -125,7 +125,10 @@ class uploader
         $this->fullName = $folder . $this->getName();
 
         if ( $this->stateInfo == $this->stateMap[ 0 ] ) {
+            mylog($file[ "tmp_name" ]);
+            mylog($this->fullName);
             if ( !move_uploaded_file( $file[ "tmp_name" ] ,$this->fullName ) ) {
+                mylog('save error');
                 $this->stateInfo = $this->getStateInfo( "MOVE" );
                 return;
             }
@@ -234,6 +237,12 @@ class uploader
     private function getFileExt()
     {
         return strtolower( strrchr( $this->file[ "name" ] , '.' ) );
+    }
+    private function getFileName()
+    {
+        $sub=explode('.',$this->file['name']);
+//        mylog(getArrayInf($sub));
+        return $sub[0];
     }
 
     private function getFolder()
