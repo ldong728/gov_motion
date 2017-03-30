@@ -205,6 +205,7 @@
     $('#handler-attachment').change(function(){
         var _=$(this);
         var handlerId= _.parent().attr('id').slice(3);
+        if(!handlerId)return;//防范多次触发change事件
         var url='upload.php?handler_attachment='+handlerId;
         fileElementId= _.attr('id')
         var uploadConfig= {
@@ -229,7 +230,8 @@
     });
     $('.close-popup').click(function(){
        closePopUp($('.m-popup'));
-        closePopUp($('.mask'));
+        $('.mask').css('display','none');
+//        window.location.reload(true);
 //		$('.mask').css('display','none');
     });
 

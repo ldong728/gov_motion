@@ -272,6 +272,8 @@ function editMotion($data){
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
     $attrFilter=array('motion_id'=>$id);
     $meetingInf=pdoQuery('motion_inf_view',null,array('motion_id'=>$id),' limit 1')->fetch();
+
+    //处理政协提案有不同交办单位的情况
     $step4CanEdit=true;
     if(4==$meetingInf['step']&&2==$meetingInf['category']){
         $staffUnit=$_SESSION['staffLogin']['unit'];
@@ -280,12 +282,15 @@ function editMotion($data){
             $step4CanEdit=false;
         }
     }
+
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
+
     foreach ($motionQuery as $row) {
-//        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;//提议案所有的属性取出后，剔除高于当前步骤，并且没有值的属性
+        //提议案所有的属性取出后，剔除高于当前步骤，并且没有值的属性
+//        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;
         $values = $row;
         $optionArray = json_decode($row['option'], true);
-        $values['content']='string'==$row['value_type']?$row['content']:$row['content_int'];
+        $values['content']='string'==$row['value_type']||'attachment'==$row['value_type']?$row['content']:$row['content_int'];
         if(!$values['content'])$values['content']='';
         if(($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])&&$step4CanEdit){//如操作员流程权限与当前权限吻合，则可修改当前流程选项
             $values['edit']=true;
@@ -301,12 +306,17 @@ function editMotion($data){
                 switch($row['target']){
                     case 'duty':
                         $values['option']=array();
-                        $userInf=getUserList();
-                        foreach ($userInf['list'] as $k=>$v) {
-                            $values['option'][$k]=$v;
-                        }
-                        $values['class']=$userInf['class'];
+
+
                         break;
+                        //下拉框的情况
+//                        $values['option']=array();
+//                        $userInf=getUserList();
+//                        foreach ($userInf['list'] as $k=>$v) {
+//                            $values['option'][$k]=$v;
+//                        }
+//                        $values['class']=$userInf['class'];
+//                        break;
                     case 'unit';
                         $values['option']=array();
                         $unitInf=getUnitList('all',$row['step']+1);
@@ -447,7 +457,8 @@ function updateAttr($data){
             if(4==$motion['step']){
                 $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),null);
                 foreach ($handlerList as $row) {
-                    pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int']));
+                    pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion'=>$motionId));
+                    pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int'],'status'=>1),'update');
                 }
             }
             if(1==$motion['step']||2==$motion['step']){//将“案由”和“领衔人”属性与motion表中的motion_name,duty字段同步

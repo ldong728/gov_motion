@@ -94,3 +94,157 @@
 2017.03.29.10:28:52:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
 2017.03.29.10:28:52:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
 2017.03.29.10:28:52:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 86}
+2017.03.30.02:00:36:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: }
+2017.03.30.02:08:28:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.02:08:28:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 6}
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpA8EE.tmp
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 50}
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpA8ED.tmp
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 51}
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpA8EF.tmp
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 52}
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpA8EC.tmp
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.02:08:40:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 53}
+2017.03.30.02:15:24:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.02:15:24:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.02:23:00:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.02:23:00:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.02:39:10:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.02:39:10:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.02:40:43:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.02:40:43:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:02:10:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:02:10:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:03:42:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:03:42:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:03:46:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:03:46:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:39:57:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:39:57:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:49:53:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:49:53:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:56:11:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:56:11:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:56:55:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:56:55:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:57:36:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:57:36:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:58:01:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:58:01:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.03:59:29:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.03:59:29:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.04:02:12:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.04:02:12:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.04:12:38:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.04:12:38:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.04:12:53:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php62C6.tmp
+2017.03.30.04:12:53:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:12:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.04:12:53:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 54}
+2017.03.30.04:12:53:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php62B5.tmp
+2017.03.30.04:12:53:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:12:53:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.04:12:53:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 55}
+2017.03.30.04:13:05:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php91F6.tmp
+2017.03.30.04:13:05:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:13:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.04:13:05:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 56}
+2017.03.30.04:13:05:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php91F5.tmp
+2017.03.30.04:13:05:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:13:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.04:13:05:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 57}
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpADBD.tmp
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 58}
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpADBC.tmp
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725",attr_id="57" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725",attr_id="57"
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 0}
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpADBE.tmp
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.04:13:12:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 59}
+2017.03.30.04:13:27:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.04:13:27:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.04:13:32:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpFAC6.tmp
+2017.03.30.04:13:32:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:13:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725",attr_id="57" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725",attr_id="57"
+2017.03.30.04:13:32:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 0}
+2017.03.30.04:13:38:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php1091.tmp
+2017.03.30.04:13:38:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/bab0e682d81beef5d4f89adff98eda3c.txt
+2017.03.30.04:13:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725",attr_id="57" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725",attr_id="57"
+2017.03.30.04:13:38:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: html.txt,md5: bab0e682d81beef5d4f89adff98eda3c,name: bab0e682d81beef5d4f89adff98eda3c.txt,url: files/bab0e682d81beef5d4f89adff98eda3c.txt,urlInDb: files/bab0e682d81beef5d4f89adff98eda3c.txt,size: 28359,type: .txt,cover: ,state: SUCCESS,attrId: 57}
+2017.03.30.04:13:44:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php292B.tmp
+2017.03.30.04:13:44:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/bab0e682d81beef5d4f89adff98eda3c.txt
+2017.03.30.04:13:44:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725",attr_id="57" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725",attr_id="57"
+2017.03.30.04:13:44:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: html.txt,md5: bab0e682d81beef5d4f89adff98eda3c,name: bab0e682d81beef5d4f89adff98eda3c.txt,url: files/bab0e682d81beef5d4f89adff98eda3c.txt,urlInDb: files/bab0e682d81beef5d4f89adff98eda3c.txt,size: 28359,type: .txt,cover: ,state: SUCCESS,attrId: 0}
+2017.03.30.04:13:44:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php292C.tmp
+2017.03.30.04:13:44:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/bab0e682d81beef5d4f89adff98eda3c.txt
+2017.03.30.04:13:44:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="undefined",attr_template="undefined",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="undefined",attr_template="undefined",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725"
+2017.03.30.04:13:44:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: html.txt,md5: bab0e682d81beef5d4f89adff98eda3c,name: bab0e682d81beef5d4f89adff98eda3c.txt,url: files/bab0e682d81beef5d4f89adff98eda3c.txt,urlInDb: files/bab0e682d81beef5d4f89adff98eda3c.txt,size: 28359,type: .txt,cover: ,state: SUCCESS,attrId: 60}
+2017.03.30.04:19:18:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.04:19:18:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.04:20:48:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.04:20:48:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.04:20:54:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpB802.tmp
+2017.03.30.04:20:54:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:20:54:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725",attr_id="57" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725",attr_id="57"
+2017.03.30.04:20:54:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 57}
+2017.03.30.04:21:05:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpE398.tmp
+2017.03.30.04:21:05:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/bab0e682d81beef5d4f89adff98eda3c.txt
+2017.03.30.04:21:05:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725",attr_id="57" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725",attr_id="57"
+2017.03.30.04:21:05:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: html.txt,md5: bab0e682d81beef5d4f89adff98eda3c,name: bab0e682d81beef5d4f89adff98eda3c.txt,url: files/bab0e682d81beef5d4f89adff98eda3c.txt,urlInDb: files/bab0e682d81beef5d4f89adff98eda3c.txt,size: 28359,type: .txt,cover: ,state: SUCCESS,attrId: 57}
+2017.03.30.04:21:18:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php15C4.tmp
+2017.03.30.04:21:18:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/bab0e682d81beef5d4f89adff98eda3c.txt
+2017.03.30.04:21:18:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="6",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725" on DUPLICATE KEY update motion="6",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725"
+2017.03.30.04:21:18:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: html.txt,md5: bab0e682d81beef5d4f89adff98eda3c,name: bab0e682d81beef5d4f89adff98eda3c.txt,url: files/bab0e682d81beef5d4f89adff98eda3c.txt,urlInDb: files/bab0e682d81beef5d4f89adff98eda3c.txt,size: 28359,type: .txt,cover: ,state: SUCCESS,attrId: 61}
+2017.03.30.04:21:24:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php2CE7.tmp
+2017.03.30.04:21:24:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:21:24:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="6",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725" on DUPLICATE KEY update motion="6",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725"
+2017.03.30.04:21:24:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 62}
+2017.03.30.04:23:06:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.04:23:06:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 6}
+2017.03.30.04:23:17:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpE68F.tmp
+2017.03.30.04:23:17:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/bab0e682d81beef5d4f89adff98eda3c.txt
+2017.03.30.04:23:17:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="html.txt",attachment="files/bab0e682d81beef5d4f89adff98eda3c.txt",staff="6725"
+2017.03.30.04:23:17:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: html.txt,md5: bab0e682d81beef5d4f89adff98eda3c,name: bab0e682d81beef5d4f89adff98eda3c.txt,url: files/bab0e682d81beef5d4f89adff98eda3c.txt,urlInDb: files/bab0e682d81beef5d4f89adff98eda3c.txt,size: 28359,type: .txt,cover: ,state: SUCCESS,attrId: 63}
+2017.03.30.04:23:34:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php2ACC.tmp
+2017.03.30.04:23:34:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/efc509c180a1f9e0f14593a9fe1e2f6a.txt
+2017.03.30.04:23:34:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725",attr_id="63" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="css.txt",attachment="files/efc509c180a1f9e0f14593a9fe1e2f6a.txt",staff="6725",attr_id="63"
+2017.03.30.04:23:34:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: css.txt,md5: efc509c180a1f9e0f14593a9fe1e2f6a,name: efc509c180a1f9e0f14593a9fe1e2f6a.txt,url: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,urlInDb: files/efc509c180a1f9e0f14593a9fe1e2f6a.txt,size: 4591,type: .txt,cover: ,state: SUCCESS,attrId: 63}
+2017.03.30.04:23:47:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php5ECE.tmp
+2017.03.30.04:23:47:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/140c808a15e877b274d1cff0fa14c01d.docx
+2017.03.30.04:23:47:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="7",motion_attr="21",attr_template="12",content="分角色操作流程1.1.docx",attachment="files/140c808a15e877b274d1cff0fa14c01d.docx",staff="6725",attr_id="63" on DUPLICATE KEY update motion="7",motion_attr="21",attr_template="12",content="分角色操作流程1.1.docx",attachment="files/140c808a15e877b274d1cff0fa14c01d.docx",staff="6725",attr_id="63"
+2017.03.30.04:23:47:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: 分角色操作流程1.1.docx,md5: 140c808a15e877b274d1cff0fa14c01d,name: 140c808a15e877b274d1cff0fa14c01d.docx,url: files/140c808a15e877b274d1cff0fa14c01d.docx,urlInDb: files/140c808a15e877b274d1cff0fa14c01d.docx,size: 14788,type: .docx,cover: ,state: SUCCESS,attrId: 63}
+2017.03.30.04:41:25:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.04:41:25:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.05:03:33:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpC3B4.tmp
+2017.03.30.05:03:33:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/140c808a15e877b274d1cff0fa14c01d.docx
+2017.03.30.05:03:33:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="6",motion_attr="21",attr_template="12",content="分角色操作流程1.1.docx",attachment="files/140c808a15e877b274d1cff0fa14c01d.docx",staff="6725" on DUPLICATE KEY update motion="6",motion_attr="21",attr_template="12",content="分角色操作流程1.1.docx",attachment="files/140c808a15e877b274d1cff0fa14c01d.docx",staff="6725"
+2017.03.30.05:03:33:D:\xampp\htdocs\gov_motion\upload.php28:{originalName: 分角色操作流程1.1.docx,md5: 140c808a15e877b274d1cff0fa14c01d,name: 140c808a15e877b274d1cff0fa14c01d.docx,url: files/140c808a15e877b274d1cff0fa14c01d.docx,urlInDb: files/140c808a15e877b274d1cff0fa14c01d.docx,size: 14788,type: .docx,cover: ,state: SUCCESS,attrId: 64}
+2017.03.30.05:06:04:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.05:06:04:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 6}
+2017.03.30.05:06:11:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php2DCF.tmp
+2017.03.30.05:06:11:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/cca68e3d6c6abfc78773573ab982ac65.docx
+2017.03.30.05:06:11:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="6",motion_attr="21",attr_template="12",content="流程.docx",attachment="files/cca68e3d6c6abfc78773573ab982ac65.docx",staff="6725" on DUPLICATE KEY update motion="6",motion_attr="21",attr_template="12",content="流程.docx",attachment="files/cca68e3d6c6abfc78773573ab982ac65.docx",staff="6725"
+2017.03.30.05:06:11:D:\xampp\htdocs\gov_motion\upload.php28:{originalName: 流程.docx,md5: cca68e3d6c6abfc78773573ab982ac65,name: cca68e3d6c6abfc78773573ab982ac65.docx,url: files/cca68e3d6c6abfc78773573ab982ac65.docx,urlInDb: files/cca68e3d6c6abfc78773573ab982ac65.docx,size: 12099,type: .docx,cover: ,state: SUCCESS,attrId: 65}
+2017.03.30.05:07:13:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.05:07:13:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 6}
+2017.03.30.05:07:38:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php8448.tmp
+2017.03.30.05:07:38:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc
+2017.03.30.05:07:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="6",motion_attr="21",attr_template="12",content="D1702-80电控规格书-20161203.doc",attachment="files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc",staff="6725" on DUPLICATE KEY update motion="6",motion_attr="21",attr_template="12",content="D1702-80电控规格书-20161203.doc",attachment="files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc",staff="6725"
+2017.03.30.05:07:38:D:\xampp\htdocs\gov_motion\upload.php28:{originalName: D1702-80电控规格书-20161203.doc,md5: d75fbe1c1b00f90d1676b737c5fe5ee8,name: d75fbe1c1b00f90d1676b737c5fe5ee8.doc,url: files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc,urlInDb: files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc,size: 71680,type: .doc,cover: ,state: SUCCESS,attrId: 66}
+2017.03.30.09:27:55:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.03.30.09:27:55:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 7}
+2017.03.30.09:28:50:D:\xampp\htdocs\gov_motion\functions.php534:unsetted:{}
+2017.03.30.09:29:10:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: }
+2017.03.30.09:34:05:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: }

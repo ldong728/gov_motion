@@ -115,6 +115,7 @@
 		var sHeight = (bHeight-580)/2;
 		$('.suggest').css('left',sWidth);
 		$('.suggest').css('top',sHeight);
+			
 	}
 	
 </script>

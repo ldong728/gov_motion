@@ -100,8 +100,8 @@ $(document).on('click','.pre-delete',function(){
 $(document).on('click','.choose-file',function(){
     if(!antiDouble){
         antiDouble=true;
-        console.log($('.doc-file'));
-        console.log($('.doc-file').length);
+        //console.log($('.doc-file'));
+        //console.log($('.doc-file').length);
         $(this).next('.doc-file').click();
         setTimeout(function(){
             antiDouble=false;
@@ -110,14 +110,12 @@ $(document).on('click','.choose-file',function(){
 
 });
 $(document).on('change','.doc-file',function(){
-
-    console.log('upload');
+    console.log('preUpload');
     var _=$(this);
     var parent=_.parent();
-    //alert(parent.data('attr'));
-    //console.log(parent.get(0));
-    console.log(parent);
     var motionAttr=parent.data('motionattr');
+    if(!motionAttr)return;//
+    console.log('upload');
     var attrTemplate=parent.data('attrtemplate');
     var attrId=parent.data('attr');
     var attrType=parent.data('type');
@@ -135,6 +133,7 @@ $(document).on('change','.doc-file',function(){
                     attrId= v.attrId;
                     parent.attr('data-attr', attrId);
                     $('.attachment-file').attr('href',v.url);
+                    $('.attachment-file').text(v.originalName);
 
                     antiDouble=false;
                 }else{
@@ -179,12 +178,14 @@ function decodeDate(element) {
             parent.attr('data-attrtemplate',data.attr_template);
             parent.attr('data-multiple',data.multiple);
             if (data.option) {
+                //同一属性有多值的情况
                 if (1 == data.multiple && data.multiple_value && data.multiple_value.length > 0) {
                     $.each(data.multiple_value, function(id, value){
                         content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
                     });
                 }
                 var isValue= data.target?'':'attr-value';
+
                 content+='<select class="'+ data.class+' '+ isValue+'">';
                 $.each(data.option,function(k,v){
                     var selected=v==data.content?'selected="selected"':'';
@@ -192,9 +193,10 @@ function decodeDate(element) {
                 });
                 content+='</select>'
             } else if(data.has_attachment>0){
-                var attachmentName=data.attachment?data.attachment.slice(16):'';
-                content+='<button class="button choose-file">选择附件</button>'+
-                '<input type="file" class="doc-file" id="file'+data.motion_attr+'" name="file'+data.motion_attr+'" style="display: none">';
+                var attachmentName=data.attachment?data.content:'';
+                content+=
+                    '<button class="button choose-file">选择附件</button>'+
+                '<input type="file" class="doc-file" id="file'+data.motion_attr+'" name="file'+data.motion_attr+'" style="display:none">';
                 content+='<a class="attachment-file" href="#" data-href="'+data.attachment+'">'+attachmentName+'</a>'
             }else if('time'==data.value_type){
                 content+='<input type="hidden" class="attr-value" value="1"><span class="time-display"></span>';
@@ -276,5 +278,8 @@ function setTime(){
     return sTime;
 }
 function closePopUp(element){
-    element.css('display','none');
+    //element.remove();
+    //element.css('display','none');
+    element.empty();
+    $('.doc-file').remove();
 }

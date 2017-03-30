@@ -23,7 +23,6 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
                     if($_GET['a']>0){
                         $value['attr_id']=$_GET['a'];
                     }
-
                     $id=pdoInsert('attr_tbl',$value,'update');
                     $inf['attrId']=$id;
                     mylog(getArrayInf($inf));
@@ -45,7 +44,7 @@ if(isset($_FILES)&&isset($_GET['handler_attachment'])){
         $fileName=md5_file($_FILES[$k]['tmp_name']);
         $uploader->upFile($fileName);
         $inf=$uploader->getFileInfo();
-        $value=array('attachment'=>$inf['url']);
+        $value=array('attachment'=>$inf['url'],'attachment_name'=>addslashes($inf['originalName']));
         try{
             $handlerId=$_GET['handler_attachment'];
             pdoUpdate('motion_handler_tbl',$value,array('motion_handler_id'=>$handlerId,'motion'=>$_SESSION['staffLogin']['currentMotion']),' limit 1');

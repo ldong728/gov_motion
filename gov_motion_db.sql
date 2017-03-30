@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-29 10:31:33
+-- Generation Time: 2017-03-30 09:51:11
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -44,7 +44,9 @@ CREATE TABLE `attr_tbl` (
 
 INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `content`, `content_int`, `attachment`, `staff`, `update_time`) VALUES
 (48, 6, 25, 16, '委员', 0, NULL, 6725, '2017-03-29 06:13:09'),
-(49, 6, 36, 3, '附件测试', 0, NULL, 6725, '2017-03-29 06:13:09');
+(49, 6, 36, 3, '附件测试', 0, NULL, 6725, '2017-03-29 06:13:09'),
+(63, 7, 21, 12, '分角色操作流程1.1.docx', 0, 'files/140c808a15e877b274d1cff0fa14c01d.docx', 6725, '2017-03-30 02:23:17'),
+(66, 6, 21, 12, 'D1702-80电控规格书-20161203.doc', 0, 'files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc', 6725, '2017-03-30 03:07:38');
 
 -- --------------------------------------------------------
 
@@ -194,6 +196,28 @@ CREATE TABLE `duty_view` (
 ,`unit` int(11)
 ,`user_group_name` varchar(20)
 );
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `handle_status_tbl`
+--
+
+CREATE TABLE `handle_status_tbl` (
+  `handle_status_id` int(11) NOT NULL,
+  `status_name` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `handle_status_tbl`
+--
+
+INSERT INTO `handle_status_tbl` (`handle_status_id`, `status_name`) VALUES
+(1, '待办'),
+(2, '异常'),
+(3, '重办'),
+(7, '作废'),
+(9, '完成');
 
 -- --------------------------------------------------------
 
@@ -382,7 +406,9 @@ CREATE TABLE `motion_handler_tbl` (
   `contact_name` varchar(15) DEFAULT NULL,
   `contact_phone` varchar(20) DEFAULT NULL,
   `phone` varchar(20) DEFAULT NULL,
-  `attachment` varchar(500) DEFAULT NULL
+  `attachment` varchar(500) DEFAULT NULL,
+  `attachment_name` varchar(100) DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -4343,6 +4369,12 @@ ALTER TABLE `duty_tbl`
   ADD PRIMARY KEY (`duty_id`);
 
 --
+-- Indexes for table `handle_status_tbl`
+--
+ALTER TABLE `handle_status_tbl`
+  ADD PRIMARY KEY (`handle_status_id`);
+
+--
 -- Indexes for table `meeting_tbl`
 --
 ALTER TABLE `meeting_tbl`
@@ -4359,7 +4391,8 @@ ALTER TABLE `motion_attr_tbl`
 -- Indexes for table `motion_handler_tbl`
 --
 ALTER TABLE `motion_handler_tbl`
-  ADD PRIMARY KEY (`motion_handler_id`);
+  ADD PRIMARY KEY (`motion_handler_id`),
+  ADD UNIQUE KEY `motion` (`motion`,`unit`);
 
 --
 -- Indexes for table `motion_tbl`
@@ -4458,7 +4491,7 @@ ALTER TABLE `zx_motion_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
@@ -4475,6 +4508,11 @@ ALTER TABLE `category_tbl`
 ALTER TABLE `duty_tbl`
   MODIFY `duty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- 使用表AUTO_INCREMENT `handle_status_tbl`
+--
+ALTER TABLE `handle_status_tbl`
+  MODIFY `handle_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+--
 -- 使用表AUTO_INCREMENT `meeting_tbl`
 --
 ALTER TABLE `meeting_tbl`
@@ -4488,7 +4526,7 @@ ALTER TABLE `motion_attr_tbl`
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --
 ALTER TABLE `motion_handler_tbl`
-  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- 使用表AUTO_INCREMENT `motion_tbl`
 --
