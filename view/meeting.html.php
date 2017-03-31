@@ -59,7 +59,7 @@
                         <?php if(1==$meetingInf['category']):?>
                         <tr>
                             <th width="3%" >序号</th>
-                            <th width="2%"><input type="checkbox"></th>
+                            <th width="2%"><input type="checkbox" class="select-all"></th>
                             <th width="4%" class="order-by-attr"> 案号</th>
                             <th width="9%" class="order-by-attr">领衔人</th>
                             <th width="8%" >案别</th>
@@ -72,8 +72,8 @@
                         <?php else: ?>
                             <tr>
                                 <th width="5%" >序号</th>
-                                <th width="4%"><input type="checkbox"></th>
-                                <th width="4%">编号</th>
+                                <th width="4%"><input type="checkbox" class="select-all"></th>
+                                <th width="4%" class="order-by-attr">编号</th>
                                 <th width="4%" class="order-by-attr"> 案号</th>
                                 <th width="9%" class="order-by-attr">提案人</th>
                                 <th width="28%" class="order-by-attr">案由</th>
@@ -107,6 +107,7 @@
     <div class="m-popup clearfix" style="display: none" >
 
     </div>        <!-- 弹出层-->
+
 </div>
 <div class="m-footer m-f-magin">
     <div class="container">
@@ -264,7 +265,7 @@
 <script type="text/javascript">
     var meetingId=<?php echo $_GET['get_meeting']?>;
     var category=<?php echo $meetingInf['category']?>;
-    var orderby='案号';
+    var orderby='编号';
     var order=true;
     var page=0;
     var filter={};
@@ -275,7 +276,7 @@
         mPopup();
     });
     $('.order-by-attr').click(function(){
-        var newOrderby=($(this).text())
+        var newOrderby=($(this).text());
 
        if(orderby==newOrderby){
            order=!order;
@@ -283,7 +284,7 @@
            order=true;
            orderby=newOrderby
        }
-        var orderText=order?'(升序)':'(降序)'
+        var orderText=order?'(升序)':'(降序)';
         reflashList(orderby,page,order);
         $('.order-disply').text(newOrderby+orderText);
     });
@@ -297,10 +298,15 @@
             mPopup();
         })
     });
+    $('.select-all').click(function(){
+       var state=$(this).prop('checked');
+        $('.check').prop('checked',state);
+    });
     $(document).on('click','.motion-select',function(){
         var maskHeight = $(document.body).height();
         var id=$(this).attr('id');
         ajaxPost('editMotion',{id:id},function(data){
+//            console.log(data);
 //            alert(data);
             $('.m-popup').html(data);
             $('.m-popup').show();
@@ -325,31 +331,55 @@
             meeting:meetingId,
             attr_order_by:sOrderby||orderby,
             attr_order:sOrder?'asc':'desc',
-            page:sPage||page
+            page:sPage||page,
+            filter:filter
         };
-        ajaxPost('ajaxMotionList',data,function(back){
-            var value=backHandle(back);
-            $('.list-content').remove();
-            var count=1;
-            var c=value.list;
-            $.each(value.sort,function(k,v){
-                var listContent='<tr class="list-content">'+
-                    '<td>'+(count++)+
-                    '<td><input type="checkbox" class="check"></td>'+
-                    '<td>'+ c[v]['案号']+'</td>'+
-                    '<td>'+ c[v]['领衔人']+'</td>'+
-                    '<td>'+ c[v]['案别']+'</td>'+
-                    '<td class="motion-select" id="'+v+'">'+ c[v]['案由']+'</td>'+
-                    '<td>'+ c[v]['性质类别'+category]+'</td>'+
-                    '<td><a href="'+ (c[v]['原文']||'#')+'">附件</a></td>'+
-                    '<td>'+ c[v]['当前环节']+'</td>'+
-                    '<td>'+ c[v]['交办单位']+'</td>'+
-                    '</tr>';
-                $('.list-table').append(listContent);
 
-            });
+            ajaxPost('ajaxMotionList',data,function(back){
+                var value=backHandle(back);
+                $('.list-content').remove();
+                var count=1;
+                var c=value.list;
+                if(1==data.category) {
+                    $.each(value.sort, function (k, v) {
+                        var listContent = '<tr class="list-content">' +
+                            '<td>' + (count++) +
+                            '<td><input type="checkbox" class="check"></td>' +
+                            '<td>' + c[v]['案号'] + '</td>' +
+                            '<td>' + c[v]['领衔人'] + '</td>' +
+                            '<td>' + c[v]['案别'] + '</td>' +
+                            '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
+                            '<td>' + c[v]['性质类别' + category] + '</td>' +
+                            '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
+                            '<td>' + c[v]['当前环节'] + '</td>' +
+                            '<td>' + c[v]['交办单位'] + '</td>' +
+                            '</tr>';
+                        $('.list-table').append(listContent);
 
-        })
+                    });
+                }else{
+                    $.each(value.sort, function (k, v) {
+                        var listContent = '<tr class="list-content">' +
+                            '<td>' + (count++) +
+                            '<td><input type="checkbox" class="check"></td>' +
+                            '<td>' + c[v]['编号'] + '</td>' +
+                            '<td>' + c[v]['案号'] + '</td>' +
+                            '<td>' + c[v]['提案人'] + '</td>' +
+//                            '<td>' + c[v]['案别'] + '</td>' +
+                            '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
+                            '<td>' + c[v]['性质类别' + category] + '</td>' +
+                            '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
+                            '<td>' + c[v]['当前环节'] + '</td>' +
+                            '<td>' + c[v]['交办单位'] + '</td>' +
+                            '</tr>';
+                        $('.list-table').append(listContent);
+
+                    });
+                }
+
+            })
+
+
     }
     function mPopup(){
         var bWidth = document.documentElement.clientWidth;

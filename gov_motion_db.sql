@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-03-31 10:33:35
+-- Generation Time: 2017-03-31 17:36:49
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -341,7 +341,6 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (14, 2, 5, '', 'index', 'duty', 0, 1, 0, 0, 1),
 (15, 2, 6, '其他', 'string', NULL, 0, 2, 0, 0, 0),
 (16, 2, 8, '大会期间', 'string', NULL, 0, 2, 0, 0, 0),
-(17, 2, 10, '立案', 'string', NULL, 0, 3, 0, 0, 0),
 (18, 2, 11, '', 'string', NULL, 0, 3, 0, 0, 0),
 (19, 2, 7, '', 'time', NULL, 0, 2, 0, 0, 0),
 (20, 2, 9, '当年', 'string', NULL, 0, 2, 0, 0, 0),
@@ -407,7 +406,8 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (81, 1, 39, '', 'string', NULL, 0, 6, 0, 0, 0),
 (82, 1, 40, '', 'attachment', NULL, 0, 6, 0, 1, 0),
 (83, 1, 41, '工业经济', 'string', NULL, 0, 1, 0, 0, 0),
-(84, 2, 43, '', 'index', 'duty', 60, 1, 0, 0, 1);
+(84, 2, 43, '', 'index', 'duty', 60, 1, 0, 0, 1),
+(85, 2, 42, '立案', 'string', NULL, 0, 0, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -527,6 +527,19 @@ CREATE TABLE `motion_inf_view` (
 ,`start_time` int(11)
 ,`end_time` int(11)
 ,`deadline_time` int(11)
+);
+
+-- --------------------------------------------------------
+
+--
+-- 替换视图以便查看 `motion_step_inf_view`
+--
+CREATE TABLE `motion_step_inf_view` (
+`motion_id` int(11)
+,`step` int(11)
+,`step_name` varchar(50)
+,`staff_name` varchar(30)
+,`update_time` timestamp
 );
 
 -- --------------------------------------------------------
@@ -4364,6 +4377,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 -- --------------------------------------------------------
 
 --
+-- 视图结构 `motion_step_inf_view`
+--
+DROP TABLE IF EXISTS `motion_step_inf_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `motion_step_inf_view`  AS  select `a`.`motion` AS `motion_id`,`b`.`step` AS `step`,`c`.`step_name` AS `step_name`,`d`.`full_name` AS `staff_name`,`a`.`update_time` AS `update_time` from (((`attr_tbl` `a` left join `motion_attr_tbl` `b` on((`a`.`motion_attr` = `b`.`motion_attr_id`))) left join `step_tbl` `c` on((`b`.`step` = `c`.`step_id`))) left join `staff_tbl` `d` on((`a`.`staff` = `d`.`staff_id`))) where (`b`.`step` is not null) group by `a`.`motion`,`b`.`step` ;
+
+-- --------------------------------------------------------
+
+--
 -- 视图结构 `motion_view`
 --
 DROP TABLE IF EXISTS `motion_view`;
@@ -4606,7 +4628,7 @@ ALTER TABLE `meeting_tbl`
 -- 使用表AUTO_INCREMENT `motion_attr_tbl`
 --
 ALTER TABLE `motion_attr_tbl`
-  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 --
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --

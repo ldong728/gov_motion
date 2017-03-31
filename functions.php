@@ -154,23 +154,31 @@ function ajaxMotionList($data){
     $count=20;
     $category=isset($data['category'])?$data['category']:$_SESSION['staffLogin']['category'];
     $meeting=isset($data['meeting'])?$data['meeting']:$_SESSION['staffLogin']['meeting'];
-    $attrOrderBy=isset($data['attr_order_by'])?$data['attr_order_by']:'当前环节';
+    $attrOrderBy=isset($data['attr_order_by'])?$data['attr_order_by']:'编号';
     $attrOrder=isset($data['attr_order'])? $data['attr_order']:'desc';
     $page=isset($data['page'])?$data['page']:0;
-
-
+    $filter=isset($data['filter'])?$data['filter']:null;
     $orderStr='order by content_int '.$attrOrder.',content '.$attrOrder;
     $sortFilter=array('meeting'=>$meeting,'attr_name'=>trim($attrOrderBy));
     if('当前环节'==$attrOrderBy){
         $orderStr='order by step '.$attrOrder;
         unset($sortFilter['attr_name']);
     }
+    if('编号'==$attrOrderBy){
+        $orderStr='order by zx_motion '.$attrOrder;
+        unset($sortFilter['attr_name']);
+    }
     $field=isset($data['field'])?$data['field']:array('案号','领衔人','提案人','案别','案由','性质类别1','性质类别2','原文','当前环节','交办单位');
+    //$sort用于储存顺序
     $sort=array();
+    //$sortList用于储存返回的motion数组
     $sortList=array();
+
     $motionfilter=array();
     $dutyList=array();
-    $dutyQuery=pdoQuery('duty_view',array('duty_id','user_name','user_unit_name','user_group_name'),array('meeting'=>$meeting),null);//获取代表委员数据，用以替换数据中的索引值
+
+    //获取代表委员数据，用以替换数据中的索引值
+    $dutyQuery=pdoQuery('duty_view',array('duty_id','user_name','user_unit_name','user_group_name'),array('meeting'=>$meeting),null);
     foreach ($dutyQuery as $row) {
         $dutyList[$row['duty_id']]=$row;
     }
@@ -184,7 +192,9 @@ function ajaxMotionList($data){
         $motionfilter[]=$row['motion_id'];
     }
     $motionDetail=pdoQuery('motion_view',null,array('motion_id'=>$motionfilter,'attr_name'=>$field),null);
+    $singleRow=null;
     foreach ($motionDetail as $row) {
+//        if(!$singleRow)$singleRow=$row;
         $content='string'==$row['value_type']?$row['content']:$row['content_int'];
         $content='attachment'==$row['value_type']?$row['attachment']:$content;
         if('index'==$row['value_type']){
@@ -198,6 +208,10 @@ function ajaxMotionList($data){
         $sortList[$row['motion_id']]['案由']=$row['motion_name'];
         $sortList[$row['motion_id']]['案别']=1==$row['category']?'建议':'提案';
         $sortList[$row['motion_id']]['当前环节']=$row['step_name'];
+        $sortList[$row['motion_id']]['编号']=$row['zx_motion'];
+    }
+    if($singleRow){
+
     }
 //    mylog(getArrayInf($sortList));
     echo ajaxBack(array('list'=>$sortList,'sort'=>$sort));
@@ -564,4 +578,15 @@ function signOut($data){
 function encodeExcel(){
 
     exit;
+}
+
+/**
+ * 获取提案议案流程信息
+ * @param $data 包含motionId
+ */
+function getMotionStepInf($data){
+    $motionStepInf=pdoQuery('motion_step_inf_view',null,array('motion_id'=>$data['id']),'order by step limit 8')->fetchAll();
+    if(!$motionStepInf)$motionStepInf=arrray();
+    include 'view/motion_step_info.html.php';
+    return;
 }

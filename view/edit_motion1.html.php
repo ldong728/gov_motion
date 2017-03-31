@@ -13,10 +13,10 @@
         <?php if(current($motion)['step']>2):?><a href="#" class="motion-reject">上一步</a><?php endif ?>
         <a href="#" class="submit-attr">下一步</a>
         <?php endif?>
-        <a href="#">查看信息</a>
+        <a href="#" class="motion-step-inf" id="<?php echo current($motion)['motion_id']?>">查看信息</a>
         <a href="#">办理单打印</a>
         <a href="#">建议议案打印</a>
-        <a href="#">全文原始稿</a>
+        <a href="<?php echo $motion['原文']['attachment']?>">全文原始稿</a>
         <a href="#">附件修改</a>
         <a href="#" class="close-popup">返回</a>
     </div>
@@ -339,11 +339,23 @@
         };
         $.ajaxFileUpload(uploadConfig);
     });
+    $('.motion-step-inf').click(function(){
+        var maskHeight = $(document.body).height();
+       var id=$(this).attr('id');
+        ajaxPost('getMotionStepInf',{id:id},function(data){
+            $('.m-popup').html(data);
+            $('.m-popup').show();
+            $('.mask').show();
+            $('.mask').css('height',maskHeight);
+            mPopup();
+        });
+    });
     $('.close-popup').click(function () {
         closePopUp($('.m-popup'));
         $('.mask').css('display', 'none');
 //        window.location.reload(true);
 //		$('.mask').css('display','none');
     });
+
 
 </script>
