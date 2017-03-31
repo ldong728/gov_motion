@@ -2,7 +2,7 @@
 
 <body>
 <div class="m-header">
-	<div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua.jpg" alt="Huabiao"></div>
+	<div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua<?php echo $_SESSION['staffLogin']['category']?>.jpg" alt="Huabiao"></div>
 	<div class="m-header-b">
 		<div class="header-b-l"><p>欢迎您: <?php echo $_SESSION['staffLogin']['staffName']?></p></div>
 		<div class="header-b-r"><button class="r-btn sign-out">退出系统</button></div>
@@ -88,7 +88,7 @@
 			mPopup();   /*弹出窗口居中*/
         });
 		
-    })
+    });
 
     $('.sign-out').click(function(){
         signOut(category);

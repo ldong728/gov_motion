@@ -61,6 +61,7 @@ function getIndex($orderBy='default'){
     $category=$staff['category'];
     $motionListFilter=array('step'=>$staff['steps']);
     $meetingListFilter=null;
+    $motionId=array();
     if($staff['category']<3){
         $motionListFilter['category']=$category;
         $meetingListFilter['category']=$category;
@@ -116,21 +117,20 @@ function getIndex($orderBy='default'){
             foreach ($handleList as $row) {
                 $motionList[$row['category']]['coop'][]=$row;
             }
-
         }
 
 
 
 //        $motionId=array_merge($mainHandleMotion,$handleMotion);
 //        $list=pdoQuery('motion_for_index_view',null,array('motion_id'=>$motionId),' order by category asc limit 20');
-        $motionList=array();
+//        $motionList=array();
         foreach ($list as $row) {
             $motionList[$row['category']][]=$row;
         }
 
 
         mylog(getArrayInf($motionList));
-        print('handle_index');
+        printView('handle_index');
         exit();
     }
 //    getMotionList(array());
@@ -165,7 +165,7 @@ function ajaxMotionList($data){
         $orderStr='order by step '.$attrOrder;
         unset($sortFilter['attr_name']);
     }
-    $field=isset($data['field'])?$data['field']:array('案号','领衔人','案别','案由','性质类别','原文','当前环节','交办单位');
+    $field=isset($data['field'])?$data['field']:array('案号','领衔人','提案人','案别','案由','性质类别1','性质类别2','原文','当前环节','交办单位');
     $sort=array();
     $sortList=array();
     $motionfilter=array();
@@ -245,20 +245,23 @@ function createMotion_temp($data){
 function createMotion(){
     $staff=$_SESSION['staffLogin'];
     $meetingInf=pdoQuery('meeting_tbl',null,array('meeting_id'=>$staff['meeting']),' order by deadline_time desc limit 1')->fetch();
+    $emptyMotion=pdoQuery('motion_tbl',array('motion_id'),array('motion_name'=>'新建','duty'=>0,'category'=>$staff['category']),'limit 1')->fetch();
     pdoTransReady();
-    try{
-        $id=pdoInsert('motion_tbl',array('meeting'=>$staff['meeting'],'category'=>$staff['category'],'motion_name'=>'新建','motion_template'=>$meetingInf['motion_template'],'step'=>1));
-        if(2==$staff['category']){
-            pdoInsert('zx_motion_tbl',array('motion'=>$id));
+    if($emptyMotion){
+        editMotion(array('id'=>$emptyMotion['motion_id']));
+    }else{
+        try{
+            $id=pdoInsert('motion_tbl',array('meeting'=>$staff['meeting'],'category'=>$staff['category'],'motion_name'=>'新建','motion_template'=>$meetingInf['motion_template'],'step'=>1));
+            if(2==$staff['category']){
+                pdoInsert('zx_motion_tbl',array('motion'=>$id));
+            }
+            pdoCommit();
+            editMotion(array('id'=>$id));
+        }catch(PDOException $e){
+            mylog($e->getMessage());
+            pdoRollBack();
         }
-        pdoCommit();
-        editMotion(array('id'=>$id));
-    }catch(PDOException $e){
-        mylog($e->getMessage());
-        pdoRollBack();
     }
-
-
 
 }
 
@@ -267,6 +270,8 @@ function createMotion(){
  * @param $data array，包含motion_id
  */
 function editMotion($data){
+    global $config;
+    mylog($config['test']);
     $id=$data['id'];
     $_SESSION['staffLogin']['currentMotion']=$id;
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
@@ -328,14 +333,20 @@ function editMotion($data){
                 }
             }
 
-            if(5==$row['attr_step']){//如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限
+            //如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限
+            if(5==$row['attr_step']){
                 $mainHandler[$row['attr_name']]=$values;
                 continue;
             }
+            //如果属性支持多值情况的处理
             if(1==$values['multiple']){
+
+                //如果此属性已包含一个值，且有新值存在，则把值放入multiple_value数组中，存入前先将表内索引值转换为对应的名称
                 if(isset($motion[$row['attr_name']])&&$values['content']){
                     $motion[$row['attr_name']]['multiple_value'][]=
                         array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
+
+                //如果新值存在且此属性并未包含值
                 }elseif($values['content']){
                     $motion[$row['attr_name']]=$values;
                     $motion[$row['attr_name']]['multiple_value'][]=
@@ -354,7 +365,7 @@ function editMotion($data){
             if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
                 $values['content']=indexToValue($row['target'],$row['content_int']);
             }
-            if('time'==$row['value_type'])$values['content']=timeUnixToMysql($values['content']);
+            if('time'==$row['value_type']&&$values['content']!=null)$values['content']=date('Y-m-d',$values['content']);
             if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['attr_name']]['content'].=','.$values['content'];
             else $motion[$row['attr_name']]=$values;
         }
@@ -403,6 +414,7 @@ function editMotion($data){
     }
 //    mylog(getArrayInf($motion));
     include '/view/edit_motion1.html.php';
+//    include '/view/edit_motion1'.$meetingInf['category'].'.html.php';//分界面
     return;
 }
 
@@ -452,7 +464,8 @@ function updateAttr($data){
 //            mylog(getArrayInf($value));
             pdoInsert('attr_tbl',$value,'update');
         }
-        if($isFoward){
+        //点击下一步的操作
+        if($isFoward>0){
             pdoUpdate('motion_tbl',array('step'=>$motion['step']+1),array('motion_id'=>$motionId));
             if(4==$motion['step']){
                 $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),null);
@@ -462,7 +475,7 @@ function updateAttr($data){
                 }
             }
             if(1==$motion['step']||2==$motion['step']){//将“案由”和“领衔人”属性与motion表中的motion_name,duty字段同步
-                $attr=pdoQuery('attr_view',array('content','content_int'),array('motion'=>$motionId,'attr_name'=>array('案由','领衔人','提案人')),' limit 2')->fetchAll();
+                $attr=pdoQuery('attr_view',array('content','content_int'),array('motion'=>$motionId,'attr_name'=>array('案由','领衔人','提案人')),'order by attr_name asc limit 2')->fetchAll();
                 $name='';
                 $duty='0';
                 foreach ($attr as $row) {
@@ -472,6 +485,16 @@ function updateAttr($data){
                 pdoUpdate('motion_tbl',array('motion_name'=>$name,'duty'=>$duty),array('motion_id'=>$motionId),'limit 1');
             }
 
+            //审核未通过的情况下，将提议案步骤直接设置为完成
+            if(3==$motion['step']){
+                $attr=pdoQuery('attr_view',array('content'),array('motion'=>$motionId,'attr_name'=>'审核'.$motion['category']),'limit 1')->fetch();
+                if('立案'!=$attr['content']){
+                    pdoUpdate('motion_tbl',array('step'=>7),array('motion_id'=>$motionId));
+                }
+            }
+
+        }elseif($isFoward<0){
+            pdoUpdate('motion_tbl',array('step'=>$motion['step']-1),array('motion_id'=>$motionId));
         }
         if(5==$motion['step']){
             $handleDate=$data['handler'];

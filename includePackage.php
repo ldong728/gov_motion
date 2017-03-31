@@ -21,8 +21,8 @@ define('DOMAIN',"/gov_motion");
 define('NOTIFY_URL',"now is null");
 define('DB_IP','localhost');
 define("DB_NAME","gov_motion_db");
-define("DB_USER","root");
-define("DB_PSW","");
+define("DB_USER","gov_motion_user");
+define("DB_PSW","uByQMbYbTy9amub4");
 $mypath = $_SERVER['DOCUMENT_ROOT'] .DOMAIN;   //用于直接部署
 
 
@@ -31,4 +31,6 @@ include_once $mypath . '/includes/db.inc.php';
 include_once $mypath . '/includes/helpers.inc.php';
 //include_once $mypath.'/includes/db.class.php';
 include_once $mypath . '/includes'.DOMAIN.'.php';
+global $config;
+$config=getConfig('mainConfig');
 header("Content-Type:text/html; charset=utf-8");

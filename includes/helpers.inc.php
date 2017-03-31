@@ -101,6 +101,17 @@ function get($url){
 function decodeXml($file){
     return simplexml_load_string($file, 'SimpleXMLElement', LIBXML_NOCDATA);
 }
+function getConfig($configName)
+{
+    $data = file_get_contents( $_SERVER['DOCUMENT_ROOT'] .DOMAIN.'/config/'.$configName.'.json');
+    return json_decode($data, true);
+}
+
+//function saveConfig($path, array $config)
+//{
+//    $data = json_encode($config);
+//    file_put_contents($path, $data);
+//}
 
 
 

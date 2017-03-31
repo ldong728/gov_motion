@@ -1,7 +1,7 @@
 <?php global $meetingInf?>
 <body>
 <div class="m-header">
-    <div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua.jpg" alt="Huabiao"></div>
+    <div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua<?php echo $meetingInf['category']?>.jpg" alt="Huabiao"></div>
     <div class="m-header-b">
         <div class="header-b-l"><p><a href="index.php">首页</a><span><?php echo 1==$meetingInf['category']?'人大议案':'政协提案'?></span></p></div>
         <div class="header-b-r"><a class="sign-out">退出系统</a></div>
@@ -56,6 +56,7 @@
                 <div class="home-table">
                     <table width="100%" border="1" cellspacing="0" cellpadding="0" class="list-table">
                         <tbody>
+                        <?php if(1==$meetingInf['category']):?>
                         <tr>
                             <th width="3%" >序号</th>
                             <th width="2%"><input type="checkbox"></th>
@@ -68,6 +69,21 @@
                             <th width="8%" class="order-by-attr">当前环节</th>
                             <th width="13%" class="order-by-attr">办理单位</th>
                         </tr>
+                        <?php else: ?>
+                            <tr>
+                                <th width="5%" >序号</th>
+                                <th width="4%"><input type="checkbox"></th>
+                                <th width="4%">编号</th>
+                                <th width="4%" class="order-by-attr"> 案号</th>
+                                <th width="9%" class="order-by-attr">提案人</th>
+                                <th width="28%" class="order-by-attr">案由</th>
+                                <th width="10%" class="order-by-attr">性质类别</th>
+                                <th width="15%" class="order-by-attr">原文</th>
+                                <th width="8%" class="order-by-attr">当前环节</th>
+                                <th width="13%" class="order-by-attr">办理单位</th>
+                            </tr>
+
+                        <?php endif ?>
 
                         </tbody>
                     </table>
@@ -97,7 +113,7 @@
         <div class="m-footer-tech"><p>技术支持：慈溪市谷多计算机网络技术有限公司</p></div>
     </div>
 </div>
-<div class="unit">
+<div class="unit" style="display: none">
 	<div class="unit-title"><h2>办理单位选择</h2></div>
 	<div class="unit-table">
 		<table width="700" border="1" bordercolor="#f08300" cellspacing="0" cellpadding="0">
@@ -251,6 +267,7 @@
     var orderby='案号';
     var order=true;
     var page=0;
+    var filter={};
     resizeWindow();
     reflashList(orderby,page,order);
     $(window).resize(function(){
@@ -296,7 +313,7 @@
         signOut(category);
     });
     function resizeWindow(){
-        var bHeight = $(document.body).height();
+            var bHeight = $(document.body).height();
         var wHeight = $(window).height();
         var bWeight = $(document.body).width();
         var weight = bWeight - 239;
@@ -323,7 +340,7 @@
                     '<td>'+ c[v]['领衔人']+'</td>'+
                     '<td>'+ c[v]['案别']+'</td>'+
                     '<td class="motion-select" id="'+v+'">'+ c[v]['案由']+'</td>'+
-                    '<td>'+ c[v]['性质类别']+'</td>'+
+                    '<td>'+ c[v]['性质类别'+category]+'</td>'+
                     '<td><a href="'+ (c[v]['原文']||'#')+'">附件</a></td>'+
                     '<td>'+ c[v]['当前环节']+'</td>'+
                     '<td>'+ c[v]['交办单位']+'</td>'+

@@ -42,7 +42,7 @@ a{color: inherit;text-decoration: none;}
 .m-header .header-b-m,.m-header .header-b-r{position: relative;float: right;_display:inline;}
 .m-header .header-b-m{margin-right: 56px; color: #000;}
 .m-header .header-b-r{ margin-right: 3.5%;}
-.m-header .header-b-r .r-btn{width: 116px; height: 26px;font-size: 14px;line-height: 1;color: #fff;border: 1px solid #de621e;box-sizing: border-box;border-radius:13.5px;background: url(images/bg-img3.png) center;}
+.m-header .header-b-r .r-btn{cursor: pointer;width: 116px; height: 26px;font-size: 14px;line-height: 1;color: #fff;border: 1px solid #de621e;box-sizing: border-box;border-radius:13.5px;background: url(images/bg-img3.png) center;}
 
 .m-home{ width: 100%;min-width: 1260px; min-height: 760px;_height: 760px; background: #fff;border-top: 2px solid #3a3a3a;box-sizing: border-box;}
 
@@ -60,7 +60,7 @@ a{color: inherit;text-decoration: none;}
 .m-home .home-title{height: 43px;background:url(images/title.jpg) ;line-height: 40px;padding-left: 100px;color: #fff;font-size: 16px;margin-left: .5%;}
 .m-home .home-content{width: 100%;}
 .m-home .content-list{width: 99%; display: block;margin-left: 1%;}
-.m-home .content-list li{width: 100%;text-indent: 100px;height: 43px;line-height: 43px;border-bottom: 1px dashed #626262;font-size: 16px; color: #212121;box-sizing: border-box;}
+.m-home .content-list li{width: 100%;text-indent: 55px;height: 43px;line-height: 43px;border-bottom: 1px dashed #626262;font-size: 16px; color: #212121;box-sizing: border-box;}
 .m-home .content-list li:last-child{border: none;}
 .m-home .content-list .hour{float: right;margin-right:12%; }
 .m-footer {width: 100%; height: 110px; background: #7e7e7e;}
@@ -103,7 +103,7 @@ a{color: inherit;text-decoration: none;}
 
 /*建议议案显示*/
 input, select, button, textarea, table {vertical-align: middle;font-size: 13px;}
-textarea{margin: 3px 0;}
+textarea{resize: none; width: 80px; margin: 3px 0;}
 button{height: 23px; line-height: 15px;}
 select{margin-left: 5px;}
 select:first-child{margin-left: 0;}
@@ -120,15 +120,16 @@ select:first-child{margin-left: 0;}
 .m-popup .sug-main-nav a{float: left;padding:1px 10px;background: #dedede;margin: 0 10px 15px 0;border-radius: 5px;}
 .m-popup .sug-main-content{width: 100%; height: 410px;box-sizing: border-box;}
 .m-popup .content-title{width: 100%; height: 40px;background: #f08300;text-align: center;line-height: 40px;color: #fff;font-size: 16px;}
-.m-popup .table-list{height: 389px; overflow-x: hidden; overflow-y: scroll;border: 1px solid #f08300;box-sizing: border-box;}
-.m-popup .table-list tr{width: 770px;height: 28px; text-align: center;border: 1px solid #f08300;border-left: none;}
+.m-popup .table-list{height: 389px; overflow-x: hidden; overflow-y: auto;border: 1px solid #f08300;box-sizing: border-box;}
+.m-popup .table-list tr{width: 770px;height: 28px; text-align: center;}
 .m-popup .table-list tr:first-child{height: 60px;}
 
-.m-popup .table-list tr th{width: 90px; background: #ffe2a3;vertical-align: middle;box-sizing: border-box;}
-.m-popup .table-list tr td{width: 165.65px; text-align: center;vertical-align: middle; border: 1px solid #f08300;padding: 0 10px;box-sizing: border-box;}
-.m-popup .table-list tr td:first-of-type{text-align: left;padding-left: 28px;}
-.m-popup .table-list tr td .attr-value{width: 100px;}
-.m-popup .table-list tr td:last-child{border-right: 1px solid #f08300;}
+.m-popup .table-list tr th{width: 90px; background: #ffe2a3;vertical-align: middle;box-sizing: border-box;border: 1px solid #f08300;}
+.m-popup .table-list tr th:first-child{border-left: none;}
+.m-popup .table-list tr td{min-width: 100px; text-align: center;vertical-align: middle;border: 1px solid #f08300;box-sizing: border-box;}
+.m-popup .table-list tr td .attr-value{width: 80px;}
+.m-popup .table-list tr td input{width: 120px;}
+/*.m-popup .table-list tr td:last-child{border-right: none;}*/
 .icon-map-marker::before{padding-right: 15px;font-size: 16px;line-height: 53px;}
 .pre-delete{display: inline-block;background: #FFFF66;border: 1px solid #FFFF66;border-radius: 3px;margin: 2px 5px 2px 0;text-align: center;line-height: 16px;box-sizing: border-box;}
 .m-popup .table-list tr .update-value a{padding-left: 5px;}

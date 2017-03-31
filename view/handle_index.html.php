@@ -2,7 +2,7 @@
 
 <body>
 <div class="m-header">
-    <div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua.jpg" alt="Huabiao"></div>
+    <div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua3.jpg" alt="Huabiao"></div>
     <div class="m-header-b">
         <div class="header-b-l"><p>欢迎您: <?php echo $_SESSION['staffLogin']['staffName']?></p></div>
         <div class="header-b-r"><button class="r-btn sign-out">退出系统</button></div>

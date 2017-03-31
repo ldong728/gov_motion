@@ -168,6 +168,7 @@ function decodeDate(element) {
         var data = eval('(' + _.text() + ')');//将数据转化为JS对象
         var attr= data.attr_id||0;
         var content='';
+        //console.log
         parent.empty();
         //console.mylog(data);
         if (data.edit) {//选项可编辑
@@ -184,14 +185,18 @@ function decodeDate(element) {
                         content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
                     });
                 }
-                var isValue= data.target?'':'attr-value';
+                if($(data.option).length>0){//非人员录入选项
+                    var isValue= data.target?'':'attr-value';
+                    content+='<select class="'+ data.class+' '+ isValue+'">';
+                    $.each(data.option,function(k,v){
+                        var selected=v==data.content?'selected="selected"':'';
+                        content+='<option value="'+ k+'" '+selected+'>'+v+'</option>';
+                    });
+                    content+='</select>'
+                }else{//人员录入选项
+                    content+='<button class="select-duty" data-motionattr="'+data.attr_template+'">选择</button>';
+                }
 
-                content+='<select class="'+ data.class+' '+ isValue+'">';
-                $.each(data.option,function(k,v){
-                    var selected=v==data.content?'selected="selected"':'';
-                    content+='<option value="'+ k+'" '+selected+'>'+v+'</option>';
-                });
-                content+='</select>'
             } else if(data.has_attachment>0){
                 var attachmentName=data.attachment?data.content:'';
                 content+=
@@ -210,7 +215,7 @@ function decodeDate(element) {
             }
         } else {//选项不可编辑
             if(data.attachment){
-                content+='<a href="'+data.attachment+'">附件</a>'
+                content+='<a href="'+data.attachment+'">'+data.content+'</a>'
             }else{
                 content+=data.content;
             }
@@ -270,12 +275,13 @@ function submitAtrrs(step,callback) {
 }
 
 function setTime(){
-    $('.time-display').text(new Date().toLocaleString());
-    var sTime=setInterval(function(){
-        var time=new Date();
-        $('.time-display').text(time.toLocaleString());
-    },1000);
-    return sTime;
+    var sDate=new Date();
+    $('.time-display').text(sDate.getFullYear()+'-'+(sDate.getMonth()+1)+'-'+sDate.getDate());
+    //var sTime=setInterval(function(){
+    //    var time=new Date();
+    //    $('.time-display').text(time.toDateString(sDate.getFullYear()+'-'+(sDate.getMonth()+1)+'-'+sDate.getDate()));
+    //},1000);
+    //return sTime;
 }
 function closePopUp(element){
     //element.remove();
