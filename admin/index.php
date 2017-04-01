@@ -163,6 +163,22 @@ function add_steff(){
 function meet_edit(){
     printAdminView('blank.html.php','添加操作员');
 }
+function user_manage(){
+    $unitQuery=pdoQuery('user_unit_tbl',array('user_unit_id as id','user_unit_name as name'),array('category'=>2),null);
+    foreach ($unitQuery as $row) {
+        $unit[$row['name']]=$row['id'];
+    }
+    $groupQuery=pdoQuery('user_group_tbl',array('user_group_id as id','user_group_name as name'),array('category'=>2),null);
+    foreach ($groupQuery as $row) {
+        $group[$row['name']]=$row['id'];
+    }
+    $userList=pdoQuery('user_tbl',array('user_id','user_name','user_unit','user_group'),array('category'=>2),null);
+    foreach ($userList as $row) {
+        $value[]=array('user'=>$row['user_id'],'category'=>2,'meeting'=>1,'user_unit'=>$unit[$row['user_unit']],'user_group'=>$group[$row['user_group']]);
+    }
+    pdoBatchInsert('duty_tbl',$value);
+    printAdminView('blank.html.php','添加操作员');
+}
 
 
 //非sub菜单方法

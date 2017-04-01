@@ -94,7 +94,7 @@
                     <a href="#"><i class="icon icon-step-backward"></i></a>
                     <a href="#"><i class="icon icon-caret-left"></i></a>
                     <a href="#">第<input name="text" type="text" value="1" class="p-num">页 共15页</a>
-                    <a href="#"><i class="icon icon-caret-right"></i></a>
+                    <a href="#"><i class="icon icon-caret-right next-page"></i></a>
                     <a href="#"><i class="icon icon-step-forward"></i></a>
                 </div>
                 <div class="home-page-r"><p>显示1到20，共288记录</p></div>
@@ -318,6 +318,10 @@
     $(document).on('click','.sign-out',function(){
         signOut(category);
     });
+    $(document).on('click','.next-page',function(){
+       page++;
+        reflashList(orderby,page,order);
+    });
     function resizeWindow(){
             var bHeight = $(document.body).height();
         var wHeight = $(window).height();
@@ -338,7 +342,7 @@
             ajaxPost('ajaxMotionList',data,function(back){
                 var value=backHandle(back);
                 $('.list-content').remove();
-                var count=1;
+                var count=1+(page*20);
                 var c=value.list;
                 if(1==data.category) {
                     $.each(value.sort, function (k, v) {
@@ -376,10 +380,9 @@
 
                     });
                 }
+                $('.p-num').val(page+1);
 
-            })
-
-
+            });
     }
     function mPopup(){
         var bWidth = document.documentElement.clientWidth;

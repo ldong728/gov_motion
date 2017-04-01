@@ -324,18 +324,17 @@ function editMotion($data){
             if($row['target']){//数据库内容
                 switch($row['target']){
                     case 'duty':
-                        $values['option']=array();
-
-
-                        break;
-                        //下拉框的情况
 //                        $values['option']=array();
-//                        $userInf=getUserList();
-//                        foreach ($userInf['list'] as $k=>$v) {
-//                            $values['option'][$k]=$v;
-//                        }
-//                        $values['class']=$userInf['class'];
+//
 //                        break;
+                        //下拉框的情况
+                        $values['option']=array();
+                        $userInf=getUserList();
+                        foreach ($userInf['list'] as $k=>$v) {
+                            $values['option'][$k]=$v;
+                        }
+                        $values['class']=$userInf['class'];
+                        break;
                     case 'unit';
                         $values['option']=array();
                         $unitInf=getUnitList('all',$row['step']+1);

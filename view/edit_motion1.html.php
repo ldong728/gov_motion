@@ -170,6 +170,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <th>主办意见全文</th>
+                            <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                                    class="encoded-data"><?php echo json_encode($motion['主办答复全文'], JSON_UNESCAPED_UNICODE) ?>
+                            </td>
+                        </tr>
+                        <tr>
                             <th>已落实事项</th>
                             <td colspan="7" style="text-align: left;padding-left: 10px;"><span
                                     class="encoded-data"><?php echo json_encode($motion['已落实事项'], JSON_UNESCAPED_UNICODE) ?>
