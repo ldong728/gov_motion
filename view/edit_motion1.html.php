@@ -64,18 +64,18 @@
                             class="encoded-data"><?php echo json_encode($motion['性质'], JSON_UNESCAPED_UNICODE) ?></span>
                     </td>
                     <th><?php echo 1 == $meetingInf['category'] ? '代表团' : '属性' ?></th>
-                    <td colspan="2"></td>
+                    <td colspan="2"><?php if($unitGroupInf):?><?php echo $unitGroupInf['group']?><?php endif?></td>
                 </tr>
                 <?php if (2 == $meetingInf['category']): ?>
                     <tr>
                         <th>委组</th>
-                        <td colspan="2"></td>
+                        <td colspan="2"><?php if($unitGroupInf):?><?php echo $unitGroupInf['unit']?><?php endif?></td>
                         <th>提案分类</th>
                         <td colspan="2"><span
                                 class="encoded-data"><?php echo json_encode($motion['提案分类'], JSON_UNESCAPED_UNICODE) ?></span>
                         </td>
                         <th>附议人数</th>
-                        <td colspan="2">&nbsp;</td>
+                        <td colspan="2"  class="fuyi">&nbsp;</td>
                     </tr>
                 <?php endif ?>
                 <?php if(1==$meetingInf['category']):?>
@@ -93,8 +93,8 @@
                     </tr>
                 <?php endif ?>
                 <tr>
-                    <th>附议人</th>
-                    <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                    <th >附议人</th>
+                    <td class="fuyi-count" colspan="7" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['附议人'], JSON_UNESCAPED_UNICODE) ?></td>
 
                 </tr>
@@ -294,6 +294,7 @@
 
 <script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
 <script>
+    getFuyiCount();
     $('.submit-attr').click(function () {
         submitAtrrs(1, function (data) {
             closePopUp($('.m-popup'));
@@ -308,7 +309,8 @@
     });
     $('.motion-reject').click(function(){
         submitAtrrs(-1,function(data){
-
+            closePopUp($('.m-popup'));
+            window.location.reload(true);
         });
     });
     var antiDouble = false;
@@ -362,6 +364,13 @@
 //        window.location.reload(true);
 //		$('.mask').css('display','none');
     });
+    function getFuyiCount(){
+        var count=0;
+        $.each($('.fuyi-count').children('.pre-delete'),function(k,v){
+            count++;
+        });
+        $('.fuyi').text(count);
+    }
 
 
 </script>

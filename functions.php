@@ -303,7 +303,7 @@ function editMotion($data){
     }
 
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
-
+    $unitGroupInf=null;
     foreach ($motionQuery as $row) {
         //提议案所有的属性取出后，剔除高于当前步骤，并且没有值的属性
 //        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;
@@ -381,6 +381,12 @@ function editMotion($data){
             if('time'==$row['value_type']&&$values['content']!=null)$values['content']=date('Y-m-d',$values['content']);
             if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['attr_name']]['content'].=','.$values['content'];
             else $motion[$row['attr_name']]=$values;
+        }
+
+        //获取领衔人信息
+        if('领衔人'==$row['attr_name']||'提案人'==$row['attr_name']){
+            $query=pdoQuery('duty_view',null,array('duty_id'=>$row['content_int']),'limit 1')->fetch();
+            $unitGroupInf=array('unit'=>$query['user_unit_name'],'group'=>$query['user_group_name']);
         }
     }
     $currentStep=current($motion)['step'];
