@@ -164,18 +164,32 @@ function meet_edit(){
     printAdminView('blank.html.php','添加操作员');
 }
 function user_manage(){
-    $unitQuery=pdoQuery('user_unit_tbl',array('user_unit_id as id','user_unit_name as name'),array('category'=>2),null);
+//
+    $unitQuery=pdoQuery('user_unit_tbl',array('user_unit_id as id','user_unit_name as name'),array('category'=>1),null);
     foreach ($unitQuery as $row) {
         $unit[$row['name']]=$row['id'];
     }
-    $groupQuery=pdoQuery('user_group_tbl',array('user_group_id as id','user_group_name as name'),array('category'=>2),null);
-    foreach ($groupQuery as $row) {
-        $group[$row['name']]=$row['id'];
-    }
-    $userList=pdoQuery('user_tbl',array('user_id','user_name','user_unit','user_group'),array('category'=>2),null);
+//    $groupQuery=pdoQuery('user_group_tbl',array('user_group_id as id','user_group_name as name'),array('category'=>2),null);
+//    foreach ($groupQuery as $row) {
+//        $group[$row['name']]=$row['id'];
+//    }
+
+    $userList=pdoQuery('user_tbl',array('user_id','user_name','user_unit','user_group'),array('category'=>1),null);
     foreach ($userList as $row) {
-        $value[]=array('user'=>$row['user_id'],'category'=>2,'meeting'=>1,'user_unit'=>$unit[$row['user_unit']],'user_group'=>$group[$row['user_group']]);
+//        $value[]=array('category'=>1,'user_unit_name'=>$row['user_unit']);
+        $group=0;
+//        if(in_array($unit[$row['user_unit']],array(725,726,715)))$group=20;
+//        if(in_array($unit[$row['user_unit']],array(717,718,719)))$group=21;
+//        if(in_array($unit[$row['user_unit']],array(721,732)))$group=22;
+//        if(in_array($unit[$row['user_unit']],array(728,731)))$group=23;
+//        if(in_array($unit[$row['user_unit']],array(722,727,729)))$group=24;
+//        if(in_array($unit[$row['user_unit']],array(714,723,724)))$group=25;
+//        if(in_array($unit[$row['user_unit']],array(720,730)))$group=26;
+//        if(in_array($unit[$row['user_unit']],array(716)))$group=27;
+
+        $value[]=array('user'=>$row['user_id'],'category'=>1,'meeting'=>2,'user_unit'=>$unit[$row['user_unit']],'user_group'=>$group);
     }
+//    mylog(getArrayInf($value));
     pdoBatchInsert('duty_tbl',$value);
     printAdminView('blank.html.php','添加操作员');
 }

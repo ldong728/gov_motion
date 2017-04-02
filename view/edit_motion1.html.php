@@ -10,14 +10,16 @@
     <div class="sug-main-nav clearfix">
         <?php if(in_array(current($motion)['step'],$_SESSION['staffLogin']['steps'])):?>
         <a href="#" class="save-attr">保存</a>
-        <?php if(current($motion)['step']>2):?><a href="#" class="motion-reject">上一步</a><?php endif ?>
+        <?php if(current($motion)['step']>2):?><a href="#" class="motion-reject">上一步</a>
+                <?php mylog($step4CanEdit)?>
+        <?php elseif($step4CanEdit&&5==current($motion)['step']&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject">上一步</a><?php endif ?>
         <a href="#" class="submit-attr">下一步</a>
         <?php endif?>
         <a href="#" class="motion-step-inf" id="<?php echo current($motion)['motion_id']?>">查看信息</a>
         <a href="#">办理单打印</a>
         <a href="#">建议议案打印</a>
         <a href="<?php echo $motion['原文']['attachment']?>">全文原始稿</a>
-        <a href="#">附件修改</a>
+        <?php if(current($motion)['step']>2):?><a href="#">附件修改</a><?php endif?>
         <a href="#" class="close-popup">返回</a>
     </div>
     <div class="sug-main-content edit-area">
@@ -193,7 +195,7 @@
                             <th>联系人</th>
                             <td><?php echo $row['contact_name'] ?></td>
                             <th>回复时间</th>
-                            <td><?php echo date('Y-m-d',$row['reply_time']) ?></td>
+                            <td><?php echo $row['reply_time']?date('Y-m-d',$row['reply_time']):'' ?></td>
                             <th>联系电话</th>
                             <td><?php echo $row['contact_phone'] ?></td>
                             <th>电话</th>
@@ -232,7 +234,7 @@
                                 <button class="upload-handler-file">上传</button>
                                 <input type="file" class id="handler-attachment" name="handler-attachment"
                                        style="display: none">
-                                <a class="attachment-file" <?php echo $handlerEdit['attachment'] ? 'href="' . $handlerEdit['attachment'] . '"' : '' ?>><?php echo $handlerEdit['attachment_name'] ?></a>
+                                <a class="handle-attachment-file" <?php echo $handlerEdit['attachment'] ? 'href="' . $handlerEdit['attachment'] . '"' : '' ?>><?php echo $handlerEdit['attachment_name'] ?></a>
                             </td>
                         </tr>
                     <?php endif ?>
@@ -292,85 +294,8 @@
 
 </table>
 
-<script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
 <script>
     getFuyiCount();
-    $('.submit-attr').click(function () {
-        submitAtrrs(1, function (data) {
-            closePopUp($('.m-popup'));
-            window.location.reload(true);
-        })
-    });
-    $('.save-attr').click(function(){
-       submitAtrrs(0,function(data){
-           closePopUp($('.m-phpup'));
-//           window.location.reload(true);
-       }) ;
-    });
-    $('.motion-reject').click(function(){
-        submitAtrrs(-1,function(data){
-            closePopUp($('.m-popup'));
-            window.location.reload(true);
-        });
-    });
-    var antiDouble = false;
-    $('.upload-handler-file').click(function () {
-        antiDouble = true;
-        $('#handler-attachment').click();
-        setTimeout(function () {
-            antiDouble = false;
-        }, 1000)
-    });
-    $('#handler-attachment').change(function () {
-        var _ = $(this);
-        var handlerId = _.parent().attr('id').slice(3);
-        if (!handlerId)return;//防范多次触发change事件
-        var url = 'upload.php?handler_attachment=' + handlerId;
-        fileElementId = _.attr('id')
-        var uploadConfig = {
-            url: url,
-            secureuri: false,
-            fileElementId: fileElementId, //文件上传域的ID
-            dataType: 'json', //返回值类型 一般设置为json
-            success: function (v, status) {
-                if ('SUCCESS' == v.state) {
-                    $('.attachment-file').attr('href', v.url);
-                    antiDouble = false;
-                    console.log(v);
-                } else {
-                    showToast(v.state);
-                }
-            },//服务器成功响应处理函数
-            error: function (d) {
-                alert('error');
-            }
-        };
-        $.ajaxFileUpload(uploadConfig);
-    });
-    $('.motion-step-inf').click(function(){
-        var maskHeight = $(document.body).height();
-       var id=$(this).attr('id');
-        ajaxPost('getMotionStepInf',{id:id},function(data){
-            $('.m-popup').html(data);
-            $('.m-popup').show();
-            $('.mask').show();
-            $('.mask').css('height',maskHeight);
-            mPopup();
-        });
-    });
-    $('.close-popup').click(function () {
-        closePopUp($('.m-popup'));
-        $('.mask').css('display', 'none');
-//        window.location.reload(true);
-//		$('.mask').css('display','none');
-    });
-    function getFuyiCount(){
-        var count=0;
-        $.each($('.fuyi-count').children('.pre-delete'),function(k,v){
-            count++;
-        });
-        $('.fuyi').text(count);
-    }
-
-
+    decodeDate( $('.encoded-data'));
 </script>
+

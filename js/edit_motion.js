@@ -1,6 +1,7 @@
 var antiDouble=false;
 var timeSet=setTime();
-decodeDate( $('.encoded-data'));
+//getFuyiCount();
+//decodeDate( $('.encoded-data'));
 $(document).on('change','.duty-group',function(){
     var currentObj=$(this);
     var col=currentObj.get(0).value;
@@ -161,6 +162,86 @@ $(document).on('click','.attachment-file',function(){
     var openDocObj=new ActiveXObject("sharePoint.OpenDocuments.2");
     openDocObj.EditDocument(protocol+'//'+host+'/'+href);
 });
+
+$(document).on('click','.submit-attr',function(){
+    submitAtrrs(1, function (data) {
+        closePopUp($('.m-popup'));
+        window.location.reload(true);
+    })
+});
+$(document).on('click','.save-attr',function(){
+    submitAtrrs(0,function(data){
+        closePopUp($('.m-phpup'));
+//           window.location.reload(true);
+    }) ;
+});
+$(document).on('click','.motion-reject',function(){
+    submitAtrrs(-1,function(data){
+        closePopUp($('.m-popup'));
+        window.location.reload(true);
+    });
+});
+var antiDouble = false;
+$(document).on('click','.upload-handler-file',function(){
+    antiDouble = true;
+    $('#handler-attachment').click();
+    setTimeout(function () {
+        antiDouble = false;
+    }, 1000)
+});
+$(document).on('change','#handler-attachment',function(){
+    var _ = $(this);
+    var handlerId = _.parent().attr('id').slice(3);
+    if (!handlerId)return;//防范多次触发change事件
+    var url = 'upload.php?handler_attachment=' + handlerId;
+    fileElementId = _.attr('id')
+    var uploadConfig = {
+        url: url,
+        secureuri: false,
+        fileElementId: fileElementId, //文件上传域的ID
+        dataType: 'json', //返回值类型 一般设置为json
+        success: function (v, status) {
+            if ('SUCCESS' == v.state) {
+                $('.handle-attachment-file').attr('href', v.url);
+                $('.handle-attachment-file').text(v.originalName);
+                antiDouble = false;
+                console.log(v);
+            } else {
+                showToast(v.state);
+            }
+        },//服务器成功响应处理函数
+        error: function (d) {
+            alert('error');
+        }
+    };
+    $.ajaxFileUpload(uploadConfig);
+});
+$(document).on('click','.motion-step-inf',function(){
+    var maskHeight = $(document.body).height();
+    var id=$(this).attr('id');
+    ajaxPost('getMotionStepInf',{id:id},function(data){
+        $('.m-popup').html(data);
+        $('.m-popup').show();
+        $('.mask').show();
+        $('.mask').css('height',maskHeight);
+        mPopup();
+    });
+});
+$(document).on('click','.close-popup',function(){
+    closePopUp($('.m-popup'));
+    $('.mask').css('display', 'none');
+//        window.location.reload(true);
+//		$('.mask').css('display','none');
+});
+function getFuyiCount(){
+    var count=0;
+    $.each($('.fuyi-count').children('.pre-delete'),function(k,v){
+        count++;
+    });
+    $('.fuyi').text(count);
+}
+
+
 function decodeDate(element) {
     element.each(function (key, subElement) {
         var _ = $(subElement);

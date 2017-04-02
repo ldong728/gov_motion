@@ -81,6 +81,7 @@
     </div>
 </div>
 <div class="mask"></div>
+<script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
 <script type="text/javascript">
     var category='<?php echo $category?>';
     resizeWindow();
