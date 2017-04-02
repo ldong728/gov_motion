@@ -68,6 +68,7 @@
 </div>
 <div class="mask"></div>
 <script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
+<script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
 <script type="text/javascript">
     var category='<?php echo $category?>';
 	resizeWindow();

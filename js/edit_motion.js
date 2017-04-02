@@ -133,12 +133,14 @@ $(document).on('change','.doc-file',function(){
                 if(0==attrId){
                     attrId= v.attrId;
                     parent.attr('data-attr', attrId);
-                    $('.attachment-file').attr('href',v.url);
-                    $('.attachment-file').text(v.originalName);
-
+                    parent.find('.attachment-file').attr('href',v.url);
+                    parent.find('.attachment-file').text(v.originalName);
                     antiDouble=false;
                 }else{
-                    alert('not 0');
+                    alert('ok');
+                    parent.find('.attachment-file').attr('href',v.url);
+                    parent.find('.attachment-file').text(v.originalName);
+                    antiDouble=false;
                 }
                 //console.log(v);
 
@@ -172,10 +174,13 @@ $(document).on('click','.submit-attr',function(){
 $(document).on('click','.save-attr',function(){
     submitAtrrs(0,function(data){
         closePopUp($('.m-phpup'));
-//           window.location.reload(true);
+           window.location.reload(true);
     }) ;
 });
 $(document).on('click','.motion-reject',function(){
+    if($('.handle-value').length>0){
+        return;
+    }
     submitAtrrs(-1,function(data){
         closePopUp($('.m-popup'));
         window.location.reload(true);
@@ -246,62 +251,66 @@ function decodeDate(element) {
     element.each(function (key, subElement) {
         var _ = $(subElement);
         var parent = _.parent();
+        console.log(_.text());
         var data = eval('(' + _.text() + ')');//将数据转化为JS对象
-        var attr= data.attr_id||0;
-        var content='';
-        //console.log
-        parent.empty();
-        //console.mylog(data);
-        if (data.edit) {//选项可编辑
-            parent.addClass('update-value');
-            parent.attr('data-attr',attr);
-            parent.attr('data-type',data.value_type);
-            parent.attr('data-motionattr',data.motion_attr);
-            parent.attr('data-attrtemplate',data.attr_template);
-            parent.attr('data-multiple',data.multiple);
-            if (data.option) {
-                //同一属性有多值的情况
-                if (1 == data.multiple && data.multiple_value && data.multiple_value.length > 0) {
-                    $.each(data.multiple_value, function(id, value){
-                        content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
-                    });
-                }
-                if($(data.option).length>0){//非人员录入选项
-                    var isValue= data.target?'':'attr-value';
-                    content+='<select class="'+ data.class+' '+ isValue+'">';
-                    $.each(data.option,function(k,v){
-                        var selected=v==data.content?'selected="selected"':'';
-                        content+='<option value="'+ k+'" '+selected+'>'+v+'</option>';
-                    });
-                    content+='</select>'
-                }else{//人员录入选项
-                    content+='<button class="select-duty" data-motionattr="'+data.attr_template+'">选择</button>';
-                }
+        if(data){
+            var attr= data.attr_id||0;
+            var content='';
+            //console.log
+            parent.empty();
+            //console.mylog(data);
+            if (data.edit) {//选项可编辑
+                parent.addClass('update-value');
+                parent.attr('data-attr',attr);
+                parent.attr('data-type',data.value_type);
+                parent.attr('data-motionattr',data.motion_attr);
+                parent.attr('data-attrtemplate',data.attr_template);
+                parent.attr('data-multiple',data.multiple);
+                if (data.option) {
+                    //同一属性有多值的情况
+                    if (1 == data.multiple && data.multiple_value && data.multiple_value.length > 0) {
+                        $.each(data.multiple_value, function(id, value){
+                            content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
+                        });
+                    }
+                    if($(data.option).length>0){//非人员录入选项
+                        var isValue= data.target?'':'attr-value';
+                        content+='<select class="'+ data.class+' '+ isValue+'">';
+                        $.each(data.option,function(k,v){
+                            var selected=v==data.content?'selected="selected"':'';
+                            content+='<option value="'+ k+'" '+selected+'>'+v+'</option>';
+                        });
+                        content+='</select>'
+                    }else{//人员录入选项
+                        content+='<button class="select-duty" data-motionattr="'+data.attr_template+'">选择</button>';
+                    }
 
-            } else if(data.has_attachment>0){
-                var attachmentName=data.attachment?data.content:'';
-                content+=
-                    '<button class="button choose-file">选择附件</button>'+
-                '<input type="file" class="doc-file" id="file'+data.motion_attr+'" name="file'+data.motion_attr+'" style="display:none">';
-                content+='<a class="attachment-file" href="#" data-href="'+data.attachment+'">'+attachmentName+'</a>'
-            }else if('time'==data.value_type){
-                content+='<input type="hidden" class="attr-value" value="1"><span class="time-display"></span>';
-            }else{
-                if('string'==data.value_type){
-                    content+='<textarea class="attr-value">'+(data.content||'')+'</textarea>';
+                } else if(data.has_attachment>0){
+                    var attachmentName=data.attachment?data.content:'';
+                    content+=
+                        '<button class="button choose-file">选择附件</button>'+
+                        '<input type="file" class="doc-file" id="file'+data.motion_attr+'" name="file'+data.motion_attr+'" style="display:none">';
+                    content+='<a class="attachment-file" href="#" data-href="'+data.attachment+'">'+attachmentName+'</a>'
+                }else if('time'==data.value_type){
+                    content+='<input type="hidden" class="attr-value" value="1"><span class="time-display"></span>';
                 }else{
-                    content+='<input type="text" class="attr-value" value="'+(data.content||'')+'" width="20px">';
-                }
+                    if('string'==data.value_type){
+                        content+='<textarea class="attr-value">'+(data.content||'')+'</textarea>';
+                    }else{
+                        content+='<input type="text" class="attr-value" value="'+(data.content||'')+'" width="20px">';
+                    }
 
+                }
+            } else {//选项不可编辑
+                if(data.attachment){
+                    content+='<a href="'+data.attachment+'">'+data.content+'</a>'
+                }else{
+                    content+=data.content;
+                }
             }
-        } else {//选项不可编辑
-            if(data.attachment){
-                content+='<a href="'+data.attachment+'">'+data.content+'</a>'
-            }else{
-                content+=data.content;
-            }
+            parent.append(content);
         }
-        parent.append(content);
+
     });
 }
 function submitAtrrs(step,callback) {

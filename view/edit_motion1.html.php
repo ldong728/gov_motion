@@ -1,6 +1,3 @@
-<script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
-
-
 <div class="suggest cont">
 <div class="sug-head clearfix">
     <div class="sug-head-l"><h1><?php echo 1 == current($motion)['category'] ? '人大建议议案办理单' : '政协提案办理单' ?></h1></div>
@@ -11,15 +8,15 @@
         <?php if(in_array(current($motion)['step'],$_SESSION['staffLogin']['steps'])):?>
         <a href="#" class="save-attr">保存</a>
         <?php if(current($motion)['step']>2):?><a href="#" class="motion-reject">上一步</a>
-                <?php mylog($step4CanEdit)?>
-        <?php elseif($step4CanEdit&&5==current($motion)['step']&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject">上一步</a><?php endif ?>
+        <?php endif?>
         <a href="#" class="submit-attr">下一步</a>
         <?php endif?>
+        <?php if($step4CanEdit&&5==current($motion)['step']&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject">上一步</a><?php endif ?>
         <a href="#" class="motion-step-inf" id="<?php echo current($motion)['motion_id']?>">查看信息</a>
         <a href="#">办理单打印</a>
         <a href="#">建议议案打印</a>
         <a href="<?php echo $motion['原文']['attachment']?>">全文原始稿</a>
-        <?php if(current($motion)['step']>2):?><a href="#">附件修改</a><?php endif?>
+        <?php if(current($motion)['step']<4):?><a href="#">附件修改</a><?php endif?>
         <a href="#" class="close-popup">返回</a>
     </div>
     <div class="sug-main-content edit-area">
@@ -144,8 +141,7 @@
                                 class="encoded-data"><?php echo json_encode($motion['主办单位'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
-                    <tr>
-                        <th>协办单位</th>
+                         <th>协办单位</th>
                         <td colspan="7" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['协办单位'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
@@ -192,6 +188,10 @@
                     <?php endif ?>
                     <?php foreach ($handlerDisplay as $row): ?>
                         <tr>
+                            <th>协办单位：</th>
+                            <td colspan="7" style="text-align: left;padding-left: 10px"><?php echo $row['unit_name']?>:</td>
+                        </tr>
+                        <tr>
                             <th>联系人</th>
                             <td><?php echo $row['contact_name'] ?></td>
                             <th>回复时间</th>
@@ -209,6 +209,10 @@
                         </tr>
                     <?php endforeach ?>
                     <?php if (isset($handlerEdit) && count($handlerEdit) > 0): ?>
+                        <tr>
+                            <th>协办单位：</th>
+                            <td colspan="7" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?>:</td>
+                        </tr>
                         <tr>
                             <th>签收时间</th>
                             <td colspan="2"><input type="hidden" class="motion_handler_id"
@@ -240,20 +244,6 @@
                     <?php endif ?>
                 <?php endif ?>
                 <?php if ($meetingInf['step'] > 5): ?>
-                <tr>
-                    <th>签收人</th>
-                    <td><span class="encoded-data"><?php echo json_encode($motion['反馈签收人'], JSON_UNESCAPED_UNICODE) ?>
-                    </td>
-                    <th>签收时间</th>
-                    <td><span class="encoded-data"><?php echo json_encode($motion['反馈时间'], JSON_UNESCAPED_UNICODE) ?>
-                    </td>
-                    <th>联系电话</th>
-                    <td><span class="encoded-data"><?php echo json_encode($motion['反馈联系电话'], JSON_UNESCAPED_UNICODE) ?>
-                    </td>
-                    <th>手机</th>
-                    <td><span class="encoded-data"><?php echo json_encode($motion['反馈手机'], JSON_UNESCAPED_UNICODE) ?>
-                    </td>
-                </tr>
                     <tr>
                         <th rowspan="2" style="border-right: 1px solid #f08300">反馈意见</th>
                         <th>办理工作</th>

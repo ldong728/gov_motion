@@ -285,7 +285,7 @@ function createMotion(){
  */
 function editMotion($data){
     global $config;
-    mylog($config['test']);
+//    mylog($config['test']);
     $id=$data['id'];
     $_SESSION['staffLogin']['currentMotion']=$id;
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
@@ -305,6 +305,7 @@ function editMotion($data){
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
     $unitGroupInf=null;
     foreach ($motionQuery as $row) {
+//        mylog(getArrayInf($row));
         //提议案所有的属性取出后，剔除高于当前步骤，并且没有值的属性
 //        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;
         $values = $row;
@@ -348,7 +349,7 @@ function editMotion($data){
             }
 
             //如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限
-            if(5==$row['attr_step']){
+            if(5==$row['attr_step']&&5==$row['step']){
                 $mainHandler[$row['attr_name']]=$values;
                 continue;
             }
@@ -436,6 +437,7 @@ function editMotion($data){
                 $canMainHandler=true;
                 $motion=array_merge($motion,$mainHandler);
             }
+//            mylog(getArrayInf($motion));
 
             break;
     }
@@ -456,7 +458,7 @@ function getUserGroup($data){
     foreach ($query as $row) {
         $groupList[]=$row;
     }
-    mylog(getArrayInf($groupList));
+//    mylog(getArrayInf($groupList));
     echo ajaxBack($groupList);
 }
 
@@ -496,8 +498,8 @@ function updateAttr($data){
             pdoUpdate('motion_tbl',array('step'=>$motion['step']+1),array('motion_id'=>$motionId));
             if(4==$motion['step']){
                 $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),null);
+                pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion'=>$motionId));
                 foreach ($handlerList as $row) {
-                    pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion'=>$motionId));
                     pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int'],'status'=>1),'update');
                 }
             }
