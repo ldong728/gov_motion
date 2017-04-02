@@ -32,10 +32,15 @@ function syncUser(){
 function getUserList(){
     if($_SESSION['staffLogin']['meeting']=='all')return null;
     if(isset($_SESSION['staffLogin']['userList'])){
-
-        $query=pdoQuery('duty_view',array('duty_id as id','user_name as name'),$_SESSION['staffLogin']['userList'],null);
+        foreach ($_SESSION['staffLogin']['userList'] as $k => $v) {
+            $filter['user_'.$k]=$v;
+        }
+        mylog(getArrayInf($filter));
+        mylog(getArrayInf($_SESSION['staffLogin']['userList']));
+        $query=pdoQuery('duty_view',array('duty_id as id','user_name as name'),$filter,null);
         $userList=$_SESSION['staffLogin']['category']==1?array('0'=>'选择人大代表'):array('0'=>'选择政协委员');
         foreach ($query as $row) {
+//            mylog(getArrayInf($row));
             $userList[$row['id']]=$row['name'];
         }
         return array('class'=> 'attr-value user-selectr','list'=>$userList);

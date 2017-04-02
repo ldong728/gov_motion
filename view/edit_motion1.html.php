@@ -150,7 +150,7 @@
                 <?php if ($meetingInf['step'] > 4): ?>
                     <?php if ((isset($canMainHandler) && $canMainHandler) || $meetingInf['step'] > 5): ?>
                         <tr>
-                            <th>答复时间</th>
+                            <th>主办答复时间</th>
                             <td width="105px"><span
                                     class="encoded-data"><?php echo json_encode($motion['主办答复时间'], JSON_UNESCAPED_UNICODE) ?>
                             </td>

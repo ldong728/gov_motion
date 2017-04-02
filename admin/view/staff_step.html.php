@@ -192,12 +192,12 @@ $(document).on('change', '.step-checkbox', function () {
         if ($(v).prop('checked'))mySteps += v.value;
     });
 //            mylog(mySteps);
-    if (1 != thisValue || 1 == $('#loc' + staffId).val()) {
-        altTable('staff', 'steps', mySteps, 'staff_id', staffId, function (data) {
-            $('#cat' + staffId).empty();
-            showToast('修改完成');
-        });
-    } else if (checked) {
+//    if (1 != thisValue || 1 == $('#loc' + staffId).val()) {
+//        altTable('staff', 'steps', mySteps, 'staff_id', staffId, function (data) {
+//            $('#cat' + staffId).empty();
+//            showToast('修改完成');
+//        });
+//    } else if (checked) {
         var groupUnitSelecter = '<select class="group-unit-filter">' +
             '<option value="0">选择分组</option>' +
             '<option value="1group">人大-按代表团</opion>' +
@@ -207,7 +207,7 @@ $(document).on('change', '.step-checkbox', function () {
             '</select>';
         $('#cat' + staffId).append(groupUnitSelecter);
         $('#cat' + staffId).attr('data-steps', mySteps);
-    }
+//    }
 });
 $(document).on('change', '.group-unit-filter', function () {
     var _ = $(this);
