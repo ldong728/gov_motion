@@ -10,6 +10,7 @@
  * @param $userName 用户输入的用户名
  * @param $password 用户输入的密码
  */
+include_once'includes/DataSupply.class.php';
 function userAuth($userName,$password,$category=3){
 
     $localStaff=false;
@@ -285,9 +286,10 @@ function createMotion(){
  */
 function editMotion($data){
     global $config;
-//    mylog($config['test']);
     $id=$data['id'];
     $_SESSION['staffLogin']['currentMotion']=$id;
+    $staffStepPms=$_SESSION['staffLogin']['steps'];
+
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
     $attrFilter=array('motion_id'=>$id);
     $meetingInf=pdoQuery('motion_inf_view',null,array('motion_id'=>$id),' limit 1')->fetch();
@@ -296,12 +298,12 @@ function editMotion($data){
     $step4CanEdit=true;
     if(4==$meetingInf['step']&&2==$meetingInf['category']){
         $staffUnit=$_SESSION['staffLogin']['unit'];
-        $stepPermition=pdoQuery('motion_view',array('content_int'),array('motion_id'=>$id,'content_int'=>$staffUnit,'attr_name'=>'交办单位'),'limit 1')->fetch();
-        if(!$stepPermition['content_int']){
+        $step4Inf=pdoQuery('motion_view',array('content_int'),array('motion_id'=>$id,'content_int'=>$staffUnit,'attr_name'=>'交办单位'),'limit 1')->fetch();
+        if(!$step4Inf['content_int']){
             $step4CanEdit=false;
         }
     }
-    mylog($step4CanEdit);
+//    mylog($step4CanEdit);
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
     $unitGroupInf=null;
     foreach ($motionQuery as $row) {
@@ -310,8 +312,9 @@ function editMotion($data){
 //        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;
         $values = $row;
         $optionArray = json_decode($row['option'], true);
-        $values['content']='string'==$row['value_type']||'attachment'==$row['value_type']?$row['content']:$row['content_int'];
-        if(!$values['content'])$values['content']='';
+
+        //将attr数据转化为可为用户观看的内容
+        $values['content']=setAttrValue($row);
         if((($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps']))||
             ($step4CanEdit&&4==$row['step']&&$row['step']==$row['attr_step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))){//如操作员流程权限与当前权限吻合，则可修改当前流程选项
             $values['edit']=true;
@@ -324,28 +327,8 @@ function editMotion($data){
                 if(!$values['content'])$values['content']=$row['default_value'];
             }
             if($row['target']){//数据库内容
-                switch($row['target']){
-                    case 'duty':
-//                        $values['option']=array();
-//
-//                        break;
-                        //下拉框的情况
-                        $values['option']=array();
-                        $userInf=getUserList();
-                        foreach ($userInf['list'] as $k=>$v) {
-                            $values['option'][$k]=$v;
-                        }
-                        $values['class']=$userInf['class'];
-                        break;
-                    case 'unit';
-                        $values['option']=array();
-                        $unitInf=getUnitList('all',$row['step']+1);
-                        foreach ($unitInf['list'] as $k=>$v) {
-                            $values['option'][$k]=$v;
-                        }
-                        $values['class']=$unitInf['class'];
-                        break;
-                }
+
+//                $values['filter']
             }
 
             //如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限
@@ -358,14 +341,13 @@ function editMotion($data){
 
                 //如果此属性已包含一个值，且有新值存在，则把值放入multiple_value数组中，存入前先将表内索引值转换为对应的名称
                 if(isset($motion[$row['attr_name']])&&$values['content']){
-                    $motion[$row['attr_name']]['multiple_value'][]=
-                        array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
+
+                    $motion[$row['attr_name']]['multiple_value'][$values['attr_id']]=$values['content'];
 
                 //如果新值存在且此属性并未包含值
                 }elseif($values['content']){
                     $motion[$row['attr_name']]=$values;
-                    $motion[$row['attr_name']]['multiple_value'][]=
-                        array('attr_id'=>$values['attr_id'],'content'=>indexToValue($row['target'],$values['content']));
+                    $motion[$row['attr_name']]['multiple_value'][$values['attr_id']]=$values['content'];
                 }else{
                     $motion[$row['attr_name']]=$values;
                 }
@@ -388,13 +370,19 @@ function editMotion($data){
                 $values['class']='select';
                 if(!$values['content'])$values['content']=$row['default_value'];
             }
+//
+//            if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
+//                $values['content']=indexToValue($row['target'],$row['content_int']);
+//            }
+//            if('time'==$row['value_type']&&$values['content']!=null)$values['content']=date('Y-m-d',$values['content']);
+            if(1==$values['multiple']&&isset($motion[$row['attr_name']])){
+                $tContent= $motion[$row['attr_name']]['content'].','.$values['content'];
+                $tContent=trim($tContent,',');
+                $motion[$row['attr_name']]['content']=$tContent;
 
-            if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
-                $values['content']=indexToValue($row['target'],$row['content_int']);
+            }else{
+                $motion[$row['attr_name']]=$values;
             }
-            if('time'==$row['value_type']&&$values['content']!=null)$values['content']=date('Y-m-d',$values['content']);
-            if(1==$values['multiple']&&isset($motion[$row['attr_name']]))$motion[$row['attr_name']]['content'].=','.$values['content'];
-            else $motion[$row['attr_name']]=$values;
         }
 
         //获取领衔人信息
@@ -447,6 +435,21 @@ function editMotion($data){
     return;
 }
 
+/**
+ * 解析motion_view中获取的数据，将索引或时间戳转换成可显示的值
+ * @param  motion_view中的一条数据
+ * @return 转换后的内容
+ */
+function setAttrValue($row){
+    $content=$row['content']?$row['content']:'';
+    if('int'==$row['value_type'])$content=$row['content_int'];
+    if('time'==$row['value_type']&&$row['content_int']>0)$content=date('Y-m-d',$row['content_int']);
+    if($row['target']){
+        $content=DataSupply::indexToValue($row['target'],$row['content_int']);
+    }
+    return $content;
+}
+
 function getUserGroup($data){
     $type=$data['group_type'];
     $groupList=array();
@@ -462,7 +465,7 @@ function getUserGroup($data){
     echo ajaxBack($groupList);
 }
 
-/**填充议案属性
+/**ajax填充议案属性
  * @param $data {step:1,data:values}
  */
 function updateAttr($data){
@@ -546,6 +549,28 @@ function updateAttr($data){
 }
 
 /**
+ * ajax获取目标表的内容
+ * @param $data
+ */
+function ajaxTargetList($data){
+    $target=$data['target'];
+    $filter=$data['filter'];
+    $backList=array();
+    switch($target){
+        case 'duty':
+            array('category'=>$_SESSION['staffLogin'],'activity'=>1);
+            if(isset($_SESSION['staffLogin']['userList']))$filter=array_merge($filter,$_SESSION['staffLogin']['userList'],array('category'=>$_SESSION['staffLogin'],'activity'=>1));
+            $dutyQuery=pdoQuery('duty_view',null,$filter,null);
+            foreach ($dutyQuery as $row) {
+                $backList['group'][$row['user_group']][]=$row;
+                $backList['unit'][$row['user_unit']][]=$row;
+            }
+
+
+    }
+}
+
+/**
  * 通过ajax获取代表委员分组成员列表的方法
  * @param $data：包含分组形式，group或unit，及对应id，例{"col":"group","id":5}
  */
@@ -597,7 +622,7 @@ function encodeExcel(){
 }
 
 /**
- * 获取提案议案流程信息
+ * ajax获取提案议案流程信息
  * @param $data 包含motionId
  */
 function getMotionStepInf($data){

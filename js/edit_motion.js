@@ -238,6 +238,39 @@ $(document).on('click','.close-popup',function(){
 //        window.location.reload(true);
 //		$('.mask').css('display','none');
 });
+$(document).on('click','.mutiple-input',function(){
+    var _=$(this);
+    var f=_.parents('.update-value');
+    var state= _.prop("checked");
+    var attid= _.attr('id');
+    console.log(attid);
+    if(!state){
+        if(attid){
+            ajaxPost('ajaxDeleteAttr',{id:attid},function(data){
+
+            });
+        }else{
+            _.removeClass('attr-value')
+        }
+    }else{
+        _.addClass('attr-value');
+    }
+    //if()
+    //console.log(state);
+});
+$(document).on('click','.target-select',function(){
+    var target=$(this).data('target');
+    console.log(target);
+    getTargetList(target,null,function(back){
+
+    });
+
+});
+function getTargetList(target,filter,callback){
+    var sTarget=target;
+    var sFilter=filter||{};
+    ajaxPost('ajaxTargetList',{target:target,filter:sFilter},callback)
+}
 function getFuyiCount(){
     var count=0;
     $.each($('.fuyi-count').children('.pre-delete'),function(k,v){
@@ -251,7 +284,7 @@ function decodeDate(element) {
     element.each(function (key, subElement) {
         var _ = $(subElement);
         var parent = _.parent();
-        console.log(_.text());
+        //console.log(_.text());
         var data = eval('(' + _.text() + ')');//将数据转化为JS对象
         if(data){
             var attr= data.attr_id||0;
@@ -268,24 +301,61 @@ function decodeDate(element) {
                 parent.attr('data-multiple',data.multiple);
                 if (data.option) {
                     //同一属性有多值的情况
-                    if (1 == data.multiple && data.multiple_value && data.multiple_value.length > 0) {
-                        $.each(data.multiple_value, function(id, value){
-                            content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
+                    if(1==data.multiple){
+                        $.each(data.option,function(k,v){
+                            var checked='';
+                            var attrId='';
+                            if(data.multiple_value && $(data.multiple_value).length > 0){
+                                $.each(data.multiple_value,function(id,cnt){
+                                    if(v==cnt){
+                                        checked='checked="checked"';
+                                        attrId='id="'+id+'"';
+                                    }
+                                })
+                            }else{
+                            }
+                           content+='<label ><input class="mutiple-input" style="width: 20px" type="checkbox" value="'+k+'" '+checked+' '+attrId+'>'+v+'</label></br>'
                         });
-                    }
-                    if($(data.option).length>0){//非人员录入选项
+                    }else{
                         var isValue= data.target?'':'attr-value';
                         content+='<select class="'+ data.class+' '+ isValue+'">';
                         $.each(data.option,function(k,v){
                             var selected=v==data.content?'selected="selected"':'';
                             content+='<option value="'+ k+'" '+selected+'>'+v+'</option>';
                         });
-                        content+='</select>'
-                    }else{//人员录入选项
-                        content+='<button class="select-duty" data-motionattr="'+data.attr_template+'">选择</button>';
+                        content+='</select>';
                     }
+                    //if (1 == data.multiple && data.multiple_value && data.multiple_value.length > 0) {
+                    //    $.each(data.multiple_value, function(id, value){
+                    //        content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
+                    //    });
+                    //}
+                    //if($(data.option).length>0){//非人员录入选项
+                    //    var isValue= data.target?'':'attr-value';
+                    //    content+='<select class="'+ data.class+' '+ isValue+'">';
+                    //    $.each(data.option,function(k,v){
+                    //        var selected=v==data.content?'selected="selected"':'';
+                    //        content+='<option value="'+ k+'" '+selected+'>'+v+'</option>';
+                    //    });
+                    //    content+='</select>';
+                    //}else{//人员录入选项
+                    //    content+='<button class="select-duty" data-motionattr="'+data.attr_template+'">选择</button>';
+                    //}
 
-                } else if(data.has_attachment>0){
+                }else if(data.target){
+                    if(1==data.multiple){
+                        if($(data.multiple_value).length > 0){
+                            $.each(data.multiple_value, function(id, value){
+                                content += '<span class="pre-delete attr-value" id="'+id+'">' + value + '</span>'
+                            });
+                        }
+                        content+='<button class="target-select" data-target="'+data.target+'">添加</button>'
+                    }else{
+                        if(data.content)content+='<span class="pre-delete attr-value" id="'+data.content_int+'">' + data.content + '</span>'
+                        content+='<button class="target-select" data-target="'+data.target+'">选择</button>'
+                    }
+                }
+                else if(data.has_attachment>0){
                     var attachmentName=data.attachment?data.content:'';
                     content+=
                         '<button class="button choose-file">选择附件</button>'+
@@ -359,7 +429,7 @@ function submitAtrrs(step,callback) {
         });
         data.handler=handlerData;
     }
-    //console.mylog(data);
+    console.log(data);
 
     ajaxPost('updateAttr',data,callback);
 }

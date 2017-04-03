@@ -12,3 +12,103 @@
 2017.04.02.14:42:01:C:\xampp\htdocs\gov_motion\includes\gov_motion.php39:{unit: 716}
 2017.04.02.14:42:01:C:\xampp\htdocs\gov_motion\includes\gov_motion.php38:{user_unit: 716}
 2017.04.02.14:42:01:C:\xampp\htdocs\gov_motion\includes\gov_motion.php39:{unit: 716}
+2017.04.03.05:52:59:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.05:52:59:D:\xampp\htdocs\gov_motion\functions.php57:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 19}
+2017.04.03.05:55:07:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.05:55:07:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 19}
+2017.04.03.07:32:39:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:32:39:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 19}
+2017.04.03.07:32:43:D:\xampp\htdocs\gov_motion\functions.php592:unsetted:{}
+2017.04.03.07:32:52:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: }
+2017.04.03.07:33:06:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:33:06:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.07:43:19:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:43:19:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.07:43:43:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:43:43:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.07:44:42:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:44:42:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.07:45:45:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:45:45:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.07:45:59:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:45:59:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.07:46:17:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:46:17:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.07:54:20:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:54:20:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.07:55:21:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.07:55:21:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.08:22:18:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.08:22:18:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.08:22:41:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.08:22:41:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.08:51:43:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.08:51:43:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:06:43:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:06:43:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:09:56:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:09:56:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:18:01:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:18:01:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:21:20:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:21:20:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="19",attr_template="7",content_int="1491204085" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="19",attr_template="7",content_int="1491204085"
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="16",attr_template="8",content="大会期间" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="16",attr_template="8",content="大会期间"
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="10",attr_template="1",content="公开" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="10",attr_template="1",content="公开"
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="15",attr_template="6",content="其他" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="15",attr_template="6",content="其他"
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="20",attr_template="9",content="当年" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="20",attr_template="9",content="当年"
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="20",attr_template="9",content="多年重复" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="20",attr_template="9",content="多年重复"
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="20",attr_template="9",content="重点督办" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="20",attr_template="9",content="重点督办"
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="25",attr_template="16",content="委员" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="25",attr_template="16",content="委员"
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:21:25:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:24:05:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:24:05:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:25:34:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:25:34:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:27:39:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:27:39:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:30:55:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:30:55:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:31:52:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:31:52:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:32:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="166",motion="18",staff="6725",motion_attr="19",attr_template="7",content_int="1491204741" on DUPLICATE KEY update attr_id="166",motion="18",staff="6725",motion_attr="19",attr_template="7",content_int="1491204741"
+2017.04.03.09:32:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="167",motion="18",staff="6725",motion_attr="16",attr_template="8",content="大会期间" on DUPLICATE KEY update attr_id="167",motion="18",staff="6725",motion_attr="16",attr_template="8",content="大会期间"
+2017.04.03.09:32:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="168",motion="18",staff="6725",motion_attr="10",attr_template="1",content="公开" on DUPLICATE KEY update attr_id="168",motion="18",staff="6725",motion_attr="10",attr_template="1",content="公开"
+2017.04.03.09:32:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="169",motion="18",staff="6725",motion_attr="15",attr_template="6",content="其他" on DUPLICATE KEY update attr_id="169",motion="18",staff="6725",motion_attr="15",attr_template="6",content="其他"
+2017.04.03.09:32:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="18",staff="6725",motion_attr="20",attr_template="9",content="重点提案" on DUPLICATE KEY update motion="18",staff="6725",motion_attr="20",attr_template="9",content="重点提案"
+2017.04.03.09:32:21:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="173",motion="18",staff="6725",motion_attr="25",attr_template="16",content="委员" on DUPLICATE KEY update attr_id="173",motion="18",staff="6725",motion_attr="25",attr_template="16",content="委员"
+2017.04.03.09:32:21:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:32:21:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="166",motion="18",staff="6725",motion_attr="19",attr_template="7",content_int="1491204745" on DUPLICATE KEY update attr_id="166",motion="18",staff="6725",motion_attr="19",attr_template="7",content_int="1491204745"
+2017.04.03.09:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="167",motion="18",staff="6725",motion_attr="16",attr_template="8",content="大会期间" on DUPLICATE KEY update attr_id="167",motion="18",staff="6725",motion_attr="16",attr_template="8",content="大会期间"
+2017.04.03.09:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="168",motion="18",staff="6725",motion_attr="10",attr_template="1",content="公开" on DUPLICATE KEY update attr_id="168",motion="18",staff="6725",motion_attr="10",attr_template="1",content="公开"
+2017.04.03.09:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="169",motion="18",staff="6725",motion_attr="15",attr_template="6",content="其他" on DUPLICATE KEY update attr_id="169",motion="18",staff="6725",motion_attr="15",attr_template="6",content="其他"
+2017.04.03.09:32:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="173",motion="18",staff="6725",motion_attr="25",attr_template="16",content="委员" on DUPLICATE KEY update attr_id="173",motion="18",staff="6725",motion_attr="25",attr_template="16",content="委员"
+2017.04.03.09:32:25:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:32:25:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:48:47:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:48:47:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:52:40:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.09:52:40:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
+2017.04.03.09:53:49:D:\xampp\htdocs\gov_motion\functions.php591:unsetted:{}
+2017.04.03.09:53:59:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: }
+2017.04.03.10:38:14:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.10:38:14:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 19}
+2017.04.03.10:38:29:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php3644.tmp
+2017.04.03.10:38:29:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx
+2017.04.03.10:38:29:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="19",motion_attr="31",attr_template="12",content="开发进度170313.docx",attachment="files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx",staff="6729" on DUPLICATE KEY update motion="19",motion_attr="31",attr_template="12",content="开发进度170313.docx",attachment="files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx",staff="6729"
+2017.04.03.10:38:29:D:\xampp\htdocs\gov_motion\upload.php28:{originalName: 开发进度170313.docx,md5: 5abe7322df1c869b2bb6fdd30bc9a6c7,name: 5abe7322df1c869b2bb6fdd30bc9a6c7.docx,url: files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx,urlInDb: files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx,size: 12938,type: .docx,cover: ,state: SUCCESS,attrId: 175}
+2017.04.03.10:38:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="19",staff="6729",motion_attr="83",attr_template="41",content="财政经济" on DUPLICATE KEY update motion="19",staff="6729",motion_attr="83",attr_template="41",content="财政经济"
+2017.04.03.10:38:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="19",staff="6729",motion_attr="61",attr_template="3",content="abc" on DUPLICATE KEY update motion="19",staff="6729",motion_attr="61",attr_template="3",content="abc"
+2017.04.03.10:38:41:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.10:38:41:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 19}
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="19",staff="6729",motion_attr="27",attr_template="7",content_int="1491208838" on DUPLICATE KEY update motion="19",staff="6729",motion_attr="27",attr_template="7",content_int="1491208838"
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="19",staff="6729",motion_attr="30",attr_template="8",content="大会期间" on DUPLICATE KEY update motion="19",staff="6729",motion_attr="30",attr_template="8",content="大会期间"
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="19",staff="6729",motion_attr="34",attr_template="17",content_int="14" on DUPLICATE KEY update motion="19",staff="6729",motion_attr="34",attr_template="17",content_int="14"
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="19",staff="6729",motion_attr="1",attr_template="1",content="公开" on DUPLICATE KEY update motion="19",staff="6729",motion_attr="1",attr_template="1",content="公开"
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="176",motion="19",staff="6729",motion_attr="83",attr_template="41",content="财政经济" on DUPLICATE KEY update attr_id="176",motion="19",staff="6729",motion_attr="83",attr_template="41",content="财政经济"
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET motion="19",staff="6729",motion_attr="29",attr_template="9",content="当年" on DUPLICATE KEY update motion="19",staff="6729",motion_attr="29",attr_template="9",content="当年"
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="177",motion="19",staff="6729",motion_attr="61",attr_template="3",content="abc" on DUPLICATE KEY update attr_id="177",motion="19",staff="6729",motion_attr="61",attr_template="3",content="abc"
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\index.php24:mark
+2017.04.03.10:40:38:D:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 19}

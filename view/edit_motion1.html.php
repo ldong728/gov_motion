@@ -59,8 +59,8 @@
                             class="encoded-data"><?php echo json_encode($motion['性质类别' . $meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
                     </td>
                     <th>性质</th>
-                    <td colspan="2"><span
-                            class="encoded-data"><?php echo json_encode($motion['性质'], JSON_UNESCAPED_UNICODE) ?></span>
+                    <td colspan="2" style="text-align: left"><span
+                            class="encoded-data" ><?php echo json_encode($motion['性质'], JSON_UNESCAPED_UNICODE) ?></span>
                     </td>
                     <th><?php echo 1 == $meetingInf['category'] ? '代表团' : '属性' ?></th>
                     <td colspan="2"><?php if($unitGroupInf):?><?php echo $unitGroupInf['group']?><?php endif?></td>
