@@ -114,153 +114,7 @@
         <div class="m-footer-tech"><p>技术支持：慈溪市谷多计算机网络技术有限公司</p></div>
     </div>
 </div>
-<div class="unit" style="display: none">
-	<div class="unit-title"><h2>办理单位选择</h2></div>
-	<div class="unit-table">
-		<table width="700" border="1" bordercolor="#f08300" cellspacing="0" cellpadding="0">
-			<tbody>
-			<tr>
-				<td rowspan="4">
-					<div class="unit-nav">
-						<ul>
-							<li class="li-1 clearfix">
-								<button class="btn-1" type="button"></button>
-								<input class="checkbox" type="checkbox" name="checkbox-lv1">
-								<button class="btn-2" type="button"></button>
-								<span class="span-1">党委系统</span>
-							</li>
-							<li class="li-2">
-								<ul>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市委办</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市纪委（监察局）</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市委组织部</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市委组织部</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市委政法委</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市委政研室</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市编委办</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市编委办</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市委统战部（侨办、台办）</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<ul>
-							<li class="li-1 clearfix">
-								<button class="btn-1" type="button"></button>
-								<input class="checkbox" type="checkbox" name="checkbox-1">
-								<button class="btn-2" type="button"></button>
-								<span class="span-1">人大机关</span>
-							</li>
-							<li class="li-2">
-								<ul>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">市人大办</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-						<ul>
-							<li class="li-1 clearfix">
-								<button class="btn-1" type="button"></button>
-								<input class="checkbox" type="checkbox" name="checkbox-1">
-								<button class="btn-2" type="button"></button>
-								<span class="span-1">政府系统</span>
-							</li>
-							<li class="li-2">
-								<ul>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">组成部门</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">组成部门</span>
-									</li>
-									<li class="li-lv2  clearfix">
-										<button class="btn-lv2-1" type="button"></button>
-										<input class="checkbox" type="checkbox" name="checkbox-lv2">
-										<button class="btn-lv2-2" type="button"></button>
-										<span class="span-1">镇街道</span>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</td>
-				<td width="100" rowspan="2">
-					<button type="button" class="u-btn">选择</button>
-					<button type="button" class="u-btn">删除</button>
-				</td>
-				<td width="300px" height="28">主办单位选择</td>
-			</tr>
-			<tr>
-				<td height="120">&nbsp;</td>
-			</tr>
-			<tr>
-				<td width="100" rowspan="2">
-					<button type="button" class="u-btn">选择</button>
-					<button type="button" class="u-btn">删除</button>
-				</td>
-				<td  height="28">协办单位选择</td>
-			</tr>
-			<tr>
-				<td height="240">&nbsp;</td>
-			</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
+
 </body>
 
 <script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
@@ -349,37 +203,43 @@
                 var c=value.list;
                 if(1==data.category) {
                     $.each(value.sort, function (k, v) {
-                        var listContent = '<tr class="list-content">' +
-                            '<td>' + (count++) +
-                            '<td><input type="checkbox" class="check"></td>' +
-                            '<td>' + c[v]['案号'] + '</td>' +
-                            '<td>' + c[v]['领衔人'] + '</td>' +
-                            '<td>' + c[v]['案别'] + '</td>' +
-                            '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
-                            '<td>' + c[v]['性质类别' + category] + '</td>' +
-                            '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
-                            '<td>' + c[v]['当前环节'] + '</td>' +
-                            '<td>' + c[v]['交办单位'] + '</td>' +
-                            '</tr>';
-                        $('.list-table').append(listContent);
+                        if(v>0){
+                            var listContent = '<tr class="list-content">' +
+                                '<td>' + (count++) +
+                                '<td><input type="checkbox" class="check"></td>' +
+                                '<td>' + c[v]['案号'] + '</td>' +
+                                '<td>' + c[v]['领衔人'] + '</td>' +
+                                '<td>' + c[v]['案别'] + '</td>' +
+                                '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
+                                '<td>' + c[v]['性质类别' + category] + '</td>' +
+                                '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
+                                '<td>' + c[v]['当前环节'] + '</td>' +
+                                '<td>' + c[v]['交办单位'] + '</td>' +
+                                '</tr>';
+                            $('.list-table').append(listContent);
+                        }
+
 
                     });
                 }else{
                     $.each(value.sort, function (k, v) {
-                        var listContent = '<tr class="list-content">' +
-                            '<td>' + (count++) +
-                            '<td><input type="checkbox" class="check"></td>' +
-                            '<td>' + c[v]['编号'] + '</td>' +
-                            '<td>' + c[v]['案号'] + '</td>' +
-                            '<td>' + c[v]['提案人'] + '</td>' +
+                        if(v>0){
+                            var listContent = '<tr class="list-content">' +
+                                '<td>' + (count++) +
+                                '<td><input type="checkbox" class="check"></td>' +
+                                '<td>' + c[v]['编号'] + '</td>' +
+                                '<td>' + c[v]['案号'] + '</td>' +
+                                '<td>' + c[v]['提案人'] + '</td>' +
 //                            '<td>' + c[v]['案别'] + '</td>' +
-                            '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
-                            '<td>' + c[v]['性质类别' + category] + '</td>' +
-                            '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
-                            '<td>' + c[v]['当前环节'] + '</td>' +
-                            '<td>' + c[v]['交办单位'] + '</td>' +
-                            '</tr>';
-                        $('.list-table').append(listContent);
+                                '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
+                                '<td>' + c[v]['性质类别' + category] + '</td>' +
+                                '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
+                                '<td>' + c[v]['当前环节'] + '</td>' +
+                                '<td>' + c[v]['交办单位'] + '</td>' +
+                                '</tr>';
+                            $('.list-table').append(listContent);
+                        }
+
 
                     });
                 }

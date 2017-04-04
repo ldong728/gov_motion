@@ -21,7 +21,6 @@ if(isset($_SESSION['staffLogin'])){
         exit;
     }
     if(isset($_FILES)){
-        mylog();
         if(isset($_POST['file_type'])&&'excel'==$_POST['file_type']){
             encodeExcel();
         }

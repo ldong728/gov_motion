@@ -284,6 +284,93 @@
 
 </table>
 
+<div class="unit" style="display: none;z-index: 999;position: fixed">
+    <div class="unit-title"><h2 class="target-name">请选择</h2></div>
+    <div class="unit-table">
+        <table width="700" border="1" bordercolor="#f08300" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td rowspan="4">
+                    <div class="unit-nav list-content">
+                        <ul>
+                            <li class="li-1 clearfix">
+                                <button class="btn-1" type="button"></button>
+                                <input class="checkbox" type="checkbox" name="checkbox-lv1">
+                                <button class="btn-2" type="button"></button>
+                                <span class="span-1">党委系统</span>
+                            </li>
+                            <li class="li-2">
+                                <ul>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市委办</span>
+                                    </li>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市纪委（监察局）</span>
+                                    </li>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市委组织部</span>
+                                    </li>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市委组织部</span>
+                                    </li>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市委政法委</span>
+                                    </li>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市委政研室</span>
+                                    </li>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市编委办</span>
+                                    </li>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市编委办</span>
+                                    </li>
+                                    <li class="li-lv2  clearfix">
+                                        <button class="btn-lv2-1" type="button"></button>
+                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
+                                        <button class="btn-lv2-2" type="button"></button>
+                                        <span class="span-1">市委统战部（侨办、台办）</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+                <td width="100" rowspan="2">
+                    <button type="button" class="u-btn">选择</button>
+                    <button type="button" class="u-btn">删除</button>
+                </td>
+                <td width="300px" height="28">主办单位选择</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 <script>
     getFuyiCount();
     decodeDate( $('.encoded-data'));

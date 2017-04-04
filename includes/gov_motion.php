@@ -33,7 +33,7 @@ function getUserList(){
     if($_SESSION['staffLogin']['meeting']=='all')return null;
     if(isset($_SESSION['staffLogin']['userList'])){
         foreach ($_SESSION['staffLogin']['userList'] as $k => $v) {
-            $filter['user_'.$k]=$v;
+            $filter[$k]=$v;
         }
         mylog(getArrayInf($filter));
         mylog(getArrayInf($_SESSION['staffLogin']['userList']));

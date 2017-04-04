@@ -259,13 +259,67 @@ $(document).on('click','.mutiple-input',function(){
     //console.log(state);
 });
 $(document).on('click','.target-select',function(){
-    var target=$(this).data('target');
-    console.log(target);
-    getTargetList(target,null,function(back){
+    if($('.target-value-selecter').length>0)return;
+    var _=$(this);
+    var f= _.parent();
+    var target= _.data('target');
+    f.addClass('target-value-selecter');
+    //$('.unit').show();
 
+    getTargetList(target,null,function(back){
+        var listData=backHandle(back);
+        console.log($(listData).length);
+        console.log(listData);
+        $('.list-content').empty();
+        var listContent='';
+        $.each(listData,function(k1,v1){
+            $.each(v1,function(k2,v2){
+                listContent+='<ul><li class="li-1 clearfix">'+
+                '<button class="btn-1" type="button"></button>'+
+                    '<input class="checkbox" type="checkbox" name="checkbox-lv1">'+
+                        '<button class="btn-2" type="button"></button>'+
+                        '<span class="span-1">'+v2.name+'</span>'+
+                    '</li>';
+                if(v2.sub){
+                    listContent+='<li class="li-2" style="display: block;height: 300px"><ul style="height: 100%">';
+                    $.each(v2.sub,function(k3,v3){
+                        listContent+='<li class="li-lv2  clearfix">'+
+                        '<button class="btn-lv2-1" type="button"></button>'+
+                            '<input class="checkbox" type="checkbox" name="checkbox-lv2">'+
+                                '<button class="btn-lv2-2" type="button"></button>'+
+                                '<span class="span-1">'+v3.name+'</span>'+
+                            '</li>'
+                    });
+                    listContent+='</li></ul>'
+                }
+
+                listContent+='</ul>';
+            });
+
+        });
+        listContent+='';
+        $('.list-content').append(listContent);
+        showSelectView($('.unit'));
     });
 
 });
+//$(document).on('click','.target-select',function(){
+//    var _=$(this);
+//    var f= _.parent();
+//    var target= _.data('target');
+//    console.log(target);
+//    console.log(f.data('multiple'));
+//    $('.unit').show();
+//});
+
+function showSelectView(element){
+
+    var width=document.documentElement.clientWidth;
+    var height=document.documentElement.clientHeight;
+    element.css('left',(width/2-360));
+    element.css('top',(height/2-365));
+    element.show();
+}
 function getTargetList(target,filter,callback){
     var sTarget=target;
     var sFilter=filter||{};

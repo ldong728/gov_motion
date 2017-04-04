@@ -238,7 +238,7 @@ $(document).on('change', '.group-unit-select', function () {
     var category = _.data('category')
     var name = _.data('name');
     if (0 != value) {
-        var admin = '{"' + name + '":' + value + '}';
+        var admin = '{"user_' + name + '":' + value + '}';
         altTableBatch('staff', {
             category: category,
             steps: steps,
