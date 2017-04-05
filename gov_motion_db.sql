@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-04-05 13:22:18
+-- Generation Time: 2017-04-05 17:19:58
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -55,9 +55,6 @@ INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `co
 (216, 24, 29, 9, '当年', 0, NULL, 6729, '2017-04-05 09:29:07'),
 (217, 24, 8, 10, '立案', 0, NULL, 6729, '2017-04-05 09:29:22'),
 (218, 24, 32, 13, NULL, 8, NULL, 6726, '2017-04-05 10:37:33'),
-(219, 24, 33, 14, NULL, 45, NULL, 6726, '2017-04-05 10:39:47'),
-(220, 24, 33, 14, NULL, 46, NULL, 6726, '2017-04-05 10:39:47'),
-(221, 24, 33, 14, NULL, 47, NULL, 6726, '2017-04-05 10:39:47'),
 (222, 25, 31, 12, '开发进度170313.docx', 0, 'files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx', 6729, '2017-04-05 11:07:26'),
 (223, 25, 83, 41, '其他', 0, NULL, 6729, '2017-04-05 11:16:11'),
 (224, 25, 6, 4, NULL, 629, NULL, 6729, '2017-04-05 11:16:11'),
@@ -68,7 +65,8 @@ INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `co
 (229, 25, 30, 8, '大会期间', 0, NULL, 6729, '2017-04-05 11:16:24'),
 (230, 25, 34, 17, NULL, 4, NULL, 6729, '2017-04-05 11:16:24'),
 (231, 25, 1, 1, '公开', 0, NULL, 6729, '2017-04-05 11:16:24'),
-(232, 25, 29, 9, '当年', 0, NULL, 6729, '2017-04-05 11:16:24');
+(232, 25, 29, 9, '当年', 0, NULL, 6729, '2017-04-05 11:16:24'),
+(233, 24, 87, 44, '交由市委办 办理', 0, NULL, 6726, '2017-04-05 15:16:16');
 
 -- --------------------------------------------------------
 
@@ -130,7 +128,9 @@ INSERT INTO `attr_template_tbl` (`attr_template_id`, `attr_name`, `option`, `sys
 (40, '反馈意见全文', NULL, 0),
 (41, '性质类别1', '["政治法律","财政经济","城建环保","教科文卫","农业农村","其他"]', 0),
 (42, '审核2', '["立案","并案","不予立案"]', 0),
-(43, '提案人', NULL, 0);
+(43, '提案人', NULL, 0),
+(44, '交办意见', NULL, 0),
+(45, '初审意见', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -995,7 +995,7 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (21, 2, 12, '', 'attachment', NULL, 0, 1, 0, 1, 0),
 (22, 2, 13, '', 'index', 'unit', 0, 4, 0, 0, 0),
 (23, 2, 14, '', 'index', 'unit', 0, 4, 0, 0, 1),
-(24, 2, 15, '', 'index', 'unit', 0, 3, 0, 0, 0),
+(24, 2, 15, '', 'index', 'staff', 0, 3, 0, 0, 0),
 (25, 2, 16, '委员', 'string', NULL, 70, 1, 0, 0, 0),
 (26, 2, 17, '', 'int', NULL, 100, 2, 0, 0, 0),
 (27, 1, 7, '', 'time', NULL, 0, 2, 0, 0, 0),
@@ -1055,7 +1055,10 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (82, 1, 40, '', 'attachment', NULL, 0, 6, 0, 1, 0),
 (83, 1, 41, '其他', 'string', NULL, 0, 1, 0, 0, 0),
 (84, 2, 43, '', 'index', 'duty', 60, 1, 0, 0, 1),
-(85, 2, 42, '立案', 'string', NULL, 0, 0, 0, 0, 0);
+(85, 2, 42, '立案', 'string', NULL, 0, 0, 0, 0, 0),
+(86, 1, 15, '', 'index', 'staff', 0, 3, 0, 0, 0),
+(87, 1, 44, '', 'string', NULL, 0, 4, 0, 0, 0),
+(88, 2, 45, '', 'string', NULL, 0, 2, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1205,7 +1208,7 @@ CREATE TABLE `motion_tbl` (
 --
 
 INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `duty`, `document`, `step`, `document_sha`, `upload_time`) VALUES
-(24, 2, 1, '测试议案', 1, 6729, 579, NULL, 4, NULL, '2017-04-05 06:49:04'),
+(24, 2, 1, '测试议案', 1, 6729, 579, NULL, 3, NULL, '2017-04-05 06:49:04'),
 (25, 2, 1, '开发进度170313.docx', 1, 6729, 629, NULL, 3, NULL, '2017-04-05 11:07:21');
 
 -- --------------------------------------------------------
@@ -2713,7 +2716,7 @@ INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name
 (4951, 1529, 'D55B2A16A33A4F9348256EEB000A731B', 11, 'sunrw', '市政协办孙如婉', NULL, NULL, NULL, '', 3, '{}', 88),
 (4952, 1533, 'D35AE2117681CC9A48256B3A002BE46E', 8, 'sunzh', '市委办孙忠华', NULL, NULL, NULL, '', 3, '{}', 88),
 (4953, 1535, 'BFA47A64340A56F34825756F0022BB2F', 8, 'swbcxh', '市委办陈小恒', NULL, NULL, NULL, '', 3, '{}', 88),
-(4954, 1536, 'C6181ECB70C4DA2448256B3800426AE4', 8, 'swbdcs', '市委办督查室', NULL, NULL, NULL, '', 3, '{}', 88),
+(4954, 1536, 'C6181ECB70C4DA2448256B3800426AE4', 8, 'swbdcs', '市委办督查室', NULL, NULL, NULL, '4', 3, '{}', 88),
 (4955, 1537, 'D87AED786A768D4848256B38004271A0', 21, 'swbdyek', '市委政研室调研科', NULL, NULL, NULL, '', 3, '{}', 88),
 (4956, 1538, '4787ED25DF0B524248256B3800426F15', 25, 'swbdys', '市委党研室（市志办）', NULL, NULL, NULL, '', 3, '{}', 88),
 (4957, 1539, '4AB253711D9805484825733A000F9D04', 8, 'swbfjl', '市委办方建林', NULL, NULL, NULL, '', 3, '{}', 88),
@@ -2863,7 +2866,7 @@ INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name
 (5100, 1741, 'E22AB5289CF6CECF4825758A00277444', 94, 'syzjbgs2', '市邮政局办公室（秘书处）', NULL, NULL, NULL, '', 3, '{}', 88),
 (5101, 1742, '9D567B908A8A3A3948256B37001ECF05', 0, 'szbbgs', '市志办', NULL, NULL, NULL, '', 3, '{}', 88),
 (5102, 1743, '1157614A460D036D48256D4E0009579A', 54, 'szddcb', '市征地督查办', NULL, NULL, NULL, '', 3, '{}', 88),
-(5103, 1744, '75F921EDCCE8C57F48256BD80024F8BC', 10, 'szfdcs', '市政府督查室', NULL, NULL, NULL, '', 3, '{}', 88),
+(5103, 1744, '75F921EDCCE8C57F48256BD80024F8BC', 10, 'szfdcs', '市政府督查室', NULL, NULL, NULL, '4', 3, '{}', 88),
 (5104, 1745, 'D2649E5EE0A7273948256B300024DD01', 4, 'szffws', '市政府发文室', NULL, NULL, NULL, '', 3, '{}', 88),
 (5105, 1747, '0C14853C1212665048256F330011BEC2', 3, 'szfhjg', '市人大胡建国', NULL, NULL, NULL, '', 3, '{}', 88),
 (5106, 1748, '283C4BA8514E0A87482572A4001BBDDC', 15, 'szfjsnhdb', '市作风建设年活动办', NULL, NULL, NULL, '', 3, '{}', 88),
@@ -5993,12 +5996,12 @@ ALTER TABLE `zx_motion_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=234;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
 ALTER TABLE `attr_template_tbl`
-  MODIFY `attr_template_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `attr_template_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 --
 -- 使用表AUTO_INCREMENT `category_tbl`
 --
@@ -6023,7 +6026,7 @@ ALTER TABLE `meeting_tbl`
 -- 使用表AUTO_INCREMENT `motion_attr_tbl`
 --
 ALTER TABLE `motion_attr_tbl`
-  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
 --
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --

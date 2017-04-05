@@ -38,3 +38,19 @@
 2017.04.05.13:15:54:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: 开发进度170313.docx,md5: 5abe7322df1c869b2bb6fdd30bc9a6c7,name: 5abe7322df1c869b2bb6fdd30bc9a6c7.docx,url: files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx,size: 12938,type: .docx,cover: ,state: SUCCESS,attrId: 222}
 2017.04.05.13:15:56:D:\xampp\htdocs\gov_motion\functions.php583:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 25}
 2017.04.05.13:16:02:D:\xampp\htdocs\gov_motion\functions.php583:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 25}
+2017.04.05.16:23:42:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
+2017.04.05.16:24:13:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
+2017.04.05.17:02:41:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
+2017.04.05.17:03:02:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
+2017.04.05.17:03:39:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
+2017.04.05.17:07:54:C:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: }
+2017.04.05.17:08:10:C:\xampp\htdocs\gov_motion\functions.php699:unsetted:{}
+2017.04.05.17:08:38:C:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 4}category: 3,meeting: ,unit: 10,staffId: 6726,staffName: 督察室（测试）,outId: }
+2017.04.05.17:12:08:C:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 4}category: 3,meeting: ,unit: 10,staffId: 6726,staffName: 督察室（测试）,outId: ,currentMotion: 24}
+2017.04.05.17:14:29:C:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 4}category: 3,meeting: ,unit: 10,staffId: 6726,staffName: 督察室（测试）,outId: ,currentMotion: 24}
+2017.04.05.17:16:17:C:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 4}category: 3,meeting: ,unit: 10,staffId: 6726,staffName: 督察室（测试）,outId: ,currentMotion: 24}
+2017.04.05.17:16:56:C:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 4}category: 3,meeting: ,unit: 10,staffId: 6726,staffName: 督察室（测试）,outId: ,currentMotion: 24}
+2017.04.05.17:17:03:C:\xampp\htdocs\gov_motion\functions.php699:unsetted:{}
+2017.04.05.17:17:19:C:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: }
+2017.04.05.17:17:31:C:\xampp\htdocs\gov_motion\functions.php595:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 24}
+2017.04.05.17:18:38:C:\xampp\htdocs\gov_motion\functions.php58:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 24}

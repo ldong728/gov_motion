@@ -322,12 +322,24 @@ function editMotion($data){
 
     //处理政协提案有不同交办单位的情况
     $step4CanEdit=true;
-    if(4==$meetingInf['step']&&2==$meetingInf['category']){
-        $staffUnit=$_SESSION['staffLogin']['unit'];
-        $step4Inf=pdoQuery('motion_view',array('content_int'),array('motion_id'=>$id,'content_int'=>$staffUnit,'attr_name'=>'交办单位'),'limit 1')->fetch();
-        if(!$step4Inf['content_int']){
-            $step4CanEdit=false;
+    if(4==$meetingInf['step']){
+        $staffId=$_SESSION['staffLogin']['staffId'];
+        if(2==$meetingInf['category']){
+            $step4Inf=pdoQuery('motion_view',array('content_int'),array('motion_id'=>$id,'content_int'=>$staffId,'attr_name'=>'交办单位'),'limit 1')->fetch();
+            if(!$step4Inf['content_int']){
+                $step4CanEdit=false;
+            }
+        }else{
+            $step4Inf=pdoQuery('motion_view',array('content_int'),array('motion_id'=>$id,'attr_name'=>'交办单位'),'limit 1')->fetch();
+            if($step4Inf['content_int']==$staffId){
+                $step4CanEdit=true;
+            }else{
+                if('6726'==$staffId)$step4CanEdit=true;
+                else $step4CanEdit=false;
+            }
         }
+
+
     }
 //    mylog($step4CanEdit);
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
@@ -620,6 +632,19 @@ function ajaxTargetList($data){
 
             }
 //            mylog(getArrayInf($backList));
+            echo ajaxBack($backList);
+            break;
+        case 'staff':
+            $motionInf=pdoQuery('motion_tbl',null,array('motion_id'=>$_SESSION['staffLogin']['currentMotion']),'limit 1')->fetch();
+            $step=$motionInf['step']+1;
+            if($filter)$str='and steps like "%'.$step.'%"';
+            else $str='where steps like "%'.$step.'%"';
+            $staffQuery=pdoQuery('staff_admin_view',null,$filter,$str);
+            foreach ($staffQuery as $row) {
+                if(!isset($backList[0][$row['unit']]))$backList[0][$row['unit']]=array('name'=>$row['unit_name'],'id'=>0);
+            }
+            $backList[0][$row['unit']]['sub'][]=array('name'=>$row['full_name'],'id'=>$row['staff_id']);
+
             echo ajaxBack($backList);
             break;
 

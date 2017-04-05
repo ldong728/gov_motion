@@ -31,6 +31,9 @@ class DataSupply {
                     $dutyInf=pdoQuery('duty_view',array('duty_id as id','user_name as name'),array('activity'=>1,'duty_id'=>$index),'limit 1')->fetch();
                     if($dutyInf)$content=$dutyInf['name'];
                     break;
+                case 'staff':
+                    $staffInf=pdoQuery('staff_tbl',array('staff_id as id','full_name as name'),array('staff_id'=>$index),'limit 1')->fetch();
+                    if($staffInf)$content=$staffInf['name'];
                 default:
                     $inf=pdoQuery($targetName.'_tbl',array($targetName.'_id as id',$targetName.'_name as name'),array($targetName.'_id'=>$index),'limit 1')->fetch();
                     if($inf)$content=$inf['name'];

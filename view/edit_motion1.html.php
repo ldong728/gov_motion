@@ -133,8 +133,32 @@
                             </td>
                         </tr>
                     <?php endif ?>
+                    <?php if(1==$meetingInf['category']&&$motion['交办意见']['content']):?>
+                        <?php if(3==$meetingInf['step']):?>
+                        <tr>
+                            <th>交办意见</th>
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                                    class="encoded-data"><?php echo json_encode($motion['交办意见'], JSON_UNESCAPED_UNICODE) ?>
+                            </td>
+                        </tr>
+                            <?php endif ?>
+                        <tr>
+                            <th>交办单位</th>
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                                    class="encoded-data"><?php echo json_encode($motion['交办单位'], JSON_UNESCAPED_UNICODE) ?>
+                            </td>
+                        </tr>
+                    <?php endif?>
                 <?php endif ?>
                 <?php if ($meetingInf['step'] > 3): ?>
+                    <?php if(1==$meetingInf['category']):?>
+                        <tr>
+                            <th>交办意见</th>
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                                    class="encoded-data"><?php echo json_encode($motion['交办意见'], JSON_UNESCAPED_UNICODE) ?>
+                            </td>
+                        </tr>
+                    <?php endif ?>
                     <tr>
                         <th>主办单位</th>
                         <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
