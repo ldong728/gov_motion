@@ -16,7 +16,7 @@
         <a href="#">办理单打印</a>
         <a href="#">建议议案打印</a>
         <a href="<?php echo $motion['原文']['attachment']?>">全文原始稿</a>
-        <?php if(current($motion)['step']<4):?><a href="#">附件修改</a><?php endif?>
+        <?php if(3==current($motion)['step']):?><a class="attachment-file" href="#" data-href="<?php echo $motion['原文']['attachment']?>">附件修改</a><?php endif?>
         <a href="#" class="close-popup">返回</a>
     </div>
     <div class="sug-main-content edit-area">
@@ -59,7 +59,7 @@
                             class="encoded-data"><?php echo json_encode($motion['性质类别' . $meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
                     </td>
                     <th>性质</th>
-                    <td colspan="2" style="text-align: left"><span
+                    <td colspan="2"><span
                             class="encoded-data" ><?php echo json_encode($motion['性质'], JSON_UNESCAPED_UNICODE) ?></span>
                     </td>
                     <th><?php echo 1 == $meetingInf['category'] ? '代表团' : '属性' ?></th>
@@ -80,55 +80,55 @@
                 <?php if(1==$meetingInf['category']):?>
                 <tr>
                     <th>领衔人</th>
-                    <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['领衔人'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
                 <?php endif ?>
                 <?php if(2==$meetingInf['category']):?>
                     <tr>
                         <th>提案人</th>
-                        <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['提案人'], JSON_UNESCAPED_UNICODE) ?></td>
                     </tr>
                 <?php endif ?>
                 <tr>
                     <th >附议人</th>
-                    <td class="fuyi-count" colspan="7" style="text-align: left;padding-left: 10px;"><span
+                    <td class="fuyi-count colspan7" colspan="7" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['附议人'], JSON_UNESCAPED_UNICODE) ?></td>
 
                 </tr>
                 <tr>
                     <th>案由</th>
-                    <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="7" class="colspan7 motion-name-area" style="text-align: left; padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['案由'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
                 <tr>
                     <th>全文</th>
-                    <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['原文'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
                 <tr>
                     <th>摘要</th>
-                    <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['摘要'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
                 <?php if ($meetingInf['step'] > 2): ?>
                     <tr>
                         <th>审核</th>
-                        <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['审核' . $meetingInf['category']], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
                     <tr>
                         <th>审核意见</th>
-                        <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['审核意见'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
                     <?php if (2 == $meetingInf['category']): ?>
                         <tr>
                             <th>交办单位</th>
-                            <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                     class="encoded-data"><?php echo json_encode($motion['交办单位'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                         </tr>
@@ -137,12 +137,12 @@
                 <?php if ($meetingInf['step'] > 3): ?>
                     <tr>
                         <th>主办单位</th>
-                        <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['主办单位'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
                          <th>协办单位</th>
-                        <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['协办单位'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
@@ -169,19 +169,19 @@
                         </tr>
                         <tr>
                             <th>主办意见全文</th>
-                            <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                     class="encoded-data"><?php echo json_encode($motion['主办答复全文'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                         </tr>
                         <tr>
                             <th>已落实事项</th>
-                            <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                     class="encoded-data"><?php echo json_encode($motion['已落实事项'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                         </tr>
                         <tr>
                             <th>计划落实事项</th>
-                            <td colspan="7" style="text-align: left;padding-left: 10px;"><span
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                     class="encoded-data"><?php echo json_encode($motion['计划落实事项'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                         </tr>
@@ -189,7 +189,7 @@
                     <?php foreach ($handlerDisplay as $row): ?>
                         <tr>
                             <th>协办单位：</th>
-                            <td colspan="7" style="text-align: left;padding-left: 10px"><?php echo $row['unit_name']?>:</td>
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px"><?php echo $row['unit_name']?>:</td>
                         </tr>
                         <tr>
                             <th>联系人</th>
@@ -203,7 +203,7 @@
                         </tr>
                         <tr>
                             <th>协办意见全文</th>
-                            <td colspan="7" style="text-align: left;padding-left: 10px;">
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;">
                                 <a class="attachment-file" <?php echo $row['attachment'] ? 'href="' . $row['attachment'] . '"' : '' ?>><?php echo $row['attachment_name'] ?></a>
                             </td>
                         </tr>
@@ -211,7 +211,7 @@
                     <?php if (isset($handlerEdit) && count($handlerEdit) > 0): ?>
                         <tr>
                             <th>协办单位：</th>
-                            <td colspan="7" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?>:</td>
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?>:</td>
                         </tr>
                         <tr>
                             <th>签收时间</th>
@@ -234,7 +234,7 @@
                         </tr>
                         <tr>
                             <th>协办意见全文</th>
-                            <td colspan="7" style="text-align: left;padding-left: 10px;" id="att<?php echo $handlerEdit['motion_handler_id'] ?>">
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;" id="att<?php echo $handlerEdit['motion_handler_id'] ?>">
                                 <button class="upload-handler-file">上传</button>
                                 <input type="file" class id="handler-attachment" name="handler-attachment"
                                        style="display: none">
@@ -268,7 +268,7 @@
                     </tr>
                     <tr>
                         <th>反馈意见全文</th>
-                        <td colspan="7" style="text-align: left;padding-left: 10px;"><span class="encoded-data"><?php echo json_encode($motion['反馈意见全文'], JSON_UNESCAPED_UNICODE) ?>
+                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span class="encoded-data"><?php echo json_encode($motion['反馈意见全文'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
 
@@ -285,86 +285,34 @@
 </table>
 
 <div class="unit" style="display: none;z-index: 999;position: fixed">
-    <div class="unit-title"><h2 class="target-name">请选择</h2></div>
+    <div class="unit-title">
+    	<h2 class="target-name">请选择</h2>
+		<div class="back close-unit"></div>
+	</div>
     <div class="unit-table">
+        <input type="hidden" class="multiple-type">
         <table width="700" border="1" bordercolor="#f08300" cellspacing="0" cellpadding="0">
             <tbody>
             <tr>
                 <td rowspan="4">
-                    <div class="unit-nav list-content">
+                    <div class="unit-nav selecter-content">
                         <ul>
-                            <li class="li-1 clearfix">
-                                <button class="btn-1" type="button"></button>
-                                <input class="checkbox" type="checkbox" name="checkbox-lv1">
-                                <button class="btn-2" type="button"></button>
-                                <span class="span-1">党委系统</span>
-                            </li>
-                            <li class="li-2">
-                                <ul>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市委办</span>
-                                    </li>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市纪委（监察局）</span>
-                                    </li>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市委组织部</span>
-                                    </li>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市委组织部</span>
-                                    </li>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市委政法委</span>
-                                    </li>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市委政研室</span>
-                                    </li>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市编委办</span>
-                                    </li>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市编委办</span>
-                                    </li>
-                                    <li class="li-lv2  clearfix">
-                                        <button class="btn-lv2-1" type="button"></button>
-                                        <input class="checkbox" type="checkbox" name="checkbox-lv2">
-                                        <button class="btn-lv2-2" type="button"></button>
-                                        <span class="span-1">市委统战部（侨办、台办）</span>
-                                    </li>
-                                </ul>
-                            </li>
+
                         </ul>
                     </div>
                 </td>
                 <td width="100" rowspan="2">
-                    <button type="button" class="u-btn">选择</button>
-                    <button type="button" class="u-btn">删除</button>
+                    <button type="button" class="u-btn target-choose">--></button>
+                    <button type="button" class="u-btn chosen-delete"><--</button>
+                    <button type="button" class="u-btn chosen-confirm">确认</button>
                 </td>
-                <td width="300px" height="28">主办单位选择</td>
+                <td width="300px" height="28">
+                	<div class="unit-nav">
+                		<ul class="target-chosen-ul">
+
+                		</ul>
+                	</div>
+                </td>
             </tr>
             </tbody>
         </table>

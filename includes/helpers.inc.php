@@ -42,17 +42,22 @@ function printInf($p){
 //debug
 
 function getArrayInf($array){
-    $s='{';
-    foreach ($array as $k=>$v) {
-        $s.=$k.': ';
-        if(is_array($v)){
-            $s=$s.getArrayInf($v);
-        }else{
-            $s.=$v.',';
+    if(is_array($array)){
+        $s='{';
+        foreach ($array as $k=>$v) {
+            $s.=$k.': ';
+            if(is_array($v)){
+                $s=$s.getArrayInf($v);
+            }else{
+                $s.=$v.',';
+            }
         }
+        $s=trim($s,',');
+        return $s.'}';
+    }else{
+       return 'not a array:'.$array;
     }
-    $s=trim($s,',');
-    return $s.'}';
+
 
 }
 

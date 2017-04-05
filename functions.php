@@ -579,7 +579,8 @@ function updateAttr($data){
  * @param $data
  */
 function ajaxTargetList($data){
-    mylog(getArrayInf($data));
+//    mylog(getArrayInf($data));
+    mylog(getArrayInf($_SESSION['staffLogin']));
     $target=$data['target'];
     $filter=isset($data['filter'])?$data['filter']:null;
     $backList=array();
@@ -604,6 +605,23 @@ function ajaxTargetList($data){
             echo ajaxBack($backList);
             break;
         case 'unit':
+            $motionInf=pdoQuery('motion_tbl',null,array('motion_id'=>$_SESSION['staffLogin']['currentMotion']),'limit 1')->fetch();
+            $step=$motionInf['step']+1;
+            if($filter)$str='and steps like "%'.$step.'%"';
+            else $str='where steps like "%'.$step.'%"';
+            $unitQuery=pdoQuery('unit_tbl',null,$filter,$str);
+            foreach ($unitQuery as $row) {
+                if(0!=$row['parent_unit']){
+                    $backList[0][$row['parent_unit']]['sub'][]=array('name'=>$row['unit_name'],'id'=>$row['unit_id']);
+                }else{
+                    $backList[0][$row['unit_id']]['name']=$row['unit_name'];
+                    $backList[0][$row['unit_id']]['id']=$row['member']?$row['unit_id']:0;
+                }
+
+            }
+//            mylog(getArrayInf($backList));
+            echo ajaxBack($backList);
+            break;
 
 
         default:

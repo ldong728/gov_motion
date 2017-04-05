@@ -2,6 +2,10 @@ var antiDouble=false;
 var timeSet=setTime();
 //getFuyiCount();
 //decodeDate( $('.encoded-data'));
+$(document).ready(function(){
+
+});
+//以下代码作废
 $(document).on('change','.duty-group',function(){
     var currentObj=$(this);
     var col=currentObj.get(0).value;
@@ -52,7 +56,6 @@ $(document).on('change','.duty-select',function(){
 
     }
 });
-
 $(document).on('change','.unit-super',function(){
     var _=$(this);
     var multiple= _.parent().data('multiple');
@@ -83,6 +86,10 @@ $(document).on('change','.unit-select',function(){
         _.prevAll('.unit-super').before('<input type="hidden" class="added-value attr-value" value="'+attrValue+'"><span class="pre-delete">' + text + '</span>');
     }
 });
+//以上代码作废
+
+
+
 $(document).on('click','.pre-delete',function(){
    var _=$(this);
     var id= _.attr('id');
@@ -137,10 +144,14 @@ $(document).on('change','.doc-file',function(){
                     parent.find('.attachment-file').text(v.originalName);
                     antiDouble=false;
                 }else{
-                    alert('ok');
                     parent.find('.attachment-file').attr('href',v.url);
                     parent.find('.attachment-file').text(v.originalName);
                     antiDouble=false;
+                }
+                if(1== v.step){
+                    console.log(v);
+                    var area=$('.motion-name-area').find('textarea');
+                    if(''==area.val())area.text(v.originalName);
                 }
                 //console.log(v);
 
@@ -164,7 +175,6 @@ $(document).on('click','.attachment-file',function(){
     var openDocObj=new ActiveXObject("sharePoint.OpenDocuments.2");
     openDocObj.EditDocument(protocol+'//'+host+'/'+href);
 });
-
 $(document).on('click','.submit-attr',function(){
     submitAtrrs(1, function (data) {
         closePopUp($('.m-popup'));
@@ -186,7 +196,6 @@ $(document).on('click','.motion-reject',function(){
         window.location.reload(true);
     });
 });
-var antiDouble = false;
 $(document).on('click','.upload-handler-file',function(){
     antiDouble = true;
     $('#handler-attachment').click();
@@ -258,36 +267,47 @@ $(document).on('click','.mutiple-input',function(){
     //if()
     //console.log(state);
 });
+
+//弹出选择框的方法
 $(document).on('click','.target-select',function(){
     if($('.target-value-selecter').length>0)return;
     var _=$(this);
     var f= _.parent();
     var target= _.data('target');
+    var multiple= f.data('multiple');
+    var selecterName= f.prev('th').text();
+    var existValue=[];
     f.addClass('target-value-selecter');
-    //$('.unit').show();
+    $.each(f.find('.pre-delete'),function(k,v){
+        var id=$(v).prev('.added-value').val();
+        var attrId=$(v).attr('id');
+       existValue.push({id:id,name:$(v).text(),attrId:attrId});
+    });
 
     getTargetList(target,null,function(back){
         var listData=backHandle(back);
         console.log($(listData).length);
-        console.log(listData);
-        $('.list-content').empty();
+        //console.log(listData);
+        $('.selecter-content').empty();
         var listContent='';
+        var chosenContent='';
+        //填充待选项
         $.each(listData,function(k1,v1){
             $.each(v1,function(k2,v2){
                 listContent+='<ul><li class="li-1 clearfix">'+
-                '<button class="btn-1" type="button"></button>'+
-                    '<input class="checkbox" type="checkbox" name="checkbox-lv1">'+
+                '<button class="btn-1 main-candidate-btn" type="button"></button>'+
+                    '<input class="checkbox candidate super" type="checkbox" name="checkbox-lv1" value="'+v2.id+'">'+
                         '<button class="btn-2" type="button"></button>'+
-                        '<span class="span-1">'+v2.name+'</span>'+
+                        '<span class="span-1 candidate-name">'+v2.name+'</span>'+
                     '</li>';
                 if(v2.sub){
-                    listContent+='<li class="li-2" style="display: block;height: 300px"><ul style="height: 100%">';
+                    listContent+='<li class="li-2"><ul>';
                     $.each(v2.sub,function(k3,v3){
-                        listContent+='<li class="li-lv2  clearfix">'+
+                        listContent+='<li class="li-lv2 main-candidate clearfix">'+
                         '<button class="btn-lv2-1" type="button"></button>'+
-                            '<input class="checkbox" type="checkbox" name="checkbox-lv2">'+
+                            '<input class="checkbox candidate sub" type="checkbox" name="checkbox-lv2" value="'+v3.id+'">'+
                                 '<button class="btn-lv2-2" type="button"></button>'+
-                                '<span class="span-1">'+v3.name+'</span>'+
+                                '<span class="span-1 candidate-name">'+v3.name+'</span>'+
                             '</li>'
                     });
                     listContent+='</li></ul>'
@@ -298,27 +318,166 @@ $(document).on('click','.target-select',function(){
 
         });
         listContent+='';
-        $('.list-content').append(listContent);
+        $('.selecter-content').append(listContent);
+        //填充已选项
+        $('.target-chosen-ul').empty();
+        $.each(existValue,function(k,v){
+            var attrIdContent='';
+            if(v.attrId)attrIdContent='<input type="hidden" class="exist-attr-id" value="'+ v.attrId+'">';
+            chosenContent+='<li class="clearfix">'+attrIdContent+
+            '<input class="checkbox exist" type="checkbox" name="checkbox-lv1" value="'+ v.id+'">'+
+            '<span class="span-1 exist-name">'+ v.name+'</span>'+
+            '</li>'
+        });
+        $('.target-chosen-ul').append(chosenContent);
+        $('.multiple-type').val(multiple);
+        $('.target-name').text('请选择'+selecterName);
         showSelectView($('.unit'));
     });
+});
+
+$(document).on('click','.candidate',function(){
+    console.log('candidate');
+    var _=$(this);
+    var chosen=_.prop('checked');
+    console.log(Boolean(0==_.val()));
+    console.log(_.hasClass('super'));
+    if(0==_.val()&& _.hasClass('super')){
+        console.log('sub');
+        var fUl= _.parents('ul');
+        fUl.find('.sub').prop('checked',chosen);
+    }
+});
+//点击选择框中的选择按钮
+$(document).on('click','.target-choose',function(){
+    var multiple=$('.multiple-type').val();
+    var chosenList={};
+    var existContent='';
+    $.each($('input.exist'),function(k,v){
+        var _=$(v);
+        var attrInf=_.prev('input.exist-attr-id')
+        var name= _.nextAll('.exist-name').text();
+        chosenList[name]={id: _.val(),name:name};
+        if(attrInf.length>0)chosenList[name].attrId=attrInf.val();
+    });
+    //多值情况
+    if(1==multiple){
+        $.each($('input.candidate'),function(k,v){
+            var _=$(v);
+            var name= _.nextAll('.candidate-name').text();
+            if(_.prop('checked')&& 0!=_.val()){
+                if(!chosenList[name])chosenList[name]={id: _.val(),name:name};
+            }
+        });
+
+    }else{//单值情况
+        var valueCount=0;
+        $.each($('input.candidate'),function(k,v){
+            if(valueCount>0)return false;
+            var _=$(v);
+            var name= _.nextAll('.candidate-name').text();
+            if(_.prop('checked')&& 0!=_.val()){
+                chosenList={};
+                chosenList[name]={id: _.val(),name:name};
+                valueCount++;
+            }
+            console.log('reached');
+
+        });
+    }
+    $.each(chosenList,function(k,v){
+        var attrIdContent='';
+        if(v.attrId)attrIdContent='<input type="hidden" class="exist-attr-id" value="'+ v.attrId+'">';
+        existContent+='<li class="clearfix">'+attrIdContent+
+        '<input class="checkbox exist" type="checkbox" name="checkbox-lv1" value="'+ v.id+'">'+
+        '<span class="span-1 exist-name">'+ v.name+'</span>'+
+        '</li>'
+    });
+    //console.log(chosenList);
+    $('.target-chosen-ul').empty();
+    $('.target-chosen-ul').append(existContent);
+
+
+
 
 });
-//$(document).on('click','.target-select',function(){
-//    var _=$(this);
-//    var f= _.parent();
-//    var target= _.data('target');
-//    console.log(target);
-//    console.log(f.data('multiple'));
-//    $('.unit').show();
-//});
+//点击选择框中的删除按钮
+$(document).on('click','.chosen-delete',function(){
+    $.each($('input.exist'),function(k,v){
+        var _=$(v);
+        var name= _.nextAll('.exist-name').text();
+        if(_.prop('checked')&& _.val()){
+            //已写入数据库的
+            if(_.prev('input.exist-attr-id').length>0){
+                ajaxPost('ajaxDeleteAttr',{id:_.prev('input.exist-attr-id').val()},function(data){
+
+                });
+            }
+            _.parent().remove();
+        }
+    });
+});
+//点击加号按钮
+$(document).on('click','.main-candidate-btn',function(){
+    var _=$(this);
+    var fUl= _.parents('ul');
+    _.toggleClass('btn-change-bg');
+    fUl.find('.main-candidate').slideToggle('fast');
+});
+
+$(document).on('click','.close-unit',function(){
+    $('.target-value-selecter').removeClass('target-value-selecter');
+   $('.unit').hide();
+});
+$(document).on('click','.chosen-confirm',function(){
+    var content='';
+    var valuePlace=$('.target-value-selecter');
+    var multiple=$('.multiple-type').val();
+    if(multiple){
+
+        $.each($('input.exist'),function(k,v){
+            var _=$(v);
+            var key= _.val();
+            var name= _.nextAll('.exist-name').text();
+            var attrId= _.prev().val();
+            console.log(Boolean(key));
+            if(attrId){
+                content+='<span class="pre-delete attr-value" id="'+attrId+'">' + name + '</span>';
+            }else{
+                console.log(key);
+                content+='<input type="hidden" class="added-value attr-value" value="'+key+'"><span class="pre-delete">' + name + '</span>';
+            }
+        });
+        valuePlace.children('.target-select').prevAll().remove();
+        valuePlace.children('.target-select').before(content);
+
+    }else{
+        $.each($('input.exist'),function(k,v){
+            var _=$(v);
+            var key= _.val();
+            var name= _.nextAll('.exist-name').text();
+            content='<input type="hidden" class="attr-value" value="'+key+'"><span>' + name + '</span>'
+        });
+        if(content){
+            valuePlace.children('.target-select').prevAll().remove();
+            valuePlace.children('.target-select').before(content);
+        }
+    }
+
+    $('.target-value-selecter').removeClass('target-value-selecter');
+    $('.unit').hide();
+
+
+});
+
 
 function showSelectView(element){
-
     var width=document.documentElement.clientWidth;
     var height=document.documentElement.clientHeight;
     element.css('left',(width/2-360));
     element.css('top',(height/2-365));
     element.show();
+
 }
 function getTargetList(target,filter,callback){
     var sTarget=target;
@@ -405,7 +564,7 @@ function decodeDate(element) {
                         }
                         content+='<button class="target-select" data-target="'+data.target+'">添加</button>'
                     }else{
-                        if(data.content)content+='<span class="pre-delete attr-value" id="'+data.content_int+'">' + data.content + '</span>'
+                        if(data.content)content+='<input type="hidden" class="attr-value" value="'+data.content_int+'"><span>' + data.content + '</span>';
                         content+='<button class="target-select" data-target="'+data.target+'">选择</button>'
                     }
                 }

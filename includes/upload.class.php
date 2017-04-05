@@ -185,7 +185,6 @@ class uploader
             'md5'=>$this->md5,
             "name" => $this->fileName ,
             "url" => $this->fullName ,
-            "urlInDb"=>$this->fullName,
             "size" => $this->fileSize ,
             "type" => $this->fileType ,
             'cover'=>false,

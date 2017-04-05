@@ -198,6 +198,7 @@ $(document).on('change', '.step-checkbox', function () {
 //            showToast('修改完成');
 //        });
 //    } else if (checked) {
+    if(1==thisValue&& _.prop('checked')){
         var groupUnitSelecter = '<select class="group-unit-filter">' +
             '<option value="0">选择分组</option>' +
             '<option value="1group">人大-按代表团</opion>' +
@@ -205,8 +206,16 @@ $(document).on('change', '.step-checkbox', function () {
             '<option value="2group">政协-按界别</opion>' +
             '<option value="2unit">政协-按委组</opion>' +
             '</select>';
+        $('#cat' + staffId).empty();
         $('#cat' + staffId).append(groupUnitSelecter);
         $('#cat' + staffId).attr('data-steps', mySteps);
+    }else{
+        altTable('staff', 'steps', mySteps, 'staff_id', staffId, function (data) {
+            $('#cat' + staffId).empty();
+            showToast('修改完成');
+        });
+    }
+
 //    }
 });
 $(document).on('change', '.group-unit-filter', function () {
