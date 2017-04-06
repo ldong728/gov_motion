@@ -586,9 +586,9 @@ function decodeDate(element) {
                 }
             } else {//选项不可编辑
                 if(data.attachment){
-                    content+='<a href="'+data.attachment+'">'+data.content+'</a>'
+                    content+='<a href="'+data.attachment+'">'+(data.content||'')+'</a>'
                 }else{
-                    content+=data.content;
+                    content+=data.content||'';
                 }
             }
             parent.append(content);

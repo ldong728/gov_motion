@@ -14,7 +14,8 @@
         <?php if($step4CanEdit&&5==current($motion)['step']&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject">上一步</a><?php endif ?>
         <a href="#" class="motion-step-inf" id="<?php echo current($motion)['motion_id']?>">查看信息</a>
         <a href="#">办理单打印</a>
-        <a href="#">建议议案打印</a>
+        <?php if(1 == $meetingInf['category']):?><a href="#">议案打印</a><?php endif?>
+        <?php if(2 == $meetingInf['category']):?><a href="#">提案打印</a><?php endif?>
         <a href="<?php echo $motion['原文']['attachment']?>">全文原始稿</a>
         <?php if(3==current($motion)['step']):?><a class="attachment-file" href="#" data-href="<?php echo $motion['原文']['attachment']?>">附件修改</a><?php endif?>
         <a href="#" class="close-popup">返回</a>
@@ -112,6 +113,18 @@
                     <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['摘要'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
+                <?php if(2==$meetingInf['category']):?>
+
+                <tr>
+                    <th>初审</th>
+                    <td  style="text-align: left;padding-left: 10px;"><span
+                            class="encoded-data"><?php echo json_encode($motion['初审'], JSON_UNESCAPED_UNICODE) ?>
+                    </td>
+                    <th>初审意见</th>
+                    <td colspan="5" style="text-align: left;padding-left: 10px;"><span
+                            class="encoded-data"><?php echo json_encode($motion['初审意见'], JSON_UNESCAPED_UNICODE) ?></td>
+                </tr>
+                <?php endif?>
                 <?php if ($meetingInf['step'] > 2): ?>
                     <tr>
                         <th>审核</th>

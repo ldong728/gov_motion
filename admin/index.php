@@ -164,20 +164,52 @@ function meet_edit(){
     printAdminView('blank.html.php','添加操作员');
 }
 function user_manage(){
-//
-    $unitQuery=pdoQuery('user_unit_tbl',array('user_unit_id as id','user_unit_name as name'),array('category'=>1),null);
-    foreach ($unitQuery as $row) {
-        $unit[$row['name']]=$row['id'];
-    }
+
+
+//    $unitQuery=pdoQuery('user_unit_tbl',array('user_unit_id as id','user_unit_name as name'),array('category'=>2),null);
+//    foreach ($unitQuery as $row) {
+//        $unit[$row['name']]=$row['id'];
+//    }
 //    $groupQuery=pdoQuery('user_group_tbl',array('user_group_id as id','user_group_name as name'),array('category'=>2),null);
 //    foreach ($groupQuery as $row) {
 //        $group[$row['name']]=$row['id'];
 //    }
+//    mylog(getArrayInf($unit));
+//    mylog(getArrayInf($group));
+//    $userQuery=pdoQuery('user_tbl',null,array('category'=>2),'group by user_unit ');
+////    mylog(getArrayInf($userQuery));
+//    foreach ($userQuery as $row) {
+//        $value[]=array('user_name'=>$row['user_unit'].'联络委','category'=>2,'user_unit'=>$row['user_unit'],'user_group'=>'中共届');
+//    }
+//    mylog(getArrayInf($value));
+//    pdoTransReady();
+//    try{
+//        foreach ($value as $row) {
+//            mylog(getArrayInf($row));
+//            $id=pdoInsert('user_tbl',$row);
+//            if(!$id)throw new PDOException;
+//            $data=array('user'=>$id,'category'=>2,'meeting'=>1,'user_unit'=>$unit[$row['user_unit']],'user_group'=>28,'activity'=>1);
+//                mylog(getArrayInf($data));
+//            pdoInsert('duty_tbl',$data);
+//        }
+//        pdoCommit();
+//
+//    }catch(PDOException $e){
+//        mylog();
+//        mylog($e->getMessage());
+//        pdoRollBack();
+//
+//    }
 
-    $userList=pdoQuery('user_tbl',array('user_id','user_name','user_unit','user_group'),array('category'=>1),null);
-    foreach ($userList as $row) {
+
+
+//
+
+
+//    $userList=pdoQuery('user_tbl',array('user_id','user_name','user_unit','user_group'),array('category'=>1),null);
+//    foreach ($userList as $row) {
 //        $value[]=array('category'=>1,'user_unit_name'=>$row['user_unit']);
-        $group=0;
+//        $group=0;
 //        if(in_array($unit[$row['user_unit']],array(725,726,715)))$group=20;
 //        if(in_array($unit[$row['user_unit']],array(717,718,719)))$group=21;
 //        if(in_array($unit[$row['user_unit']],array(721,732)))$group=22;
@@ -187,10 +219,10 @@ function user_manage(){
 //        if(in_array($unit[$row['user_unit']],array(720,730)))$group=26;
 //        if(in_array($unit[$row['user_unit']],array(716)))$group=27;
 
-        $value[]=array('user'=>$row['user_id'],'category'=>1,'meeting'=>2,'user_unit'=>$unit[$row['user_unit']],'user_group'=>$group);
-    }
+//        $value[]=array('user'=>$row['user_id'],'category'=>1,'meeting'=>2,'user_unit'=>$unit[$row['user_unit']],'user_group'=>$group);
+//    }
 //    mylog(getArrayInf($value));
-    pdoBatchInsert('duty_tbl',$value);
+//    pdoBatchInsert('duty_tbl',$value);
     printAdminView('blank.html.php','添加操作员');
 }
 

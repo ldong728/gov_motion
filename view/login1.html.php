@@ -24,7 +24,7 @@
                     <p>密码</p>
                     <input type="password" name="password" class="pwd">
                     <input type="hidden" name="category" value="<?php echo $category ?>">
-                    <button class="btn">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
+                    <button class="btn" onclick="form.submit()">登&nbsp;&nbsp;&nbsp;&nbsp;录</button>
                 </form>
 			</div>
 		</div>
@@ -39,7 +39,9 @@
 <script type="text/javascript">
     var error='<?php echo isset($_GET['error'])?$_GET['error']:''?>';
     init();
-
+//    $('.btn').click(function(){
+//       alert('click');
+//    });
 	$(document).ready(function(){
         resizeView();
         $(window).resize(function(){

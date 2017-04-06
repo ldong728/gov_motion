@@ -55,7 +55,7 @@ function userAuth($userName,$password,$category=3){
  */
 function getIndex($orderBy='default'){
     $staff=$_SESSION['staffLogin'];
-    mylog(getArrayInf($staff));
+//    mylog(getArrayInf($staff));
     global $motionList,$meetingList,$category;
     $meetingList=array();
     $motionList=array();
@@ -87,12 +87,14 @@ function getIndex($orderBy='default'){
     }
 
     if(4==$staff['steps'][0]){
-        $unitQuery=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('step'=>4,'motion_id'=>$motionId,'attr_name'=>'交办单位','category'=>2),' group by motion_id');
+        $unitQuery=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('step'=>4,'motion_id'=>$motionId,'attr_name'=>'交办单位'),' group by motion_id');
         foreach ($unitQuery as $row) {
-            if($staff['unit']!=$row['content_int']){
+//            mylog(getArrayInf($row));
+//            mylog($staff['staffId']);
+            if($row['content_int']&&$staff['staffId']!=$row['content_int']){
                 mylog('not my job');
-                mylog(getArrayInf($motionList[$row['category']]));
-                mylog($row['motion_id']);
+//                mylog(getArrayInf($motionList[$row['category']]));
+//                mylog($row['motion_id']);
                 unset($motionList[$row['category']][$row['motion_id']]);
             }
         }
@@ -569,10 +571,13 @@ function updateAttr($data){
         if(5==$motion['step']){
             $handleDate=$data['handler'];
             mylog(getArrayInf($handleDate));
-            $handleDate['receive_time']=time();
-            $handleDate['reply_time']=time();
-            $handleDate['status']=9;
-            pdoInsert('motion_handler_tbl',$handleDate,'update');
+            if($handleDate){
+                $handleDate['receive_time']=time();
+                $handleDate['reply_time']=time();
+                $handleDate['status']=9;
+                pdoInsert('motion_handler_tbl',$handleDate,'update');
+            }
+
         }
 //        if($data['step'])exeNew('update motion_tbl set step=step+1 where motion_id='.$motionId);
 
@@ -592,7 +597,7 @@ function updateAttr($data){
  */
 function ajaxTargetList($data){
 //    mylog(getArrayInf($data));
-    mylog(getArrayInf($_SESSION['staffLogin']));
+//    mylog(getArrayInf($_SESSION['staffLogin']));
     $target=$data['target'];
     $filter=isset($data['filter'])?$data['filter']:null;
     $backList=array();
@@ -603,15 +608,23 @@ function ajaxTargetList($data){
             $dutyQuery=pdoQuery('duty_view',null,$filter,null);
 
             foreach ($dutyQuery as $row) {
-                if(!isset($backList['user_unit'][$row['user_unit']])){
-                    $backList['user_unit'][$row['user_unit']]=array('name'=>$row['user_unit_name'],'id'=>'0');
-                }
-                $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
                 if(2==$_SESSION['staffLogin']['category']){
-                    if(!isset($backList['user_group'][$row['user_group']])){
-                        $backList['user_group'][$row['user_group']]=array('name'=>$row['user_group_name'],'id'=>'0');
+                    if(strpos($row['user_name'],'联络委')){
+                        $backList['user_unit'][$row['user_unit']]['name']=$row['user_name'];
+                        $backList['user_unit'][$row['user_unit']]['id']=$row['duty_id'];
                     }
-                    $backList['user_group'][$row['user_group']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
+                    $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
+
+
+//                    if(!isset($backList['user_group'][$row['user_group']])){
+//                        $backList['user_group'][$row['user_group']]=array('name'=>$row['user_group_name'],'id'=>'0');
+//                    }
+//                    $backList['user_group'][$row['user_group']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
+                }else{
+                    if(!isset($backList['user_unit'][$row['user_unit']])){
+                        $backList['user_unit'][$row['user_unit']]=array('name'=>$row['user_unit_name'],'id'=>'0');
+                    }
+                    $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
                 }
             }
             echo ajaxBack($backList);
@@ -642,8 +655,9 @@ function ajaxTargetList($data){
             $staffQuery=pdoQuery('staff_admin_view',null,$filter,$str);
             foreach ($staffQuery as $row) {
                 if(!isset($backList[0][$row['unit']]))$backList[0][$row['unit']]=array('name'=>$row['unit_name'],'id'=>0);
+                $backList[0][$row['unit']]['sub'][]=array('name'=>$row['full_name'],'id'=>$row['staff_id']);
             }
-            $backList[0][$row['unit']]['sub'][]=array('name'=>$row['full_name'],'id'=>$row['staff_id']);
+
 
             echo ajaxBack($backList);
             break;
@@ -696,7 +710,7 @@ function getUnit($data){
  */
 function signOut($data){
     session_unset();
-    mylog('unsetted:'.getArrayInf($_SESSION));
+//    mylog('unsetted:'.getArrayInf($_SESSION));
     echo ajaxBack('ok');
 }
 

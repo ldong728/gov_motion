@@ -207,14 +207,14 @@
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (count++) +
                                 '<td><input type="checkbox" class="check"></td>' +
-                                '<td>' + c[v]['案号'] + '</td>' +
-                                '<td>' + c[v]['领衔人'] + '</td>' +
-                                '<td>' + c[v]['案别'] + '</td>' +
-                                '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
-                                '<td>' + c[v]['性质类别' + category] + '</td>' +
+                                '<td>' + (c[v]['案号']||'')+ '</td>' +
+                                '<td>' + (c[v]['领衔人']||'') + '</td>' +
+                                '<td>' + (c[v]['案别']||'') + '</td>' +
+                                '<td class="motion-select" id="' + v + '">' + (c[v]['案由']||'') + '</td>' +
+                                '<td>' + (c[v]['性质类别' + category]||'')+ '</td>' +
                                 '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
-                                '<td>' + c[v]['当前环节'] + '</td>' +
-                                '<td>' + c[v]['交办单位'] + '</td>' +
+                                '<td>' + (c[v]['当前环节']||'') + '</td>' +
+                                '<td>' + (c[v]['交办单位']||'') + '</td>' +
                                 '</tr>';
                             $('.list-table').append(listContent);
                         }
@@ -228,14 +228,14 @@
                                 '<td>' + (count++) +
                                 '<td><input type="checkbox" class="check"></td>' +
                                 '<td>' + c[v]['编号'] + '</td>' +
-                                '<td>' + c[v]['案号'] + '</td>' +
-                                '<td>' + c[v]['提案人'] + '</td>' +
+                                '<td>' + (c[v]['案号']||'') + '</td>' +
+                                '<td>' + (c[v]['提案人']||'') + '</td>' +
 //                            '<td>' + c[v]['案别'] + '</td>' +
                                 '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
-                                '<td>' + c[v]['性质类别' + category] + '</td>' +
+                                '<td>' + (c[v]['性质类别' + category]||'') + '</td>' +
                                 '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
-                                '<td>' + c[v]['当前环节'] + '</td>' +
-                                '<td>' + c[v]['交办单位'] + '</td>' +
+                                '<td>' + (c[v]['当前环节']||'') + '</td>' +
+                                '<td>' + (c[v]['交办单位']||'') + '</td>' +
                                 '</tr>';
                             $('.list-table').append(listContent);
                         }
