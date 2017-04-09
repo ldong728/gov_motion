@@ -182,6 +182,13 @@
        page++;
         reflashList(orderby,page,order);
     });
+    $(document).on('click','.next-page',function(){
+        if(page>0){
+            page--;
+            reflashList(orderby,page,order);
+        }
+
+    });
     function resizeWindow(){
             var bHeight = $(document.body).height();
         var wHeight = $(window).height();
