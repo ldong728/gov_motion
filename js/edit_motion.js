@@ -1,94 +1,9 @@
 var antiDouble=false;
 var timeSet=setTime();
-//getFuyiCount();
-//decodeDate( $('.encoded-data'));
+//console.log(staff);
 $(document).ready(function(){
 
 });
-//以下代码作废
-$(document).on('change','.duty-group',function(){
-    var currentObj=$(this);
-    var col=currentObj.get(0).value;
-//        alert(col);
-    var groupName=currentObj.find('option:selected').text();
-    if(col!=0){
-        ajaxPost('getUserGroup',{group_type:col},function(data){
-            currentObj.nextAll().remove();
-            var content='<select class="duty-sub" data-col="user_'+col+'"><option value="0">'+groupName+'</option>';
-            var value=backHandle(data);
-            $.each(value,function(k,v){
-                content+='<option value="'+ v.id+'">'+ v.name+'</option>'
-            });
-            content+='</select>';
-            currentObj.after(content);
-        })
-    }
-});
-$(document).on('change','.duty-sub',function(){
-    var currentObj=$(this);
-    var col=currentObj.data('col');
-    var value=currentObj.get(0).value;
-    if(0!=value){
-        currentObj.nextAll().remove();
-        ajaxPost('getUser',{col:col,id:value},function(data){
-            var value=backHandle(data);
-            if(value.length>0){
-                console.log(value);
-                var content='<select class="duty-select attr-value">';
-                $.each(value,function(k,v){
-                    content+='<option value="'+ v.id+'">'+ v.name+'</option>';
-                });
-                content+='</select>';
-                currentObj.after(content);
-            }
-
-
-        });
-    }
-});
-$(document).on('change','.duty-select',function(){
-    var _=$(this);
-    var attrValue= _.get(0).value;
-    var text= _.find('option:selected').text();
-    var parent= _.parent();
-    if(parent.data('multiple')){
-        _.prevAll('.duty-group').before('<input type="hidden" class="added-value attr-value" value="'+attrValue+'"><span class="pre-delete">' + text + '</span>');
-
-    }
-});
-$(document).on('change','.unit-super',function(){
-    var _=$(this);
-    var multiple= _.parent().data('multiple');
-    var id= _.val();
-    if(id>0){
-        _.nextAll().remove();
-        ajaxPost('getUnit',{id:id},function(data){
-            var value=backHandle(data);
-            var content='<select class="unit-select attr-value">';
-
-            $.each(value,function(k,v){
-                content+='<option value="'+ v.id+'">'+ v.name+'</option>';
-            });
-            _.after(content);
-            if(1==multiple&&1==value.length){
-                _.before('<input type="hidden" class="added-value attr-value" value="'+value[0].id+'"><span class="pre-delete">' + value[0].name + '</span>')
-            }
-        })
-    }
-});
-$(document).on('change','.unit-select',function(){
-    var _=$(this);
-    var attrValue= _.get(0).value;
-    var text= _.find('option:selected').text();
-    var parent= _.parent();
-    //alert('what');
-    if(parent.data('multiple')){
-        _.prevAll('.unit-super').before('<input type="hidden" class="added-value attr-value" value="'+attrValue+'"><span class="pre-delete">' + text + '</span>');
-    }
-});
-//以上代码作废
-
-
 
 $(document).on('click','.pre-delete',function(){
    var _=$(this);
@@ -98,18 +13,18 @@ $(document).on('click','.pre-delete',function(){
             var value=backHandle(data);
             console.log(value);
             if(value)_.remove();
+            getFuyiCount();
         });
     }else{
         _.prev('.added-value').remove();
         _.remove();
+        getFuyiCount();
     }
    //alert(_.attr('id'));
 });
 $(document).on('click','.choose-file',function(){
     if(!antiDouble){
         antiDouble=true;
-        //console.log($('.doc-file'));
-        //console.log($('.doc-file').length);
         $(this).next('.doc-file').click();
         setTimeout(function(){
             antiDouble=false;
@@ -128,7 +43,7 @@ $(document).on('change','.doc-file',function(){
     var attrId=parent.data('attr');
     var attrType=parent.data('type');
     var fileElementId=_.attr('id');
-    var url='upload.php?attachment=1&ma='+motionAttr+'&at='+attrTemplate+'&a='+attrId+'&t='+attrType
+    var url='upload.php?attachment=1&ma='+motionAttr+'&at='+attrTemplate+'&a='+attrId+'&t='+attrType;
     var uploadData={
         url:url,
         secureuri: false,
@@ -140,11 +55,11 @@ $(document).on('change','.doc-file',function(){
                 if(0==attrId){
                     attrId= v.attrId;
                     parent.attr('data-attr', attrId);
-                    parent.find('.attachment-file').attr('href',v.url);
+                    parent.find('.attachment-file').attr('data-href',v.url);
                     parent.find('.attachment-file').text(v.originalName);
                     antiDouble=false;
                 }else{
-                    parent.find('.attachment-file').attr('href',v.url);
+                    parent.find('.attachment-file').attr('data-href',v.url);
                     parent.find('.attachment-file').text(v.originalName);
                     antiDouble=false;
                 }
@@ -169,16 +84,36 @@ $(document).on('change','.doc-file',function(){
 $(document).on('click','.attachment-file',function(){
     var protocol=window.location.protocol;
     var host=window.location.host;
-    //console.log(window.location.host);
-    //console.log(window.location);
     var href=$(this).data('href');
-    var openDocObj=new ActiveXObject("sharePoint.OpenDocuments.2");
-    openDocObj.EditDocument(protocol+'//'+host+'/'+href);
+    try{
+        var openDocObj=new ActiveXObject("sharePoint.OpenDocuments.2")||'';
+        openDocObj.EditDocument(protocol+'//'+host+'/'+href);
+    }catch(err){
+        console.log(err);
+        if(confirm('您使用的浏览器不支持word在线编辑插件，附件将以下载方式保存至您的电脑')){
+            console.log(window.location);
+            console.log(document.domain);
+            location.href=href;
+        }
+    }
+
+
+
+
 });
 $(document).on('click','.submit-attr',function(){
     submitAtrrs(1, function (data) {
-        closePopUp($('.m-popup'));
-        window.location.reload(true);
+        var back=backHandle(data);
+        if(staff.steps.indexOf(String(back.step))>-1){
+            console.log(staff);
+            ajaxPost('editMotion',{id:back.id},function(data) {
+                $('.m-popup').html(data);
+                mPopup();
+            });
+        }else{
+            closePopUp($('.m-popup'));
+            window.location.reload(true);
+        }
     })
 });
 $(document).on('click','.save-attr',function(){
@@ -188,12 +123,18 @@ $(document).on('click','.save-attr',function(){
     }) ;
 });
 $(document).on('click','.motion-reject',function(){
-    if($('.handle-value').length>0){
-        return;
-    }
     submitAtrrs(-1,function(data){
-        closePopUp($('.m-popup'));
-        window.location.reload(true);
+        var back=backHandle(data);
+        if(staff.steps.indexOf(String(back.step))>-1){
+            console.log(staff);
+            ajaxPost('editMotion',{id:back.id},function(data) {
+                $('.m-popup').html(data);
+                mPopup();
+            });
+        }else{
+            closePopUp($('.m-popup'));
+            window.location.reload(true);
+        }
     });
 });
 $(document).on('click','.upload-handler-file',function(){
@@ -270,6 +211,10 @@ $(document).on('click','.mutiple-input',function(){
 
 //弹出选择框的方法
 $(document).on('click','.target-select',function(){
+    //testcode
+    //showSelectView($('.unit'));
+    //return;
+
     if($('.target-value-selecter').length>0)return;
     var _=$(this);
     var f= _.parent();
@@ -286,15 +231,19 @@ $(document).on('click','.target-select',function(){
 
     getTargetList(target,null,function(back){
         var listData=backHandle(back);
-        console.log($(listData).length);
+        //console.log($(listData).length);
         //console.log(listData);
         $('.selecter-content').empty();
         var listContent='';
         var chosenContent='';
         //填充待选项
         $.each(listData,function(k1,v1){
-            $.each(v1,function(k2,v2){
-                listContent+='<ul><li class="li-1 clearfix">'+
+
+            var value1=v1.list||v1;
+            var hidden=v1.list?'style="display:none"':'';
+            listContent+=v1.list?'<div class="nav-tab"><h2 class="main-category"><i class="icon icon-chevron-right"></i>'+v1.name+'</h2>':'';
+            $.each(value1,function(k2,v2){
+                listContent+='<ul '+hidden+'><li class="li-1 clearfix">'+
                 '<button class="btn-1 main-candidate-btn" type="button"></button>'+
                     '<input class="checkbox candidate super" type="checkbox" name="checkbox-lv1" value="'+v2.id+'">'+
                         '<button class="btn-2" type="button"></button>'+
@@ -315,9 +264,11 @@ $(document).on('click','.target-select',function(){
 
                 listContent+='</ul>';
             });
+            listContent+=v1.list?'</div>':'';
 
         });
-        listContent+='';
+        //listContent+='';
+        //console.log(listContent);
         $('.selecter-content').append(listContent);
         //填充已选项
         $('.target-chosen-ul').empty();
@@ -335,13 +286,19 @@ $(document).on('click','.target-select',function(){
         showSelectView($('.unit'));
     });
 });
+$(document).on('click','.main-category',function(){
+    var _=$(this);
+    _.children('i').toggleClass('icon-chevron-down');
+    var uls= _.nextAll('ul');
+    uls.slideToggle('fast');
+});
 
 $(document).on('click','.candidate',function(){
-    console.log('candidate');
+    //console.log('candidate');
     var _=$(this);
     var chosen=_.prop('checked');
-    console.log(Boolean(0==_.val()));
-    console.log(_.hasClass('super'));
+    //console.log(Boolean(0==_.val()));
+    //console.log(_.hasClass('super'));
     if(0==_.val()&& _.hasClass('super')){
         console.log('sub');
         var fUl= _.parents('ul');
@@ -428,6 +385,7 @@ $(document).on('click','.main-candidate-btn',function(){
 $(document).on('click','.close-unit',function(){
     $('.target-value-selecter').removeClass('target-value-selecter');
    $('.unit').hide();
+    judgeMotionType();
 });
 $(document).on('click','.chosen-confirm',function(){
     var content='';
@@ -440,11 +398,11 @@ $(document).on('click','.chosen-confirm',function(){
             var key= _.val();
             var name= _.nextAll('.exist-name').text();
             var attrId= _.prev().val();
-            console.log(Boolean(key));
+            //console.log(Boolean(key));
             if(attrId){
                 content+='<span class="pre-delete attr-value" id="'+attrId+'">' + name + '</span>';
             }else{
-                console.log(key);
+                //console.log(key);
                 content+='<input type="hidden" class="added-value attr-value" value="'+key+'"><span class="pre-delete">' + name + '</span>';
             }
         });
@@ -466,7 +424,8 @@ $(document).on('click','.chosen-confirm',function(){
 
     $('.target-value-selecter').removeClass('target-value-selecter');
     $('.unit').hide();
-
+    judgeMotionType();
+    getFuyiCount();
 
 });
 
@@ -538,23 +497,6 @@ function decodeDate(element) {
                         });
                         content+='</select>';
                     }
-                    //if (1 == data.multiple && data.multiple_value && data.multiple_value.length > 0) {
-                    //    $.each(data.multiple_value, function(id, value){
-                    //        content += '<span class="pre-delete attr-value" id="'+value.attr_id+'">' + value.content + '</span>'
-                    //    });
-                    //}
-                    //if($(data.option).length>0){//非人员录入选项
-                    //    var isValue= data.target?'':'attr-value';
-                    //    content+='<select class="'+ data.class+' '+ isValue+'">';
-                    //    $.each(data.option,function(k,v){
-                    //        var selected=v==data.content?'selected="selected"':'';
-                    //        content+='<option value="'+ k+'" '+selected+'>'+v+'</option>';
-                    //    });
-                    //    content+='</select>';
-                    //}else{//人员录入选项
-                    //    content+='<button class="select-duty" data-motionattr="'+data.attr_template+'">选择</button>';
-                    //}
-
                 }else if(data.target){
                     if(1==data.multiple){
                         if($(data.multiple_value).length > 0){
@@ -564,7 +506,7 @@ function decodeDate(element) {
                         }
                         content+='<button class="target-select" data-target="'+data.target+'">添加</button>'
                     }else{
-                        if(data.content)content+='<input type="hidden" class="attr-value" value="'+data.content_int+'"><span>' + data.content + '</span>';
+                        if(data.content)content+='<input type="hidden" class="attr-value" value="'+data.content_int+'"><span class="single-value">' + data.content + '</span>';
                         content+='<button class="target-select" data-target="'+data.target+'">选择</button>'
                     }
                 }
@@ -597,7 +539,17 @@ function decodeDate(element) {
     });
 }
 function submitAtrrs(step,callback) {
+
     var sStep=step||0;
+    if(sStep>0){
+        var verifyData=inputVerify();
+        if(verifyData.length>0){
+            console.log(verifyData);
+            alert(verifyData[0].content);
+            return;
+        }
+
+    }
     var data={step:sStep,data:[]};
     //console.mylog($('.update-value'));
     $('.update-value').each(function (k, v) {
@@ -661,4 +613,108 @@ function closePopUp(element){
     //element.css('display','none');
     element.empty();
     $('.doc-file').remove();
+}
+/**
+ * 政协自动变更提案性质类别
+ */
+function judgeMotionType(){
+    var selecter=$('.judged-value').children('select');
+    if($('.user-type').length>0&&selecter.length>0){
+        var _=$('.user-type');
+        var attrValue= _.find('.attr-value');
+        //var preDelete= _.find('.pre-delete');
+        //console.log(preDelete);
+        if(attrValue.length>1){
+            //console.log('联名');
+            selecter.val('联名提案');
+            return;
+        }else if(0==attrValue.length){
+            selecter.val('委员');
+        }else{
+           if(attrValue.val()){
+               ajaxPost('ajaxUserInf',{id:attrValue.val()},set);
+           }else{
+               ajaxPost('ajaxUserInfFromAttrTbl',{attrId:attrValue.attr('id')},set);
+           }
+        }
+    }
+    function set(data){
+        //console.log(data);
+        var back=backHandle(data);
+        //console.log(back);
+        if('0'!=back.user_unit&&'0'!=back.user_group){
+            selecter.val('委员');
+        }else{
+            selecter.val('党派团体');
+        }
+    }
+}
+/**
+ * 表单校验
+ */
+function inputVerify(){
+    var errorlist=[];
+    var passVerify=$('.pass-verify').find('.attr-value');
+    if(passVerify.length>0&&'立案'!=passVerify.val()){
+        return errorlist;
+    }
+
+    $.each($('.verify-value'),function(k,v){
+        var _=$(v);
+        var valueInput=_.find('.attr-value');
+        var inputButton= _.find('.target-select');
+        var value= _.find('.attr-value').val()||'';
+        var handleValue= _.find('.handle-value');
+        var attrType= _.data('type');
+        var valueName= _.prev().text();
+
+
+        if('attachment'!=attrType){
+            if(inputButton.length>0){
+                if(0== _.find('.pre-delete').length&&0==_.find('.single-value').length){
+                    errorlist.push({name:valueName,content:valueName+"不能为空"})
+                }
+
+            }
+            if(valueInput.length>0&&0==inputButton.length){
+                if(!value||!Boolean(value.trim())){
+                    //console.log(value);
+                    errorlist.push({name:valueName,content:valueName+"不能为空"})
+                }else{
+                    if('int'==attrType&&!value.match(/^-?[1-9]\d*$/)){
+                        errorlist.push({name:valueName,content:valueName+"必须为整数"});
+                    }
+                }
+            }
+        }else{//附件
+            //var attachmentFile=_.find('.attachment-file').data('href');
+            var attachment= _.find('.attachment-file').data('href');
+            if('#'==attachment||'null'==attachment||!attachment){
+                errorlist.push({name:valueName,content:valueName+"未上传"})
+            }
+        }
+        if (handleValue.length > 0) {
+            var value = handleValue.val().trim();
+            var type = handleValue.attr('type');
+            if (!value) {
+                errorlist.push({name: valueName, content: valueName + "不能为空"});
+            } else {
+                if (!value.match(/^-?[1-9]\d*$/) && 'tel' == type)errorlist.push({
+                    name: valueName,
+                    content: valueName + "必须为电话号码"
+                });
+            }
+        }
+    });
+    var handlerAttachment = $('.upload-handler-file').nextAll('.handle-attachment-file');
+
+    if (handlerAttachment.length > 0 && !handlerAttachment.attr('href')){
+        var handlertAtachmentName=$('.upload-handler-file').parent().prev().text();
+        errorlist.push({
+            name: handlertAtachmentName,
+            content: handlertAtachmentName + "未上传"
+        });
+    }
+
+    return errorlist;
 }

@@ -1,4 +1,7 @@
 <?php global $meetingInf?>
+<script>
+    var staff=eval('('+'<?php echo json_encode($_SESSION['staffLogin'])?>'+')');
+</script>
 <body>
 <div class="m-header">
     <div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua<?php echo $meetingInf['category']?>.jpg" alt="Huabiao"></div>

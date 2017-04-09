@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-04-06 08:17:45
+-- Generation Time: 2017-04-08 08:15:22
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `gov_motion_db`
@@ -61,7 +61,7 @@ INSERT INTO `attr_template_tbl` (`attr_template_id`, `attr_name`, `option`, `sys
 (3, '案由', NULL, 0),
 (4, '领衔人', NULL, 0),
 (5, '附议人', NULL, 0),
-(6, '性质类别2', '["工业经济","农林水利","财贸金融","道路交通","城建管理","环境保护","医药卫生","科技教育","文化体育","劳动人事","政法统战","其他"]', 0),
+(6, '性质类别2', '["","工业经济","农林水利","财贸金融","道路交通","城建管理","环境保护","医药卫生","科技教育","文化体育","劳动人事","政法统战","其他"]', 0),
 (7, '登记时间', NULL, 0),
 (8, '状态', '["大会期间","闭会期间","重新办理"]', 0),
 (9, '性质', '["当年","多年重复","重点督办","重点提案","重点提案备选"]', 0),
@@ -96,12 +96,13 @@ INSERT INTO `attr_template_tbl` (`attr_template_id`, `attr_name`, `option`, `sys
 (38, '采纳情况', NULL, 0),
 (39, '落实情况', NULL, 0),
 (40, '反馈意见全文', NULL, 0),
-(41, '性质类别1', '["政治法律","财政经济","城建环保","教科文卫","农业农村","其他"]', 0),
+(41, '性质类别1', '["","政治法律","财政经济","城建环保","教科文卫","农业农村","其他"]', 0),
 (42, '审核2', '["立案","并案","不予立案"]', 0),
 (43, '提案人', NULL, 0),
 (44, '交办意见', NULL, 0),
 (45, '初审意见', NULL, 0),
-(46, '初审', '["立案","并案","不予立案"]', 0);
+(46, '初审', '["立案","并案","不予立案"]', 0),
+(47, '案别', '["","建议","议案"]', 0);
 
 -- --------------------------------------------------------
 
@@ -851,35 +852,63 @@ INSERT INTO `duty_tbl` (`duty_id`, `user`, `category`, `meeting`, `user_unit`, `
 (688, 722, 1, 2, 716, 27, NULL, 1),
 (689, 723, 1, 2, 716, 27, NULL, 1),
 (690, 724, 1, 2, 716, 27, NULL, 1),
-(778, 813, 2, 1, 685, 28, NULL, 1),
-(779, 814, 2, 1, 686, 28, NULL, 1),
-(780, 815, 2, 1, 687, 28, NULL, 1),
-(781, 816, 2, 1, 688, 28, NULL, 1),
-(782, 817, 2, 1, 689, 28, NULL, 1),
-(783, 818, 2, 1, 690, 28, NULL, 1),
-(784, 819, 2, 1, 691, 28, NULL, 1),
-(785, 820, 2, 1, 692, 28, NULL, 1),
-(786, 821, 2, 1, 693, 28, NULL, 1),
-(787, 822, 2, 1, 694, 28, NULL, 1),
-(788, 823, 2, 1, 695, 28, NULL, 1),
-(789, 824, 2, 1, 696, 28, NULL, 1),
-(790, 825, 2, 1, 697, 28, NULL, 1),
-(791, 826, 2, 1, 698, 28, NULL, 1),
-(792, 827, 2, 1, 699, 28, NULL, 1),
-(793, 828, 2, 1, 700, 28, NULL, 1),
-(794, 829, 2, 1, 701, 28, NULL, 1),
-(795, 830, 2, 1, 702, 28, NULL, 1),
-(796, 831, 2, 1, 703, 28, NULL, 1),
-(797, 832, 2, 1, 704, 28, NULL, 1),
-(798, 833, 2, 1, 705, 28, NULL, 1),
-(799, 834, 2, 1, 706, 28, NULL, 1),
-(800, 835, 2, 1, 707, 28, NULL, 1),
-(801, 836, 2, 1, 708, 28, NULL, 1),
-(802, 837, 2, 1, 709, 28, NULL, 1),
-(803, 838, 2, 1, 710, 28, NULL, 1),
-(804, 839, 2, 1, 711, 28, NULL, 1),
-(805, 840, 2, 1, 712, 28, NULL, 1),
-(806, 841, 2, 1, 713, 28, NULL, 1);
+(778, 813, 2, 1, 685, 0, NULL, 1),
+(779, 814, 2, 1, 686, 0, NULL, 1),
+(780, 815, 2, 1, 687, 0, NULL, 1),
+(781, 816, 2, 1, 688, 0, NULL, 1),
+(782, 817, 2, 1, 689, 0, NULL, 1),
+(783, 818, 2, 1, 690, 0, NULL, 1),
+(784, 819, 2, 1, 691, 0, NULL, 1),
+(785, 820, 2, 1, 692, 0, NULL, 1),
+(786, 821, 2, 1, 693, 0, NULL, 1),
+(787, 822, 2, 1, 694, 0, NULL, 1),
+(788, 823, 2, 1, 695, 0, NULL, 1),
+(789, 824, 2, 1, 696, 0, NULL, 1),
+(790, 825, 2, 1, 697, 0, NULL, 1),
+(791, 826, 2, 1, 698, 0, NULL, 1),
+(792, 827, 2, 1, 699, 0, NULL, 1),
+(793, 828, 2, 1, 700, 0, NULL, 1),
+(794, 829, 2, 1, 701, 0, NULL, 1),
+(795, 830, 2, 1, 702, 0, NULL, 1),
+(796, 831, 2, 1, 703, 0, NULL, 1),
+(797, 832, 2, 1, 704, 0, NULL, 1),
+(798, 833, 2, 1, 705, 0, NULL, 1),
+(799, 834, 2, 1, 706, 0, NULL, 1),
+(800, 835, 2, 1, 707, 0, NULL, 1),
+(801, 836, 2, 1, 708, 0, NULL, 1),
+(802, 837, 2, 1, 709, 0, NULL, 1),
+(803, 838, 2, 1, 710, 0, NULL, 1),
+(804, 839, 2, 1, 711, 0, NULL, 1),
+(805, 840, 2, 1, 712, 0, NULL, 1),
+(806, 841, 2, 1, 713, 0, NULL, 1),
+(807, 842, 2, 1, 0, 28, NULL, 1),
+(808, 843, 2, 1, 0, 29, NULL, 1),
+(809, 844, 2, 1, 0, 30, NULL, 1),
+(810, 845, 2, 1, 0, 31, NULL, 1),
+(811, 846, 2, 1, 0, 32, NULL, 1),
+(812, 847, 2, 1, 0, 33, NULL, 1),
+(813, 848, 2, 1, 0, 34, NULL, 1),
+(814, 849, 2, 1, 0, 35, NULL, 1),
+(815, 850, 2, 1, 0, 36, NULL, 1),
+(816, 851, 2, 1, 0, 37, NULL, 1),
+(817, 852, 2, 1, 0, 38, NULL, 1),
+(818, 853, 2, 1, 0, 39, NULL, 1),
+(819, 854, 2, 1, 0, 40, NULL, 1),
+(820, 855, 2, 1, 0, 41, NULL, 1),
+(821, 856, 2, 1, 0, 42, NULL, 1),
+(822, 857, 2, 1, 0, 43, NULL, 1),
+(823, 858, 2, 1, 0, 44, NULL, 1),
+(824, 859, 2, 1, 0, 45, NULL, 1),
+(825, 860, 2, 1, 0, 46, NULL, 1),
+(826, 861, 2, 1, 0, 47, NULL, 1),
+(827, 862, 2, 1, 0, 48, NULL, 1),
+(828, 863, 2, 1, 0, 49, NULL, 1),
+(829, 864, 2, 1, 0, 40, NULL, 1),
+(830, 865, 2, 1, 0, 40, NULL, 1),
+(831, 866, 2, 1, 0, 40, NULL, 1),
+(832, 867, 2, 1, 0, 40, NULL, 1),
+(833, 868, 2, 1, 0, 40, NULL, 1),
+(834, 869, 2, 1, 0, 40, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -899,7 +928,7 @@ CREATE TABLE `duty_view` (
 ,`user_group` int(11)
 ,`admin_type` varchar(10)
 ,`activity` tinyint(4)
-,`user_name` varchar(10)
+,`user_name` varchar(25)
 ,`user_phone` varchar(11)
 ,`party` varchar(10)
 ,`user_unit_name` varchar(20)
@@ -952,8 +981,8 @@ CREATE TABLE `meeting_tbl` (
 --
 
 INSERT INTO `meeting_tbl` (`meeting_id`, `meeting_name`, `start_time`, `end_time`, `deadline_time`, `category`, `motion_template`, `jie`, `ci`) VALUES
-(1, '慈溪市政协第XX届第XX次会议', 123, 1234, 1490511241, 2, 2, 0, 0),
-(2, '慈溪市人大第XX届第XX次会议', 123, 1234, 12345, 1, 1, 1, 1);
+(1, '慈溪市政协十一届第一次会议', 123, 1234, 1490511241, 2, 2, 11, 1),
+(2, '慈溪市人大十七届第一次会议', 123, 1234, 12345, 1, 1, 17, 1);
 
 -- --------------------------------------------------------
 
@@ -1041,7 +1070,7 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (68, 1, 26, '', 'string', NULL, 0, 5, 0, 0, 0),
 (69, 1, 27, '', 'time', NULL, 0, 5, 0, 0, 0),
 (70, 1, 28, '', 'string', NULL, 0, 5, 0, 0, 0),
-(71, 1, 29, '', 'attachment', NULL, 0, 5, 0, 0, 0),
+(71, 1, 29, '', 'attachment', NULL, 0, 5, 0, 1, 0),
 (72, 1, 30, '', 'string', NULL, 0, 6, 0, 0, 0),
 (73, 1, 31, '', 'time', NULL, 0, 6, 0, 0, 0),
 (74, 1, 32, '', 'string', NULL, 0, 6, 0, 0, 0),
@@ -1053,13 +1082,14 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (80, 1, 38, '', 'string', NULL, 0, 6, 0, 0, 0),
 (81, 1, 39, '', 'string', NULL, 0, 6, 0, 0, 0),
 (82, 1, 40, '', 'attachment', NULL, 0, 6, 0, 1, 0),
-(83, 1, 41, '其他', 'string', NULL, 0, 1, 0, 0, 0),
+(83, 1, 41, '', 'string', NULL, 0, 1, 0, 0, 0),
 (84, 2, 43, '', 'index', 'duty', 60, 1, 0, 0, 1),
 (85, 2, 42, '立案', 'string', NULL, 0, 3, 0, 0, 0),
 (86, 1, 15, '', 'index', 'staff', 0, 3, 0, 0, 0),
 (87, 1, 44, '', 'string', NULL, 0, 4, 0, 0, 0),
 (88, 2, 45, '', 'string', NULL, 0, 2, 0, 0, 0),
-(89, 2, 46, '立案', 'string', NULL, 0, 2, 0, 0, 0);
+(89, 2, 46, '立案', 'string', NULL, 0, 2, 0, 0, 0),
+(90, 1, 47, '', 'string', NULL, 0, 1, 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1209,7 +1239,7 @@ CREATE TABLE `motion_tbl` (
 --
 
 INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `duty`, `document`, `step`, `document_sha`, `upload_time`) VALUES
-(28, 1, 2, '新建', 2, 6725, 0, NULL, 1, NULL, '2017-04-06 05:40:38');
+(1, 2, 1, '新建', 1, 6729, 0, NULL, 1, NULL, '2017-04-08 06:12:44');
 
 -- --------------------------------------------------------
 
@@ -4512,8 +4542,8 @@ INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name
 (6747, NULL, NULL, 158, 'zxzgly', '周巷镇管理员', NULL, NULL, '123456', '1', 1, '{"user_unit":716}', 0),
 (6748, NULL, NULL, 160, 'fsjdgly', '浒山街道管理员', NULL, NULL, '123456', '1', 1, '{"user_unit":725}', 0),
 (6749, NULL, NULL, 161, 'bxljdgly', '白沙路街道管理员', NULL, NULL, '123456', '1', 1, '{"user_unit":726}', 0),
-(6750, NULL, NULL, 159, 'gtjdgly', '古塘街道管理员', NULL, NULL, '123456', '', 1, '{}', 0),
-(6751, NULL, NULL, 162, 'zhjdgly', '宗汉街道管理员', NULL, NULL, '123456', '', 1, '{}', 0),
+(6750, NULL, NULL, 159, 'gtjdgly', '古塘街道管理员', NULL, NULL, '123456', '1', 1, '{"user_unit":715}\n', 0),
+(6751, NULL, NULL, 162, 'zhjdgly', '宗汉街道管理员', NULL, NULL, '123456', '1', 1, '{"user_unit":718}\n', 0),
 (6752, NULL, NULL, 163, 'kdjdgly', '坎墩街道管理员', NULL, NULL, '123456', '1', 1, '{"user_unit":717}', 0),
 (6753, NULL, NULL, 154, 'cszgly', '崇寿镇管理员', NULL, NULL, '123456', '1', 1, '{"user_unit":719}', 0);
 
@@ -4567,7 +4597,8 @@ INSERT INTO `sub_menu_tbl` (`id`, `parent_id`, `key_word`, `name`) VALUES
 (13, 105, 'staff_step', '操作员流程权限'),
 (14, 105, 'add_steff', '添加操作员'),
 (15, 106, 'meet_edit', '会议编辑'),
-(16, 106, 'user_manage', '用户编辑');
+(16, 106, 'user_manage', '用户编辑'),
+(17, -1, 'excel_encode', '解析Excel');
 
 -- --------------------------------------------------------
 
@@ -4907,7 +4938,8 @@ INSERT INTO `user_group_tbl` (`user_group_id`, `user_group_name`, `category`) VA
 (45, '科技科协（人才办）', 2),
 (46, '科技科协（科协）', 2),
 (47, '科技科协（科技）', 2),
-(48, '经济界', 2);
+(48, '经济界', 2),
+(49, '科技科协', 2);
 
 -- --------------------------------------------------------
 
@@ -4917,14 +4949,14 @@ INSERT INTO `user_group_tbl` (`user_group_id`, `user_group_name`, `category`) VA
 
 CREATE TABLE `user_tbl` (
   `user_id` int(11) NOT NULL,
-  `user_name` varchar(10) NOT NULL,
+  `user_name` varchar(25) NOT NULL,
   `user_phone` varchar(11) DEFAULT NULL,
   `id_card` varchar(18) DEFAULT NULL,
   `mail` varchar(50) DEFAULT NULL,
   `address` varchar(200) DEFAULT NULL,
   `password` varchar(40) DEFAULT NULL,
   `party` varchar(10) DEFAULT NULL,
-  `category` int(11) NOT NULL DEFAULT '1',
+  `category` int(11) NOT NULL DEFAULT '2',
   `user_unit` varchar(50) DEFAULT NULL,
   `user_group` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -5622,36 +5654,64 @@ INSERT INTO `user_tbl` (`user_id`, `user_name`, `user_phone`, `id_card`, `mail`,
 (722, '谢利群', '13777188560', NULL, NULL, NULL, NULL, NULL, 1, '周巷镇', NULL),
 (723, '谭小萍', '15990294192', NULL, NULL, NULL, NULL, NULL, 1, '周巷镇', NULL),
 (724, '魏海明', '13968230788', NULL, NULL, NULL, NULL, NULL, 1, '周巷镇', NULL),
-(813, '农业农村组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '农业农村组', '中共届'),
+(813, '农业农村组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '农业农村组', ''),
 (814, '匡堰联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '匡堰', '中共届'),
-(815, '医卫组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '医卫组', '中共届'),
+(815, '医卫组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '医卫组', ''),
 (816, '古塘联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '古塘', '中共届'),
 (817, '周巷联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '周巷', '中共届'),
 (818, '坎墩联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '坎墩', '中共届'),
-(819, '城交环组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '城交环组', '中共届'),
+(819, '城交环组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '城交环组', ''),
 (820, '宗汉联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '宗汉', '中共届'),
 (821, '崇寿联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '崇寿', '中共届'),
 (822, '庵东联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '庵东', '中共届'),
 (823, '掌起联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '掌起', '中共届'),
-(824, '教育组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '教育组', '中共届'),
-(825, '文体新闻组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '文体新闻组', '中共届'),
+(824, '教育组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '教育组', ''),
+(825, '文体新闻组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '文体新闻组', ''),
 (826, '新浦联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '新浦', '中共届'),
-(827, '无编组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '无编组', '中共届'),
+(827, '无编组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '无编组', ''),
 (828, '桥头联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '桥头', '中共届'),
 (829, '横河联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '横河', '中共届'),
 (830, '浒山联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '浒山', '中共届'),
-(831, '港澳台侨组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '港澳台侨组', '中共届'),
+(831, '港澳台侨组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '港澳台侨组', ''),
 (832, '白沙路联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '白沙路', '中共届'),
-(833, '社法组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '社法组', '中共届'),
-(834, '经科组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '经科组', '中共届'),
+(833, '社法组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '社法组', ''),
+(834, '经科组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '经科组', ''),
 (835, '胜山联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '胜山', '中共届'),
 (836, '观海卫联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '观海卫', '中共届'),
-(837, '财贸组联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '财贸组', '中共届');
+(837, '财贸组', NULL, NULL, NULL, NULL, NULL, NULL, 2, '财贸组', ''),
+(838, '逍林联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '逍林', '中共届');
 INSERT INTO `user_tbl` (`user_id`, `user_name`, `user_phone`, `id_card`, `mail`, `address`, `password`, `party`, `category`, `user_unit`, `user_group`) VALUES
-(838, '逍林联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '逍林', '中共届'),
 (839, '长河联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '长河', '中共届'),
 (840, '附海联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '附海', '中共届'),
-(841, '龙山联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '龙山', '中共届');
+(841, '龙山联络委', NULL, NULL, NULL, NULL, NULL, NULL, 2, '龙山', '中共届'),
+(842, '中共界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '中共界'),
+(843, '侨联界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '侨联界'),
+(844, '共青团青联界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '共青团青联界'),
+(845, '农业农村界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '农业农村界'),
+(846, '医药卫生界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '医药卫生界'),
+(847, '台联界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '台联界'),
+(848, '妇联界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '妇联界'),
+(849, '工商联界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '工商联界'),
+(850, '总工会界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '总工会界'),
+(851, '教育界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '教育界'),
+(852, '文体新闻出版界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '文体新闻出版界'),
+(853, '无党派人士界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '无党派人士界'),
+(854, '民主党派人士界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '民主党派人士界'),
+(855, '民族宗教界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '民族宗教界'),
+(856, '特邀界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '特邀界'),
+(857, '社会福利和保障界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '社会福利和保障界'),
+(858, '社会科学界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '社会科学界'),
+(859, '科技科协（人才办）', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '科技科协（人才办）'),
+(860, '科技科协（科协）', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '科技科协（科协）'),
+(861, '科技科协（科技）', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '科技科协（科技）'),
+(862, '经济界', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '经济界'),
+(863, '科技科协', NULL, NULL, NULL, NULL, NULL, NULL, 2, '', '科技科协'),
+(864, '民盟慈溪市基层委员会', NULL, NULL, NULL, NULL, NULL, NULL, 2, NULL, '民主党派人士界'),
+(865, '民建慈溪市基层委员会', NULL, NULL, NULL, NULL, NULL, NULL, 2, '民主党派人士界', NULL),
+(866, '九三学社慈溪市综合支社', NULL, NULL, NULL, NULL, NULL, NULL, 2, '民主党派人士界', NULL),
+(867, '致公党慈溪市综合支部', NULL, NULL, NULL, NULL, NULL, NULL, 2, '民主党派人士界', NULL),
+(868, '民革杭州湾新区综合支部', NULL, NULL, NULL, NULL, NULL, NULL, 2, '民主党派人士界', NULL),
+(869, '农工党杭州湾新区综合支部', NULL, NULL, NULL, NULL, NULL, NULL, 2, '民主党派人士界', NULL);
 
 -- --------------------------------------------------------
 
@@ -5672,34 +5732,34 @@ CREATE TABLE `user_unit_tbl` (
 
 INSERT INTO `user_unit_tbl` (`user_unit_id`, `category`, `user_unit_name`, `unit`) VALUES
 (685, 2, '农业农村组', NULL),
-(686, 2, '匡堰', NULL),
+(686, 2, '匡堰镇', NULL),
 (687, 2, '医卫组', NULL),
-(688, 2, '古塘', NULL),
-(689, 2, '周巷', NULL),
-(690, 2, '坎墩', NULL),
+(688, 2, '古塘街道', NULL),
+(689, 2, '周巷镇', NULL),
+(690, 2, '坎墩街道', NULL),
 (691, 2, '城交环组', NULL),
-(692, 2, '宗汉', NULL),
-(693, 2, '崇寿', NULL),
-(694, 2, '庵东', NULL),
-(695, 2, '掌起', NULL),
+(692, 2, '宗汉街道', NULL),
+(693, 2, '崇寿镇', NULL),
+(694, 2, '庵东镇', NULL),
+(695, 2, '掌起镇', NULL),
 (696, 2, '教育组', NULL),
 (697, 2, '文体新闻组', NULL),
-(698, 2, '新浦', NULL),
+(698, 2, '新浦镇', NULL),
 (699, 2, '无编组', NULL),
-(700, 2, '桥头', NULL),
-(701, 2, '横河', NULL),
-(702, 2, '浒山', NULL),
+(700, 2, '桥头镇', NULL),
+(701, 2, '横河镇', NULL),
+(702, 2, '浒山街道', NULL),
 (703, 2, '港澳台侨组', NULL),
-(704, 2, '白沙路', NULL),
-(705, 2, '社法组', NULL),
-(706, 2, '经科组', NULL),
-(707, 2, '胜山', NULL),
-(708, 2, '观海卫', NULL),
+(704, 2, '白沙路街道', NULL),
+(705, 2, '社会法制组', NULL),
+(706, 2, '经济科技组', NULL),
+(707, 2, '胜山镇', NULL),
+(708, 2, '观海卫镇', NULL),
 (709, 2, '财贸组', NULL),
-(710, 2, '逍林', NULL),
-(711, 2, '长河', NULL),
-(712, 2, '附海', NULL),
-(713, 2, '龙山', NULL),
+(710, 2, '逍林镇', NULL),
+(711, 2, '长河镇', NULL),
+(712, 2, '附海镇', NULL),
+(713, 2, '龙山镇', NULL),
 (714, 1, '匡堰镇', NULL),
 (715, 1, '古塘街道', NULL),
 (716, 1, '周巷镇', NULL),
@@ -5730,25 +5790,6 @@ CREATE TABLE `zx_motion_tbl` (
   `zx_motion` int(11) NOT NULL,
   `motion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- 转存表中的数据 `zx_motion_tbl`
---
-
-INSERT INTO `zx_motion_tbl` (`zx_motion`, `motion`) VALUES
-(1, 2),
-(2, 3),
-(3, 6),
-(4, 7),
-(5, 8),
-(6, 9),
-(7, 10),
-(8, 11),
-(9, 12),
-(10, 13),
-(11, 21),
-(12, 27),
-(13, 28);
 
 -- --------------------------------------------------------
 
@@ -6028,12 +6069,12 @@ ALTER TABLE `zx_motion_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=249;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
 ALTER TABLE `attr_template_tbl`
-  MODIFY `attr_template_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `attr_template_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 --
 -- 使用表AUTO_INCREMENT `category_tbl`
 --
@@ -6043,7 +6084,7 @@ ALTER TABLE `category_tbl`
 -- 使用表AUTO_INCREMENT `duty_tbl`
 --
 ALTER TABLE `duty_tbl`
-  MODIFY `duty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=807;
+  MODIFY `duty_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=835;
 --
 -- 使用表AUTO_INCREMENT `handle_status_tbl`
 --
@@ -6058,17 +6099,17 @@ ALTER TABLE `meeting_tbl`
 -- 使用表AUTO_INCREMENT `motion_attr_tbl`
 --
 ALTER TABLE `motion_attr_tbl`
-  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `motion_attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
 --
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --
 ALTER TABLE `motion_handler_tbl`
-  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用表AUTO_INCREMENT `motion_tbl`
 --
 ALTER TABLE `motion_tbl`
-  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- 使用表AUTO_INCREMENT `motion_template_tbl`
 --
@@ -6098,7 +6139,7 @@ ALTER TABLE `step_tbl`
 -- 使用表AUTO_INCREMENT `sub_menu_tbl`
 --
 ALTER TABLE `sub_menu_tbl`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 --
 -- 使用表AUTO_INCREMENT `unit_group_tbl`
 --
@@ -6113,12 +6154,12 @@ ALTER TABLE `unit_tbl`
 -- 使用表AUTO_INCREMENT `user_group_tbl`
 --
 ALTER TABLE `user_group_tbl`
-  MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `user_group_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- 使用表AUTO_INCREMENT `user_tbl`
 --
 ALTER TABLE `user_tbl`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=842;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=870;
 --
 -- 使用表AUTO_INCREMENT `user_unit_tbl`
 --

@@ -56,7 +56,7 @@ function userAuth($userName,$password,$category=3){
 function getIndex($orderBy='default'){
     $staff=$_SESSION['staffLogin'];
 //    mylog(getArrayInf($staff));
-    global $motionList,$meetingList,$category;
+    global $motionList,$meetingList,$handleUnitMotionList,$category;
     $meetingList=array();
     $motionList=array();
     $category=$staff['category'];
@@ -121,13 +121,13 @@ function getIndex($orderBy='default'){
         if(count($mainHandleMotion)>0){
             $mainHandleList=pdoQuery('motion_for_index_view',null,array('motion_id'=>$mainHandleMotion),null);
             foreach ($mainHandleList as $row) {
-                $motionList[$row['category']]['main'][]=$row;
+                $handleUnitMotionList[$row['category']]['main'][]=$row;
             }
         }
         if(count($handleMotion)>0){
             $handleList=pdoQuery('motion_for_index_view',null,array('motion_id'=>$handleMotion),null);
             foreach ($handleList as $row) {
-                $motionList[$row['category']]['coop'][]=$row;
+                $handleUnitMotionList[$row['category']]['coop'][]=$row;
             }
         }
 
@@ -141,11 +141,10 @@ function getIndex($orderBy='default'){
         }
 
 
-        mylog(getArrayInf($motionList));
+//        mylog(getArrayInf($motionList));
         printView('handle_index');
         exit();
     }
-//    getMotionList(array());
     printView('index');
 }
 
@@ -316,6 +315,8 @@ function editMotion($data){
     global $config;
     $id=$data['id'];
     $_SESSION['staffLogin']['currentMotion']=$id;
+    $canMainHandler=false;
+    $mainHandler=array();
     $staffStepPms=$_SESSION['staffLogin']['steps'];
 
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
@@ -355,7 +356,7 @@ function editMotion($data){
 
         //将attr数据转化为可为用户观看的内容
         $values['content']=setAttrValue($row);
-        if((($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps']))||
+        if((($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])&&4!=$row['step'])||
             ($step4CanEdit&&4==$row['step']&&$row['step']==$row['attr_step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))){//如操作员流程权限与当前权限吻合，则可修改当前流程选项
             $values['edit']=true;
             if (count($optionArray) > 0) {//普通选项
@@ -373,6 +374,7 @@ function editMotion($data){
 
             //如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限
             if(5==$row['attr_step']&&5==$row['step']){
+                mylog(getArrayInf($row));
                 $mainHandler[$row['attr_name']]=$values;
                 continue;
             }
@@ -432,6 +434,7 @@ function editMotion($data){
         }
     }
     $currentStep=current($motion)['step'];
+//    mylog(getArrayInf($motion));
 //    $userInf=getUserList();
     switch($currentStep){
         case 1:
@@ -464,14 +467,19 @@ function editMotion($data){
             if($canMainHandler&&$motion['主办单位']['content_int']==$_SESSION['staffLogin']['unit']){
                 $canMainHandler=true;
                 $motion=array_merge($motion,$mainHandler);
-            }
-//            mylog(getArrayInf($motion));
+            }else{
+                foreach ($mainHandler as $row) {
+//                    mylog(getArrayInf($row));
+                    $values=$row;
+                    $values['edit']=false;
+                    $motion[$values['attr_name']]=$values;
+                }
 
+            }
             break;
     }
 //    mylog(getArrayInf($motion));
     include '/view/edit_motion1.html.php';
-//    include '/view/edit_motion1'.$meetingInf['category'].'.html.php';//分界面
     return;
 }
 
@@ -512,6 +520,7 @@ function updateAttr($data){
     $isFoward=$data['step'];
     $motionId=$_SESSION['staffLogin']['currentMotion'];
     $motion=pdoQuery('motion_tbl',null,array('motion_id'=>$motionId),' limit 1')->fetch();
+    $currentStep=$motion['step'];
     $attrs=isset($data['data'])?$data['data']:array();
     pdoTransReady();
     try{
@@ -536,9 +545,20 @@ function updateAttr($data){
 //            mylog(getArrayInf($value));
             pdoInsert('attr_tbl',$value,'update');
         }
+        if(1==$motion['step']||2==$motion['step']){//将“案由”和“领衔人”属性与motion表中的motion_name,duty字段同步
+            $attr=pdoQuery('attr_view',array('content','content_int'),array('motion'=>$motionId,'attr_name'=>array('案由','领衔人','提案人')),'order by attr_name asc')->fetchAll();
+            $name='';
+            $duty='0';
+            foreach ($attr as $row) {
+                if($row['content'])$name=$row['content'];
+                else $duty=$row['content_int'];
+            }
+            pdoUpdate('motion_tbl',array('motion_name'=>$name,'duty'=>$duty),array('motion_id'=>$motionId),'limit 1');
+        }
         //点击下一步的操作
         if($isFoward>0){
-            pdoUpdate('motion_tbl',array('step'=>$motion['step']+1),array('motion_id'=>$motionId));
+            $currentStep++;
+            pdoUpdate('motion_tbl',array('step'=>$currentStep),array('motion_id'=>$motionId));
             if(4==$motion['step']){
                 $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),null);
                 pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion'=>$motionId));
@@ -546,16 +566,7 @@ function updateAttr($data){
                     pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int'],'status'=>1),'update');
                 }
             }
-            if(1==$motion['step']||2==$motion['step']){//将“案由”和“领衔人”属性与motion表中的motion_name,duty字段同步
-                $attr=pdoQuery('attr_view',array('content','content_int'),array('motion'=>$motionId,'attr_name'=>array('案由','领衔人','提案人')),'order by attr_name asc limit 2')->fetchAll();
-                $name='';
-                $duty='0';
-                foreach ($attr as $row) {
-                    if($row['content'])$name=$row['content'];
-                    else $duty=$row['content_int'];
-                }
-                pdoUpdate('motion_tbl',array('motion_name'=>$name,'duty'=>$duty),array('motion_id'=>$motionId),'limit 1');
-            }
+
 
             //审核未通过的情况下，将提议案步骤直接设置为完成
             if(3==$motion['step']){
@@ -569,23 +580,26 @@ function updateAttr($data){
             pdoUpdate('motion_tbl',array('step'=>$motion['step']-1),array('motion_id'=>$motionId));
         }
         if(5==$motion['step']){
-            $handleDate=$data['handler'];
-            mylog(getArrayInf($handleDate));
-            if($handleDate){
-                $handleDate['receive_time']=time();
-                $handleDate['reply_time']=time();
-                $handleDate['status']=9;
-                pdoInsert('motion_handler_tbl',$handleDate,'update');
+            if(isset($data['handler'])){
+                $handleDate=$data['handler'];
+                mylog(getArrayInf($handleDate));
+                if($handleDate){
+                    $handleDate['receive_time']=time();
+                    $handleDate['reply_time']=time();
+                    $handleDate['status']=9;
+                    $handleDate['staff']=$_SESSION['staffLogin']['staffId'];
+                    pdoInsert('motion_handler_tbl',$handleDate,'update');
+                }
             }
-
         }
 //        if($data['step'])exeNew('update motion_tbl set step=step+1 where motion_id='.$motionId);
 
         pdoCommit();
-        echo ajaxBack('ok');
+        echo ajaxBack(array('step'=>$currentStep,'id'=>$motionId));
     }catch(PDOException $e){
         mylog($e->getMessage());
         pdoRollBack();
+        echo ajaxBack(1,null,'database error');
     }
 
 
@@ -607,26 +621,52 @@ function ajaxTargetList($data){
             if(isset($_SESSION['staffLogin']['userList']))$filter=array_merge($filter,$_SESSION['staffLogin']['userList'],array('category'=>$_SESSION['staffLogin']['category'],'activity'=>1));
             $dutyQuery=pdoQuery('duty_view',null,$filter,null);
 
-            foreach ($dutyQuery as $row) {
+//            foreach ($dutyQuery as $row) {
                 if(2==$_SESSION['staffLogin']['category']){
-                    if(strpos($row['user_name'],'联络委')){
-                        $backList['user_unit'][$row['user_unit']]['name']=$row['user_name'];
-                        $backList['user_unit'][$row['user_unit']]['id']=$row['duty_id'];
+                    $backList['unitFilt']['name']='按委组';
+                    $backList['groupFilt']['name']='按界别';
+                    $backList['unitGroup']['name']='党派团体';
+                    foreach ($dutyQuery as $row) {
+                        if($row['user_group']&&$row['user_unit']){
+                            if(!isset($backList['unitFilt']['list'][$row['user_unit']])){
+                                $backList['unitFilt']['list'][$row['user_unit']]=array('name'=>$row['user_unit_name'],'id'=>0);
+                            }
+                            $backList['unitFilt']['list'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
+                            if(!isset($backList['groupFilt']['list'][$row['user_group']])){
+                                $backList['groupFilt']['list'][$row['user_group']]=array('name'=>$row['user_group_name'],'id'=>0);
+                            }
+                            $backList['groupFilt']['list'][$row['user_group']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
+
+                        }else{
+                            $backList['unitGroup']['list'][$row['duty_id']]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
+                        }
                     }
-                    $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
 
 
+//                    if(strpos($row['user_name'],'联络委')){
+//                        $backList['user_unit'][$row['user_unit']]['name']=$row['user_name'];
+//                        $backList['user_unit'][$row['user_unit']]['id']=$row['duty_id'];
+//                    }
+//                    $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
 //                    if(!isset($backList['user_group'][$row['user_group']])){
 //                        $backList['user_group'][$row['user_group']]=array('name'=>$row['user_group_name'],'id'=>'0');
 //                    }
 //                    $backList['user_group'][$row['user_group']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
+//                }else{
+//                    if(!isset($backList['user_unit'][$row['user_unit']])){
+//                        $backList['user_unit'][$row['user_unit']]=array('name'=>$row['user_unit_name'],'id'=>'0');
+//                    }
+//                    $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
                 }else{
-                    if(!isset($backList['user_unit'][$row['user_unit']])){
-                        $backList['user_unit'][$row['user_unit']]=array('name'=>$row['user_unit_name'],'id'=>'0');
+                    foreach ($dutyQuery as $row) {
+                        if(!isset($backList['user_unit'][$row['user_unit']])){
+                            $backList['user_unit'][$row['user_unit']]=array('name'=>$row['user_unit_name'],'id'=>'0');
+                        }
+                        $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
                     }
-                    $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
+
                 }
-            }
+//            }
             echo ajaxBack($backList);
             break;
         case 'unit':
@@ -672,18 +712,25 @@ function ajaxTargetList($data){
 }
 
 /**
- * 通过ajax获取代表委员分组成员列表的方法
- * @param $data：包含分组形式，group或unit，及对应id，例{"col":"group","id":5}
+ * 通过ajax获取代表委员信息
+ * @param $data：委员id:{"id":5}
  */
-function getUser($data){
-    $where=array($data['col']=>$data['id']);
-    $list=pdoQuery('duty_view',array('duty_id as id','user_name as name'),$where,null);
-    $userList=null;
-    foreach ($list as $row) {
-        $userList[]=$row;
-    }
-    echo ajaxBack($userList);
+function ajaxUserInf($data){
+    $where=array('duty_id'=>$data['id']);
+    $inf=pdoQuery('duty_view',null,$where,'limit 1')->fetch();
+    echo ajaxBack($inf);
 }
+
+/**
+ * 已知指定attr_id数据中保存的数据为委员duty_id,获取该代表委员信息
+ * @param $data 保存attr_id {attrId:id}
+ */
+function ajaxUserInfFromAttrTbl($data){
+    $dutyId=pdoQuery('attr_tbl',array('content_int'),array('attr_id'=>$data['attrId']),'limit 1')->fetch()['content_int'];
+    $inf=pdoQuery('duty_view',null,array('duty_id'=>$dutyId),'limit 1')->fetch();
+    echo ajaxBack($inf);
+}
+
 
 /**
  * 通过ajax获取分组单位列表的方法

@@ -165,6 +165,28 @@ function meet_edit(){
 }
 function user_manage(){
 
+//    $groupQuery=pdoQuery('user_group_tbl',null,array('category'=>2),null);
+//    $group=array();
+//    foreach ($groupQuery as $row) {
+//        $value[]=array('user_name'=>$row['user_group_name'],'category'=>'2','user_group'=>$row['user_group_name'],'user_unit'=>'');
+//        $group[$row['user_group_name']]=$row['user_group_id'];
+//    }
+//    mylog(getArrayInf($value));
+//    mylog(getArrayInf($group));
+//    pdoTransReady();
+//    try{
+//        foreach ($value as $row) {
+//            $id=pdoInsert('user_tbl',$row);
+//            pdoInsert('duty_tbl',array('user'=>$id,'category'=>2,'meeting'=>1,'user_unit'=>0,'user_group'=>$group[$row['user_group']],'activity'=>1));
+//        }
+//
+//        pdoCommit();
+//    }catch(PDOException $e){
+//        pdoRollBack();
+//        mylog($e);
+//    }
+
+
 
 //    $unitQuery=pdoQuery('user_unit_tbl',array('user_unit_id as id','user_unit_name as name'),array('category'=>2),null);
 //    foreach ($unitQuery as $row) {

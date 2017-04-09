@@ -1,5 +1,7 @@
-<?php global $motionList,$meetingList,$category;?>
-
+<?php global $handleUnitMotionList,$meetingList,$category;?>
+<script>
+    var staff=eval('('+'<?php echo json_encode($_SESSION['staffLogin'])?>'+')');
+</script>
 <body>
 <div class="m-header">
     <div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua3.jpg" alt="Huabiao"></div>
@@ -33,34 +35,34 @@
         <?php endif?>
     </div>                     <!--左边-->
     <div class="home-r">
-        <?php if(isset($motionList[1])):?>
+        <?php if(isset($handleUnitMotionList[1])):?>
             <div class="home-title"><p>人大议案待办</p></div>
             <div class="home-content">
                 <ul class="content-list">
-                    <?php if(isset($motionList[1]['main'])):?>)
-                    <?php foreach($motionList[1]['main'] as $row):?>
+                    <?php if(isset($handleUnitMotionList[1]['main'])):?>
+                    <?php foreach($handleUnitMotionList[1]['main'] as $row):?>
                         <li><a class="motion" id="mtn<?php echo $row['motion_id'] ?>" href="#">请办理【主办待办】—— <?php echo $row['motion_name'] ?><span class="hour"><?php echo $row['upload_time'] ?></span></a></li>
                     <?php endforeach ?>
                     <?php endif ?>
-                    <?php if(isset($motionList[1]['coop'])):?>)
-                        <?php foreach($motionList[1]['coop'] as $row):?>
+                    <?php if(isset($handleUnitMotionList[1]['coop'])):?>
+                        <?php foreach($handleUnitMotionList[1]['coop'] as $row):?>
                             <li><a class="motion" id="mtn<?php echo $row['motion_id'] ?>" href="#">请办理【协办待办】—— <?php echo $row['motion_name'] ?><span class="hour"><?php echo $row['upload_time'] ?></span></a></li>
                         <?php endforeach ?>
                     <?php endif ?>
                 </ul>
             </div>
         <?php endif ?>
-        <?php if(isset($motionList[2])):?>
+        <?php if(isset($handleUnitMotionList[2])):?>
             <div class="home-title"><p>政协提案待办</p></div>
             <div class="home-content">
                 <ul class="content-list">
-                    <?php if(isset($motionList[2]['main'])):?>)
-                        <?php foreach($motionList[2]['main'] as $row):?>
+                    <?php if(isset($handleUnitMotionList[2]['main'])):?>
+                        <?php foreach($handleUnitMotionList[2]['main'] as $row):?>
                             <li><a class="motion" id="mtn<?php echo $row['motion_id'] ?>" href="#">请办理【主办待办】—— <?php echo $row['motion_name'] ?><span class="hour"><?php echo $row['upload_time'] ?></span></a></li>
                         <?php endforeach ?>
                     <?php endif ?>
-                    <?php if(isset($motionList[2]['coop'])):?>)
-                        <?php foreach($motionList[2]['coop'] as $row):?>
+                    <?php if(isset($handleUnitMotionList[2]['coop'])):?>
+                        <?php foreach($handleUnitMotionList[2]['coop'] as $row):?>
                             <li><a class="motion" id="mtn<?php echo $row['motion_id'] ?>" href="#">请办理【协办待办】—— <?php echo $row['motion_name'] ?><span class="hour"><?php echo $row['upload_time'] ?></span></a></li>
                         <?php endforeach ?>
                     <?php endif ?>

@@ -5,12 +5,23 @@
 </div>
 <div class="sug-main">
     <div class="sug-main-nav clearfix">
-        <?php if(in_array(current($motion)['step'],$_SESSION['staffLogin']['steps'])):?>
-        <a href="#" class="save-attr">保存</a>
-        <?php if(current($motion)['step']>2):?><a href="#" class="motion-reject">上一步</a>
+        <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 != current($motion)['step']): ?>
+            <a href="#" class="save-attr">保存</a>
+            <?php if (current($motion)['step'] > 2): ?>
+                <a href="#" class="motion-reject">上一步</a>
+            <?php endif ?>
+            <a href="#" class="submit-attr">下一步</a>
+        <?php endif ?>
+        <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 == current($motion)['step']&&(isset($handlerEdit) && count($handlerEdit) > 0)): ?>
+            <a href="#" class="save-attr">保存</a>
+            <a href="#" class="submit-attr">提交</a>
         <?php endif?>
-        <a href="#" class="submit-attr">下一步</a>
+        <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 == current($motion)['step']&&$canMainHandler): ?>
+
+            <a href="#" class="save-attr">保存</a>
+            <a href="#" class="submit-attr">提交</a>
         <?php endif?>
+
         <?php if($step4CanEdit&&5==current($motion)['step']&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject">上一步</a><?php endif ?>
         <a href="#" class="motion-step-inf" id="<?php echo current($motion)['motion_id']?>">查看信息</a>
         <a href="#">办理单打印</a>
@@ -44,9 +55,14 @@
                 <tr>
                     <th>案别</th>
                     <td colspan="2">
-                        <span><?php echo 1 == $meetingInf['category'] ? '建议' : '提案' ?></span></td>
+                        <?php if(2==$meetingInf['category']):?><span>提案</span>
+                        <?php else:?>
+                            <span
+                                class="encoded-data"><?php echo json_encode($motion['案别'], JSON_UNESCAPED_UNICODE) ?></span>
+                        <?php endif?>
+                        </td>
                     <th>案号</th>
-                    <td colspan="2"><span
+                    <td colspan="2" class="verify-value"><span
                             class="encoded-data"><?php echo json_encode($motion['案号'], JSON_UNESCAPED_UNICODE) ?></span>
                     </td>
                     <th>是否公开</th>
@@ -56,7 +72,7 @@
                 </tr>
                 <tr>
                     <th>性质类别</th>
-                    <td colspan="2"><span
+                    <td colspan="2" class="verify-value"><span
                             class="encoded-data"><?php echo json_encode($motion['性质类别' . $meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
                     </td>
                     <th>性质</th>
@@ -71,7 +87,7 @@
                         <th>委组</th>
                         <td colspan="2"><?php if($unitGroupInf):?><?php echo $unitGroupInf['unit']?><?php endif?></td>
                         <th>提案分类</th>
-                        <td colspan="2"><span
+                        <td colspan="2" class="judged-value"><span
                                 class="encoded-data"><?php echo json_encode($motion['提案分类'], JSON_UNESCAPED_UNICODE) ?></span>
                         </td>
                         <th>附议人数</th>
@@ -81,14 +97,14 @@
                 <?php if(1==$meetingInf['category']):?>
                 <tr>
                     <th>领衔人</th>
-                    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['领衔人'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
                 <?php endif ?>
                 <?php if(2==$meetingInf['category']):?>
                     <tr>
                         <th>提案人</th>
-                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7 user-type verify-value" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['提案人'], JSON_UNESCAPED_UNICODE) ?></td>
                     </tr>
                 <?php endif ?>
@@ -100,12 +116,12 @@
                 </tr>
                 <tr>
                     <th>案由</th>
-                    <td colspan="7" class="colspan7 motion-name-area" style="text-align: left; padding-left: 10px;"><span
+                    <td colspan="7" class="colspan7 motion-name-area verify-value" style="text-align: left; padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['案由'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
                 <tr>
                     <th>全文</th>
-                    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['原文'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
                 <tr>
@@ -128,7 +144,7 @@
                 <?php if ($meetingInf['step'] > 2): ?>
                     <tr>
                         <th>审核</th>
-                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7 pass-verify" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['审核' . $meetingInf['category']], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
@@ -141,7 +157,7 @@
                     <?php if (2 == $meetingInf['category']): ?>
                         <tr>
                             <th>交办单位</th>
-                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                            <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
                                     class="encoded-data"><?php echo json_encode($motion['交办单位'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                         </tr>
@@ -157,7 +173,7 @@
                             <?php endif ?>
                         <tr>
                             <th>交办单位</th>
-                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                            <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
                                     class="encoded-data"><?php echo json_encode($motion['交办单位'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                         </tr>
@@ -174,39 +190,39 @@
                     <?php endif ?>
                     <tr>
                         <th>主办单位</th>
-                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['主办单位'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
                          <th>协办单位</th>
-                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['协办单位'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>
                 <?php endif ?>
                 <?php if ($meetingInf['step'] > 4): ?>
-                    <?php if ((isset($canMainHandler) && $canMainHandler) || $meetingInf['step'] > 5): ?>
+                    <?php if ($canMainHandler || $meetingInf['step'] > 5 || (!$canMainHandler&&in_array(4,$_SESSION['staffLogin']['steps']))): ?>
                         <tr>
                             <th>主办答复时间</th>
                             <td width="105px"><span
                                     class="encoded-data"><?php echo json_encode($motion['主办答复时间'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                             <th>文号</th>
-                            <td width="95px"><span
-                                    class="encoded-data"><?php echo json_encode($motion['文号'], JSON_UNESCAPED_UNICODE) ?>
+                            <td width="95px" class="verify-value"><span
+                                    class="encoded-data verify-value"><?php echo json_encode($motion['文号'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                             <th>类别标记</th>
                             <td width="100px"><span
                                     class="encoded-data"><?php echo json_encode($motion['类别标记'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                             <th>签发人</th>
-                            <td><span
-                                    class="encoded-data"><?php echo json_encode($motion['主办签发人'], JSON_UNESCAPED_UNICODE) ?>
+                            <td class="verify-value"><span
+                                    class="encoded-data verify-value"><?php echo json_encode($motion['主办签发人'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                         </tr>
                         <tr>
                             <th>主办意见全文</th>
-                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                            <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
                                     class="encoded-data"><?php echo json_encode($motion['主办答复全文'], JSON_UNESCAPED_UNICODE) ?>
                             </td>
                         </tr>
@@ -248,7 +264,7 @@
                     <?php if (isset($handlerEdit) && count($handlerEdit) > 0): ?>
                         <tr>
                             <th>协办单位：</th>
-                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?>:</td>
+                            <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?>:</td>
                         </tr>
                         <tr>
                             <th>签收时间</th>
@@ -256,14 +272,14 @@
                                                    id="<?php echo $handlerEdit['motion_handler_id'] ?>"><span
                                     class="time-display" id="receive-time"></span></td>
                             <th>联系人</th>
-                            <td colspan="2"><input type="text" class="handle-value" id="contact_name"
+                            <td colspan="2" class="verify-value"><input type="text" class="handle-value" id="contact_name"
                                                    value="<?php echo $handlerEdit['contact_name'] ?>"></td>
                             <th>回复时间</th>
                             <td><span class="time-display" id="reply_time"></span></td>
                         </tr>
                         <tr>
                             <th>联系电话</th>
-                            <td colspan="2"><input type="tel" class="handle-value" id="contact_phone"
+                            <td colspan="2" class="verify-value"><input type="tel" class="handle-value" id="contact_phone"
                                                    value="<?php echo $handlerEdit['contact_phone'] ?>"></td>
                             <th>电话</th>
                             <td colspan="4"><input type="tel" class="handle-value" id="phone"
@@ -271,7 +287,7 @@
                         </tr>
                         <tr>
                             <th>协办意见全文</th>
-                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;" id="att<?php echo $handlerEdit['motion_handler_id'] ?>">
+                            <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;" id="att<?php echo $handlerEdit['motion_handler_id'] ?>">
                                 <button class="upload-handler-file">上传</button>
                                 <input type="file" class id="handler-attachment" name="handler-attachment"
                                        style="display: none">
@@ -330,12 +346,37 @@
         <input type="hidden" class="multiple-type">
         <table width="700" border="1" bordercolor="#f08300" cellspacing="0" cellpadding="0">
             <tbody>
+            <tr style="height: 40px;">
+				<td><div class="nav-tab"><input type="text" name="search" style="width: 280px;height: 20px; margin: 0 10px;"></div></td>
+            	<td><button type="button" class="u-btn">搜索</button></td>
+            	<td></td>
+            </tr>
             <tr>
                 <td rowspan="4">
                     <div class="unit-nav selecter-content">
-                        <ul>
+                        <div class="nav-tab">
+                            <h2><i class="icon icon-chevron-right"></i></h2>
+                            <ul>
+                                <li class="li-1 clearfix">
+                                    <button class="btn-1 main-candidate-btn" type="button"></button>
+                                    <input class="checkbox candidate super" type="checkbox" name="checkbox-lv1"
+                                           value="778">
+                                    <button class="btn-2" type="button"></button>
+                                    <span class="span-1 candidate-name">农业农村组联络委</span></li>
+                                <li class="li-2">
+                                    <ul>
+                                        <li class="li-lv2 main-candidate clearfix">
+                                            <button class="btn-lv2-1" type="button"></button>
+                                            <input class="checkbox candidate sub" type="checkbox" name="checkbox-lv2"
+                                                   value="23">
+                                            <button class="btn-lv2-2" type="button"></button>
+                                            <span class="span-1 candidate-name">毛玲洁</span></li>
 
-                        </ul>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
                     </div>
                 </td>
                 <td width="100" rowspan="2">
