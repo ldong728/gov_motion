@@ -1,6 +1,4 @@
-2017.04.10.04:35:29:E:\xampp\htdocs\gov_motion\functions.php15:mark
-2017.04.10.04:37:00:E:\xampp\htdocs\gov_motion\functions.php15:mark
-2017.04.10.04:37:00:E:\xampp\htdocs\gov_motion\functions.php25:SUCCESS
-2017.04.10.04:38:02:E:\xampp\htdocs\gov_motion\functions.php15:mark
-2017.04.10.04:44:22:E:\xampp\htdocs\gov_motion\functions.php15:mark
-2017.04.10.04:44:22:E:\xampp\htdocs\gov_motion\functions.php25:SUCCESS
+2017.04.10.10:09:32:D:\xampp\htdocs\gov_motion\functions.php424:mark
+2017.04.10.10:09:32:D:\xampp\htdocs\gov_motion\functions.php428:mark
+2017.04.10.10:29:19:D:\xampp\htdocs\gov_motion\functions.php424:{motion_id: 8,0: 8,zx_motion: 4,1: 4,meeting: 1,2: 1,category: 2,3: 2,motion_name: 千寻灯JS接口v1.01.txt,4: 千寻灯JS接口v1.01.txt,user: 6725,5: 6725,attr_id: 74,6: 74,motion_template: 2,7: 2,motion_attr: 20,8: 20,attr_template: 9,9: 9,duty: 780,10: 780,document: 千寻灯JS接口v1.01.txt,11: 千寻灯JS接口v1.01.txt,step: 3,12: 3,step_name: 审核,13: 审核,attr_step: 2,14: 2,document_sha: files/1b0dd7436ae3dac1f70286c49e4e00e6.txt,15: files/1b0dd7436ae3dac1f70286c49e4e00e6.txt,upload_time: 2017-04-10 15:13:11,16: 2017-04-10 15:13:11,default_value: 当年,17: 当年,value_type: string,18: string,target: ,19: ,value_sort: 0,20: 0,hidden: 0,21: 0,attr_name: 性质,22: 性质,option: ["当年","多年重复","重点督办","重点提案","重点提案备选"],23: ["当年","多年重复","重点督办","重点提案","重点提案备选"],content: 多年重复,24: 多年重复,content_int: 0,25: 0,has_attachment: 0,26: 0,attachment: ,27: ,multiple: 1,28: 1}
+2017.04.10.10:29:19:D:\xampp\htdocs\gov_motion\functions.php428:mark

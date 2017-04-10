@@ -359,8 +359,10 @@ function editMotion($data){
 
         //将attr数据转化为可为用户观看的内容
         $values['content']=setAttrValue($row);
-        if((($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])&&4!=$row['step'])||
-            ($step4CanEdit&&4==$row['step']&&$row['step']==$row['attr_step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))){//如操作员流程权限与当前权限吻合，则可修改当前流程选项
+        if((($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])&&4!=$row['step'])||//
+            ($step4CanEdit&&4==$row['step']&&$row['step']==$row['attr_step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))||
+            ('性质'==$row['attr_name']&&3==$row['step']&&in_array($row['step'],$_SESSION['staffLogin']['steps'])))
+        {//如操作员流程权限与当前权限吻合，则可修改当前流程选项
             $values['edit']=true;
             if (count($optionArray) > 0) {//普通选项
                 $values['option']=array();
@@ -387,12 +389,12 @@ function editMotion($data){
                 //如果此属性已包含一个值，且有新值存在，则把值放入multiple_value数组中，存入前先将表内索引值转换为对应的名称
                 if(isset($motion[$row['attr_name']])&&$values['content']){
 
-                    $motion[$row['attr_name']]['multiple_value'][$values['attr_id']]=$values['content'];
+                    $motion[$row['attr_name']]['multiple_value'][$values['attr_id']]=array('content'=>$values['content'],'attachment'=>$values['attachment']);
 
                 //如果新值存在且此属性并未包含值
                 }elseif($values['content']){
                     $motion[$row['attr_name']]=$values;
-                    $motion[$row['attr_name']]['multiple_value'][$values['attr_id']]=$values['content'];
+                    $motion[$row['attr_name']]['multiple_value'][$values['attr_id']]=array('content'=>$values['content'],'attachment'=>$values['attachment']);
                 }else{
                     $motion[$row['attr_name']]=$values;
                 }
@@ -404,26 +406,17 @@ function editMotion($data){
             }
         }else{
             $values['edit']=false;
-
-            //审核阶段仍然可调整性质
-            if('性质'==$row['attr_name']&&3==$row['step']){
-                $values['edit']=true;
-                $values['option']=array();
-                foreach ($optionArray as $oRow) {
-                    $values['option'][$oRow]=$oRow;
-                }
-                $values['class']='select';
-                if(!$values['content'])$values['content']=$row['default_value'];
-            }
-//
-//            if(isset($row['target'])&&isset($row['content_int'])&&'index'==$row['value_type']){
-//                $values['content']=indexToValue($row['target'],$row['content_int']);
-//            }
-//            if('time'==$row['value_type']&&$values['content']!=null)$values['content']=date('Y-m-d',$values['content']);
             if(1==$values['multiple']&&isset($motion[$row['attr_name']])){
-                $tContent= $motion[$row['attr_name']]['content'].','.$values['content'];
-                $tContent=trim($tContent,',');
-                $motion[$row['attr_name']]['content']=$tContent;
+//                mylog(getArrayInf($row));
+                if($row['attachment']){
+                    $motion[$row['attr_name']]['content'][]=array('content'=>$values['content'],'attachment'=>$values['attachment']);
+                }else{
+
+                    $tContent= $motion[$row['attr_name']]['content'].','.$values['content'];
+                    $tContent=trim($tContent,',');
+                    $motion[$row['attr_name']]['content']=$tContent;
+                }
+
 
             }else{
                 $motion[$row['attr_name']]=$values;

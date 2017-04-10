@@ -27,7 +27,7 @@
         <a href="#">办理单打印</a>
         <?php if(1 == $meetingInf['category']):?><a href="#">议案打印</a><?php endif?>
         <?php if(2 == $meetingInf['category']):?><a href="#">提案打印</a><?php endif?>
-        <a href="<?php echo $motion['原文']['attachment']?>">全文原始稿</a>
+        <a href="<?php echo 'original_'.$meetingInf['document_sha']?>">全文原始稿</a>
         <?php if(3==current($motion)['step']):?><a class="attachment-file" href="#" data-href="<?php echo $motion['原文']['attachment']?>">附件修改</a><?php endif?>
         <a href="#" class="close-popup">返回</a>
     </div>
@@ -195,7 +195,7 @@
                         </td>
                     </tr>
                          <th>协办单位</th>
-                        <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['协办单位'], JSON_UNESCAPED_UNICODE) ?>
                         </td>
                     </tr>

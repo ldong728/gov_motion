@@ -24,7 +24,9 @@
     $(document).on('click', '.choose-file', function () {
         if (!antiDouble) {
             antiDouble = true;
+            console.log('choose-file');
             $(this).next('.doc-file').click();
+
             setTimeout(function () {
                 antiDouble = false;
             }, 1000);
@@ -464,6 +466,7 @@
                 parent.empty();
                 //console.mylog(data);
                 if (data.edit) {//选项可编辑
+                    console.log(data);
                     parent.addClass('update-value');
                     parent.attr('data-attr', attr);
                     parent.attr('data-type', data.value_type);
@@ -478,7 +481,9 @@
                                 var attrId = '';
                                 if (data.multiple_value && $(data.multiple_value).length > 0) {
                                     $.each(data.multiple_value, function (id, cnt) {
-                                        if (v == cnt) {
+                                        console.log(cnt);
+                                        console.log(id);
+                                        if (v == cnt.content) {
                                             checked = 'checked="checked"';
                                             attrId = 'id="' + id + '"';
                                         }
@@ -489,8 +494,7 @@
                             });
                         } else {
                             var isValue = data.target ? '' : 'attr-value';
-                            console.log(data['class']);
-                            content += '<select class="' + (data.class) + ' ' + isValue + '">';
+                            content += '<select class="' + (data['class']) + ' ' + isValue + '">';
                             $.each(data.option, function (k, v) {
                                 var selected = v == data.content ? 'selected="selected"' : '';
                                 content += '<option value="' + k + '" ' + selected + '>' + v + '</option>';
@@ -501,7 +505,7 @@
                         if (1 == data.multiple) {
                             if ($(data.multiple_value).length > 0) {
                                 $.each(data.multiple_value, function (id, value) {
-                                    content += '<span class="pre-delete attr-value" id="' + id + '">' + value + '</span>'
+                                    content += '<span class="pre-delete attr-value" id="' + id + '">' + value.content + '</span>'
                                 });
                             }
                             content += '<button class="target-select" data-target="' + data.target + '">添加</button>'
@@ -681,7 +685,7 @@
 
                 }
                 if (valueInput.length > 0 && 0 == inputButton.length) {
-                    if (!value || !Boolean(value.trim())) {
+                    if (!value || !Boolean($.trim(value))) {
                         //console.log(value);
                         errorlist.push({name: valueName, content: valueName + "不能为空"})
                     } else {
@@ -698,7 +702,7 @@
                 }
             }
             if (handleValue.length > 0) {
-                var value = handleValue.val().trim();
+                var value = $.trim(handleValue.val());
                 var type = handleValue.attr('type');
                 if (!value) {
                     errorlist.push({name: valueName, content: valueName + "不能为空"});
