@@ -160,6 +160,10 @@ function add_steff(){
     printAdminView('add_staff.html.php','添加操作员');
 }
 
+function sync_info(){
+    printAdminView('sync_info.html.php','同步名单');
+}
+
 function meet_edit(){
     printAdminView('blank.html.php','添加操作员');
 }

@@ -12,21 +12,24 @@
  */
 include_once'includes/DataSupply.class.php';
 function userAuth($userName,$password,$category=3){
-
     $localStaff=false;
     $staffFilter=array('staff_name'=>$userName);
-    if($category<3&&$category>0)$staffFilter['category']=$category;
+//    if($category<3&&$category>0)$staffFilter['category']=$category;
     if($staffQuery=pdoQuery('staff_tbl',null,$staffFilter,' limit 1')->fetch()){
         $metting=pdoQuery('meeting_tbl',null,array('category'=>$staffQuery['category']),' order by deadline_time desc limit 1')->fetch();
         if($password==$staffQuery['staff_password']&&$staffQuery['staff_password']!=''){//自创建用户
            $localStaff=1;
         }else{//查询党政信息网
             $userVerify=file_get_contents("http://172.19.48.144:88/Verify?Username=$userName&Password=$password");
+            mylog('outerStaffLogin name:'.$userName.',status:'.$userVerify);
             if('SUCCESS'==$userVerify){
                $localStaff=2;
             }
         }
+    }else{
+//        mylog('notInList');
     }
+
     if($localStaff){
         $_SESSION['staffLogin']=array();
         for($i=0;$i<strlen($staffQuery['steps']);$i++){
@@ -540,7 +543,7 @@ function updateAttr($data){
             }elseif('time'==$row['attr_type']){
                 $value['content_int']=time();
             }else{
-                $value['content']=$row['value'];
+                $value['content']=addslashes($row['value']);
             }
 //            mylog(getArrayInf($value));
             pdoInsert('attr_tbl',$value,'update');

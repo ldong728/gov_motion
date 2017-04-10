@@ -398,7 +398,9 @@
 </div>
 
 <script>
-    getFuyiCount();
-    decodeDate( $('.encoded-data'));
+//    $(document).ready(function(){
+        getFuyiCount();
+        decodeDate( $('.encoded-data'));
+//    });
 </script>
 

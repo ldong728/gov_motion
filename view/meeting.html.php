@@ -1,4 +1,6 @@
 <?php global $meetingInf?>
+<script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
+<script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
 <script>
     var staff=eval('('+'<?php echo json_encode($_SESSION['staffLogin'])?>'+')');
 </script>
@@ -120,8 +122,7 @@
 
 </body>
 
-<script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
-<script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
+
 <script type="text/javascript">
     var meetingId=<?php echo $_GET['get_meeting']?>;
     var category=<?php echo $meetingInf['category']?>;

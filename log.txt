@@ -1,2 +1,6 @@
-2017.04.09.10:30:21:D:\xampp\htdocs\gov_motion\functions.php584:not a array:
-2017.04.09.10:44:47:D:\xampp\htdocs\gov_motion\functions.php584:not a array:
+2017.04.10.04:35:29:E:\xampp\htdocs\gov_motion\functions.php15:mark
+2017.04.10.04:37:00:E:\xampp\htdocs\gov_motion\functions.php15:mark
+2017.04.10.04:37:00:E:\xampp\htdocs\gov_motion\functions.php25:SUCCESS
+2017.04.10.04:38:02:E:\xampp\htdocs\gov_motion\functions.php15:mark
+2017.04.10.04:44:22:E:\xampp\htdocs\gov_motion\functions.php15:mark
+2017.04.10.04:44:22:E:\xampp\htdocs\gov_motion\functions.php25:SUCCESS
