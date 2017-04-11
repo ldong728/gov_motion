@@ -43,8 +43,9 @@
         var attrTemplate = parent.data('attrtemplate');
         var attrId = parent.data('attr');
         var attrType = parent.data('type');
+        var multiple=parent.data('multiple');
         var fileElementId = _.attr('id');
-        var url = 'upload.php?attachment=1&ma=' + motionAttr + '&at=' + attrTemplate + '&a=' + attrId + '&t=' + attrType;
+        var url = 'upload.php?attachment=1&ma=' + motionAttr + '&at=' + attrTemplate + '&a=' + attrId + '&t=' + attrType+ '&mul=' + multiple;
         var uploadData = {
             url: url,
             secureuri: false,
@@ -466,7 +467,7 @@
                 parent.empty();
                 //console.mylog(data);
                 if (data.edit) {//选项可编辑
-                    console.log(data);
+                    //console.log(data);
                     parent.addClass('update-value');
                     parent.attr('data-attr', attr);
                     parent.attr('data-type', data.value_type);
@@ -479,18 +480,20 @@
                             $.each(data.option, function (k, v) {
                                 var checked = '';
                                 var attrId = '';
+                                var defalultValue='';
                                 if (data.multiple_value && $(data.multiple_value).length > 0) {
                                     $.each(data.multiple_value, function (id, cnt) {
-                                        console.log(cnt);
-                                        console.log(id);
+                                        //console.log(cnt);
+                                        //console.log(id);
                                         if (v == cnt.content) {
+                                            if(!id)defalultValue='attr-value';
                                             checked = 'checked="checked"';
                                             attrId = 'id="' + id + '"';
                                         }
                                     })
                                 } else {
                                 }
-                                content += '<label ><input class="mutiple-input" style="width: 20px" type="checkbox" value="' + k + '" ' + checked + ' ' + attrId + '>' + v + '</label></br>'
+                                content += '<label ><input class="mutiple-input '+defalultValue+'" style="width: 20px" type="checkbox" value="' + k + '" ' + checked + ' ' + attrId + '>' + v + '</label></br>'
                             });
                         } else {
                             var isValue = data.target ? '' : 'attr-value';
@@ -515,11 +518,16 @@
                         }
                     }
                     else if (data.has_attachment > 0) {
-                        var attachmentName = data.attachment ? data.content : '';
                         content +=
                             '<button class="button choose-file">选择附件</button>' +
                             '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none">';
-                        content += '<a class="attachment-file" href="#" data-href="' + data.attachment + '">' + attachmentName + '</a>'
+                        if(1==data.multiple){
+
+                        }else{
+                            var attachmentName = data.attachment ? data.content : '';
+                            content += '<a class="attachment-file" href="#" data-href="' + data.attachment + '">' + attachmentName + '</a>'
+                        }
+
                     } else if ('time' == data.value_type) {
                         content += '<input type="hidden" class="attr-value" value="1"><span class="time-display"></span>';
                     } else {
@@ -532,7 +540,16 @@
                     }
                 } else {//选项不可编辑
                     if (data.attachment) {
-                        content += '<a href="' + data.attachment + '">' + (data.content || '') + '</a>'
+                        if(1==data.multiple){
+                            console.log(data);
+                            $.each(data.content,function(attaKey,attaData){
+                                content += '<a href="' + attaData.attachment + '">' + (attaData.content || '') + '</a>'
+                            });
+
+                        }else{
+                            content += '<a href="' + data.attachment + '">' + (data.content || '') + '</a>'
+                        }
+
                     } else {
                         content += data.content || '';
                     }
@@ -637,6 +654,7 @@
                 return;
             } else if (0 == attrValue.length) {
                 selecter.val('委员');
+                $('.union-conecter').hide();
             } else {
                 if (attrValue.val()) {
                     ajaxPost('ajaxUserInf', {id: attrValue.val()}, set);
@@ -651,8 +669,10 @@
             //console.log(back);
             if ('0' != back.user_unit && '0' != back.user_group) {
                 selecter.val('委员');
+                $('.union-conecter').hide();
             } else {
                 selecter.val('党派团体');
+                $('.union-conecter').show();
             }
         }
     }

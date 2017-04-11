@@ -7,7 +7,7 @@
     <div class="sug-main-nav clearfix">
         <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 != current($motion)['step']): ?>
             <a href="#" class="save-attr">保存</a>
-            <?php if (current($motion)['step'] > 2): ?>
+            <?php if (current($motion)['step'] > 2&&current($motion)['step']<6): ?>
                 <a href="#" class="motion-reject">上一步</a>
             <?php endif ?>
             <a href="#" class="submit-attr">下一步</a>
@@ -104,13 +104,18 @@
                 <?php if(2==$meetingInf['category']):?>
                     <tr>
                         <th>提案人</th>
-                        <td colspan="7" class="colspan7 user-type verify-value" style="text-align: left;padding-left: 10px;"><span
+                        <td colspan="7" class="user-type verify-value" style="text-align: left;padding-left: 10px;"><span
                                 class="encoded-data"><?php echo json_encode($motion['提案人'], JSON_UNESCAPED_UNICODE) ?></td>
+                    </tr>
+                    <tr class="union-conecter" <?php if(!$motion['提案联系人']['content'])echo 'style="display: none"'?>>
+                        <th >联系人</th>
+                        <td colspan="7" class="conecter" style="text-align: left;padding-left: 10px;" ><span
+                                class="encoded-data"><?php echo json_encode($motion['提案联系人'], JSON_UNESCAPED_UNICODE) ?></td>
                     </tr>
                 <?php endif ?>
                 <tr>
                     <th >附议人</th>
-                    <td class="fuyi-count colspan7" colspan="7" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="7" class="fuyi-count colspan7" colspan="7" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['附议人'], JSON_UNESCAPED_UNICODE) ?></td>
 
                 </tr>
@@ -296,7 +301,7 @@
                         </tr>
                     <?php endif ?>
                 <?php endif ?>
-                <?php if ($meetingInf['step'] > 5): ?>
+                <?php if ($meetingInf['step'] > 5||(isset($motion['办理工作']['content'])&&$motion['办理工作']['content'])): ?>
                     <tr>
                         <th rowspan="2" style="border-right: 1px solid #f08300">反馈意见</th>
                         <th>办理工作</th>

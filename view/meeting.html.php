@@ -9,7 +9,7 @@
     <div class="m-header-t"><img class="bg-hua" src="stylesheet/images/bg-hua<?php echo $meetingInf['category']?>.jpg" alt="Huabiao"></div>
     <div class="m-header-b">
         <div class="header-b-l"><p><a href="index.php">首页</a><span><?php echo 1==$meetingInf['category']?'人大议案':'政协提案'?></span></p></div>
-        <div class="header-b-r"><a class="sign-out">退出系统</a></div>
+        <div class="header-b-r"><a class="sign-out" href="#">退出系统</a></div>
         <div class="header-b-m"><p>修改密码</p></div>
     </div>
 </div>
@@ -72,7 +72,8 @@
                             <th width="10%" class="order-by-attr">性质类别</th>
                             <th width="15%" class="order-by-attr">原文</th>
                             <th width="8%" class="order-by-attr">当前环节</th>
-                            <th width="13%" class="order-by-attr">办理单位</th>
+                            <th width="10%" class="order-by-attr">办理单位</th>
+                            <th width="3%" class="order-by-attr">删除</th>
                         </tr>
                         <?php else: ?>
                             <tr>
@@ -85,7 +86,8 @@
                                 <th width="10%" class="order-by-attr">性质类别</th>
                                 <th width="15%" class="order-by-attr">原文</th>
                                 <th width="8%" class="order-by-attr">当前环节</th>
-                                <th width="13%" class="order-by-attr">办理单位</th>
+                                <th width="10%" class="order-by-attr">办理单位</th>
+                                <th width="3%" class="order-by-attr">删除</th>
                             </tr>
 
                         <?php endif ?>
@@ -138,7 +140,7 @@
     });
     $('.order-by-attr').click(function(){
         var newOrderby=($(this).text());
-
+        if('性质类别'==newOrderby)newOrderby+=category;
        if(orderby==newOrderby){
            order=!order;
        }else{
@@ -190,6 +192,17 @@
         }
 
     });
+    $(document).on('click','.delete-motion',function(){
+       var motionId=$(this).attr('id').slice(3);
+        if(staff.steps.indexOf('3')>-1){
+            ajaxPost('ajaxDeleteMotion',{id:motionId},function(data){
+                if('ok'==backHandle(data)){
+                    reflashList(orderby,page,order);
+                }
+            })
+        }
+
+    });
     function resizeWindow(){
             var bHeight = $(document.body).height();
         var wHeight = $(window).height();
@@ -217,15 +230,16 @@
                         if(v>0){
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (count++) +
-                                '<td><input type="checkbox" class="check"></td>' +
+                                '<td><input type="checkbox" class="check" value='+v+'></td>' +
                                 '<td>' + (c[v]['案号']||'')+ '</td>' +
                                 '<td>' + (c[v]['领衔人']||'') + '</td>' +
                                 '<td>' + (c[v]['案别']||'') + '</td>' +
-                                '<td class="motion-select" id="' + v + '">' + (c[v]['案由']||'') + '</td>' +
+                                '<td class="motion-select" id="' + v + '"><a href="#">' + (c[v]['案由']||'') + '</a></td>' +
                                 '<td>' + (c[v]['性质类别' + category]||'')+ '</td>' +
                                 '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
                                 '<td>' + (c[v]['当前环节']||'') + '</td>' +
                                 '<td>' + (c[v]['交办单位']||'') + '</td>' +
+                                '<td><button class="delete-motion" id="del'+v+'">X</button></td>'+
                                 '</tr>';
                             $('.list-table').append(listContent);
                         }
@@ -237,16 +251,17 @@
                         if(v>0){
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (count++) +
-                                '<td><input type="checkbox" class="check"></td>' +
+                                '<td><input type="checkbox" class="check" value='+v+'></td>' +
                                 '<td>' + c[v]['编号'] + '</td>' +
                                 '<td>' + (c[v]['案号']||'') + '</td>' +
                                 '<td>' + (c[v]['提案人']||'') + '</td>' +
 //                            '<td>' + c[v]['案别'] + '</td>' +
-                                '<td class="motion-select" id="' + v + '">' + c[v]['案由'] + '</td>' +
+                                '<td class="motion-select" id="' + v + '"><a href="#">' + c[v]['案由'] + '</a></td>' +
                                 '<td>' + (c[v]['性质类别' + category]||'') + '</td>' +
                                 '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
                                 '<td>' + (c[v]['当前环节']||'') + '</td>' +
                                 '<td>' + (c[v]['交办单位']||'') + '</td>' +
+                                '<td><button class="delete-motion" id="del'+v+'">X</button></td>'+
                                 '</tr>';
                             $('.list-table').append(listContent);
                         }
@@ -258,6 +273,7 @@
 
             });
     }
+
     function mPopup(){
         var bWidth = document.documentElement.clientWidth;
         var bHeight = document.documentElement.clientHeight ;

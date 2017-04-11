@@ -231,10 +231,13 @@ function ajaxMotionList($data){
             if('duty'==$row['target']&&$content){
                 $content=$dutyList[$content]['user_name'];
             }else{
-                $content=indexToValue($row['target'],$content);
+                $content=DataSupply::indexToValue($row['target'],$content);
             }
         }
-        $sortList[$row['motion_id']][$row['attr_name']]=$content;
+
+
+        if(!isset($sortList[$row['motion_id']][$row['attr_name']]))$sortList[$row['motion_id']][$row['attr_name']]=$content;
+        else $sortList[$row['motion_id']][$row['attr_name']].=','.$content;
         $sortList[$row['motion_id']]['案由']=$row['motion_name'];
         $sortList[$row['motion_id']]['案别']=1==$row['category']?'建议':'提案';
         $sortList[$row['motion_id']]['当前环节']=$row['step_name'];
@@ -351,17 +354,24 @@ function editMotion($data){
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
     $unitGroupInf=null;
     foreach ($motionQuery as $row) {
-//        mylog(getArrayInf($row));
-        //提议案所有的属性取出后，剔除高于当前步骤，并且没有值的属性
-//        if($row['step']<$row['attr_step']&&!$row['content']&&!$row['content_int'])continue;
         $values = $row;
         $optionArray = json_decode($row['option'], true);
+        $values['edit']=false;
+        if(in_array($row['step'],$_SESSION['staffLogin']['steps'])){
+            if($row['step']==$row['attr_step']){
+                if($step4CanEdit&&4==$row['step'])$values['edit']=true;
+                if(4!=$row['step'])$values['edit']=true;
+            }
+            if(2==$row['step']&&1==$row['attr_step'])$values['edit']=true;
+            if('性质'==$row['attr_name']&&3==$row['step'])$values['edit']=true;
+        }
+//        if(($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])&&4!=$row['step']||//
+//        ($step4CanEdit&&4==$row['step']&&$row['step']==$row['attr_step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))||
+//        ('性质'==$row['attr_name']&&3==$row['step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))){}
 
         //将attr数据转化为可为用户观看的内容
         $values['content']=setAttrValue($row);
-        if((($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])&&4!=$row['step'])||//
-            ($step4CanEdit&&4==$row['step']&&$row['step']==$row['attr_step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))||
-            ('性质'==$row['attr_name']&&3==$row['step']&&in_array($row['step'],$_SESSION['staffLogin']['steps'])))
+        if($values['edit'])
         {//如操作员流程权限与当前权限吻合，则可修改当前流程选项
             $values['edit']=true;
             if (count($optionArray) > 0) {//普通选项
@@ -494,6 +504,17 @@ function setAttrValue($row){
     return $content;
 }
 
+function ajaxDeleteMotion($data){
+    $id=$data['id'];
+    $motionInf=pdoQuery('motion_tbl',null,array('motion_id'=>$id),'limit 1')->fetch();
+    if($motionInf['step']<4&&in_array(3,$_SESSION['staffLogin']['steps'])){
+       pdoUpdate('motion_tbl',array('step'=>0),array('motion_id'=>$id),' limit 1');
+        echo ajaxBack('ok');
+    }else{
+        echo ajaxBack('no');
+    }
+}
+
 function getUserGroup($data){
     $type=$data['group_type'];
     $groupList=array();
@@ -567,9 +588,19 @@ function updateAttr($data){
             //审核未通过的情况下，将提议案步骤直接设置为完成
             if(3==$motion['step']){
                 $attr=pdoQuery('attr_view',array('content'),array('motion'=>$motionId,'attr_name'=>'审核'.$motion['category']),'limit 1')->fetch();
-                if('立案'!=$attr['content']){
+                if('不立案'==$attr['content']){
                     pdoUpdate('motion_tbl',array('step'=>7),array('motion_id'=>$motionId));
                 }
+            }
+            if(6==$motion['step']){
+                $attr=pdoQuery('attr_view',array('content'),array('motion'=>$motionId,'attr_name'=>array('办理工作','办理结果').$motion['category']),'limit 2')->fetchAll();
+                foreach ($attr as $row) {
+                    if('不满意'==$row['content']){
+                        pdoUpdate('motion_tbl',array('step'=>4),array('motion_id'=>$motionId));
+                        break;
+                    }
+                }
+
             }
 
         }elseif($isFoward<0){
@@ -588,6 +619,7 @@ function updateAttr($data){
                 }
             }
         }
+
 //        if($data['step'])exeNew('update motion_tbl set step=step+1 where motion_id='.$motionId);
 
         pdoCommit();
@@ -638,21 +670,6 @@ function ajaxTargetList($data){
                         }
                     }
 
-
-//                    if(strpos($row['user_name'],'联络委')){
-//                        $backList['user_unit'][$row['user_unit']]['name']=$row['user_name'];
-//                        $backList['user_unit'][$row['user_unit']]['id']=$row['duty_id'];
-//                    }
-//                    $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
-//                    if(!isset($backList['user_group'][$row['user_group']])){
-//                        $backList['user_group'][$row['user_group']]=array('name'=>$row['user_group_name'],'id'=>'0');
-//                    }
-//                    $backList['user_group'][$row['user_group']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
-//                }else{
-//                    if(!isset($backList['user_unit'][$row['user_unit']])){
-//                        $backList['user_unit'][$row['user_unit']]=array('name'=>$row['user_unit_name'],'id'=>'0');
-//                    }
-//                    $backList['user_unit'][$row['user_unit']]['sub'][]=array('name'=>$row['user_name'],'id'=>$row['duty_id']);
                 }else{
                     foreach ($dutyQuery as $row) {
                         if(!isset($backList['user_unit'][$row['user_unit']])){
@@ -684,6 +701,7 @@ function ajaxTargetList($data){
             echo ajaxBack($backList);
             break;
         case 'staff':
+
             $motionInf=pdoQuery('motion_tbl',null,array('motion_id'=>$_SESSION['staffLogin']['currentMotion']),'limit 1')->fetch();
             $step=$motionInf['step']+1;
             if($filter)$str='and steps like "%'.$step.'%"';
@@ -693,11 +711,15 @@ function ajaxTargetList($data){
                 if(!isset($backList[0][$row['unit']]))$backList[0][$row['unit']]=array('name'=>$row['unit_name'],'id'=>0);
                 $backList[0][$row['unit']]['sub'][]=array('name'=>$row['full_name'],'id'=>$row['staff_id']);
             }
-
-
             echo ajaxBack($backList);
             break;
-
+        case 'motion':
+            if('all'!=$_SESSION['staffLogin']['meeting'])$filter['meeting']=$_SESSION['staffLogin']['meeting'];
+            $motionList=pdoQuery('motion_tbl',null,$filter,null);
+            foreach ($motionList as $row) {
+                $backList['list'][]=array('name'=>$row['motion_name'],'id'=>$row['motion_id']);
+            }
+            echo ajaxBack($backList);
 
         default:
             break;
