@@ -99,11 +99,11 @@
     });
 	
     function resizeWindow(){
-        var bHeight = $(document.body).height();
-        var wHeight = $(window).height();
-        var bWeight = $(document.body).width();
-        var weight = bWeight - 240;
-        $('.home-r').css('width',weight);
+//        var bHeight = $(document.body).height();
+//        var wHeight = $(window).height();
+//        var bWeight = $(document.body).width();
+//        var weight = bWeight - 240;
+//        $('.home-r').css('width',weight);
 		
     }
     function setTime(element){

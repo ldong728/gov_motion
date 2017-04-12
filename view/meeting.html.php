@@ -63,31 +63,31 @@
                         <tbody>
                         <?php if(1==$meetingInf['category']):?>
                         <tr>
-                            <th width="3%" >序号</th>
-                            <th width="2%"><input type="checkbox" class="select-all"></th>
-                            <th width="4%" class="order-by-attr"> 案号</th>
-                            <th width="9%" class="order-by-attr">领衔人</th>
-                            <th width="8%" >案别</th>
-                            <th width="28%" class="order-by-attr">案由</th>
-                            <th width="10%" class="order-by-attr">性质类别</th>
-                            <th width="15%" class="order-by-attr">原文</th>
-                            <th width="8%" class="order-by-attr">当前环节</th>
-                            <th width="10%" class="order-by-attr">办理单位</th>
-                            <th width="3%" class="order-by-attr">删除</th>
+                            <th>序号</th>
+                            <th><input type="checkbox" class="select-all"></th>
+                            <th class="order-by-attr"> 案号</th>
+                            <th class="order-by-attr">领衔人</th>
+                            <th>案别</th>
+                            <th class="order-by-attr">案由</th>
+                            <th class="order-by-attr">性质类别</th>
+                            <th class="order-by-attr">原文</th>
+                            <th class="order-by-attr">当前环节</th>
+                            <th>办理单位</th>
+                            <th>删除</th>
                         </tr>
                         <?php else: ?>
                             <tr>
-                                <th width="5%" >序号</th>
-                                <th width="4%"><input type="checkbox" class="select-all"></th>
-                                <th width="4%" class="order-by-attr">编号</th>
-                                <th width="4%" class="order-by-attr"> 案号</th>
-                                <th width="9%" class="order-by-attr">提案人</th>
-                                <th width="28%" class="order-by-attr">案由</th>
-                                <th width="10%" class="order-by-attr">性质类别</th>
-                                <th width="15%" class="order-by-attr">原文</th>
-                                <th width="8%" class="order-by-attr">当前环节</th>
-                                <th width="10%" class="order-by-attr">办理单位</th>
-                                <th width="3%" class="order-by-attr">删除</th>
+                                <th>序号</th>
+                                <th><input type="checkbox" class="select-all"></th>
+                                <th class="order-by-attr">编号</th>
+                                <th class="order-by-attr"> 案号</th>
+                                <th class="order-by-attr">提案人</th>
+                                <th class="order-by-attr">案由</th>
+                                <th class="order-by-attr">性质类别</th>
+                                <th class="order-by-attr">原文</th>
+                                <th class="order-by-attr">当前环节</th>
+                                <th>办理单位</th>
+                                <th>删除</th>
                             </tr>
 
                         <?php endif ?>

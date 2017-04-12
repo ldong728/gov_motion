@@ -7,10 +7,10 @@
     <div class="sug-main-nav clearfix">
         <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 != current($motion)['step']): ?>
             <a href="#" class="save-attr">保存</a>
-            <?php if (current($motion)['step'] > 2&&current($motion)['step']<6): ?>
-                <a href="#" class="motion-reject">上一步</a>
+            <?php if (3==current($motion)['step']): ?>
+                <a href="#" class="motion-reject temp1">上一步</a>
             <?php endif ?>
-            <a href="#" class="submit-attr">下一步</a>
+
         <?php endif ?>
         <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 == current($motion)['step']&&(isset($handlerEdit) && count($handlerEdit) > 0)): ?>
             <a href="#" class="save-attr">保存</a>
@@ -22,7 +22,13 @@
             <a href="#" class="submit-attr">提交</a>
         <?php endif?>
 
-        <?php if($step4CanEdit&&5==current($motion)['step']&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject">上一步</a><?php endif ?>
+        <?php if($step4CanEdit&&current($motion)['step']>3&&current($motion)['step']<6&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject temp2">上一步</a><?php endif ?>
+        <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 != current($motion)['step']): ?>
+            <?php if(4!=current($motion)['step']||(4==current($motion)['step']&&$step4CanEdit)):?>
+                <a href="#" class="submit-attr">下一步</a>
+            <?php endif ?>
+        <?php endif ?>
+
         <a href="#" class="motion-step-inf" id="<?php echo current($motion)['motion_id']?>">查看信息</a>
         <a href="#">办理单打印</a>
         <?php if(1 == $meetingInf['category']):?><a href="#">议案打印</a><?php endif?>
@@ -269,7 +275,7 @@
                     <?php if (isset($handlerEdit) && count($handlerEdit) > 0): ?>
                         <tr>
                             <th>协办单位：</th>
-                            <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?>:</td>
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?>:</td>
                         </tr>
                         <tr>
                             <th>签收时间</th>

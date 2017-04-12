@@ -522,7 +522,11 @@
                             '<button class="button choose-file">选择附件</button>' +
                             '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none">';
                         if(1==data.multiple){
-
+                            if ($(data.multiple_value).length > 0) {
+                                $.each(data.multiple_value, function (id, value) {
+                                    content += '<span><a href="'+value.attachment+'">'+value.content+'</a><span class="pre-delete pre-btn" id="' + id + '">X</span></span>'
+                                });
+                            }
                         }else{
                             var attachmentName = data.attachment ? data.content : '';
                             content += '<a class="attachment-file" href="#" data-href="' + data.attachment + '">' + attachmentName + '</a>'

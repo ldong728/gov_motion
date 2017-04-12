@@ -80,8 +80,8 @@ a{color: inherit;text-decoration: none;}
 .m-home .content-seat a::before{font-size: 16px;margin-right: 10px;}
 .m-home .content-b{padding-left: 45px;margin-top: 13px;}
 .m-home .content-b .c-btn{height: 26px;margin-left: 25px; border-radius: 3px;background: #f0f0f0;border: 1px solid #f0f0f0;}
-.m-home .home-r-content{width: 100%;}
-.m-home .home-table{width: 100%;min-height: 560px; margin-left: .5%;}
+.m-home .home-r-content{width: 100%;overflow-x: auto;}
+.m-home .home-table{width: 99.5%;min-height: 560px; margin-left: .5%;}
 .m-home .home-table tr{background: #fff;border: 1px solid #ccc;box-sizing: border-box;}
 .m-home .home-table tr th {background: #f08000;color: #fff;box-sizing: border-box;vertical-align: middle;line-height: 32px; text-align: center;border-right: 1px solid #ccc;}
 .m-home .home-table tr th:nth-of-type(10n+2){border-right: none;}
@@ -135,9 +135,8 @@ select:first-child{margin-left: 0;}
 .icon-map-marker::before{padding-right: 15px;font-size: 16px;line-height: 53px;}
 .pre-delete{display: inline-block;background: #FFFF66;border: 1px solid #FFFF66;border-radius: 3px;margin: 2px 5px 2px 0;text-align: center;line-height: 16px;box-sizing: border-box;}
 .m-popup .table-list tr .update-value a{padding-left: 5px;}
-
-
-
+.pre-btn{margin-left: 5px;padding: 0 3px;color: #f00; background-color: #ccc}
+    
 /*信息流程显示*/
 .flow{position: fixed;width:764px;left: 22%;top: 180px; height: 600px;background: #fff;border: 1px solid #4a4a4a;z-index: 199;}
 .m-popup .flow-head{position: relative; font-size: 16px;background-color: #4a4a4a;height: 53px;line-height: 53px;color: #fff;}

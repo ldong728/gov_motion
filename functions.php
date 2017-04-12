@@ -32,6 +32,7 @@ function userAuth($userName,$password,$category=3){
 
     if($localStaff){
         $_SESSION['staffLogin']=array();
+        $_SESSION['staffLogin']['steps']=array();
         for($i=0;$i<strlen($staffQuery['steps']);$i++){
             $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
         }
@@ -92,13 +93,16 @@ function getIndex($orderBy='default'){
     if(4==$staff['steps'][0]){
         $unitQuery=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('step'=>4,'motion_id'=>$motionId,'attr_name'=>'交办单位'),' group by motion_id');
         foreach ($unitQuery as $row) {
-//            mylog(getArrayInf($row));
-//            mylog($staff['staffId']);
-            if($row['content_int']&&$staff['staffId']!=$row['content_int']){
-                mylog('not my job');
-//                mylog(getArrayInf($motionList[$row['category']]));
-//                mylog($row['motion_id']);
-                unset($motionList[$row['category']][$row['motion_id']]);
+            if($row['content_int']){
+                if($staff['staffId']!=$row['content_int']){
+                    mylog('not my job');
+                    unset($motionList[$row['category']][$row['motion_id']]);
+                }
+            }else{
+                if('5103'!=$staff['staffId']){
+                    mylog('not my job');
+                    unset($motionList[$row['category']][$row['motion_id']]);
+                }
             }
         }
 
@@ -331,7 +335,7 @@ function editMotion($data){
 
     //处理政协提案有不同交办单位的情况
     $step4CanEdit=true;
-    if(4==$meetingInf['step']){
+    if(4==$meetingInf['step']||5==$meetingInf['step']){
         $staffId=$_SESSION['staffLogin']['staffId'];
         if(2==$meetingInf['category']){
             $step4Inf=pdoQuery('motion_view',array('content_int'),array('motion_id'=>$id,'content_int'=>$staffId,'attr_name'=>'交办单位'),'limit 1')->fetch();
@@ -343,11 +347,11 @@ function editMotion($data){
             if($step4Inf['content_int']==$staffId){
                 $step4CanEdit=true;
             }else{
-                if('6726'==$staffId)$step4CanEdit=true;
+                if('5103'==$staffId)$step4CanEdit=true;
                 else $step4CanEdit=false;
             }
         }
-
+    }else{
 
     }
 //    mylog($step4CanEdit);
@@ -539,6 +543,10 @@ function updateAttr($data){
     $motion=pdoQuery('motion_tbl',null,array('motion_id'=>$motionId),' limit 1')->fetch();
     $currentStep=$motion['step'];
     $attrs=isset($data['data'])?$data['data']:array();
+//    $uniqueInf=pdoQuery('attr_view',)
+//    foreach($attrs as $row){
+//
+//    }
     pdoTransReady();
     try{
         foreach ($attrs as $row) {

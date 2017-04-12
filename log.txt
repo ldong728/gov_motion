@@ -1,230 +1,26 @@
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php177:{农业农村组: 685,匡堰: 686,医卫组: 687,古塘: 688,周巷: 689,坎墩: 690,城交环组: 691,宗汉: 692,崇寿: 693,庵东: 694,掌起: 695,教育组: 696,文体新闻组: 697,新浦: 698,无编组: 699,桥头: 700,横河: 701,浒山: 702,港澳台侨组: 703,白沙路: 704,社法组: 705,经科组: 706,胜山: 707,观海卫: 708,财贸组: 709,逍林: 710,长河: 711,附海: 712,龙山: 713}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php178:{中共界: 28,侨联界: 29,共青团青联界: 30,农业农村界: 31,医药卫生界: 32,台联界: 33,妇联界: 34,工商联界: 35,总工会界: 36,教育界: 37,文体新闻出版界: 38,无党派人士界: 39,民主党派人士界: 40,民族宗教界: 41,特邀界: 42,社会福利和保障界: 43,社会科学界: 44,科技科协（人才办）: 45,科技科协（科协）: 46,科技科协（科技）: 47,经济界: 48}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php184:{0: {user_name: 农业农村组联络委,category: 2,user_unit: 农业农村组,user_group: 中共届}1: {user_name: 匡堰联络委,category: 2,user_unit: 匡堰,user_group: 中共届}2: {user_name: 医卫组联络委,category: 2,user_unit: 医卫组,user_group: 中共届}3: {user_name: 古塘联络委,category: 2,user_unit: 古塘,user_group: 中共届}4: {user_name: 周巷联络委,category: 2,user_unit: 周巷,user_group: 中共届}5: {user_name: 坎墩联络委,category: 2,user_unit: 坎墩,user_group: 中共届}6: {user_name: 城交环组联络委,category: 2,user_unit: 城交环组,user_group: 中共届}7: {user_name: 宗汉联络委,category: 2,user_unit: 宗汉,user_group: 中共届}8: {user_name: 崇寿联络委,category: 2,user_unit: 崇寿,user_group: 中共届}9: {user_name: 庵东联络委,category: 2,user_unit: 庵东,user_group: 中共届}10: {user_name: 掌起联络委,category: 2,user_unit: 掌起,user_group: 中共届}11: {user_name: 教育组联络委,category: 2,user_unit: 教育组,user_group: 中共届}12: {user_name: 文体新闻组联络委,category: 2,user_unit: 文体新闻组,user_group: 中共届}13: {user_name: 新浦联络委,category: 2,user_unit: 新浦,user_group: 中共届}14: {user_name: 无编组联络委,category: 2,user_unit: 无编组,user_group: 中共届}15: {user_name: 桥头联络委,category: 2,user_unit: 桥头,user_group: 中共届}16: {user_name: 横河联络委,category: 2,user_unit: 横河,user_group: 中共届}17: {user_name: 浒山联络委,category: 2,user_unit: 浒山,user_group: 中共届}18: {user_name: 港澳台侨组联络委,category: 2,user_unit: 港澳台侨组,user_group: 中共届}19: {user_name: 白沙路联络委,category: 2,user_unit: 白沙路,user_group: 中共届}20: {user_name: 社法组联络委,category: 2,user_unit: 社法组,user_group: 中共届}21: {user_name: 经科组联络委,category: 2,user_unit: 经科组,user_group: 中共届}22: {user_name: 胜山联络委,category: 2,user_unit: 胜山,user_group: 中共届}23: {user_name: 观海卫联络委,category: 2,user_unit: 观海卫,user_group: 中共届}24: {user_name: 财贸组联络委,category: 2,user_unit: 财贸组,user_group: 中共届}25: {user_name: 逍林联络委,category: 2,user_unit: 逍林,user_group: 中共届}26: {user_name: 长河联络委,category: 2,user_unit: 长河,user_group: 中共届}27: {user_name: 附海联络委,category: 2,user_unit: 附海,user_group: 中共届}28: {user_name: 龙山联络委,category: 2,user_unit: 龙山,user_group: 中共届}}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 农业农村组联络委,category: 2,user_unit: 农业农村组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 784,category: 2,meeting: 1,user_unit: 685,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 匡堰联络委,category: 2,user_unit: 匡堰,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 785,category: 2,meeting: 1,user_unit: 686,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 医卫组联络委,category: 2,user_unit: 医卫组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 786,category: 2,meeting: 1,user_unit: 687,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 古塘联络委,category: 2,user_unit: 古塘,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 787,category: 2,meeting: 1,user_unit: 688,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 周巷联络委,category: 2,user_unit: 周巷,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 788,category: 2,meeting: 1,user_unit: 689,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 坎墩联络委,category: 2,user_unit: 坎墩,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 789,category: 2,meeting: 1,user_unit: 690,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 城交环组联络委,category: 2,user_unit: 城交环组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 790,category: 2,meeting: 1,user_unit: 691,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 宗汉联络委,category: 2,user_unit: 宗汉,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 791,category: 2,meeting: 1,user_unit: 692,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 崇寿联络委,category: 2,user_unit: 崇寿,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 792,category: 2,meeting: 1,user_unit: 693,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 庵东联络委,category: 2,user_unit: 庵东,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 793,category: 2,meeting: 1,user_unit: 694,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 掌起联络委,category: 2,user_unit: 掌起,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 794,category: 2,meeting: 1,user_unit: 695,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 教育组联络委,category: 2,user_unit: 教育组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 795,category: 2,meeting: 1,user_unit: 696,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 文体新闻组联络委,category: 2,user_unit: 文体新闻组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 796,category: 2,meeting: 1,user_unit: 697,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 新浦联络委,category: 2,user_unit: 新浦,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 797,category: 2,meeting: 1,user_unit: 698,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 无编组联络委,category: 2,user_unit: 无编组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 798,category: 2,meeting: 1,user_unit: 699,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 桥头联络委,category: 2,user_unit: 桥头,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 799,category: 2,meeting: 1,user_unit: 700,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 横河联络委,category: 2,user_unit: 横河,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 800,category: 2,meeting: 1,user_unit: 701,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 浒山联络委,category: 2,user_unit: 浒山,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 801,category: 2,meeting: 1,user_unit: 702,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 港澳台侨组联络委,category: 2,user_unit: 港澳台侨组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 802,category: 2,meeting: 1,user_unit: 703,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 白沙路联络委,category: 2,user_unit: 白沙路,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 803,category: 2,meeting: 1,user_unit: 704,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 社法组联络委,category: 2,user_unit: 社法组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 804,category: 2,meeting: 1,user_unit: 705,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 经科组联络委,category: 2,user_unit: 经科组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 805,category: 2,meeting: 1,user_unit: 706,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 胜山联络委,category: 2,user_unit: 胜山,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 806,category: 2,meeting: 1,user_unit: 707,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 观海卫联络委,category: 2,user_unit: 观海卫,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 807,category: 2,meeting: 1,user_unit: 708,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 财贸组联络委,category: 2,user_unit: 财贸组,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 808,category: 2,meeting: 1,user_unit: 709,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 逍林联络委,category: 2,user_unit: 逍林,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 809,category: 2,meeting: 1,user_unit: 710,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 长河联络委,category: 2,user_unit: 长河,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 810,category: 2,meeting: 1,user_unit: 711,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 附海联络委,category: 2,user_unit: 附海,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 811,category: 2,meeting: 1,user_unit: 712,user_group: 28,activity: 1}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 龙山联络委,category: 2,user_unit: 龙山,user_group: 中共届}
-2017.04.06.05:18:57:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 812,category: 2,meeting: 1,user_unit: 713,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php177:{农业农村组: 685,匡堰: 686,医卫组: 687,古塘: 688,周巷: 689,坎墩: 690,城交环组: 691,宗汉: 692,崇寿: 693,庵东: 694,掌起: 695,教育组: 696,文体新闻组: 697,新浦: 698,无编组: 699,桥头: 700,横河: 701,浒山: 702,港澳台侨组: 703,白沙路: 704,社法组: 705,经科组: 706,胜山: 707,观海卫: 708,财贸组: 709,逍林: 710,长河: 711,附海: 712,龙山: 713}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php178:{中共界: 28,侨联界: 29,共青团青联界: 30,农业农村界: 31,医药卫生界: 32,台联界: 33,妇联界: 34,工商联界: 35,总工会界: 36,教育界: 37,文体新闻出版界: 38,无党派人士界: 39,民主党派人士界: 40,民族宗教界: 41,特邀界: 42,社会福利和保障界: 43,社会科学界: 44,科技科协（人才办）: 45,科技科协（科协）: 46,科技科协（科技）: 47,经济界: 48}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php184:{0: {user_name: 农业农村组联络委,category: 2,user_unit: 农业农村组,user_group: 中共届}1: {user_name: 匡堰联络委,category: 2,user_unit: 匡堰,user_group: 中共届}2: {user_name: 医卫组联络委,category: 2,user_unit: 医卫组,user_group: 中共届}3: {user_name: 古塘联络委,category: 2,user_unit: 古塘,user_group: 中共届}4: {user_name: 周巷联络委,category: 2,user_unit: 周巷,user_group: 中共届}5: {user_name: 坎墩联络委,category: 2,user_unit: 坎墩,user_group: 中共届}6: {user_name: 城交环组联络委,category: 2,user_unit: 城交环组,user_group: 中共届}7: {user_name: 宗汉联络委,category: 2,user_unit: 宗汉,user_group: 中共届}8: {user_name: 崇寿联络委,category: 2,user_unit: 崇寿,user_group: 中共届}9: {user_name: 庵东联络委,category: 2,user_unit: 庵东,user_group: 中共届}10: {user_name: 掌起联络委,category: 2,user_unit: 掌起,user_group: 中共届}11: {user_name: 教育组联络委,category: 2,user_unit: 教育组,user_group: 中共届}12: {user_name: 文体新闻组联络委,category: 2,user_unit: 文体新闻组,user_group: 中共届}13: {user_name: 新浦联络委,category: 2,user_unit: 新浦,user_group: 中共届}14: {user_name: 无编组联络委,category: 2,user_unit: 无编组,user_group: 中共届}15: {user_name: 桥头联络委,category: 2,user_unit: 桥头,user_group: 中共届}16: {user_name: 横河联络委,category: 2,user_unit: 横河,user_group: 中共届}17: {user_name: 浒山联络委,category: 2,user_unit: 浒山,user_group: 中共届}18: {user_name: 港澳台侨组联络委,category: 2,user_unit: 港澳台侨组,user_group: 中共届}19: {user_name: 白沙路联络委,category: 2,user_unit: 白沙路,user_group: 中共届}20: {user_name: 社法组联络委,category: 2,user_unit: 社法组,user_group: 中共届}21: {user_name: 经科组联络委,category: 2,user_unit: 经科组,user_group: 中共届}22: {user_name: 胜山联络委,category: 2,user_unit: 胜山,user_group: 中共届}23: {user_name: 观海卫联络委,category: 2,user_unit: 观海卫,user_group: 中共届}24: {user_name: 财贸组联络委,category: 2,user_unit: 财贸组,user_group: 中共届}25: {user_name: 逍林联络委,category: 2,user_unit: 逍林,user_group: 中共届}26: {user_name: 长河联络委,category: 2,user_unit: 长河,user_group: 中共届}27: {user_name: 附海联络委,category: 2,user_unit: 附海,user_group: 中共届}28: {user_name: 龙山联络委,category: 2,user_unit: 龙山,user_group: 中共届}}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 农业农村组联络委,category: 2,user_unit: 农业农村组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 813,category: 2,meeting: 1,user_unit: 685,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 匡堰联络委,category: 2,user_unit: 匡堰,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 814,category: 2,meeting: 1,user_unit: 686,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 医卫组联络委,category: 2,user_unit: 医卫组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 815,category: 2,meeting: 1,user_unit: 687,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 古塘联络委,category: 2,user_unit: 古塘,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 816,category: 2,meeting: 1,user_unit: 688,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 周巷联络委,category: 2,user_unit: 周巷,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 817,category: 2,meeting: 1,user_unit: 689,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 坎墩联络委,category: 2,user_unit: 坎墩,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 818,category: 2,meeting: 1,user_unit: 690,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 城交环组联络委,category: 2,user_unit: 城交环组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 819,category: 2,meeting: 1,user_unit: 691,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 宗汉联络委,category: 2,user_unit: 宗汉,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 820,category: 2,meeting: 1,user_unit: 692,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 崇寿联络委,category: 2,user_unit: 崇寿,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 821,category: 2,meeting: 1,user_unit: 693,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 庵东联络委,category: 2,user_unit: 庵东,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 822,category: 2,meeting: 1,user_unit: 694,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 掌起联络委,category: 2,user_unit: 掌起,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 823,category: 2,meeting: 1,user_unit: 695,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 教育组联络委,category: 2,user_unit: 教育组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 824,category: 2,meeting: 1,user_unit: 696,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 文体新闻组联络委,category: 2,user_unit: 文体新闻组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 825,category: 2,meeting: 1,user_unit: 697,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 新浦联络委,category: 2,user_unit: 新浦,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 826,category: 2,meeting: 1,user_unit: 698,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 无编组联络委,category: 2,user_unit: 无编组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 827,category: 2,meeting: 1,user_unit: 699,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 桥头联络委,category: 2,user_unit: 桥头,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 828,category: 2,meeting: 1,user_unit: 700,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 横河联络委,category: 2,user_unit: 横河,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 829,category: 2,meeting: 1,user_unit: 701,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 浒山联络委,category: 2,user_unit: 浒山,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 830,category: 2,meeting: 1,user_unit: 702,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 港澳台侨组联络委,category: 2,user_unit: 港澳台侨组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 831,category: 2,meeting: 1,user_unit: 703,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 白沙路联络委,category: 2,user_unit: 白沙路,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 832,category: 2,meeting: 1,user_unit: 704,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 社法组联络委,category: 2,user_unit: 社法组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 833,category: 2,meeting: 1,user_unit: 705,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 经科组联络委,category: 2,user_unit: 经科组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 834,category: 2,meeting: 1,user_unit: 706,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 胜山联络委,category: 2,user_unit: 胜山,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 835,category: 2,meeting: 1,user_unit: 707,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 观海卫联络委,category: 2,user_unit: 观海卫,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 836,category: 2,meeting: 1,user_unit: 708,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 财贸组联络委,category: 2,user_unit: 财贸组,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 837,category: 2,meeting: 1,user_unit: 709,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 逍林联络委,category: 2,user_unit: 逍林,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 838,category: 2,meeting: 1,user_unit: 710,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 长河联络委,category: 2,user_unit: 长河,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 839,category: 2,meeting: 1,user_unit: 711,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 附海联络委,category: 2,user_unit: 附海,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 840,category: 2,meeting: 1,user_unit: 712,user_group: 28,activity: 1}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php188:{user_name: 龙山联络委,category: 2,user_unit: 龙山,user_group: 中共届}
-2017.04.06.05:19:21:D:\xampp\htdocs\gov_motion\admin\index.php192:{user: 841,category: 2,meeting: 1,user_unit: 713,user_group: 28,activity: 1}
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:19:49:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:15:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpB6C3.tmp
-2017.04.06.05:21:15:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx
-2017.04.06.05:21:15:D:\xampp\htdocs\gov_motion\upload.php29:{originalName: 开发进度170313.docx,md5: 5abe7322df1c869b2bb6fdd30bc9a6c7,name: 5abe7322df1c869b2bb6fdd30bc9a6c7.docx,url: files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx,size: 12938,type: .docx,cover: ,state: SUCCESS,attrId: 239}
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:21:29:D:\xampp\htdocs\gov_motion\functions.php611:find
-2017.04.06.05:29:55:D:\xampp\htdocs\gov_motion\functions.php711:unsetted:{}
-2017.04.06.05:30:48:D:\xampp\htdocs\gov_motion\functions.php711:unsetted:{}
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php92:{motion_id: 24,0: 24,motion_name: 测试议案,1: 测试议案,step_name: 交办,2: 交办,category: 1,3: 1,content_int: 6728,4: 6728}
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php93:6726
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php95:not my job
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php96:{24: {motion_id: 24,0: 24,meeting: 2,1: 2,category: 1,2: 1,motion_name: 测试议案,3: 测试议案,motion_template: 1,4: 1,user: 6729,5: 6729,document: ,6: ,step: 4,7: 4,document_sha: ,8: ,upload_time: 2017-04-05 14:49:04,9: 2017-04-05 14:49:04,step_name: 交办,10: 交办}25: {motion_id: 25,0: 25,meeting: 2,1: 2,category: 1,2: 1,motion_name: 开发进度170313.docx,3: 开发进度170313.docx,motion_template: 1,4: 1,user: 6729,5: 6729,document: ,6: ,step: 4,7: 4,document_sha: ,8: ,upload_time: 2017-04-05 19:07:21,9: 2017-04-05 19:07:21,step_name: 交办,10: 交办}}
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php97:24
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php92:{motion_id: 25,0: 25,motion_name: 开发进度170313.docx,1: 开发进度170313.docx,step_name: 交办,2: 交办,category: 1,3: 1,content_int: ,4: }
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php93:6726
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php95:not my job
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php96:{25: {motion_id: 25,0: 25,meeting: 2,1: 2,category: 1,2: 1,motion_name: 开发进度170313.docx,3: 开发进度170313.docx,motion_template: 1,4: 1,user: 6729,5: 6729,document: ,6: ,step: 4,7: 4,document_sha: ,8: ,upload_time: 2017-04-05 19:07:21,9: 2017-04-05 19:07:21,step_name: 交办,10: 交办}}
-2017.04.06.06:25:18:D:\xampp\htdocs\gov_motion\functions.php97:25
-2017.04.06.06:26:49:D:\xampp\htdocs\gov_motion\functions.php92:{motion_id: 24,0: 24,motion_name: 测试议案,1: 测试议案,step_name: 交办,2: 交办,category: 1,3: 1,content_int: 6728,4: 6728}
-2017.04.06.06:26:49:D:\xampp\htdocs\gov_motion\functions.php93:6726
-2017.04.06.06:26:49:D:\xampp\htdocs\gov_motion\functions.php95:not my job
-2017.04.06.06:26:49:D:\xampp\htdocs\gov_motion\functions.php96:{24: {motion_id: 24,0: 24,meeting: 2,1: 2,category: 1,2: 1,motion_name: 测试议案,3: 测试议案,motion_template: 1,4: 1,user: 6729,5: 6729,document: ,6: ,step: 4,7: 4,document_sha: ,8: ,upload_time: 2017-04-05 14:49:04,9: 2017-04-05 14:49:04,step_name: 交办,10: 交办}25: {motion_id: 25,0: 25,meeting: 2,1: 2,category: 1,2: 1,motion_name: 开发进度170313.docx,3: 开发进度170313.docx,motion_template: 1,4: 1,user: 6729,5: 6729,document: ,6: ,step: 4,7: 4,document_sha: ,8: ,upload_time: 2017-04-05 19:07:21,9: 2017-04-05 19:07:21,step_name: 交办,10: 交办}}
-2017.04.06.06:26:49:D:\xampp\htdocs\gov_motion\functions.php97:24
-2017.04.06.06:26:49:D:\xampp\htdocs\gov_motion\functions.php92:{motion_id: 25,0: 25,motion_name: 开发进度170313.docx,1: 开发进度170313.docx,step_name: 交办,2: 交办,category: 1,3: 1,content_int: ,4: }
-2017.04.06.06:26:49:D:\xampp\htdocs\gov_motion\functions.php93:6726
-2017.04.06.08:08:27:D:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
-2017.04.06.08:13:14:D:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
-2017.04.06.14:53:13:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php7140.tmp
-2017.04.06.14:53:13:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/739a3cfaac0d1b8365f319b812a09150.doc
-2017.04.06.14:53:13:C:\xampp\htdocs\gov_motion\upload.php29:{originalName: 宗汉007房涤关于要求分年拿土地款可享受土保政策的建议.doc,md5: 739a3cfaac0d1b8365f319b812a09150,name: 739a3cfaac0d1b8365f319b812a09150.doc,url: files/739a3cfaac0d1b8365f319b812a09150.doc,size: 23040,type: .doc,cover: ,state: SUCCESS,attrId: 249}
-2017.04.06.14:54:11:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php543F.tmp
-2017.04.06.14:54:11:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/5c3d0bb3b283b7150561de1fed0ff269.docx
-2017.04.06.14:54:11:C:\xampp\htdocs\gov_motion\upload.php29:{originalName: 宗汉018王建群关于要求政府职能部门参与基层社区管理的建议.docx,md5: 5c3d0bb3b283b7150561de1fed0ff269,name: 5c3d0bb3b283b7150561de1fed0ff269.docx,url: files/5c3d0bb3b283b7150561de1fed0ff269.docx,size: 24576,type: .docx,cover: ,state: SUCCESS,attrId: 253}
-2017.04.06.15:03:52:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php2EB7.tmp
-2017.04.06.15:03:52:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/b24aecdf702f9fa3bf33745650e7b3a9.doc
-2017.04.06.15:03:52:C:\xampp\htdocs\gov_motion\upload.php29:{originalName: 宗汉016孙立君关于建筑垃圾资源化利用的建议 1.关于建筑垃圾资源化利用的建议.doc,md5: b24aecdf702f9fa3bf33745650e7b3a9,name: b24aecdf702f9fa3bf33745650e7b3a9.doc,url: files/b24aecdf702f9fa3bf33745650e7b3a9.doc,size: 24064,type: .doc,cover: ,state: SUCCESS,attrId: 257}
-2017.04.10.17:47:29:C:\xampp\htdocs\gov_motion\functions.php98:not my job
-2017.04.10.17:47:29:C:\xampp\htdocs\gov_motion\functions.php98:not my job
-2017.04.10.17:48:07:C:\xampp\htdocs\gov_motion\functions.php98:not my job
-2017.04.10.17:48:07:C:\xampp\htdocs\gov_motion\functions.php98:not my job
-2017.04.11.10:48:35:C:\xampp\htdocs\gov_motion\functions.php24:outerStaffLogin name:rdtemp,status:
-2017.04.11.10:52:04:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php1093.tmp
-2017.04.11.10:52:04:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/7f50d9d141e4ab366b425a8c329b3a46.doc
-2017.04.11.10:52:04:C:\xampp\htdocs\gov_motion\upload.php29:{originalName: api_kuaidi100_com(20140729).doc,md5: 7f50d9d141e4ab366b425a8c329b3a46,name: 7f50d9d141e4ab366b425a8c329b3a46.doc,url: files/7f50d9d141e4ab366b425a8c329b3a46.doc,size: 220160,type: .doc,cover: ,state: SUCCESS,attrId: 292}
-2017.04.11.11:10:30:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
-2017.04.11.11:11:08:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
-2017.04.11.11:11:34:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
-2017.04.11.12:05:03:C:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
-2017.04.11.17:15:51:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php6E64.tmp
-2017.04.11.17:15:51:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/a01be55580db7a04ca8194644f542f44.doc
-2017.04.11.17:15:51:C:\xampp\htdocs\gov_motion\upload.php29:{originalName: a01be55580db7a04ca8194644f542f44.doc,md5: a01be55580db7a04ca8194644f542f44,name: a01be55580db7a04ca8194644f542f44.doc,url: files/a01be55580db7a04ca8194644f542f44.doc,size: 20992,type: .doc,cover: ,state: SUCCESS,attrId: 101}
-2017.04.11.17:32:20:C:\xampp\htdocs\gov_motion\functions.php24:outerStaffLogin name:zxtemp,status:LIMIT
-2017.04.11.17:32:30:C:\xampp\htdocs\gov_motion\functions.php24:outerStaffLogin name:zxtemp,status:LIMIT
+2017.04.12.05:16:04:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:16:04:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:16:04:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:16:04:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:16:14:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:16:14:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:16:14:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:16:14:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:42:13:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpE1B.tmp
+2017.04.12.05:42:13:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/833b8b4fd5b5b8311ae977e73a0e38cc.txt
+2017.04.12.05:51:40:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:51:40:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:51:40:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:51:40:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:51:55:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:51:55:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:51:55:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.05:51:55:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.06:41:05:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.06:41:05:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.06:41:05:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.06:41:05:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.06:41:22:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.06:41:22:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.06:41:22:D:\xampp\htdocs\gov_motion\functions.php99:not my job
+2017.04.12.06:41:22:D:\xampp\htdocs\gov_motion\functions.php99:not my job

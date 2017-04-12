@@ -19,19 +19,17 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
             $uploader->upFile($fileName);
             $inf=$uploader->getFileInfo();
             if('SUCCESS'==$inf['state']){
-                $value=array('motion'=>$_SESSION['staffLogin']['currentMotion'],'motion_attr'=>$_GET['ma'],'attr_template'=>$_GET['at'],'content'=>addslashes($inf['originalName']),'attachment'=>addslashes($inf['url']),'staff'=>$_SESSION['staffLogin']['staffId']);
-                try{
-                    if($_GET['a']>0){
-                        $value['attr_id']=$_GET['a'];
+                    $value=array('motion'=>$_SESSION['staffLogin']['currentMotion'],'motion_attr'=>$_GET['ma'],'attr_template'=>$_GET['at'],'content'=>addslashes($inf['originalName']),'attachment'=>addslashes($inf['url']),'staff'=>$_SESSION['staffLogin']['staffId']);
+                    try{
+                        if($_GET['a']>0&&!$_GET['mul']){
+                            $value['attr_id']=$_GET['a'];
+                        }
+                        $id=pdoInsert('attr_tbl',$value,'update');
+                        $inf['attrId']=$id;
+                    }catch(PDOException $e){
+                        $inf['state']='fail';
                     }
-                    $id=pdoInsert('attr_tbl',$value,'update');
-                    $inf['attrId']=$id;
-                    mylog(getArrayInf($inf));
-//                    echo json_encode($inf);
-                }catch(PDOException $e){
-                    $inf['state']='fail';
-//                    echo json_encode($inf);
-                }
+
             }
             $inf['step']=$step;
             echo json_encode($inf);
