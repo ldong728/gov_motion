@@ -543,10 +543,12 @@ function updateAttr($data){
     $motion=pdoQuery('motion_tbl',null,array('motion_id'=>$motionId),' limit 1')->fetch();
     $currentStep=$motion['step'];
     $attrs=isset($data['data'])?$data['data']:array();
-//    $uniqueInf=pdoQuery('attr_view',)
-//    foreach($attrs as $row){
-//
-//    }
+    $uniqueInf=pdoQuery('motion_attr_view',null,array('attr_name'=>'案号','motion_template'=>$motion['motion_template']),'limit 1')->fetch()['motion_attr_id'];
+    $uniqueQuery=pdoQuery('attr_tbl',array('content_int as value'),array('motion_attr'=>$uniqueInf,),null);
+    $uniqueValues=array();
+    foreach($uniqueQuery as $row){
+//        $uniqueValues[]=$row['']
+    }
     pdoTransReady();
     try{
         foreach ($attrs as $row) {
