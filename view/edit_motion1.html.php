@@ -8,7 +8,7 @@
         <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 != current($motion)['step']): ?>
             <a href="#" class="save-attr">保存</a>
             <?php if (3==current($motion)['step']): ?>
-                <a href="#" class="motion-reject temp1">上一步</a>
+                <a href="#" class="motion-reject temp1">退回</a>
             <?php endif ?>
 
         <?php endif ?>
@@ -22,7 +22,7 @@
             <a href="#" class="submit-attr">提交</a>
         <?php endif?>
 
-        <?php if($step4CanEdit&&current($motion)['step']>3&&current($motion)['step']<6&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject temp2">上一步</a><?php endif ?>
+        <?php if($step4CanEdit&&current($motion)['step']>3&&current($motion)['step']<6&&in_array(4,$_SESSION['staffLogin']['steps'])):?><a href="#" class="motion-reject temp2">退回</a><?php endif ?>
         <?php if (in_array(current($motion)['step'], $_SESSION['staffLogin']['steps']) && 5 != current($motion)['step']): ?>
             <?php if(4!=current($motion)['step']||(4==current($motion)['step']&&$step4CanEdit)):?>
                 <a href="#" class="submit-attr">下一步</a>

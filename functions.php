@@ -462,7 +462,7 @@ function editMotion($data){
             break;
         default:
             $unit=$_SESSION['staffLogin']['unit'];
-            $handlerQuery=pdoQuery('motion_handler_view',null,array('motion'=>$id,),null);
+            $handlerQuery=pdoQuery('motion_handler_view',null,array('motion'=>$id,'status'=>array('1','3','9')),null);
             $handlerDisplay=array();
             $handlerEdit=array();
             $canMainHandler=true;
