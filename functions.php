@@ -801,6 +801,23 @@ function ajaxUserInfFromAttrTbl($data){
     echo ajaxBack($inf);
 }
 
+function ajaxGetSingleDutyId($data){
+    $name=trim($data['name']);
+    if($name){
+        mylog($name);
+        $where['user_name']=$name;
+        if(isset($_SESSION['staffLogin']['userList']))$where=array_merge($where,$_SESSION['staffLogin']['userList']);
+        $inf=pdoQuery('duty_view',array('duty_id'),$where,'limit 1')->fetch();
+        if($inf){
+            echo ajaxBack($inf['duty_id']);
+            return;
+        }
+    }
+    echo ajaxBack(0);
+
+
+}
+
 
 /**
  * 通过ajax获取分组单位列表的方法

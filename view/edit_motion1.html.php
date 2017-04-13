@@ -104,7 +104,7 @@
                 <?php if(1==$meetingInf['category']):?>
                 <tr>
                     <th>领衔人</th>
-                    <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="7" class="colspan7 verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['领衔人'], JSON_UNESCAPED_UNICODE) ?></td>
                 </tr>
                 <?php endif ?>

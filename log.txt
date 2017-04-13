@@ -101,3 +101,44 @@
 2017.04.13.10:51:32:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
 2017.04.13.10:51:34:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
 2017.04.13.11:01:19:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: }
+2017.04.13.15:42:01:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: }
+2017.04.13.15:56:27:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}}
+2017.04.13.16:01:31:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 13}
+2017.04.13.16:01:56:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}}
+2017.04.13.16:02:02:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php8FEC.tmp
+2017.04.13.16:02:02:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/739a3cfaac0d1b8365f319b812a09150.doc
+2017.04.13.16:02:02:C:\xampp\htdocs\gov_motion\functions.php807:房涤
+2017.04.13.16:04:32:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 14}
+2017.04.13.16:05:29:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 14}
+2017.04.13.16:05:32:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 14}
+2017.04.13.16:06:22:C:\xampp\htdocs\gov_motion\functions.php24:outerStaffLogin name:zhjdgly,status:LIMIT
+2017.04.13.16:06:35:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}}
+2017.04.13.16:06:56:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\phpB06.tmp
+2017.04.13.16:06:56:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/a3305512f929187fa90919d76fe1bd8b.doc
+2017.04.13.16:06:56:C:\xampp\htdocs\gov_motion\functions.php807:陈建士
+2017.04.13.16:07:34:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\phpA208.tmp
+2017.04.13.16:07:34:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/a3e48ea01abebe6b83e7f80e143a1bee.doc
+2017.04.13.16:11:17:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
+2017.04.13.16:16:54:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
+2017.04.13.16:17:07:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php6068.tmp
+2017.04.13.16:17:07:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/a3305512f929187fa90919d76fe1bd8b.doc
+2017.04.13.16:17:08:C:\xampp\htdocs\gov_motion\functions.php807:陈建士
+2017.04.13.16:19:56:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
+2017.04.13.16:20:00:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php272.tmp
+2017.04.13.16:20:00:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/0f9fbbc457b06768f60518b8a75dec8b.doc
+2017.04.13.16:20:00:C:\xampp\htdocs\gov_motion\functions.php807:陆信祥
+2017.04.13.16:20:35:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
+2017.04.13.16:20:48:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
+2017.04.13.16:20:52:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\phpCF52.tmp
+2017.04.13.16:20:52:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/5c3d0bb3b283b7150561de1fed0ff269.docx
+2017.04.13.16:20:53:C:\xampp\htdocs\gov_motion\functions.php807:王建群
+2017.04.13.16:21:00:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
+2017.04.13.16:21:13:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
+2017.04.13.16:21:19:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php3621.tmp
+2017.04.13.16:21:19:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/64fbba635bf6af238f493a72d8b633fc.docx
+2017.04.13.16:21:19:C:\xampp\htdocs\gov_motion\functions.php807:徐娣珍
+2017.04.13.16:21:25:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php4E72.tmp
+2017.04.13.16:21:25:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/b9db318f17c6eaabb93aa87c96df0d04.doc
+2017.04.13.16:22:23:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php31FE.tmp
+2017.04.13.16:22:23:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/5c3d0bb3b283b7150561de1fed0ff269.docx
+2017.04.13.16:22:23:C:\xampp\htdocs\gov_motion\functions.php807:王建群

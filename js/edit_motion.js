@@ -69,6 +69,7 @@
                         console.log(v);
                         var area = $('.motion-name-area').find('textarea');
                         if ('' == area.val())area.text(v.originalName);
+                        autoFixName(v.originalName);
                     }
                     //console.log(v);
 
@@ -429,9 +430,11 @@
     $(document).on('click','#search-button',function(){
         var word= $.trim($('#search-input').val());
         if(word){
+            $('li.li-lv2').css('display','none');
             $.each($('.candidate-name'),function(k,v){
-                if($(v).text().match(word)){
-                    console.log($(v).text())
+                var name=$(v).text();
+                if(name.match(word)){
+                    $(v).parent().css('display','list-item');
                 }
             })
         }else{
@@ -768,5 +771,25 @@
 
         return errorlist;
     }
+function autoFixName(str) {
+    var button = $('.name-auto').find('button.target-select');
+    if (0 == button.prev().length) {
+        var test = /\d(\D.*?)关于/;
+        var matched = str.match(test);
+        console.log(matched);
+        if (matched) {
+            var name = matched[1];
+            ajaxPost('ajaxGetSingleDutyId', {name: name}, function (data) {
+                var id = backHandle(data);
+                if (id > 0) {
+                    var content='<input type="hidden" class="added-value attr-value" value="'+id+'"><span class="pre-delete">'+name+'</span>';
+                    button.before(content);
+                }
+            });
+
+        }
+    }
+
+}
 
 //});
