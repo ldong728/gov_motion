@@ -1,3 +1,4 @@
+<div class="mask"></div>
 <div class="suggest cont">
 <div class="sug-head clearfix">
     <div class="sug-head-l"><h1><?php echo 1 == current($motion)['category'] ? '人大建议议案办理单' : '政协提案办理单' ?></h1></div>
@@ -253,7 +254,9 @@
                     <?php foreach ($handlerDisplay as $row): ?>
                         <tr>
                             <th>协办单位：</th>
-                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px"><?php echo $row['unit_name']?>:</td>
+                            <td colspan="3" style="text-align: left;padding-left: 10px"><?php echo $row['unit_name']?>:</td>
+                            <th>办理状态</th>
+                            <td colspan="3"><?php echo 9==$row['status']?'已完成':'未完成'?></td>
                         </tr>
                         <tr>
                             <th>联系人</th>
@@ -263,7 +266,7 @@
                             <th>联系电话</th>
                             <td><?php echo $row['contact_phone'] ?></td>
                             <th>电话</th>
-                            <td><?php echo $row['contact_phone'] ?></td>
+                            <td><?php echo $row['phone'] ?></td>
                         </tr>
                         <tr>
                             <th>协办意见全文</th>
@@ -294,7 +297,7 @@
                                                    value="<?php echo $handlerEdit['contact_phone'] ?>"></td>
                             <th>电话</th>
                             <td colspan="4"><input type="tel" class="handle-value" id="phone"
-                                                   value="<?php echo $handlerEdit['contact_phone'] ?>"></td>
+                                                   value="<?php echo $handlerEdit['phone'] ?>"></td>
                         </tr>
                         <tr>
                             <th>协办意见全文</th>
@@ -347,7 +350,7 @@
 <table class="table-list">
 
 </table>
-
+<div class="mask1"></div>
 <div class="unit" style="display: none;z-index: 999;position: fixed">
     <div class="unit-title">
     	<h2 class="target-name">请选择</h2>
@@ -358,8 +361,8 @@
         <table width="700" border="1" bordercolor="#f08300" cellspacing="0" cellpadding="0">
             <tbody>
             <tr style="height: 40px;">
-				<td><div class="nav-tab"><input type="text" name="search" style="width: 280px;height: 20px; margin: 0 10px;"></div></td>
-            	<td><button type="button" class="u-btn">搜索</button></td>
+				<td><div class="nav-tab"><input type="text" name="search" style="width: 280px;height: 20px; margin: 0 10px;" id="search-input"></div></td>
+            	<td><button type="button" class="u-btn " id="search-button">搜索</button></td>
             	<td></td>
             </tr>
             <tr>

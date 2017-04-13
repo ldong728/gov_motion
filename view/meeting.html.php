@@ -15,10 +15,10 @@
 </div>
 <div class="m-home clearfix">
     <div class="home-l">          <!--左边-->
-        <div class="home-nav h-border"><p class="icon icon-angle-right"><?php echo 1==$meetingInf['category']?'人大议案':'政协提案'?>></p></div>
+        <div class="home-nav h-border"><p><i class="icon icon-angle-right"></i><?php echo 1==$meetingInf['category']?'人大议案':'政协提案'?>></p></div>
         <!--		<div class="home-nav h-border"><p>政协提案<span>》</span></p></div>-->
         <!--		<div class="home-nav h-border"><p>查询<span>》</span></p></div>-->
-        <div class="home-nav h-border"><p class="icon icon-angle-right">统计</p></div>
+        <div class="home-nav h-border"><p><i class="icon icon-angle-right"></i>统计</p></div>
         <!--		<div class="home-nav h-border"><p>历届数据<span>》</span></p></div>-->
         <!--		<div class="home-nav h-border"><p>人大议案建议<span>》</span></p></div>-->
     </div>
@@ -67,7 +67,7 @@
                             <th><input type="checkbox" class="select-all"></th>
                             <th class="order-by-attr"> 案号</th>
                             <th class="order-by-attr">领衔人</th>
-                            <th>案别</th>
+                            <th class="order-by-attr">案别</th>
                             <th class="order-by-attr">案由</th>
                             <th class="order-by-attr">性质类别</th>
                             <th class="order-by-attr">原文</th>
@@ -99,7 +99,7 @@
                 <div class="home-page-l">
                     <a class="page-num">20v</a>
                     <a href="#"><i class="icon icon-step-backward"></i></a>
-                    <a href="#"><i class="icon icon-caret-left"></i></a>
+                    <a href="#"><i class="icon icon-caret-left prev-page"></i></a>
                     <a href="#">第<input name="text" type="text" value="1" class="p-num">页 共15页</a>
                     <a href="#"><i class="icon icon-caret-right next-page"></i></a>
                     <a href="#"><i class="icon icon-step-forward"></i></a>
@@ -161,6 +161,16 @@
             mPopup();
         })
     });
+	$('.target-select').click(function(){
+        var maskHeight = $(document.body).height();
+        ajaxPost('createMotion',{},function(data){
+            $('.m-popup').html(data);
+            $('.m-popup').show();
+            $('.mask1').show();
+            $('.mask1').css('height',maskHeight);
+            mPopup();
+        })
+    });
     $('.select-all').click(function(){
        var state=$(this).prop('checked');
         $('.check').prop('checked',state);
@@ -179,13 +189,14 @@
         });
     });
     $(document).on('click','.sign-out',function(){
-        signOut(category);
+        signOut(staff.category);
     });
     $(document).on('click','.next-page',function(){
        page++;
         reflashList(orderby,page,order);
+        console.log(page);
     });
-    $(document).on('click','.next-page',function(){
+    $(document).on('click','.prev-page',function(){
         if(page>0){
             page--;
             reflashList(orderby,page,order);
@@ -194,12 +205,16 @@
     });
     $(document).on('click','.delete-motion',function(){
        var motionId=$(this).attr('id').slice(3);
+
         if(staff.steps.indexOf('3')>-1){
-            ajaxPost('ajaxDeleteMotion',{id:motionId},function(data){
-                if('ok'==backHandle(data)){
-                    reflashList(orderby,page,order);
-                }
-            })
+            if(confirm('警告：是否删除此条记录？')){
+                ajaxPost('ajaxDeleteMotion',{id:motionId},function(data){
+                    if('ok'==backHandle(data)){
+                        reflashList(orderby,page,order);
+                    }
+                });
+            }
+
         }
 
     });
@@ -211,6 +226,7 @@
         $('.home-r').css('width',weight);
     }
     function reflashList(sOrderby,sPage,sOrder){
+//        console.log('reflash');
         var data={
             category:category,
             meeting:meetingId,
@@ -225,6 +241,7 @@
                 $('.list-content').remove();
                 var count=1+(page*20);
                 var c=value.list;
+//                console.log(c);
                 if(1==data.category) {
                     $.each(value.sort, function (k, v) {
                         if(v>0){

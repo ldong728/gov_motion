@@ -14,7 +14,7 @@
 <div class="m-home clearfix">
 	<div class="home-l">          <!--左边-->
         <?php if(isset($meetingList[1])):?>
-		<div class="home-nav"><p class="icon icon-angle-right">人大议案建议</p></div>
+		<div class="home-nav"><p><i class="icon icon-angle-right"></i>人大议案建议</p></div>
 		<div class="home-wrap">
 			<ul class="nav-list">
                 <?php foreach($meetingList[1] as $row):?>
@@ -24,7 +24,7 @@
 		</div>
         <?php endif?>
         <?php if(isset($meetingList[2])):?>
-		<div class="home-nav"><p class="icon icon-angle-right">政协提案</p></div>
+		<div class="home-nav"><p><i class="icon icon-angle-right"></i>政协提案</p></div>
 		<div class="home-wrap">
 			<ul class="nav-list">
                 <?php foreach($meetingList[2] as $row):?>
@@ -57,9 +57,9 @@
         <?php endif ?>
 
 	</div>
-
+	
     <div class="m-popup clearfix" style="display: none" >
-
+	
     </div>        <!-- 弹出层-->
 </div>
 <div class="m-footer">
@@ -99,11 +99,11 @@
     });
 	
     function resizeWindow(){
-//        var bHeight = $(document.body).height();
-//        var wHeight = $(window).height();
-//        var bWeight = $(document.body).width();
-//        var weight = bWeight - 240;
-//        $('.home-r').css('width',weight);
+        var bHeight = $(document.body).height();
+        var wHeight = $(window).height();
+        var bWeight = $(document.body).width();
+        var weight = bWeight - 240;
+        $('.home-r').css('width',weight);
 		
     }
     function setTime(element){

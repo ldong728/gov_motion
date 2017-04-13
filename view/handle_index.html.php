@@ -82,7 +82,7 @@
         <div class="m-footer-tech"><p>技术支持：慈溪市谷多计算机网络技术有限公司</p></div>
     </div>
 </div>
-<div class="mask"></div>
+<!--<div class="mask"></div>-->
 <script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
 <script type="text/javascript">

@@ -24,7 +24,7 @@
     $(document).on('click', '.choose-file', function () {
         if (!antiDouble) {
             antiDouble = true;
-            console.log('choose-file');
+            //console.log('choose-file');
             $(this).next('.doc-file').click();
 
             setTimeout(function () {
@@ -92,7 +92,7 @@
             openDocObj.EditDocument(protocol + '//' + host + '/' + href);
         } catch (err) {
             console.log(err);
-            if (confirm('您使用的浏览器不支持word在线编辑插件，附件将以下载方式保存至您的电脑')) {
+            if (confirm('编辑插件无法使用，请检查IE设置和已安装的Office软件版本，当前附件将以下载方式保存至您的电脑')) {
                 console.log(window.location);
                 console.log(document.domain);
                 location.href = href;
@@ -426,6 +426,18 @@
         getFuyiCount();
 
     });
+    $(document).on('click','#search-button',function(){
+        var word= $.trim($('#search-input').val());
+        if(word){
+            $.each($('.candidate-name'),function(k,v){
+                if($(v).text().match(word)){
+                    console.log($(v).text())
+                }
+            })
+        }else{
+
+        }
+    });
 
 
     function showSelectView(element) {
@@ -619,10 +631,16 @@
                 handlerData[v.id] = v.value;
             });
             data.handler = handlerData;
+            data.confirm=step;
         }
         console.log(data);
 
-        ajaxPost('updateAttr', data, callback);
+        ajaxPost('updateAttr', data, function(data){
+            //console.log(data);
+            var info=backHandle(data);
+            if('unique'==info)alert('案号重复');
+            else callback(data);
+        });
     }
 
     function setTime() {

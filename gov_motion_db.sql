@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 2017-04-11 18:00:18
+-- Generation Time: 2017-04-13 11:03:21
 -- 服务器版本： 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -156,7 +156,84 @@ INSERT INTO `attr_tbl` (`attr_id`, `motion`, `motion_attr`, `attr_template`, `co
 (113, 10, 85, 42, '并案', 0, NULL, 6725, '2017-04-11 15:16:57'),
 (114, 10, 20, 9, '多年重复', 0, NULL, 6725, '2017-04-11 15:17:00'),
 (115, 10, 20, 9, '重点督办', 0, NULL, 6725, '2017-04-11 15:17:00'),
-(116, 10, 24, 15, NULL, 5103, NULL, 6725, '2017-04-11 15:17:53');
+(116, 10, 24, 15, NULL, 5103, NULL, 6725, '2017-04-11 15:17:53'),
+(117, 11, 21, 12, '分角色操作流程1.1.docx', 0, 'files/140c808a15e877b274d1cff0fa14c01d.docx', 6725, '2017-04-12 01:33:48'),
+(118, 11, 25, 16, '党派团体', 0, NULL, 6725, '2017-04-12 01:33:54'),
+(119, 11, 84, 43, NULL, 781, NULL, 6725, '2017-04-12 01:33:54'),
+(120, 11, 91, 48, NULL, 143, NULL, 6725, '2017-04-12 01:33:54'),
+(121, 11, 36, 3, '分角色操作流程', 0, NULL, 6725, '2017-04-12 01:33:54'),
+(122, 11, 19, 7, NULL, 1491960871, NULL, 6725, '2017-04-12 01:34:31'),
+(123, 11, 16, 8, '大会期间', 0, NULL, 6725, '2017-04-12 01:34:31'),
+(124, 11, 26, 17, NULL, 5, NULL, 6725, '2017-04-12 01:34:31'),
+(125, 11, 10, 1, '公开', 0, NULL, 6725, '2017-04-12 01:34:31'),
+(126, 11, 15, 6, '其他', 0, NULL, 6725, '2017-04-12 01:34:31'),
+(127, 11, 20, 9, '当年', 0, NULL, 6725, '2017-04-12 01:34:31'),
+(128, 11, 20, 9, '重点提案', 0, NULL, 6725, '2017-04-12 01:34:31'),
+(129, 11, 89, 46, '立案', 0, NULL, 6725, '2017-04-12 01:34:31'),
+(130, 11, 85, 42, '立案', 0, NULL, 6725, '2017-04-12 01:37:31'),
+(131, 11, 24, 15, NULL, 6726, NULL, 6725, '2017-04-12 01:37:31'),
+(132, 12, 21, 12, '千寻灯web通信协议.txt', 0, 'files/833b8b4fd5b5b8311ae977e73a0e38cc.txt', 6725, '2017-04-12 03:42:13'),
+(133, 12, 25, 16, '委员', 0, NULL, 6725, '2017-04-12 03:42:15'),
+(134, 12, 84, 43, NULL, 60, NULL, 6725, '2017-04-12 03:42:15'),
+(135, 12, 36, 3, '千寻灯web通信协议.txt', 0, NULL, 6725, '2017-04-12 03:42:15'),
+(136, 12, 19, 7, NULL, 1491968544, NULL, 6725, '2017-04-12 03:42:24'),
+(137, 12, 16, 8, '大会期间', 0, NULL, 6725, '2017-04-12 03:42:24'),
+(138, 12, 26, 17, NULL, 56, NULL, 6725, '2017-04-12 03:42:24'),
+(139, 12, 10, 1, '公开', 0, NULL, 6725, '2017-04-12 03:42:24'),
+(140, 12, 15, 6, '其他', 0, NULL, 6725, '2017-04-12 03:42:24'),
+(141, 12, 20, 9, '当年', 0, NULL, 6725, '2017-04-12 03:42:24'),
+(142, 12, 89, 46, '立案', 0, NULL, 6725, '2017-04-12 03:42:24'),
+(143, 12, 85, 42, '立案', 0, NULL, 6725, '2017-04-12 03:42:42'),
+(144, 12, 24, 15, NULL, 6726, NULL, 6725, '2017-04-12 03:42:42'),
+(145, 12, 22, 13, NULL, 32, NULL, 6726, '2017-04-12 03:51:55'),
+(146, 12, 23, 14, NULL, 28, NULL, 6726, '2017-04-13 00:11:41'),
+(150, 12, 23, 14, NULL, 33, NULL, 6726, '2017-04-13 00:48:07'),
+(151, 12, 37, 19, NULL, 1492046782, NULL, 6731, '2017-04-13 01:25:30'),
+(152, 12, 38, 20, 'adfa', 0, NULL, 6731, '2017-04-13 01:25:30'),
+(153, 12, 39, 21, 'A', 0, NULL, 6731, '2017-04-13 01:25:30'),
+(154, 12, 40, 22, 'asdfa', 0, NULL, 6731, '2017-04-13 01:25:30'),
+(155, 12, 47, 29, '网络控制功能列表.docx', 0, 'files/879a0493babbcc8330ac4b8004d16811.docx', 6731, '2017-04-13 01:26:17'),
+(156, 15, 21, 12, 'UI 接口.docx', 0, 'files/d41d8cd98f00b204e9800998ecf8427e.docx', 6725, '2017-04-13 05:30:28'),
+(157, 15, 25, 16, '委员', 0, NULL, 6725, '2017-04-13 05:30:32'),
+(158, 15, 84, 43, NULL, 89, NULL, 6725, '2017-04-13 05:30:32'),
+(159, 15, 36, 3, 'UI 接口.docx', 0, NULL, 6725, '2017-04-13 05:30:32'),
+(160, 15, 19, 7, NULL, 1492061437, NULL, 6725, '2017-04-13 05:30:37'),
+(161, 15, 16, 8, '大会期间', 0, NULL, 6725, '2017-04-13 05:30:37'),
+(162, 15, 26, 17, NULL, 12, NULL, 6725, '2017-04-13 05:30:37'),
+(163, 15, 10, 1, '公开', 0, NULL, 6725, '2017-04-13 05:30:37'),
+(164, 15, 15, 6, '其他', 0, NULL, 6725, '2017-04-13 05:30:37'),
+(165, 15, 20, 9, '当年', 0, NULL, 6725, '2017-04-13 05:30:37'),
+(166, 15, 89, 46, '立案', 0, NULL, 6725, '2017-04-13 05:30:37'),
+(167, 15, 20, 9, '重点提案备选', 0, NULL, 6725, '2017-04-13 05:30:51'),
+(168, 15, 85, 42, '立案', 0, NULL, 6725, '2017-04-13 05:30:51'),
+(169, 15, 24, 15, NULL, 6726, NULL, 6725, '2017-04-13 05:30:51'),
+(170, 15, 22, 13, NULL, 33, NULL, 6726, '2017-04-13 05:32:18'),
+(171, 15, 23, 14, NULL, 43, NULL, 6726, '2017-04-13 05:32:18'),
+(172, 11, 22, 13, NULL, 43, NULL, 6726, '2017-04-13 05:32:53'),
+(173, 11, 23, 14, NULL, 33, NULL, 6726, '2017-04-13 05:32:53'),
+(174, 16, 31, 12, 'css.txt', 0, 'files/efc509c180a1f9e0f14593a9fe1e2f6a.txt', 6729, '2017-04-13 06:59:49'),
+(175, 16, 90, 47, '建议', 0, NULL, 6729, '2017-04-13 06:59:53'),
+(176, 16, 83, 41, '财政经济', 0, NULL, 6729, '2017-04-13 06:59:53'),
+(177, 16, 6, 4, NULL, 630, NULL, 6729, '2017-04-13 06:59:53'),
+(178, 16, 61, 3, 'css.txt', 0, NULL, 6729, '2017-04-13 06:59:53'),
+(179, 2, 90, 47, '议案', 0, NULL, 6729, '2017-04-13 07:00:07'),
+(180, 2, 83, 41, '财政经济', 0, NULL, 6729, '2017-04-13 07:00:07'),
+(181, 2, 31, 12, 'css.txt', 0, 'files/efc509c180a1f9e0f14593a9fe1e2f6a.txt', 6729, '2017-04-13 07:01:06'),
+(182, 2, 31, 12, '开发进度170313.docx', 0, 'files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx', 6729, '2017-04-13 07:01:10'),
+(183, 2, 6, 4, NULL, 631, NULL, 6729, '2017-04-13 07:01:21'),
+(184, 2, 61, 3, '开发进度', 0, NULL, 6729, '2017-04-13 07:01:21'),
+(185, 18, 21, 12, '分角色操作流程1.1.docx', 0, 'files/140c808a15e877b274d1cff0fa14c01d.docx', 6725, '2017-04-13 07:36:45'),
+(186, 18, 25, 16, '委员', 0, NULL, 6725, '2017-04-13 07:36:49'),
+(187, 18, 84, 43, NULL, 149, NULL, 6725, '2017-04-13 07:36:49'),
+(188, 18, 36, 3, '分角色操作流程1.1.docx', 0, NULL, 6725, '2017-04-13 07:36:49'),
+(191, 19, 21, 12, 'D1702-80电控规格书-20161203.doc', 0, 'files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc', 6725, '2017-04-13 07:40:15'),
+(192, 19, 25, 16, '党派团体', 0, NULL, 6725, '2017-04-13 07:40:17'),
+(193, 19, 84, 43, NULL, 780, NULL, 6725, '2017-04-13 07:40:17'),
+(194, 19, 91, 48, NULL, 103, NULL, 6725, '2017-04-13 07:40:17'),
+(195, 19, 36, 3, 'D1702-80电控规格书-20161203.doc', 0, NULL, 6725, '2017-04-13 07:40:17'),
+(210, 20, 21, 12, '流程.docx', 0, 'files/cca68e3d6c6abfc78773573ab982ac65.docx', 6725, '2017-04-13 08:21:44'),
+(211, 20, 25, 16, '委员', 0, NULL, 6725, '2017-04-13 08:21:57'),
+(212, 20, 36, 3, '流程.docx', 0, NULL, 6725, '2017-04-13 08:21:57');
 
 -- --------------------------------------------------------
 
@@ -228,10 +305,40 @@ INSERT INTO `attr_template_tbl` (`attr_template_id`, `attr_name`, `option`, `sys
 -- --------------------------------------------------------
 
 --
+-- 替换视图以便查看 `attr_unique_view`
+--
+CREATE TABLE `attr_unique_view` (
+`attr_id` int(11)
+,`motion` int(11)
+,`motion_attr` int(11)
+,`attr_template` int(11)
+,`content` varchar(500)
+,`content_int` int(11)
+,`attachment` varchar(500)
+,`staff` int(11)
+,`update_time` timestamp
+,`motion_id` int(11)
+,`meeting` int(11)
+,`category` int(11)
+,`motion_name` varchar(50)
+,`motion_template` int(11)
+,`user` int(11)
+,`duty` int(11)
+,`document` varchar(400)
+,`step` int(11)
+,`document_sha` varchar(50)
+,`upload_time` timestamp
+);
+
+-- --------------------------------------------------------
+
+--
 -- 替换视图以便查看 `attr_view`
 --
 CREATE TABLE `attr_view` (
-`attr_id` int(11)
+`meeting` int(11)
+,`category` int(11)
+,`attr_id` int(11)
 ,`motion` int(11)
 ,`motion_attr` int(11)
 ,`attr_template` int(11)
@@ -1167,7 +1274,7 @@ INSERT INTO `motion_attr_tbl` (`motion_attr_id`, `motion_template`, `attr_templa
 (44, 2, 26, '', 'string', NULL, 0, 5, 0, 0, 0),
 (45, 2, 27, '', 'time', NULL, 0, 5, 0, 0, 0),
 (46, 2, 28, '', 'string', NULL, 0, 5, 0, 0, 0),
-(47, 2, 29, '', 'attachment', NULL, 0, 5, 0, 0, 0),
+(47, 2, 29, '', 'attachment', NULL, 0, 5, 0, 1, 0),
 (48, 2, 30, '', 'string', NULL, 0, 6, 0, 0, 0),
 (49, 2, 31, '', 'time', NULL, 0, 6, 0, 0, 0),
 (50, 2, 32, '', 'string', NULL, 0, 6, 0, 0, 0),
@@ -1258,6 +1365,29 @@ CREATE TABLE `motion_for_index_view` (
 -- --------------------------------------------------------
 
 --
+-- 替换视图以便查看 `motion_handler_inf_view`
+--
+CREATE TABLE `motion_handler_inf_view` (
+`meeting` int(11)
+,`category` int(11)
+,`motion_handler_id` int(11)
+,`motion` int(11)
+,`attr` int(11)
+,`unit` int(11)
+,`staff` int(11)
+,`receive_time` int(11)
+,`reply_time` int(11)
+,`contact_name` varchar(15)
+,`contact_phone` varchar(20)
+,`phone` varchar(20)
+,`attachment` varchar(500)
+,`attachment_name` varchar(100)
+,`status` tinyint(1)
+);
+
+-- --------------------------------------------------------
+
+--
 -- 表的结构 `motion_handler_tbl`
 --
 
@@ -1276,6 +1406,18 @@ CREATE TABLE `motion_handler_tbl` (
   `attachment_name` varchar(100) DEFAULT NULL,
   `status` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `motion_handler_tbl`
+--
+
+INSERT INTO `motion_handler_tbl` (`motion_handler_id`, `motion`, `attr`, `unit`, `staff`, `receive_time`, `reply_time`, `contact_name`, `contact_phone`, `phone`, `attachment`, `attachment_name`, `status`) VALUES
+(1, 12, 146, 28, 6732, 1492046202, 1492046202, 'abc', '4321', '1234', 'files/d41d8cd98f00b204e9800998ecf8427e.txt', '新建文本文档.txt', 9),
+(2, 12, 150, 33, 6730, 1492046350, 1492046350, '张三', '12121212', '12343', 'files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx', '开发进度170313.docx', 9),
+(4, 12, 148, 45, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7),
+(6, 12, 149, 43, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 7),
+(9, 15, 171, 43, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1),
+(10, 11, 173, 33, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1362,7 +1504,7 @@ CREATE TABLE `motion_tbl` (
 
 INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `motion_template`, `user`, `duty`, `document`, `step`, `document_sha`, `upload_time`) VALUES
 (1, 2, 1, '新建', 1, 6729, 0, NULL, 1, NULL, '2017-04-10 03:44:19'),
-(2, 2, 1, '新建', 1, 4780, 0, NULL, 1, NULL, '2017-04-10 05:59:07'),
+(2, 2, 1, '开发进度', 1, 4780, 631, '开发进度170313.docx', 1, 'files/5abe7322df1c869b2bb6fdd30bc9a6c7.docx', '2017-04-10 05:59:07'),
 (3, 1, 2, '关于着力打造沿山精品线助推接轨大上海的建议', 2, 5154, 829, '266民盟慈溪市基层委员会关于着力打造沿山精品线助推接轨大上海的建议.doc', 4, 'files/4b4a505c412af05886f5bd685dc69cfe.doc', '2017-04-10 06:09:01'),
 (4, 1, 2, '关于推进我市优质学前教育的建议', 2, 5154, 829, '265民盟慈溪市基层委员会关于推进我市优质学前教育的建议.doc', 0, 'files/dba7de7da8798db12c79f3937accf3b4.doc', '2017-04-10 06:17:58'),
 (5, 1, 2, '关于加大投入提升我市普通高中办学水准的建议', 2, 5154, 829, '267民盟慈溪市基层委员会关于加大投入提升我市普通高中办学水准的建议.doc', 7, 'files/02edae2520c505a01ab2d9195099c404.doc', '2017-04-10 06:21:11'),
@@ -1370,7 +1512,17 @@ INSERT INTO `motion_tbl` (`motion_id`, `meeting`, `category`, `motion_name`, `mo
 (7, 1, 2, '关于抓紧落实宗教团体办公及培训用房的建议', 2, 5154, 320, '24关于抓紧落实宗教团体办公及培训用房的建议.doc', 7, 'files/49d8dbc120d4d6400239959423268e36.doc', '2017-04-10 06:24:23'),
 (8, 1, 2, '关于传承、纪念和保护境外慈溪籍人士在慈公益事业的建议', 2, 5154, 808, '392侨联界关于传承、纪念和保护境外慈溪籍人士在慈公益事业的建议.doc', 5, 'files/201e28e22c22b759b4fb0d0acf7f94f7.doc', '2017-04-10 06:30:25'),
 (9, 1, 2, '关于应对杭州湾新区人才流失的相关建议', 2, 5154, 240, '143陈德生关于应对杭州湾新区人才流失的相关建议.doc', 4, 'files/562266d58f76b89ebe09b7fd16919a5d.doc', '2017-04-10 06:45:38'),
-(10, 1, 2, 'a01be55580db7a04ca8194644f542f44.doc', 2, 6725, 780, 'a01be55580db7a04ca8194644f542f44.doc', 4, 'files/a01be55580db7a04ca8194644f542f44.doc', '2017-04-11 15:15:45');
+(10, 1, 2, 'a01be55580db7a04ca8194644f542f44.doc', 2, 6725, 780, 'a01be55580db7a04ca8194644f542f44.doc', 4, 'files/a01be55580db7a04ca8194644f542f44.doc', '2017-04-11 15:15:45'),
+(11, 1, 2, '分角色操作流程', 2, 6725, 781, '分角色操作流程1.1.docx', 5, 'files/140c808a15e877b274d1cff0fa14c01d.docx', '2017-04-12 00:54:57'),
+(12, 1, 2, '千寻灯web通信协议.txt', 2, 6725, 60, '千寻灯web通信协议.txt', 6, 'files/833b8b4fd5b5b8311ae977e73a0e38cc.txt', '2017-04-12 03:42:01'),
+(13, 1, 2, '新建', 2, 6725, 0, NULL, 0, NULL, '2017-04-13 00:32:32'),
+(14, 1, 2, '新建', 2, 6725, 0, NULL, 0, NULL, '2017-04-13 00:58:29'),
+(15, 1, 2, 'UI 接口.docx', 2, 6725, 89, 'UI 接口.docx', 5, 'files/d41d8cd98f00b204e9800998ecf8427e.docx', '2017-04-13 01:05:16'),
+(16, 2, 1, 'css.txt', 1, 6736, 630, 'css.txt', 1, 'files/efc509c180a1f9e0f14593a9fe1e2f6a.txt', '2017-04-13 06:05:20'),
+(17, 1, 2, '新建', 2, 6725, 0, NULL, 0, NULL, '2017-04-13 06:33:21'),
+(18, 1, 2, '分角色操作流程1.1.docx', 2, 6725, 149, '分角色操作流程1.1.docx', 2, 'files/140c808a15e877b274d1cff0fa14c01d.docx', '2017-04-13 07:24:16'),
+(19, 1, 2, 'D1702-80电控规格书-20161203.doc', 2, 6725, 780, 'D1702-80电控规格书-20161203.doc', 2, 'files/d75fbe1c1b00f90d1676b737c5fe5ee8.doc', '2017-04-13 07:37:56'),
+(20, 1, 2, '流程.docx', 2, 6725, 0, '流程.docx', 1, 'files/cca68e3d6c6abfc78773573ab982ac65.docx', '2017-04-13 07:40:33');
 
 -- --------------------------------------------------------
 
@@ -1588,7 +1740,7 @@ INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name
 (3663, 8, '2E197C8C13BB9BF948257559001BFA44', 157, 'adzfl', '庵东镇妇联', NULL, NULL, NULL, '', 3, '{}', 88),
 (3664, 9, 'EF16D926586CE6D54825705200042BD4', 157, 'adzgh', '庵东镇工会', NULL, NULL, NULL, '', 3, '{}', 88),
 (3665, 10, '82A50FE55F636A1448256DA6000CAEA4', 157, 'adzhzb', '庵东镇环治办', NULL, NULL, NULL, '', 3, '{}', 88),
-(3666, 11, 'F5881836B59EE7BE48256CB4000B94A8', 157, 'adzjfb', '庵东镇经发办', NULL, NULL, NULL, '5', 3, '{}', 88),
+(3666, 11, 'F5881836B59EE7BE48256CB4000B94A8', 157, 'adzjfb', '庵东镇经发办', NULL, NULL, NULL, '', 3, '{}', 88),
 (3667, 12, '8F7DCF124508718348256EF400044177', 157, 'adzjpb', '庵东镇经普办', NULL, NULL, NULL, '', 3, '{}', 88),
 (3668, 13, 'A340750DA7E7D05D48256B38002AADED', 157, 'adzjsb', '庵东镇计生办', NULL, NULL, NULL, '', 3, '{}', 88),
 (3669, 14, '800CC47F58F3A96348256CB4000B98C0', 157, 'adzjwb', '庵东镇教卫办', NULL, NULL, NULL, '', 3, '{}', 88),
@@ -4650,8 +4802,8 @@ INSERT INTO `staff_tbl` (`staff_id`, `out_id`, `staff_unid`, `unit`, `staff_name
 (6719, 3650, '81FE55ECE9608806482580D7000FC0D2', 5, 'szxwyn', '市政协王益女', NULL, NULL, NULL, '', 3, '{}', 88),
 (6720, 3651, '0BA4A10118EC7504482580D800228D7E', 153, 'hhzxczzhzzb', '横河镇小城镇综合整治办', NULL, NULL, NULL, '', 3, '{}', 88),
 (6721, 3652, '6A6DF58FEE902471482580DB000640AC', 45, 'sgajcqzd', '市公安局交警大队城区中队', NULL, NULL, NULL, '', 3, '{}', 88),
-(6725, NULL, NULL, 5, 'zxtemp', '政协（测试账号）', NULL, NULL, '1234', '1236', 2, '{}', 0),
-(6726, NULL, NULL, 10, 'dcstemp', '督察室（测试）', NULL, NULL, '1234', '', 3, '{}', 0),
+(6725, NULL, NULL, 5, 'zxtemp', '政协（测试账号）', NULL, NULL, '1234', '12346', 2, '{}', 0),
+(6726, NULL, NULL, 10, 'dcstemp', '督察室（测试）', NULL, NULL, '1234', '4', 3, '{}', 0),
 (6728, NULL, NULL, 8, 'swbtemp', '市委办（测试）', NULL, NULL, '1234', '', 3, '{}', 0),
 (6729, NULL, NULL, 3, 'rdtemp', '市人大工委（测试）', NULL, NULL, '1234', '123', 1, '{}', 0),
 (6730, NULL, NULL, 33, 'cltemp', '市残联', NULL, NULL, '1234', '5', 3, '{}', 0),
@@ -5936,7 +6088,25 @@ INSERT INTO `zx_motion_tbl` (`zx_motion`, `motion`) VALUES
 (5, 7),
 (6, 8),
 (7, 9),
-(8, 10);
+(8, 10),
+(9, 11),
+(10, 12),
+(11, 13),
+(12, 14),
+(13, 15),
+(14, 17),
+(15, 18),
+(16, 19),
+(17, 20);
+
+-- --------------------------------------------------------
+
+--
+-- 视图结构 `attr_unique_view`
+--
+DROP TABLE IF EXISTS `attr_unique_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `attr_unique_view`  AS  select `a`.`attr_id` AS `attr_id`,`a`.`motion` AS `motion`,`a`.`motion_attr` AS `motion_attr`,`a`.`attr_template` AS `attr_template`,`a`.`content` AS `content`,`a`.`content_int` AS `content_int`,`a`.`attachment` AS `attachment`,`a`.`staff` AS `staff`,`a`.`update_time` AS `update_time`,`b`.`motion_id` AS `motion_id`,`b`.`meeting` AS `meeting`,`b`.`category` AS `category`,`b`.`motion_name` AS `motion_name`,`b`.`motion_template` AS `motion_template`,`b`.`user` AS `user`,`b`.`duty` AS `duty`,`b`.`document` AS `document`,`b`.`step` AS `step`,`b`.`document_sha` AS `document_sha`,`b`.`upload_time` AS `upload_time` from (`attr_tbl` `a` left join `motion_tbl` `b` on((`a`.`motion` = `b`.`motion_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -5945,7 +6115,7 @@ INSERT INTO `zx_motion_tbl` (`zx_motion`, `motion`) VALUES
 --
 DROP TABLE IF EXISTS `attr_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `attr_view`  AS  select `a`.`attr_id` AS `attr_id`,`a`.`motion` AS `motion`,`a`.`motion_attr` AS `motion_attr`,`a`.`attr_template` AS `attr_template`,`a`.`content` AS `content`,`a`.`content_int` AS `content_int`,`a`.`attachment` AS `attachment`,`a`.`staff` AS `staff`,`a`.`update_time` AS `update_time`,`b`.`attr_name` AS `attr_name` from (`attr_tbl` `a` left join `attr_template_tbl` `b` on((`a`.`attr_template` = `b`.`attr_template_id`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `attr_view`  AS  select `c`.`meeting` AS `meeting`,`c`.`category` AS `category`,`a`.`attr_id` AS `attr_id`,`a`.`motion` AS `motion`,`a`.`motion_attr` AS `motion_attr`,`a`.`attr_template` AS `attr_template`,`a`.`content` AS `content`,`a`.`content_int` AS `content_int`,`a`.`attachment` AS `attachment`,`a`.`staff` AS `staff`,`a`.`update_time` AS `update_time`,`b`.`attr_name` AS `attr_name` from ((`attr_tbl` `a` left join `attr_template_tbl` `b` on((`a`.`attr_template` = `b`.`attr_template_id`))) left join `motion_tbl` `c` on((`a`.`motion` = `c`.`motion_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -5973,6 +6143,15 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 DROP TABLE IF EXISTS `motion_for_index_view`;
 
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `motion_for_index_view`  AS  select `a`.`motion_id` AS `motion_id`,`a`.`meeting` AS `meeting`,`a`.`category` AS `category`,`a`.`motion_name` AS `motion_name`,`a`.`motion_template` AS `motion_template`,`a`.`user` AS `user`,`a`.`document` AS `document`,`a`.`step` AS `step`,`a`.`document_sha` AS `document_sha`,`a`.`upload_time` AS `upload_time`,`b`.`step_name` AS `step_name` from (`motion_tbl` `a` left join `step_tbl` `b` on((`a`.`step` = `b`.`step_id`))) ;
+
+-- --------------------------------------------------------
+
+--
+-- 视图结构 `motion_handler_inf_view`
+--
+DROP TABLE IF EXISTS `motion_handler_inf_view`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `motion_handler_inf_view`  AS  select `b`.`meeting` AS `meeting`,`b`.`category` AS `category`,`a`.`motion_handler_id` AS `motion_handler_id`,`a`.`motion` AS `motion`,`a`.`attr` AS `attr`,`a`.`unit` AS `unit`,`a`.`staff` AS `staff`,`a`.`receive_time` AS `receive_time`,`a`.`reply_time` AS `reply_time`,`a`.`contact_name` AS `contact_name`,`a`.`contact_phone` AS `contact_phone`,`a`.`phone` AS `phone`,`a`.`attachment` AS `attachment`,`a`.`attachment_name` AS `attachment_name`,`a`.`status` AS `status` from (`motion_handler_tbl` `a` left join `motion_tbl` `b` on((`a`.`motion` = `b`.`motion_id`))) ;
 
 -- --------------------------------------------------------
 
@@ -6216,7 +6395,7 @@ ALTER TABLE `zx_motion_tbl`
 -- 使用表AUTO_INCREMENT `attr_tbl`
 --
 ALTER TABLE `attr_tbl`
-  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `attr_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=213;
 --
 -- 使用表AUTO_INCREMENT `attr_template_tbl`
 --
@@ -6251,12 +6430,12 @@ ALTER TABLE `motion_attr_tbl`
 -- 使用表AUTO_INCREMENT `motion_handler_tbl`
 --
 ALTER TABLE `motion_handler_tbl`
-  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `motion_handler_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- 使用表AUTO_INCREMENT `motion_tbl`
 --
 ALTER TABLE `motion_tbl`
-  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `motion_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- 使用表AUTO_INCREMENT `motion_template_tbl`
 --
@@ -6316,7 +6495,7 @@ ALTER TABLE `user_unit_tbl`
 -- 使用表AUTO_INCREMENT `zx_motion_tbl`
 --
 ALTER TABLE `zx_motion_tbl`
-  MODIFY `zx_motion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `zx_motion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
