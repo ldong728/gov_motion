@@ -1,144 +1,102 @@
-2017.04.13.09:43:59:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 18}
-2017.04.13.09:44:08:D:\xampp\htdocs\gov_motion\functions.php677:
-2017.04.13.09:44:08:D:\xampp\htdocs\gov_motion\functions.php680:出错
-2017.04.13.09:44:45:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:45:09:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:46:09:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.09:46:15:D:\xampp\htdocs\gov_motion\functions.php677:
-2017.04.13.09:46:15:D:\xampp\htdocs\gov_motion\functions.php678:unique
-2017.04.13.09:46:15:D:\xampp\htdocs\gov_motion\functions.php680:出错
-2017.04.13.09:46:39:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:46:46:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:46:59:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:48:03:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:48:04:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:48:11:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:48:57:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.09:49:02:D:\xampp\htdocs\gov_motion\functions.php677:
-2017.04.13.09:49:02:D:\xampp\htdocs\gov_motion\functions.php678:unique
-2017.04.13.09:49:02:D:\xampp\htdocs\gov_motion\functions.php680:出错
-2017.04.13.09:49:02:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.09:49:15:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.09:49:19:D:\xampp\htdocs\gov_motion\functions.php677:
-2017.04.13.09:49:19:D:\xampp\htdocs\gov_motion\functions.php678:unique
-2017.04.13.09:49:19:D:\xampp\htdocs\gov_motion\functions.php680:出错
-2017.04.13.09:49:20:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.09:50:03:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.09:50:08:D:\xampp\htdocs\gov_motion\functions.php677:
-2017.04.13.09:50:08:D:\xampp\htdocs\gov_motion\functions.php678:unique
-2017.04.13.09:50:08:D:\xampp\htdocs\gov_motion\functions.php680:出错
-2017.04.13.09:50:27:D:\xampp\htdocs\gov_motion\functions.php677:
-2017.04.13.09:50:27:D:\xampp\htdocs\gov_motion\functions.php678:unique
-2017.04.13.09:50:27:D:\xampp\htdocs\gov_motion\functions.php680:出错
-2017.04.13.09:53:32:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:55:44:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:56:10:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:56:42:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:56:44:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:56:45:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:57:46:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:58:16:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:58:27:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:58:31:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:58:36:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:58:39:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:59:05:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:59:23:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.09:59:47:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:01:50:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:03:20:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:04:16:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:04:35:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:04:51:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:05:28:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:07:35:D:\xampp\htdocs\gov_motion\functions.php174:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:17:05:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:17:17:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:17:57:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:18:08:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:18:25:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:19:34:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:19:53:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 3}
-2017.04.13.10:20:30:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:20:32:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:21:11:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:21:26:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 3}
-2017.04.13.10:21:31:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 9}
-2017.04.13.10:21:44:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\php1A37.tmp
-2017.04.13.10:21:44:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/cca68e3d6c6abfc78773573ab982ac65.docx
-2017.04.13.10:21:57:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:22:54:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:22:56:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:23:13:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:23:24:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:23:47:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 12}
-2017.04.13.10:23:59:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:24:06:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 3}
-2017.04.13.10:24:06:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 3}
-2017.04.13.10:26:25:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:26:28:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:27:16:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:27:32:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:27:53:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:28:16:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:28:44:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:29:25:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:32:52:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:36:58:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.10:38:55:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.10:39:10:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:39:13:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:39:22:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:42:04:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:42:19:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:42:23:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:42:33:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.10:43:22:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:47:55:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:47:58:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:48:01:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:48:11:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 20}
-2017.04.13.10:51:32:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.10:51:34:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 19}
-2017.04.13.11:01:19:D:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: }
-2017.04.13.15:42:01:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1,1: 2,2: 3,3: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: }
-2017.04.13.15:56:27:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}}
-2017.04.13.16:01:31:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 13}
-2017.04.13.16:01:56:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}}
-2017.04.13.16:02:02:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php8FEC.tmp
-2017.04.13.16:02:02:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/739a3cfaac0d1b8365f319b812a09150.doc
-2017.04.13.16:02:02:C:\xampp\htdocs\gov_motion\functions.php807:房涤
-2017.04.13.16:04:32:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 14}
-2017.04.13.16:05:29:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 14}
-2017.04.13.16:05:32:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 14}
-2017.04.13.16:06:22:C:\xampp\htdocs\gov_motion\functions.php24:outerStaffLogin name:zhjdgly,status:LIMIT
-2017.04.13.16:06:35:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}}
-2017.04.13.16:06:56:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\phpB06.tmp
-2017.04.13.16:06:56:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/a3305512f929187fa90919d76fe1bd8b.doc
-2017.04.13.16:06:56:C:\xampp\htdocs\gov_motion\functions.php807:陈建士
-2017.04.13.16:07:34:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\phpA208.tmp
-2017.04.13.16:07:34:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/a3e48ea01abebe6b83e7f80e143a1bee.doc
-2017.04.13.16:11:17:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
-2017.04.13.16:16:54:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
-2017.04.13.16:17:07:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php6068.tmp
-2017.04.13.16:17:07:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/a3305512f929187fa90919d76fe1bd8b.doc
-2017.04.13.16:17:08:C:\xampp\htdocs\gov_motion\functions.php807:陈建士
-2017.04.13.16:19:56:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
-2017.04.13.16:20:00:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php272.tmp
-2017.04.13.16:20:00:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/0f9fbbc457b06768f60518b8a75dec8b.doc
-2017.04.13.16:20:00:C:\xampp\htdocs\gov_motion\functions.php807:陆信祥
-2017.04.13.16:20:35:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
-2017.04.13.16:20:48:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
-2017.04.13.16:20:52:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\phpCF52.tmp
-2017.04.13.16:20:52:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/5c3d0bb3b283b7150561de1fed0ff269.docx
-2017.04.13.16:20:53:C:\xampp\htdocs\gov_motion\functions.php807:王建群
-2017.04.13.16:21:00:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
-2017.04.13.16:21:13:C:\xampp\htdocs\gov_motion\functions.php175:{steps: {0: 1}category: 1,meeting: 2,unit: 162,staffId: 6751,staffName: 宗汉街道管理员,outId: ,userList: {user_unit: 718}currentMotion: 21}
-2017.04.13.16:21:19:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php3621.tmp
-2017.04.13.16:21:19:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/64fbba635bf6af238f493a72d8b633fc.docx
-2017.04.13.16:21:19:C:\xampp\htdocs\gov_motion\functions.php807:徐娣珍
-2017.04.13.16:21:25:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php4E72.tmp
-2017.04.13.16:21:25:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/b9db318f17c6eaabb93aa87c96df0d04.doc
-2017.04.13.16:22:23:C:\xampp\htdocs\gov_motion\includes\upload.class.php128:C:\xampp\tmp\php31FE.tmp
-2017.04.13.16:22:23:C:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/5c3d0bb3b283b7150561de1fed0ff269.docx
-2017.04.13.16:22:23:C:\xampp\htdocs\gov_motion\functions.php807:王建群
+2017.04.14.07:38:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:50:D:\xampp\htdocs\gov_motion\includes\upload.class.php128:D:\xampp\tmp\phpE31E.tmp
+2017.04.14.07:38:50:D:\xampp\htdocs\gov_motion\includes\upload.class.php129:files/6f74ad2f98565f443d1f05bf9cd523b0.png
+2017.04.14.07:38:57:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:57:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:57:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:57:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:38:57:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 29}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:15:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:17:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:17:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:17:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:17:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:17:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:18:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:18:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:18:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:18:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:18:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 1,1: 2,2: 3}category: 1,meeting: 2,unit: 3,staffId: 6729,staffName: 市人大工委（测试）,outId: ,currentMotion: 29,passUnique: 6}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:30:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:30:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:30:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:30:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:39:30:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:11:D:\xampp\htdocs\gov_motion\functions.php104:not my job
+2017.04.14.07:42:16:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 4}category: 3,meeting: ,unit: 10,staffId: 6726,staffName: 督察室（测试）,outId: }
+2017.04.14.07:42:16:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:16:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:16:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:16:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:25:D:\xampp\htdocs\gov_motion\functions.php104:not my job
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 4}category: 3,meeting: ,unit: 10,staffId: 6726,staffName: 督察室（测试）,outId: }
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:26:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:29:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:29:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:29:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:29:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.07:42:29:D:\xampp\htdocs\gov_motion\includes\DataSupply.class.php13:{}
+2017.04.14.08:04:47:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 23}
+2017.04.14.08:09:13:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 23}
+2017.04.14.08:15:14:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 23}
+2017.04.14.08:15:16:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 23}
+2017.04.14.08:17:34:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 23}
+2017.04.14.08:17:35:D:\xampp\htdocs\gov_motion\functions.php223:{steps: {0: 1,1: 2,2: 3,3: 4,4: 6}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: ,currentMotion: 23}

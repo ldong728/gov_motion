@@ -53,8 +53,8 @@
                     <?php if (in_array(1, $_SESSION['staffLogin']['steps'])): ?>
                         <button class="c-btn create-motion" style="width: 90px;margin-left: none;">新建
                         </button><?php endif ?>
-                    <button class="c-btn" style="width: 190px;">案号缺少清单</button>
-                    <button class="c-btn" style="width: 90px;">建议</button>
+<!--                    <button class="c-btn" style="width: 190px;">案号缺少清单</button>-->
+<!--                    <button class="c-btn" style="width: 90px;">建议</button>-->
                 </div>
             </div>
             <div class="home-r-content clearfix">
@@ -65,13 +65,13 @@
                         <tr>
                             <th>序号</th>
                             <th><input type="checkbox" class="select-all"></th>
-                            <th class="order-by-attr"> 案号</th>
-                            <th class="order-by-attr">领衔人</th>
-                            <th class="order-by-attr">案别</th>
-                            <th class="order-by-attr">案由</th>
-                            <th class="order-by-attr">性质类别</th>
-                            <th class="order-by-attr">原文</th>
-                            <th class="order-by-attr">当前环节</th>
+                            <th class="order-by-attr"><a href="#"> 案号</a></th>
+                            <th class="order-by-attr"><a href="#">领衔人</a></th>
+                            <th class="order-by-attr"><a href="#">案别</a></th>
+                            <th class="order-by-attr"><a href="#">案由</a></th>
+                            <th class="order-by-attr"><a href="#">性质类别</a></th>
+                            <th>原文</th>
+                            <th class="order-by-attr"><a href="#">当前环节</a></th>
                             <th>办理单位</th>
                             <th>删除</th>
                         </tr>
@@ -79,13 +79,13 @@
                             <tr>
                                 <th>序号</th>
                                 <th><input type="checkbox" class="select-all"></th>
-                                <th class="order-by-attr">编号</th>
-                                <th class="order-by-attr"> 案号</th>
-                                <th class="order-by-attr">提案人</th>
-                                <th class="order-by-attr">案由</th>
-                                <th class="order-by-attr">性质类别</th>
-                                <th class="order-by-attr">原文</th>
-                                <th class="order-by-attr">当前环节</th>
+                                <th class="order-by-attr"><a href="#">编号</a></th>
+                                <th class="order-by-attr"><a href="#"> 案号</a></th>
+                                <th class="order-by-attr"><a href="#">提案人</a></th>
+                                <th class="order-by-attr"><a href="#">案由</a></th>
+                                <th class="order-by-attr"><a href="#">性质类别</a></th>
+                                <th>原文</th>
+                                <th class="order-by-attr"><a href="#">当前环节</a></th>
                                 <th>办理单位</th>
                                 <th>删除</th>
                             </tr>
@@ -97,14 +97,14 @@
 
                 </div>
                 <div class="home-page-l">
-                    <a class="page-num">20v</a>
+<!--                    <a class="page-num">20v</a>-->
                     <a href="#"><i class="icon icon-step-backward"></i></a>
                     <a href="#"><i class="icon icon-caret-left prev-page"></i></a>
-                    <a href="#">第<input name="text" type="text" value="1" class="p-num">页 共15页</a>
+                    <a href="#">第<input name="text" type="text" value="1" class="p-num">页</a>
                     <a href="#"><i class="icon icon-caret-right next-page"></i></a>
                     <a href="#"><i class="icon icon-step-forward"></i></a>
                 </div>
-                <div class="home-page-r"><p>显示1到20，共288记录</p></div>
+<!--                <div class="home-page-r"><p>显示1到20，共288记录</p></div>-->
             </div>
         </div>
     </div>

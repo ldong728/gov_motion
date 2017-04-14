@@ -10,7 +10,9 @@ class DataSupply {
     private static $data=array();
 
     public static function indexToValue($targetName,$index){
+//        mylog(getArrayInf(DataSupply::$data));
         $content='';
+        if(!$index)return $content;
         if(isset(DataSupply::$data[$targetName][$index])){
             $content=DataSupply::$data[$targetName][$index];
         }else{

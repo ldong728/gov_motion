@@ -36,6 +36,7 @@ function userAuth($userName,$password,$category=3){
         for($i=0;$i<strlen($staffQuery['steps']);$i++){
             $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
         }
+        if(count($_SESSION['staffLogin']['steps'])<1)return;
         $_SESSION['staffLogin']['category']=$staffQuery['category'];
         $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
         $_SESSION['staffLogin']['unit']=$staffQuery['unit'];
@@ -99,7 +100,7 @@ function getIndex($orderBy='default'){
                     unset($motionList[$row['category']][$row['motion_id']]);
                 }
             }else{
-                if('5103'!=$staff['staffId']){
+                if('5103'!=$staff['staffId']&&'6726'!=$staff['staffId']){
                     mylog('not my job');
                     unset($motionList[$row['category']][$row['motion_id']]);
                 }
@@ -121,8 +122,9 @@ function getIndex($orderBy='default'){
 //        foreach ($canMainHandleQuery as $row) {
 //            $canMainHandleMotion[]=$row['motion_id'];
 //        }
-        $handleListQuery=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$motionId,'attr_name'=>'协办单位','content_int'=>$staff['unit']),null);
-//        $handleListQuery=pdoQuery('motion_handler_inf_view',array('motion as motion_id'),array('motion'=>$motionId,'status'=>1),null);
+//        $handleListQuery=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$motionId,'attr_name'=>'协办单位','content_int'=>$staff['unit']),null);
+        $handleListQuery=pdoQuery('motion_handler_inf_view',array('motion as motion_id'),array('motion'=>$motionId,'status'=>1,'unit'=>$staff['unit']),null);
+//        mylog(getArrayInf($handleListQuery));
         foreach ($handleListQuery as $row) {
             $handleMotion[]=$row['motion_id'];
         }
@@ -172,7 +174,6 @@ function getMeetingView($id){
 function ajaxMotionList($data){
 
     $staffInf=$_SESSION['staffLogin'];
-    mylog(getArrayInf($staffInf));
     $count=20;
     $category=isset($data['category'])?$data['category']:$staffInf['category'];
     $meeting=isset($data['meeting'])?$data['meeting']:$staffInf['meeting'];
@@ -219,13 +220,14 @@ function ajaxMotionList($data){
 
     }
     //办理单位界面筛选
-
+    mylog(getArrayInf($staffInf));
     if(1==count($staffInf['steps'])&&5==$staffInf['steps'][0]){
-//        mylog()
+        mylog();
         $motionLimit=array();
 
         $mainHandleQuery=pdoQuery('attr_view',array('motion as motion_id','count(*) as count'),array('meeting'=>$meeting,'attr_name'=>'主办单位','content_int'=>$staffInf['unit']),null);
         foreach ($mainHandleQuery as $row) {
+            mylog($row['count']);
             $motionLimit[]=$row['motion_id'];
         }
         $handleQuery=pdoQuery('motion_handler_inf_view',array('motion as motion_id','count(*) as count'),array('meeting'=>$meeting,'status'=>array(1,3,9)),null);
@@ -379,7 +381,7 @@ function editMotion($data){
             if($step4Inf['content_int']==$staffId){
                 $step4CanEdit=true;
             }else{
-                if('5103'==$staffId)$step4CanEdit=true;
+                if('5103'==$staffId||'6726'==$staffId)$step4CanEdit=true;
                 else $step4CanEdit=false;
             }
         }
@@ -389,7 +391,9 @@ function editMotion($data){
 //    mylog($step4CanEdit);
     $motionQuery=pdoQuery('motion_view',null,$attrFilter,' order by value_sort desc,motion_attr asc');
     $unitGroupInf=null;
+    unset($_SESSION['staffLogin']['passUnique']);
     foreach ($motionQuery as $row) {
+        if('案号'==$row['attr_name']&&$row['content_int']>0)$_SESSION['staffLogin']['passUnique']=$row['content_int'];//获取案号
         $values = $row;
         $optionArray = json_decode($row['option'], true);
         $values['edit']=false;
@@ -401,6 +405,7 @@ function editMotion($data){
             if(2==$row['step']&&1==$row['attr_step'])$values['edit']=true;
             if('性质'==$row['attr_name']&&3==$row['step'])$values['edit']=true;
         }
+        if('提案联系人'==$row['attr_name']&&in_array(3,$_SESSION['staffLogin']['steps']))$values['edit']=true;
 //        if(($row['step']==$row['attr_step']||(2==$row['step']&&1==$row['attr_step']))&&in_array($row['step'],$_SESSION['staffLogin']['steps'])&&4!=$row['step']||//
 //        ($step4CanEdit&&4==$row['step']&&$row['step']==$row['attr_step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))||
 //        ('性质'==$row['attr_name']&&3==$row['step']&&in_array($row['step'],$_SESSION['staffLogin']['steps']))){}
@@ -425,7 +430,6 @@ function editMotion($data){
 
             //如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限
             if(5==$row['attr_step']&&5==$row['step']){
-                mylog(getArrayInf($row));
                 $mainHandler[$row['attr_name']]=$values;
                 continue;
             }
@@ -510,6 +514,7 @@ function editMotion($data){
                 $canMainHandler=true;
                 $motion=array_merge($motion,$mainHandler);
             }else{
+                $canMainHandler=false;
                 foreach ($mainHandler as $row) {
 //                    mylog(getArrayInf($row));
                     $values=$row;
@@ -586,9 +591,18 @@ function updateAttr($data){
         foreach ($attrs as $row) {
             if($uniqueInf==$row['motion_attr']){
                 if(in_array($row['value'],$uniqueValues)){
-                    $e=new PDOException();
-                    $e->errorInfo="unique";
-                    throw $e;
+                    if(!isset($_SESSION['staffLogin']['passUnique'])){
+                        $e=new PDOException();
+                        $e->errorInfo="unique";
+                        throw $e;
+                    }else{
+                        if($_SESSION['staffLogin']['passUnique']!=$row['value']){
+                            $e=new PDOException();
+                            $e->errorInfo="unique";
+                            throw $e;
+                        }
+                    }
+
                 }
             }
             $value=array();
@@ -665,6 +679,7 @@ function updateAttr($data){
                     $handleDate['receive_time']=time();
                     $handleDate['reply_time']=time();
                     $handleDate['staff']=$_SESSION['staffLogin']['staffId'];
+                    mylog(getArrayInf($handleDate));
                     pdoInsert('motion_handler_tbl',$handleDate,'update');
                 }
             }
@@ -675,10 +690,10 @@ function updateAttr($data){
         pdoCommit();
         echo ajaxBack(array('step'=>$currentStep,'id'=>$motionId));
     }catch(PDOException $e){
-        mylog($e->getMessage());
-        mylog($e->errorInfo);
+//        mylog($e->getMessage());
+//        mylog($e->errorInfo);
         pdoRollBack();
-        mylog('出错');
+//        mylog('出错');
         echo ajaxBack($e->errorInfo);
     }
 

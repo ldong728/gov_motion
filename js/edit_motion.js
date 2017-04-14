@@ -89,7 +89,7 @@
         var host = window.location.host;
         var href = $(this).data('href');
         try {
-            var openDocObj = new ActiveXObject("sharePoint.OpenDocuments.2") || '';
+            var openDocObj = new ActiveXObject("sharePoint.OpenDocuments.1") || '';
             openDocObj.EditDocument(protocol + '//' + host + '/' + href);
         } catch (err) {
             console.log(err);
@@ -105,7 +105,7 @@
     $(document).on('click', '.submit-attr', function () {
         submitAtrrs(1, function (data) {
             var back = backHandle(data);
-            if (staff.steps.indexOf(String(back.step)) > -1) {
+            if (staff.steps.indexOf(String(back.step)) > -1&&5!=back.step) {
                 console.log(staff);
                 ajaxPost('editMotion', {id: back.id}, function (data) {
                     $('.m-popup').html(data);
