@@ -32,7 +32,7 @@
 
         <a href="#" class="motion-step-inf" id="<?php echo current($motion)['motion_id']?>">查看信息</a>
         <a href="#">办理单打印</a>
-        <?php if(1 == $meetingInf['category']):?><a href="#">议案打印</a><?php endif?>
+        <?php if(1 == $meetingInf['category']):?><a href="#">建议议案打印</a><?php endif?>
         <?php if(2 == $meetingInf['category']):?><a href="#">提案打印</a><?php endif?>
         <a href="<?php echo 'original_'.$meetingInf['document_sha']?>">全文原始稿</a>
         <?php if(3==current($motion)['step']):?><a class="attachment-file" href="#" data-href="<?php echo $motion['原文']['attachment']?>">附件修改</a><?php endif?>

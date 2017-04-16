@@ -11,12 +11,17 @@
             ajaxPost('ajaxDeleteAttr', {id: id}, function (data) {
                 var value = backHandle(data);
                 console.log(value);
-                if (value)_.remove();
+                if (value){
+                    _.parents('.multiple-attachment-content').remove();
+                    _.remove();
+                }
+
                 getFuyiCount();
             });
         } else {
             _.prev('.added-value').remove();
             _.remove();
+
             getFuyiCount();
         }
         //alert(_.attr('id'));
@@ -54,27 +59,34 @@
             success: function (v, status) {
                 //console.log(v);
                 if ('SUCCESS' == v.state) {
-                    if (0 == attrId) {
-                        attrId = v.attrId;
-                        parent.attr('data-attr', attrId);
-                        parent.find('.attachment-file').attr('data-href', v.url);
-                        parent.find('.attachment-file').text(v.originalName);
-                        antiDouble = false;
-                    } else {
-                        parent.find('.attachment-file').attr('data-href', v.url);
-                        parent.find('.attachment-file').text(v.originalName);
-                        antiDouble = false;
+                    console.log(Boolean(multiple));
+                    if(!multiple){
+                        if (0 == attrId) {
+                            attrId = v.attrId;
+                            parent.attr('data-attr', attrId);
+                            parent.find('.attachment-file').attr('data-href', v.url);
+                            parent.find('.attachment-file').text(v.originalName);
+                            antiDouble = false;
+                        } else {
+                            parent.find('.attachment-file').attr('data-href', v.url);
+                            parent.find('.attachment-file').text(v.originalName);
+                            antiDouble = false;
+                        }
+                        if (1 == v.step) {
+                            console.log(v);
+                            var area = $('.motion-name-area').find('textarea');
+                            if ('' == area.val())area.text(v.originalName);
+                            autoFixName(v.originalName);
+                        }
+                    }else{
+                        var content='<span class="multiple-attachment-content"><a href="'+v.url+'">'+ v.originalName+'</a><a href="#"><span class="pre-delete pre-btn" id="'+v.attrId+'">X</span></a></span>'
+                        parent.append(content)
                     }
-                    if (1 == v.step) {
-                        console.log(v);
-                        var area = $('.motion-name-area').find('textarea');
-                        if ('' == area.val())area.text(v.originalName);
-                        autoFixName(v.originalName);
-                    }
+
                     //console.log(v);
 
                 } else {
-                    showToast(v.state);
+                    alert(v.state);
                 }
             },//服务器成功响应处理函数
             error: function (d) {
@@ -476,9 +488,9 @@
             //console.log(data);
             //return;
             if (data) {
+                //console.log(data);
                 var attr = data.attr_id || 0;
                 var content = '';
-                //console.log
                 parent.empty();
                 //console.mylog(data);
                 if (data.edit) {//选项可编辑
@@ -537,9 +549,11 @@
                             '<button class="button choose-file">选择附件</button>' +
                             '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none">';
                         if(1==data.multiple){
+                            console.log(data);
                             if ($(data.multiple_value).length > 0) {
+                                console.log(data);
                                 $.each(data.multiple_value, function (id, value) {
-                                    content += '<span><a href="'+value.attachment+'">'+value.content+'</a><span class="pre-delete pre-btn" id="' + id + '">X</span></span>'
+                                    content += '<span class="multiple-attachment-content"><a href="'+value.attachment+'">'+value.content+'</a><a href="#"><span class="pre-delete pre-btn" id="' + id + '">X</span></a></span>'
                                 });
                             }
                         }else{
@@ -560,12 +574,13 @@
                 } else {//选项不可编辑
                     if (data.attachment) {
                         if(1==data.multiple){
-                            console.log(data);
+                            //console.log(data);
                             $.each(data.content,function(attaKey,attaData){
-                                content += '<a href="' + attaData.attachment + '">' + (attaData.content || '') + '</a>'
+                                content += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="' + attaData.attachment + '">' + (attaData.content || '') + '</a>'
                             });
 
                         }else{
+                            //console.log('no multiple');
                             content += '<a href="' + data.attachment + '">' + (data.content || '') + '</a>'
                         }
 
@@ -679,6 +694,7 @@
                 return;
             } else if (0 == attrValue.length) {
                 selecter.val('委员');
+                $('.conecter').removeClass('verify-value')
                 $('.union-conecter').hide();
             } else {
                 if (attrValue.val()) {
@@ -694,10 +710,13 @@
             //console.log(back);
             if ('0' != back.user_unit && '0' != back.user_group) {
                 selecter.val('委员');
+                $('.conecter').removeClass('verify-value')
                 $('.union-conecter').hide();
+
             } else {
                 selecter.val('党派团体');
                 $('.union-conecter').show();
+                $('.conecter').addClass('verify-value');
             }
         }
     }
@@ -742,7 +761,10 @@
             } else {//附件
                 //var attachmentFile=_.find('.attachment-file').data('href');
                 var attachment = _.find('.attachment-file').data('href');
+                var preDelete= _.find('.pre-delete');
+                if(preDelete.length>0)return;
                 if ('#' == attachment || 'null' == attachment || !attachment) {
+                    console.log(attachment)
                     errorlist.push({name: valueName, content: valueName + "未上传"})
                 }
             }

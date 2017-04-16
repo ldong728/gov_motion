@@ -15,12 +15,23 @@
 </div>
 <div class="m-home clearfix">
     <div class="home-l">          <!--左边-->
-        <div class="home-nav h-border"><p><i class="icon icon-angle-right"></i><?php echo 1==$meetingInf['category']?'人大议案':'政协提案'?>></p></div>
-        <!--		<div class="home-nav h-border"><p>政协提案<span>》</span></p></div>-->
-        <!--		<div class="home-nav h-border"><p>查询<span>》</span></p></div>-->
-        <div class="home-nav h-border"><p><i class="icon icon-angle-right"></i>统计</p></div>
+        <div class="home-nav h-border"><p><?php echo 1==$meetingInf['category']?'人大议案建议':'政协提案'?>></p></div>
+
+<!--        		<div class="home-nav h-border"><p>政协提案<span>》</span></p></div>-->
+<!--        		<div class="home-nav h-border"><p>查询<span>》</span></p></div>-->
+<!--        <div class="home-nav h-border"><p><i class="icon icon-angle-right"></i>统计</p></div>-->
         <!--		<div class="home-nav h-border"><p>历届数据<span>》</span></p></div>-->
         <!--		<div class="home-nav h-border"><p>人大议案建议<span>》</span></p></div>-->
+
+        <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="no"><i class="icon icon-angle-right"></i>全部<span></span></a></p></div>
+
+        <?php if(in_array(5,$_SESSION['staffLogin']['steps'])):?>
+            <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i>主办列表<span></span></a></p></div>
+            <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="handle"><i class="icon icon-angle-right"></i>协办列表<span></span></a></p></div>
+        <?php endif?>
+        <?php if(in_array(3,$_SESSION['staffLogin']['steps'])):?>
+            <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i><?php echo 1==$_SESSION['staffLogin']['category']?'代表名单管理':'委员名单管理'?><span></span></a></p></div>
+        <?php endif ?>
     </div>
     <!--左边-->
     <div class="home-r h-last">
@@ -137,6 +148,12 @@
     $(window).resize(function(){
         resizeWindow();
         mPopup();
+    });
+    $('.list-filter').click(function(){
+        filter={};
+        filter.step=$(this).data('step');
+        filter.filter=$(this).data('filtertype');
+        reflashList(orderby,page,order);
     });
     $('.order-by-attr').click(function(){
         var newOrderby=($(this).text());
