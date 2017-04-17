@@ -170,7 +170,7 @@ function getMeetingView($id){
 function ajaxMotionList($data){
 
     $staffInf=$_SESSION['staffLogin'];
-    $count=20;
+    $count=isset($data['count'])?$data['count']:20;
     $category=isset($data['category'])?$data['category']:$staffInf['category'];
     $meeting=isset($data['meeting'])?$data['meeting']:$staffInf['meeting'];
     $attrOrderBy=isset($data['attr_order_by'])?$data['attr_order_by']:'编号';
@@ -535,7 +535,7 @@ function editMotion($data){
             }
             break;
     }
-    mylog(getArrayInf($motion));
+//    mylog(getArrayInf($motion));
     include '/view/edit_motion1.html.php';
     return;
 }

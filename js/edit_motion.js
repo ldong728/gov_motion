@@ -458,7 +458,7 @@
         }
     });
     function uploadFile(element){
-        console.log('preUpload');
+        //console.log('preUpload');
         var _=$(element);
         //var _ = $(_);
         console.log(_);
@@ -482,6 +482,7 @@
             dataType: 'json', //返回值类型 一般设置为json
             success: function (v, status) {
                 console.log(v);
+                console.log(status);
                 if ('SUCCESS' == v.state) {
                     console.log(Boolean(multiple));
                     if(!multiple){
@@ -615,7 +616,7 @@
                     else if (data.has_attachment > 0) {
                         content +=
                             '<button class="button choose-file">选择附件</button>' +
-                            '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none"  onchange="uploadFile()">';
+                            '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none"  onchange="uploadFile(this)">';
                         if(1==data.multiple){
                             console.log(data);
                             if ($(data.multiple_value).length > 0) {
