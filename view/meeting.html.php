@@ -23,14 +23,16 @@
         <!--		<div class="home-nav h-border"><p>历届数据<span>》</span></p></div>-->
         <!--		<div class="home-nav h-border"><p>人大议案建议<span>》</span></p></div>-->
 
-        <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="no"><i class="icon icon-angle-right"></i>全部<span></span></a></p></div>
+        <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" ><i class="icon icon-angle-right"></i>全部<span></span></a></p></div>
 
-        <?php if(in_array(5,$_SESSION['staffLogin']['steps'])):?>
+        <?php if(in_array(5,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])):?>
             <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i>主办列表<span></span></a></p></div>
             <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="handle"><i class="icon icon-angle-right"></i>协办列表<span></span></a></p></div>
+            <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="can-mainhandle"><i class="icon icon-angle-right"></i>主办可办<span></span></a></p></div>
+            <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="can-handle"><i class="icon icon-angle-right"></i>协办可办<span></span></a></p></div>
         <?php endif?>
         <?php if(in_array(3,$_SESSION['staffLogin']['steps'])):?>
-            <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i><?php echo 1==$_SESSION['staffLogin']['category']?'代表名单管理':'委员名单管理'?><span></span></a></p></div>
+            <div class="home-nav h-border"><p><a href="#"  data-step="5" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i><?php echo 1==$_SESSION['staffLogin']['category']?'代表名单管理':'委员名单管理'?><span></span></a></p></div>
         <?php endif ?>
     </div>
     <!--左边-->
@@ -109,13 +111,13 @@
                 </div>
                 <div class="home-page-l">
 <!--                    <a class="page-num">20v</a>-->
-                    <a href="#"><i class="icon icon-step-backward"></i></a>
+                    <a href="#"><i class="icon icon-step-backward first-page"></i></a>
                     <a href="#"><i class="icon icon-caret-left prev-page"></i></a>
-                    <a href="#">第<input name="text" type="text" value="1" class="p-num">页</a>
+                    <a href="#">第<input name="text" type="number" value="1" class="p-num">页</a>
                     <a href="#"><i class="icon icon-caret-right next-page"></i></a>
-                    <a href="#"><i class="icon icon-step-forward"></i></a>
+                    <a href="#"><i class="icon icon-step-forward last-page"></i></a>
                 </div>
-<!--                <div class="home-page-r"><p>显示1到20，共288记录</p></div>-->
+                <div class="home-page-r"><p class="page-inf"></p></div>
             </div>
         </div>
     </div>
@@ -143,6 +145,7 @@
     var order=true;
     var page=0;
     var filter={};
+    var count=20;
     resizeWindow();
     reflashList(orderby,page,order);
     $(window).resize(function(){
@@ -220,6 +223,9 @@
         }
 
     });
+    $(document).on('click','.last-page',function(){
+
+    });
     $(document).on('click','.delete-motion',function(){
        var motionId=$(this).attr('id').slice(3);
 
@@ -250,7 +256,8 @@
             attr_order_by:sOrderby||orderby,
             attr_order:sOrder?'asc':'desc',
             page:sPage||page,
-            filter:filter
+            filter:filter,
+            count:count
         };
 
             ajaxPost('ajaxMotionList',data,function(back){
@@ -304,6 +311,8 @@
                     });
                 }
                 $('.p-num').val(page+1);
+                console.log(value);
+                $('.page-inf').text('显示'+(page*count+1)+'到'+((page+1)*count)+'，共'+value.totalCount+'记录')
 
             });
     }

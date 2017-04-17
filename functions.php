@@ -168,7 +168,9 @@ function getMeetingView($id){
  * @param $data
  */
 function ajaxMotionList($data){
-
+    $totalNumber=-1;
+    $mainHandleCount=0;
+    $handleCount=0;
     $staffInf=$_SESSION['staffLogin'];
     $count=isset($data['count'])?$data['count']:20;
     $category=isset($data['category'])?$data['category']:$staffInf['category'];
@@ -180,6 +182,7 @@ function ajaxMotionList($data){
     $orderStr='order by content_int '.$attrOrder.',content '.$attrOrder;
     $sortFilter=array('meeting'=>$meeting,'attr_name'=>trim($attrOrderBy));
     $dutyList=array();
+    $countFilter=array('meeting'=>$meeting);
 
 
     //获取代表委员数据，用以替换数据中的索引值
@@ -207,9 +210,11 @@ function ajaxMotionList($data){
 
     //乡镇管理员界面筛选
     if(1==count($staffInf['steps'])&&1==$staffInf['steps'][0]&&isset($staffInf['userList'])){
+        $totalNumber=0;
         $motionLimit=array();
         $motionQuery=pdoQuery('motion_tbl',array('motion_id'),array('meeting'=>$meeting,'user'=>$staffInf['staffId']),null);
         foreach ($motionQuery as $row) {
+            $totalNumber++;
             $motionLimit[]=$row['motion_id'];
         }
         $sortFilter['motion_id']=$motionLimit;
@@ -218,42 +223,80 @@ function ajaxMotionList($data){
     //办理单位界面筛选
 //    mylog(getArrayInf($staffInf));
     if(1==count($staffInf['steps'])&&5==$staffInf['steps'][0]){
-        mylog();
+//        mylog();
         $motionLimit=array();
-
-        $mainHandleQuery=pdoQuery('attr_view',array('motion as motion_id'),array('meeting'=>$meeting,'attr_name'=>'主办单位','content_int'=>$staffInf['unit']),null);
+        $mainHandleLimit=array();
+        $handleLimit=array();
+        $canHandleLimit=array();
+        $canMainHandleLimit=array();
+        $totalNumber=0;
         $mainHandleCount=0;
+        $handleCount=0;
+        $canMainHandleCount=0;
+        $canHandleCount=0;
+        $mainHandleQuery=pdoQuery('attr_view',array('motion as motion_id','step'),array('meeting'=>$meeting,'attr_name'=>'主办单位','content_int'=>$staffInf['unit']),null);
+
         foreach ($mainHandleQuery as $row) {
             $mainHandleCount++;
-            $motionLimit[]=$row['motion_id'];
+            $mainHandleLimit[]=$row['motion_id'];
+            if(5==$row['step']){
+                $canMainHandleLimit[$row['motion_id']]=$row['motion_id'];
+                $canMainHandleCount++;
+            }
         }
-        $handleQuery=pdoQuery('motion_handler_inf_view',array('motion as motion_id'),array('meeting'=>$meeting,'status'=>array(1,3,9)),null);
-        $handleCount=0;
+        $handleQuery=pdoQuery('motion_handler_inf_view',array('motion as motion_id','status','step'),array('meeting'=>$meeting,'unit'=>$staffInf['unit'],'status'=>array(1,3,9)),null);
         foreach ($handleQuery as $row) {
             $handleCount++;
-            $motionLimit[]=$row['motion_id'];
+            $handleLimit[]=$row['motion_id'];
+            if((1==$row['status']||3==$row['status'])&&5==$row['step']){
+                $canHandleLimit[]=$row['motion_id'];
+                $canHandleCount++;
+            }
         }
+        if(isset($filter['filter'])){
+            switch($filter['filter']){
+                case 'mainhandle':
+                    $motionLimit=$mainHandleLimit;
+                    $totalNumber=$mainHandleCount;
+                    break;
+                case 'handle':
+                    $motionLimit=$handleLimit;
+                    $totalNumber=$handleCount;
+                    break;
+                case 'can-mainhandle':
+                    $query=pdoQuery('motion_handler_inf_view',array('motion as motion_id','status'),array('meeting'=>$meeting,'','motion'=>$mainHandleLimit,'status'=>array(1,3)),null);
+                    foreach ($query as $hrow) {
+                        mylog();
+                        unset($canMainHandleLimit[$hrow['motion_id']]);
+                        $canMainHandleCount--;
+                    }
+                    $motionLimit=$canMainHandleLimit;
+                    $totalNumber=$canMainHandleCount;
+                    break;
+                case 'can-handle':
+                    $motionLimit=$canHandleLimit;
+                    $totalNumber=$canHandleCount;
+                    break;
 
-
-//        $sortFilter['attr_name']
-//        $sortQuery=pdoQuery('motion_view',array('motion_id'),$sortFilter,'group by motion_id '.$orderStr.' limit '.$page*$count.','.$count);
+            }
+        }else{
+            $motionLimit=array_merge($mainHandleLimit,$handleLimit);
+            $totalNumber=$mainHandleCount+$handleCount;
+        }
         $sortFilter['motion_id']=$motionLimit;
-        mylog(getArrayInf($motionLimit));
     }
 
 
+
+    if(-1==$totalNumber){
+        $totalNumber=pdoQuery('motion_tbl',array('count(*) as count'),array('meeting'=>$meeting),'and step>0')->fetch()['count'];
+    }
     $sortQuery=pdoQuery('motion_view',array('motion_id'),$sortFilter,'group by motion_id '.$orderStr.' limit '.$page*$count.','.$count);
     foreach ($sortQuery as $row) {
         $sort[]=$row['motion_id'];
         $sortList[$row['motion_id']]=array();
         $motionfilter[]=$row['motion_id'];
     }
-
-
-
-
-
-
 
 
 
@@ -284,7 +327,7 @@ function ajaxMotionList($data){
 
     }
 //    mylog(getArrayInf($sortList));
-    echo ajaxBack(array('list'=>$sortList,'sort'=>$sort));
+    echo ajaxBack(array('list'=>$sortList,'sort'=>$sort,'totalCount'=>$totalNumber,'mainHandleCount'=>$mainHandleCount,'handleCount'=>$handleCount));
 //    mylog(getArrayInf($sortList));
 //    return $sortList;
 }
