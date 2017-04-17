@@ -38,8 +38,12 @@
         }
 
     });
+    //$('.doc-file').live('change',function(){
+
+
     $(document).on('change', '.doc-file', function () {
-        console.log('preUpload');
+        return;//临时代码
+        console.log('file input change');
         var _ = $(this);
         var parent = _.parent();
         var motionAttr = parent.data('motionattr');
@@ -453,6 +457,70 @@
 
         }
     });
+    function uploadFile(element){
+        console.log('preUpload');
+        var _=$(element);
+        //var _ = $(_);
+        console.log(_);
+        //console.log(file);
+        var parent = _.parent();
+        var motionAttr = parent.data('motionattr');
+        if (!motionAttr)return;//
+        console.log('upload');
+        var attrTemplate = parent.data('attrtemplate');
+        var attrId = parent.data('attr');
+        var attrType = parent.data('type');
+        var multiple=parent.data('multiple');
+        var fileElementId = _.attr('id');
+        console.log(fileElementId);
+        var url = 'upload.php?attachment=1&ma=' + motionAttr + '&at=' + attrTemplate + '&a=' + attrId + '&t=' + attrType+ '&mul=' + multiple;
+        console.log(url);
+        var uploadData = {
+            url: url,
+            secureuri: false,
+            fileElementId: fileElementId, //文件上传域的ID
+            dataType: 'json', //返回值类型 一般设置为json
+            success: function (v, status) {
+                console.log(v);
+                if ('SUCCESS' == v.state) {
+                    console.log(Boolean(multiple));
+                    if(!multiple){
+                        if (0 == attrId) {
+                            attrId = v.attrId;
+                            parent.attr('data-attr', attrId);
+                            parent.find('.attachment-file').attr('data-href', v.url);
+                            parent.find('.attachment-file').text(v.originalName);
+                            antiDouble = false;
+                        } else {
+                            parent.find('.attachment-file').attr('data-href', v.url);
+                            parent.find('.attachment-file').text(v.originalName);
+                            antiDouble = false;
+                        }
+                        if (1 == v.step) {
+                            console.log(v);
+                            var area = $('.motion-name-area').find('textarea');
+                            if ('' == area.val())area.text(v.originalName);
+                            autoFixName(v.originalName);
+                        }
+                    }else{
+                        var content='<span class="multiple-attachment-content"><a href="'+v.url+'">'+ v.originalName+'</a><a href="#"><span class="pre-delete pre-btn" id="'+v.attrId+'">X</span></a></span>'
+                        parent.append(content)
+                    }
+
+                    //console.log(v);
+
+                } else {
+                    console.log('upload fail');
+                    alert(v.state);
+                }
+            },//服务器成功响应处理函数
+            error: function (d) {
+                alert('error');
+            }
+        };
+        console.log(uploadData);
+        $.ajaxFileUpload(uploadData);
+    }
 
 
     function showSelectView(element) {
@@ -547,7 +615,7 @@
                     else if (data.has_attachment > 0) {
                         content +=
                             '<button class="button choose-file">选择附件</button>' +
-                            '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none">';
+                            '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none"  onchange="uploadFile()">';
                         if(1==data.multiple){
                             console.log(data);
                             if ($(data.multiple_value).length > 0) {
@@ -793,7 +861,7 @@
 
         return errorlist;
     }
-function autoFixName(str) {
+    function autoFixName(str) {
     var button = $('.name-auto').find('button.target-select');
     if (0 == button.prev().length) {
         var test = /\d(\D.*?)关于/;

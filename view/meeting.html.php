@@ -139,7 +139,7 @@
 <script type="text/javascript">
     var meetingId=<?php echo $_GET['get_meeting']?>;
     var category=<?php echo $meetingInf['category']?>;
-    var orderby='编号';
+    var orderby=2==staff.category?'编号':'案号';
     var order=true;
     var page=0;
     var filter={};

@@ -33,17 +33,19 @@ if(isset($_SESSION['staffLogin'])){
    getIndex();
 }else{
     if(isset($_POST['user'])&&isset($_POST['password'])&&isset($_POST['category'])){
-//        mylog($_POST['category']);
         $category=$_POST['category'];
         userAuth($_POST['user'],$_POST['password'],$category);
         unset($_POST['password']);
-//        mylog('login'.$category);
-//        printView('login3');
         header('Location:index.php?c='.$category.'&error=password');
         exit;
     }else{
         global $category;
         $category =isset($_GET['c'])?$_GET['c']:3;
+        if(isset($_GET['user'])&&isset($_GET['password'])){
+            userAuth($_GET['user'],$_GET['password'],$category);
+            header('Location:index.php?c='.$category.'&error=password');
+            exit;
+        }
         $title='';
         switch($category){
             case 1:

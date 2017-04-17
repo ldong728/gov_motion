@@ -31,12 +31,12 @@ function userAuth($userName,$password,$category=3){
     }
 
     if($localStaff){
+        if(!$staffQuery['steps'])return;
         $_SESSION['staffLogin']=array();
         $_SESSION['staffLogin']['steps']=array();
         for($i=0;$i<strlen($staffQuery['steps']);$i++){
             $_SESSION['staffLogin']['steps'][]=(string)$staffQuery['steps'][$i];
         }
-        if(count($_SESSION['staffLogin']['steps'])<1)return;
         $_SESSION['staffLogin']['category']=$staffQuery['category'];
         $_SESSION['staffLogin']['meeting']=isset($metting)?$metting['meeting_id']:'all';
         $_SESSION['staffLogin']['unit']=$staffQuery['unit'];
@@ -451,7 +451,7 @@ function editMotion($data){
 //            }
             //如果属性支持多值情况的处理
             if(1==$values['multiple']){
-                mylog('multiple');
+//                mylog('multiple');
                 //如果此属性已包含一个值，且有新值存在，则把值放入multiple_value数组中，存入前先将表内索引值转换为对应的名称
                 if(isset($motion[$row['attr_name']])&&$values['content']){
                     mylog(getArrayInf($values));
@@ -466,7 +466,7 @@ function editMotion($data){
                 }else{
                     $motion[$row['attr_name']]=$values;
                 }
-                mylog($values['content']);
+//                mylog($values['content']);
 
             }else{
                 $motion[$row['attr_name']]=$values;

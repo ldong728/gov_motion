@@ -130,7 +130,7 @@ select:first-child{margin-left: 0;}
 .m-popup .table-list tr{width: 770px;height: 28px; text-align: center;}
 .m-popup .table-list tr:first-child{height: 60px;}
 
-.m-popup .table-list tr th{width: 90px; background: #ffe2a3;vertical-align: middle;box-sizing: border-box;border: 1px solid #f08300;}
+.m-popup .table-list tr th{width: 90px; min-width: 90px; background: #ffe2a3;vertical-align: middle;box-sizing: border-box;border: 1px solid #f08300;}
 .m-popup .table-list tr th:first-child{border-left: none;}
 .m-popup .table-list tr td{min-width: 100px; text-align: center;vertical-align: middle;border: 1px solid #f08300;box-sizing: border-box;}
 /*.m-popup .table-list tr td select{text-align: left;}*/
