@@ -730,7 +730,8 @@ function updateAttr($data){
                 }
             }
             if(6==$motion['step']){
-                $attr=pdoQuery('attr_view',array('content'),array('motion'=>$motionId,'attr_name'=>array('办理工作','办理结果').$motion['category']),'limit 2')->fetchAll();
+                mylog();
+                $attr=pdoQuery('attr_view',array('content'),array('motion'=>$motionId,'attr_name'=>array('办理工作','办理结果')),'limit 2')->fetchAll();
                 foreach ($attr as $row) {
                     if('不满意'==$row['content']){
                         pdoUpdate('motion_tbl',array('step'=>6),array('motion_id'=>$motionId));
