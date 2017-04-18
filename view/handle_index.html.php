@@ -1,4 +1,4 @@
-<?php global $handleUnitMotionList,$meetingList,$category;?>
+<?php global $handleUnitMotionList,$meetingList,$category,$mainCount1,$mainCount2,$count1,$count2;?>
 <script>
     var staff=eval('('+'<?php echo json_encode($_SESSION['staffLogin'])?>'+')');
 </script>
@@ -36,7 +36,7 @@
     </div>                     <!--左边-->
     <div class="home-r">
         <?php if(isset($handleUnitMotionList[1])):?>
-            <div class="home-title"><p>人大议案待办</p></div>
+            <div class="home-title"><p><span>人大议案待办：</span>&nbsp&nbsp&nbsp&nbsp<span>主办共<?php echo $mainCount1?>件；</span>&nbsp<span>协办共<?php echo $count1?>件</span></p></div>
             <div class="home-content">
                 <ul class="content-list">
                     <?php if(isset($handleUnitMotionList[1]['main'])):?>
@@ -53,7 +53,7 @@
             </div>
         <?php endif ?>
         <?php if(isset($handleUnitMotionList[2])):?>
-            <div class="home-title"><p>政协提案待办</p></div>
+            <div class="home-title"><p><span>政协提案待办：</span>&nbsp&nbsp&nbsp&nbsp<span>主办共<?php echo $mainCount2?>件；</span>&nbsp<span>协办共<?php echo $count2?>件</span></p></div>
             <div class="home-content">
                 <ul class="content-list">
                     <?php if(isset($handleUnitMotionList[2]['main'])):?>

@@ -253,52 +253,49 @@
                     <?php endif ?>
                     <?php foreach ($handlerDisplay as $row): ?>
                         <tr>
-                            <th>协办单位：</th>
-                            <td colspan="3" style="text-align: left;padding-left: 10px"><?php echo $row['unit_name']?>:</td>
-                            <th>办理状态</th>
-                            <td colspan="3"><?php echo 9==$row['status']?'已完成':'未完成'?></td>
+                            <th>协办单位名称</th>
+                            <td colspan="2" style="text-align: left;padding-left: 10px"><?php echo $row['unit_name']?></td>
+                            <th>协办办理状态</th>
+                            <td colspan="4"><?php echo 9==$row['status']?'已完成':'未完成'?></td>
+
                         </tr>
                         <tr>
                             <th>联系人</th>
-                            <td><?php echo $row['contact_name'] ?></td>
-                            <th>回复时间</th>
-                            <td><?php echo $row['reply_time']?date('Y-m-d',$row['reply_time']):'' ?></td>
+                            <td colspan="2"><?php echo $row['contact_name'] ?></td>
                             <th>联系电话</th>
-                            <td><?php echo $row['contact_phone'] ?></td>
-                            <th>电话</th>
-                            <td><?php echo $row['phone'] ?></td>
+                            <td colspan="2"><?php echo $row['contact_phone'] ?></td>
+                            <th>回复时间</th>
+                            <td colspan="2"><?php echo $row['reply_time']?date('Y-m-d',$row['reply_time']):'' ?></td>
                         </tr>
                         <tr>
                             <th>协办意见全文</th>
                             <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;">
-                                <a class="attachment-file" <?php echo $row['attachment'] ? 'href="' . $row['attachment'] . '"' : '' ?>><?php echo $row['attachment_name'] ?></a>
+                                <a <?php echo $row['attachment'] ? 'href="' . $row['attachment'] . '"' : '' ?>><?php echo $row['attachment_name'] ?></a>
                             </td>
                         </tr>
                     <?php endforeach ?>
                     <?php if (isset($handlerEdit) && count($handlerEdit) > 0): ?>
                         <tr>
                             <th>协办单位：</th>
-                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?>:</td>
+                            <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px"><?php echo $handlerEdit['unit_name']?></td>
                         </tr>
                         <tr>
-                            <th>签收时间</th>
-                            <td colspan="2"><input type="hidden" class="motion_handler_id"
-                                                   id="<?php echo $handlerEdit['motion_handler_id'] ?>"><span
-                                    class="time-display" id="receive-time"></span></td>
+<!--                            <th>签收时间</th>-->
+<!--                            <td colspan="2"><input type="hidden" class="motion_handler_id"-->
+<!--                                                   id="--><?php //echo $handlerEdit['motion_handler_id'] ?><!--"><span-->
+<!--                                    class="time-display" id="receive-time"></span></td>-->
                             <th>联系人</th>
+                            <input type="hidden" class="motion_handler_id"
+                                   id="<?php echo $handlerEdit['motion_handler_id'] ?>">
                             <td colspan="2" class="verify-value"><input type="text" class="handle-value" id="contact_name"
                                                    value="<?php echo $handlerEdit['contact_name'] ?>"></td>
-                            <th>回复时间</th>
-                            <td><span class="time-display" id="reply_time"></span></td>
-                        </tr>
-                        <tr>
                             <th>联系电话</th>
-                            <td colspan="2" class="verify-value"><input type="tel" class="handle-value" id="contact_phone"
-                                                   value="<?php echo $handlerEdit['contact_phone'] ?>"></td>
-                            <th>电话</th>
-                            <td colspan="4"><input type="tel" class="handle-value" id="phone"
-                                                   value="<?php echo $handlerEdit['phone'] ?>"></td>
+                            <td colspan="2" class="verify-value" data-type="int"><input type="tel" class="handle-value" id="contact_phone"
+                                                                        value="<?php echo $handlerEdit['contact_phone'] ?>"></td>
+                            <th>回复时间</th>
+                            <td colspan="2"><span class="time-display" id="reply_time"></span></td>
                         </tr>
+
                         <tr>
                             <th>协办意见全文</th>
                             <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;" id="att<?php echo $handlerEdit['motion_handler_id'] ?>">

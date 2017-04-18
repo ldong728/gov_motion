@@ -269,6 +269,10 @@
                 if(1==data.category) {
                     $.each(value.sort, function (k, v) {
                         if(v>0){
+                            var unitName='';
+                            if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市人大办代工委';
+                            if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督察室';
+                            if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (count++) +
                                 '<td><input type="checkbox" class="check" value='+v+'></td>' +
@@ -279,7 +283,7 @@
                                 '<td>' + (c[v]['性质类别' + category]||'')+ '</td>' +
                                 '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
                                 '<td>' + (c[v]['当前环节']||'') + '</td>' +
-                                '<td>' + (c[v]['交办单位']||'') + '</td>' +
+                                '<td>' + unitName + '</td>' +
                                 '<td><button class="delete-motion" id="del'+v+'">X</button></td>'+
                                 '</tr>';
                             $('.list-table').append(listContent);
@@ -290,6 +294,10 @@
                 }else{
                     $.each(value.sort, function (k, v) {
                         if(v>0){
+                            var unitName='';
+                            if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市政协办提案委';
+                            if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督察室';
+                            if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (count++) +
                                 '<td><input type="checkbox" class="check" value='+v+'></td>' +
@@ -301,7 +309,7 @@
                                 '<td>' + (c[v]['性质类别' + category]||'') + '</td>' +
                                 '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
                                 '<td>' + (c[v]['当前环节']||'') + '</td>' +
-                                '<td>' + (c[v]['交办单位']||'') + '</td>' +
+                                '<td>' + unitName + '</td>' +
                                 '<td><button class="delete-motion" id="del'+v+'">X</button></td>'+
                                 '</tr>';
                             $('.list-table').append(listContent);

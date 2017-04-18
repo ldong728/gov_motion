@@ -65,7 +65,11 @@ function getIndex($orderBy='default'){
     $meetingList=array();
     $motionList=array();
     $category=$staff['category'];
-    $motionListFilter=array('step'=>$staff['steps']);
+    $motionListFilter=array();
+    foreach ($staff['steps'] as $step) {
+        if(4==$step)continue;//如果用户有交办权限，则从筛选器中删除4，待下一步处理
+        $motionListFilter['step'][]=$step;
+    }
     $meetingListFilter=null;
     $motionId=array();
     if($staff['category']<3){
@@ -73,15 +77,20 @@ function getIndex($orderBy='default'){
         $meetingListFilter['category']=$category;
     }
 
-
-    if(4==$staff['steps'][0]){
+    if(in_array(4,$staff['steps'])){//交办权限的情况
         $defaultUnit='5103'==$staff['staffId']||'6726'==$staff['staffId']?'or content_int is null or content_int=5103':'';
         $motionLimit=array();
-        $unitQuery=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('step'=>4,'attr_name'=>'交办单位'),'and(content_int='.$staff['staffId'].' '.$defaultUnit.' )  limit 20');
-        foreach ($unitQuery as $row) {
-            $motionLimit[]=$row['motion_id'];
+        $unitQuery1=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('category'=>1,'step'=>4,'attr_name'=>'交办单位'),'and(content_int='.$staff['staffId'].' '.$defaultUnit.' )  limit 10')->fetchAll();
+        $unitQuery2=pdoQuery('motion_view',array('motion_id','motion_name','step_name','category','content_int'),array('category'=>2,'step'=>4,'attr_name'=>'交办单位'),'and(content_int='.$staff['staffId'].' '.$defaultUnit.' )  limit 10')->fetchAll();
+        for($i=0;$i<20;$i++){
+            if(isset($unitQuery1[$i]))$motionLimit[]=$unitQuery1[$i]['motion_id'];
+            if(isset($unitQuery2[$i]))$motionLimit[]=$unitQuery2[$i]['motion_id'];
         }
-        if(count($motionLimit)>0)$motionListFilter['motion_id']=$motionLimit;
+        if(count($motionLimit)>0){
+            mylog('limit > 0');
+            $motionListFilter['motion_id']=$motionLimit;
+            $motionListFilter['step'][]=4;
+        }
     }
     $list=pdoQuery('motion_for_index_view',null,$motionListFilter,' order by category asc limit 20');
 
@@ -106,20 +115,30 @@ function getIndex($orderBy='default'){
 
 
     if(in_array(5,$staff['steps'])&&1==count($staff['steps'])&&isset($motionId)){
+        global $mainCount1,$mainCount2,$count1,$count2;
+        $mainCount1=0;
+        $mainCount2=0;
+        $count1=0;
+        $count2=0;
+        $mainCountQuery=pdoQuery('motion_view',array('category','meeting','count(*) as count'),array('attr_name'=>'主办单位','content_int'=>$staff['unit']),'group by meeting order by meeting desc limit 2');
+        foreach ($mainCountQuery as $row) {
+            if(1==$row['category'])$mainCount1=$row['count'];
+            else $mainCount2=$row['count'];
+        }
+        $countQuery=pdoQuery('motion_handler_inf_view',array('count(*) as count','meeting','category'),array('unit'=>$staff['unit']),'group by meeting order by meeting desc limit 2');
+        foreach ($countQuery as $row) {
+            if(1==$row['category'])$count1=$row['count'];
+            else $count2=$row['count'];
+        }
+
 
         $mainHandleMotion=array();
         $handleMotion=array();
-        $mainHandleListQuery=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$motionId,'attr_name'=>'主办单位','content_int'=>$staff['unit']),null);
+        $mainHandleListQuery=pdoQuery('motion_view',array('motion_id'),array('step'=>5,'attr_name'=>'主办单位','content_int'=>$staff['unit']),'order by upload_time asc limit 10');
         foreach ($mainHandleListQuery as $row) {
             $mainHandleMotion[]=$row['motion_id'];
         }
-        //筛选待主办项目
-//        $canMainHandleQuery=pdoQuery('motion_handler_tbl',array('motion as motion_id'),array('motion'=>$mainHandleMotion),' and reply_time is not null');
-//        foreach ($canMainHandleQuery as $row) {
-//            $canMainHandleMotion[]=$row['motion_id'];
-//        }
-//        $handleListQuery=pdoQuery('motion_view',array('motion_id'),array('motion_id'=>$motionId,'attr_name'=>'协办单位','content_int'=>$staff['unit']),null);
-        $handleListQuery=pdoQuery('motion_handler_inf_view',array('motion as motion_id'),array('motion'=>$motionId,'status'=>1,'unit'=>$staff['unit']),null);
+        $handleListQuery=pdoQuery('motion_handler_inf_view',array('motion as motion_id'),array('step'=>5,'status'=>1,'unit'=>$staff['unit']),'limit 10');
 //        mylog(getArrayInf($handleListQuery));
         foreach ($handleListQuery as $row) {
             $handleMotion[]=$row['motion_id'];
@@ -440,6 +459,7 @@ function editMotion($data){
 
     //处理主办单位是否可办理的情况
     if(5==$meetingInf['step']&&in_array(5,$_SESSION['staffLogin']['steps'])){
+
         $staffUnit=$_SESSION['staffLogin']['unit'];
         $mainHandlerInf=pdoQuery('motion_view',array('content_int'),array('motion_id'=>$id,'content_int'=>$staffUnit,'attr_name'=>'主办单位'),'limit 1')->fetch();
         if($mainHandlerInf){
@@ -570,7 +590,7 @@ function editMotion($data){
             $handlerDisplay=array();
             $handlerEdit=array();
             foreach ($handlerQuery as $row) {
-                if($row['unit']==$unit&&1==$row['status']){
+                if($row['unit']==$unit&&1==$row['status']&&in_array(5,$_SESSION['staffLogin']['steps'])){
                     $handlerEdit=$row;
                 }else{
                     $handlerDisplay[]=$row;
@@ -705,7 +725,7 @@ function updateAttr($data){
             //审核未通过的情况下，将提议案步骤直接设置为完成
             if(3==$motion['step']){
                 $attr=pdoQuery('attr_view',array('content'),array('motion'=>$motionId,'attr_name'=>'审核'.$motion['category']),'limit 1')->fetch();
-                if('不立案'==$attr['content']){
+                if('不予立案'==$attr['content']){
                     pdoUpdate('motion_tbl',array('step'=>7),array('motion_id'=>$motionId));
                 }
             }
@@ -725,7 +745,7 @@ function updateAttr($data){
         }
         if(5==$motion['step']){
             if(isset($data['handler'])){
-
+                mylog(getArrayInf($data['handler']));
                 $handleDate=$data['handler'];
                 mylog(getArrayInf($handleDate));
                 if($handleDate){
