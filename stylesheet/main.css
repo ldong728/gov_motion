@@ -86,11 +86,13 @@ a{color: inherit;text-decoration: none;}
 .m-home .content-b{padding-left: 45px;margin-top: 13px;}
 .m-home .content-b .c-btn{height: 26px;margin-left: 25px; border-radius: 3px;background: #f0f0f0;border: 1px solid #f0f0f0;}
 .m-home .home-r-content{ width: 100%;overflow-x: auto;}
-.m-home .home-table{min-width: 1400px; min-height: 560px; margin-left: .5%;}
+.m-home .home-table{min-width: 1800px; min-height: 560px; margin-left: .5%;}
 .m-home .home-table tr{background: #fff;border: 1px solid #ccc;box-sizing: border-box;}
-.m-home .home-table tr th {background: #f08000;color: #fff;box-sizing: border-box;vertical-align: middle;line-height: 32px; text-align: center;border-right: 1px solid #ccc;}
-.m-home .home-table tr th:nth-of-type(10n+2){border-right: none;}
+.m-home .home-table tr th { width: 33px; background: #f08000;color: #fff;box-sizing: border-box;vertical-align: middle;line-height: 32px; text-align: center;border-right: 1px solid #ccc;}
+.m-home .home-table tr th:nth-of-type(10n+2){border-right: none;width: 10px;}
 .m-home .home-table tr td:nth-of-type(10n+2){border-right: none;}
+.m-home .home-table tr th:nth-of-type(10n+3){width: 20px;}
+.m-home .home-table tr th:nth-of-type(10n+4){width: 215px;}
 .m-home .home-table tr:nth-of-type(2n+1){background: #ffe7d0;}
 .m-home .home-table tr td{height: 32px;line-height: 32px; text-align: center;border-right: 1px solid #ccc;border-bottom: 1px solid #ccc;box-sizing: border-box;}
 .m-home .home-table tr .motion-select{cursor: pointer;}

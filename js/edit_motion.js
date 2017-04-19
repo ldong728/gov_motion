@@ -119,6 +119,7 @@
 
     });
     $(document).on('click', '.submit-attr', function () {
+
         submitAtrrs(1, function (data) {
             var back = backHandle(data);
             if (staff.steps.indexOf(String(back.step)) > -1&&5!=back.step) {
@@ -140,19 +141,22 @@
         });
     });
     $(document).on('click', '.motion-reject', function () {
-        submitAtrrs(-1, function (data) {
-            var back = backHandle(data);
-            if (staff.steps.indexOf(String(back.step)) > -1) {
-                console.log(staff);
-                ajaxPost('editMotion', {id: back.id}, function (data) {
-                    $('.m-popup').html(data);
-                    mPopup();
-                });
-            } else {
-                closePopUp($('.m-popup'));
-                window.location.reload(true);
-            }
-        });
+        if(confirm('此操作将使办理单退回到上一流程，如果您没有上一流程的处理权限，将无法处理此办理单，确认退回？')){
+            submitAtrrs(-1, function (data) {
+                var back = backHandle(data);
+                if (staff.steps.indexOf(String(back.step)) > -1) {
+                    console.log(staff);
+                    ajaxPost('editMotion', {id: back.id}, function (data) {
+                        $('.m-popup').html(data);
+                        mPopup();
+                    });
+                } else {
+                    closePopUp($('.m-popup'));
+                    window.location.reload(true);
+                }
+            });
+        }
+
     });
     $(document).on('click', '.upload-handler-file', function () {
         antiDouble = true;

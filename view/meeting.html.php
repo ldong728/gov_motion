@@ -146,6 +146,8 @@
 
 
 <script type="text/javascript">
+    var total=0;
+    var totalPages=0;
     var meetingId=<?php echo $_GET['get_meeting']?>;
     var category=<?php echo $meetingInf['category']?>;
     var orderby=2==staff.category?'编号':'案号';
@@ -279,7 +281,7 @@
                             var unitName='';
                             var delButton=staff.steps.indexOf('3')>-1?'<td><button class="delete-motion" id="del'+v+'">X</button></td>':'';
                             if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市人大代工委';
-                            if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督察室';
+                            if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督查室';
                             if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (count++) +
@@ -306,7 +308,7 @@
                             var unitName='';
                             var delButton=staff.steps.indexOf('3')>-1?'<td><button class="delete-motion" id="del'+v+'">X</button></td>':'';
                             if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市政协办提案委';
-                            if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督察室';
+                            if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督查室';
                             if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (count++) +
@@ -329,11 +331,16 @@
 
                     });
                 }
+                total=totalCount;
                 $('.p-num').val(page+1);
                 console.log(value);
                 $('.page-inf').text('显示'+(page*count+1)+'到'+((page+1)*count)+'，共'+value.totalCount+'记录')
 
             });
+    }
+    function reCalculate(){
+        total=totalCount;
+
     }
 
     function mPopup(){
