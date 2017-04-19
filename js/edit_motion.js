@@ -130,6 +130,7 @@
                 });
             } else {
                 closePopUp($('.m-popup'));
+
                 window.location.reload(true);
             }
         })
@@ -137,6 +138,7 @@
     $(document).on('click', '.save-attr', function () {
         submitAtrrs(0, function (data) {
             closePopUp($('.m-phpup'));
+            //location.href=location.href;
             window.location.reload(true);
         });
     });

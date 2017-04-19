@@ -3,6 +3,7 @@
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
 <script>
     var staff=eval('('+'<?php echo json_encode($_SESSION['staffLogin'])?>'+')');
+    var place='meeting';
 </script>
 <body>
 <div class="m-header">
@@ -118,9 +119,15 @@
                 </div>
                 <div class="home-page-l">
 <!--                    <a class="page-num">20v</a>-->
+                    <select class="count-in-page">
+                        <option id="cnt15" value="15">15条</option>
+                        <option id="cnt20" value="20" selected="selected">20条</option>
+                        <option id="cnt30" value="30">30条</option>
+                        <option id="cnt50" value="50">50条</option>
+                    </select>
                     <a href="#"><i class="icon icon-step-backward first-page"></i></a>
                     <a href="#"><i class="icon icon-caret-left prev-page"></i></a>
-                    <a href="#">第<input name="text" type="number" value="1" class="p-num">页</a>
+                    第<input name="text" type="number" value="1" class="p-num" onkeypress="pageJump(this,event)">页
                     <a href="#"><i class="icon icon-caret-right next-page"></i></a>
                     <a href="#"><i class="icon icon-step-forward last-page"></i></a>
                 </div>
@@ -160,6 +167,10 @@
     $(window).resize(function(){
         resizeWindow();
         mPopup();
+    });
+    $('.count-in-page').change(function(){
+        count=parseInt($(this).val());
+        reflashList(orderby,page,order);
     });
     $('.list-filter').click(function(){
         filter={};
@@ -232,8 +243,13 @@
         }
 
     });
+    $(document).on('click','.first-page',function(){
+       page=0;
+        reflashList(orderby,page,order);
+    });
     $(document).on('click','.last-page',function(){
-
+            page=totalPages-1;
+            reflashList(orderby,page,order)
     });
     $(document).on('click','.delete-motion',function(){
        var motionId=$(this).attr('id').slice(3);
@@ -250,6 +266,18 @@
         }
 
     });
+    function pageJump(element,event){
+//        console.log(event.keyCode);
+        if(13==event.keyCode){
+            var sPage= $.trim(element.value);
+            if(sPage.match(/^-?[1-9]\d*$/)&&sPage>0&&sPage<totalPages+1){
+                page=sPage-1;
+                reflashList(orderby,page,order);
+            }else{
+                alert('页码错误');
+            }
+        }
+    }
     function resizeWindow(){
             var bHeight = $(document.body).height();
         var wHeight = $(window).height();
@@ -272,7 +300,7 @@
             ajaxPost('ajaxMotionList',data,function(back){
                 var value=backHandle(back);
                 $('.list-content').remove();
-                var count=1+(page*20);
+                var myCount=1+(page*count);
                 var c=value.list;
 //                console.log(c);
                 if(1==data.category) {
@@ -284,7 +312,7 @@
                             if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督查室';
                             if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
-                                '<td>' + (count++) +
+                                '<td>' + (myCount++) +
                                 '<td><input type="checkbox" class="check" value='+v+'></td>' +
                                 '<td>' + (c[v]['案号']||'')+ '</td>' +
                                 '<td>' + (c[v]['领衔人']||'') + '</td>' +
@@ -311,7 +339,7 @@
                             if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督查室';
                             if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
-                                '<td>' + (count++) +
+                                '<td>' + (myCount++) +
                                 '<td><input type="checkbox" class="check" value='+v+'></td>' +
                                 '<td>' + c[v]['编号'] + '</td>' +
                                 '<td>' + (c[v]['案号']||'') + '</td>' +
@@ -331,15 +359,18 @@
 
                     });
                 }
-                total=totalCount;
-                $('.p-num').val(page+1);
-                console.log(value);
-                $('.page-inf').text('显示'+(page*count+1)+'到'+((page+1)*count)+'，共'+value.totalCount+'记录')
+                reCalculate(value.totalCount);
+
+
 
             });
     }
-    function reCalculate(){
+    function reCalculate(totalCount){
         total=totalCount;
+        totalPages=Math.ceil(total/count);
+        $('.p-num').val(page+1);
+        $('.page-inf').text('显示'+(page*count+1)+'到'+((page+1)*count)+'，共'+totalCount+'条记录，共'+totalPages+'页');
+        console.log(totalPages);
 
     }
 
