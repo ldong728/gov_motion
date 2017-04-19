@@ -35,8 +35,8 @@
         <?php endif?>
     </div>                     <!--左边-->
     <div class="home-r">
+        <div class="home-title"><p><span>人大议案待办：</span>&nbsp&nbsp&nbsp&nbsp<span>主办共<?php echo $mainCount1?>件；</span>&nbsp<span>协办共<?php echo $count1?>件</span></p></div>
         <?php if(isset($handleUnitMotionList[1])):?>
-            <div class="home-title"><p><span>人大议案待办：</span>&nbsp&nbsp&nbsp&nbsp<span>主办共<?php echo $mainCount1?>件；</span>&nbsp<span>协办共<?php echo $count1?>件</span></p></div>
             <div class="home-content">
                 <ul class="content-list">
                     <?php if(isset($handleUnitMotionList[1]['main'])):?>
@@ -52,8 +52,8 @@
                 </ul>
             </div>
         <?php endif ?>
+        <div class="home-title"><p><span>政协提案待办：</span>&nbsp&nbsp&nbsp&nbsp<span>主办共<?php echo $mainCount2?>件；</span>&nbsp<span>协办共<?php echo $count2?>件</span></p></div>
         <?php if(isset($handleUnitMotionList[2])):?>
-            <div class="home-title"><p><span>政协提案待办：</span>&nbsp&nbsp&nbsp&nbsp<span>主办共<?php echo $mainCount2?>件；</span>&nbsp<span>协办共<?php echo $count2?>件</span></p></div>
             <div class="home-content">
                 <ul class="content-list">
                     <?php if(isset($handleUnitMotionList[2]['main'])):?>
