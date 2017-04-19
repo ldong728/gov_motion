@@ -168,6 +168,28 @@ function meet_edit(){
     printAdminView('blank.html.php','添加操作员');
 }
 function user_manage(){
+//    $motionQuery=pdoQuery('motion_view',null,array('attr_name'=>'审核1'),'and content is null');
+//    $insertValue=array();
+//    foreach ($motionQuery as $row) {
+//        if(!$row['content']){
+//            $insertValue[]=array('motion'=>$row['motion_id'],'motion_attr'=>$row['motion_attr'],'attr_template'=>$row['attr_template'],'content'=>'立案');
+////            mylog(getArrayInf(array('motion'=>$row['motion_id'],'motion_attr'=>$row['motion_attr'],'attr_template'=>$row['attr_template'],'content'=>'立案','staff'=>4780)));
+//        }
+//
+//
+//    }
+//    pdoTransReady();
+//    try{
+//        pdoBatchInsert('attr_tbl',$insertValue);
+//        $sql='update motion_tbl set step=4 where category=1 and step=2';
+//        exeNew($sql);
+//        pdoCommit();
+//
+//    }catch(PDOException $e){
+//        pdoRollBack();
+//    }
+
+
 
 //    $groupQuery=pdoQuery('user_group_tbl',null,array('category'=>2),null);
 //    $group=array();

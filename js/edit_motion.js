@@ -42,8 +42,8 @@
 
 
     $(document).on('change', '.doc-file', function () {
-        return;//临时代码
-        console.log('file input change');
+        //return;//临时代码
+        //console.log('file input change');
         var _ = $(this);
         var parent = _.parent();
         var motionAttr = parent.data('motionattr');
@@ -616,7 +616,7 @@
                     else if (data.has_attachment > 0) {
                         content +=
                             '<button class="button choose-file">选择附件</button>' +
-                            '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none"  onchange="uploadFile(this)">';
+                            '<input type="file" class="doc-file" id="file' + data.motion_attr + '" name="file' + data.motion_attr + '" style="display:none"">';
                         if(1==data.multiple){
                             console.log(data);
                             if ($(data.multiple_value).length > 0) {

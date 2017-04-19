@@ -86,7 +86,11 @@
                             <th>原文</th>
                             <th class="order-by-attr"><a href="#">当前环节</a></th>
                             <th>办理单位</th>
+
+                            <th style="white-space: nowrap;text-overflow: clip; overflow: hidden">协办单位</th>
+                            <?php if(in_array(3,$_SESSION['staffLogin']['steps'])):?>
                             <th>删除</th>
+                            <?php endif ?>
                         </tr>
                         <?php else: ?>
                             <tr>
@@ -100,7 +104,10 @@
                                 <th>原文</th>
                                 <th class="order-by-attr"><a href="#">当前环节</a></th>
                                 <th>办理单位</th>
-                                <th>删除</th>
+                                <th style="white-space: nowrap;text-overflow: clip; overflow: hidden">协办单位</th>
+                                <?php if(in_array(3,$_SESSION['staffLogin']['steps'])):?>
+                                    <th>删除</th>
+                                <?php endif ?>
                             </tr>
 
                         <?php endif ?>
@@ -270,7 +277,8 @@
                     $.each(value.sort, function (k, v) {
                         if(v>0){
                             var unitName='';
-                            if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市人大办代工委';
+                            var delButton=staff.steps.indexOf('3')>-1?'<td><button class="delete-motion" id="del'+v+'">X</button></td>':'';
+                            if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市人大代工委';
                             if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督察室';
                             if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
@@ -284,7 +292,8 @@
                                 '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
                                 '<td>' + (c[v]['当前环节']||'') + '</td>' +
                                 '<td>' + unitName + '</td>' +
-                                '<td><button class="delete-motion" id="del'+v+'">X</button></td>'+
+                                '<td style="white-space: nowrap;text-overflow: clip; overflow: hidden">' + (c[v]['协办单位']||'') + '</td>' +
+                                delButton+
                                 '</tr>';
                             $('.list-table').append(listContent);
                         }
@@ -295,6 +304,7 @@
                     $.each(value.sort, function (k, v) {
                         if(v>0){
                             var unitName='';
+                            var delButton=staff.steps.indexOf('3')>-1?'<td><button class="delete-motion" id="del'+v+'">X</button></td>':'';
                             if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市政协办提案委';
                             if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督察室';
                             if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
@@ -310,7 +320,8 @@
                                 '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
                                 '<td>' + (c[v]['当前环节']||'') + '</td>' +
                                 '<td>' + unitName + '</td>' +
-                                '<td><button class="delete-motion" id="del'+v+'">X</button></td>'+
+                                '<td style="white-space: nowrap;text-overflow: clip; overflow: hidden">' + (c[v]['协办单位']||'') + '</td>' +
+                                delButton+
                                 '</tr>';
                             $('.list-table').append(listContent);
                         }

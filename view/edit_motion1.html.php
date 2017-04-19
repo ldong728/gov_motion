@@ -256,7 +256,13 @@
                             <th>协办单位名称</th>
                             <td colspan="2" style="text-align: left;padding-left: 10px"><?php echo $row['unit_name']?></td>
                             <th>协办办理状态</th>
-                            <td colspan="4"><?php echo 9==$row['status']?'已完成':'未完成'?></td>
+                            <td colspan="4">
+                                <?php echo 9==$row['status']?'已完成':'未完成'?>
+                                <?php if(5==current($motion)['step']&&$step4CanEdit&&in_array(4, $_SESSION['staffLogin']['steps']) ):?>
+                                    <button class="delete-coop-unit" id="<?php echo $row['motion_handler_id']?>" data-attr="<?php echo $row['attr']?>">删除</button>
+
+                                <?php endif?>
+                            </td>
 
                         </tr>
                         <tr>

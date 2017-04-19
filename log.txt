@@ -1,58 +1,124 @@
-2017.04.18.16:31:53:C:\xampp\htdocs\gov_motion\functions.php733:mark
-2017.04.18.16:34:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="3" limit 1
-2017.04.18.16:34:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="3" order by value_sort desc,motion_attr asc
-2017.04.18.16:34:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND duty_id="408" limit 1
-2017.04.18.16:34:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM duty_view WHERE duty_id="408" limit 1
-2017.04.18.16:34:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
-2017.04.18.16:34:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_handler_view WHERE motion="3" AND status in("1","3","9")
-2017.04.18.16:34:44:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_tbl WHERE motion_id="3" limit 1
-2017.04.18.16:34:44:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_attr_view WHERE attr_name="案号" AND motion_template="1" limit 1
-2017.04.18.16:34:44:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT content_int as value FROM attr_unique_view WHERE motion_attr="34" AND meeting="2"
-2017.04.18.16:34:44:C:\xampp\htdocs\gov_motion\functions.php733:mark
-2017.04.18.16:34:44:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT content FROM attr_view WHERE motion="3" AND attr_name="Array1" limit 2
-2017.04.18.16:37:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE meeting_id="2" limit 1
-2017.04.18.16:37:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
-2017.04.18.16:37:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="2" and step>0
-2017.04.18.16:37:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" group by motion_id order by content_int asc,content asc limit 0,20
-2017.04.18.16:37:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("43","3","16","17","19","20","22","24","25","26","27","28","29","30","32","35","37","38","39","40") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
-2017.04.18.16:37:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
-2017.04.18.16:37:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="3" limit 1
-2017.04.18.16:37:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="3" order by value_sort desc,motion_attr asc
-2017.04.18.16:37:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND duty_id="408" limit 1
-2017.04.18.16:37:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM duty_view WHERE duty_id="408" limit 1
-2017.04.18.16:37:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
-2017.04.18.16:37:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_handler_view WHERE motion="3" AND status in("1","3","9")
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_tbl WHERE motion_id="3" limit 1
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_attr_view WHERE attr_name="案号" AND motion_template="1" limit 1
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT content_int as value FROM attr_unique_view WHERE motion_attr="34" AND meeting="2"
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\functions.php733:mark
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT content FROM attr_view WHERE motion="3" AND attr_name in("办理工作","办理结果") limit 2
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE meeting_id="2" limit 1
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="2" and step>0
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" group by motion_id order by content_int asc,content asc limit 0,20
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("43","3","16","17","19","20","22","24","25","26","27","28","29","30","32","35","37","38","39","40") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
-2017.04.18.16:37:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
-2017.04.18.16:37:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="3" limit 1
-2017.04.18.16:37:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="3" order by value_sort desc,motion_attr asc
-2017.04.18.16:37:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND duty_id="408" limit 1
-2017.04.18.16:37:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM duty_view WHERE duty_id="408" limit 1
-2017.04.18.16:37:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
-2017.04.18.16:37:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_handler_view WHERE motion="3" AND status in("1","3","9")
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_tbl WHERE motion_id="3" limit 1
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_attr_view WHERE attr_name="案号" AND motion_template="1" limit 1
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT content_int as value FROM attr_unique_view WHERE motion_attr="34" AND meeting="2"
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\functions.php733:mark
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT content FROM attr_view WHERE motion="3" AND attr_name in("办理工作","办理结果") limit 2
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM meeting_tbl WHERE meeting_id="2" limit 1
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="2" and step>0
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" group by motion_id order by content_int asc,content asc limit 0,20
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id in("43","3","16","17","19","20","22","24","25","26","27","28","29","30","32","35","37","38","39","40") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
-2017.04.18.16:37:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
-2017.04.18.16:37:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_inf_view WHERE motion_id="3" limit 1
-2017.04.18.16:37:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_view WHERE motion_id="3" order by value_sort desc,motion_attr asc
-2017.04.18.16:37:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND duty_id="408" limit 1
-2017.04.18.16:37:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM duty_view WHERE duty_id="408" limit 1
-2017.04.18.16:37:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
-2017.04.18.16:37:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php81:query:SELECT *  FROM motion_handler_view WHERE motion="3" AND status in("1","3","9")
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 18,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 21,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 23,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 28,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 29,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 30,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 31,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 32,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 33,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 34,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 35,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 36,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 37,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 38,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 39,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 40,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 41,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 45,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 49,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 51,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 106,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 108,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 109,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 110,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 111,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 113,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 115,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 187,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 204,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 209,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 211,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 216,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 219,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 221,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 222,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 223,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 224,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 227,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 230,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 231,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 254,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 274,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 278,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 280,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 282,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 284,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 296,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 298,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 300,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 302,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 303,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 304,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 305,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 306,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 307,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 308,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 309,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 310,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 311,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 312,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.04:57:45:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 313,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 18,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 21,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 23,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 28,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 29,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 30,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 31,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 32,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 33,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 34,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 35,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 36,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 37,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 38,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 39,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 40,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 41,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 45,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 49,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 51,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 106,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 108,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 109,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 110,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 111,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 113,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 115,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 187,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 204,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 209,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 211,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 216,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 219,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 221,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 222,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 223,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 224,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 227,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 230,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 231,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 254,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 274,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 278,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 280,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 282,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 284,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 296,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 298,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 300,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 302,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 303,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 304,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 305,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 306,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 307,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 308,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 309,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 310,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 311,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 312,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.06:14:52:D:\xampp\htdocs\gov_motion\admin\index.php176:{motion: 313,motion_attr: 8,attr_template: 10,content: 立案}
+2017.04.19.07:06:25:D:\xampp\htdocs\gov_motion\functions.php90:limit > 0
+2017.04.19.07:06:55:D:\xampp\htdocs\gov_motion\functions.php90:limit > 0
