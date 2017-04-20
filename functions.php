@@ -517,15 +517,15 @@ function editMotion($data){
 //                mylog('multiple');
                 //如果此属性已包含一个值，且有新值存在，则把值放入multiple_value数组中，存入前先将表内索引值转换为对应的名称
                 if(isset($motion[$row['attr_name']])&&$values['content']){
-                    mylog(getArrayInf($values));
+//                    mylog(getArrayInf($values));
                     $motion[$row['attr_name']]['multiple_value'][$values['attr_id']]=array('content'=>$values['content'],'attachment'=>$values['attachment']);
 
                 //如果新值存在且此属性并未包含值
                 }elseif($values['content']){
-                    mylog('has content');
+//                    mylog('has content');
                     $motion[$row['attr_name']]=$values;
                     $motion[$row['attr_name']]['multiple_value'][$values['attr_id']]=array('content'=>$values['content'],'attachment'=>$values['attachment']);
-                    mylog($row['attr_name'].': '.getArrayInf($motion));
+//                    mylog($row['attr_name'].': '.getArrayInf($motion));
                 }else{
                     $motion[$row['attr_name']]=$values;
                 }

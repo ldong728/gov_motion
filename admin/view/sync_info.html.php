@@ -14,6 +14,16 @@
         </div>
 
     </div>
+    <script>
+        $('.sync-button').click(function(){
+            var type=$(this).attr('id');
+            loading();
+            ajaxPost('syncInf',{type:type},function(data){
+                stopLoading();
+                showToast('ok');
+            })
+        });
+    </script>
 
 
 </div>

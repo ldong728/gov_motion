@@ -68,6 +68,18 @@ if (isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
         exit;
     }
 }
+function syncInf($data){
+
+    switch($data['type']){
+        case 'staff':
+            syncUser();
+            break;
+        case 'unit':
+            syncDept();
+            break;
+    }
+    echo ajaxBack('ok');
+}
 function getSubUnit($data){
     $id=$data['id'];
     $query=pdoQuery('unit_tbl',array('unit_id as id','unit_name as name'),array('parent_unit'=>$id),null)->fetchAll();

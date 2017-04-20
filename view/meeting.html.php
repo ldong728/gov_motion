@@ -73,41 +73,41 @@
             </div>
             <div class="home-r-content clearfix">
                 <div class="home-table">
-                    <table width="100%" border="1" cellspacing="0" cellpadding="0" class="list-table">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="list-table">
                         <tbody>
                         <?php if(1==$meetingInf['category']):?>
                         <tr>
-                            <th>序号</th>
-                            <th><input type="checkbox" class="select-all"></th>
-                            <th class="order-by-attr"><a href="#"> 案号</a></th>
-                            <th class="order-by-attr"><a href="#">领衔人</a></th>
-                            <th class="order-by-attr"><a href="#">案别</a></th>
-                            <th class="order-by-attr"><a href="#">案由</a></th>
-                            <th class="order-by-attr"><a href="#">性质类别</a></th>
-                            <th>原文</th>
-                            <th class="order-by-attr"><a href="#">当前环节</a></th>
-                            <th>办理单位</th>
+                            <th width="75">序号</th>
+                            <th width="25"> <input type="checkbox" class="select-all"></th>
+                            <th width="50" class="order-by-attr"><a href="#"> 案号</a></th>
+                            <th width="110" class="order-by-attr"><a href="#">领衔人</a></th>
+                            <th width="95" class="order-by-attr"><a href="#">案别</a></th>
+                            <th width="510" class="order-by-attr"><a href="#">案由</a></th>
+                            <th width="120" class="order-by-attr"><a href="#">性质类别</a></th>
+                            <th width="90">原文</th>
+                            <th width="120" class="order-by-attr"><a href="#">当前环节</a></th>
+                            <th width="150">办理单位</th>
 
-                            <th style="white-space: nowrap;text-overflow: clip; overflow: hidden">协办单位</th>
+                            <th width="390" style="white-space: nowrap;text-overflow: clip; overflow: hidden">协办单位</th>
                             <?php if(in_array(3,$_SESSION['staffLogin']['steps'])):?>
-                            <th>删除</th>
+                            <th width="75">删除</th>
                             <?php endif ?>
                         </tr>
                         <?php else: ?>
                             <tr>
-                                <th>序号</th>
-                                <th><input type="checkbox" class="select-all"></th>
-                                <th class="order-by-attr"><a href="#">编号</a></th>
-                                <th class="order-by-attr"><a href="#"> 案号</a></th>
-                                <th class="order-by-attr"><a href="#">提案人</a></th>
-                                <th class="order-by-attr"><a href="#">案由</a></th>
-                                <th class="order-by-attr"><a href="#">性质类别</a></th>
-                                <th>原文</th>
-                                <th class="order-by-attr"><a href="#">当前环节</a></th>
-                                <th>办理单位</th>
-                                <th style="white-space: nowrap;text-overflow: clip; overflow: hidden">协办单位</th>
+                                <th width="65">序号</th>
+                                <th width="20"><input type="checkbox" class="select-all"></th>
+                                <th width="45" class="order-by-attr"><a href="#">编号</a></th>
+                                <th width="65" class="order-by-attr"><a href="#"> 案号</a></th>
+                                <th width="180" class="order-by-attr"><a href="#">提案人</a></th>
+                                <th width="510" class="order-by-attr"><a href="#">案由</a></th>
+                                <th width="120" class="order-by-attr"><a href="#">性质类别</a></th>
+                                <th width="90">原文</th>
+                                <th width="120" class="order-by-attr"><a href="#">当前环节</a></th>
+                                <th width="160">办理单位</th>
+                                <th width="380" style="white-space: nowrap;text-overflow: clip; overflow: hidden">协办单位</th>
                                 <?php if(in_array(3,$_SESSION['staffLogin']['steps'])):?>
-                                    <th>删除</th>
+                                    <th width="65">删除</th>
                                 <?php endif ?>
                             </tr>
 
@@ -368,8 +368,9 @@
     function reCalculate(totalCount){
         total=totalCount;
         totalPages=Math.ceil(total/count);
+        var last=totalCount<((page+1)*count)?totalCount:(page+1)*count;
         $('.p-num').val(page+1);
-        $('.page-inf').text('显示'+(page*count+1)+'到'+((page+1)*count)+'，共'+totalCount+'条记录，共'+totalPages+'页');
+        $('.page-inf').text('当前显示第'+(page*count+1)+'到'+last+'条，共'+totalCount+'条记录，共'+totalPages+'页');
         console.log(totalPages);
 
     }

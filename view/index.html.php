@@ -1,6 +1,7 @@
 <?php global $motionList,$meetingList,$category;?>
 <script>
     var staff=eval('('+'<?php echo json_encode($_SESSION['staffLogin'])?>'+')');
+    var place="index";
 </script>
 <body>
 <div class="m-header">

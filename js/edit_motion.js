@@ -48,7 +48,7 @@
         var parent = _.parent();
         var motionAttr = parent.data('motionattr');
         if (!motionAttr)return;//
-        console.log('upload');
+        //console.log('upload');
         var attrTemplate = parent.data('attrtemplate');
         var attrId = parent.data('attr');
         var attrType = parent.data('type');
@@ -129,17 +129,29 @@
                     mPopup();
                 });
             } else {
-                closePopUp($('.m-popup'));
+                if('meeting'==place){
+                    $('.close-popup').click();
+                    reflashList(orderby,page,order);
+                }else{
+                    window.location.reload(true);
+                }
 
-                window.location.reload(true);
             }
         })
     });
     $(document).on('click', '.save-attr', function () {
         submitAtrrs(0, function (data) {
-            closePopUp($('.m-phpup'));
+            if('meeting'==place){
+                $('.close-popup').click();
+                reflashList(orderby,page,order);
+            }else{
+                $('.close-popup').click();
+                //window.location.reload(true);
+            }
+
+            //closePopUp($('.m-phpup'));
             //location.href=location.href;
-            window.location.reload(true);
+            //window.location.reload(true);
         });
     });
     $(document).on('click', '.motion-reject', function () {
@@ -153,8 +165,12 @@
                         mPopup();
                     });
                 } else {
-                    closePopUp($('.m-popup'));
-                    window.location.reload(true);
+                    if('meeting'==place){
+                        $('.close-popup').click();
+                        reflashList(orderby,page,order);
+                    }else{
+                        window.location.reload(true);
+                    }
                 }
             });
         }
@@ -185,7 +201,7 @@
                     antiDouble = false;
                     console.log(v);
                 } else {
-                    showToast(v.state);
+                    alert(v.state);
                 }
             },//服务器成功响应处理函数
             error: function (d) {
@@ -208,8 +224,6 @@
     $(document).on('click', '.close-popup', function () {
         closePopUp($('.m-popup'));
         $('.mask').css('display', 'none');
-//        window.location.reload(true);
-//		$('.mask').css('display','none');
     });
     $(document).on('click', '.mutiple-input', function () {
         var _ = $(this);
