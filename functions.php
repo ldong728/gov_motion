@@ -92,7 +92,12 @@ function getIndex($orderBy='default'){
             $motionListFilter['step'][]=4;
         }
     }
-    $list=pdoQuery('motion_for_index_view',null,$motionListFilter,' order by category asc limit 20');
+    if(count($motionListFilter)>0){
+        $list=pdoQuery('motion_for_index_view',null,$motionListFilter,' order by category asc limit 20');
+    }else{
+        $list=array();
+    }
+
 
     foreach ($list as $row) {
         $motionId[]=$row['motion_id'];
