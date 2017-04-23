@@ -477,6 +477,13 @@
 
         }
     });
+    $(document).on('click','.print-motion',function(){
+       $('.table-list').jqprint({debug: true,importCSS:true});
+       // $('.table-list').msoPrintArea();
+    });
+    $(document).on('click','.print-motion-detail',function(){
+       alert('功能暂未开放，请点击全文对应链接，下载全文后打印');
+    });
     function uploadFile(element){
         //console.log('preUpload');
         var _=$(element);

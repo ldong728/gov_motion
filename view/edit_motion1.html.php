@@ -31,9 +31,9 @@
         <?php endif ?>
 
         <a href="#" class="motion-step-inf" id="<?php echo current($motion)['motion_id']?>">查看信息</a>
-        <a href="#">办理单打印</a>
-        <?php if(1 == $meetingInf['category']):?><a href="#">建议议案打印</a><?php endif?>
-        <?php if(2 == $meetingInf['category']):?><a href="#">提案打印</a><?php endif?>
+        <a href="#" class="print-motion">办理单打印</a>
+        <?php if(1 == $meetingInf['category']):?><a class="print-motion-detail" href="#">建议议案打印</a><?php endif?>
+        <?php if(2 == $meetingInf['category']):?><a class="print-motion-detail" href="#">提案打印</a><?php endif?>
         <a href="<?php echo 'original_'.$meetingInf['document_sha']?>">全文原始稿</a>
         <?php if(3==current($motion)['step']):?><a class="attachment-file" href="#" data-href="<?php echo $motion['原文']['attachment']?>">附件修改</a><?php endif?>
         <a href="#" class="close-popup">返回</a>
@@ -42,8 +42,9 @@
         <div class="content-title">
             <p style="height: 40px;"><?php echo 1 == current($motion)['category'] ? '慈溪市人大建议议案办理单' : '慈溪市政协提案办理单' ?></p>
         </div>
-        <div class="table-list ">
-            <table width="100%" height="296" border="0" bordercolor="#f08300" cellpadding="0" cellspacing="0">
+        <div class="table-list">
+        <link rel="stylesheet" type="text/css" media="print" href="stylesheet/print.css?v=<?php echo rand(1000, 9999) ?>">
+            <table width="100%" height="296" border="0" bordercolor="#f08300" cellpadding="0" cellspacing="0" class="motion-table">
                 <tbody style="font-size: 14px">
                 <tr>
                     <th><p> 会议名称</p></th>
