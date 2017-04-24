@@ -3,28 +3,36 @@ include_once '../includePackage.php';
 include_once 'upload.class.php';
 session_start();
 if(isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
-    if(isset($_FILES['logo-up'])){
-        $uploader = new uploader('logo-up');
-        $uploader->upFile('cardLogo');
-        $inf=$uploader->getFileInfo();
-        mylog(getArrayInf($inf));
-        include_once '../wechat/cardManager.php';
-        $logo=uploadLogo($GLOBALS['mypath'].'/'.$inf['url']);
-            $inf['logo']=$logo;
-            echo json_encode($inf);
+    if(isset($_GET['excel_file'])){
+        include_once '../libs/PHPExcel.php';
+        $excelReader=new PHPExcel_Reader_Excel2007();
+        if(!$excelReader->canRead($_FILES['excel-file']['tmp_name'])){
+            $excelReader=new PHPExcel_Reader_Excel5();
+            if(!$excelReader->canRead($_FILES['excel-file']['tmp_name'])){
+                mylog('can\'t read');
+            }
+            $myExcel=$excelReader->load($_FILES['excel-file']['tmp_name']);
+            $currentSheet=$myExcel->getSheet();
+            $totalRow=$currentSheet->getHighestRow();
+            for($i=1;$i<$totalRow+1;$i++){
+                $name=$currentSheet->getCell('A'.$i);
+                if($name instanceof PHPExcel_RichText){
+                    $name=$name->__toString();
+                }
+                $phone=$currentSheet->getCell('D'.$i);
+                if($phone instanceof PHPExcel_RichText){
+                    $phone=$phone->__toString();
+                }
+                $phone=substr($phone,0,11);
+                mylog($name.': '.$phone);
+
+            }
+
+        }
+        mylog('excel-file-uploaded');
+        echo array('status'=>'SUCCESS');
     }
-    if(isset($_FILES['temp-img-up'])){
-        $uploader = new uploader('temp-img-up');
-        $filename=md5_file($_FILES['temp-img-up']['tmp_name']);
-        $uploader->upFile($filename);
-        $inf=$uploader->getFileInfo();
-        mylog(getArrayInf($inf));
-        include_once '../wechat/mediasdk.php';
-        $media=new mediasdk();
-        $mediaid=uploadLogo($GLOBALS['mypath'].'/'.$inf['url']);
-        $inf['media_id']=$mediaid;
-        echo json_encode($inf);
-    }
+
     exit;
 }
 function fileFilter($file, array $type, $size)
