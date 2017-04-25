@@ -369,8 +369,10 @@ function ajaxDeleteAttr($data){
         mylog($e->getMessage());
         echo ajaxBack(0);
     }
+}
 
-
+function ajaxGetDutyInf($data){
+    $motionId=$data['id'];
 
 }
 

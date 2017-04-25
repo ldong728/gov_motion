@@ -484,6 +484,13 @@
     $(document).on('click','.print-motion-detail',function(){
        alert('功能暂未开放，请点击全文对应链接，下载全文后打印');
     });
+    $(document).on('click','.user-inf',function(){
+        var motionId=$(this).attr('id').slice(3);
+        ajaxPost('ajaxGetDutyInf',{id:motionId},function(data){
+
+        });
+    });
+
     function uploadFile(element){
         //console.log('preUpload');
         var _=$(element);
@@ -587,8 +594,8 @@
                 //console.log(data);
                 var attr = data.attr_id || 0;
                 var content = '';
-                parent.empty();
-                //console.mylog(data);
+                //parent.empty();
+                parent.children('span').remove();
                 if (data.edit) {//选项可编辑
                     //console.log(data);
                     parent.addClass('update-value');
@@ -681,6 +688,7 @@
                         }
 
                     } else {
+                        console.log(data);
                         content += data.content || '';
                     }
                 }
