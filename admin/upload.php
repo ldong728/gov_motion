@@ -6,6 +6,8 @@ if(isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
     if(isset($_GET['excel_file'])){
         include_once '../libs/PHPExcel.php';
         $excelReader=new PHPExcel_Reader_Excel2007();
+        $excelWriter=new PHPExcel();
+        $notInput=array();
         if(!$excelReader->canRead($_FILES['excel-file']['tmp_name'])){
             $excelReader=new PHPExcel_Reader_Excel5();
             if(!$excelReader->canRead($_FILES['excel-file']['tmp_name'])){
@@ -18,13 +20,24 @@ if(isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
                 $name=$currentSheet->getCell('A'.$i);
                 if($name instanceof PHPExcel_RichText){
                     $name=$name->__toString();
+                    mylog('name is richText');
                 }
                 $phone=$currentSheet->getCell('D'.$i);
                 if($phone instanceof PHPExcel_RichText){
                     $phone=$phone->__toString();
                 }
                 $phone=substr($phone,0,11);
-                mylog($name.': '.$phone);
+                if($name&&$phone){
+                    $updateSuccess=pdoUpdate('user_tbl',array('user_phone'=>$phone),array('user_name'=>$name,'category'=>2),'limit 1');
+                    if(!$updateSuccess){
+                        $notInput[]=array('name'=>$name,'phone'=>$phone);
+                        mylog($name.': '.$phone);
+                    }
+                }
+
+
+            }
+            if(count($notInput)>0){
 
             }
 

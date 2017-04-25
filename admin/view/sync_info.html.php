@@ -38,7 +38,7 @@
             })
         });
         $('.upload-excel').click(function(){
-            $('#excel-file').click();
+//            $('#excel-file').click();
         });
         $('#excel-file').change(function(){
             var url='upload.php?excel_file=1';
