@@ -58,3 +58,114 @@
 2017.04.25.11:28:36:D:\xampp\htdocs\gov_motion\functions.php472:{motion_handler_id: 591,0: 591}
 2017.04.25.11:46:54:D:\xampp\htdocs\gov_motion\functions.php472:{motion_handler_id: 591,0: 591}
 2017.04.25.11:49:24:D:\xampp\htdocs\gov_motion\functions.php472:{motion_handler_id: 591,0: 591}
+2017.04.25.16:04:29:C:\xampp\htdocs\gov_motion\functions.php492:{motion_handler_id: 172,0: 172}
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:07:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:12:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:17:C:\xampp\htdocs\gov_motion\functions.php293:mark
+2017.04.25.16:05:19:C:\xampp\htdocs\gov_motion\functions.php492:not a array:
+2017.04.25.16:05:26:C:\xampp\htdocs\gov_motion\functions.php492:{motion_handler_id: 172,0: 172}
+2017.04.25.16:13:15:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:15:46:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:18:01:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:18:43:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:20:25:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:23:43:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:27:41:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:29:00:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:31:32:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:33:35:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:33:50:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:37:11:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:37:37:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:38:43:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 166,0: 166}
+2017.04.25.16:38:59:C:\xampp\htdocs\gov_motion\functions.php494:{motion_handler_id: 172,0: 172}

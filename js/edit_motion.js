@@ -484,10 +484,17 @@
     $(document).on('click','.print-motion-detail',function(){
        alert('功能暂未开放，请点击全文对应链接，下载全文后打印');
     });
+
     $(document).on('click','.user-inf',function(){
         var motionId=$(this).attr('id').slice(3);
         ajaxPost('ajaxGetDutyInf',{id:motionId},function(data){
-
+            var back=backHandle(data);
+            $.each(back,function(k,v){
+                var content='<tr><td>'+ (v.duty||'')+'</td><td>'+ (v.name||'')+'</td><td>'+ (v.phone||'')+'</td></tr>';
+               $('.duty-detail-table').append(content);
+            });
+            $('.duty-detail-box').show();
+            console.log(data);
         });
     });
 
@@ -688,7 +695,7 @@
                         }
 
                     } else {
-                        console.log(data);
+                        //console.log(data);
                         content += data.content || '';
                     }
                 }

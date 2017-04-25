@@ -371,8 +371,28 @@ function ajaxDeleteAttr($data){
     }
 }
 
+/**
+ * 获取代表委员联系方式
+ * @param $data
+ */
 function ajaxGetDutyInf($data){
     $motionId=$data['id'];
+    $back=array();
+    $infList=array();
+    $dutyQuery=pdoQuery('motion_view',array('attr_name','content_int'),array('motion_id'=>$motionId,'target'=>'duty'),'limit 10');
+    foreach ($dutyQuery as $row) {
+        if($row['content_int']>0){
+            $back[$row['content_int']]=array('duty'=>$row['attr_name']);
+            $infList[]=$row['content_int'];
+        }
+    }
+    $detailInf=pdoQuery('duty_view',null,array('duty_id'=>$infList),'limit '.count($infList));
+    foreach ($detailInf as $row) {
+        $back[$row['duty_id']]['name']=$row['user_name'];
+        $back[$row['duty_id']]['phone']=$row['user_phone'];
+    }
+    echo ajaxBack($back);
+
 
 }
 

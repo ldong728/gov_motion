@@ -414,7 +414,36 @@
         </table>
     </div>
 </div>
-<div class="info-box" style="position: fixed;display: none;width: 60px;height: 20px;background-color: #ffe2a3;border-radius: 3px"></div>
+<style>
+    .duty-detail-box{
+        display: none;;
+        position: fixed;
+        width: 400px;
+        height: 250px;
+        background-color: #ffffff;
+        border-radius: 3px;
+        z-index: 999;top:50%;
+        left:50%;
+        margin-left: -200px;
+        margin-top: -125px;
+        padding: 5px;
+
+    }
+    .duty-detail-box table{
+        border: solid 1px #000000;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    .duty-detail-box tr,td{
+        border: solid 1px #000000;
+        text-align: center;
+    }
+</style>
+<div class="duty-detail-box" >
+    <table class="duty-detail-table">
+        <tr><td>身份</td><td>姓名</td><td>联系电话</td></tr>
+    </table>
+</div>
 
 <script>
 //    $(document).ready(function(){
