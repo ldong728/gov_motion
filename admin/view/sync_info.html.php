@@ -20,7 +20,7 @@
                         <input type="file" class="upload" id="excel-file" name="excel-file" style="display: none">
                     </td>
                     <td>
-
+                        <button class="button get-unit-user-inf">获取</button>
                     </td>
                 </tr>
             </table>
@@ -38,7 +38,7 @@
             })
         });
         $('.upload-excel').click(function(){
-//            $('#excel-file').click();
+            $('#excel-file').click();
         });
         $('#excel-file').change(function(){
             var url='upload.php?excel_file=1';
@@ -56,7 +56,10 @@
             };
             //console.log(uploadData);
             $.ajaxFileUpload(uploadData);
-        })
+        });
+        $('.get-unit-user-inf').click(function(){
+
+        });
     </script>
 
 

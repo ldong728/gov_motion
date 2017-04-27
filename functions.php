@@ -390,6 +390,7 @@ function ajaxGetDutyInf($data){
     foreach ($detailInf as $row) {
         $back[$row['duty_id']]['name']=$row['user_name'];
         $back[$row['duty_id']]['phone']=$row['user_phone'];
+        $back[$row['duty_id']]['address']=$row['address'];
     }
     echo ajaxBack($back);
 
@@ -773,15 +774,15 @@ function updateAttr($data){
         }
         if(5==$motion['step']){
             if(isset($data['handler'])){
-                mylog(getArrayInf($data['handler']));
+//                mylog(getArrayInf($data['handler']));
                 $handleDate=$data['handler'];
-                mylog(getArrayInf($handleDate));
+//                mylog(getArrayInf($handleDate));
                 if($handleDate){
                     if($data['confirm'])$handleDate['status']=9;
                     $handleDate['receive_time']=time();
                     $handleDate['reply_time']=time();
                     $handleDate['staff']=$_SESSION['staffLogin']['staffId'];
-                    mylog(getArrayInf($handleDate));
+//                    mylog(getArrayInf($handleDate));
                     pdoInsert('motion_handler_tbl',$handleDate,'update');
                 }
             }
@@ -982,4 +983,13 @@ function getMotionStepInf($data){
     if(!$motionStepInf)$motionStepInf=arrray();
     include 'view/motion_step_info.html.php';
     return;
+}
+
+function handleStatistics($unitId=0){
+
+    if($unitId){
+
+    }else{
+
+    }
 }

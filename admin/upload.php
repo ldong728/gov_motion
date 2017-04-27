@@ -26,9 +26,13 @@ if(isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
                 if($phone instanceof PHPExcel_RichText){
                     $phone=$phone->__toString();
                 }
-                $phone=substr($phone,0,11);
+                $address=$currentSheet->getCell('B'.$i);
+                if($address instanceof PHPExcel_RichText){
+                    $address=$address->__toString();
+                }
                 if($name&&$phone){
-                    $updateSuccess=pdoUpdate('user_tbl',array('user_phone'=>$phone),array('user_name'=>$name,'category'=>2),'limit 1');
+                    $updateSuccess=pdoUpdate('user_tbl',array('address'=>$address),array('user_phone'=>$phone,'category'=>1),'limit 1');
+
                     if(!$updateSuccess){
                         $notInput[]=array('name'=>$name,'phone'=>$phone);
                         mylog($name.': '.$phone);

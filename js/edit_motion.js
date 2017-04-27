@@ -489,13 +489,17 @@
         var motionId=$(this).attr('id').slice(3);
         ajaxPost('ajaxGetDutyInf',{id:motionId},function(data){
             var back=backHandle(data);
+            $('.detail-tr').remove();
             $.each(back,function(k,v){
-                var content='<tr><td>'+ (v.duty||'')+'</td><td>'+ (v.name||'')+'</td><td>'+ (v.phone||'')+'</td></tr>';
+                var content='<tr class="detail-tr"><td>'+ (v.duty||'')+'</td><td>'+ (v.name||'')+'</td><td>'+ (v.phone||'')+'</td><td>'+(v.address||'')+'</td></tr>';
                $('.duty-detail-table').append(content);
             });
             $('.duty-detail-box').show();
             console.log(data);
         });
+    });
+    $(document).on('click','.close-detail-box',function(){
+        $('.duty-detail-box').hide();
     });
 
     function uploadFile(element){

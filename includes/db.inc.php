@@ -177,7 +177,7 @@ function pdoUpdate($tableName,array $value,array $where,$str=''){
         }
     }
     $sql=$sql.$str;
-//    mylog($sql);
+    mylog($sql);
 //    echo $sql;
 //    exit;
     try {

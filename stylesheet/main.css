@@ -42,6 +42,7 @@ a{color: inherit;text-decoration: none;}
 .m-header .header-b-l{float: left;margin-left: 324px;height: 35px;line-height: 35px; overflow: hidden;_zoom:1}
 .m-header .header-b-m,.m-header .header-b-r{position: relative;float: right;_display:inline;}
 .m-header .header-b-m{margin-right: 56px; color: #000;}
+.m-header .header-b-m p{cursor: pointer;}
 .m-header .header-b-r{ margin-right: 3.5%;}
 .m-header .header-b-r .r-btn{cursor: pointer;width: 116px; height: 26px;font-size: 14px;line-height: 1;color: #fff;border: 1px solid #de621e;box-sizing: border-box;border-radius:13.5px;background: url(images/bg-img3.png) center;}
 

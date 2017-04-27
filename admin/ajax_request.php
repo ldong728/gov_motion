@@ -146,7 +146,7 @@ function reflashStaffList($data){
                 }
                 $stepStr.='%"';
             }elseif('full_name'==$k){
-                $stepStr='full_name like "%'.$v.'%"';
+                $stepStr='full_name like "%'.$v.'%" or staff_name like "%'.$v.'%"';
             }else{
                 if(!$where)$where=array($k=>$v);
                 else $where[$k]=$v;
@@ -163,3 +163,7 @@ function reflashStaffList($data){
 
     echo ajaxBack($back);
 }
+
+/*
+ * select user_name,user_phone,address FROM duty_view where duty_id in (select content_int from motion_view where attr_name in ("提案人","领衔人","提案联系人") and motion_id in (select motion_id from motion_view where target="unit" and content_int=55))
+ */

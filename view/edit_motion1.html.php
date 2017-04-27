@@ -105,15 +105,21 @@
                 <?php if(1==$meetingInf['category']):?>
                 <tr>
                     <th>领衔人</th>
-                    <td colspan="7" class="colspan7 verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
-                            class="encoded-data"><?php echo json_encode($motion['领衔人'], JSON_UNESCAPED_UNICODE) ?></span><button class="user-inf" id="inf<?php echo current($motion)['motion_id']?>">显示</button></td>
+                    <td colspan="5" class="verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
+                            class="encoded-data"><?php echo json_encode($motion['领衔人'], JSON_UNESCAPED_UNICODE) ?></span></td>
+                    <td colspan="2">
+                        <button class="user-inf" id="inf<?php echo current($motion)['motion_id']?>">显示</button>
+                    </td>
                 </tr>
                 <?php endif ?>
                 <?php if(2==$meetingInf['category']):?>
                     <tr>
                         <th>提案人</th>
-                        <td colspan="7" class="user-type verify-value" style="text-align: left;padding-left: 10px;"><span
-                                class="encoded-data"><?php echo json_encode($motion['提案人'], JSON_UNESCAPED_UNICODE) ?></span><button class="user-inf" id="inf<?php echo current($motion)['motion_id']?>">显示</button></td>
+                        <td colspan="5" class="user-type verify-value" style="text-align: left;padding-left: 10px;"><span
+                                class="encoded-data"><?php echo json_encode($motion['提案人'], JSON_UNESCAPED_UNICODE) ?></span></td>
+                        <td colspan="2">
+                            <button class="user-inf" id="inf<?php echo current($motion)['motion_id']?>">显示</button>
+                        </td>
                     </tr>
                     <tr class="union-conecter" <?php if(!$motion['提案联系人']['content'])echo 'style="display: none"'?>>
                         <th >联系人</th>
@@ -416,33 +422,54 @@
 </div>
 <style>
     .duty-detail-box{
-        display: none;;
+        display: none;
         position: fixed;
-        width: 400px;
-        height: 250px;
+        width: 600px;
+        height: 300px;
         background-color: #ffffff;
         border-radius: 3px;
-        z-index: 999;top:50%;
-        left:50%;
-        margin-left: -200px;
-        margin-top: -125px;
+        z-index: 999;
+        top: 50%;
+        left: 50%;
+        margin-left: -300px;
+        margin-top: -150px;
         padding: 5px;
+        /* border: 1px solid #f08300; */
+        box-shadow: 10px 10px 5px #888888;
 
+		
     }
     .duty-detail-box table{
-        border: solid 1px #000000;
         border-collapse: collapse;
         width: 100%;
     }
     .duty-detail-box tr,td{
-        border: solid 1px #000000;
+        border: 1px solid #f08300;
         text-align: center;
+    }
+	.duty-box{width: 600px;
+        height: 270px;
+        overflow: auto;}
+	.duty-header{height: 40px; line-height: 40px; font-size: 15px;color: #fff; background-color: #4a4a4a;}
+	.duty-header p{margin-left: 15px;}
+	.duty-header i{float: right;margin-right: 15px; line-height: 40px;font-size: 16px;}
+	.duty-detail-table tr{height: 26px;line-height: 26px;}
+	.duty-detail-table tr:first-child{background-color: #ffe2a3;}
+	.duty-detail-box table{table-layout: fixed;overflow: hidden;}
+	.duty-detail-box tr td{
+        /*word-break: keep-all; */
+        /*white-space: nowrap; */
+        text-overflow:ellipsis;
+        overflow: hidden;
     }
 </style>
 <div class="duty-detail-box" >
-    <table class="duty-detail-table">
-        <tr><td>身份</td><td>姓名</td><td>联系电话</td></tr>
-    </table>
+	<div class="duty-header"><p>提案人信息<i class="icon icon-close close-detail-box"></i></p></div>
+	<div class="duty-box">
+		<table class="duty-detail-table">
+			<tr><td style="min-width: 80px;max-width: 80px;width: 80px;">身份</td><td style="min-width: 150px;max-width: 150px;width: 150px;">姓名</td><td style="min-width: 80px;max-width: 80px;width: 80px;">联系电话</td><td style="min-width: 150px;max-width: 150px;width: 150px;">工作单位</td></tr>
+		</table>
+	</div>
 </div>
 
 <script>
