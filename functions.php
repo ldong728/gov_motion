@@ -290,7 +290,7 @@ function ajaxMotionList($data){
                 case 'can-mainhandle':
                     $query=pdoQuery('motion_handler_inf_view',array('motion as motion_id','status'),array('meeting'=>$meeting,'','motion'=>$mainHandleLimit,'status'=>array(1,3)),null);
                     foreach ($query as $hrow) {
-                        mylog();
+//                        mylog();
                         unset($canMainHandleLimit[$hrow['motion_id']]);
                         $canMainHandleCount--;
                     }
@@ -492,7 +492,7 @@ function editMotion($data){
         $mainHandlerInf=pdoQuery('motion_view',array('content_int'),array('motion_id'=>$id,'content_int'=>$staffUnit,'attr_name'=>'主办单位'),'limit 1')->fetch();
         if($mainHandlerInf){
             $handler=pdoQuery('motion_handler_tbl',array('motion_handler_id'),array('motion'=>$id,'status'=>array(1,3)),'limit 1')->fetch();
-            mylog(getArrayInf($handler));
+//            mylog(getArrayInf($handler));
             if(!$handler)$canMainHandler=true;
         }
     }
@@ -774,7 +774,7 @@ function updateAttr($data){
         }
         if(5==$motion['step']){
             if(isset($data['handler'])){
-//                mylog(getArrayInf($data['handler']));
+                mylog(getArrayInf($data['handler']));
                 $handleDate=$data['handler'];
 //                mylog(getArrayInf($handleDate));
                 if($handleDate){
@@ -985,11 +985,26 @@ function getMotionStepInf($data){
     return;
 }
 
-function handleStatistics($unitId=0){
-
-    if($unitId){
-
-    }else{
-
+function handleStatistics($unitId=0,$filter=null){
+    $totalList=array();
+    $where=$unitId?array('unit_id'=>$unitId):null;
+    $order=null;
+    $totalQuery=pdoQuery('handle_statistics_view',null,$where,$order);
+    foreach ($totalQuery as $row) {
+        $totalList[$row['unit_id']]['unit_id']=$row['unit_id'];
+        $totalList[$row['unit_id']]['unit_name']=$row['unit_name'];
+        if('主办单位'==$row['handle_name'])$totalList[$row['unit_id']]['main-total']=$row['number'];
+        else $totalList[$row['unit_id']]['sub-total']=$row['number'];
     }
+    $mainDoneQuery=pdoQuery('main_handle_view',array('unit_id','handle_name','count(*) as number'),$where,'group by unit_id,handle_name');
+    foreach ($mainDoneQuery as $row) {
+        if('主办单位'==$row['handle_name'])$totalList[$row['unit_id']]['main-done']=$row['number'];
+        else $totalList[$row['unit_id']]['sub-done']=$row['number'];
+    }
+    $responseQuery=pdoQuery('handle_response_view',array('unit_id','response_type','response','count(*) as number'),$where,'group by unit_id,response_type,response');
+    foreach ($responseQuery as $row) {
+            $totalList[$row['unit_id']][$row['response_type']][$row['response']]=$row['numver'];
+    }
+
+
 }
