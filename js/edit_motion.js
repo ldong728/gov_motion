@@ -502,6 +502,32 @@
         $('.duty-detail-box').hide();
     });
 
+    $(document).on('click','.delete-sub-unit',function(){
+        if(confirm('确认要删除此协办单位吗？')){
+            var id=$(this).attr('id');
+            var attrId=$(this).data('attr');
+            ajaxPost('ajaxDynamicDelHandle',{handle_id:id,attr_id:attrId},function(data){
+                var motionId=backHandle(data);
+                ajaxPost('editMotion', {id: motionId}, function (data) {
+                    $('.m-popup').html(data);
+                    mPopup();
+                });
+            });
+        }
+    });
+    $(document).on('click','.backward-sub-unit',function(){
+        if(confirm('确认要撤回该单位提交的协办意见吗？')){
+            var id=$(this).attr('id');
+            ajaxPost('ajaxDynamicBackwardHandle',{handle_id:id},function(data){
+                var motionId=backHandle(data);
+                ajaxPost('editMotion', {id: motionId}, function (data) {
+                    $('.m-popup').html(data);
+                    mPopup();
+                });
+            });
+        }
+    });
+
     function uploadFile(element){
         //console.log('preUpload');
         var _=$(element);

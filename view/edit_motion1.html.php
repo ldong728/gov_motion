@@ -266,8 +266,10 @@
                             <td colspan="4">
                                 <?php echo 9==$row['status']?'已完成':'未完成'?>
                                 <?php if(5==current($motion)['step']&&$step4CanEdit&&in_array(4, $_SESSION['staffLogin']['steps']) ):?>
-                                    <button class="delete-coop-unit" id="<?php echo $row['motion_handler_id']?>" data-attr="<?php echo $row['attr']?>">删除</button>
-
+                                    <button class="delete-sub-unit" id="<?php echo $row['motion_handler_id']?>" data-attr="<?php echo $row['attr']?>">删除</button>
+                                    <?php if(9==$row['status']):?>
+                                        <button class="backward-sub-unit" id="<?php echo $row['motion_handler_id']?>" data-attr="<?php echo $row['attr']?>">退回</button>
+                                    <?php endif?>
                                 <?php endif?>
                             </td>
 

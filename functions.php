@@ -743,10 +743,14 @@ function updateAttr($data){
             pdoUpdate('motion_tbl',array('step'=>$currentStep),array('motion_id'=>$motionId));
             if(4==$motion['step']){
                 $handlerList=pdoQuery('attr_view',null,array('motion'=>$motionId,'attr_name'=>'协办单位'),null);
-                pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion'=>$motionId));
+                pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion'=>$motionId,'status'=>1));
+
                 foreach ($handlerList as $row) {
-                    pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int'],'status'=>1),'update');
+                    pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int']),'ignore');
+                    pdoUpdate('motion_handler_tbl',array('status'=>1),array('unit'=>$row['content_int'],'status'=>7), ' limit 1');
                 }
+
+
             }
 
 
@@ -932,8 +936,28 @@ function ajaxGetSingleDutyId($data){
         }
     }
     echo ajaxBack(0);
+}
 
+/**
+ * 交办单位在办理阶段动态删除协办单位
+ * @param $data
+ */
+function ajaxDynamicDelHandle($data){
+    pdoTransReady();
+    try{
+        pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion_handler_id'=>$data['handle_id']),'limit 1');
+        pdoDelete('attr_tbl',array('attr_id'=>$data['attr_id']),'limit 1');
+        pdoCommit();
+        echo ajaxBack($_SESSION['staffLogin']['currentMotion']);
+    }catch(PDOException $e){
+        mylog($e->getMessage());
+        pdoRollBack();
+    }
+}
 
+function ajaxDynamicBackwardHandle($data){
+    pdoUpdate('motion_handler_tbl',array('status'=>1),array('motion_handler_id'=>$data['handle_id']),'limit 1');
+    echo ajaxBack($_SESSION['staffLogin']['currentMotion']);
 }
 
 
@@ -985,26 +1009,42 @@ function getMotionStepInf($data){
     return;
 }
 
+function ajaxGetStatistics($data){
+    handleStatistics();
+
+//    echo ajaxBack('ok');
+}
+//function exceOut
+
 function handleStatistics($unitId=0,$filter=null){
     $totalList=array();
     $where=$unitId?array('unit_id'=>$unitId):null;
-    $order=null;
+    $order='order by handle_name asc,number desc';
     $totalQuery=pdoQuery('handle_statistics_view',null,$where,$order);
     foreach ($totalQuery as $row) {
         $totalList[$row['unit_id']]['unit_id']=$row['unit_id'];
         $totalList[$row['unit_id']]['unit_name']=$row['unit_name'];
-        if('主办单位'==$row['handle_name'])$totalList[$row['unit_id']]['main-total']=$row['number'];
-        else $totalList[$row['unit_id']]['sub-total']=$row['number'];
+        if('主办单位'==$row['handle_name'])$totalList[$row['unit_id']]['main_total']=$row['number'];
+        else $totalList[$row['unit_id']]['sub_total']=$row['number'];
     }
     $mainDoneQuery=pdoQuery('main_handle_view',array('unit_id','handle_name','count(*) as number'),$where,'group by unit_id,handle_name');
     foreach ($mainDoneQuery as $row) {
-        if('主办单位'==$row['handle_name'])$totalList[$row['unit_id']]['main-done']=$row['number'];
-        else $totalList[$row['unit_id']]['sub-done']=$row['number'];
+        if('主办单位'==$row['handle_name'])$totalList[$row['unit_id']]['main_done']=$row['number'];
     }
+    $handledoneWhere=$where?array_merge($where,array('status'=>9)):array('status'=>9);
+    $handleDoneQuery=pdoQuery('motion_handler_tbl',array('unit as unit_id','count(*) as number'),$handledoneWhere,' group by unit');
+    foreach ($handleDoneQuery as $row) {
+        $totalList[$row['unit_id']]['sub_done']=$row['number'];
+    }
+
     $responseQuery=pdoQuery('handle_response_view',array('unit_id','response_type','response','count(*) as number'),$where,'group by unit_id,response_type,response');
     foreach ($responseQuery as $row) {
-            $totalList[$row['unit_id']][$row['response_type']][$row['response']]=$row['numver'];
+            $totalList[$row['unit_id']][$row['response_type']][$row['response']]=$row['number'];
     }
+    return $totalList;
+//    foreach ($totalList as $row) {
+//        mylog(getArrayInf($row));
+//    }
 
 
 }

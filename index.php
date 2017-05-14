@@ -24,6 +24,13 @@ if(isset($_SESSION['staffLogin'])){
         getMeetingView($_GET['get_meeting']);
         exit;
     }
+    if(isset($_GET['statistics_excel_out'])){
+//        header("Content-type:application/vnd.ms-excel");
+//        header("Content-Disposition:attachment;filename=办理情况统计".timeUnixToMysql(time()).".xls" );
+        $totalList= handleStatistics();
+        include"view/statisticsOutExcel.html.php";
+        exit;
+    }
     if(isset($_FILES)){
         if(isset($_POST['file_type'])&&'excel'==$_POST['file_type']){
             encodeExcel();

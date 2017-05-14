@@ -35,6 +35,9 @@
         <?php if(in_array(3,$_SESSION['staffLogin']['steps'])):?>
             <div class="home-nav h-border"><p><a href="#"  data-step="5" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i><?php echo 1==$_SESSION['staffLogin']['category']?'代表名单管理':'委员名单管理'?><span></span></a></p></div>
         <?php endif ?>
+        <?php if(in_array(4,$_SESSION['staffLogin']['steps'])):?>
+            <div class="home-nav h-border"><p><a href="index.php?statistics_excel_out=1" class="statistics"><i class="icon icon-angle-right"></i>办理统计<span></span></a></p></div>
+        <?php endif ?>
     </div>
     <!--左边-->
     <div class="home-r h-last">
@@ -177,6 +180,12 @@
         filter.step=$(this).data('step');
         filter.filter=$(this).data('filtertype');
         reflashList(orderby,page,order);
+    });
+    $('.statistics').click(function(){
+//        alert('hahahah');
+//        ajaxPost('ajaxGetStatistics',{},function(data){
+//
+//        });
     });
     $('.order-by-attr').click(function(){
         var newOrderby=($(this).text());
