@@ -746,7 +746,7 @@ function updateAttr($data){
                 pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion'=>$motionId,'status'=>1));
 
                 foreach ($handlerList as $row) {
-                    pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int']),'ignore');
+                    pdoInsert('motion_handler_tbl',array('motion'=>$motionId,'attr'=>$row['attr_id'],'unit'=>$row['content_int']),'update');
                     pdoUpdate('motion_handler_tbl',array('status'=>1),array('unit'=>$row['content_int'],'status'=>7), ' limit 1');
                 }
 
@@ -945,6 +945,7 @@ function ajaxGetSingleDutyId($data){
 function ajaxDynamicDelHandle($data){
     pdoTransReady();
     try{
+        mylog('delete handle'.getArrayInf($data));
         pdoUpdate('motion_handler_tbl',array('status'=>7),array('motion_handler_id'=>$data['handle_id']),'limit 1');
         pdoDelete('attr_tbl',array('attr_id'=>$data['attr_id']),'limit 1');
         pdoCommit();
@@ -956,6 +957,7 @@ function ajaxDynamicDelHandle($data){
 }
 
 function ajaxDynamicBackwardHandle($data){
+//    mylog('ajaxDynamicBackwardHandle');
     pdoUpdate('motion_handler_tbl',array('status'=>1),array('motion_handler_id'=>$data['handle_id']),'limit 1');
     echo ajaxBack($_SESSION['staffLogin']['currentMotion']);
 }

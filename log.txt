@@ -1,29 +1,17 @@
-2017.05.14.16:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="27103",motion="3",staff="6726",motion_attr="32",attr_template="13",content_int="75" on DUPLICATE KEY update attr_id="27103",motion="3",staff="6726",motion_attr="32",attr_template="13",content_int="75"
-2017.05.14.16:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_tbl SET step="5" WHERE motion_id="3"
-2017.05.14.16:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="7" WHERE motion="3" AND status="1"
-2017.05.14.16:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="27104",unit="53"
-2017.05.14.16:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handle_tbl SET status="1" WHERE unit="53" AND status="7"limit 1
-2017.05.14.16:00:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="27103",motion="3",staff="6726",motion_attr="32",attr_template="13",content_int="75" on DUPLICATE KEY update attr_id="27103",motion="3",staff="6726",motion_attr="32",attr_template="13",content_int="75"
-2017.05.14.16:00:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_tbl SET step="5" WHERE motion_id="3"
-2017.05.14.16:00:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="7" WHERE motion="3" AND status="1"
-2017.05.14.16:00:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="27104",unit="53"
-2017.05.14.16:00:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handle_tbl SET status="1" WHERE unit="53" AND status="7" limit 1
-2017.05.14.16:01:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="27103",motion="3",staff="6726",motion_attr="32",attr_template="13",content_int="75" on DUPLICATE KEY update attr_id="27103",motion="3",staff="6726",motion_attr="32",attr_template="13",content_int="75"
-2017.05.14.16:01:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_tbl SET step="5" WHERE motion_id="3"
-2017.05.14.16:01:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="7" WHERE motion="3" AND status="1"
-2017.05.14.16:01:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="27104",unit="53"
-2017.05.14.16:01:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="29125",unit="43"
-2017.05.14.16:01:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="29126",unit="55"
-2017.05.14.16:01:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="29127",unit="56"
-2017.05.14.16:02:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_tbl SET step="4" WHERE motion_id="3"
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT INTO attr_tbl SET attr_id="27103",motion="3",staff="6726",motion_attr="32",attr_template="13",content_int="75" on DUPLICATE KEY update attr_id="27103",motion="3",staff="6726",motion_attr="32",attr_template="13",content_int="75"
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_tbl SET step="5" WHERE motion_id="3"
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="7" WHERE motion="3" AND status="1"
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="27104",unit="53"
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="53" AND status="7" limit 1
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="29125",unit="43"
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="43" AND status="7" limit 1
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="29126",unit="55"
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="55" AND status="7" limit 1
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php132:INSERT ignore motion_handler_tbl SET motion="3",attr="29127",unit="56"
-2017.05.14.16:02:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="56" AND status="7" limit 1
+2017.05.07.09:42:33:D:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
+2017.05.07.11:36:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_tbl SET step="7" WHERE motion_id="514"
+2017.05.07.11:36:09:D:\xampp\htdocs\gov_motion\functions.php761:mark
+2017.05.15.10:29:10:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE staff_tbl SET steps="4" WHERE staff_id="6726" limit 1
+2017.05.15.10:32:46:D:\xampp\htdocs\gov_motion\functions.php90:limit > 0
+2017.05.15.18:31:54:D:\xampp\htdocs\gov_motion\functions.php90:limit > 0
+2017.05.15.18:45:51:D:\xampp\htdocs\gov_motion\functions.php90:limit > 0
+2017.05.15.19:11:08:D:\xampp\htdocs\gov_motion\functions.php948:delete handle{handle_id: 145,attr_id: 27138}
+2017.05.15.19:11:08:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="7" WHERE motion_handler_id="145"limit 1
+2017.05.15.19:11:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_tbl SET step="4" WHERE motion_id="20"
+2017.05.15.19:11:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_tbl SET step="5" WHERE motion_id="20"
+2017.05.15.19:11:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="7" WHERE motion="20" AND status="1"
+2017.05.15.19:11:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="60" AND status="7" limit 1
+2017.05.15.19:11:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="54" AND status="7" limit 1
+2017.05.15.19:11:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="56" AND status="7" limit 1
+2017.05.15.19:11:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="162" AND status="7" limit 1
+2017.05.15.19:11:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php180:UPDATE motion_handler_tbl SET status="1" WHERE unit="45" AND status="7" limit 1
