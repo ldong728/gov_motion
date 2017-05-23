@@ -25,11 +25,15 @@ if(isset($_SESSION['staffLogin'])){
         exit;
     }
     if(isset($_GET['statistics_excel_out'])){
-//        header("Content-type:application/vnd.ms-excel");
-//        header("Content-Disposition:attachment;filename=办理情况统计".timeUnixToMysql(time()).".xls" );
-        $totalList= handleStatistics();
+        $totalList= handleStatistics(0, $_SESSION['staffLogin']['category']);
         include"view/statisticsOutExcel.html.php";
+//        include"view/statistics_document.html.php";
         exit;
+    }
+    if(isset($_GET['download'])){
+        mylog();
+        include_once "downLoad.php";
+        $_GET['download']();
     }
     if(isset($_FILES)){
         if(isset($_POST['file_type'])&&'excel'==$_POST['file_type']){

@@ -1,7 +1,16 @@
 <meta charset = "utf-8">
 <?php
+$name='';
+switch($_SESSION['staffLogin']['category']){
+    case 1:
+        $name="人大建议议案";
+        break;
+    case 2:
+        $name="政协提案";
+        break;
+}
 header("Content-type:application/vnd.ms-excel");
-header("Content-Disposition:filename=办理情况统计".timeUnixToMysql(time()).".xls");
+header("Content-Disposition:filename=".$name."办理情况统计".timeUnixToMysql(time()).".xls");
 
 ?>
 <table border=1 style="text-align: center">
@@ -23,7 +32,7 @@ header("Content-Disposition:filename=办理情况统计".timeUnixToMysql(time())
         <td><?php echo $mainDone?></td>
         <td><?php echo $subDone?></td>
         <td><?php echo $subDone+$mainDone?></td>
-        <td><?php echo number_format(($subDone+$mainDone)/($subTotal+$mainTotal),2,'.','').'%'?></td>
+        <td><?php echo number_format(($subDone+$mainDone)/($subTotal+$mainTotal)*100,2,'.','').'%'?></td>
 
 <!--        <td></td>-->
     </tr>

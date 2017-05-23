@@ -33,7 +33,8 @@
             <div class="home-nav h-border"><p><a href="#" class="list-filter" data-step="5" data-filtertype="can-handle"><i class="icon icon-angle-right"></i>协办可办<span></span></a></p></div>
         <?php endif?>
         <?php if(in_array(3,$_SESSION['staffLogin']['steps'])):?>
-            <div class="home-nav h-border"><p><a href="#"  data-step="5" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i><?php echo 1==$_SESSION['staffLogin']['category']?'代表名单管理':'委员名单管理'?><span></span></a></p></div>
+            <div class="home-nav h-border"><p><a href="#"  data-step="3" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i><?php echo 1==$_SESSION['staffLogin']['category']?'代表名单管理':'委员名单管理'?><span></span></a></p></div>
+            <?php if(2==$_SESSION['staffLogin']['category']):?><div class="home-nav h-border"><p><a href="#" class="multiple-statistics" data-step="3" data-filtertype="mainhandle"><i class="icon icon-angle-right"></i><span>综合统计</span></a></p></div><?php endif ?>
         <?php endif ?>
         <?php if(in_array(4,$_SESSION['staffLogin']['steps'])):?>
             <div class="home-nav h-border"><p><a href="index.php?statistics_excel_out=1" class="statistics"><i class="icon icon-angle-right"></i>办理统计<span></span></a></p></div>
@@ -274,6 +275,9 @@
 
         }
 
+    });
+    $(document).on('click','.multiple-statistics',function(){
+                location.href="?download=multiple_statistics";
     });
     function pageJump(element,event){
 //        console.log(event.keyCode);

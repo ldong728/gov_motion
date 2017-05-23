@@ -35,7 +35,10 @@ class DataSupply {
                     break;
                 case 'staff':
                     $staffInf=pdoQuery('staff_tbl',array('staff_id as id','full_name as name'),array('staff_id'=>$index),'limit 1')->fetch();
-                    if($staffInf)$content=$staffInf['name'];
+                    if($staffInf){
+                        DataSupply::$data[$targetName][$index]=$staffInf['name'];
+                        $content=$staffInf['name'];
+                    }
                     break;
                 default:
                     $inf=pdoQuery($targetName.'_tbl',array($targetName.'_id as id',$targetName.'_name as name'),array($targetName.'_id'=>$index),'limit 1')->fetch();
