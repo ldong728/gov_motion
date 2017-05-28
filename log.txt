@@ -6,3 +6,5 @@
 2017.05.23.16:53:16:D:\xampp\htdocs\gov_motion\index.php19:mark
 2017.05.23.16:53:53:D:\xampp\htdocs\gov_motion\index.php34:mark
 2017.05.23.16:53:53:D:\xampp\htdocs\gov_motion\download.php10:get
+2017.05.28.16:28:15:D:\xampp\htdocs\gov_motion\index.php34:mark
+2017.05.28.16:28:15:D:\xampp\htdocs\gov_motion\download.php10:multiple_statistics

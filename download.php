@@ -7,7 +7,9 @@
  */
 
 function multiple_statistics(){
-    $inf=array();
+    mylog('multiple_statistics');
+    $inf=array('');
+
     $query=pdoQuery('s_duty_view',null,array('category'=>$_SESSION['staffLogin']['category']),null);
     foreach ($query as $row) {
 
