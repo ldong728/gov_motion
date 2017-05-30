@@ -1,10 +1,237 @@
-2017.05.23.16:53:08:D:\xampp\htdocs\gov_motion\index.php11:mark
-2017.05.23.16:53:08:D:\xampp\htdocs\gov_motion\index.php19:mark
-2017.05.23.16:53:09:D:\xampp\htdocs\gov_motion\index.php11:mark
-2017.05.23.16:53:09:D:\xampp\htdocs\gov_motion\index.php19:mark
-2017.05.23.16:53:16:D:\xampp\htdocs\gov_motion\index.php11:mark
-2017.05.23.16:53:16:D:\xampp\htdocs\gov_motion\index.php19:mark
-2017.05.23.16:53:53:D:\xampp\htdocs\gov_motion\index.php34:mark
-2017.05.23.16:53:53:D:\xampp\htdocs\gov_motion\download.php10:get
-2017.05.28.16:28:15:D:\xampp\htdocs\gov_motion\index.php34:mark
-2017.05.28.16:28:15:D:\xampp\htdocs\gov_motion\download.php10:multiple_statistics
+2017.05.30.08:40:56:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:40:56:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id FROM duty_view where user_name like "%经费%"
+2017.05.30.08:40:56:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("-1000000")
+2017.05.30.08:40:56:C:\xampp\htdocs\gov_motion\functions.php346:{0: 77,1: 84,2: 527}
+2017.05.30.08:40:56:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:40:56:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("-1000000") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:40:56:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:43:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:43:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id FROM duty_view where user_name like "%我市%"
+2017.05.30.08:43:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("-1000000")
+2017.05.30.08:43:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:43:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("-1000000") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:43:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:45:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM meeting_tbl WHERE meeting_id="1" limit 1
+2017.05.30.08:45:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:45:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:45:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:45:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:45:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:45:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:45:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.08:49:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM meeting_tbl WHERE meeting_id="1" limit 1
+2017.05.30.08:49:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:49:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:49:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:49:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:49:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:49:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:49:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.08:54:26:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM meeting_tbl WHERE meeting_id="1" limit 1
+2017.05.30.08:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.08:54:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:54:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%我市%"
+2017.05.30.08:54:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:54:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("5","6","7","8","9","10","46","53","55","58","69","98","99","100","101","107","120","123","127","140","145","152","153","159","162","170","174","177","193","195","199","200","201","203","206","215","229","232","235","236","237","238","248","251","257","263","293","294","316","318","351","358","360","362","363","378","381","385","389","392","400","401","410","417","445","454","456","458","464","466","471","474","478","513","515","519","521","522","32","45","110","187","230","335","415","480","496","555","570","577","667","668") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:54:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("5","6","7","8","9","10","46","53","55","58","69","98","99","100","101","107","120","123","127","140") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:54:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:54:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:54:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:54:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id FROM duty_view where user_name like "%蒋%"
+2017.05.30.08:54:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("17","282","505")
+2017.05.30.08:54:47:C:\xampp\htdocs\gov_motion\functions.php347:{0: 5,1: 6,2: 7,3: 8,4: 9,5: 10,6: 46,7: 53,8: 55,9: 58,10: 69,11: 98,12: 99,13: 100,14: 101,15: 107,16: 120,17: 123,18: 127,19: 140,20: 145,21: 152,22: 153,23: 159,24: 162,25: 170,26: 174,27: 177,28: 193,29: 195,30: 199,31: 200,32: 201,33: 203,34: 206,35: 215,36: 229,37: 232,38: 235,39: 236,40: 237,41: 238,42: 248,43: 251,44: 257,45: 263,46: 293,47: 294,48: 316,49: 318,50: 351,51: 358,52: 360,53: 362,54: 363,55: 378,56: 381,57: 385,58: 389,59: 392,60: 400,61: 401,62: 410,63: 417,64: 445,65: 454,66: 456,67: 458,68: 464,69: 466,70: 471,71: 474,72: 478,73: 513,74: 515,75: 519,76: 521,77: 522,78: 32,79: 45,80: 110,81: 187,82: 230,83: 335,84: 415,85: 480,86: 496,87: 555,88: 570,89: 577,90: 667,91: 668}
+2017.05.30.08:54:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:54:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("-1000000") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:54:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id FROM duty_view where user_name like "%蒋%"
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("17","282","505")
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("77","84","527") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("77","84","527") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:54:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.08:55:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:55:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%市民%"
+2017.05.30.08:55:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:55:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("11","77","203","294","316","526","409") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:55:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("11","77","203","294","316","526") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:55:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:55:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id FROM duty_view where user_name like "%蒋%"
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("17","282","505")
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\functions.php347:{0: 11,1: 77,2: 203,3: 294,4: 316,5: 526,6: 409}
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("77") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("77") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:55:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:56:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM meeting_tbl WHERE meeting_id="1" limit 1
+2017.05.30.08:56:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:56:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:56:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:56:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:56:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:56:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:56:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.08:57:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:57:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%市民%"
+2017.05.30.08:57:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("11","77","203","294","316","526","409") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:57:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("11","77","203","294","316","526") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:57:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:57:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:57:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:57:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:57:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:57:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:57:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:57:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:57:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.08:57:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:57:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.08:57:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:57:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:57:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:57:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:57:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.08:59:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.08:59:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id FROM duty_view where user_name like "%蒋%"
+2017.05.30.08:59:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("17","282","505")
+2017.05.30.08:59:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("77","84","527") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.08:59:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("77","84","527") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.08:59:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.08:59:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.08:59:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.09:00:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.09:00:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.09:00:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:00:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.09:00:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.09:00:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.09:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:00:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.09:00:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.09:00:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:00:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.09:00:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id FROM duty_view where user_name like "%蒋%"
+2017.05.30.09:00:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("17","282","505")
+2017.05.30.09:00:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("77","84","527") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.09:00:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("77","84","527") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:00:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.09:00:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="1" and step>0
+2017.05.30.09:00:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.09:00:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("4","5","6","7","8","9","10","11","12","44","46","47","50","52","53","54","55","56","57","58") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:00:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.09:00:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id FROM unit_tbl where unit_name like "%住建局%"
+2017.05.30.09:00:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="主办单位" AND content_int in("55")
+2017.05.30.09:00:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("46","56","57","66","74","103","123","124","131","139","163","164","178","181","182","195","198","208","210","238","247","251","253","283","293","295","346","353","356","359","426","457","503","517","519","520","521","18","20","22","23","27","32","33","38","45","51","113","204","214","220","223","224","254","309","327","418","433","486","492","541","596","598","600","604","606","616","622","651","655","670") group by motion_id order by zx_motion asc limit 0,20
+2017.05.30.09:00:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("46","56","57","66","74","103","123","124","131","139","163","164","178","181","182","195","198","208","210","238") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:00:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id FROM unit_tbl where unit_name like "%住建局%"
+2017.05.30.09:00:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="主办单位" AND content_int in("55")
+2017.05.30.09:00:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("46","56","57","66","74","103","123","124","131","139","163","164","178","181","182","195","198","208","210","238","247","251","253","283","293","295","346","353","356","359","426","457","503","517","519","520","521","18","20","22","23","27","32","33","38","45","51","113","204","214","220","223","224","254","309","327","418","433","486","492","541","596","598","600","604","606","616","622","651","655","670") group by motion_id order by zx_motion asc limit 20,20
+2017.05.30.09:00:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("247","251","253","283","293","295","346","353","356","359","426","457","503","517","519","520","521") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:00:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id FROM unit_tbl where unit_name like "%住建局%"
+2017.05.30.09:00:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="主办单位" AND content_int in("55")
+2017.05.30.09:00:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("46","56","57","66","74","103","123","124","131","139","163","164","178","181","182","195","198","208","210","238","247","251","253","283","293","295","346","353","356","359","426","457","503","517","519","520","521","18","20","22","23","27","32","33","38","45","51","113","204","214","220","223","224","254","309","327","418","433","486","492","541","596","598","600","604","606","616","622","651","655","670") group by motion_id order by zx_motion asc limit 40,20
+2017.05.30.09:00:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="1"
+2017.05.30.09:00:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id FROM unit_tbl where unit_name like "%住建局%"
+2017.05.30.09:00:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="主办单位" AND content_int in("55")
+2017.05.30.09:00:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="1" AND motion_id in("46","56","57","66","74","103","123","124","131","139","163","164","178","181","182","195","198","208","210","238","247","251","253","283","293","295","346","353","356","359","426","457","503","517","519","520","521","18","20","22","23","27","32","33","38","45","51","113","204","214","220","223","224","254","309","327","418","433","486","492","541","596","598","600","604","606","616","622","651","655","670") group by motion_id order by zx_motion asc limit 20,20
+2017.05.30.09:00:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("247","251","253","283","293","295","346","353","356","359","426","457","503","517","519","520","521") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:00:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:00:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="5103" limit 1
+2017.05.30.09:01:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM staff_tbl WHERE staff_name="rdtemp" limit 1
+2017.05.30.09:01:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM meeting_tbl WHERE category="1" order by deadline_time desc limit 1
+2017.05.30.09:01:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="1" order by category asc limit 20
+2017.05.30.09:01:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM meeting_tbl WHERE category="1" order by start_time asc
+2017.05.30.09:01:53:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM meeting_tbl WHERE meeting_id="2" limit 1
+2017.05.30.09:01:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
+2017.05.30.09:01:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="2" and step>0
+2017.05.30.09:01:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" group by motion_id order by content_int asc,content asc limit 0,20
+2017.05.30.09:01:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("3","16","17","19","20","22","24","25","26","27","28","29","30","32","35","37","38","39","40","41") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:01:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:01:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.05.30.09:02:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
+2017.05.30.09:02:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id FROM unit_tbl where unit_name like "%住建局%"
+2017.05.30.09:02:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="主办单位" AND content_int in("55")
+2017.05.30.09:02:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" AND motion_id in("46","56","57","66","74","103","123","124","131","139","163","164","178","181","182","195","198","208","210","238","247","251","253","283","293","295","346","353","356","359","426","457","503","517","519","520","521","18","20","22","23","27","32","33","38","45","51","113","204","214","220","223","224","254","309","327","418","433","486","492","541","596","598","600","604","606","616","622","651","655","670") group by motion_id order by content_int asc,content asc limit 0,20
+2017.05.30.09:02:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("20","22","27","32","38","18","23","33","45","51","113","204","214","220","223","224","254","309","327","541") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:02:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:03:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
+2017.05.30.09:03:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%道路%"
+2017.05.30.09:03:40:C:\xampp\htdocs\gov_motion\functions.php347:{0: 46,1: 56,2: 57,3: 66,4: 74,5: 103,6: 123,7: 124,8: 131,9: 139,10: 163,11: 164,12: 178,13: 181,14: 182,15: 195,16: 198,17: 208,18: 210,19: 238,20: 247,21: 251,22: 253,23: 283,24: 293,25: 295,26: 346,27: 353,28: 356,29: 359,30: 426,31: 457,32: 503,33: 517,34: 519,35: 520,36: 521,37: 18,38: 20,39: 22,40: 23,41: 27,42: 32,43: 33,44: 38,45: 45,46: 51,47: 113,48: 204,49: 214,50: 220,51: 223,52: 224,53: 254,54: 309,55: 327,56: 418,57: 433,58: 486,59: 492,60: 541,61: 596,62: 598,63: 600,64: 604,65: 606,66: 616,67: 622,68: 651,69: 655,70: 670}
+2017.05.30.09:03:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" AND motion_id in("57","103","520","32","622","670") group by motion_id order by content_int asc,content asc limit 0,20
+2017.05.30.09:03:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("32","622","670") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:03:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:03:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
+2017.05.30.09:03:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%道路%"
+2017.05.30.09:03:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" AND motion_id in("57","59","86","103","122","354","425","427","520","32","40","303","304","439","576","590","592","597","622","639","648","661","670") group by motion_id order by content_int asc,content asc limit 0,20
+2017.05.30.09:03:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("32","40","303","304","576","592","597","622","639","648","661","670","439","590") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:03:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.09:03:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
+2017.05.30.09:03:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%道路%"
+2017.05.30.09:03:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" AND motion_id in("57","59","86","103","122","354","425","427","520","32","40","303","304","439","576","590","592","597","622","639","648","661","670") group by motion_id order by content_int asc,content asc limit 20,20
+2017.05.30.09:03:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:03:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
+2017.05.30.09:03:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%道路%"
+2017.05.30.09:03:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" AND motion_id in("57","59","86","103","122","354","425","427","520","32","40","303","304","439","576","590","592","597","622","639","648","661","670") group by motion_id order by content_int asc,content asc limit 40,20
+2017.05.30.09:03:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:04:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
+2017.05.30.09:04:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%道路%"
+2017.05.30.09:04:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" AND motion_id in("57","59","86","103","122","354","425","427","520","32","40","303","304","439","576","590","592","597","622","639","648","661","670") group by motion_id order by content_int asc,content asc limit 20,20
+2017.05.30.09:04:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:04:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="2"
+2017.05.30.09:04:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE attr_name="案由" and content like "%道路%"
+2017.05.30.09:04:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT motion_id FROM motion_view WHERE meeting="2" AND attr_name="案号" AND motion_id in("57","59","86","103","122","354","425","427","520","32","40","303","304","439","576","590","592","597","622","639","648","661","670") group by motion_id order by content_int asc,content asc limit 0,20
+2017.05.30.09:04:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT *  FROM motion_view WHERE motion_id in("32","40","303","304","576","592","597","622","639","648","661","670","439","590") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
+2017.05.30.09:04:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php83:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2017.05.30.11:59:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_tbl SET step="6" WHERE motion_id="21"
+2017.05.30.12:01:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE staff_tbl SET steps="1236" WHERE staff_id="6729" limit 1
+2017.05.30.12:01:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_tbl SET step="7" WHERE motion_id="21"
+2017.05.30.12:01:47:C:\xampp\htdocs\gov_motion\functions.php809:mark
+2017.05.30.13:52:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_tbl SET step="7" WHERE motion_id="607"
+2017.05.30.13:52:27:C:\xampp\htdocs\gov_motion\functions.php809:mark
+2017.05.30.14:41:13:C:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:dcstemp,status:
+2017.05.30.14:41:13:C:\xampp\htdocs\gov_motion\functions.php92:limit > 0
+2017.05.30.14:41:13:C:\xampp\htdocs\gov_motion\functions.php92:limit > 0
+2017.05.30.14:41:13:C:\xampp\htdocs\gov_motion\functions.php92:limit > 0
+2017.05.30.14:41:13:C:\xampp\htdocs\gov_motion\functions.php92:limit > 0

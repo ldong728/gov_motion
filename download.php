@@ -12,7 +12,15 @@ function multiple_statistics(){
 
     $query=pdoQuery('s_duty_view',null,array('category'=>$_SESSION['staffLogin']['category']),null);
     foreach ($query as $row) {
+        if('提案人'==$row['attr_name']){
+            if(!$row['user_unit']){
 
+            }elseif(!$row['user_group']){
+
+            }else{
+
+            }
+        }
     }
 
     include 'view/statistics_document.html.php';

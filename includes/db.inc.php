@@ -60,7 +60,9 @@ function pdoQuery($tableName, $fields, $where, $append)
                 if(count($v)>0){
                     $sql.=$k.' in(';
                     foreach ($v as $d) {
-                        $sql.='"'.$d.'",';
+                        $val=$d;
+                        if(is_array($d))$val=$d[0];
+                        $sql.='"'.$val.'",';
                     }
                     $sql=trim($sql,',');
                     $sql.=')';
@@ -178,8 +180,6 @@ function pdoUpdate($tableName,array $value,array $where,$str=''){
     }
     $sql=$sql.$str;
     mylog($sql);
-//    echo $sql;
-//    exit;
     try {
         $rows=$GLOBALS['pdo']->exec($sql);
         return $rows;

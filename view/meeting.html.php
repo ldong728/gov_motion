@@ -47,14 +47,15 @@
                 <table width="93%;">
                     <tbody>
                     <tr>
-                        <td width="7%"><a href="#">按案号</a></td>
-                        <td width="15%"><a href="#">按等级时间（序列）</a></td>
-                        <td width="12%"><a href="#">按性质分类</a></td>
-                        <td width="10%;"><a href="#">换状态</a></td>
-                        <td width="10%;"><a href="#">按领衔人</a></td>
-                        <td width="12%"><a href="#">按办理单位</a></td>
-                        <td width="12%;"><a href="#">按签收情况</a></td>
-                        <td width="8%"><a href="#">查询</a></td>
+                        <td width="7%"><a href="#" class="search" data-filter="案号" data-type="int">按案号</a></td>
+                        <td width="7%"><a href="#" class="search" data-filter="案由" data-type="string">按案由</a></td>
+<!--                        <td width="15%"><a href="#" class="search" >按等级时间（序列）</a></td>-->
+                        <td width="12%"><a href="#" class="search" data-filter="性质类别<?php echo $meetingInf['category']?>" data-type="string">按性质类别</a></td>
+                        <td width="10%;"><a href="#" class="search" data-filter="状态" data-type="string">按状态</a></td>
+                        <td width="10%;"><a href="#" class="search" data-filter="<?php echo 1==$meetingInf['category']?'领衔人':'提案人'?>" data-type="duty">按<?php echo 1==$meetingInf['category']?'领衔人':'提案人'?></a></td>
+                        <td width="12%"><a href="#" class="search" data-filter="主办单位" data-type="unit">按主办单位</a></td>
+                        <td width="12%;"><a href="#" class="search" data-filter="协办单位" data-type="unit">按协办单位</a></td>
+<!--                        <td width="8%"><a href="#">查询</a></td>-->
                         <td width="8%"><a href="#">统计</a></td>
                     </tr>
                     </tbody>
@@ -152,7 +153,14 @@
         <div class="m-footer-tech"><p>技术支持：慈溪市谷多计算机网络技术有限公司</p></div>
     </div>
 </div>
-
+<div class="search-container">
+    <div class="search-mask"></div>
+    <div class="input-box">
+        <input type="text" class="search-input">
+        <button class="search-button">重新搜索</button>
+        <button class="search-button inner">在结果中搜索</button>
+    </div>
+    </div>
 </body>
 
 
@@ -166,6 +174,7 @@
     var page=0;
     var filter={};
     var count=20;
+    var motionIdLimit=null;
     resizeWindow();
     reflashList(orderby,page,order);
     $(window).resize(function(){
@@ -373,7 +382,8 @@
                     });
                 }
                 reCalculate(value.totalCount);
-
+                motionIdLimit=value.motionIdLimit;
+                console.log(motionIdLimit);
 
 
             });
@@ -396,5 +406,34 @@
         $('.suggest').css('left',sWidth);
         $('.suggest').css('top',sHeight);
     }
+</script>
+<script type="text/javascript">
+    var searchAttrName;
+    var searchAttrType;
+    //搜索脚本
+    $('.search').click(function(){
+        searchAttrName=$(this).data('filter');
+        searchAttrType=$(this).data('type');
+        $('.search-input').attr('placeholder',$(this).text()+'搜索');
+        $('.search-input').val('');
+        $('.search-container').show();
+//        alert(attrName);
+    });
+    $('.search-button').click(function(){
+        var input=$('.search-input');
+        if($.trim(input.val())){
+            filter.search={attr_name:searchAttrName,attr_value:input.val(),attr_type:searchAttrType};
+            if($(this).hasClass('inner'))filter.search.motion_id_limit=motionIdLimit;
+            reflashList(orderby,page,order);
+        }
+        $('.search-mask').click();
+
+    });
+
+    $('.search-mask').click(function(){
+//        delete filter.search;
+        $('.search-container').hide();
+    })
+
 </script>
 </html>
