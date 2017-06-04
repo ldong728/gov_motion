@@ -31,7 +31,7 @@ if(isset($_SESSION['staffLogin'])){
         exit;
     }
     if(isset($_GET['download'])){
-        mylog();
+//        mylog();
         include_once "downLoad.php";
         $_GET['download']();
     }

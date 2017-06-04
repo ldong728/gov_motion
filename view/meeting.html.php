@@ -47,14 +47,15 @@
                 <table width="93%;">
                     <tbody>
                     <tr>
-                        <td width="7%"><a href="#" class="search" data-filter="案号" data-type="int">按案号</a></td>
-                        <td width="7%"><a href="#" class="search" data-filter="案由" data-type="string">按案由</a></td>
+                        <td width="10%"><a href="#" class="search" data-filter="案号" data-type="int">按案号</a></td>
+                        <td width="10%"><a href="#" class="search" data-filter="案由" data-type="string">按案由</a></td>
+                        <?php if(2==$meetingInf['category']):?><td width="7%"><a href="#" class="search" data-filter="性质" data-type="string">按性质</a></td><?php endif ?>
 <!--                        <td width="15%"><a href="#" class="search" >按等级时间（序列）</a></td>-->
-                        <td width="12%"><a href="#" class="search" data-filter="性质类别<?php echo $meetingInf['category']?>" data-type="string">按性质类别</a></td>
+                        <td width="10%"><a href="#" class="search" data-filter="性质类别<?php echo $meetingInf['category']?>" data-type="string">按性质类别</a></td>
                         <td width="10%;"><a href="#" class="search" data-filter="状态" data-type="string">按状态</a></td>
                         <td width="10%;"><a href="#" class="search" data-filter="<?php echo 1==$meetingInf['category']?'领衔人':'提案人'?>" data-type="duty">按<?php echo 1==$meetingInf['category']?'领衔人':'提案人'?></a></td>
-                        <td width="12%"><a href="#" class="search" data-filter="主办单位" data-type="unit">按主办单位</a></td>
-                        <td width="12%;"><a href="#" class="search" data-filter="协办单位" data-type="unit">按协办单位</a></td>
+                        <td width="10%"><a href="#" class="search" data-filter="主办单位" data-type="unit">按主办单位</a></td>
+                        <td width="10%;"><a href="#" class="search" data-filter="协办单位" data-type="unit">按协办单位</a></td>
 <!--                        <td width="8%"><a href="#">查询</a></td>-->
                         <td width="8%"><a href="#">统计</a></td>
                     </tr>
