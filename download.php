@@ -39,6 +39,10 @@ function motion_1_list(){
     include 'view/formated_out.html.php';
     exit;
 }
+
+/**
+ * 政协界别统计
+ */
 function sta1(){
     $fieldCount=3;
     $meeting='all'==$_SESSION['staffLogin']['meeting']?2:$_SESSION['staffLogin']['meeting'];
@@ -62,6 +66,10 @@ function sta1(){
     include 'view/formated_out.html.php';
     exit;
 }
+
+/**
+ * 政协委组统计
+ */
 function sta2(){
     $fieldCount=3;
     $meeting='all'==$_SESSION['staffLogin']['meeting']?2:$_SESSION['staffLogin']['meeting'];
@@ -85,6 +93,8 @@ function sta2(){
     include 'view/formated_out.html.php';
     exit;
 }
+
+
 
 
 function getMeetingName($meetingId){

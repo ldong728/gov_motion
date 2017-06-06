@@ -671,6 +671,29 @@ function editMotion($data)
     return;
 }
 
+
+/**
+ * 返回搜索框
+ */
+function searchMotionView($data){
+    $where=array();
+    $where['category']=isset($data['category'])?$data['category']:1;
+    if(isset($data['meeting'])){
+        $meetingName=pdoQuery('meeting_tbl',array('meeting_name'),array('meeting_id'=>$data['meeting']),'limit 1')->fetch()['meeting_name'];
+    }
+    $module=array();
+    $query=pdoQuery('motion_attr_view',null,array('motion_template'=>$where['category']),null);
+    foreach ($query as $row) {
+        $module['attr_name']=$row;
+    }
+    include '/view/search.html.php';
+    return;
+
+
+
+
+}
+
 /**
  * 解析motion_view中获取的数据，将索引或时间戳转换成可显示的值
  * @param  motion_view中的一条数据
