@@ -1,8 +1,11 @@
 <?php global $meetingInf?>
 <script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
+<script src="js/search.js?v=<?php echo rand(1000, 9999) ?>"></script>
 <script>
     var staff=eval('('+'<?php echo json_encode($_SESSION['staffLogin'])?>'+')');
+    var category=<?php echo $meetingInf['category']?>;
+    var meetingId=<?php echo $meetingInf['meeting_id']?>;
     var place='meeting';
 </script>
 <body>
@@ -56,7 +59,7 @@
                         <td width="10%;"><a href="#" class="search" data-filter="<?php echo 1==$meetingInf['category']?'领衔人':'提案人'?>" data-type="duty">按<?php echo 1==$meetingInf['category']?'领衔人':'提案人'?></a></td>
                         <td width="10%"><a href="#" class="search" data-filter="主办单位" data-type="unit">按主办单位</a></td>
                         <td width="10%;"><a href="#" class="search" data-filter="协办单位" data-type="unit">按协办单位</a></td>
-<!--                        <td width="8%"><a href="#">查询</a></td>-->
+                        <td width="8%"><a href="#" class="multiple-search">查询</a></td>
                         <td width="8%"><a href="#">统计</a></td>
                     </tr>
                     </tbody>

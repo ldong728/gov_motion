@@ -321,7 +321,7 @@ function ajaxMotionList($data)
         $searchQuery=new PDOStatement();
         switch ($attrType) {
             case 'int':
-                $searchQuery = pdoQuery('motion_view', array('motion_id'), array('attr_name' => $attrName, 'content_int' => $attrType), null);
+                $searchQuery = pdoQuery('motion_view', array('motion_id'), array('attr_name' => $attrName, 'content_int' => $attrValue), null);
                 break;
             case 'duty':
                 $searchDuty=pdoQuery('duty_view',array('duty_id'),null,'where user_name like "%'.$attrValue.'%"')->fetchAll();
@@ -676,15 +676,19 @@ function editMotion($data)
  * 返回搜索框
  */
 function searchMotionView($data){
+
     $where=array();
+    mylog(getArrayInf($data));
     $where['category']=isset($data['category'])?$data['category']:1;
+    $meetingInf['category']=$where['category'];
     if(isset($data['meeting'])){
         $meetingName=pdoQuery('meeting_tbl',array('meeting_name'),array('meeting_id'=>$data['meeting']),'limit 1')->fetch()['meeting_name'];
     }
-    $module=array();
+    $motion=array();
     $query=pdoQuery('motion_attr_view',null,array('motion_template'=>$where['category']),null);
     foreach ($query as $row) {
-        $module['attr_name']=$row;
+        if($row['option'])$row['option']=json_decode($row['option'],true);
+        $motion[$row['attr_name']]=$row;
     }
     include '/view/search.html.php';
     return;

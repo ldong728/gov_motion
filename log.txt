@@ -1,47 +1,322 @@
-2017.06.04.11:47:42:D:\xampp\htdocs\gov_motion\download.php61:{28: {0: ä¸­å…±ç•Œ,1: 3,2: 0}29: {0: ä¾¨è”ç•Œ,1: 16,2: 0}30: {0: å…±é’å›¢é’è”ç•Œ,1: 15,2: 0}31: {0: å†œä¸šå†œæ‘ç•Œ,1: 26,2: 0}32: {0: åŒ»è¯å«ç”Ÿç•Œ,1: 20,2: 0}33: {0: å°è”ç•Œ,1: 11,2: 0}34: {0: å¦‡è”ç•Œ,1: 12,2: 0}35: {0: å·¥å•†è”ç•Œ,1: 25,2: 0}36: {0: æ€»å·¥ä¼šç•Œ,1: 11,2: 0}37: {0: æ•™è‚²ç•Œ,1: 23,2: 0}38: {0: æ–‡ä½“æ–°é—»å‡ºç‰ˆç•Œ,1: 17,2: 0}39: {0: æ— å…šæ´¾äººå£«ç•Œ,1: 8,2: 0}40: {0: æ°‘ä¸»å…šæ´¾äººå£«ç•Œ,1: 61,2: 0}41: {0: æ°‘æ—å®—æ•™ç•Œ,1: 14,2: 0}42: {0: ç‰¹é‚€ç•Œ,1: 23,2: 0}43: {0: ç¤¾ä¼šç¦åˆ©å’Œä¿éšœç•Œ,1: 7,2: 0}44: {0: ç¤¾ä¼šç§‘å­¦ç•Œ,1: 8,2: 0}45: {0: ç§‘æŠ€ç§‘åï¼ˆäººæ‰åŠï¼‰,1: 2,2: 0}46: {0: ç§‘æŠ€ç§‘åï¼ˆç§‘åï¼‰,1: 11,2: 0}47: {0: ç§‘æŠ€ç§‘åï¼ˆç§‘æŠ€ï¼‰,1: 14,2: 0}48: {0: ç»æµç•Œ,1: 46,2: 0}}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ä¸­å…±ç•Œ,1: 3,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ä¾¨è”ç•Œ,1: 16,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: å…±é’å›¢é’è”ç•Œ,1: 15,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: å†œä¸šå†œæ‘ç•Œ,1: 26,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: åŒ»è¯å«ç”Ÿç•Œ,1: 20,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: å°è”ç•Œ,1: 11,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: å¦‡è”ç•Œ,1: 12,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: å·¥å•†è”ç•Œ,1: 25,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: æ€»å·¥ä¼šç•Œ,1: 11,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: æ•™è‚²ç•Œ,1: 23,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: æ–‡ä½“æ–°é—»å‡ºç‰ˆç•Œ,1: 17,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: æ— å…šæ´¾äººå£«ç•Œ,1: 8,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: æ°‘ä¸»å…šæ´¾äººå£«ç•Œ,1: 61,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: æ°‘æ—å®—æ•™ç•Œ,1: 14,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ç‰¹é‚€ç•Œ,1: 23,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ç¤¾ä¼šç¦åˆ©å’Œä¿éšœç•Œ,1: 7,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ç¤¾ä¼šç§‘å­¦ç•Œ,1: 8,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ç§‘æŠ€ç§‘åï¼ˆäººæ‰åŠï¼‰,1: 2,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ç§‘æŠ€ç§‘åï¼ˆç§‘åï¼‰,1: 11,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ç§‘æŠ€ç§‘åï¼ˆç§‘æŠ€ï¼‰,1: 14,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php59:{0: ç»æµç•Œ,1: 46,2: 0}
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php60:0
-2017.06.04.11:55:14:D:\xampp\htdocs\gov_motion\download.php63:{28: {0: ä¸­å…±ç•Œ,1: 3,2: 0}29: {0: ä¾¨è”ç•Œ,1: 16,2: 0}30: {0: å…±é’å›¢é’è”ç•Œ,1: 15,2: 0}31: {0: å†œä¸šå†œæ‘ç•Œ,1: 26,2: 0}32: {0: åŒ»è¯å«ç”Ÿç•Œ,1: 20,2: 0}33: {0: å°è”ç•Œ,1: 11,2: 0}34: {0: å¦‡è”ç•Œ,1: 12,2: 0}35: {0: å·¥å•†è”ç•Œ,1: 25,2: 0}36: {0: æ€»å·¥ä¼šç•Œ,1: 11,2: 0}37: {0: æ•™è‚²ç•Œ,1: 23,2: 0}38: {0: æ–‡ä½“æ–°é—»å‡ºç‰ˆç•Œ,1: 17,2: 0}39: {0: æ— å…šæ´¾äººå£«ç•Œ,1: 8,2: 0}40: {0: æ°‘ä¸»å…šæ´¾äººå£«ç•Œ,1: 61,2: 0}41: {0: æ°‘æ—å®—æ•™ç•Œ,1: 14,2: 0}42: {0: ç‰¹é‚€ç•Œ,1: 23,2: 0}43: {0: ç¤¾ä¼šç¦åˆ©å’Œä¿éšœç•Œ,1: 7,2: 0}44: {0: ç¤¾ä¼šç§‘å­¦ç•Œ,1: 8,2: 0}45: {0: ç§‘æŠ€ç§‘åï¼ˆäººæ‰åŠï¼‰,1: 2,2: 0}46: {0: ç§‘æŠ€ç§‘åï¼ˆç§‘åï¼‰,1: 11,2: 0}47: {0: ç§‘æŠ€ç§‘åï¼ˆç§‘æŠ€ï¼‰,1: 14,2: 0}48: {0: ç»æµç•Œ,1: 46,2: 0}}
-2017.06.04.12:01:08:D:\xampp\htdocs\gov_motion\download.php61:{28: {0: ä¸­å…±ç•Œ,1: 3,2: 0.77922077922078}29: {0: ä¾¨è”ç•Œ,1: 16,2: 4.1558441558442}30: {0: å…±é’å›¢é’è”ç•Œ,1: 15,2: 3.8961038961039}31: {0: å†œä¸šå†œæ‘ç•Œ,1: 26,2: 6.7532467532468}32: {0: åŒ»è¯å«ç”Ÿç•Œ,1: 20,2: 5.1948051948052}33: {0: å°è”ç•Œ,1: 11,2: 2.8571428571429}34: {0: å¦‡è”ç•Œ,1: 12,2: 3.1168831168831}35: {0: å·¥å•†è”ç•Œ,1: 25,2: 6.4935064935065}36: {0: æ€»å·¥ä¼šç•Œ,1: 11,2: 2.8571428571429}37: {0: æ•™è‚²ç•Œ,1: 23,2: 5.974025974026}38: {0: æ–‡ä½“æ–°é—»å‡ºç‰ˆç•Œ,1: 17,2: 4.4155844155844}39: {0: æ— å…šæ´¾äººå£«ç•Œ,1: 8,2: 2.0779220779221}40: {0: æ°‘ä¸»å…šæ´¾äººå£«ç•Œ,1: 61,2: 15.844155844156}41: {0: æ°‘æ—å®—æ•™ç•Œ,1: 14,2: 3.6363636363636}42: {0: ç‰¹é‚€ç•Œ,1: 23,2: 5.974025974026}43: {0: ç¤¾ä¼šç¦åˆ©å’Œä¿éšœç•Œ,1: 7,2: 1.8181818181818}44: {0: ç¤¾ä¼šç§‘å­¦ç•Œ,1: 8,2: 2.0779220779221}45: {0: ç§‘æŠ€ç§‘åï¼ˆäººæ‰åŠï¼‰,1: 2,2: 0.51948051948052}46: {0: ç§‘æŠ€ç§‘åï¼ˆç§‘åï¼‰,1: 11,2: 2.8571428571429}47: {0: ç§‘æŠ€ç§‘åï¼ˆç§‘æŠ€ï¼‰,1: 14,2: 3.6363636363636}48: {0: ç»æµç•Œ,1: 46,2: 11.948051948052}}
-2017.06.04.12:03:16:D:\xampp\htdocs\gov_motion\download.php61:{28: {0: ä¸­å…±ç•Œ,1: 3,2: 0.78%}29: {0: ä¾¨è”ç•Œ,1: 16,2: 4.16%}30: {0: å…±é’å›¢é’è”ç•Œ,1: 15,2: 3.90%}31: {0: å†œä¸šå†œæ‘ç•Œ,1: 26,2: 6.75%}32: {0: åŒ»è¯å«ç”Ÿç•Œ,1: 20,2: 5.19%}33: {0: å°è”ç•Œ,1: 11,2: 2.86%}34: {0: å¦‡è”ç•Œ,1: 12,2: 3.12%}35: {0: å·¥å•†è”ç•Œ,1: 25,2: 6.49%}36: {0: æ€»å·¥ä¼šç•Œ,1: 11,2: 2.86%}37: {0: æ•™è‚²ç•Œ,1: 23,2: 5.97%}38: {0: æ–‡ä½“æ–°é—»å‡ºç‰ˆç•Œ,1: 17,2: 4.42%}39: {0: æ— å…šæ´¾äººå£«ç•Œ,1: 8,2: 2.08%}40: {0: æ°‘ä¸»å…šæ´¾äººå£«ç•Œ,1: 61,2: 15.84%}41: {0: æ°‘æ—å®—æ•™ç•Œ,1: 14,2: 3.64%}42: {0: ç‰¹é‚€ç•Œ,1: 23,2: 5.97%}43: {0: ç¤¾ä¼šç¦åˆ©å’Œä¿éšœç•Œ,1: 7,2: 1.82%}44: {0: ç¤¾ä¼šç§‘å­¦ç•Œ,1: 8,2: 2.08%}45: {0: ç§‘æŠ€ç§‘åï¼ˆäººæ‰åŠï¼‰,1: 2,2: 0.52%}46: {0: ç§‘æŠ€ç§‘åï¼ˆç§‘åï¼‰,1: 11,2: 2.86%}47: {0: ç§‘æŠ€ç§‘åï¼ˆç§‘æŠ€ï¼‰,1: 14,2: 3.64%}48: {0: ç»æµç•Œ,1: 46,2: 11.95%}}
-2017.06.04.12:07:11:D:\xampp\htdocs\gov_motion\download.php84:{685: {0: å†œä¸šå†œæ‘ç»„,1: 13,2: 3.38%}686: {0: åŒ¡å °é•‡,1: 9,2: 2.34%}687: {0: åŒ»å«ç»„,1: 20,2: 5.19%}688: {0: å¤å¡˜è¡—é“,1: 9,2: 2.34%}689: {0: å‘¨å··é•‡,1: 18,2: 4.68%}690: {0: åå¢©è¡—é“,1: 12,2: 3.12%}691: {0: åŸäº¤ç¯ç»„,1: 11,2: 2.86%}692: {0: å®—æ±‰è¡—é“,1: 12,2: 3.12%}693: {0: å´‡å¯¿é•‡,1: 17,2: 4.42%}694: {0: åºµä¸œé•‡,1: 16,2: 4.16%}695: {0: æŒèµ·é•‡,1: 9,2: 2.34%}696: {0: æ•™è‚²ç»„,1: 21,2: 5.45%}697: {0: æ–‡ä½“æ–°é—»ç»„,1: 14,2: 3.64%}698: {0: æ–°æµ¦é•‡,1: 11,2: 2.86%}700: {0: æ¡¥å¤´é•‡,1: 11,2: 2.86%}701: {0: æ¨ªæ²³é•‡,1: 14,2: 3.64%}702: {0: æµ’å±±è¡—é“,1: 13,2: 3.38%}703: {0: æ¸¯æ¾³å°ä¾¨ç»„,1: 7,2: 1.82%}704: {0: ç™½æ²™è·¯è¡—é“,1: 11,2: 2.86%}705: {0: ç¤¾ä¼šæ³•åˆ¶ç»„,1: 18,2: 4.68%}706: {0: ç»æµç§‘æŠ€ç»„,1: 14,2: 3.64%}707: {0: èƒœå±±é•‡,1: 12,2: 3.12%}708: {0: è§‚æµ·å«é•‡,1: 13,2: 3.38%}709: {0: è´¢è´¸ç»„,1: 14,2: 3.64%}710: {0: é€æ—é•‡,1: 12,2: 3.12%}711: {0: é•¿æ²³é•‡,1: 12,2: 3.12%}712: {0: é™„æµ·é•‡,1: 10,2: 2.60%}713: {0: é¾™å±±é•‡,1: 17,2: 4.42%}}
+2017.06.01.02:13:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.01.02:13:29:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sspscgwhbgs,status:SUCCESS
+2017.06.01.02:37:33:E:\xampp\htdocs\gov_motion\functions.php92:limit > 0
+2017.06.01.03:02:59:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzzjjbgs,status:SUCCESS
+2017.06.01.03:10:20:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzzjjbgs,status:SUCCESS
+2017.06.01.03:11:08:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swxcbbzs3,status:SUCCESS
+2017.06.01.03:11:14:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swxcbbgs,status:SUCCESS
+2017.06.01.03:11:49:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swxcbbgs,status:SUCCESS
+2017.06.01.03:12:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzzjjbgs,status:SUCCESS
+2017.06.01.03:17:50:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjrbjrk,status:SUCCESS
+2017.06.01.03:20:38:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sldjfgk,status:SUCCESS
+2017.06.01.03:20:41:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sldjbgs,status:SUCCESS
+2017.06.01.03:22:08:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smylsjhyk,status:SUCCESS
+2017.06.01.03:22:09:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smylsjbgs,status:SUCCESS
+2017.06.01.03:23:06:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smylsjhyk,status:SUCCESS
+2017.06.01.04:21:09:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swxcbbgs,status:SUCCESS
+2017.06.01.04:22:50:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.01.04:23:13:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swxcbbgs,status:SUCCESS
+2017.06.01.04:32:51:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swxcbbgs,status:SUCCESS
+2017.06.01.05:08:54:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scjwbgs,status:SUCCESS
+2017.06.01.07:52:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.01.08:17:41:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.01.08:24:47:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:shbjstb,status:SUCCESS
+2017.06.01.08:25:36:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:shbjstb,status:SUCCESS
+2017.06.01.08:26:29:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.01.08:26:29:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.01.08:27:17:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:shbjstb,status:SUCCESS
+2017.06.01.08:27:51:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:shbjbgs,status:SUCCESS
+2017.06.01.08:28:21:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:shbjstb,status:SUCCESS
+2017.06.01.08:28:31:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:shbjbgs,status:SUCCESS
+2017.06.01.08:31:33:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfbhdh,status:SUCCESS
+2017.06.01.08:31:56:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szfdcs,status:SUCCESS
+2017.06.01.08:31:56:E:\xampp\htdocs\gov_motion\functions.php92:limit > 0
+2017.06.01.08:31:56:E:\xampp\htdocs\gov_motion\functions.php92:limit > 0
+2017.06.01.08:32:02:E:\xampp\htdocs\gov_motion\functions.php92:limit > 0
+2017.06.01.08:32:22:E:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_tbl SET step="5" WHERE motion_id="273"
+2017.06.01.08:32:22:E:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_handler_tbl SET status="7" WHERE motion="273" AND status="1"
+2017.06.01.08:32:22:E:\xampp\htdocs\gov_motion\functions.php92:limit > 0
+2017.06.01.08:33:00:E:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_tbl SET step="5" WHERE motion_id="68"
+2017.06.01.08:33:00:E:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_handler_tbl SET status="7" WHERE motion="68" AND status="1"
+2017.06.01.08:37:19:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scn6,status:SUCCESS
+2017.06.01.08:50:37:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbfws,status:SUCCESS
+2017.06.01.08:53:58:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scn6,status:SUCCESS
+2017.06.01.09:13:22:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scn6,status:SUCCESS
+2017.06.01.09:13:56:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scngzjszhb,status:SUCCESS
+2017.06.01.10:20:16:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjiaowbgs,status:SUCCESS
+2017.06.01.10:22:56:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjiaowbgs,status:SUCCESS
+2017.06.01.10:23:10:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szfdcs,status:SUCCESS
+2017.06.01.10:23:32:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.01.11:05:37:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjggws,status:SUCCESS
+2017.06.01.11:06:32:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.02.02:39:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scjwbgs,status:SUCCESS
+2017.06.02.02:39:18:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjggws,status:SUCCESS
+2017.06.02.02:40:00:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.02.02:42:13:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjsjszc,status:SUCCESS
+2017.06.02.02:42:29:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw,status:SUCCESS
+2017.06.02.02:43:19:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjsjszc,status:SUCCESS
+2017.06.02.02:46:35:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjsjszc,status:SUCCESS
+2017.06.02.02:46:50:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scjwbgs,status:SUCCESS
+2017.06.02.02:50:22:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjsjszc,status:SUCCESS
+2017.06.02.02:50:34:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scjwbgs,status:SUCCESS
+2017.06.02.02:53:01:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjsjszc,status:SUCCESS
+2017.06.02.02:53:33:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scjwbgs,status:SUCCESS
+2017.06.02.02:56:33:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjgnjjhz,status:SUCCESS
+2017.06.02.02:56:49:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.02.02:56:50:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.02.03:52:18:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smylsjbgs,status:SUCCESS
+2017.06.02.04:10:18:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smylsjbgs,status:SUCCESS
+2017.06.02.04:11:54:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjtzkjk,status:SUCCESS
+2017.06.02.04:12:01:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjtzkjk,status:SUCCESS
+2017.06.02.04:12:27:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.02.04:13:30:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.02.05:13:43:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjggws,status:SUCCESS
+2017.06.02.05:14:37:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs  ,status:INVALID
+2017.06.02.05:14:37:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs  ,status:INVALID
+2017.06.02.05:14:42:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.02.05:14:42:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.02.05:15:11:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.02.06:28:00:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbdys,status:SUCCESS
+2017.06.02.07:51:21:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swzfw9,status:SUCCESS
+2017.06.02.07:51:24:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swzfwbgs,status:SUCCESS
+2017.06.02.08:13:08:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.02.08:13:25:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:
+2017.06.02.08:13:39:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:
+2017.06.02.08:14:08:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:SUCCESS
+2017.06.02.08:17:28:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.02.08:18:15:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:SUCCESS
+2017.06.02.08:24:27:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.02.08:24:52:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:SUCCESS
+2017.06.02.08:27:32:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.02.08:28:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.02.08:46:36:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:dljjz,status:SUCCESS
+2017.06.02.09:16:22:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjiaowbgs,status:SUCCESS
+2017.06.02.09:49:33:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbsj,status:SUCCESS
+2017.06.02.09:55:14:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.02.10:06:56:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs ,status:INVALID
+2017.06.02.10:06:57:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs ,status:INVALID
+2017.06.02.10:07:10:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.02.10:09:27:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.05.02:26:30:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.05.02:26:48:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw,status:SUCCESS
+2017.06.05.02:27:43:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw,status:SUCCESS
+2017.06.05.03:05:45:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.05.03:07:03:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.05.03:07:09:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:SUCCESS
+2017.06.05.03:27:50:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.05.03:56:21:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scjwbgs,status:SUCCESS
+2017.06.05.04:41:16:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:SUCCESS
+2017.06.05.04:57:30:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.05.05:10:38:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sshjzzb4,status:SUCCESS
+2017.06.05.05:21:39:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.05.05:34:51:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.05.05:35:14:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.05.05:35:46:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgj5,status:SUCCESS
+2017.06.05.05:35:54:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgj5,status:SUCCESS
+2017.06.05.05:36:09:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.05.05:36:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.05.05:40:23:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.05.08:38:59:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.05.08:49:36:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szkjzhk,status:SUCCESS
+2017.06.05.08:55:01:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.05.09:00:06:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szfdcs,status:SUCCESS
+2017.06.05.09:05:42:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjrbjrk,status:SUCCESS
+2017.06.05.09:10:04:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjfgy,status:
+2017.06.05.09:10:34:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjfgy,status:SUCCESS
+2017.06.05.09:44:39:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:whswqzhk,status:SUCCESS
+2017.06.05.10:12:27:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgj8,status:SUCCESS
+2017.06.05.10:12:37:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgj8,status:SUCCESS
+2017.06.05.10:13:20:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.05.10:16:48:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjrbjrk,status:SUCCESS
+2017.06.05.10:36:02:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:                               ,status:INVALID
+2017.06.05.10:36:07:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scgbbgs,status:SUCCESS
+2017.06.05.13:05:01:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.06.02:33:48:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.06.02:33:54:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swtjbgs,status:SUCCESS
+2017.06.06.03:01:49:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szfdcs,status:SUCCESS
+2017.06.06.03:30:04:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjxxh,status:SUCCESS
+2017.06.06.03:30:32:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:
+2017.06.06.03:30:32:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:FAIL
+2017.06.06.03:32:39:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.06.03:36:26:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:FAIL
+2017.06.06.03:36:27:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:FAIL
+2017.06.06.03:39:10:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.06.04:27:36:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw,status:SUCCESS
+2017.06.06.05:11:48:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.06.05:43:50:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:snyjbgs,status:SUCCESS
+2017.06.06.08:46:48:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:snyjbgs,status:SUCCESS
+2017.06.06.09:14:46:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.06.09:19:17:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.06.09:26:15:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.06.09:31:46:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.06.09:32:30:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.06.09:33:14:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.06.09:33:58:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.06.09:44:41:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:stgjbgs,status:SUCCESS
+2017.06.06.09:49:41:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjhszh,status:SUCCESS
+2017.06.06.09:55:01:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.06.09:59:50:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjhszh,status:SUCCESS
+2017.06.06.10:00:08:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.06.10:04:19:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.06.10:05:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjhszh,status:SUCCESS
+2017.06.06.10:05:30:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.06.10:24:05:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjhszh,status:SUCCESS
+2017.06.06.10:24:55:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.07.03:01:07:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:snyjbgs,status:SUCCESS
+2017.06.07.03:03:40:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjggws,status:SUCCESS
+2017.06.07.03:04:29:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.07.03:05:33:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sspscgwhbgs,status:SUCCESS
+2017.06.07.03:13:33:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.07.03:15:23:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sspscgwhbgs,status:SUCCESS
+2017.06.07.03:19:07:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.07.03:24:23:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.07.03:24:56:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzjbgs,status:SUCCESS
+2017.06.07.03:51:32:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.07.03:52:28:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sgslbgs,status:SUCCESS
+2017.06.07.04:50:18:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbfws,status:SUCCESS
+2017.06.07.06:24:11:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sspscgwhbgs,status:SUCCESS
+2017.06.07.07:56:24:E:\xampp\htdocs\gov_motion\download.php131:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ½ÌÓı¾Ö,sub_handle: å¸‚ç¼–å§”åŠ,°¸ºÅ: 3,°¸ÓÉ: ¹ØÓÚ¼Ó´óÍ¶ÈëÌáÉıÎÒÊĞÆÕÍ¨¸ßÖĞ°ìÑ§Ë®×¼µÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13738801566}
+2017.06.07.07:59:35:E:\xampp\htdocs\gov_motion\download.php131:not a array: 5355194888
+2017.06.07.08:00:32:E:\xampp\htdocs\gov_motion\download.php131:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ½ÌÓı¾Ö,sub_handle: å¸‚ä½å»ºå±€,°¸ºÅ: 2,°¸ÓÉ: ¹ØÓÚÍÆ½øÎÒÊĞÓÅÖÊÑ§Ç°½ÌÓıµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 18906748006}
+2017.06.07.08:08:03:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szfdcs,status:SUCCESS
+2017.06.07.08:09:08:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ½ÌÓı¾Ö,sub_handle: å¸‚è´¢æ”¿åœ°ç¨å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€,°¸ºÅ: 39,°¸ÓÉ: ¹ØÓÚÈ«ÊĞÃñ°ìÑ§Ğ£ÖĞ¹«°ì±àÖÆ½ÌÊ¦½øĞĞÑøÀÏ½ğ²¢¹ìµÄ½¨Òé,user_name: ½¯  ÈØ,phone: 15355194888}
+2017.06.07.08:12:04:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbfws,status:SUCCESS
+2017.06.07.08:12:08:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÎ¯°ì,sub_handle: å¸‚åºœåŠï¼Œå¸‚å§”å®£ä¼ éƒ¨ï¼Œå¸‚æœºå…³å…šå·¥å§”ï¼Œå¸‚å§”å…šæ ¡ï¼Œå¸‚å§”ç»„ç»‡éƒ¨ï¼Œå¸‚è¡Œæ”¿æœåŠ¡ä¸­å¿ƒï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€ï¼Œå¸‚æœºå…³äº‹åŠ¡ç®¡ç†å±€ï¼Œå¸‚çºªå§”ï¼ˆç›‘å¯Ÿå±€ï¼‰,°¸ºÅ: 84,°¸ÓÉ: ¹ØÓÚ¼ÓÇ¿ºÍÌá¸ßÕşÎñÀñÒÇ¹æ·¶µÄ½¨Òé,user_name: ÖÜ  Åå,phone: 13958286288}
+2017.06.07.08:12:26:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ¹æ»®¾Ö,sub_handle: å¸‚æ•™è‚²å±€ï¼Œå¸‚ä½å»ºå±€ï¼Œç™½æ²™è·¯è¡—é“,°¸ºÅ: 100,°¸ÓÉ: ¹ØÓÚ´òÍ¨´ÈÏª°×É³½ÖµÀÄÏ°×ºÓÂ·¶ÏÍ·Â·µÄ½¨Òé,user_name: ÖÜÑë¶ù,phone: 13606884646}
+2017.06.07.08:13:41:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÎ¯°ì,sub_handle: å¸‚åºœåŠï¼Œå¸‚å§”å®£ä¼ éƒ¨ï¼Œå¸‚æœºå…³å…šå·¥å§”ï¼Œå¸‚å§”å…šæ ¡ï¼Œå¸‚å§”ç»„ç»‡éƒ¨ï¼Œå¸‚è¡Œæ”¿æœåŠ¡ä¸­å¿ƒï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€ï¼Œå¸‚æœºå…³äº‹åŠ¡ç®¡ç†å±€ï¼Œå¸‚çºªå§”ï¼ˆç›‘å¯Ÿå±€ï¼‰,°¸ºÅ: 84,°¸ÓÉ: ¹ØÓÚ¼ÓÇ¿ºÍÌá¸ßÕşÎñÀñÒÇ¹æ·¶µÄ½¨Òé,user_name: ÖÜ  Åå,phone: 13958286288}
+2017.06.07.09:11:53:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.07.09:12:01:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ½ÌÓı¾Ö,sub_handle: å¸‚ä½å»ºå±€,°¸ºÅ: 2,°¸ÓÉ: ¹ØÓÚÍÆ½øÎÒÊĞÓÅÖÊÑ§Ç°½ÌÓıµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 18906748006}
+2017.06.07.09:23:40:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sspscgwhbgs,status:SUCCESS
+2017.06.07.09:24:41:E:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_tbl SET step="6" WHERE motion_id="161"
+2017.06.07.09:34:37:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ·¢Õ¹¸Ä¸ï¾Ö,sub_handle: å¸‚å§”ç»„ç»‡éƒ¨ï¼Œå¸‚ç»ä¿¡å±€ï¼Œå¸‚ç§‘æŠ€å±€ï¼Œå¸‚æµåŠ¨äººå£å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€ï¼Œå¸‚äº¤é€šè¿è¾“å±€ï¼Œå¸‚ç¯æ­å·æ¹¾åˆ›æ–°ä¸­å¿ƒï¼Œå¸‚æ‹›å•†å±€,°¸ºÅ: 10,°¸ÓÉ: ¹ØÓÚÈÚÈë³¤Èı½ÇÄ±ÇóĞÂ·¢Õ¹ÍÆ¶¯¾­¼ÃĞÂ³£Ì¬ÏÂ´ÈÏª·¢Õ¹Ë®Æ½ÔÙÌáÉıµÄ½¨Òé,user_name: Ãñ½¨´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13819888158}
+2017.06.07.09:35:13:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ×¡½¨¾Ö,sub_handle: å¸‚å…¬å®‰å±€ï¼Œå¸‚è´¢æ”¿åœ°ç¨å±€ï¼Œå¸‚è§„åˆ’å±€ï¼Œå¸‚äº¤é€šè¿è¾“å±€ï¼Œå¸‚ç»¼åˆè¡Œæ”¿æ‰§æ³•å±€ï¼ˆå¸‚åŸç®¡å±€ï¼‰,°¸ºÅ: 351,°¸ÓÉ: ¹ØÓÚÍÆ½ø³ÇÇøÂıĞĞ½»Í¨ÏµÍ³½¨ÉèµÄ½¨Òé,user_name: ÓİÖÒÄÜ,phone: 13706748208}
+2017.06.07.09:35:36:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ×¡½¨¾Ö,sub_handle: å¸‚å…¬å®‰å±€ï¼Œå¸‚è´¢æ”¿åœ°ç¨å±€ï¼Œå¸‚è§„åˆ’å±€ï¼Œå¸‚äº¤é€šè¿è¾“å±€ï¼Œå¸‚ç»¼åˆè¡Œæ”¿æ‰§æ³•å±€ï¼ˆå¸‚åŸç®¡å±€ï¼‰,°¸ºÅ: 351,°¸ÓÉ: ¹ØÓÚÍÆ½ø³ÇÇøÂıĞĞ½»Í¨ÏµÍ³½¨ÉèµÄ½¨Òé,user_name: ÓİÖÒÄÜ,phone: 13706748208}
+2017.06.07.09:48:46:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ½ÌÓı¾Ö,sub_handle: å›¢å¸‚å§”ï¼Œå¸‚å¦‡è”ï¼Œå¸‚ç§‘åï¼Œå¸‚è´¢æ”¿åœ°ç¨å±€,°¸ºÅ: 346,°¸ÓÉ: ¹ØÓÚ¼ÓÇ¿ÇàÉÙÄêĞ£Íâ½ÌÓı¹ÜÀíµÄ½¨Òé,user_name: ĞìÃÏµÏ,phone: 13805810922}
+2017.06.07.10:10:57:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ×¡½¨¾Ö,sub_handle: å¸‚å…¬å®‰å±€ï¼Œå¸‚è§„åˆ’å±€ï¼Œå¸‚äº¤é€šè¿è¾“å±€ï¼Œå¸‚ç»¼åˆè¡Œæ”¿æ‰§æ³•å±€ï¼ˆå¸‚åŸç®¡å±€ï¼‰,°¸ºÅ: 355,°¸ÓÉ: ¹ØÓÚ»º½âÎÒÊĞ³ÇÇø¡°Í£³µÄÑ¡±ÎÊÌâµÄ½¨Òé,user_name: Ò¦»ÛÀö,phone: 13626824444}
+2017.06.07.10:33:49:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:snyjbgs,status:SUCCESS
+2017.06.07.10:44:58:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:shbjbgs,status:SUCCESS
+2017.06.07.13:06:47:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:ssfjbgs,status:SUCCESS
+2017.06.08.02:19:38:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.08.02:51:34:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjjjyhk,status:SUCCESS
+2017.06.08.02:51:57:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.08.03:44:11:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbfws,status:SUCCESS
+2017.06.08.03:44:14:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÎ¯°ì,sub_handle: å¸‚åºœåŠï¼Œå¸‚å§”å®£ä¼ éƒ¨ï¼Œå¸‚æœºå…³å…šå·¥å§”ï¼Œå¸‚å§”å…šæ ¡ï¼Œå¸‚å§”ç»„ç»‡éƒ¨ï¼Œå¸‚è¡Œæ”¿æœåŠ¡ä¸­å¿ƒï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€ï¼Œå¸‚æœºå…³äº‹åŠ¡ç®¡ç†å±€ï¼Œå¸‚çºªå§”ï¼ˆç›‘å¯Ÿå±€ï¼‰,°¸ºÅ: 84,°¸ÓÉ: ¹ØÓÚ¼ÓÇ¿ºÍÌá¸ßÕşÎñÀñÒÇ¹æ·¶µÄ½¨Òé,user_name: ÖÜ  Åå,phone: 13958286288}
+2017.06.08.04:03:46:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzjbgs,status:SUCCESS
+2017.06.08.04:05:13:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbdcs,status:SUCCESS
+2017.06.08.04:05:20:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjtzkjk,status:SUCCESS
+2017.06.08.04:05:55:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.08.04:10:10:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sbwbzhk1,status:SUCCESS
+2017.06.08.04:41:41:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:snyjbgs,status:SUCCESS
+2017.06.08.04:52:46:E:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_tbl SET step="6" WHERE motion_id="429"
+2017.06.08.05:01:07:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjjtfzk,status:SUCCESS
+2017.06.08.05:01:27:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.08.05:02:36:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.08.08:10:30:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sawb2,status:SUCCESS
+2017.06.08.08:11:16:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.08.08:37:34:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.08.08:37:48:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.08.08:42:58:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swjzzpgb,status:SUCCESS
+2017.06.08.08:43:10:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swjzzpgb,status:SUCCESS
+2017.06.08.08:43:16:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swjzzpgb,status:SUCCESS
+2017.06.08.08:44:07:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.08.08:44:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.08.08:53:58:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.08.08:54:03:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.08.09:16:11:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:skwbgs,status:SUCCESS
+2017.06.08.09:26:24:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.09.02:09:55:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swxcbbgs,status:SUCCESS
+2017.06.09.02:33:53:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.09.02:40:28:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.09.02:48:04:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sflbgs,status:SUCCESS
+2017.06.09.02:49:08:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sflbgs,status:SUCCESS
+2017.06.09.02:59:28:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.09.02:59:33:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzjbgs,status:SUCCESS
+2017.06.09.03:06:11:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:qtzdzb,status:SUCCESS
+2017.06.09.03:12:15:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbzys,status:SUCCESS
+2017.06.09.03:14:28:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfwzgbzhk,status:SUCCESS
+2017.06.09.03:17:09:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfwzgbzhk,status:SUCCESS
+2017.06.09.03:27:14:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbdcs,status:
+2017.06.09.03:27:22:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbdcs,status:SUCCESS
+2017.06.09.03:35:08:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:stgjbgs,status:SUCCESS
+2017.06.09.03:37:13:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw,status:SUCCESS
+2017.06.09.03:41:57:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.09.03:42:00:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzjbgs,status:SUCCESS
+2017.06.09.04:09:31:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzzjjbgs,status:SUCCESS
+2017.06.09.04:09:47:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzzjjbgs,status:SUCCESS
+2017.06.09.04:28:45:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfgjbgs,status:SUCCESS
+2017.06.09.04:51:08:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzzjjbgs,status:SUCCESS
+2017.06.09.05:12:52:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfwzgbzhk,status:SUCCESS
+2017.06.09.05:45:14:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:snyjbgs,status:SUCCESS
+2017.06.09.08:11:21:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:SUCCESS
+2017.06.09.08:29:04:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:scjwbgs,status:SUCCESS
+2017.06.09.08:32:31:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfwzgbzhk,status:SUCCESS
+2017.06.09.08:33:29:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.09.08:39:57:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfwzgbzhk,status:SUCCESS
+2017.06.09.08:50:45:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sfwzgbzhk,status:SUCCESS
+2017.06.09.09:34:10:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjrbjrk,status:SUCCESS
+2017.06.09.09:37:48:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:ghjydk,status:SUCCESS
+2017.06.09.10:07:05:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:skwbgs,status:SUCCESS
+2017.06.09.10:07:38:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szfdcs,status:SUCCESS
+2017.06.09.10:21:40:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjfjzh,status:SUCCESS
+2017.06.10.09:30:03:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swzfwzjk,status:SUCCESS
+2017.06.10.09:30:25:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:SWZFWBGS,status:SUCCESS
+2017.06.12.02:16:22:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs4,status:SUCCESS
+2017.06.12.02:16:41:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjtjbgs,status:SUCCESS
+2017.06.12.02:37:12:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjiaowbgs,status:SUCCESS
+2017.06.12.02:43:50:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szfdcs,status:SUCCESS
+2017.06.12.02:55:35:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:ghjghwfj,status:SUCCESS
+2017.06.12.02:56:07:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:GHJBGS,status:FAIL
+2017.06.12.02:56:09:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:GHJBGS,status:FAIL
+2017.06.12.02:57:13:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:ghjbgs,status:SUCCESS
+2017.06.12.03:00:00:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.12.03:00:13:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzjbgs,status:SUCCESS
+2017.06.12.03:08:24:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.12.03:08:46:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzjbgs,status:
+2017.06.12.03:09:05:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzjbgs,status:SUCCESS
+2017.06.12.03:10:48:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swbfws,status:SUCCESS
+2017.06.12.03:16:29:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:slpzxbgs,status:SUCCESS
+2017.06.12.03:17:44:E:\xampp\htdocs\gov_motion\functions.php402:{id: 29230}
+2017.06.12.03:20:03:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sshjzzb4,status:SUCCESS
+2017.06.12.03:24:21:E:\xampp\htdocs\gov_motion\includes\db.inc.php182:UPDATE motion_tbl SET step="6" WHERE motion_id="130"
+2017.06.12.03:33:46:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:slpzxbgs,status:SUCCESS
+2017.06.12.03:46:47:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.12.04:22:58:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:szxbtaw,status:SUCCESS
+2017.06.12.04:23:13:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sjiaowbgs,status:SUCCESS
+2017.06.12.04:29:32:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.12.04:29:35:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:smzjbgs,status:SUCCESS
+2017.06.12.04:34:45:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjjck,status:SUCCESS
+2017.06.12.04:36:39:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:,status:INVALID
+2017.06.12.04:37:39:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:swsjbgs,status:SUCCESS
+2017.06.12.04:41:56:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sldjfgk,status:SUCCESS
+2017.06.12.04:41:58:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sldjbgs,status:SUCCESS
+2017.06.12.04:49:16:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.04:49:16:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.04:49:43:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÎÀÉúºÍ¼Æ»®ÉúÓı¾Ö,sub_handle: å¸‚æ•™è‚²å±€ï¼Œå¸‚å…¬å®‰å±€ï¼Œå¸‚æ°‘æ”¿å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€,°¸ºÅ: 5,°¸ÓÉ: ¹ØÓÚÌáÉıÎÒÊĞÓÅÉúÓÅÓıË®Æ½µÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13567408484}
+2017.06.12.04:49:43:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÎÀÉúºÍ¼Æ»®ÉúÓı¾Ö,sub_handle: å¸‚æ•™è‚²å±€ï¼Œå¸‚å…¬å®‰å±€ï¼Œå¸‚æ°‘æ”¿å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€,°¸ºÅ: 5,°¸ÓÉ: ¹ØÓÚÌáÉıÎÒÊĞÓÅÉúÓÅÓıË®Æ½µÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13567408484}
+2017.06.12.04:50:02:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÕĞÉÌ¾Ö,sub_handle: å¸‚å·¥å•†è”ï¼Œå¸‚ç»ä¿¡å±€ï¼Œå¸‚å•†åŠ¡å±€,°¸ºÅ: 13,°¸ÓÉ: ¹ØÓÚÈ«Ãæ½Ó¹ìÉÏº£ÍÆ½ø¾«×¼ÕĞÉÌµÄ½¨Òé,user_name: ¹¤ÉÌÁª½ç,phone: 13586608211}
+2017.06.12.04:50:18:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÊĞ³¡¼à¹Ü¾Ö,sub_handle: å¸‚ç»ä¿¡å±€ï¼Œå¸‚ç§‘æŠ€å±€ï¼Œå¸‚è´¢æ”¿åœ°ç¨å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€,°¸ºÅ: 64,°¸ÓÉ: ¹ØÓÚÌá¸ßÖĞĞ¡ÆóÒµ²úÆ·Æ·ÖÊµÄ½¨Òé,user_name: »ÆĞÂ»ª,phone: 13906744718}
+2017.06.12.04:50:18:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÊĞ³¡¼à¹Ü¾Ö,sub_handle: å¸‚ç»ä¿¡å±€ï¼Œå¸‚ç§‘æŠ€å±€ï¼Œå¸‚è´¢æ”¿åœ°ç¨å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€,°¸ºÅ: 64,°¸ÓÉ: ¹ØÓÚÌá¸ßÖĞĞ¡ÆóÒµ²úÆ·Æ·ÖÊµÄ½¨Òé,user_name: »ÆĞÂ»ª,phone: 13906744718}
+2017.06.12.04:50:36:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÎÀÉúºÍ¼Æ»®ÉúÓı¾Ö,sub_handle: å¸‚æ•™è‚²å±€ï¼Œå¸‚å…¬å®‰å±€ï¼Œå¸‚æ°‘æ”¿å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€,°¸ºÅ: 5,°¸ÓÉ: ¹ØÓÚÌáÉıÎÒÊĞÓÅÉúÓÅÓıË®Æ½µÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13567408484}
+2017.06.12.04:50:37:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÎÀÉúºÍ¼Æ»®ÉúÓı¾Ö,sub_handle: å¸‚æ•™è‚²å±€ï¼Œå¸‚å…¬å®‰å±€ï¼Œå¸‚æ°‘æ”¿å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€,°¸ºÅ: 5,°¸ÓÉ: ¹ØÓÚÌáÉıÎÒÊĞÓÅÉúÓÅÓıË®Æ½µÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13567408484}
+2017.06.12.04:51:28:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sldjfgk,status:SUCCESS
+2017.06.12.04:51:44:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sldjbgs,status:SUCCESS
+2017.06.12.04:51:56:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.04:52:16:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.04:52:22:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.04:53:00:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,sub_handle: å¸‚å«ç”Ÿå’Œè®¡åˆ’ç”Ÿè‚²å±€,°¸ºÅ: 63,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞ³ÇÏçÒ½±£Í³³ïÒ»Ìå»¯Õş²ßµÄ½¨Òé,user_name: Ó¦  ¿Æ,phone: 13805811886}
+2017.06.12.04:53:00:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,sub_handle: å¸‚å«ç”Ÿå’Œè®¡åˆ’ç”Ÿè‚²å±€,°¸ºÅ: 63,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞ³ÇÏçÒ½±£Í³³ïÒ»Ìå»¯Õş²ßµÄ½¨Òé,user_name: Ó¦  ¿Æ,phone: 13805811886}
+2017.06.12.04:54:06:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÕĞÉÌ¾Ö,sub_handle: å¸‚å·¥å•†è”ï¼Œå¸‚ç»ä¿¡å±€ï¼Œå¸‚å•†åŠ¡å±€,°¸ºÅ: 13,°¸ÓÉ: ¹ØÓÚÈ«Ãæ½Ó¹ìÉÏº£ÍÆ½ø¾«×¼ÕĞÉÌµÄ½¨Òé,user_name: ¹¤ÉÌÁª½ç,phone: 13586608211}
+2017.06.12.04:56:36:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 198,°¸ÓÉ: ¹ØÓÚ½¨Á¢¸öÈË¹¤×÷µµ°¸¿âµÄ½¨Òé,user_name: ÕÅµÏ¾ü,phone: 13806641288}
+2017.06.12.04:56:37:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 198,°¸ÓÉ: ¹ØÓÚ½¨Á¢¸öÈË¹¤×÷µµ°¸¿âµÄ½¨Òé,user_name: ÕÅµÏ¾ü,phone: 13806641288}
+2017.06.12.04:56:53:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.04:56:53:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.04:57:06:E:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:sldjbgs,status:SUCCESS
+2017.06.12.04:57:48:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.04:57:48:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÈËÁ¦Éç±£¾Ö,°¸ºÅ: 4,°¸ÓÉ: ¹ØÓÚÍêÉÆÎÒÊĞÉç±£·şÎñÌåÏµµÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13606749579}
+2017.06.12.05:00:34:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÕĞÉÌ¾Ö,sub_handle: å¸‚å·¥å•†è”ï¼Œå¸‚ç»ä¿¡å±€ï¼Œå¸‚å•†åŠ¡å±€,°¸ºÅ: 13,°¸ÓÉ: ¹ØÓÚÈ«Ãæ½Ó¹ìÉÏº£ÍÆ½ø¾«×¼ÕĞÉÌµÄ½¨Òé,user_name: ¹¤ÉÌÁª½ç,phone: 13586608211}
+2017.06.12.05:01:20:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ·¢Õ¹¸Ä¸ï¾Ö,sub_handle: å¸‚å§”ç»„ç»‡éƒ¨ï¼Œå¸‚ç»ä¿¡å±€ï¼Œå¸‚ç§‘æŠ€å±€ï¼Œå¸‚æµåŠ¨äººå£å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€ï¼Œå¸‚äº¤é€šè¿è¾“å±€ï¼Œå¸‚ç¯æ­å·æ¹¾åˆ›æ–°ä¸­å¿ƒï¼Œå¸‚æ‹›å•†å±€,°¸ºÅ: 10,°¸ÓÉ: ¹ØÓÚÈÚÈë³¤Èı½ÇÄ±ÇóĞÂ·¢Õ¹ÍÆ¶¯¾­¼ÃĞÂ³£Ì¬ÏÂ´ÈÏª·¢Õ¹Ë®Æ½ÔÙÌáÉıµÄ½¨Òé,user_name: Ãñ½¨´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13819888158}
+2017.06.12.05:01:21:E:\xampp\htdocs\gov_motion\download.php138:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞ·¢Õ¹¸Ä¸ï¾Ö,sub_handle: å¸‚å§”ç»„ç»‡éƒ¨ï¼Œå¸‚ç»ä¿¡å±€ï¼Œå¸‚ç§‘æŠ€å±€ï¼Œå¸‚æµåŠ¨äººå£å±€ï¼Œå¸‚äººåŠ›ç¤¾ä¿å±€ï¼Œå¸‚äº¤é€šè¿è¾“å±€ï¼Œå¸‚ç¯æ­å·æ¹¾åˆ›æ–°ä¸­å¿ƒï¼Œå¸‚æ‹›å•†å±€,°¸ºÅ: 10,°¸ÓÉ: ¹ØÓÚÈÚÈë³¤Èı½ÇÄ±ÇóĞÂ·¢Õ¹ÍÆ¶¯¾­¼ÃĞÂ³£Ì¬ÏÂ´ÈÏª·¢Õ¹Ë®Æ½ÔÙÌáÉıµÄ½¨Òé,user_name: Ãñ½¨´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13819888158}
+2017.06.12.11:08:19:D:\xampp\htdocs\gov_motion\download.php139:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÕĞÉÌ¾Ö,sub_handle: å¸‚å·¥å•†è”ï¼Œå¸‚ç»ä¿¡å±€ï¼Œå¸‚å•†åŠ¡å±€,°¸ºÅ: 13,°¸ÓÉ: ¹ØÓÚÈ«Ãæ½Ó¹ìÉÏº£ÍÆ½ø¾«×¼ÕĞÉÌµÄ½¨Òé,user_name: ¹¤ÉÌÁª½ç,phone: 13586608211}
+2017.06.12.11:11:53:D:\xampp\htdocs\gov_motion\download.php139:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,°¸ÓÉ: ¹ØÓÚ¶ÒÏÖ2016Äê¶ÈÃñ°ìÑ§Ğ£×¨Ïî¾­·Ñ²¹ÖúµÄ½¨Òé,user_name: Ğì½¿ÄÛ,phone: 13858321151}
+2017.06.12.11:12:24:D:\xampp\htdocs\gov_motion\download.php139:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÂÃÓÎ¾Ö,sub_handle: å¸‚å†œåŠï¼Œå¸‚å§”å…šç ”å®¤ï¼ˆå¸‚å¿—åŠï¼‰ï¼Œå¸‚æ–‡å¹¿å±€ï¼Œå¸‚è§„åˆ’å±€ï¼Œå¸‚è´¢æ”¿åœ°ç¨å±€ï¼Œå¸‚å›½åœŸèµ„æºå±€ï¼Œå¸‚æ°´åˆ©å±€,°¸ºÅ: 1,°¸ÓÉ: ¹ØÓÚ×ÅÁ¦´òÔìÑØÉ½¾«Æ·ÏßÖúÍÆ½Ó¹ì´óÉÏº£µÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13858302126}
+2017.06.12.11:14:57:D:\xampp\htdocs\gov_motion\download.php139:{meeting_name: ´ÈÏªÊĞÕşĞ­Ê®Ò»½ìµÚÒ»´Î»áÒé,Ö÷°ìµ¥Î»: ÊĞÂÃÓÎ¾Ö,sub_handle: å¸‚å†œåŠï¼Œå¸‚å§”å…šç ”å®¤ï¼ˆå¸‚å¿—åŠï¼‰ï¼Œå¸‚æ–‡å¹¿å±€ï¼Œå¸‚è§„åˆ’å±€ï¼Œå¸‚è´¢æ”¿åœ°ç¨å±€ï¼Œå¸‚å›½åœŸèµ„æºå±€ï¼Œå¸‚æ°´åˆ©å±€,°¸ºÅ: 1,°¸ÓÉ: ¹ØÓÚ×ÅÁ¦´òÔìÑØÉ½¾«Æ·ÏßÖúÍÆ½Ó¹ì´óÉÏº£µÄ½¨Òé,user_name: ÃñÃË´ÈÏªÊĞ»ù²ãÎ¯Ô±»á,phone: 13858302126}
