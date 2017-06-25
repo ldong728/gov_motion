@@ -470,6 +470,7 @@ function createMotion()
     $staff = $_SESSION['staffLogin'];
     $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $staff['meeting']), ' order by deadline_time desc limit 1')->fetch();
     $emptyMotion = pdoQuery('motion_tbl', array('motion_id'), array('motion_name' => '新建', 'duty' => 0, 'category' => $staff['category'], 'user' => $staff['staffId']), 'and step>0 limit 1')->fetch();
+    setSyncPublic();
     pdoTransReady();
     if ($emptyMotion) {
         editMotion(array('id' => $emptyMotion['motion_id']));
@@ -759,6 +760,7 @@ function updateAttr($data)
     foreach ($uniqueQuery as $row) {
         $uniqueValues[] = $row['value'];
     }
+    setSyncPublic();
     pdoTransReady();
     try {
         foreach ($attrs as $row) {
@@ -864,14 +866,14 @@ function updateAttr($data)
         }
 
 //        if($data['step'])exeNew('update motion_tbl set step=step+1 where motion_id='.$motionId);
-
+        mylog('ok');
         pdoCommit();
         echo ajaxBack(array('step' => $currentStep, 'id' => $motionId));
     } catch (PDOException $e) {
-//        mylog($e->getMessage());
-//        mylog($e->errorInfo);
+        mylog($e->getMessage());
+        mylog($e->errorInfo);
         pdoRollBack();
-//        mylog('出错');
+        mylog('出错');
         echo ajaxBack($e->errorInfo);
     }
 

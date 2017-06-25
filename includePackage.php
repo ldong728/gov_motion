@@ -23,6 +23,10 @@ define('DB_IP','localhost');
 define("DB_NAME","gov_motion_db");
 define("DB_USER","gov_motion_user");
 define("DB_PSW","uByQMbYbTy9amub4");
+define('OUT_DB_IP','localhost');
+define("OUT_DB_NAME","motion_public_db");
+define("OUT_DB_USER","test");
+define("OUT_DB_PSW","test");
 $mypath = $_SERVER['DOCUMENT_ROOT'] .DOMAIN;   //用于直接部署
 
 

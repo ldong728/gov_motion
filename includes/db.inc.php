@@ -6,23 +6,39 @@
  */
 
 
-
+$syncPublic=false;
+$public=null;
 try {
     $pdo = new PDO('mysql:host='.DB_IP.';dbname=' . DB_NAME, DB_USER,DB_PSW);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
+
+
 //    $pdo->q
 } catch (PDOException $e) {
     $error = 'Unable to connect to the database server.' . $e->getMessage();
     include 'error.html.php';
     exit();
 }
+function setSyncPublic(){
+    try{
+        $GLOBALS['syncPublic']=true;
+        $GLOBALS['public'] = new PDO('mysql:host='.OUT_DB_IP.';dbname=' . OUT_DB_NAME, OUT_DB_USER,OUT_DB_PSW);
+        $GLOBALS['public']->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        $GLOBALS['public']->exec('SET NAMES "utf8"');
+    }catch(PDOException $e){
+        $error = 'Unable to connect to the database server.' . $e->getMessage();
+        include 'error.html.php';
+        exit();
+    }
 
+}
 
 
 function exeNew($s){
     try{
         $GLOBALS['pdo']->exec($s);
+        if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($s);
         return $GLOBALS['pdo']->lastInsertId();
     }catch(PDOException $e){
 //        echo $e->getMessage();
@@ -134,6 +150,7 @@ function pdoInsert($tableName,$value,$str=''){
 //    mylog($sql);
     try {
         $GLOBALS['pdo']->exec($sql);
+        if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($sql);
         return $GLOBALS['pdo']->lastInsertId();
 
     }catch (PDOException $e) {
@@ -182,6 +199,7 @@ function pdoUpdate($tableName,array $value,array $where,$str=''){
     mylog($sql);
     try {
         $rows=$GLOBALS['pdo']->exec($sql);
+        if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($sql);
         return $rows;
 
     }catch (PDOException $e) {
@@ -217,6 +235,7 @@ function pdoDelete($tableName,array $where,$str=''){
 //    mylog($sql);
     try {
         $GLOBALS['pdo']->exec($sql);
+        if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($sql);
         return $GLOBALS['pdo']->lastInsertId();
 
     }catch (PDOException $e) {
@@ -305,12 +324,15 @@ function pdoBatchInsert($tableName,array $value,$str=''){
         $sql=$sql.$str;
     }
     $p=$GLOBALS['pdo']->prepare($sql);
+    if($GLOBALS['syncPublic'])$pub=$GLOBALS['public']->prepare($sql);
     try{
         foreach ($value as $data) {
             foreach ($data as $k=>$v) {
                 $p->bindValue($k,$v);
+                if(isset($pub)&&$pub)$pub->bindValue($k,$v);
             }
             $p->execute();
+            if(isset($pub)&&$pub)$pub->execute();
         }
     }catch(PDOException $e){
         throw $e;
@@ -323,6 +345,11 @@ function pdoTransReady()
 {
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
     $GLOBALS['pdo']->beginTransaction();
+    if($GLOBALS['syncPublic']){
+        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
+        $GLOBALS['public']->beginTransaction();
+    }
+
 //    mylog('ready');
 }
 
@@ -330,6 +357,10 @@ function pdoCommit()
 {
     $GLOBALS['pdo']->commit();
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
+    if($GLOBALS['syncPublic']){
+        $GLOBALS['public']->commit();
+        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
+    }
 //    mylog('commit');
 }
 
@@ -337,6 +368,11 @@ function pdoRollBack()
 {
     $GLOBALS['pdo']->rollBack();
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
+    if($GLOBALS['syncPublic']){
+        $GLOBALS['public']->rollBack();
+        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
+    }
+
 //    mylog('rollback');
 }
 
