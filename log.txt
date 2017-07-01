@@ -2,3 +2,14 @@
 2017.06.20.10:15:56:D:\xampp\htdocs\gov_motion\functions.php869:ok
 2017.06.20.11:38:23:D:\xampp\htdocs\gov_motion\includes\db.inc.php199:UPDATE motion_tbl SET step="6" WHERE motion_id="129"
 2017.06.20.11:38:23:D:\xampp\htdocs\gov_motion\functions.php869:ok
+2017.06.28.14:58:09:D:\xampp\htdocs\gov_motion\functions.php721:{id: 693}
+2017.06.28.14:58:09:D:\xampp\htdocs\gov_motion\includes\db.inc.php199:UPDATE motion_tbl SET step="0" WHERE motion_id="693" limit 1
+2017.06.28.14:58:12:D:\xampp\htdocs\gov_motion\functions.php721:{id: 694}
+2017.06.28.14:58:12:D:\xampp\htdocs\gov_motion\includes\db.inc.php199:UPDATE motion_tbl SET step="0" WHERE motion_id="694" limit 1
+2017.06.28.14:58:16:D:\xampp\htdocs\gov_motion\functions.php721:{id: 689}
+2017.06.28.14:58:16:D:\xampp\htdocs\gov_motion\includes\db.inc.php199:UPDATE motion_tbl SET step="0" WHERE motion_id="689" limit 1
+2017.06.28.14:58:19:D:\xampp\htdocs\gov_motion\functions.php721:{id: 692}
+2017.06.28.14:58:19:D:\xampp\htdocs\gov_motion\includes\db.inc.php199:UPDATE motion_tbl SET step="0" WHERE motion_id="692" limit 1
+2017.06.28.15:41:25:D:\xampp\htdocs\gov_motion\functions.php721:{id: 681}
+2017.06.28.15:41:25:D:\xampp\htdocs\gov_motion\includes\db.inc.php199:UPDATE motion_tbl SET step="0" WHERE motion_id="681" limit 1
+2017.06.29.15:02:41:D:\xampp\htdocs\gov_motion\includes\db.inc.php199:UPDATE motion_attr_tbl SET default_value="" WHERE motion_attr_id="78" limit 1

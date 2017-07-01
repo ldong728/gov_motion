@@ -9,7 +9,8 @@ include_once 'includePackage.php';
 include_once 'functions.php';
 session_start();
 if($config['server_status']>0){
-    echo '网站维护中，请稍后重试,状态码：'.$config['server_status'];
+//    echo '网站维护中，请稍后重试,状态码：'.$config['server_status'];
+    include 'view/404.html';
     exit;
 }
 if(isset($_SESSION['staffLogin'])){
