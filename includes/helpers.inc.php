@@ -229,6 +229,38 @@ function signVerify($array){
     }else{
         return false;
     }
+}
+function uploadFileByCurl($remote_server, $file, $field = 'media', $exraInf = null)
+{
+    $replaced_server = $remote_server;
+    $fields[$field] = '@' . $file;
+    if ($exraInf != null) {
+        foreach ($exraInf as $k => $v) {
+            $fields[$k] = $v;
+        }
+    }
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $replaced_server);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_HEADER, false);
+    $data = curl_exec($ch);
+    curl_close($ch);
+    $dataArray = json_decode($data, true);
+//    if (40001 == $dataArray['errcode']) {
+//        if ($this->tryCount < 4) {
+//            $this->tryCount++;
+//            $this->diable = true;
+//            $this->clearToken();
+//            return $this->uploadFileByCurl($remote_server, $file, $field = 'media', $exraInf = null);
+//        }
+//    } else {
+//        $this->tryCount = 0;
+//    }
+    return $data;
 
 }
 

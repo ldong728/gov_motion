@@ -19,6 +19,7 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
             $uploader->upFile($fileName);
             $inf=$uploader->getFileInfo();
             if('SUCCESS'==$inf['state']){
+//                    uploadFileByCurl('')
                     $value=array('motion'=>$_SESSION['staffLogin']['currentMotion'],'motion_attr'=>$_GET['ma'],'attr_template'=>$_GET['at'],'content'=>addslashes($inf['originalName']),'attachment'=>addslashes($inf['url']),'staff'=>$_SESSION['staffLogin']['staffId']);
                     try{
                         if($_GET['a']>0&&!$_GET['mul']){
@@ -29,14 +30,17 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
                     }catch(PDOException $e){
                         $inf['state']='fail';
                     }
+                $inf['step']=$step;
+                echo json_encode($inf);
+                if(1==$step){
+                    uploadFileByCurl(REMOTE_SERVER,$GLOBALS['mypath'].'/'.$inf['url'],'original',['file_name'=>$inf['name']]);
+                    file_put_contents($GLOBALS['mypath'].'/original_'.$inf['url'], file_get_contents($GLOBALS['mypath'].'/'.$inf['url']));
+                    pdoUpdate('motion_tbl',array('document'=>addslashes($inf['originalName']),'document_sha'=>$inf['url']),array('motion_id'=>$_SESSION['staffLogin']['currentMotion']),'limit 1');
+                }else{
+                    uploadFileByCurl(REMOTE_SERVER,$GLOBALS['mypath'].'/'.$inf['url'],'file',['file_name'=>$inf['name']]);
+                }
+            }
 
-            }
-            $inf['step']=$step;
-            echo json_encode($inf);
-            if(1==$step){
-                file_put_contents($GLOBALS['mypath'].'/original_'.$inf['url'], file_get_contents($GLOBALS['mypath'].'/'.$inf['url']));
-                pdoUpdate('motion_tbl',array('document'=>addslashes($inf['originalName']),'document_sha'=>$inf['url']),array('motion_id'=>$_SESSION['staffLogin']['currentMotion']),'limit 1');
-            }
         }
     }
 }
