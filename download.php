@@ -152,9 +152,98 @@ function reply_table2()
 
     exit;
 }
+function unit_handle_info(){
+    $unitId=$_GET['unit'];
+    $data=handleDetailInfo($unitId);
+    mylog(getArrayInf($data));
+    if($data){
+        $sortList=$data['mainHandle'];
+        $sortList2=$data['handle'];
+        $unitName=$data['unitName'];
+        include 'view/formated_out_type2.html.php';
+        exit;
+    }
+    exit;
+}
 
+/**
+ * 每个单位的办理件详情表
+ */
+function batch_handle_info(){
+    $unit=pdoQuery('unit_tbl',['unit_id','unit_name'],null,null);
+    foreach ($unit as $row) {
+        $data=handleDetailInfo($row['unit_id'],$row['unit_name']);
+        if($data){
+            $sortList=$data['mainHandle'];
+            $sortList2=$data['handle'];
+            $unitName=$data['unitName'];
+            ob_start();
+            include 'view/formated_out_type2.html.php';
+            $content=ob_get_contents();
+            mylog($content);
+            file_put_contents(iconv('UTF-8', 'GBK',$GLOBALS['mypath'].'/temp/'.$unitName.'.xls'),$content);
+            ob_end_clean();
+        }
+    }
+    exit;
+
+}
+
+
+
+/*
+ * 以下为非get方法
+ */
+
+function handleDetailInfo($unitId,$unitName=null){
+//    $unitId=$_GET['unit'];
+    if(!$unitName)$unitName=pdoQuery('unit_tbl',null,array('unit_id'=>$unitId),'limit 1')->fetch()['unit_name'];
+    $whereFilter=['attr_name'=>['主办单位','协办单位'],'content_int'=>$unitId];
+    if($_SESSION['staffLogin']['category']<3)$whereFilter['category']=$_SESSION['staffLogin']['category'];
+    $motionLimit=array();
+    $sortList=array();
+    $sortList2=array();
+    $limitQuery=pdoQuery('motion_view',array('motion_id'),$whereFilter,null);
+
+    foreach ($limitQuery as $row) {
+        $motionLimit[]=$row['motion_id'];
+    }
+    if(count($motionLimit)>0){
+        $field=array('案号', '领衔人', '提案人', '案别', '案由', '性质类别1', '性质类别2', '原文', '当前环节', '交办单位', '协办单位', '主办单位');
+        $motionDetail = pdoQuery('motion_view', null, array('motion_id' => $motionLimit, 'attr_name' => $field), null);
+        foreach ($motionDetail as $row) {
+//        if(!$singleRow)$singleRow=$row;
+            $content = 'string' == $row['value_type'] ? $row['content'] : $row['content_int'];
+            $content = 'attachment' == $row['value_type'] ? $row['attachment'] : $content;
+            if ('index' == $row['value_type']) {
+                $content = DataSupply::indexToValue($row['target'], $content);
+            }
+
+
+            if (!isset($sortList[$row['motion_id']][$row['attr_name']])) $sortList[$row['motion_id']][$row['attr_name']] = $content;
+            else $sortList[$row['motion_id']][$row['attr_name']] .= ',' . $content;
+            $sortList[$row['motion_id']]['案由'] = $row['motion_name'];
+//        $sortList[$row['motion_id']]['案别']=2==$row['category']?'建议':'提案';
+            $sortList[$row['motion_id']]['当前环节'] = $row['step_name'];
+//        $sortList[$row['motion_id']]['编号'] = $row['zx_motion'];
+            $sortList[$row['motion_id']]['category']=$row['category'];
+        }
+        foreach ($sortList as $k => $row) {
+            if($unitName!=$row['主办单位']){
+                $sortList2[$k]=$row;
+                unset($sortList[$k]);
+            }
+        }
+        return ['unitName'=>$unitName,'mainHandle'=>$sortList,'handle'=>$sortList2];
+    }else{
+        return false;
+    }
+
+
+}
 
 function getMeetingName($meetingId)
 {
     return pdoQuery('meeting_tbl', array('meeting_name'), array('meeting_id' => $meetingId), 'limit 1')->fetch()['meeting_name'];
 }
+

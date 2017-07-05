@@ -1,16 +1,17 @@
 <div class="mask"></div>
 <div class="suggest cont">
 <div class="sug-head clearfix">
-    <div class="sug-head-l"><h1><?php echo 1 == $meetingInf['category'] ? '人大建议议案办理单' : '政协提案办理单' ?></h1></div>
+    <div class="sug-head-l"><h1><?php echo 1 == $meetingInf['category'] ? '人大建议议案查询' : '政协提案查询' ?></h1></div>
     <div class="sug-head-r"><p>当前环节：<?php echo current($motion)['step_name'] ?></p></div>
 </div>
 <div class="sug-main">
 <div class="sug-main-nav clearfix">
     <a href="#" class="close-popup">返回</a>
+    <a href="#" class="start-multiple-search">搜索</a>
 </div>
 <div class="sug-main-content edit-area">
 <div class="content-title">
-    <p style="height: 40px;"><?php echo 1 == $meetingInf['category'] ? '慈溪市人大建议议案办理单' : '慈溪市政协提案办理单' ?></p>
+    <p style="height: 40px;"><?php echo 1 == $meetingInf['category'] ? '慈溪市人大建议议案查询' : '慈溪市政协提案查询' ?></p>
 </div>
 <div class="table-list">
 <link rel="stylesheet" type="text/css" media="print" href="stylesheet/print.css?v=<?php echo rand(1000, 9999) ?>">
@@ -57,12 +58,25 @@
             class="encoded-search-data" ><?php echo json_encode($motion['性质'], JSON_UNESCAPED_UNICODE) ?></span>
     </td>
     <th><?php echo 1 == $meetingInf['category'] ? '代表团' : '属性' ?></th>
-    <td colspan="2"><?php if($unitGroupInf):?><?php echo $unitGroupInf['group']?><?php endif?></td>
+    <td colspan="2">
+        <select class="search-value">
+            <option value="0">请选择</option>
+            <?php foreach($userGroup as $row):?>
+                <option value="<?php echo $row['user_group_id']?>"><?php echo $row['user_group_name']?></option>
+            <?php endforeach ?>
+        </select>
+    </td>
 </tr>
 <?php if (2 == $meetingInf['category']): ?>
     <tr>
         <th>委组</th>
-        <td colspan="2"><?php if($unitGroupInf):?><?php echo $unitGroupInf['unit']?><?php endif?></td>
+        <td colspan="2">
+            <select>
+                <option value="0">请选择</option>
+                <?php foreach($userUnit as $row):?>
+                <option value="<?php echo $row['user_unit_id']?>"><?php echo $row['user_unit_name']?></option>
+                <?php endforeach ?>
+            </select></td>
         <th>提案分类</th>
         <td colspan="2" class="judged-value"><span
                 class="encoded-search-data"><?php echo json_encode($motion['提案分类'], JSON_UNESCAPED_UNICODE) ?></span>
@@ -74,21 +88,16 @@
 <?php if(1==$meetingInf['category']):?>
     <tr>
         <th>领衔人</th>
-        <td colspan="5" class="verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
+        <td colspan="7" class="verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
                 class="encoded-search-data"><?php echo json_encode($motion['领衔人'], JSON_UNESCAPED_UNICODE) ?></span></td>
-        <td colspan="2">
-            <button class="user-inf" id="inf<?php echo current($motion)['motion_id']?>">显示</button>
-        </td>
     </tr>
 <?php endif ?>
 <?php if(2==$meetingInf['category']):?>
     <tr>
         <th>提案人</th>
-        <td colspan="5" class="user-type verify-value" style="text-align: left;padding-left: 10px;"><span
+        <td colspan="7" class="user-type verify-value" style="text-align: left;padding-left: 10px;"><span
                 class="encoded-search-data"><?php echo json_encode($motion['提案人'], JSON_UNESCAPED_UNICODE) ?></span></td>
-        <td colspan="2">
-            <button class="user-inf" id="inf<?php echo current($motion)['motion_id']?>">显示</button>
-        </td>
+
     </tr>
 <?php endif ?>
 <tr>
@@ -103,52 +112,9 @@
             class="encoded-search-data"><?php echo json_encode($motion['案由'], JSON_UNESCAPED_UNICODE) ?></span></td>
 </tr>
 <tr>
-    <th>全文</th>
-    <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
-            class="encoded-search-data"><?php echo json_encode($motion['原文'], JSON_UNESCAPED_UNICODE) ?></span></td>
-</tr>
-<tr>
-    <th>摘要</th>
-    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
-            class="encoded-search-data"><?php echo json_encode($motion['摘要'], JSON_UNESCAPED_UNICODE) ?></span></td>
-</tr>
-<?php if(2==$meetingInf['category']):?>
-
-    <tr>
-        <th>初审</th>
-        <td  style="text-align: left;padding-left: 10px;"><span
-                class="encoded-search-data"><?php echo json_encode($motion['初审'], JSON_UNESCAPED_UNICODE) ?></span>
-        </td>
-        <th>初审意见</th>
-        <td colspan="5" style="text-align: left;padding-left: 10px;"><span
-                class="encoded-search-data"><?php echo json_encode($motion['初审意见'], JSON_UNESCAPED_UNICODE) ?></span></td>
-    </tr>
-<?php endif?>
-<tr>
-    <th>审核</th>
-    <td colspan="7" class="colspan7 pass-verify" style="text-align: left;padding-left: 10px;"><span
-            class="encoded-search-data"><?php echo json_encode($motion['审核' . $meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-</tr>
-<tr>
     <th>审核意见</th>
     <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
             class="encoded-search-data"><?php echo json_encode($motion['审核意见'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-</tr>
-<?php if (2 == $meetingInf['category']): ?>
-    <tr>
-        <th>交办单位</th>
-        <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
-                class="encoded-search-data"><?php echo json_encode($motion['交办单位'], JSON_UNESCAPED_UNICODE) ?></span>
-        </td>
-    </tr>
-<?php endif ?>
-
-<tr>
-    <th>交办单位</th>
-    <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
-            class="encoded-search-data"><?php echo json_encode($motion['交办单位'], JSON_UNESCAPED_UNICODE) ?></span>
     </td>
 </tr>
 
@@ -163,42 +129,24 @@
         class="encoded-search-data"><?php echo json_encode($motion['协办单位'], JSON_UNESCAPED_UNICODE) ?></span>
 </td>
 </tr>
-<tr>
-    <th>主办答复时间</th>
-    <td width="105px"><span
-            class="encoded-search-data"><?php echo json_encode($motion['主办答复时间'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-    <th>文号</th>
-    <td width="95px" class="verify-value"><span
-            class="encoded-search-data verify-value"><?php echo json_encode($motion['文号'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-    <th>类别标记</th>
-    <td width="100px"><span
-            class="encoded-search-data"><?php echo json_encode($motion['类别标记'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-    <th>签发人</th>
-    <td class="verify-value"><span
-            class="encoded-search-data verify-value"><?php echo json_encode($motion['主办签发人'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-</tr>
-<tr>
-    <th>主办意见全文</th>
-    <td colspan="7" class="colspan7 verify-value" style="text-align: left;padding-left: 10px;"><span
-            class="encoded-search-data"><?php echo json_encode($motion['主办答复全文'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-</tr>
-<tr>
-    <th>已落实事项</th>
-    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
-            class="encoded-search-data"><?php echo json_encode($motion['已落实事项'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-</tr>
-<tr>
-    <th>计划落实事项</th>
-    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
-            class="encoded-search-data"><?php echo json_encode($motion['计划落实事项'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-</tr>
+<!--<tr>-->
+<!--    <th>主办答复时间</th>-->
+<!--    <td width="105px"><span-->
+<!--            class="encoded-search-data">--><?php //echo json_encode($motion['主办答复时间'], JSON_UNESCAPED_UNICODE) ?><!--</span>-->
+<!--    </td>-->
+<!--    <th>文号</th>-->
+<!--    <td width="95px" class="verify-value"><span-->
+<!--            class="encoded-search-data verify-value">--><?php //echo json_encode($motion['文号'], JSON_UNESCAPED_UNICODE) ?><!--</span>-->
+<!--    </td>-->
+<!--    <th>类别标记</th>-->
+<!--    <td width="100px"><span-->
+<!--            class="encoded-search-data">--><?php //echo json_encode($motion['类别标记'], JSON_UNESCAPED_UNICODE) ?><!--</span>-->
+<!--    </td>-->
+<!--    <th>签发人</th>-->
+<!--    <td class="verify-value"><span-->
+<!--            class="encoded-search-data verify-value">--><?php //echo json_encode($motion['主办签发人'], JSON_UNESCAPED_UNICODE) ?><!--</span>-->
+<!--    </td>-->
+<!--</tr>-->
 <tr>
     <th rowspan="2" style="border-right: 1px solid #f08300">反馈意见</th>
     <th>办理工作</th>
@@ -221,11 +169,7 @@
     <td><span class="encoded-search-data"><?php echo json_encode($motion['落实情况'], JSON_UNESCAPED_UNICODE) ?></span>
     </td>
 </tr>
-<tr>
-    <th>反馈意见全文</th>
-    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span class="encoded-search-data"><?php echo json_encode($motion['反馈意见全文'], JSON_UNESCAPED_UNICODE) ?></span>
-    </td>
-</tr>
+
 
 
 </tbody>

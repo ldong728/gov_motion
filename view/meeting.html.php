@@ -42,6 +42,9 @@
         <?php if(in_array(4,$_SESSION['staffLogin']['steps'])):?>
             <div class="home-nav h-border"><p><a href="index.php?statistics_excel_out=1" class="statistics"><i class="icon icon-angle-right"></i>办理统计<span></span></a></p></div>
         <?php endif ?>
+        <?php if(in_array(3,$_SESSION['staffLogin']['steps'])&&1==$_SESSION['staffLogin']['category']):?>
+            <div class="home-nav h-border"><p><a href="index.php?statistics_excel_out=1" class="statistics"><i class="icon icon-angle-right"></i>办理统计<span></span></a></p></div>
+        <?php endif ?>
     </div>
     <!--左边-->
     <div class="home-r h-last">

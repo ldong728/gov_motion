@@ -352,6 +352,7 @@ function ajaxMotionList($data)
     }
 
 
+
     if (-1 == $totalNumber) {
         $totalNumber = pdoQuery('motion_tbl', array('count(*) as count'), array('meeting' => $meeting), 'and step>0')->fetch()['count'];
     }
@@ -680,7 +681,8 @@ function searchMotionView($data){
 
     $where=array();
     mylog(getArrayInf($data));
-    $where['category']=isset($data['category'])?$data['category']:1;
+    $category=isset($data['category'])?$data['category']:1;
+    $where['category']=$category;
     $meetingInf['category']=$where['category'];
     if(isset($data['meeting'])){
         $meetingName=pdoQuery('meeting_tbl',array('meeting_name'),array('meeting_id'=>$data['meeting']),'limit 1')->fetch()['meeting_name'];
@@ -690,7 +692,15 @@ function searchMotionView($data){
     foreach ($query as $row) {
         if($row['option'])$row['option']=json_decode($row['option'],true);
         $motion[$row['attr_name']]=$row;
+        //获取领衔人信息
+//        if ('领衔人' == $row['attr_name'] || '提案人' == $row['attr_name']) {
+//            $query = pdoQuery('duty_view', null, array('duty_id' => $row['content_int']), 'limit 1')->fetch();
+//            $unitGroupInf = array('unit' => $query['user_unit_name'], 'group' => $query['user_group_name']);
+//        }
     }
+    $userGroup=pdoQuery('user_group_tbl',['user_group_id','user_group_name'],['category'=>$category],null)->fetchAll();
+    $userUnit=pdoQuery('user_unit_tbl',['user_unit_id','user_unit_name'],['category'=>$category],null)->fetchAll();
+
     include '/view/search.html.php';
     return;
 
@@ -931,8 +941,14 @@ function ajaxTargetList($data)
             echo ajaxBack($backList);
             break;
         case 'unit':
-            $motionInf = pdoQuery('motion_tbl', null, array('motion_id' => $_SESSION['staffLogin']['currentMotion']), 'limit 1')->fetch();
-            $step = $motionInf['step'] + 1;
+//            mylog(getArrayInf($_SESSION));
+            if(isset($_SESSION['staffLogin']['currentMotion'])){
+                $motionInf = pdoQuery('motion_tbl', null, array('motion_id' => $_SESSION['staffLogin']['currentMotion']), 'limit 1')->fetch();
+                $step = $motionInf['step'] + 1;
+            }else{
+                $step=5;
+            }
+
             if ($filter) $str = 'and steps like "%' . $step . '%"';
             else $str = 'where steps like "%' . $step . '%"';
             $unitQuery = pdoQuery('unit_tbl', null, $filter, $str);
@@ -949,9 +965,12 @@ function ajaxTargetList($data)
             echo ajaxBack($backList);
             break;
         case 'staff':
-
-            $motionInf = pdoQuery('motion_tbl', null, array('motion_id' => $_SESSION['staffLogin']['currentMotion']), 'limit 1')->fetch();
-            $step = $motionInf['step'] + 1;
+            if(isset($_SESSION['staffLogin']['currentMotion'])) {
+                $motionInf = pdoQuery('motion_tbl', null, array('motion_id' => $_SESSION['staffLogin']['currentMotion']), 'limit 1')->fetch();
+                $step = $motionInf['step'] + 1;
+            }else{
+                $step=3;
+            }
             if ($filter) $str = 'and steps like "%' . $step . '%"';
             else $str = 'where steps like "%' . $step . '%"';
             $staffQuery = pdoQuery('staff_admin_view', null, $filter, $str);
