@@ -1,5 +1,6 @@
 $(document).on('click','.multiple-search',function(){
     var maskHeight = $(document.body).height();
+    ajaxPost('unsetCurrentMotion',{});
     ajaxPost('searchMotionView',{category:category,meeting:meetingId},function(data){
         $('.m-popup').html(data);
         $('.m-popup').show();
@@ -16,24 +17,51 @@ $(document).on('click','.start-multiple-search',function(){
         var motionAttr= _.data('motionattr')||false;
         var type= _.data('type');
         var multiple= _.data('multiple')||false;
+        var searchValueContainer= _.find('.search-value');
+        var otherValueContainer= _.find('.attr-value');
         var value= _.find('.search-value').val();
-        console.log(motionAttr);
-        console.log(value);
-        if(motionAttr&&value){
+        var otherValue= _.find('.attr-value').val();
+        //console.log(otherValue);
+        value='0'==value?false:value
+        //console.log(motionAttr);
+        //console.log(value);
+        if(motionAttr){
             if(multiple){
-                if(!multipleSearchData[motionAttr]){
-                    multipleSearchData[motionAttr]={motionAttr:motionAttr,value:[value]}
+                if(searchValueContainer.length>0){
+                    searchValueContainer.each(function(id,element){
+                       var value=$(element).val();
+                        if(!$(element).prop('checked'))return;
+                        if(!multipleSearchData[motionAttr]){
+                            multipleSearchData[motionAttr]={motionAttr:motionAttr,type:type,value:[value]}
+                        }else{
+                            multipleSearchData[motionAttr].value.push(value);
+                        }
+                    });
                 }else{
-                    multipleSearchData[motionAttr].value.push(value);
+                   otherValueContainer.each(function(id,element){
+                        var value=$(element).val();
+                        if(!multipleSearchData[motionAttr]){
+                            multipleSearchData[motionAttr]={motionAttr:motionAttr,type:type,value:[value]}
+                        }else{
+                            multipleSearchData[motionAttr].value.push(value);
+                        }
+                    });
                 }
             }else{
-                multipleSearchData[motionAttr]={motionAttr:motionAttr,value:value}
+                if(value)multipleSearchData[motionAttr]={motionAttr:motionAttr,type:type,value:value};
+                if(otherValue) multipleSearchData[motionAttr]={motionAttr:motionAttr,type:type,value:otherValue}
             }
         }
-    });
-    console.log(multipleSearchData);
 
-    //reflashList(orderby,page,order);
+
+    });
+    filter.multiple_search=multipleSearchData;
+
+    console.log(multipleSearchData);
+    $('.close-popup').click();
+
+    reflashList(orderby,page,order);
+    delete filter.multiple_search;
 
 });
 function decodeSearchDate(element) {
@@ -54,17 +82,17 @@ function decodeSearchDate(element) {
                 parent.attr('data-motionattr', data.motion_attr_id);
                 parent.attr('data-multiple', data.multiple);
                 if (data.option) {
+                    parent.attr('data-type', 'option');
                     //同一属性有多值的情况
                     if (1 == data.multiple) {
                         $.each(data.option, function (k, v) {
-                            content += '<label ><input class="search-value" style="width: 20px" type="checkbox" value="' + k + '" >' + v + '</label></br>'
+                            content += '<label ><input class="search-value multiple-check" style="width: 20px" type="checkbox" value="' + v + '" >' + v + '</label></br>'
                         });
                     } else {
                         var isValue = data.target ? '' : 'search-value';
                         content += '<select class="' + (data['class']) + ' ' + isValue + '">';
                         $.each(data.option, function (k, v) {
-                            var selected = v == data.content ? 'selected="selected"' : '';
-                            content += '<option value="' + k + '" ' + selected + '>' + v + '</option>';
+                            content += '<option value="' + v + '">' + v + '</option>';
                         });
                         content += '</select>';
                     }
@@ -92,26 +120,11 @@ function decodeSearchDate(element) {
 
                 }
             } 
-            //else {//选项不可编辑
-            //    if (data.attachment) {
-            //        if(1==data.multiple){
-            //            //console.log(data);
-            //            $.each(data.content,function(attaKey,attaData){
-            //                content += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="' + attaData.attachment + '">' + (attaData.content || '') + '</a>'
-            //            });
-            //
-            //        }else{
-            //            //console.log('no multiple');
-            //            content += '<a href="' + data.attachment + '">' + (data.content || '') + '</a>'
-            //        }
-            //
-            //    } else {
-            //        //console.log(data);
-            //        content += data.content || '';
-            //    }
-            //}
+
             parent.append(content);
         }
 
+
     });
+    $('select').append('<option value="0" selected></option>');
 }

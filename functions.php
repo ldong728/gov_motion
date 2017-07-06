@@ -351,6 +351,84 @@ function ajaxMotionList($data)
 
     }
 
+    //综合搜索
+//    mylog(getArrayInf($filter));
+    if(isset($filter['multiple_search'])){
+        $searchLimit=null;
+//        $multipleSearchFilter=null;
+        $multipleSearchTempFilter=array('meeting'=>$meeting);
+        $multipleSearchMotionLimit=null;
+        $filterDetail=$filter['multiple_search'];
+        if(isset($filterDetail['user_unit'])){
+            $multipleSearchTempFilter['user_unit']=$filterDetail['user_unit']['value'];
+            unset($filterDetail['user_unit']);
+        }
+        if(isset($filterDetail['user_group'])){
+            $multipleSearchTempFilter['user_group']=$filterDetail['user_group']['value'];
+            unset($filterDetail['user_group']);
+        }
+        if(count($multipleSearchTempFilter)>1){
+            $attrName=1==$category?"领衔人":"提案人";
+            $multipleDutyList=pdoQuery('duty_tbl',array('duty_id'),$multipleSearchTempFilter,null)->fetchAll();
+            $multipleSearchMotionLimit=pdoQuery('motion_view',['motion_id'],['attr_name'=>$attrName,'content_int'=>$multipleDutyList],null);
+            foreach ($multipleSearchMotionLimit as $row) {
+                $searchLimit[]=$row['motion_id'];
+            }
+        }
+
+
+        mylog(getArrayInf($filter['multiple_search']));
+        foreach($filterDetail as $k=>$v){
+            $sMotionAttr=$v['motionAttr'];
+            $sType=$v['type'];
+            $sValue=$v['value'];
+            $sWhere=['motion_attr'=>$sMotionAttr];
+            if(is_array($searchLimit)&&count($searchLimit)>0)$sWhere['motion']=$searchLimit;
+            elseif(is_array($searchLimit)&&0==count($searchLimit))break;
+            $str=null;
+            switch($sType){
+                case 'string':
+                    $str=' and content like "%'.$sValue.'%"';
+                    break;
+                case 'option':
+                    $sWhere['content']=$sValue;
+                    break;
+                case 'int':
+                    $sWhere['content_int']=$sValue;
+                    break;
+                default:
+                    $sWhere['content_int']=$sValue;
+                    break;
+            }
+
+            $motionQuery=pdoQuery('attr_tbl',['motion as motion_id'],$sWhere,$str);
+            $motions=array();
+            foreach ($motionQuery as $row) {
+                $motions[]=$row['motion_id'];
+            }
+
+            if(is_array($searchLimit)){
+                $searchLimit=array_intersect($searchLimit,$motions);
+            }else{
+                $searchLimit=$motions;
+            }
+        }
+
+
+
+
+        if(isset($sortFilter['motion_id'])){
+            $sortFilter['motion_id']=array_intersect($sortFilter['motion_id'],$searchLimit);
+        }else{
+            $sortFilter['motion_id']=$searchLimit;
+        }
+        $totalNumber=count($sortFilter['motion_id']);
+
+
+//        mylog(getArrayInf($filter));
+
+    }
+
 
 
     if (-1 == $totalNumber) {
@@ -680,7 +758,7 @@ function editMotion($data)
 function searchMotionView($data){
 
     $where=array();
-    mylog(getArrayInf($data));
+//    mylog(getArrayInf($data));
     $category=isset($data['category'])?$data['category']:1;
     $where['category']=$category;
     $meetingInf['category']=$where['category'];
@@ -1057,6 +1135,11 @@ function ajaxDynamicBackwardHandle($data)
 //    mylog('ajaxDynamicBackwardHandle');
     pdoUpdate('motion_handler_tbl', array('status' => 1), array('motion_handler_id' => $data['handle_id']), 'limit 1');
     echo ajaxBack($_SESSION['staffLogin']['currentMotion']);
+}
+
+function unsetCurrentMotion(){
+    unset($_SESSION['staffLogin']['currentMotion']);
+    echo ajaxBack( 'ok');
 }
 
 

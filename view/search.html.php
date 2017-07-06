@@ -58,7 +58,7 @@
             class="encoded-search-data" ><?php echo json_encode($motion['性质'], JSON_UNESCAPED_UNICODE) ?></span>
     </td>
     <th><?php echo 1 == $meetingInf['category'] ? '代表团' : '属性' ?></th>
-    <td colspan="2">
+    <td colspan="2" class="search-key" data-motionattr="user_group">
         <select class="search-value">
             <option value="0">请选择</option>
             <?php foreach($userGroup as $row):?>
@@ -70,8 +70,8 @@
 <?php if (2 == $meetingInf['category']): ?>
     <tr>
         <th>委组</th>
-        <td colspan="2">
-            <select>
+        <td colspan="2" class="search-key" data-motionattr="user_unit">
+            <select class="search-value">
                 <option value="0">请选择</option>
                 <?php foreach($userUnit as $row):?>
                 <option value="<?php echo $row['user_unit_id']?>"><?php echo $row['user_unit_name']?></option>

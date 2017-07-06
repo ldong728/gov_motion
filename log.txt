@@ -1,13 +1,2 @@
-2017.07.05.15:00:00:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.15:00:02:D:\xampp\htdocs\gov_motion\functions.php944:{staffLogin: {steps: {0: 1,1: 2,2: 3}category: 2,meeting: 1,unit: 5,staffId: 6725,staffName: 政协（测试账号）,outId: }}
-2017.07.05.15:09:35:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.16:21:41:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.16:49:19:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.16:50:06:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.17:00:25:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.17:02:32:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.17:11:07:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.17:13:30:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.17:18:27:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.17:20:59:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
-2017.07.05.17:22:07:D:\xampp\htdocs\gov_motion\functions.php683:{category: 2,meeting: 1}
+2017.07.06.17:12:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php99:query:SELECT *  FROM motion_tbl WHERE motion_id="428" limit 1
+2017.07.06.17:12:40:D:\xampp\htdocs\gov_motion\includes\db.inc.php99:query:SELECT *  FROM unit_tbl where steps like "%6%"
