@@ -332,7 +332,7 @@ function ajaxMotionList($data)
                 $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchUnit),null);
                 break;
             default:
-                $searchQuery = pdoQuery('motion_view', array('motion_id'), array('attr_name' => $attrName), "and content like \"%$attrValue%\"");
+                $searchQuery = pdoQuery('motion_view', array('motion_id'), array('attr_name' => $attrName,'category'=>$category), "and content like \"%$attrValue%\"");
                 break;
         }
         foreach ($searchQuery as $row) {

@@ -11,6 +11,7 @@ $(document).on('click','.multiple-search',function(){
 });
 $(document).on('click','.start-multiple-search',function(){
     delete filter.search;
+    filter.multiple_search={};
     var multipleSearchData={};
     $('.search-key').each(function(k,v){
        var _=$(v);
@@ -22,7 +23,7 @@ $(document).on('click','.start-multiple-search',function(){
         var value= _.find('.search-value').val();
         var otherValue= _.find('.attr-value').val();
         //console.log(otherValue);
-        value='0'==value?false:value
+        value='0'==value?false:value;
         //console.log(motionAttr);
         //console.log(value);
         if(motionAttr){
@@ -61,7 +62,7 @@ $(document).on('click','.start-multiple-search',function(){
     $('.close-popup').click();
 
     reflashList(orderby,page,order);
-    delete filter.multiple_search;
+
 
 });
 function decodeSearchDate(element) {

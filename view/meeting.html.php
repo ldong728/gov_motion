@@ -337,9 +337,9 @@
                         if(v>0){
                             var unitName='';
                             var delButton=staff.steps.indexOf('3')>-1?'<td><button class="delete-motion" id="del'+v+'">X</button></td>':'';
-                            if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市人大代工委';
+                            if(['审核','登记'].indexOf(c[v]['当前环节'])>-1)unitName='市人大代工委';
                             if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督查室';
-                            if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
+                            if(['办理','反馈'].indexOf(c[v]['当前环节'])>-1)unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (myCount++) +
                                 '<td><input type="checkbox" class="check" value='+v+'></td>' +
@@ -364,9 +364,9 @@
                         if(v>0){
                             var unitName='';
                             var delButton=staff.steps.indexOf('3')>-1?'<td><button class="delete-motion" id="del'+v+'">X</button></td>':'';
-                            if(['审核','登记','反馈'].indexOf(c[v]['当前环节'])>-1)unitName='市政协办提案委';
+                            if(['审核','登记'].indexOf(c[v]['当前环节'])>-1)unitName='市政协办提案委';
                             if('交办'==c[v]['当前环节'])unitName=c[v]['交办单位']||'市政府督查室';
-                            if('办理'==c[v]['当前环节'])unitName=c[v]['主办单位']||'';
+                            if(['办理','反馈'].indexOf(c[v]['当前环节'])>-1)unitName=c[v]['主办单位']||'';
                             var listContent = '<tr class="list-content">' +
                                 '<td>' + (myCount++) +
                                 '<td><input type="checkbox" class="check" value='+v+'></td>' +
@@ -429,6 +429,7 @@
     $('.search-button').click(function(){
         var input=$('.search-input');
         if($.trim(input.val())){
+            delete filter.multiple_search;
             filter.search={attr_name:searchAttrName,attr_value:input.val(),attr_type:searchAttrType};
             if($(this).hasClass('inner'))filter.search.motion_id_limit=motionIdLimit;
             reflashList(orderby,page,order);
