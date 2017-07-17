@@ -25,3 +25,4 @@
 2017.07.07.16:00:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php99:query:SELECT *  FROM motion_view WHERE motion_id in("3","16","17","19","20","22","24","25","26","27","28","29","30","32","35","37","38","39","40","41") AND attr_name in("案号","领衔人","提案人","案别","案由","性质类别1","性质类别2","原文","当前环节","交办单位","协办单位","主办单位")
 2017.07.07.16:00:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php99:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
 2017.07.07.16:00:39:D:\xampp\htdocs\gov_motion\includes\db.inc.php99:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="4954" limit 1
+2017.07.15.10:28:35:D:\xampp\htdocs\gov_motion\download.php12:multiple_statistics

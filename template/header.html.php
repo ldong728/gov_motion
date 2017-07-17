@@ -9,4 +9,5 @@
     <script type="text/javascript" src="js/jquery.jqprint-0.3.js"></script>
     <script type="text/javascript" src="js/index.js?v=<?php echo rand(10,1000)?>"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheet/main.css?v=<?php echo rand(1000, 9999) ?>">
+
 </head>
