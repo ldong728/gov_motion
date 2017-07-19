@@ -425,7 +425,6 @@ function ajaxMotionList($data)
         $totalNumber=count($sortFilter['motion_id']);
 
 
-//        mylog(getArrayInf($filter));
 
     }
 
@@ -801,6 +800,17 @@ function setAttrValue($row)
         $content = DataSupply::indexToValue($row['target'], $row['content_int']);
     }
     return $content;
+}
+
+/**
+ * 从客户端获取需要输出列表的motionList，存入$_SESSION
+ * @param $data motionId列表
+ */
+function ajaxPrepareMotionsToOutput($data){
+    $key=getRandStr(6);
+    mylog($key);
+    $_SESSION[$key]=$data;
+    echo ajaxBack($key);
 }
 
 function ajaxDeleteMotion($data)

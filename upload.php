@@ -28,9 +28,11 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
                         $id=pdoInsert('attr_tbl',$value,'update');
                         $inf['attrId']=$id;
                     }catch(PDOException $e){
+                        mylog($e->getMessage());
                         $inf['state']='fail';
                     }
                 $inf['step']=$step;
+//                mylog(getArrayInf($inf));
                 echo json_encode($inf);
                 if(1==$step){
                     uploadFileByCurl(REMOTE_SERVER,$GLOBALS['mypath'].'/'.$inf['url'],'original',['file_name'=>$inf['name']]);
@@ -54,6 +56,7 @@ if(isset($_FILES)&&isset($_GET['handler_attachment'])){
         $value=array('attachment'=>$inf['url'],'attachment_name'=>addslashes($inf['originalName']));
         try{
             $handlerId=$_GET['handler_attachment'];
+            uploadFileByCurl(REMOTE_SERVER,$GLOBALS['mypath'].'/'.$inf['url'],'file',['file_name'=>$inf['name']]);
             pdoUpdate('motion_handler_tbl',$value,array('motion_handler_id'=>$handlerId,'motion'=>$_SESSION['staffLogin']['currentMotion']),' limit 1');
             echo json_encode($inf);
         }catch(PDOException $e){

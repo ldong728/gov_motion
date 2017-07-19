@@ -99,6 +99,31 @@ function sta2()
     exit;
 }
 
+
+function ajax_downLoad(){
+    $key=$_GET['key'];
+    $category=$_GET['category'];
+    $data=null;
+    if(isset($_SESSION[$key])){
+        $data=$_SESSION[$key];
+
+    }else{
+        echo 'error';
+        exit;
+    }
+    if(1==$category){
+        $field=array('案号'=>'案号', '领衔人'=>'领衔人', '案由'=>'案由', '性质类别'=>'性质类别1', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位');
+    }else{
+        $field=array('案号'=>'案号', '提案人'=>'提案人', '案由'=>'案由', '性质类别'=>'性质类别2', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位');
+    }
+    $motionInfo=reGroupMotionInfList($data,$field);
+//    mylog(getArrayInf($motionInfo));
+    include 'view/motion_inf_output.html.php';
+    unset($_SESSION[$key]);
+    exit;
+
+}
+
 function reply_table2()
 {
     $motionId = $_GET['motion_id'];
@@ -223,7 +248,7 @@ function handleDetailInfo($unitId,$unitName=null){
             if (!isset($sortList[$row['motion_id']][$row['attr_name']])) $sortList[$row['motion_id']][$row['attr_name']] = $content;
             else $sortList[$row['motion_id']][$row['attr_name']] .= ',' . $content;
             $sortList[$row['motion_id']]['案由'] = $row['motion_name'];
-//        $sortList[$row['motion_id']]['案别']=2==$row['category']?'建议':'提案';
+        $sortList[$row['motion_id']]['案别']=2==$row['category']?'建议':'提案';
             $sortList[$row['motion_id']]['当前环节'] = $row['step_name'];
 //        $sortList[$row['motion_id']]['编号'] = $row['zx_motion'];
             $sortList[$row['motion_id']]['category']=$row['category'];
@@ -245,5 +270,40 @@ function handleDetailInfo($unitId,$unitName=null){
 function getMeetingName($meetingId)
 {
     return pdoQuery('meeting_tbl', array('meeting_name'), array('meeting_id' => $meetingId), 'limit 1')->fetch()['meeting_name'];
+}
+
+function reGroupMotionInfList($motionList,$motionFiled){
+    $motionQuery=pdoQuery('motion_view',['motion_id','attr_name','step_name','meeting','category','content','content_int','target','value_type','attachment'],['motion_id'=>$motionList],null);
+    $dutyList=null;
+    $sortList=array();
+
+//    mylog(getArrayInf($dutyList));
+
+    foreach ($motionQuery as $row) {
+//        if(!$singleRow)$singleRow=$row;
+        if(!$dutyList){
+            $dutyInf=pdoQuery('duty_view',['duty_id','user_name','user_phone'],['category'=>$row['category'],'meeting'=>$row['meeting']],null);
+            foreach ($dutyInf as $v) {
+                $dutyList[$v['duty_id']]=$v;
+            }
+//            mylog(getArrayInf($dutyList));
+        }
+        if(in_array($row['attr_name'],$motionFiled)){
+            $content = 'string' == $row['value_type'] ? $row['content'] : $row['content_int'];
+            $content = 'attachment' == $row['value_type'] ? $row['attachment'] : $content;
+            if ('index' == $row['value_type']) {
+                if('duty'==$row['target'])$content=$dutyList[$row['content_int']]['user_name'];
+                else $content = DataSupply::indexToValue($row['target'], $content);
+            }
+
+
+            if (!isset($sortList[$row['motion_id']][$row['attr_name']])) $sortList[$row['motion_id']][$row['attr_name']] = $content;
+            else $sortList[$row['motion_id']][$row['attr_name']] .= ',' . $content;
+            $sortList[$row['motion_id']]['当前环节'] = $row['step_name'];
+            $sortList[$row['motion_id']]['category']=$row['category'];
+        }
+    }
+    return $sortList;
+
 }
 
