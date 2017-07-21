@@ -80,7 +80,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <th>性质类别</th>
+                    <th>类别</th>
                     <td colspan="2" class="verify-value"><span
                             class="encoded-data"><?php echo json_encode($motion['性质类别' . $meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
                     </td>
@@ -106,11 +106,14 @@
                 <?php if(1==$meetingInf['category']):?>
                 <tr>
                     <th>领衔人</th>
-                    <td colspan="5" class="verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
+                    <td colspan="3" class="verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
                             class="encoded-data"><?php echo json_encode($motion['领衔人'], JSON_UNESCAPED_UNICODE) ?></span></td>
                     <td colspan="2">
                         <button class="user-inf" id="inf<?php echo current($motion)['motion_id']?>">显示</button>
                     </td>
+                    <th>所属中心组</th>
+                    <td colspan="2"><?php if($unitGroupInf):?><?php echo $unitGroupInf['unit']?><?php endif?></td>
+
                 </tr>
                 <?php endif ?>
                 <?php if(2==$meetingInf['category']):?>

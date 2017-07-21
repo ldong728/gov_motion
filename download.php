@@ -129,7 +129,7 @@ function reply_table2()
     $motionId = $_GET['motion_id'];
     $meetingName = $_GET['meeting_name'];
     $category = $_GET['category'];
-    $fileName = 1 == $category ? '建议反馈表' : '提案反馈表';
+    $fileName = 1 == $category ? '议案建议反馈表' : '提案反馈表';
     $fileName .= timeUnixToMysql(time());
 //    header("Content-Type:text/html; charset=gb2312");
     header("Content-Type: application/doc");

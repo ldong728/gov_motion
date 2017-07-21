@@ -88,9 +88,18 @@
 <?php if(1==$meetingInf['category']):?>
     <tr>
         <th>领衔人</th>
-        <td colspan="7" class="verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
+        <td colspan="5" class="verify-value name-auto" style="text-align: left;padding-left: 10px;"><span
                 class="encoded-search-data"><?php echo json_encode($motion['领衔人'], JSON_UNESCAPED_UNICODE) ?></span></td>
+        <th>所属中心组</th>
+        <td class="search-key" data-motionattr="user_unit">
+            <select class="search-value">
+                <option value="0">请选择</option>
+                <?php foreach($userUnit as $row):?>
+                    <option value="<?php echo $row['user_unit_id']?>"><?php echo $row['user_unit_name']?></option>
+                <?php endforeach ?>
+            </select></td>
     </tr>
+
 <?php endif ?>
 <?php if(2==$meetingInf['category']):?>
     <tr>
@@ -111,6 +120,27 @@
     <td colspan="7" class="colspan7 motion-name-area verify-value" style="text-align: left; padding-left: 10px;"><span
             class="encoded-search-data"><?php echo json_encode($motion['案由'], JSON_UNESCAPED_UNICODE) ?></span></td>
 </tr>
+<?php if(1==$meetingInf['category']):?>
+<tr>
+    <th>审核</th>
+    <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+            class="encoded-search-data"><?php echo json_encode($motion['审核'.$meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
+    </td>
+</tr>
+<?php else: ?>
+    <tr>
+        <th>初审</th>
+        <td colspan="3" class="colspan3" style="text-align: left;padding-left: 10px;"><span
+                class="encoded-search-data"><?php echo json_encode($motion['初审'], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+    </tr>
+    <tr>
+        <th>审核</th>
+        <td colspan="3" class="colspan3" style="text-align: left;padding-left: 10px;"><span
+                class="encoded-search-data"><?php echo json_encode($motion['审核'.$meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+    </tr>
+<?php endif ?>
 <tr>
     <th>审核意见</th>
     <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span

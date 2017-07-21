@@ -30,7 +30,7 @@
 
 <nav class="home-nav">
     <ul class="clearfix">
-
+        <li><a href="index.php">首页</a></li>
         <li><a href="#" class="search" data-filter="案号" data-type="int">按案号</a></li>
         <li><a href="#" class="search" data-filter="案由" data-type="string">按案由</a></li>
         <?php if (2 == $meetingInf['category']): ?>
@@ -150,6 +150,11 @@
             <div class="table-page">
                 <span class="float-left"><button class="list-output all-out">全部导出</button></span>
                 <span class="float-left"><button class="list-output checked-out" >选中项导出</button></span>
+                <?php if (in_array(1, $_SESSION['staffLogin']['steps'])): ?>
+                    <span class="float-left"><button class="create-motion">新建<?php echo 1==$_SESSION['staffLogin']['category']?'建议/议案':'提案'?>
+                    </button>
+                        </span>
+                <?php endif ?>
 
                 <span class="first-page"><i class="icon icon-step-backward"></i></span>
                 <span class="span-i prev-page"><i class="icon icon-caret-left"></i></span>
@@ -173,7 +178,7 @@
     <p>技术支持 <span>慈溪谷多计算机网络技术有限公司</span></p>
 </footer>
 
-<div class="m-popup clearfix" style="display: none">
+<div class="m-popup popup-container clearfix" style="display: none">
 
 </div>
 <div class="search-container">
@@ -184,6 +189,50 @@
         <button class="search-button inner">在结果中搜索</button>
     </div>
 </div>
+<div class="popup-container popup-search field-select" style="display: none">
+    <div class="mask"></div>
+    <div class="term popup-title">
+        <div class="title-h2">
+            <h2>查询条件<i class="icon icon-close close-popup-js"></i></h2>
+        </div>
+        <div class="term-msg">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr class="filter-wrap-js">
+                    <td class="light">姓名</td>
+                    <td>曾用名</td>
+                    <td>性别</td>
+                    <td>教职工号</td>
+                    <td>国籍/地区</td>
+                    <td>身份证类型</td>
+                    <td class="light">身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                    <td>身份证号</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="term-b">
+            <button type="button" class="termbtn">确定</button>
+            <button type="button" class="termbtn close-popup-js">取消</button>
+        </div>
+    </div>
+</div>
+
 </body>
 
 

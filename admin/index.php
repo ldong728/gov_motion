@@ -168,6 +168,28 @@ function meet_edit(){
     printAdminView('blank.html.php','添加操作员');
 }
 function user_manage(){
+//    $zxQuery=pdoQuery('zx_motion_tbl',null,null,null);
+//    $zxInf=[];
+//    $valueList=[];
+//    foreach ($zxQuery as $row) {
+//        $zxInf[$row['motion']]=$row['zx_motion'];
+//    }
+//    $position=pdoQuery('motion_view',['motion_id','attr_id','motion_attr','attr_template','content_int'],['category'=>2,'attr_name'=>'登记号'],null);
+//    foreach ($position as $row) {
+//        $value=['motion'=>$row['motion_id'],'motion_attr'=>$row['motion_attr'],'attr_template'=>$row['attr_template'],'content_int'=>$zxInf[$row['motion_id']]];
+//        if($row['attr_id'])$value['attr_id']=$row['attr_id'];
+////        mylog(getArrayInf($value));
+//        $valueList[]=$value;
+//    }
+//    try{
+//        pdoBatchInsert('attr_tbl',$valueList,'ignore');
+//        mylog('set ok');
+//    }catch(PDOException $e){
+//        mylog($e->getMessage());
+//    }
+//    mylog(getArrayInf($valueList));
+
+
 //    $motionQuery=pdoQuery('motion_view',null,array('attr_name'=>'审核1'),'and content is null');
 //    $insertValue=array();
 //    foreach ($motionQuery as $row) {

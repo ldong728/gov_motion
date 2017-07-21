@@ -1,3 +1,4 @@
-2017.07.19.11:07:30:D:\xampp\htdocs\gov_motion\upload.php31:SQLSTATE[42000]: Syntax error or access violation: 1142 INSERT, UPDATE command denied to user 'gov_motion_user'@'localhost' for table 'attr_tbl'
-2017.07.19.11:08:01:D:\xampp\htdocs\gov_motion\upload.php31:SQLSTATE[42000]: Syntax error or access violation: 1142 INSERT, UPDATE command denied to user 'gov_motion_user'@'localhost' for table 'attr_tbl'
-2017.07.19.14:31:45:D:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:jyjtemp,status:
+2017.07.21.10:20:21:D:\xampp\htdocs\gov_motion\functions.php719:{unit: 宗汉街道,group: 第二代表团}
+2017.07.21.11:06:28:D:\xampp\htdocs\gov_motion\functions.php380:{33: {motionAttr: 33,type: index,value: {0: 43,1: 44}}}
+2017.07.21.11:10:59:D:\xampp\htdocs\gov_motion\functions.php380:{user_unit: {motionAttr: user_unit,value: 715}}
+2017.07.21.11:17:23:D:\xampp\htdocs\gov_motion\functions.php380:{8: {motionAttr: 8,type: option,value: 不予立案}}

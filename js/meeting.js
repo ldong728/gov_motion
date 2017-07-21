@@ -1,5 +1,5 @@
-var fields= 1==category ? {'案号':'案号','领衔人':'领衔人', '案别':'案别', '案由':'案由', '性质类别':'性质类别1', '原文':'原文', '当前环节':'当前环节', '交办单位':'交办单位', '协办单位':'协办单位', '主办单位':'主办单位'}:
-{'案号':'案号','登记号':'登记号', '提案人':'提案人', '案由':'案由', '性质类别':'性质类别2', '原文':'原文', '当前环节':'当前环节', '交办单位':'交办单位', '协办单位':'协办单位', '主办单位':'主办单位'};
+var fields= 1==category ? {'案号':'案号','领衔人':'领衔人', '案别':'案别', '案由':'案由', '性质类别':'性质类别1', '原文':'原文', '当前环节':'当前环节', '交办单位':'交办单位', '主办单位':'主办单位', '协办单位':'协办单位'}:
+{'登记号':'登记号','案号':'案号', '提案人':'提案人', '案由':'案由', '性质类别':'性质类别2', '原文':'原文', '当前环节':'当前环节', '交办单位':'交办单位', '主办单位':'主办单位', '协办单位':'协办单位'};
 resizeWindow();
 reflashList(orderby, page, order);
 $(window).resize(function () {
@@ -23,7 +23,7 @@ $('.statistics').click(function () {
 //        });
 });
 
-$('.order-by-attr').click(function () {
+$(document).on('click','.order-by-attr',function(){
     var newOrderby = ($(this).text());
     if ('性质类别' == newOrderby)newOrderby += category;
     if (orderby == newOrderby) {
@@ -59,7 +59,7 @@ $('.target-select').click(function () {
         mPopup();
     })
 });
-$('.select-all').click(function () {
+$(document).on('click','.select-all',function(){
     var state = $(this).prop('checked');
     $('.check').prop('checked', state);
 });
@@ -186,71 +186,42 @@ function reflashList(sOrderby, sPage, sOrder) {
         attr_order: sOrder ? 'asc' : 'desc',
         page: sPage || page,
         filter: filter,
-        count: count
+        count: count,
+        fields:fields
     };
 
     ajaxPost('ajaxMotionList', data, function (back) {
+        $('#genetable_tableData').html('<table id="sample2" width="100%" border="0" cellpadding="0" cellspacing="0" class="sample-table-js source-table"><thead><tr class="list-head"></tr></thead><tbody class="list-table"></tbody></table>');
+        $('.list-head').append('<th>序号</th><th><input type="checkbox" class="select-all"></th>');
+        $.each(fields,function(k,v){
+            $('.list-head').append('<th class="order-by-attr"><a href="#">'+k+'</a></th>');
+        });
+        if(staff.steps.indexOf('3')>-1){
+            $('.list-head').append('<th>删除</th>')
+        }
         var value = backHandle(back);
         $('.list-content').remove();
         var myCount = 1 + (page * count);
         var c = value.list;
-//                console.log(c);
-        if (1 == data.category) {
-            $.each(value.sort, function (k, v) {
-                if (v > 0) {
-                    var unitName = '';
-                    var delButton = staff.steps.indexOf('3') > -1 ? '<td><button class="delete-motion" id="del' + v + '">X</button></td>' : '';
-                    if (['审核', '登记'].indexOf(c[v]['当前环节']) > -1)unitName = '市人大代工委';
-                    if ('交办' == c[v]['当前环节'])unitName = c[v]['交办单位'] || '市政府督查室';
-                    if (['办理', '反馈'].indexOf(c[v]['当前环节']) > -1)unitName = c[v]['主办单位'] || '';
-                    var listContent = '<tr class="list-content">' +
-                        '<td>' + (myCount++) +
-                        '<td><input type="checkbox" class="check" value=' + v + '></td>' +
-                        '<td>' + (c[v]['案号'] || '') + '</td>' +
-                        '<td>' + (c[v]['领衔人'] || '') + '</td>' +
-                        '<td>' + (c[v]['案别'] || '') + '</td>' +
-                        '<td class="motion-select" id="' + v + '"><a href="#">' + (c[v]['案由'] || '') + '</a></td>' +
-                        '<td>' + (c[v]['性质类别' + category] || '') + '</td>' +
-                        '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
-                        '<td>' + (c[v]['当前环节'] || '') + '</td>' +
-                        '<td>' + unitName + '</td>' +
-                        '<td style="white-space: nowrap;text-overflow: clip; overflow: hidden">' + (c[v]['协办单位'] || '') + '</td>' +
-                        delButton +
-                        '</tr>';
-                    $('.list-table').append(listContent);
+        $.each(value.sort,function(k,v){
+            $('.list-table').append('<tr id="tr'+v+'"></tr>');
+            $('#tr'+v).append('<td>'+(myCount++)+'</td><td><input type="checkbox" class="check" value=' + v + '></td>');
+            $.each(fields,function(name,field){
+                switch(field){
+                    case '原文':
+                        $('#tr'+v).append('<td><a href="' + (c[v][field] || '#') + '">附件</a></td>');
+                        break;
+                    case '案由':
+                        $('#tr'+v).append('<td class="motion-select" id="' + v + '"><a href="#">' + c[v]['案由'] + '</a></td>');
+                        break;
+                    default :
+                        $('#tr'+v).append('<td>' + (c[v][field] || '') + '</td>');
+                        break;
                 }
 
-
             });
-        } else {
-            $.each(value.sort, function (k, v) {
-                if (v > 0) {
-                    var unitName = '';
-                    var delButton = staff.steps.indexOf('3') > -1 ? '<td><button class="delete-motion" id="del' + v + '">X</button></td>' : '';
-                    if (['审核', '登记'].indexOf(c[v]['当前环节']) > -1)unitName = '市政协办提案委';
-                    if ('交办' == c[v]['当前环节'])unitName = c[v]['交办单位'] || '市政府督查室';
-                    if (['办理', '反馈'].indexOf(c[v]['当前环节']) > -1)unitName = c[v]['主办单位'] || '';
-                    var listContent = '<tr class="list-content">' +
-                        '<td>' + (myCount++) +
-                        '<td><input type="checkbox" class="check" value=' + v + '></td>' +
-                        '<td>' + c[v]['编号'] + '</td>' +
-                        '<td>' + (c[v]['案号'] || '') + '</td>' +
-                        '<td>' + (c[v]['提案人'] || '') + '</td>' +
-//                            '<td>' + c[v]['案别'] + '</td>' +
-                        '<td class="motion-select" id="' + v + '"><a href="#">' + c[v]['案由'] + '</a></td>' +
-                        '<td>' + (c[v]['性质类别' + category] || '') + '</td>' +
-                        '<td><a href="' + (c[v]['原文'] || '#') + '">附件</a></td>' +
-                        '<td>' + (c[v]['当前环节'] || '') + '</td>' +
-                        '<td>' + unitName + '</td>' +
-                        '<td style="white-space: nowrap;text-overflow: clip; overflow: hidden">' + (c[v]['协办单位'] || '') + '</td>' +
-                        delButton +
-                        '</tr>';
-                    $('.list-table').append(listContent);
-                }
-
-
-            });
-        }
+            if(staff.steps.indexOf('3') > -1)$('#tr'+v).append('<td><button class="delete-motion" id="del' + v + '">X</button></td>');
+        });
         reCalculate(value.totalCount);
         motionIdLimit = value.motionIdLimit;
         console.log(motionIdLimit);

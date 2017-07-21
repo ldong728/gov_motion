@@ -224,7 +224,7 @@ function ajaxMotionList($data)
         $orderStr = 'order by zx_motion ' . $attrOrder;
         unset($sortFilter['attr_name']);
     }
-    $field = isset($data['field']) ? $data['field'] : array('案号', '领衔人', '提案人', '案别', '案由', '性质类别1', '性质类别2', '原文', '当前环节', '交办单位', '协办单位', '主办单位');
+    $field = isset($data['fields']) ? $data['fields'] : array('案号', '领衔人', '提案人', '案别', '案由', '性质类别1', '性质类别2', '原文', '当前环节', '交办单位', '协办单位', '主办单位');
 
     //$sort用于储存顺序
     $sort = array();
@@ -440,7 +440,7 @@ function ajaxMotionList($data)
         $motionfilter[] = $row['motion_id'];
     }
 
-
+//    mylog(getArrayInf($field));
     $motionDetail = pdoQuery('motion_view', null, array('motion_id' => $motionfilter, 'attr_name' => $field), null);
     $singleRow = null;
     foreach ($motionDetail as $row) {
@@ -458,10 +458,10 @@ function ajaxMotionList($data)
 
         if (!isset($sortList[$row['motion_id']][$row['attr_name']])) $sortList[$row['motion_id']][$row['attr_name']] = $content;
         else $sortList[$row['motion_id']][$row['attr_name']] .= ',' . $content;
-        $sortList[$row['motion_id']]['案由'] = $row['motion_name'];
+//        $sortList[$row['motion_id']]['案由'] = $row['motion_name'];
 //        $sortList[$row['motion_id']]['案别']=2==$row['category']?'建议':'提案';
         $sortList[$row['motion_id']]['当前环节'] = $row['step_name'];
-        $sortList[$row['motion_id']]['编号'] = $row['zx_motion'];
+//        $sortList[$row['motion_id']]['编号'] = $row['zx_motion'];
     }
 
     if ($singleRow) {
@@ -557,7 +557,9 @@ function createMotion()
         try {
             $id = pdoInsert('motion_tbl', array('meeting' => $staff['meeting'], 'category' => $staff['category'], 'motion_name' => '新建', 'motion_template' => $meetingInf['motion_template'], 'step' => 1, 'user' => $staff['staffId']));
             if (2 == $staff['category']) {
-                pdoInsert('zx_motion_tbl', array('motion' => $id));
+                $zx_id=pdoInsert('zx_motion_tbl', array('motion' => $id));
+                $zxIdInf=pdoQuery('motion_attr_view',['motion_attr_id as motion_attr','attr_template'],['attr_name'=>'登记号'],'limit 1')->fetch();
+                pdoInsert('attr_tbl',['motion'=>$id,'motion_attr'=>$zxIdInf['motion_attr'],'attr_template'=>$zxIdInf['attr_template'],'content_int'=>$zx_id,'staff'=>$staff['staffId']]);
             }
             pdoCommit();
             editMotion(array('id' => $id));

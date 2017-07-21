@@ -429,9 +429,11 @@
         if (multiple) {
 
             $.each($('input.exist'), function (k, v) {
+
                 var _ = $(v);
                 var key = _.val();
                 var name = _.nextAll('.exist-name').text();
+                console.log(name);
                 var attrId = _.prev().val();
                 //console.log(Boolean(key));
                 if (attrId) {
@@ -443,6 +445,8 @@
             });
             valuePlace.children('.target-select').prevAll().remove();
             valuePlace.children('.target-select').before(content);
+            console.log(content);
+            console.log('add');
 
         } else {
             $.each($('input.exist'), function (k, v) {
