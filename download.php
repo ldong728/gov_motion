@@ -48,13 +48,23 @@ function motion_1_list()
  */
 function sta1()
 {
+    $category=$_GET['category'];
     $fieldCount = 3;
     $meeting = 'all' == $_SESSION['staffLogin']['meeting'] ? 2 : $_SESSION['staffLogin']['meeting'];
     $fileName = getMeetingName($meeting);
-    $fileName .= '各界别提交提案数量统计';
+    if(2==$category){
+        $fileName .= '各界别提交提案数量统计';
+        $title = '<tr><td>界别</td><td>件数</td><td>平均百分比</td></tr>';
+        $attrName='提案人';
+    }else{
+        $fileName .= '各代表团提交建议数量统计';
+        $title = '<tr><td>代表团</td><td>件数</td><td>平均百分比</td></tr>';
+        $attrName='领衔人';
+    }
+
     $totalNumber = 0;
-    $title = '<tr><td>界别</td><td>件数</td><td>平均百分比</td></tr>';
-    $query = pdoQuery('s_duty_view', array('user_group', 'user_group_name', 'count(*) as number',), array('attr_name' => '提案人', 'meeting' => $meeting), ' group by user_group');
+
+    $query = pdoQuery('s_duty_view', array('user_group', 'user_group_name', 'count(*) as number',), array('attr_name' => $attrName, 'meeting' => $meeting), ' group by user_group');
     $listQuery = array();
     foreach ($query as $row) {
         $totalNumber += $row['number'];
@@ -76,13 +86,23 @@ function sta1()
  */
 function sta2()
 {
+    $category=$_GET['category'];
     $fieldCount = 3;
     $meeting = 'all' == $_SESSION['staffLogin']['meeting'] ? 2 : $_SESSION['staffLogin']['meeting'];
     $fileName = getMeetingName($meeting);
-    $fileName .= '各委组提交提案数量统计';
+    if(2==$category){
+        $fileName .= '各委组提交提案数量统计';
+        $title = '<tr><td>委组</td><td>件数</td><td>平均百分比</td></tr>';
+        $attrName='提案人';
+    }else{
+        $fileName .= '各中心组提交提案数量统计';
+        $title = '<tr><td>中心组</td><td>件数</td><td>平均百分比</td></tr>';
+        $attrName='领衔人';
+    }
+
     $totalNumber = 0;
-    $title = '<tr><td>委组</td><td>件数</td><td>平均百分比</td></tr>';
-    $query = pdoQuery('s_duty_view', array('user_unit ', 'user_unit_name', 'count(*) as number',), array('attr_name' => '提案人', 'meeting' => $meeting), ' group by user_unit');
+
+    $query = pdoQuery('s_duty_view', array('user_unit ', 'user_unit_name', 'count(*) as number',), array('attr_name' => $attrName, 'meeting' => $meeting), ' group by user_unit');
     $listQuery = array();
     foreach ($query as $row) {
         $totalNumber += $row['number'];
@@ -172,6 +192,30 @@ function reply_table2()
 //        mylog(getArrayInf($motionInf));
 //        if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] = iconv('utf-8', 'gb2312//IGNORE', $motionInf['sub_handle']);
         include 'view/response_table2.html.php';
+    }else{
+            foreach ($motionQuery as $row) {
+                if ($row['content'] || $row['content_int']) {
+                    if ('领衔人' == $row['attr_name']) {
+                        $userInf = pdoQuery('duty_view', array('user_name', 'user_phone', 'address'), array('duty_id' => $row['content_int']), 'limit 1')->fetch();
+                        $motionInf['user_name'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_name']);
+//                    if ($userInf['user_phone']) $motionInf['phone'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_phone']);
+                        if ($userInf['user_phone']) $motionInf['phone'] =$userInf['user_phone'];
+                        continue;
+                    }
+                    if ('协办单位' == $row['attr_name']) {
+                        if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] .= '，' . DataSupply::indexToValue($row['target'], $row['content_int']);
+                        else $motionInf['sub_handle'] = DataSupply::indexToValue($row['target'], $row['content_int']);
+                        continue;
+                    }
+                    if ($row['target']) $row['content'] = DataSupply::indexToValue($row['target'], $row['content_int']);
+//                $motionInf[iconv('utf-8', 'gb2312//IGNORE', $row['attr_name'])] = iconv('utf-8', 'gb2312//IGNORE', $row['content'] ? $row['content'] : $row['content_int']);
+                    $motionInf[$row['attr_name']] = $row['content'] ? $row['content'] : $row['content_int'];
+
+                }
+            }
+//        mylog(getArrayInf($motionInf));
+//        if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] = iconv('utf-8', 'gb2312//IGNORE', $motionInf['sub_handle']);
+            include 'view/response_table1.html.php';
     }
 
 
@@ -211,8 +255,48 @@ function batch_handle_info(){
         }
     }
     exit;
-
 }
+
+function non_motion_user(){
+    $category=$_GET['category'];
+    $meeting=$_GET['meeting'];
+    $attrname=1==$category?'领衔人':'提案人';
+    $unit=1==$category?'中心组':'委组';
+    $group=1==$category?'代表团':'界别';
+    $query=pdoQuery('duty_view',['user_name','user_phone','address','user_unit_name','user_group_name','duty_id'],['meeting'=>$meeting,'category'=>$category],null);
+
+    foreach ($query as $row) {
+        $dutyList[$row['duty_id']]=$row;
+    }
+    $query=pdoQuery('motion_view',['content_int'],['meeting'=>$meeting,'category'=>$category,'attr_name'=>$attrname],null);
+    foreach ($query as $row) {
+        if(isset($dutyList[$row['content_int']]))unset($dutyList[$row['content_int']]);
+    }
+    $title = "<tr><td>姓名</td><td>电话</td><td>工作单位</td><td>$unit</td><td>$group</td></tr>";
+    $fieldCount=5;
+    $fileName=2==$category?"无提案委员统计":'无建议代表统计';
+    $listQuery=$dutyList;
+    include 'view/formated_out.html.php';
+    exit;
+}
+function have_coop_motion(){
+    $category=$_GET['category'];
+    $meeting=$_GET['meeting'];
+    $query=pdoQuery('motion_view',['motion_id'],['attr_name'=>'附议人','meeting'=>$meeting,'category'=>$category],' and content_int is not null');
+    $motionList=[];
+    foreach ($query as $row) {
+        $motionList[]=$row['motion_id'];
+    }
+    if(1==$category){
+        $field=array('案号'=>'案号', '领衔人'=>'领衔人', '案由'=>'案由', '性质类别'=>'性质类别1','附议人'=>'附议人');
+    }else{
+        $field=array('案号'=>'案号', '提案人'=>'提案人', '案由'=>'案由', '性质类别'=>'性质类别2','附议人'=>'附议人');
+    }
+    $motionInfo=reGroupMotionInfList($motionList,$field);
+    include 'view/motion_inf_output.html.php';
+    exit;
+}
+
 
 
 

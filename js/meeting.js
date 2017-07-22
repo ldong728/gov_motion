@@ -17,10 +17,7 @@ $('.list-filter').click(function () {
     reflashList(orderby, page, order);
 });
 $('.statistics').click(function () {
-//        alert('hahahah');
-//        ajaxPost('ajaxGetStatistics',{},function(data){
-//
-//        });
+
 });
 
 $(document).on('click','.order-by-attr',function(){
@@ -117,21 +114,15 @@ $(document).on('click', '.delete-motion', function () {
 $(document).on('click', '.multiple-statistics', function () {
     location.href = "?download=multiple_statistics";
 });
-//$(document).on('change','.check',function(){
-//    var id=$(this).val();
-//    var isChecked=$(this).prop('checked');
-//    if(isChecked){
-//        checkedList[id]=id;
-//    }else{
-//        delete checkedList[id];
-//    }
-//    if($(checkedList).length<1){
-//        $('.checked-out').attr('disabled','disabled')
-//
-//    }else{
-//        $('.checked-out').removeAttr('disabled')
-//    }
-//});
+$(document).on('click','.get-statistics-view',function(){
+    //alert('ok');
+    //console.log({category:category,meeting:meetingId});
+    ajaxPost('get_statistics_view',{category:category,meeting:meetingId},function(back){
+        console.log(back);
+       $('#genetable_tableData').html(back);
+    });
+});
+
 $(document).on('click','.list-output',function(){
     var motions=null;
     if($(this).hasClass('checked-out')){

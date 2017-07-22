@@ -96,7 +96,7 @@ function pdoQuery($tableName, $fields, $where, $append)
         $sql=$sql.' '.trim($append);
     }
     try {
-//        mylog('query:'.$sql);
+        mylog('query:'.$sql);
         $query = $GLOBALS['pdo']->query($sql);
         return $query;
     }catch (PDOException $e) {
@@ -196,7 +196,7 @@ function pdoUpdate($tableName,array $value,array $where,$str=''){
         }
     }
     $sql=$sql.$str;
-    mylog($sql);
+//    mylog($sql);
     try {
         $rows=$GLOBALS['pdo']->exec($sql);
         if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($sql);

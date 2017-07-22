@@ -73,7 +73,7 @@
 
     </div>
 
-    <div class="m-popup clearfix" style="display: none" >
+    <div class="m-popup popup-container clearfix" style="display: none" >
 
     </div>        <!-- 弹出层-->
 </div>

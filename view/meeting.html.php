@@ -44,7 +44,9 @@
         <li><a href="#" class="search" data-filter="主办单位" data-type="unit">按主办单位</a></li>
         <li><a href="#" class="search" data-filter="协办单位" data-type="unit">按协办单位</a></li>
         <li><a href="#" class="multiple-search">高级搜索</a></li>
-        <li><a href="#">统计</a></li>
+        <?php if (in_array(3, $_SESSION['staffLogin']['steps'])): ?>
+            <li><a href="#" class="get-statistics-view">统计</a></li>
+        <?php endif ?>
 
     </ul>
     <div class="nav-right">
@@ -96,53 +98,6 @@
                 <div class="table">
                     <div class="container">
                         <div id="genetable_tableData" style="z-index: 1">
-                            <table id="sample2" width="100%" border="0" cellpadding="0" cellspacing="0"
-                                   class="sample-table-js source-table">
-                                <thead>
-                                <?php if (1 == $meetingInf['category']): ?>
-                                    <tr>
-                                        <th>序号</th>
-                                        <th><input type="checkbox" class="select-all"></th>
-                                        <th class="order-by-attr"><a href="#"> 案号</a></th>
-                                        <th class="order-by-attr"><a href="#">领衔人</a></th>
-                                        <th class="order-by-attr"><a href="#">案别</a></th>
-                                        <th class="order-by-attr"><a href="#">案由</a></th>
-                                        <th class="order-by-attr"><a href="#">性质类别</a></th>
-                                        <th>原文</th>
-                                        <th class="order-by-attr"><a href="#">当前环节</a></th>
-                                        <th>办理单位</th>
-
-                                        <th style="white-space: nowrap;text-overflow: clip; overflow: hidden">协办单位</th>
-                                        <?php if (in_array(3, $_SESSION['staffLogin']['steps'])): ?>
-                                            <th>删除</th>
-                                        <?php endif ?>
-                                    </tr>
-                                <?php else: ?>
-                                    <tr>
-                                        <th width="65">序号</th>
-                                        <th width="20"><input type="checkbox" class="select-all"></th>
-                                        <th width="45" class="order-by-attr"><a href="#">编号</a></th>
-                                        <th width="65" class="order-by-attr"><a href="#"> 案号</a></th>
-                                        <th width="180" class="order-by-attr"><a href="#">提案人</a></th>
-                                        <th width="510" class="order-by-attr"><a href="#">案由</a></th>
-                                        <th width="120" class="order-by-attr"><a href="#">性质类别</a></th>
-                                        <th width="90">原文</th>
-                                        <th width="120" class="order-by-attr"><a href="#">当前环节</a></th>
-                                        <th width="160">办理单位</th>
-                                        <th width="380"
-                                            style="white-space: nowrap;text-overflow: clip; overflow: hidden">协办单位
-                                        </th>
-                                        <?php if (in_array(3, $_SESSION['staffLogin']['steps'])): ?>
-                                            <th width="65">删除</th>
-                                        <?php endif ?>
-                                    </tr>
-
-                                <?php endif ?>
-
-                                </thead>
-                                <tbody class="list-table">
-                                </tbody>
-                            </table>
                         </div>
                     </div>
                 </div>
@@ -206,22 +161,6 @@
                     <td>国籍/地区</td>
                     <td>身份证类型</td>
                     <td class="light">身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
-                    <td>身份证号</td>
                 </tr>
                 </tbody>
             </table>

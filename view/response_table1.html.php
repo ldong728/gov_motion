@@ -787,7 +787,7 @@
 normal'><span style='font-size:22.0pt;font-family:宋体;mso-ascii-font-family:
 Calibri;mso-hansi-font-family:Calibri'><?php echo $motionInf['meeting_name']?></span><span lang=EN-US><br>
 </span></b><b style='mso-bidi-font-weight:normal'><span style='font-size:22.0pt;
-font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri'>办理意见反馈表</span></b><b
+font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri'>建议办理工作意见反馈表</span></b><b
         style='mso-bidi-font-weight:normal'><span lang=EN-US style='font-size:22.0pt'><o:p></o:p></span></b></p>
 
 <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
@@ -1027,10 +1027,10 @@ font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri'>
   border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
   padding:0cm 5.4pt 0cm 5.4pt'>
         <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
-                style='font-size:12.0pt;line-height:150%;font-family:宋体'>提案者是否</span><span
+                style='font-size:12.0pt;line-height:150%;font-family:宋体'>领衔代表</span><span
                 lang=EN-US style='font-size:12.0pt;line-height:150%'><o:p></o:p></span></p>
         <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
-                style='font-size:12.0pt;line-height:150%;font-family:宋体'>满意</span><span
+                style='font-size:12.0pt;line-height:150%;font-family:宋体'>反馈意见</span><span
                 lang=EN-US style='font-size:12.0pt;line-height:150%'><o:p></o:p></span></p>
     </td>
     <td width="17%" colspan=3 rowspan=2 style='width:17.82%;border-top:none;
@@ -1157,7 +1157,7 @@ font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri'>
   border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
   padding:0cm 5.4pt 0cm 5.4pt;height:117.1pt'>
         <p class=MsoNormal style='line-height:150%'><span style='font-size:12.0pt;
-  line-height:150%;font-family:宋体'>对提案办理还有什么意见、建议：</span><span lang=EN-US
+  line-height:150%;font-family:宋体'>对建议办理还有什么意见、建议：</span><span lang=EN-US
                                                                style='font-size:12.0pt;line-height:150%'><o:p></o:p></span>
         </p>
     </td>
@@ -1167,7 +1167,7 @@ font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri'>
   none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
   padding:0cm 5.4pt 0cm 5.4pt'>
         <p class=MsoNormal align=center style='text-align:center;line-height:150%'><span
-                style='font-size:12.0pt;line-height:150%;font-family:宋体'>提案者</span><span
+                style='font-size:12.0pt;line-height:150%;font-family:宋体'>领衔代表</span><span
                 lang=EN-US style='font-size:12.0pt;line-height:150%'><o:p></o:p></span></p>
     </td>
     <td width="15%" colspan=2 style='width:15.54%;border-top:none;border-left:
@@ -1262,13 +1262,10 @@ font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:Calibri'>
 Calibri;mso-hansi-font-family:Calibri'>说明：</span><span lang=EN-US
                                                        style='font-size:12.0pt;line-height:150%'>1</span><span style='font-size:12.0pt;
 line-height:150%;font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
-Calibri'>、此表由主办单位在系统打印生成后，与提案办理复文一并寄给提案者；</span><span lang=EN-US
+Calibri'>..此表由各镇、街道人大在建议办理系统打印生成，交领衔代表填写并亲笔签名后收回，反馈意见录入建议办理系统后，原件送交市人大代表工委归档。</span><span lang=EN-US
                                                       style='font-size:12.0pt;line-height:150%'>2</span><span style='font-size:12.0pt;
 line-height:150%;font-family:宋体;mso-ascii-font-family:Calibri;mso-hansi-font-family:
-Calibri'>、本表由委员自主实事求是填写，部门不能代填，示意委员当场填写、自己带回。委员填写后，通过邮寄、传真（</span><span
-        lang=EN-US style='font-size:12.0pt;line-height:150%'>63812450</span><span
-        style='font-size:12.0pt;line-height:150%;font-family:宋体;mso-ascii-font-family:
-Calibri;mso-hansi-font-family:Calibri'>）、网上提交方式及时反馈给市政协提案委（网上反馈请进入慈溪政协网，点击“委员提案履职”，进入相关页面操作）。</span><span
+Calibri'>.有关办理协商方式、采纳情况、满意度反馈情况请代表在相应栏内打“√”。</span><span
         lang=EN-US style='font-size:12.0pt;line-height:150%'><o:p></o:p></span></p>
 
 </div>

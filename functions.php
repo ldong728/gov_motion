@@ -1222,6 +1222,14 @@ function ajaxGetStatistics($data)
 //    echo ajaxBack('ok');
 }
 
+function get_statistics_view($data){
+    $category=$data['category'];
+    $meeting=$data['meeting'];
+//    mylog($meeting);
+    include "view/statistics_view$category.html.php";
+
+    return;
+}
 //function exceOut
 
 function handleStatistics($unitId = 0, $category = 3)
