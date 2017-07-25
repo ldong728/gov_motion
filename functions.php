@@ -70,6 +70,7 @@ function getIndex($orderBy = 'default')
     $motionListFilter = array();
     foreach ($staff['steps'] as $step) {
         if (4 == $step) continue;//如果用户有交办权限，则从筛选器中删除4，待下一步处理
+        if(1==$staff['category']&&6==$step)continue;//如果是人大有反馈权限，则同样从筛选器中删除，待下一步处理
         $motionListFilter['step'][] = $step;
     }
     $meetingListFilter = null;
@@ -93,6 +94,9 @@ function getIndex($orderBy = 'default')
             $motionListFilter['motion_id'] = $motionLimit;
             $motionListFilter['step'][] = 4;
         }
+    }
+    if(in_array(6,$staff['steps'])&&1==$staff['category']){
+
     }
     if (count($motionListFilter) > 0) {
         $list = pdoQuery('motion_for_index_view', null, $motionListFilter, ' order by category asc limit 20');
