@@ -49,6 +49,7 @@ function userAuth($userName, $password, $category = 3)
             $_SESSION['staffLogin']['userList'][$k] = $v;
         }
         getIndex();
+//        mylog(getArrayInf($_SESSION['staffLogin']));
         exit;
     } else {
         return;
@@ -69,6 +70,7 @@ function getIndex($orderBy = 'default')
     $category = $staff['category'];
     $motionListFilter = array();
     foreach ($staff['steps'] as $step) {
+        if(1==$category&&6==$step)continue;
         if (4 == $step) continue;//如果用户有交办权限，则从筛选器中删除4，待下一步处理
         $motionListFilter['step'][] = $step;
     }
@@ -92,6 +94,23 @@ function getIndex($orderBy = 'default')
             mylog('limit > 0');
             $motionListFilter['motion_id'] = $motionLimit;
             $motionListFilter['step'][] = 4;
+        }
+    }
+    if(1==$category&&in_array(6, $staff['steps'])){
+        if(isset($staff['userList'])&&$staff['userList']){
+            $motionLimit=array();
+            $tempLimit=$staff['userList'];
+            $tempLimit['attr_name']="领衔人";
+            $tempLimit['step']=6;
+            $query=pdoQuery('s_duty_view',['motion_id'],$tempLimit,'order by meeting desc limit 20');
+            foreach ($query as $limitRow) {
+                $motionLimit[]=$limitRow['motion_id'];
+            }
+            if (count($motionLimit) > 0) {
+                $motionListFilter['motion_id'] = $motionLimit;
+                $motionListFilter['step'][] = 6;
+            }
+
         }
     }
     if (count($motionListFilter) > 0) {
@@ -233,15 +252,18 @@ function ajaxMotionList($data)
     $motionfilter = array();
 
     //乡镇管理员界面筛选
-    if (1 == count($staffInf['steps']) && 1 == $staffInf['steps'][0] && isset($staffInf['userList'])) {
+    if (1 == $staffInf['category']&&isset($staffInf['userList'])&&$staffInf['userList']) {
         $totalNumber = 0;
         $motionLimit = array();
-        $motionQuery = pdoQuery('motion_tbl', array('motion_id'), array('meeting' => $meeting, 'user' => $staffInf['staffId']), null);
+        $tempFilter=$staffInf['userList'];
+        $tempFilter['attr_name']="领衔人";
+        $tempFilter['meeting']=$meeting;
+        $motionQuery = pdoQuery('s_duty_view', array('motion_id'), $tempFilter, null);
         foreach ($motionQuery as $row) {
             $totalNumber++;
             $motionLimit[] = $row['motion_id'];
         }
-        $sortFilter['motion_id'] = $motionLimit;
+        if(count($motionLimit)>0)$sortFilter['motion_id'] = $motionLimit;
 
     }
     //办理单位界面筛选
