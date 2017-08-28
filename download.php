@@ -11,7 +11,7 @@ function multiple_statistics()
 {
     mylog('multiple_statistics');
     $inf = array('');
-    $total =
+//    $total =
 
     $query = pdoQuery('s_duty_view', null, array('category' => $_SESSION['staffLogin']['category']), null);
     foreach ($query as $row) {
@@ -142,6 +142,57 @@ function ajax_downLoad(){
     unset($_SESSION[$key]);
     exit;
 
+}
+function response_by_unit(){//人大需求
+    $totalList=array();
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    $type=1==$category?'领衔人':'提案人';
+    $where = array('category' => $category,'meeting'=>$meeting,'attr_name'=>$type);
+
+    $mainDoneQuery = pdoQuery('s_duty_view', array('user_unit', 'user_unit_name', 'count(*) as number'), $where, 'group by user_unit');
+    foreach ($mainDoneQuery as $row) {
+        $totalList[$row['user_unit']]['user_unit_name'] = $row['user_unit_name'];
+       $totalList[$row['user_unit']]['main_done'] = $row['number'];
+    }
+
+    $responseQuery = pdoQuery('s_duty_response_view', array('user_unit', 'response_type', 'response', 'count(*) as number'), $where, 'group by user_unit,response_type,response');
+    foreach ($responseQuery as $row) {
+        $totalList[$row['user_unit']][$row['response_type']][$row['response']] = $row['number'];
+    }
+    include"view/response_by_unit.html.php";
+    exit;
+}
+function response_by_unit_type(){//人大需求
+    $totalList=array();
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    $type=1==$category?'领衔人':'提案人';
+    $where = array('category' => $category,'meeting'=>$meeting,'attr_name'=>$type);
+
+    $mainDoneQuery = pdoQuery('s_duty_type_view', array('user_unit', 'user_unit_name','type', 'count(*) as number'), $where, 'group by user_unit,type');
+    foreach ($mainDoneQuery as $row) {
+        $totalList[$row['user_unit']]['user_unit_name'] = $row['user_unit_name'];
+        if(!isset($totalList[$row['user_unit']]['type'])){
+            $totalList[$row['user_unit']]['type']=array();
+            $totalList[$row['user_unit']]['typeCount']=0;
+        }
+        if(!isset($totalList[$row['user_unit']]['main_done']))$totalList[$row['user_unit']]['main_done']=0;
+        if($row['type']){
+            $totalList[$row['user_unit']]['type'][$row['type']]['main_done'] = $row['number'];
+            $totalList[$row['user_unit']]['typeCount']+=1;
+            $totalList[$row['user_unit']]['main_done'] += $row['number'];
+        }
+    }
+    mylog(json_encode($totalList));
+
+    $responseQuery = pdoQuery('s_duty_type_response_view', array('user_unit', 'response_type', 'response','type', 'count(*) as number'), $where, 'group by user_unit,response_type,response,type');
+    foreach ($responseQuery as $row) {
+        $totalList[$row['user_unit']]['type'][$row['type']][$row['response_type']][$row['response']] = $row['number'];
+    }
+//    include"view/temp.html.php";
+    include"view/response_by_unit_type.html.php";
+    exit;
 }
 
 function reply_table2()

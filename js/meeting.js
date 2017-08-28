@@ -98,8 +98,8 @@ $(document).on('click', '.last-page', function () {
 });
 $(document).on('click', '.delete-motion', function () {
     var motionId = $(this).attr('id').slice(3);
-
-    if (staff.steps.indexOf('3') > -1) {
+    if($.inArray('3',staff.steps)>-1){
+    //if (staff.steps.indexOf('3') > -1) {
         if (confirm('警告：是否删除此条记录？')) {
             ajaxPost('ajaxDeleteMotion', {id: motionId}, function (data) {
                 if ('ok' == backHandle(data)) {
@@ -187,7 +187,8 @@ function reflashList(sOrderby, sPage, sOrder) {
         $.each(fields,function(k,v){
             $('.list-head').append('<th class="order-by-attr"><a href="#">'+k+'</a></th>');
         });
-        if(staff.steps.indexOf('3')>-1){
+        if($.inArray('3',staff.steps)>-1){
+        //if(staff.steps.indexOf('3')>-1){
             $('.list-head').append('<th>删除</th>')
         }
         var value = backHandle(back);
@@ -211,7 +212,7 @@ function reflashList(sOrderby, sPage, sOrder) {
                 }
 
             });
-            if(staff.steps.indexOf('3') > -1)$('#tr'+v).append('<td><button class="delete-motion" id="del' + v + '">X</button></td>');
+            if($.inArray('3',staff.steps)>-1)$('#tr'+v).append('<td><button class="delete-motion" id="del' + v + '">X</button></td>');
         });
         reCalculate(value.totalCount);
         motionIdLimit = value.motionIdLimit;

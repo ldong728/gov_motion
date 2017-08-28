@@ -879,6 +879,10 @@ function updateAttr($data)
     $uniqueInf = pdoQuery('motion_attr_view', null, array('attr_name' => '案号', 'motion_template' => $motion['motion_template']), 'limit 1')->fetch()['motion_attr_id'];
     $uniqueQuery = pdoQuery('attr_unique_view', array('content_int as value'), array('motion_attr' => $uniqueInf, 'meeting' => $motion['meeting']), null);
     $uniqueValues = array();
+    if($motion['step']>6){//防止重复提交
+        echo ajaxBack(array('step' => $currentStep, 'id' => $motionId));
+        exit;
+    }
     foreach ($uniqueQuery as $row) {
         $uniqueValues[] = $row['value'];
     }
@@ -961,7 +965,8 @@ function updateAttr($data)
                 $attr = pdoQuery('attr_view', array('content'), array('motion' => $motionId, 'attr_name' => array('办理工作', '办理结果')), 'limit 2')->fetchAll();
                 foreach ($attr as $row) {
                     if ('不满意' == $row['content']) {
-                        pdoUpdate('motion_tbl', array('step' => 6), array('motion_id' => $motionId));
+                        displeasure($motionId);
+//                        pdoUpdate('motion_tbl', array('step' => 6), array('motion_id' => $motionId));
                         break;
                     }
                 }
@@ -993,7 +998,7 @@ function updateAttr($data)
         echo ajaxBack(array('step' => $currentStep, 'id' => $motionId));
     } catch (PDOException $e) {
         mylog($e->getMessage());
-        mylog($e->errorInfo);
+        mylog(getArrayInf($e->errorInfo));
         pdoRollBack();
         mylog('出错');
         echo ajaxBack($e->errorInfo);
@@ -1313,5 +1318,29 @@ function handleStatistics($unitId = 0, $category = 3)
         return $totalList;
     }
 
+}
+function displeasure($motion_id){
+    $isDisPleasure=pdoQuery('displeasure_attr_tbl',['motion'],['motion'=>$motion_id],'limit 1')->fetch();
+    if(!$isDisPleasure){
+        $query=pdoQuery('attr_tbl',null,['motion'=>$motion_id],null);
+        $query->setFetchMode(PDO::FETCH_ASSOC);
+        $attrInf=$query->fetchAll();
+        pdoBatchInsert('displeasure_attr_tbl',$attrInf,'ignore');
+        $query=pdoQuery('motion_handler_tbl',null,['motion'=>$motion_id],null);
+        $query->setFetchMode(PDO::FETCH_ASSOC);
+        $handlerInf=$query->fetchAll();
+        if($handlerInf)pdoBatchInsert('displeasure_motion_handler_tbl',$handlerInf,'ignore');
+        $status=array();
+        foreach ($attrInf as $row) {
+            if("大会期间"==$row['content']||"闭会期间"==$row['content'])$status=$row;
+        }
+        pdoUpdate('motion_tbl', array('step' => 5), array('motion_id' => $motion_id));
+        pdoUpdate('attr_tbl',['content'=>"重新办理"],['attr_id'=>$status['attr_id']],' limit 1');
+        pdoUpdate('motion_handler_tbl',['status'=>3],['motion'=>$motion_id,'status'=>9]);
 
+        mylog(getArrayInf($status));
+
+    }else{
+
+    }
 }

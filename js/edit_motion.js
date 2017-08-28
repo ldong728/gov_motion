@@ -122,7 +122,11 @@
 
         submitAtrrs(1, function (data) {
             var back = backHandle(data);
-            if (staff.steps.indexOf(String(back.step)) > -1&&5!=back.step) {
+            //console.log($.inArray(String(back.step),staff.steps));
+            //console.log(staff.steps.indexOf(String(back.step)));
+
+            if ($.inArray(String(back.step),staff.steps)>-1&&5!=back.step) {
+            //if (staff.steps.indexOf(String(back.step)) > -1&&5!=back.step) {
                 console.log(staff);
                 ajaxPost('editMotion', {id: back.id}, function (data) {
                     $('.m-popup').html(data);
@@ -158,7 +162,10 @@
         if(confirm('此操作将使办理单退回到上一流程，如果您没有上一流程的处理权限，将无法处理此办理单，确认退回？')){
             submitAtrrs(-1, function (data) {
                 var back = backHandle(data);
-                if (staff.steps.indexOf(String(back.step)) > -1) {
+                //console.log($.inArray(String(back.step),staff.steps));
+                //console.log(staff.steps.indexOf(String(back.step)));
+                if($.inArray(String(back.step),staff.steps)>-1){
+                //if (staff.steps.indexOf(String(back.step)) > -1) {
                     console.log(staff);
                     ajaxPost('editMotion', {id: back.id}, function (data) {
                         $('.m-popup').html(data);
