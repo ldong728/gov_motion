@@ -170,6 +170,7 @@ function resizeWindow() {
 }
 function reflashList(sOrderby, sPage, sOrder) {
 //        console.log('reflash');
+    hasDispleasures=false;
     var data = {
         category: category,
         meeting: meetingId,
@@ -195,9 +196,15 @@ function reflashList(sOrderby, sPage, sOrder) {
         $('.list-content').remove();
         var myCount = 1 + (page * count);
         var c = value.list;
+        var displeasure=value.displeasureList;
         $.each(value.sort,function(k,v){
             $('.list-table').append('<tr id="tr'+v+'"></tr>');
+            if(displeasure[v]){
+                $('#tr'+v).css('color','red');
+                hasDispleasures=true;
+            }
             $('#tr'+v).append('<td>'+(myCount++)+'</td><td><input type="checkbox" class="check" value=' + v + '></td>');
+
             $.each(fields,function(name,field){
                 switch(field){
                     case '原文':
@@ -205,6 +212,10 @@ function reflashList(sOrderby, sPage, sOrder) {
                         break;
                     case '案由':
                         $('#tr'+v).append('<td class="motion-select" id="' + v + '"><a href="#">' + c[v]['案由'] + '</a></td>');
+                        break;
+                    case '当前环节':
+                        if(displeasure[v])$('#tr'+v).append('<td>重办</td>');
+                        else $('#tr'+v).append('<td>' + (c[v][field] || '') + '</td>');
                         break;
                     default :
                         $('#tr'+v).append('<td>' + (c[v][field] || '') + '</td>');
@@ -219,6 +230,11 @@ function reflashList(sOrderby, sPage, sOrder) {
         console.log(motionIdLimit);
         if(!motionIdLimit||motionIdLimit.length<1)$('.all-out').attr('disabled','disabled');
         else $('.all-out').removeAttr('disabled');
+        if(hasDispleasures){
+            $('.displeasure-li').show();
+        }else{
+            $('.displeasure-li').hide();
+        }
 
 
     });
@@ -241,30 +257,3 @@ function mPopup() {
     $('.suggest').css('left', sWidth);
     $('.suggest').css('top', sHeight);
 }
-var searchAttrName;
-var searchAttrType;
-//搜索脚本
-$('.search').click(function () {
-    searchAttrName = $(this).data('filter');
-    searchAttrType = $(this).data('type');
-    $('.search-input').attr('placeholder', $(this).text() + '搜索');
-    $('.search-input').val('');
-    $('.search-container').show();
-//        alert(attrName);
-});
-$('.search-button').click(function () {
-    var input = $('.search-input');
-    if ($.trim(input.val())) {
-        delete filter.multiple_search;
-        filter.search = {attr_name: searchAttrName, attr_value: input.val(), attr_type: searchAttrType};
-        if ($(this).hasClass('inner'))filter.search.motion_id_limit = motionIdLimit;
-        reflashList(orderby, page, order);
-    }
-    $('.search-mask').click();
-
-});
-
-$('.search-mask').click(function () {
-//        delete filter.search;
-    $('.search-container').hide();
-})

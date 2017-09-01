@@ -159,24 +159,25 @@
         class="encoded-search-data"><?php echo json_encode($motion['协办单位'], JSON_UNESCAPED_UNICODE) ?></span>
 </td>
 </tr>
-<!--<tr>-->
-<!--    <th>主办答复时间</th>-->
-<!--    <td width="105px"><span-->
+<tr>
+    <th>主办答复时间</th>
+    <td width="105px">
+<!--        <span-->
 <!--            class="encoded-search-data">--><?php //echo json_encode($motion['主办答复时间'], JSON_UNESCAPED_UNICODE) ?><!--</span>-->
-<!--    </td>-->
-<!--    <th>文号</th>-->
-<!--    <td width="95px" class="verify-value"><span-->
-<!--            class="encoded-search-data verify-value">--><?php //echo json_encode($motion['文号'], JSON_UNESCAPED_UNICODE) ?><!--</span>-->
-<!--    </td>-->
-<!--    <th>类别标记</th>-->
-<!--    <td width="100px"><span-->
-<!--            class="encoded-search-data">--><?php //echo json_encode($motion['类别标记'], JSON_UNESCAPED_UNICODE) ?><!--</span>-->
-<!--    </td>-->
-<!--    <th>签发人</th>-->
-<!--    <td class="verify-value"><span-->
-<!--            class="encoded-search-data verify-value">--><?php //echo json_encode($motion['主办签发人'], JSON_UNESCAPED_UNICODE) ?><!--</span>-->
-<!--    </td>-->
-<!--</tr>-->
+    </td>
+    <th>文号</th>
+    <td width="95px" class="verify-value"><span
+            class="encoded-search-data verify-value"><?php echo json_encode($motion['文号'], JSON_UNESCAPED_UNICODE) ?></span>
+    </td>
+    <th>类别标记</th>
+    <td width="100px"><span
+            class="encoded-search-data"><?php echo json_encode($motion['类别标记'], JSON_UNESCAPED_UNICODE) ?></span>
+    </td>
+    <th>签发人</th>
+    <td class="verify-value"><span
+            class="encoded-search-data verify-value"><?php echo json_encode($motion['主办签发人'], JSON_UNESCAPED_UNICODE) ?></span>
+    </td>
+</tr>
 <tr>
     <th rowspan="2" style="border-right: 1px solid #f08300">反馈意见</th>
     <th>办理工作</th>

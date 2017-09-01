@@ -25,6 +25,10 @@ if(isset($_SESSION['staffLogin'])){
         getMeetingView($_GET['get_meeting']);
         exit;
     }
+    if(isset($_GET['duty_manager'])){
+        getDutyView($_GET['meeting']);
+        exit;
+    }
     if(isset($_GET['statistics_excel_out'])){
         $totalList= handleStatistics(0, $_SESSION['staffLogin']['category']);
         include"view/statisticsOutExcel.html.php";

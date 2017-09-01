@@ -1,3 +1,30 @@
+var searchAttrName;
+var searchAttrType;
+//搜索脚本
+$('.search').click(function () {
+    searchAttrName = $(this).data('filter');
+    searchAttrType = $(this).data('type');
+    $('.search-input').attr('placeholder', $(this).text() + '搜索');
+    $('.search-input').val('');
+    $('.search-container').show();
+//        alert(attrName);
+});
+$('.search-button').click(function () {
+    var input = $('.search-input');
+    if ($.trim(input.val())) {
+        delete filter.multiple_search;
+        filter.search = {attr_name: searchAttrName, attr_value: input.val(), attr_type: searchAttrType};
+        if ($(this).hasClass('inner'))filter.search.motion_id_limit = motionIdLimit;
+        reflashList(orderby, page, order);
+    }
+    $('.search-mask').click();
+
+});
+
+$('.search-mask').click(function () {
+//        delete filter.search;
+    $('.search-container').hide();
+})
 $(document).on('click','.multiple-search',function(){
     var maskHeight = $(document.body).height();
     ajaxPost('unsetCurrentMotion',{});

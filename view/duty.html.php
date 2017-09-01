@@ -2,6 +2,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="stylesheet/newMain.css?v=<?php echo rand(1000, 9999) ?>">
 <script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
+<!--<script src="js/search.js?v=--><?php //echo rand(1000, 9999) ?><!--"></script>-->
 <script>
     var staff = eval('(' + '<?php echo json_encode($_SESSION['staffLogin'])?>' + ')');
     var category =<?php echo $meetingInf['category']?>;
@@ -10,17 +11,21 @@
 </script>
 <style>
     .header{
-        <?php if(1==$meetingInf['category']):?>
+    <?php if(1==$meetingInf['category']):?>
         background: url(stylesheet/images/bg-hua1.jpg) 50% 50% no-repeat;
-        <?php else:?>
+    <?php else:?>
         background: url(stylesheet/images/bg-hua2.jpg) 50% 50% no-repeat;
-        <?php endif ?>
+    <?php endif ?>
         /*background-size: 100% 100%;*/
     }
+     .table tr td{
+         max-width: 250px;
+         padding: 0 0;
+     }
 </style>
 <body>
 <header class="header">
-<!--    <div class="header-l"><img src="stylesheet/images/p--><?php //echo $meetingInf['category'] ?><!--.jpg" alt="logo"></div>-->
+    <!--    <div class="header-l"><img src="stylesheet/images/p--><?php //echo $meetingInf['category'] ?><!--.jpg" alt="logo"></div>-->
     <div class="header-r">
         <a href="#">密码修改</a>
         <a href="#" class="sign-out">退出系统</a>
@@ -30,8 +35,8 @@
 <nav class="home-nav">
     <ul class="clearfix">
         <li><a href="index.php">首页</a></li>
-        <li><a href="#" class="search" data-filter="案号" data-type="int">按案号</a></li>
-        <li><a href="#" class="search" data-filter="案由" data-type="string">按案由</a></li>
+        <li><a href="#" class="search" data-filter="" data-type="int">按姓名</a></li>
+        <li><a href="#" class="search" data-filter="案由" data-type="string"></a></li>
         <?php if (2 == $meetingInf['category']): ?>
             <li><a href="#" class="search" data-filter="性质" data-type="string">按性质</a></li><?php endif ?>
         <!--                        <td width="15%"><a href="#" class="search" >按等级时间（序列）</a></li>-->
@@ -56,44 +61,23 @@
 <section class="clearfix" id="section">
     <aside id="aside">
         <ul>
-            <li><p><a href="#" class="list-filter" data-step="5"><i
+            <li><p><a href="?get_meeting=<?php echo $meetingInf['meeting_id']?>" class="list-filter" data-step="5"><i
                             class="icon icon-angle-right"></i>全部<span></span></a></p></li>
-            <?php if (in_array(5, $_SESSION['staffLogin']['steps']) && 1 == count($_SESSION['staffLogin']['steps'])): ?>
-                <li><p><a href="#" class="list-filter" data-step="5" data-filtertype="mainhandle"><i
-                                class="icon icon-angle-right"></i>主办列表<span></span></a></p></li>
-                <li><p><a href="#" class="list-filter" data-step="5" data-filtertype="handle"><i
-                                class="icon icon-angle-right"></i>协办列表<span></span></a></p></li>
-                <li><p><a href="#" class="list-filter" data-step="5" data-filtertype="can-mainhandle"><i
-                                class="icon icon-angle-right"></i>主办可办<span></span></a></p></li>
-                <li><p><a href="#" class="list-filter" data-step="5" data-filtertype="can-handle"><i
-                                class="icon icon-angle-right"></i>协办可办<span></span></a></p></li>
-            <?php endif ?>
             <?php if (in_array(3, $_SESSION['staffLogin']['steps'])): ?>
-                <li><p><a href="index.php?duty_manager=1&category=<?php echo $_SESSION['staffLogin']['category']?>&meeting=<?php echo $meetingInf['meeting_id'] ?>" data-step="3" data-filtertype="mainhandle" class="duty-manager"><i
+                <li><p><a href="#" data-step="3" data-filtertype="mainhandle" class="duty-manager"><i
                                 class="icon icon-angle-right"></i><?php echo 1 == $_SESSION['staffLogin']['category'] ? '代表名单管理' : '委员名单管理' ?>
                             <span></span></a></p></li>
                 <?php if (2 == $_SESSION['staffLogin']['category']): ?>
                     <li><p><a href="#" class="multiple-statistics" data-step="3" data-filtertype="mainhandle"><i
                                     class="icon icon-angle-right"></i><span>综合统计</span></a></p></li><?php endif ?>
             <?php endif ?>
-            <?php if (in_array(4, $_SESSION['staffLogin']['steps'])): ?>
-                <li><p><a href="index.php?statistics_excel_out=1" class="statistics"><i
-                                class="icon icon-angle-right"></i>办理统计<span></span></a></p></li>
-            <?php endif ?>
-            <?php if (in_array(3, $_SESSION['staffLogin']['steps']) && 1 == $_SESSION['staffLogin']['category']): ?>
-                <li><p><a href="index.php?statistics_excel_out=1" class="statistics"><i
-                                class="icon icon-angle-right"></i>办理统计<span></span></a></p></li>
-            <?php endif ?>
-            <li clsss="displeasure-li" style="display: none"><p><a href="#" class="displeasure-button"><i
-                            class="icon icon-angle-right"></i>不满意件<span></span></a></p></li>
-
         </ul>
     </aside>
     <div class="main-show">
         <span id="span-contract"><i class="icon icon-caret-left"></i></span>
     </div>
     <div class="left section-main" id="main">
-        <div class="main-navbar"><h2>当前位置:<em><?php echo $meetingInf['meeting_name'] ?></em></h2></div>
+        <div class="main-navbar"><h2>当前位置:<em><?php echo $meetingInf['meeting_name'] ?> 名单管理</em></h2></div>
         <div class="blueborder_lower">
             <div class="table-box">
                 <div class="table">
@@ -108,7 +92,7 @@
                 <span class="float-left"><button class="list-output checked-out" >选中项导出</button></span>
                 <?php if (in_array(1, $_SESSION['staffLogin']['steps'])): ?>
                     <span class="float-left"><button class="create-motion">新建<?php echo 1==$_SESSION['staffLogin']['category']?'建议/议案':'提案'?>
-                    </button>
+                        </button>
                         </span>
                 <?php endif ?>
 
@@ -177,19 +161,19 @@
 
 
 <script type="text/javascript">
-    var hasDispleasures=false;
     var total = 0;
     var totalPages = 0;
-    var meetingId =<?php echo $_GET['get_meeting']?>;
+    var meetingId =<?php echo $_GET['meeting']?>;
     var category =<?php echo $meetingInf['category']?>;
-    var orderby = 2 == staff.category ? '编号' : '案号';
+//    var orderby = 2 == staff.category ? '编号' : '案号';
     var order = true;
     var page = 0;
     var filter = {};
     var count = 20;
     var motionIdLimit = null;
+    var userUnit={};
+    var userGroup={};
 </script>
-<script src="js/search.js?v=<?php echo rand(1000, 9999) ?>"></script>
-<script src="js/meeting.js?v=<?php echo rand(1000, 9999) ?>"></script>
+<script src="js/duty.js?v=<?php echo rand(1000, 9999) ?>"></script>
 <script src="js/tables.js?v=<?php echo rand(1000, 9999) ?>"></script>
 </html>

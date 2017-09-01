@@ -41,7 +41,7 @@ header("Content-Disposition:filename=".$name."反馈情况统计".timeUnixToMysq
             $result['基本满意']=isset($result['基本满意'])?$result['基本满意']:0;
             $result['不满意']=isset($result['不满意'])?$result['不满意']:0;
             $result['未表态']=isset($result['未表态'])?$result['未表态']:0;
-            mylog(++$count);
+//            mylog(++$count);
             ?>
 
             <tr>

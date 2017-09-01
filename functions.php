@@ -203,6 +203,11 @@ function getMeetingView($id)
     $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $id), 'limit 1')->fetch();
     printView('meeting');
 }
+function getDutyView($id){
+    global$meetingInf;
+    $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $id), 'limit 1')->fetch();
+    printView('duty');
+}
 
 
 /**
@@ -346,7 +351,7 @@ function ajaxMotionList($data)
                 $searchQuery = pdoQuery('motion_view', array('motion_id'), array('attr_name' => $attrName, 'content_int' => $attrValue), null);
                 break;
             case 'duty':
-                $searchDuty=pdoQuery('duty_view',array('duty_id'),null,'where user_name like "%'.$attrValue.'%"')->fetchAll();
+                $searchDuty=pdoQuery('duty_view',array('duty_id'),null,'where user_name like "%'.$attrValue.'%" and activity=1')->fetchAll();
                 $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchDuty),null);
                 break;
             case 'unit':
@@ -428,7 +433,6 @@ function ajaxMotionList($data)
             foreach ($motionQuery as $row) {
                 $motions[]=$row['motion_id'];
             }
-
             if(is_array($searchLimit)){
                 $searchLimit=array_intersect($searchLimit,$motions);
             }else{
@@ -490,7 +494,13 @@ function ajaxMotionList($data)
 
     }
     $motionIdLimit = isset($sortFilter['motion_id']) ? $sortFilter['motion_id'] : null;
-    echo ajaxBack(array('list' => $sortList, 'sort' => $sort, 'totalCount' => $totalNumber, 'mainHandleCount' => $mainHandleCount, 'handleCount' => $handleCount, 'motionIdLimit' => $motionIdLimit));
+    $query=pdoQuery('displeasure_attr_tbl',['motion as motion_id'],null,'where date_add(update_time,INTERVAL 12 month)>now() group by motion');
+    $displeasureList=[];
+    foreach ($query as $row) {
+        $displeasureList[$row['motion_id']]=1;
+    }
+
+    echo ajaxBack(array('list' => $sortList, 'sort' => $sort, 'totalCount' => $totalNumber, 'mainHandleCount' => $mainHandleCount, 'handleCount' => $handleCount, 'motionIdLimit' => $motionIdLimit,'displeasureList'=>$displeasureList));
 }
 
 /**
@@ -607,6 +617,7 @@ function editMotion($data)
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
     $attrFilter = array('motion_id' => $id);
     $meetingInf = pdoQuery('motion_inf_view', null, array('motion_id' => $id), ' limit 1')->fetch();
+//    $isDispleasure=count(pdoQuery('displeasure_attr_tbl',['motion'],['motion'=>$id],' limit 1')->fetch());
 //    mylog();
     //处理政协提案有不同交办单位的情况
     $step4CanEdit = true;
@@ -1022,7 +1033,7 @@ function ajaxTargetList($data)
         case 'duty':
             $filter = array('category' => $_SESSION['staffLogin']['category'], 'activity' => 1);
             if (isset($_SESSION['staffLogin']['userList'])) $filter = array_merge($filter, $_SESSION['staffLogin']['userList'], array('category' => $_SESSION['staffLogin']['category'], 'activity' => 1));
-            $dutyQuery = pdoQuery('duty_view', null, $filter, null);
+            $dutyQuery = pdoQuery('duty_view', null, $filter, 'and activity=1');
 
 //            foreach ($dutyQuery as $row) {
             if (2 == $_SESSION['staffLogin']['category']) {
@@ -1249,6 +1260,10 @@ function ajaxGetStatistics($data)
 //    echo ajaxBack('ok');
 }
 
+/**
+ * 获取统计页面
+ * @param $data
+ */
 function get_statistics_view($data){
     $category=$data['category'];
     $meeting=$data['meeting'];
@@ -1256,6 +1271,45 @@ function get_statistics_view($data){
     include "view/statistics_view$category.html.php";
 
     return;
+}
+
+/**
+ * 获取代表委员管理界面
+ * @param $data
+ */
+function get_duty_manager_view($data){
+    $meeting=$data['meeting'];
+    $category=$data['category'];
+    $dutyWhere=['meeting'=>$meeting,'category'=>$category];
+    $unitList=[];
+    $groupList=[];
+    $dutyFileter=isset($data['duty_filter'])?$data['duty_filter']:null;
+    $filterString='';
+    if($dutyFileter){
+//        $filterString=' and';
+        foreach ($dutyFileter as $field=>$value) {
+            if(in_array($field,['user_name','address','user_phone'])){
+                $filterString.=' and '.$field .'in (%'.$value.'%)';
+            }else{
+                $dutyWhere[$field]=$value;
+            }
+        }
+
+    }
+    $query=pdoQuery('user_unit_tbl',['user_unit_id','user_unit_name as unit_name'],['category'=>$category],null);
+    foreach ($query as $row) {
+        $unitList[$row['user_unit_id']]=$row;
+    }
+    $query=pdoQuery('user_group_tbl',['user_group_id','user_group_name as group_name'],['category'=>$category],null);
+    foreach ($query as $row) {
+        $groupList[$row['user_group_id']]=$row;
+    }
+    $dutyList=pdoQuery('duty_view',null,$dutyWhere,$filterString);
+    $dutyList->setFetchMode(PDO::FETCH_ASSOC);
+    include_once 'view/duty_table_view.html.php';
+    return;
+
+
 }
 //function exceOut
 
@@ -1308,10 +1362,11 @@ function handleStatistics($unitId = 0, $category = 3)
         $handledoneWhere = $where ? array_merge($where, array('status' => 9)) : array('status' => 9);
         $handleDoneQuery = pdoQuery('motion_handler_inf_view', array('unit as unit_id', 'count(*) as number'), $handledoneWhere, ' group by unit');
         foreach ($handleDoneQuery as $row) {
+            if(55==$row['unit_id'])mylog($row['number']);
             $totalList[$row['unit_id']]['sub_done'] = $row['number'];
         }
 
-        $responseQuery = pdoQuery('handle_response_view', array('unit_id', 'response_type', 'response', 'count(*) as number'), $where, 'group by unit_id,response_type,response');
+        $responseQuery = pdoQuery('handle_response_view', array('unit_id', 'response_type', 'response', 'count(*) as number'), $where, 'and handle_name="主办单位" group by unit_id,response_type,response');
         foreach ($responseQuery as $row) {
             $totalList[$row['unit_id']][$row['response_type']][$row['response']] = $row['number'];
         }
