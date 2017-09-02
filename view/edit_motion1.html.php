@@ -37,6 +37,8 @@
         <a href="<?php echo 'original_'.$meetingInf['document_sha']?>">全文原始稿</a>
         <?php if(3==current($motion)['step']):?><a class="attachment-file" href="#" data-href="<?php echo $motion['原文']['attachment']?>">附件修改</a><?php endif?>
         <?php if(current($motion)['step']>4):?><a href="?download=reply_table2&motion_id=<?php echo current($motion)['motion_id']?>&category=<?php echo current($motion)['category']?>&meeting_name=<?php echo $meetingInf['meeting_name']?>">下载反馈表</a><?php endif?>
+        <?php if($hasDispleasure>0):?><a class="displeasure-motion" href="#" id="dis<?php echo current($motion)['motion_id']?>">原始办理件</a><?php endif?>
+        <?php if($isDispleasure):?><a class="normal-motion" href="#" id="nom<?php echo current($motion)['motion_id']?>">重办件</a><?php endif?>
         <a href="#" class="close-popup">返回</a>
     </div>
     <div class="sug-main-content edit-area">

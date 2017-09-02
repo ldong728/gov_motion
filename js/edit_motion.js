@@ -495,6 +495,20 @@
     $(document).on('click','.print-motion-detail',function(){
        alert('功能暂未开放，请点击全文对应链接，下载全文后打印');
     });
+    $(document).on('click','.displeasure-motion',function(){
+        ajaxPost('getDispleasureMotion',{},function(data){
+            //console.log(data);
+            $('.m-popup').html(data);
+            mPopup();
+        });
+    });
+$(document).on('click','.normal-motion',function(){
+    var id=$(this).attr('id').slice(3);
+    ajaxPost('editMotion',{id:id},function(data){
+        $('.m-popup').html(data);
+        mPopup();
+    });
+});
 
     $(document).on('click','.user-inf',function(){
         var motionId=$(this).attr('id').slice(3);
