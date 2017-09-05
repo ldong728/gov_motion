@@ -10,7 +10,7 @@
     </tr>
     <?php foreach($dutyList as $row):?>
     <tr id="row<?php echo $row['duty_id']?>">
-        <td class="can-modify" data-type="value" data-field="user_name"><?php echo $row['user_name']?></td>
+        <td><?php echo $row['user_name']?></td>
         <td  class="can-modify" data-type="value" data-field="user_phone"><?php echo $row['user_phone']?></td>
         <td  class="can-modify" data-type="value" data-field="address"><?php echo $row['address']?></td>
         <td class="can-modify" data-type="unit" data-field="user_unit"><?php echo $row['user_unit_name']?></td>

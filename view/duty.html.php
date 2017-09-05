@@ -96,19 +96,19 @@
                         </span>
                 <?php endif ?>
 
-                <span class="first-page"><i class="icon icon-step-backward"></i></span>
-                <span class="span-i prev-page"><i class="icon icon-caret-left"></i></span>
-                <span class="current-page">1</span> <span class="total-page"></span>
-                <span class="span-i next-page"><i class="icon icon-caret-right"></i></span>
-                <span class="last-page"><i class="icon icon-step-forward"></i></span>
-                <span>
-                    <select style="width: 60px;border: 1px solid #ddd;" class="count-in-page">
-                        <option value="20">20条</option>
-                        <option value="30">30条</option>
-                        <option value="50">50条</option>
-                    </select>
-                </span>
-                <span class="current-num">1-15</span> <span>共<span class="span-num total-num"></span>条</span>
+<!--                <span class="first-page"><i class="icon icon-step-backward"></i></span>-->
+<!--                <span class="span-i prev-page"><i class="icon icon-caret-left"></i></span>-->
+<!--                <span class="current-page">1</span> <span class="total-page"></span>-->
+<!--                <span class="span-i next-page"><i class="icon icon-caret-right"></i></span>-->
+<!--                <span class="last-page"><i class="icon icon-step-forward"></i></span>-->
+<!--                <span>-->
+<!--                    <select style="width: 60px;border: 1px solid #ddd;" class="count-in-page">-->
+<!--                        <option value="20">20条</option>-->
+<!--                        <option value="30">30条</option>-->
+<!--                        <option value="50">50条</option>-->
+<!--                    </select>-->
+<!--                </span>-->
+<!--                <span class="current-num">1-15</span> <span>共<span class="span-num total-num"></span>条</span>-->
             </div>
         </div>
     </div>

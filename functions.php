@@ -799,6 +799,7 @@ function getDispleasureMotion($data){
     $step4CanEdit=false;
     $attrFilter = array('motion_id' => $id);
     $meetingInf = pdoQuery('motion_inf_view', null, array('motion_id' => $id), ' limit 1')->fetch();
+    $meetingInf['step']=7;
     $hasDispleasure=false;
     $isDispleasure=true;
     $motionQuery = pdoQuery('displeasure_motion_view', null, $attrFilter, ' order by value_sort desc,motion_attr asc');
@@ -848,13 +849,12 @@ function getDispleasureMotion($data){
             $unit = $_SESSION['staffLogin']['unit'];
             $handlerQuery = pdoQuery('displeasure_motion_handler_view', null, array('motion' => $id, 'status' => array('1', '3', '9')), null);
             $handlerDisplay = array();
-            $handlerEdit = array();
             foreach ($handlerQuery as $row) {
-                if ($row['unit'] == $unit && 1 == $row['status'] && in_array(5, $_SESSION['staffLogin']['steps'])) {
-                    $handlerEdit = $row;
-                } else {
+//                if ($row['unit'] == $unit && 1 == $row['status'] && in_array(5, $_SESSION['staffLogin']['steps'])) {
+//                    $handlerEdit = $row;
+//                } else {
                     $handlerDisplay[] = $row;
-                }
+//                }
             }
 
     mylog(getArrayInf($motion));
@@ -874,6 +874,7 @@ function searchMotionView($data){
     $category=isset($data['category'])?$data['category']:1;
     $where['category']=$category;
     $meetingInf['category']=$where['category'];
+
     if(isset($data['meeting'])){
         $meetingName=pdoQuery('meeting_tbl',array('meeting_name'),array('meeting_id'=>$data['meeting']),'limit 1')->fetch()['meeting_name'];
     }
