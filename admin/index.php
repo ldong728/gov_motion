@@ -167,6 +167,11 @@ function sync_info(){
 function meet_edit(){
     printAdminView('blank.html.php','添加操作员');
 }
+function step_manage(){
+    global $meetings;
+    $meeting=pdoQuery('meeting_tbl',null,null,null);
+    printAdminView('step_manage.html.php','提案建议管理');
+}
 function user_manage(){
 //    $zxQuery=pdoQuery('zx_motion_tbl',null,null,null);
 //    $zxInf=[];

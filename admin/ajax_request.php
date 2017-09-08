@@ -68,6 +68,8 @@ if (isset($_SESSION['login'])&&DOMAIN==$_SESSION['login']) {
         exit;
     }
 }
+
+
 function syncInf($data){
 
     switch($data['type']){
@@ -162,6 +164,46 @@ function reflashStaffList($data){
     $back['page']=ceil($count/$number);
 
     echo ajaxBack($back);
+}
+function ajaxGetMeetingList($data){
+    $category=$data['category'];
+    $meetingList=pdoQuery('meeting_tbl',null,['category'=>$category],' order by meeting_id desc')->fetchAll();
+    echo ajaxBack($meetingList);
+
+}
+function ajaxGetMotion($data){
+    $motionId=pdoQuery('motion_view',['motion_id'],['meeting'=>$data['meeting'],'category'=>$data['category'],'attr_name'=>'案号','content_int'=>$data['motion_number']],'limit 1')->fetch();
+    $displeasure=false;
+    if($motionId){
+        $motionId=$motionId['motion_id'];
+        $motionInf=pdoQuery("motion_view",null,['motion_id'=>$motionId],null)->fetchAll();
+        $displeasure=pdoQuery('displeasure_attr_tbl',['motion'],['motion'=>$motionId],'limit 1')->fetch();
+        echo ajaxBack(['inf'=>$motionInf,'displeasure'=>$displeasure]);
+
+    }else{
+        echo ajaxBack(null,100,'没有对应内容');
+    }
+}
+function modifyMotionStep($data){
+
+    $motionId=$data['motionId'];
+    $step=$data['step'];
+    $clearDisPleasure=$data['clearDispleasure'];
+    $hasDisPleasure=pdoQuery('displeasure_attr_tbl',null,['motion'=>$motionId,'content'=>['大会期间','闭会期间']],'limit 1')->fetch();
+    pdoTransReady();
+    try{
+        pdoUpdate('motion_tbl',['step'=>$step],['motion_id'=>$motionId],' limit 1');
+        if($clearDisPleasure&&$hasDisPleasure){
+            pdoDelete('displeasure_attr_tbl',['motion'=>$motionId]);
+            pdoUpdate('attr_tbl',['content'=>$hasDisPleasure['content']],['attr_id'=>$hasDisPleasure['attr_id']]);
+        }
+        pdoCommit();
+        echo ajaxBack('ok');
+    }catch(PDOException $e){
+        mylog($e->getMessage());
+        pdoRollBack();
+        echo ajaxBack(null,102,'数据库错误');
+    }
 }
 
 /*

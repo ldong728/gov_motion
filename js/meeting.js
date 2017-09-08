@@ -170,7 +170,6 @@ function resizeWindow() {
 }
 function reflashList(sOrderby, sPage, sOrder) {
 //        console.log('reflash');
-    hasDispleasures=false;
     var data = {
         category: category,
         meeting: meetingId,
@@ -201,7 +200,6 @@ function reflashList(sOrderby, sPage, sOrder) {
             $('.list-table').append('<tr id="tr'+v+'"></tr>');
             if(displeasure[v]){
                 $('#tr'+v).css('color','red');
-                hasDispleasures=true;
             }
             $('#tr'+v).append('<td>'+(myCount++)+'</td><td><input type="checkbox" class="check" value=' + v + '></td>');
 
@@ -230,11 +228,6 @@ function reflashList(sOrderby, sPage, sOrder) {
         console.log(motionIdLimit);
         if(!motionIdLimit||motionIdLimit.length<1)$('.all-out').attr('disabled','disabled');
         else $('.all-out').removeAttr('disabled');
-        if(hasDispleasures){
-            $('.displeasure-li').show();
-        }else{
-            $('.displeasure-li').hide();
-        }
 
 
     });

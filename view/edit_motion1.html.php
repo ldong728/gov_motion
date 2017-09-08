@@ -349,7 +349,7 @@
                         <td  class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['采纳情况'], JSON_UNESCAPED_UNICODE) ?></span>
                         </td>
                         <th colspan="2">落实情况</th>
-                        <td  class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['落实情况'], JSON_UNESCAPED_UNICODE) ?></span>
+                        <td><span class="encoded-data"><?php echo json_encode($motion['落实情况'], JSON_UNESCAPED_UNICODE) ?></span>
                         </td>
                     </tr>
                     <tr>
