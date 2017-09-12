@@ -1,5 +1,5 @@
-var fields= 1==category ? {'案号':'案号','领衔人':'领衔人', '案别':'案别', '案由':'案由', '性质类别':'性质类别1', '原文':'原文', '当前环节':'当前环节', '交办单位':'交办单位', '主办单位':'主办单位', '协办单位':'协办单位'}:
-{'登记号':'登记号','案号':'案号', '提案人':'提案人', '案由':'案由', '性质类别':'性质类别2', '原文':'原文', '当前环节':'当前环节', '交办单位':'交办单位', '主办单位':'主办单位', '协办单位':'协办单位'};
+var fields= 1==category ? {'案号':'案号','领衔人':'领衔人', '案别':'案别', '案由':'案由', '性质类别':'性质类别1', '原文':'原文','类别标记':'类别标记', '当前环节':'当前环节', '交办单位':'交办单位', '主办单位':'主办单位', '协办单位':'协办单位'}:
+{'登记号':'登记号','案号':'案号', '提案人':'提案人', '案由':'案由', '性质类别':'性质类别2', '原文':'原文','类别标记':'类别标记', '当前环节':'当前环节', '交办单位':'交办单位', '主办单位':'主办单位', '协办单位':'协办单位'};
 resizeWindow();
 reflashList(orderby, page, order);
 $(window).resize(function () {
@@ -35,7 +35,7 @@ $(document).on('click','.order-by-attr',function(){
 });
 $('.create-motion').click(function () {
     var maskHeight = $(document.body).height();
-    ajaxPost('createMotion', {}, function (data) {
+    ajaxPost('createMotion', {meetingId:meetingId}, function (data) {
         $('.m-popup').html(data);
         $('.m-popup').show();
         $('.mask').show();

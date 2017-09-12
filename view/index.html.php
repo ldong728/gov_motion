@@ -74,6 +74,7 @@
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
 <script type="text/javascript">
     var category='<?php echo $category?>';
+    var meetingId=false;
 	resizeWindow();
     setTime($('.date-time'));
     $(window).resize(function(){

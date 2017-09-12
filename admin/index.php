@@ -165,7 +165,9 @@ function sync_info(){
 }
 
 function meet_edit(){
-    printAdminView('blank.html.php','添加操作员');
+    global $meetingList;
+    $meetingList=pdoQuery('meeting_tbl',null,null,null)->fetchAll();
+    printAdminView('meeting_edit.html.php','会议管理');
 }
 function step_manage(){
     global $meetings;

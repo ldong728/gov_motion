@@ -509,6 +509,7 @@
 //    $(document).ready(function(){
         getFuyiCount();
         decodeDate( $('.encoded-data'));
+        meetingId=<?php echo $meetingInf['meeting']?>;
 //    });
 </script>
 

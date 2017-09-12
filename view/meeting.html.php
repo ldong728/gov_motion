@@ -84,8 +84,7 @@
                 <li><p><a href="index.php?statistics_excel_out=1" class="statistics"><i
                                 class="icon icon-angle-right"></i>办理统计<span></span></a></p></li>
             <?php endif ?>
-            <li clsss="displeasure-li" style="display: none"><p><a href="#" class="displeasure-button"><i
-                            class="icon icon-angle-right"></i>不满意件<span></span></a></p></li>
+
 
         </ul>
     </aside>

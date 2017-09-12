@@ -352,14 +352,14 @@ function ajaxMotionList($data)
                 break;
             case 'duty':
                 $searchDuty=pdoQuery('duty_view',array('duty_id'),null,'where user_name like "%'.$attrValue.'%" and activity=1')->fetchAll();
-                $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchDuty),null);
+                $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchDuty,'meeting'=>$meeting),null);
                 break;
             case 'unit':
                 $searchUnit=pdoQuery('unit_tbl',array('unit_id'),null,'where unit_name like "%'.$attrValue.'%"')->fetchAll();
-                $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchUnit),null);
+                $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchUnit,'meeting'=>$meeting),null);
                 break;
             default:
-                $searchQuery = pdoQuery('motion_view', array('motion_id'), array('attr_name' => $attrName,'category'=>$category), "and content like \"%$attrValue%\"");
+                $searchQuery = pdoQuery('motion_view', array('motion_id'), array('attr_name' => $attrName,'category'=>$category,'meeting'=>$meeting), "and content like \"%$attrValue%\"");
                 break;
         }
         foreach ($searchQuery as $row) {
@@ -397,7 +397,7 @@ function ajaxMotionList($data)
         if(count($multipleSearchTempFilter)>1){
             $attrName=1==$category?"领衔人":"提案人";
             $multipleDutyList=pdoQuery('duty_tbl',array('duty_id'),$multipleSearchTempFilter,null)->fetchAll();
-            $multipleSearchMotionLimit=pdoQuery('motion_view',['motion_id'],['attr_name'=>$attrName,'content_int'=>$multipleDutyList],null);
+            $multipleSearchMotionLimit=pdoQuery('motion_view',['motion_id'],['attr_name'=>$attrName,'content_int'=>$multipleDutyList,'meeting'=>$meeting],null);
             foreach ($multipleSearchMotionLimit as $row) {
                 $searchLimit[]=$row['motion_id'];
             }
@@ -575,10 +575,11 @@ function createMotion_temp($data)
 /**
  * 内网提交新提议案
  */
-function createMotion()
+function createMotion($data)
 {
     $staff = $_SESSION['staffLogin'];
-    $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $staff['meeting']), ' order by deadline_time desc limit 1')->fetch();
+    $meetingId=$data['meetingId'];
+    $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $meetingId), ' order by deadline_time desc limit 1')->fetch();
     $emptyMotion = pdoQuery('motion_tbl', array('motion_id'), array('motion_name' => '新建', 'duty' => 0, 'category' => $staff['category'], 'user' => $staff['staffId']), 'and step>0 limit 1')->fetch();
 //    setSyncPublic();
     pdoTransReady();
@@ -587,13 +588,14 @@ function createMotion()
 
     } else {
         try {
-            $id = pdoInsert('motion_tbl', array('meeting' => $staff['meeting'], 'category' => $staff['category'], 'motion_name' => '新建', 'motion_template' => $meetingInf['motion_template'], 'step' => 1, 'user' => $staff['staffId']));
+            $id = pdoInsert('motion_tbl', array('meeting' => $meetingId, 'category' => $staff['category'], 'motion_name' => '新建', 'motion_template' => $meetingInf['motion_template'], 'step' => 1, 'user' => $staff['staffId']));
             if (2 == $staff['category']) {
                 $zx_id=pdoInsert('zx_motion_tbl', array('motion' => $id));
                 $zxIdInf=pdoQuery('motion_attr_view',['motion_attr_id as motion_attr','attr_template'],['attr_name'=>'登记号'],'limit 1')->fetch();
                 pdoInsert('attr_tbl',['motion'=>$id,'motion_attr'=>$zxIdInf['motion_attr'],'attr_template'=>$zxIdInf['attr_template'],'content_int'=>$zx_id,'staff'=>$staff['staffId']]);
             }
             pdoCommit();
+//            mylog('id='.$id);
             editMotion(array('id' => $id));
         } catch (PDOException $e) {
             mylog($e->getMessage());
@@ -1103,15 +1105,20 @@ function updateAttr($data)
  */
 function ajaxTargetList($data)
 {
-//    mylog(getArrayInf($data));
+    mylog(getArrayInf($data));
 //    mylog(getArrayInf($_SESSION['staffLogin']));
     $target = $data['target'];
     $filter = isset($data['filter']) ? $data['filter'] : null;
     $backList = array();
     switch ($target) {
         case 'duty':
-            $filter = array('category' => $_SESSION['staffLogin']['category'], 'activity' => 1);
-            if (isset($_SESSION['staffLogin']['userList'])) $filter = array_merge($filter, $_SESSION['staffLogin']['userList'], array('category' => $_SESSION['staffLogin']['category'], 'activity' => 1));
+//            $filter = array_merge($filter,array('category' => $_SESSION['staffLogin']['category'], 'activity' => 1));
+            if(!$filter){
+                $filter['meeting']=$_SESSION['staffLogin']['meeting'];
+            }
+            $filter['activity']=1;
+
+            if (isset($_SESSION['staffLogin']['userList'])) $filter = array_merge($filter, $_SESSION['staffLogin']['userList']);
             $dutyQuery = pdoQuery('duty_view', null, $filter, 'and activity=1');
 
 //            foreach ($dutyQuery as $row) {

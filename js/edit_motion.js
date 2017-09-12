@@ -266,14 +266,20 @@
         var multiple = f.data('multiple');
         var selecterName = f.prev('th').text();
         var existValue = [];
+        var filter=null;
         f.addClass('target-value-selecter');
         $.each(f.find('.pre-delete'), function (k, v) {
             var id = $(v).prev('.added-value').val();
             var attrId = $(v).attr('id');
             existValue.push({id: id, name: $(v).text(), attrId: attrId});
         });
+        if('duty'==target){
+            if(window.meetingId){
+                filter={meeting:meetingId}
+            }
 
-        getTargetList(target, null, function (back) {
+        }
+        getTargetList(target,filter, function (back) {
             var listData = backHandle(back);
             //console.log($(listData).length);
             //console.log(listData);

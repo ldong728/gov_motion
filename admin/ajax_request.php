@@ -206,6 +206,46 @@ function modifyMotionStep($data){
     }
 }
 
+function createMeeting($data){
+    $category=$data['category'];
+    $name=$data['meetingName'];
+    $jie=$data['jie'];
+    $ci=$data['ci'];
+    $startTime=timeMysqlToUnix($data['startTime']);
+    $endTime=timeMysqlToUnix($data['endTime']);
+    $deadlineTime=timeMysqlToUnix($data['deadlineTime']);
+    if($startTime&&$endTime&&$deadlineTime){
+        $oldMeeting=pdoQuery('meeting_tbl',['meeting_id'],['category'=>$category,'jie'=>$jie,'ci'=>$ci-1],'limit 1')->fetch();
+        $oldMeeting=$oldMeeting?$oldMeeting['meeting_id']:0;
+        pdoTransReady();
+        try{
+            $newMeetingId=pdoInsert('meeting_tbl',['meeting_name'=>$name,'start_time'=>$startTime,'end_time'=>$endTime,'deadline_time'=>$deadlineTime,'category'=>$category,'motion_template'=>$category,'jie'=>$jie,'ci'=>$ci]);
+            $dutyQuery=pdoQuery('duty_tbl',['user','category','user_unit','user_group','admin_type','activity'],['meeting'=>$oldMeeting],null);
+            $dutyQuery->setFetchMode(PDO::FETCH_ASSOC);
+            $newDutyList=array();
+            foreach ($dutyQuery as $key=>$row) {
+                $newDutyList[$key]=$row;
+                $newDutyList[$key]['meeting']=$newMeetingId;
+            }
+            pdoBatchInsert('duty_tbl',$newDutyList);
+            if(1==$category){
+
+            }else{
+                exeNew('TRUNCATE zx_motion_tbl');
+            }
+            pdoCommit();
+            echo ajaxBack('ok');
+        }catch(PDOException $e){
+            mylog($e->getMessage());
+            pdoRollBack();
+
+        }
+
+    }else{
+        echo ajaxBack(null,102,'数据不全');
+    }
+}
+
 /*
  * select user_name,user_phone,address FROM duty_view where duty_id in (select content_int from motion_view where attr_name in ("提案人","领衔人","提案联系人") and motion_id in (select motion_id from motion_view where target="unit" and content_int=55))
  */
