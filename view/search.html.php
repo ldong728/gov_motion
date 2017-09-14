@@ -127,17 +127,29 @@
             class="encoded-search-data"><?php echo json_encode($motion['审核'.$meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
     </td>
 </tr>
+    <tr>
+        <th>交办单位</th>
+        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                class="encoded-search-data"><?php echo json_encode($motion['交办单位'], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+    </tr>
 <?php else: ?>
     <tr>
         <th>初审</th>
-        <td colspan="3" class="colspan3" style="text-align: left;padding-left: 10px;"><span
+        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                 class="encoded-search-data"><?php echo json_encode($motion['初审'], JSON_UNESCAPED_UNICODE) ?></span>
         </td>
     </tr>
     <tr>
         <th>审核</th>
-        <td colspan="3" class="colspan3" style="text-align: left;padding-left: 10px;"><span
+        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
                 class="encoded-search-data"><?php echo json_encode($motion['审核'.$meetingInf['category']], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+    </tr>
+    <tr>
+        <th>交办单位</th>
+        <td colspan="7" class="colspan7" style="text-align: left;padding-left: 10px;"><span
+                class="encoded-search-data"><?php echo json_encode($motion['交办单位'], JSON_UNESCAPED_UNICODE) ?></span>
         </td>
     </tr>
 <?php endif ?>

@@ -7,6 +7,13 @@
  */
 //global $meetingName=
 
+
+function statistics_excel_out(){
+    $totalList= handleStatistics(0, $_SESSION['staffLogin']['category']);
+    include"view/statisticsOutExcel.html.php";
+//        include"view/statistics_document.html.php";
+    exit;
+}
 function multiple_statistics()
 {
     mylog('multiple_statistics');
@@ -49,8 +56,9 @@ function motion_1_list()
 function sta1()
 {
     $category=$_GET['category'];
+    $meeting=$_GET['metting'];
     $fieldCount = 3;
-    $meeting = 'all' == $_SESSION['staffLogin']['meeting'] ? 2 : $_SESSION['staffLogin']['meeting'];
+//    $meeting = 'all' == $_SESSION['staffLogin']['meeting'] ? 2 : $_SESSION['staffLogin']['meeting'];
     $fileName = getMeetingName($meeting);
     if(2==$category){
         $fileName .= '各界别提交提案数量统计';
@@ -87,8 +95,9 @@ function sta1()
 function sta2()
 {
     $category=$_GET['category'];
+    $meeting=$_GET['meeting'];
     $fieldCount = 3;
-    $meeting = 'all' == $_SESSION['staffLogin']['meeting'] ? 2 : $_SESSION['staffLogin']['meeting'];
+//    $meeting = 'all' == $_SESSION['staffLogin']['meeting'] ? 2 : $_SESSION['staffLogin']['meeting'];
     $fileName = getMeetingName($meeting);
     if(2==$category){
         $fileName .= '各委组提交提案数量统计';
@@ -118,7 +127,33 @@ function sta2()
     include 'view/formated_out.html.php';
     exit;
 }
+function sta_by_duty(){
+    $category=$_GET['category'];
+    $meeting=$_GET['meeting'];
+    $fieldCount = 3;
+    $fileName=getMeetingName($meeting);
+    if(2==$category){
+        $fileName .= '各委员提交提案数量统计';
+        $title = '<tr><td>姓名</td><td>委组</td><td>件数</td></tr>';
+        $attrName='提案人';
+    }else{
+        $fileName .= '各代表提交提案数量统计';
+        $title = '<tr><td>姓名</td><td>中心组</td><td>件数</td></tr>';
+        $attrName='领衔人';
+    }
+    $totalNumber = 0;
+    $query = pdoQuery('s_duty_view', array('user_name ', 'user_unit_name', 'count(*) as number','duty'), array('attr_name' => $attrName, 'meeting' => $meeting), ' group by duty');
+    $listQuery = array();
+    foreach ($query as $row) {
+        $totalNumber += $row['number'];
+        if ($row['duty'] > 0) {
+            $listQuery[$row['duty']] = array($row['user_name'],$row['user_unit_name'], $row['number'], 0);
+        }
+    }
+    include 'view/formated_out.html.php';
+    exit;
 
+}
 
 function ajax_downLoad(){
     $key=$_GET['key'];

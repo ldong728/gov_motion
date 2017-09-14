@@ -381,6 +381,7 @@ function ajaxMotionList($data)
     //综合搜索
 //    mylog(getArrayInf($filter));
     if(isset($filter['multiple_search'])){
+//        mylog(getArrayInf($filter));
         $searchLimit=null;
 //        $multipleSearchFilter=null;
         $multipleSearchTempFilter=array('meeting'=>$meeting);
@@ -404,7 +405,7 @@ function ajaxMotionList($data)
         }
 
 
-        mylog(getArrayInf($filter['multiple_search']));
+//        mylog(getArrayInf($filter['multiple_search']));
         foreach($filterDetail as $k=>$v){
             $sMotionAttr=$v['motionAttr'];
             $sType=$v['type'];
@@ -620,7 +621,7 @@ function editMotion($data)
     $attrFilter = array('motion_id' => $id);
     $meetingInf = pdoQuery('motion_inf_view', null, array('motion_id' => $id), ' limit 1')->fetch();
     $hasDispleasure=pdoQuery('displeasure_attr_tbl',['motion'],['motion'=>$id],' limit 1')->fetch();
-    mylog($hasDispleasure);
+//    mylog($hasDispleasure);
     $isDispleasure=false;
 //    mylog();
     //处理政协提案有不同交办单位的情况
@@ -637,8 +638,12 @@ function editMotion($data)
             if ($step4Inf['content_int'] == $staffId) {
                 $step4CanEdit = true;
             } else {
-                if ('5103' == $staffId || '6726' == $staffId) $step4CanEdit = true;
-                else $step4CanEdit = false;
+//                if ('5103' == $staffId || '6726' == $staffId){
+//                    $step4CanEdit = true;
+//                }
+//                else {
+                    $step4CanEdit = false;
+//                }
             }
         }
     } else {
@@ -971,10 +976,11 @@ function updateAttr($data)
     $uniqueInf = pdoQuery('motion_attr_view', null, array('attr_name' => '案号', 'motion_template' => $motion['motion_template']), 'limit 1')->fetch()['motion_attr_id'];
     $uniqueQuery = pdoQuery('attr_unique_view', array('content_int as value'), array('motion_attr' => $uniqueInf, 'meeting' => $motion['meeting']), null);
     $uniqueValues = array();
-    if($motion['step']>6){//防止重复提交
+    if($isFoward>-1&&($currentStep>6||!in_array($currentStep,$_SESSION['staffLogin']['steps']))){//防止重复提交
         echo ajaxBack(array('step' => $currentStep, 'id' => $motionId));
         exit;
     }
+
     foreach ($uniqueQuery as $row) {
         $uniqueValues[] = $row['value'];
     }
@@ -1050,6 +1056,13 @@ function updateAttr($data)
                 $attr = pdoQuery('attr_view', array('content'), array('motion' => $motionId, 'attr_name' => '审核' . $motion['category']), 'limit 1')->fetch();
                 if ('不予立案' == $attr['content']) {
                     pdoUpdate('motion_tbl', array('step' => 7), array('motion_id' => $motionId));
+                }
+            }
+            //自动为人大建议添加交办单位
+            if(4==$motion['step']&&1==$motion['category']){
+                $query=pdoQuery('attr_tbl',null,['motion'=>$motionId,'motion_attr'=>86],'limit 1')->fetch();
+                if(!$query){
+                    pdoInsert('attr_tbl',['motion'=>$motionId,'motion_attr'=>86,'attr_template'=>15,'content_int'=>$_SESSION['staffLogin']['staffId']]);
                 }
             }
             if (6 == $motion['step']) {
@@ -1183,7 +1196,7 @@ function ajaxTargetList($data)
                 $motionInf = pdoQuery('motion_tbl', null, array('motion_id' => $_SESSION['staffLogin']['currentMotion']), 'limit 1')->fetch();
                 $step = $motionInf['step'] + 1;
             }else{
-                $step=3;
+                $step=4;
             }
             if ($filter) $str = 'and steps like "%' . $step . '%"';
             else $str = 'where steps like "%' . $step . '%"';
@@ -1341,7 +1354,7 @@ function getMotionStepInf($data)
 
 function ajaxGetStatistics($data)
 {
-    handleStatistics();
+    handleStatistics($data['meeting']);
 
 //    echo ajaxBack('ok');
 }
@@ -1399,7 +1412,7 @@ function get_duty_manager_view($data){
 }
 //function exceOut
 
-function handleStatistics($unitId = 0, $category = 3)
+function handleStatistics($meeting,$unitId = 0, $category = 3)
 {
     $totalList = array();
     if (3 == $category) {

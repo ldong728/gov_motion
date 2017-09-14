@@ -73,7 +73,7 @@
                                 class="icon icon-angle-right"></i><?php echo 1 == $_SESSION['staffLogin']['category'] ? '代表名单管理' : '委员名单管理' ?>
                             <span></span></a></p></li>
                 <?php if (2 == $_SESSION['staffLogin']['category']): ?>
-                    <li><p><a href="#" class="multiple-statistics" data-step="3" data-filtertype="mainhandle"><i
+                    <li style="display: none"><p><a href="#" class="multiple-statistics" data-step="3" data-filtertype="mainhandle"><i
                                     class="icon icon-angle-right"></i><span>综合统计</span></a></p></li><?php endif ?>
             <?php endif ?>
             <?php if (in_array(4, $_SESSION['staffLogin']['steps'])): ?>
