@@ -78,7 +78,7 @@
                 <?php endforeach ?>
             </select></td>
         <th>提案分类</th>
-        <td colspan="2" class="judged-value"><span
+        <td colspan="2"><span
                 class="encoded-search-data"><?php echo json_encode($motion['提案分类'], JSON_UNESCAPED_UNICODE) ?></span>
         </td>
         <th>附议人数</th>
@@ -228,7 +228,7 @@
 <div class="unit" style="display: none;z-index: 999;position: fixed">
     <div class="unit-title">
         <h2 class="target-name">请选择</h2>
-        <div class="back close-unit"></div>
+        <div class="back close-unit close-search-unit"></div>
     </div>
     <div class="unit-table">
         <input type="hidden" class="multiple-type">

@@ -1118,7 +1118,7 @@ function updateAttr($data)
  */
 function ajaxTargetList($data)
 {
-    mylog(getArrayInf($data));
+//    mylog(getArrayInf($data));
 //    mylog(getArrayInf($_SESSION['staffLogin']));
     $target = $data['target'];
     $filter = isset($data['filter']) ? $data['filter'] : null;
