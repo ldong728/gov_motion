@@ -185,10 +185,10 @@ function ajaxGetMotion($data){
     }
 }
 function modifyMotionStep($data){
-
+//    mylog(json_encode($data));
     $motionId=$data['motionId'];
     $step=$data['step'];
-    $clearDisPleasure=$data['clearDispleasure'];
+    $clearDisPleasure='true'==$data['clearDispleasure']?true:false;
     $hasDisPleasure=pdoQuery('displeasure_attr_tbl',null,['motion'=>$motionId,'content'=>['大会期间','闭会期间']],'limit 1')->fetch();
     pdoTransReady();
     try{

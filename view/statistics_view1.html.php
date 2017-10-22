@@ -8,7 +8,7 @@
     </tr>
     <tr>
         <td><a href="?download=response_by_unit_type&meeting=<?php echo $meeting?>&category=1">反馈统计（按中心组分类别）</a></td>
-        <td></td>
+        <td><a href="?download=user_motion_count&meeting=<?php echo $meeting?>&category=1">代表建议数量统计</a></td>
         <td></td>
         <td></td>
         <td></td>

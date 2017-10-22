@@ -40,6 +40,7 @@ $(document).on('click','.start-multiple-search',function(){
     delete filter.search;
     filter.multiple_search={};
     var multipleSearchData={};
+    page=0;
     $('.search-key').each(function(k,v){
        var _=$(v);
         var motionAttr= _.data('motionattr')||false;

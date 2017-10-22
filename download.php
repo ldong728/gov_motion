@@ -365,6 +365,41 @@ function non_motion_user(){
     include 'view/formated_out.html.php';
     exit;
 }
+function user_motion_count(){
+    $category=$_GET['category'];
+    $meeting=$_GET['meeting'];
+    $attrname=1==$category?'领衔人':'提案人';
+    $unit=1==$category?'中心组':'委组';
+    $group=1==$category?'代表团':'界别';
+    $query=pdoQuery('duty_view',['user_name','user_phone','address','user_unit_name','user_group_name','duty_id'],['meeting'=>$meeting,'category'=>$category],null);
+
+    foreach ($query as $row) {
+        $dutyList[$row['duty_id']]=$row;
+        $dutyList[$row['duty_id']][5]=0;
+        $dutyList[$row['duty_id']][6]=0;
+//        mylog(json_encode( $dutyList[$row['duty_id']]));
+    }
+    $query=pdoQuery('motion_view',['attr_name','content_int'],['meeting'=>$meeting,'category'=>$category,'attr_name'=>[$attrname,'附议人']],null);
+    foreach ($query as $row) {
+        if($attrname==$row['attr_name']){
+            $dutyList[$row['content_int']][5]++;
+        }else{
+            if($row['content_int'])$dutyList[$row['content_int']][6]++;
+        }
+
+    }
+//    $coopQuery=pdoQuery('motion_view',['content_int'],['meeting'=>$meeting,'category'=>$category,'attr_name'=>'附议人'],null);
+//    foreach ($coopQuery as $row) {
+//        $dutyList[$row['content_int']][6]++;
+//    }
+    $meetingName=getMeetingName($meeting);
+    $title = "<tr><td>姓名</td><td>电话</td><td>工作单位</td><td>$unit</td><td>$group</td><td>领衔建议数</td><td>附议建议数</td></tr>";
+    $fieldCount=7;
+    $fileName=2==$category?$meetingName."委员提案数量统计":$meetingName.'代表建议数量统计';
+    $listQuery=$dutyList;
+    include 'view/formated_out.html.php';
+    exit;
+}
 function have_coop_motion(){
     $category=$_GET['category'];
     $meeting=$_GET['meeting'];
