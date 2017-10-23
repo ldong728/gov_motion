@@ -53,3 +53,29 @@
 2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:初审+立案: 347
 2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:初审+并案: 10
 2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:初审+不予立案: 15
+2017.10.23.21:05:03:C:\xampp\htdocs\gov_motion\download.php66:市政府督查室: 322
+2017.10.23.21:05:03:C:\xampp\htdocs\gov_motion\download.php66:市委办督查室: 33
+2017.10.23.21:05:03:C:\xampp\htdocs\gov_motion\download.php66:市政协提案委: 2
+2017.10.23.21:05:03:C:\xampp\htdocs\gov_motion\download.php66:: 17
+2017.10.23.21:11:34:C:\xampp\htdocs\gov_motion\functions.php932:eWqBpc
+2017.10.23.21:19:45:C:\xampp\htdocs\gov_motion\download.php66:5103: 322
+2017.10.23.21:19:45:C:\xampp\htdocs\gov_motion\download.php66:4954: 33
+2017.10.23.21:19:45:C:\xampp\htdocs\gov_motion\download.php66:5154: 2
+2017.10.23.21:19:45:C:\xampp\htdocs\gov_motion\download.php66:: 17
+2017.10.23.21:25:26:C:\xampp\htdocs\gov_motion\download.php66:5103: 322
+2017.10.23.21:25:26:C:\xampp\htdocs\gov_motion\download.php66:4954: 33
+2017.10.23.21:25:26:C:\xampp\htdocs\gov_motion\download.php66:5154: 2
+2017.10.23.21:25:26:C:\xampp\htdocs\gov_motion\download.php66:: 17
+2017.10.23.21:36:18:C:\xampp\htdocs\gov_motion\download.php78:主办：45
+2017.10.23.21:36:18:C:\xampp\htdocs\gov_motion\download.php79:协办：85
+2017.10.23.21:36:18:C:\xampp\htdocs\gov_motion\download.php80:办理：0
+2017.10.23.21:37:31:C:\xampp\htdocs\gov_motion\download.php78:主办：45
+2017.10.23.21:37:31:C:\xampp\htdocs\gov_motion\download.php79:协办：85
+2017.10.23.21:37:31:C:\xampp\htdocs\gov_motion\download.php80:办理：129
+2017.10.23.21:42:18:C:\xampp\htdocs\gov_motion\download.php78:主办：45
+2017.10.23.21:42:18:C:\xampp\htdocs\gov_motion\download.php79:协办：85
+2017.10.23.21:42:18:C:\xampp\htdocs\gov_motion\download.php80:办理：129
+2017.10.23.21:44:07:C:\xampp\htdocs\gov_motion\download.php83:主办：45
+2017.10.23.21:44:07:C:\xampp\htdocs\gov_motion\download.php84:协办：86
+2017.10.23.21:46:17:C:\xampp\htdocs\gov_motion\download.php83:主办：45
+2017.10.23.21:46:17:C:\xampp\htdocs\gov_motion\download.php84:协办：86

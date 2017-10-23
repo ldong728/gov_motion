@@ -22,9 +22,17 @@ function statistics_excel_out(){
     include"view/statisticsOutExcel.html.php";
     exit;
 }
+
+/**
+ * 综合统计 未完成
+ *
+ */
 function multiple_statistics()
 {
     $optionList=[];
+    $unitList=[];
+    $mainHandleList=[];
+    $handleList=[];
     $meeting=$_GET['meeting'];
     $attrQuery=pdoQuery('motion_attr_view',null,null,' where motion_template=(select motion_template from meeting_tbl where meeting_id='.$meeting.')');
     foreach ($attrQuery as $row) {
@@ -40,29 +48,45 @@ function multiple_statistics()
 
     $query = pdoQuery('motion_view', null, ['meeting'=>$meeting], null);
     foreach ($query as $row) {
+
         if(isset($optionList[$row['attr_name'].'+'.$row['content']])){
             $optionList[$row['attr_name'].'+'.$row['content']]++;
         }
+        if('交办单位'==$row['attr_name']){
+            if(isset($unitList[$row['content_int']])){
+                $unitList[$row['content_int']]++;
+            }else{
+                $unitList[$row['content_int']]=1;
+            }
+        }
+        if('主办单位'==$row['attr_name']){
+            if(isset($mainHandleList[$row['content_int']])){
+                $mainHandleList[$row['content_int']]++;
+            }else{
+                $mainHandleList[$row['content_int']]=1;
+            }
+            if(isset($handleList[$row['content_int']])){
+                $handleList[$row['content_int']]++;
+            }else{
+                $handleList[$row['content_int']]=1;
+            }
+        }
+        if('协办单位'==$row['attr_name']){
+            if(isset($handleList[$row['content_int']])){
+                $handleList[$row['content_int']]++;
+            }else{
+                $handleList[$row['content_int']]=1;
+            }
+        }
+
     }
-    foreach ($optionList as $key=>$v) {
-        mylog($key.': '.$v);
-    }
+    mylog('主办：'. count($mainHandleList));
+    mylog('协办：'.count($handleList));
+//    mylog('办理：'.count(array_merge($mainHandleList,$handleList)));
 
 
-//    foreach ($query as $row) {
-//        if ('提案人' == $row['attr_name']) {
-//
-//            if (!$row['user_unit']) {
-//
-//            } elseif (!$row['user_group']) {
-//
-//            } else {
-//
-//            }
-//        }
-//    }
-
-//    include 'view/statistics_document.html.php';
+    $name=getMeetingName($meeting);
+    include"view/statistics_document.html.php";
     exit;
 }
 
