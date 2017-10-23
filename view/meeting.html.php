@@ -77,11 +77,11 @@
                                     class="icon icon-angle-right"></i><span>综合统计</span></a></p></li><?php endif ?>
             <?php endif ?>
             <?php if (in_array(4, $_SESSION['staffLogin']['steps'])): ?>
-                <li><p><a href="index.php?statistics_excel_out=1" class="statistics"><i
+                <li><p><a href="index.php?download=statistics_excel_out&meeting=<?php echo $meetingInf['meeting_id']?>" class="statistics"><i
                                 class="icon icon-angle-right"></i>办理统计<span></span></a></p></li>
             <?php endif ?>
             <?php if (in_array(3, $_SESSION['staffLogin']['steps']) && 1 == $_SESSION['staffLogin']['category']): ?>
-                <li><p><a href="index.php?statistics_excel_out=1" class="statistics"><i
+                <li><p><a href="index.php?download=statistics_excel_out&meeting=<?php echo $meetingInf['meeting_id']?>" class="statistics"><i
                                 class="icon icon-angle-right"></i>办理统计<span></span></a></p></li>
             <?php endif ?>
 

@@ -30,7 +30,9 @@ if(isset($_SESSION['staffLogin'])){
         exit;
     }
     if(isset($_GET['statistics_excel_out'])){
-        $totalList= handleStatistics(0, $_SESSION['staffLogin']['category']);
+        $meeting=$_GET['meeting'];
+        $meetingName=getMeetingName($meeting);
+        $totalList= handleStatistics($meeting,0, $_SESSION['staffLogin']['category']);
         include"view/statisticsOutExcel.html.php";
 //        include"view/statistics_document.html.php";
         exit;

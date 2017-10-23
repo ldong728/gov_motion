@@ -9,9 +9,17 @@
 
 
 function statistics_excel_out(){
-    $totalList= handleStatistics(0, $_SESSION['staffLogin']['category']);
+    $meeting=$_GET['meeting'];
+    $inf=pdoQuery('meeting_tbl', array('meeting_name','category'), array('meeting_id' => $meeting), 'limit 1')->fetch();
+    if(1==$inf['category']){
+        $name=$inf['meeting_name'].'建议议案';
+    }else{
+        $name=$inf['meeting_name'].'提案';
+    }
+//    $name=getMeetingName($meeting);
+//    mylog($meetingName);
+    $totalList= handleStatistics($meeting,0, $_SESSION['staffLogin']['category']);
     include"view/statisticsOutExcel.html.php";
-//        include"view/statistics_document.html.php";
     exit;
 }
 function multiple_statistics()
@@ -417,6 +425,7 @@ function have_coop_motion(){
     include 'view/motion_inf_output.html.php';
     exit;
 }
+
 
 
 

@@ -1415,9 +1415,9 @@ function get_duty_manager_view($data){
 function handleStatistics($meeting,$unitId = 0, $category = 3)
 {
     $totalList = array();
-    if (3 == $category) {
+//    if (3 == $category) {
 
-        $where = $unitId ? array('unit_id' => $unitId) : null;
+        $where = $unitId ? array('unit_id' => $unitId,'meeting'=>$meeting) : array('meeting'=>$meeting);
         $order = 'order by handle_name asc,number desc';
         $totalQuery = pdoQuery('handle_statistics_view', null, $where, $order);
         foreach ($totalQuery as $row) {
@@ -1431,7 +1431,7 @@ function handleStatistics($meeting,$unitId = 0, $category = 3)
             if ('主办单位' == $row['handle_name']) $totalList[$row['unit_id']]['main_done'] = $row['number'];
         }
         $handledoneWhere = $where ? array_merge($where, array('status' => 9)) : array('status' => 9);
-        $handleDoneQuery = pdoQuery('motion_handler_tbl', array('unit as unit_id', 'count(*) as number'), $handledoneWhere, ' group by unit');
+        $handleDoneQuery = pdoQuery('motion_handler_inf_view', array('unit as unit_id', 'count(*) as number'), $handledoneWhere, ' group by unit');
         foreach ($handleDoneQuery as $row) {
             $totalList[$row['unit_id']]['sub_done'] = $row['number'];
         }
@@ -1442,35 +1442,35 @@ function handleStatistics($meeting,$unitId = 0, $category = 3)
         }
         return $totalList;
 
-    } else {
-//        $where=$unitId?array('unit_id'=>$unitId,'category'=>$category):null;
-        $where = array('category' => $category);
-        if ($unitId) $where['unit_id'] = $unitId;
-        $order = 'order by handle_name asc,number desc';
-        $totalQuery = pdoQuery('handle_statistics_category_view', null, $where, $order);
-        foreach ($totalQuery as $row) {
-            $totalList[$row['unit_id']]['unit_id'] = $row['unit_id'];
-            $totalList[$row['unit_id']]['unit_name'] = $row['unit_name'];
-            if ('主办单位' == $row['handle_name']) $totalList[$row['unit_id']]['main_total'] = $row['number'];
-            else $totalList[$row['unit_id']]['sub_total'] = $row['number'];
-        }
-        $mainDoneQuery = pdoQuery('main_handle_view', array('unit_id', 'handle_name', 'count(*) as number'), $where, 'group by unit_id,handle_name');
-        foreach ($mainDoneQuery as $row) {
-            if ('主办单位' == $row['handle_name']) $totalList[$row['unit_id']]['main_done'] = $row['number'];
-        }
-        $handledoneWhere = $where ? array_merge($where, array('status' => 9)) : array('status' => 9);
-        $handleDoneQuery = pdoQuery('motion_handler_inf_view', array('unit as unit_id', 'count(*) as number'), $handledoneWhere, ' group by unit');
-        foreach ($handleDoneQuery as $row) {
-            if(55==$row['unit_id'])mylog($row['number']);
-            $totalList[$row['unit_id']]['sub_done'] = $row['number'];
-        }
-
-        $responseQuery = pdoQuery('handle_response_view', array('unit_id', 'response_type', 'response', 'count(*) as number'), $where, 'and handle_name="主办单位" group by unit_id,response_type,response');
-        foreach ($responseQuery as $row) {
-            $totalList[$row['unit_id']][$row['response_type']][$row['response']] = $row['number'];
-        }
-        return $totalList;
-    }
+//    } else {
+////        $where=$unitId?array('unit_id'=>$unitId,'category'=>$category):null;
+//        $where = array('category' => $category);
+//        if ($unitId) $where['unit_id'] = $unitId;
+//        $order = 'order by handle_name asc,number desc';
+//        $totalQuery = pdoQuery('handle_statistics_category_view', null, $where, $order);
+//        foreach ($totalQuery as $row) {
+//            $totalList[$row['unit_id']]['unit_id'] = $row['unit_id'];
+//            $totalList[$row['unit_id']]['unit_name'] = $row['unit_name'];
+//            if ('主办单位' == $row['handle_name']) $totalList[$row['unit_id']]['main_total'] = $row['number'];
+//            else $totalList[$row['unit_id']]['sub_total'] = $row['number'];
+//        }
+//        $mainDoneQuery = pdoQuery('main_handle_view', array('unit_id', 'handle_name', 'count(*) as number'), $where, 'group by unit_id,handle_name');
+//        foreach ($mainDoneQuery as $row) {
+//            if ('主办单位' == $row['handle_name']) $totalList[$row['unit_id']]['main_done'] = $row['number'];
+//        }
+//        $handledoneWhere = $where ? array_merge($where, array('status' => 9)) : array('status' => 9);
+//        $handleDoneQuery = pdoQuery('motion_handler_inf_view', array('unit as unit_id', 'count(*) as number'), $handledoneWhere, ' group by unit');
+//        foreach ($handleDoneQuery as $row) {
+//            if(55==$row['unit_id'])mylog($row['number']);
+//            $totalList[$row['unit_id']]['sub_done'] = $row['number'];
+//        }
+//
+//        $responseQuery = pdoQuery('handle_response_view', array('unit_id', 'response_type', 'response', 'count(*) as number'), $where, 'and handle_name="主办单位" group by unit_id,response_type,response');
+//        foreach ($responseQuery as $row) {
+//            $totalList[$row['unit_id']][$row['response_type']][$row['response']] = $row['number'];
+//        }
+//        return $totalList;
+//    }
 
 }
 function displeasure($motion_id){
