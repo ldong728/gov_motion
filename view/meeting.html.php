@@ -72,9 +72,6 @@
                 <li><p><a href="index.php?duty_manager=1&category=<?php echo $_SESSION['staffLogin']['category']?>&meeting=<?php echo $meetingInf['meeting_id'] ?>" data-step="3" data-filtertype="mainhandle" class="duty-manager"><i
                                 class="icon icon-angle-right"></i><?php echo 1 == $_SESSION['staffLogin']['category'] ? '代表名单管理' : '委员名单管理' ?>
                             <span></span></a></p></li>
-                <?php if (2 == $_SESSION['staffLogin']['category']): ?>
-                    <li style="display: none"><p><a href="#" class="multiple-statistics" data-step="3" data-filtertype="mainhandle"><i
-                                    class="icon icon-angle-right"></i><span>综合统计</span></a></p></li><?php endif ?>
             <?php endif ?>
             <?php if (in_array(4, $_SESSION['staffLogin']['steps'])): ?>
                 <li><p><a href="index.php?download=statistics_excel_out&meeting=<?php echo $meetingInf['meeting_id']?>" class="statistics"><i

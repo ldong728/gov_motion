@@ -6,7 +6,7 @@
  * Time: 14:29
  */
 //global $meetingName=
-
+include_once 'includes/DataSupply.class.php';
 
 function statistics_excel_out(){
     $meeting=$_GET['meeting'];
@@ -24,25 +24,45 @@ function statistics_excel_out(){
 }
 function multiple_statistics()
 {
-    mylog('multiple_statistics');
-    $inf = array('');
-//    $total =
-
-    $query = pdoQuery('s_duty_view', null, array('category' => $_SESSION['staffLogin']['category']), null);
-    foreach ($query as $row) {
-        if ('提案人' == $row['attr_name']) {
-
-            if (!$row['user_unit']) {
-
-            } elseif (!$row['user_group']) {
-
-            } else {
-
+    $optionList=[];
+    $meeting=$_GET['meeting'];
+    $attrQuery=pdoQuery('motion_attr_view',null,null,' where motion_template=(select motion_template from meeting_tbl where meeting_id='.$meeting.')');
+    foreach ($attrQuery as $row) {
+        if($row['option']){
+            $optionJson=json_decode($row['option'],true);
+            foreach ($optionJson as $option) {
+                $optionList[$row['attr_name'].'+'.$option]=0;
             }
         }
     }
 
-    include 'view/statistics_document.html.php';
+
+
+    $query = pdoQuery('motion_view', null, ['meeting'=>$meeting], null);
+    foreach ($query as $row) {
+        if(isset($optionList[$row['attr_name'].'+'.$row['content']])){
+            $optionList[$row['attr_name'].'+'.$row['content']]++;
+        }
+    }
+    foreach ($optionList as $key=>$v) {
+        mylog($key.': '.$v);
+    }
+
+
+//    foreach ($query as $row) {
+//        if ('提案人' == $row['attr_name']) {
+//
+//            if (!$row['user_unit']) {
+//
+//            } elseif (!$row['user_group']) {
+//
+//            } else {
+//
+//            }
+//        }
+//    }
+
+//    include 'view/statistics_document.html.php';
     exit;
 }
 
@@ -426,6 +446,31 @@ function have_coop_motion(){
     exit;
 }
 
+/**
+ * 集体提案统计
+ */
+function group_motion(){
+    $meeting=$_GET['meeting'];
+    $listQuery=singleFilterStatistics('提案分类','党派团体',$meeting);
+    $title = "<tr><td>单位</td><td>数量</td></tr>";
+    $fieldCount=2;
+    $fileName=getMeetingName($meeting).'集体提案统计';
+//    $listQuery=$dutyList;
+    include 'view/formated_out.html.php';
+    exit;
+}
+
+function denied_motion(){
+    $meeting=$_GET['meeting'];
+    $title = "<tr><td>单位</td><td>数量</td></tr>";
+    $fieldCount=2;
+    $fileName=getMeetingName($meeting).'不予立案提案统计';
+    $listQuery=singleFilterStatistics('审核2','不予立案',$meeting);
+    include 'view/formated_out.html.php';
+    exit;
+}
+
+
 
 
 
@@ -433,6 +478,21 @@ function have_coop_motion(){
 /*
  * 以下为非get方法
  */
+
+function singleFilterStatistics($attrName,$attrValue,$meeting){
+    $limit=pdoQuery('motion_view',['motion_id'],['attr_name'=>$attrName,'content'=>$attrValue,'meeting'=>$meeting],null)->fetchAll();
+    $inf=pdoQuery('motion_view',['content_int'],['meeting'=>$meeting,'motion_id'=>$limit,'attr_name'=>['提案人','领衔人']],null);
+    $listQuery=[];
+    foreach ($inf as $row) {
+        if(isset($listQuery[$row['content_int']])){
+            $listQuery[$row['content_int']][1]++;
+        }else{
+            $listQuery[$row['content_int']][0]=DataSupply::indexToValue('duty',$row['content_int']);
+            $listQuery[$row['content_int']][1]=1;
+        }
+    }
+    return $listQuery;
+}
 
 function handleDetailInfo($unitId,$unitName=null){
 //    $unitId=$_GET['unit'];

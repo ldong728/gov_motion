@@ -7,6 +7,8 @@
     </tr>
     <tr>
         <td><a href="?download=have_coop_motion&meeting=<?php echo $meeting?>&category=2">有附议人的提案统计</a></td>
-
+        <td><a href="?download=group_motion&meeting=<?php echo $meeting?>&category=2">集体提案统计</a></td>
+        <td><a href="?download=denied_motion&meeting=<?php echo $meeting?>&category=2">不予立案提案统计</a></td>
+        <td><a href="?download=multiple_statistics&meeting=<?php echo $meeting?>&category=2">综合统计</a></td>
     </tr>
     </table>
