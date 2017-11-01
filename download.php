@@ -221,7 +221,13 @@ function ajax_downLoad(){
     if(1==$category){
         $field=array('案号'=>'案号', '领衔人'=>'领衔人', '案由'=>'案由', '性质类别'=>'性质类别1', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位');
     }else{
-        $field=array('案号'=>'案号', '提案人'=>'提案人', '案由'=>'案由', '性质类别'=>'性质类别2', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位');
+        $field=array('案号'=>'案号','性质'=>'性质','提案分类'=>'提案分类', '提案人'=>'提案人',
+            '附议人'=>'附议人','委组'=>'委组','界别'=>'界别', '案由'=>'案由', '性质类别'=>'性质类别2',
+            '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位',
+            '主办答复时间'=>'主办答复时间','文号'=>'文号','签发人'=>'主办签发人',
+            '办理工作'=>'办理工作','办理结果'=>'办理结果','办理面商形式'=>'面商形式','面商人'=>'面商人',
+            '采纳情况'=>'采纳情况','落实情况'=>'落实情况','反馈意见全文'=>'反馈意见全文'
+        );
     }
     $motionInfo=reGroupMotionInfList($data,$field);
 //    mylog(getArrayInf($motionInfo));
@@ -578,27 +584,32 @@ function reGroupMotionInfList($motionList,$motionFiled){
 //    mylog(getArrayInf($dutyList));
 
     foreach ($motionQuery as $row) {
-//        if(!$singleRow)$singleRow=$row;
         if(!$dutyList){
-            $dutyInf=pdoQuery('duty_view',['duty_id','user_name','user_phone'],['category'=>$row['category'],'meeting'=>$row['meeting']],null);
+            $dutyInf=pdoQuery('duty_view',['duty_id','user_name','user_phone','user_unit_name','user_group_name'],['category'=>$row['category'],'meeting'=>$row['meeting']],null);
             foreach ($dutyInf as $v) {
                 $dutyList[$v['duty_id']]=$v;
             }
-//            mylog(getArrayInf($dutyList));
         }
         if(in_array($row['attr_name'],$motionFiled)){
             $content = 'string' == $row['value_type'] ? $row['content'] : $row['content_int'];
             $content = 'attachment' == $row['value_type'] ? $row['attachment'] : $content;
-            if ('index' == $row['value_type']) {
+            if ('index' == $row['value_type']&&$row['content_int']) {
                 if('duty'==$row['target'])$content=$dutyList[$row['content_int']]['user_name'];
                 else $content = DataSupply::indexToValue($row['target'], $content);
+                if('提案人'==$row['attr_name']){
+                    $sortList[$row['motion_id']]['委组']=$dutyList[$row['content_int']]['user_unit_name'];
+                    $sortList[$row['motion_id']]['界别']=$dutyList[$row['content_int']]['user_group_name'];
+                }
             }
-
+            if('time'==$row['attr_name']){
+                $content=timeUnixToMysql($row['content']);
+            }
 
             if (!isset($sortList[$row['motion_id']][$row['attr_name']])) $sortList[$row['motion_id']][$row['attr_name']] = $content;
             else $sortList[$row['motion_id']][$row['attr_name']] .= ',' . $content;
-            $sortList[$row['motion_id']]['当前环节'] = $row['step_name'];
             $sortList[$row['motion_id']]['category']=$row['category'];
+        }else{
+
         }
     }
     return $sortList;

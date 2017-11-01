@@ -19,7 +19,7 @@ $pmsCount = count($pmsList);
         <?php foreach ($opList as $row): ?>
             <tr>
                 <td><input type="text" class="alt-name textbox" id="name<?php echo $row['id'] ?>" value="<?php echo $row['name'] ?>" style="width: 70px"></td>
-                <td><input type="text" class="alt-pwd textbox" id="pwd<?php echo $row['id'] ?>" value="<?php echo $row['pwd'] ?>" style="width: 70px"></td>
+                <td><input type="text" class="alt-pwd textbox" id="pwd<?php echo $row['id'] ?>" style="width: 70px"></td>
                 <?php foreach ($row['pms'] as $k=>$v): ?>
                     <td>
                         <input type="checkbox" class="pms-alt" id="<?php echo $row['id'] ?>"
@@ -72,7 +72,7 @@ $pmsCount = count($pmsList);
     $('.alt-pwd').change(function () {
         var id = $(this).attr('id').slice(3);
         var pwd = $(this).val();
-        altTable('operator','pwd',pwd,'id',id,function(){
+        altTable('operator','pwd',hex_md5(pwd),'id',id,function(){
             showToast('更改完成');
         })
     });

@@ -15,7 +15,7 @@
 
 
 define('ADMIN','admin');
-define('PASSWORD','admin');
+define('PASSWORD','gooduo888');
 define("TOKEN", "godlee");
 define('DOMAIN',"/gov_motion");
 define('NOTIFY_URL',"now is null");

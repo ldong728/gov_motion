@@ -37,7 +37,7 @@ if (isset($_SESSION['login']) && DOMAIN == $_SESSION['login']) {
             $_SESSION['operator_id'] = -1;
             printAdminView('blank.html.php', '提案议案管理系统后台');
         } else {
-            $query = pdoQuery('operator_tbl',array('id'), array('name' => $name, 'md5' => md5($pwd)), ' limit 1');
+            $query = pdoQuery('operator_tbl',array('id'), array('name' => $name, 'pwd' => md5($pwd)), ' limit 1');
             $op_inf = $query->fetch();
             if ($op_inf) {
                 $_SESSION['login'] = DOMAIN;
@@ -302,69 +302,9 @@ function user_manage(){
 //    pdoBatchInsert('duty_tbl',$value);
     printAdminView('blank.html.php','添加操作员');
 }
+function suggestion_manage(){
+    printAdminView('suggestion_manage.html.php','提案线索审核');
 
+}
 
 //非sub菜单方法
-function motion_temp_list(){
-    global $list;
-    if($_SESSION['operator_id']==-1){
-        $list=pdoQuery('motion_template_tbl',null,null,null)->fetchAll();
-
-        if(!isset($list))$list=array();
-        printAdminView('motion_temp_list.html.php','议案提案管理系统后提');
-    }else{
-        printAdminView('blank.html.php','议案提案管理系统后台');
-    }
-}
-function index_config(){
-    global $getStr;
-    $articleInf=pdoQuery('gd_article',array('art_id'),array('art_channel_id'=>-1),' limit 1');
-    $articleId=$articleInf->fetch();
-    header('location: controller.php?get_editor='.$articleId['art_id'].'&'.$getStr);
-
-}
-function about(){
-    global $getStr;
-    $articleInf=pdoQuery('gd_article_view',array('art_id'),array('cha_code'=>$_GET['sub']),' limit 1');
-    $articleId=$articleInf->fetch();
-    if(!$articleId)$articleId['art_id']=0;
-    header('location: controller.php?get_editor='.$articleId['art_id'].'&'.$getStr);
-}
-function customer_photo(){
-    global $getStr;
-    global $page;
-    global $num;
-    global $list;
-    global $count;
-    $list=pdoQuery('gd_article_view',array('art_id','art_img','art_title','art_show','art_index'),array('cha_code'=>$_GET['sub']), ' order by art_add_time desc,art_index asc limit ' . $page * $num . ', ' .$num);
-    $list=$list->fetchAll();
-    $count=pdoQuery('gd_article_view',array('count(*) as count'),array('cha_code'=>$_GET['sub']),null);
-    $count=$count->fetch()['count'];
-    printAdminView('customer_photo_list.html.php');
-}
-function goods(){
-    global $getStr;
-    global $page;
-    global $num;
-    global $list;
-    global $count;
-    $list=pdoQuery('gd_article_view',array('art_id','art_more_img','art_title','art_show','art_index'),array('cha_code'=>$_GET['sub']), ' order by art_add_time desc,art_index asc limit ' . $page * $num . ', ' .$num);
-    $list=$list->fetchAll();
-    $count=pdoQuery('gd_article_view',array('count(*) as count'),array('cha_code'=>$_GET['sub']),null);
-    $count=$count->fetch()['count'];
-    printAdminView('goods_list.html.php');
-}
-function activities(){
-    global $getStr;
-    global $page;
-    global $num;
-    global $list;
-    global $count;
-    global $source;
-    $list=pdoQuery('gd_article_view',array('art_id','art_img','art_title','art_show','art_index'),array('cha_code'=>$_GET['sub']), ' order by art_add_time desc,art_index asc limit ' . $page * $num . ', ' .$num);
-    $list=$list->fetchAll();
-    $count=pdoQuery('gd_article_view',array('count(*) as count'),array('cha_code'=>$_GET['sub']),null);
-    $count=$count->fetch()['count'];
-    $source=getConfig('../config/mainConfig.json')['activity_source'];
-    printAdminView('activities_list.html.php');
-}

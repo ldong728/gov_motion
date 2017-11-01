@@ -165,6 +165,21 @@ function reflashStaffList($data){
 
     echo ajaxBack($back);
 }
+function reflashSuggestionList($data){
+    $number=12;
+    $orderby=$data['orderby'];
+    $order=$data['order'];
+    $start=$data['page']*$number;
+    $filter="order by $orderby $order";
+    $limit=" limit $start,$number";
+    $where=isset($data['where'])?$data['where']:null;
+    $count=pdoQuery('suggestion_tbl',array('count(*) as count'),$where,$filter)->fetch()['count'];
+    $query=pdoQuery('suggestion_tbl',null,$where,$filter.$limit)->fetchAll();
+    $back['list']=$query;
+    $back['count']=$count;
+    $back['page']=ceil($count/$number);
+    echo ajaxBack($back);
+}
 function ajaxGetMeetingList($data){
     $category=$data['category'];
     $meetingList=pdoQuery('meeting_tbl',null,['category'=>$category],' order by meeting_id desc')->fetchAll();
