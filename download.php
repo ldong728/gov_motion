@@ -108,7 +108,7 @@ function motion_1_list()
 function sta1()
 {
     $category=$_GET['category'];
-    $meeting=$_GET['metting'];
+    $meeting=$_GET['meeting'];
     $fieldCount = 3;
 //    $meeting = 'all' == $_SESSION['staffLogin']['meeting'] ? 2 : $_SESSION['staffLogin']['meeting'];
     $fileName = getMeetingName($meeting);
@@ -295,12 +295,12 @@ function reply_table2()
     $category = $_GET['category'];
     $fileName = 1 == $category ? '议案建议反馈表' : '提案反馈表';
     $fileName .= timeUnixToMysql(time());
-//    header("Content-Type:text/html; charset=gb2312");
+    header("Content-Type:text/html; charset=gb2312");
     header("Content-Type: application/doc");
     header("Content-Disposition: attachment; filename=$fileName.doc");
     $motionQuery = pdoQuery('motion_view', array('content', 'content_int', 'attr_name', 'target'), array('motion_id' => $motionId, 'attr_name' => array('提案人', '提案联系人', '领衔人', '案由', '案号', '主办单位', '协办单位')), null);
-//    $motionInf = array('meeting_name' => iconv('utf-8', 'gb2312//IGNORE', $meetingName));
-    $motionInf = array('meeting_name' => $meetingName);
+    $motionInf = array('meeting_name' => iconv('utf-8', 'gb2312//IGNORE', $meetingName));
+//    $motionInf = array('meeting_name' => $meetingName);
 
 
 
@@ -310,14 +310,14 @@ function reply_table2()
                 if ('提案人' == $row['attr_name']) {
                     $userInf = pdoQuery('duty_view', array('user_name', 'user_phone', 'address'), array('duty_id' => $row['content_int']), 'limit 1')->fetch();
                     $motionInf['user_name'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_name']);
-//                    if ($userInf['user_phone']) $motionInf['phone'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_phone']);
+                    if ($userInf['user_phone']) $motionInf['phone'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_phone']);
                     if ($userInf['user_phone']) $motionInf['phone'] =$userInf['user_phone'];
 
                     continue;
                 }
                 if ('提案联系人' == $row['attr_name']) {
                     $userInf = pdoQuery('duty_view', array('user_name', 'user_phone', 'address'), array('duty_id' => $row['content_int']), 'limit 1')->fetch();
-//                    $motionInf['phone'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_phone']);
+                    $motionInf['phone'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_phone']);
                     $motionInf['phone'] = $userInf['user_phone'];
 
                     continue;
@@ -328,13 +328,13 @@ function reply_table2()
                     continue;
                 }
                 if ($row['target']) $row['content'] = DataSupply::indexToValue($row['target'], $row['content_int']);
-//                $motionInf[iconv('utf-8', 'gb2312//IGNORE', $row['attr_name'])] = iconv('utf-8', 'gb2312//IGNORE', $row['content'] ? $row['content'] : $row['content_int']);
+                $motionInf[iconv('utf-8', 'gb2312//IGNORE', $row['attr_name'])] = iconv('utf-8', 'gb2312//IGNORE', $row['content'] ? $row['content'] : $row['content_int']);
                 $motionInf[$row['attr_name']] = $row['content'] ? $row['content'] : $row['content_int'];
 
             }
         }
 //        mylog(getArrayInf($motionInf));
-//        if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] = iconv('utf-8', 'gb2312//IGNORE', $motionInf['sub_handle']);
+        if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] = iconv('utf-8', 'gb2312//IGNORE', $motionInf['sub_handle']);
         include 'view/response_table2.html.php';
     }else{
             foreach ($motionQuery as $row) {
@@ -342,7 +342,7 @@ function reply_table2()
                     if ('领衔人' == $row['attr_name']) {
                         $userInf = pdoQuery('duty_view', array('user_name', 'user_phone', 'address'), array('duty_id' => $row['content_int']), 'limit 1')->fetch();
                         $motionInf['user_name'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_name']);
-//                    if ($userInf['user_phone']) $motionInf['phone'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_phone']);
+                    if ($userInf['user_phone']) $motionInf['phone'] = iconv('utf-8', 'gb2312//IGNORE', $userInf['user_phone']);
                         if ($userInf['user_phone']) $motionInf['phone'] =$userInf['user_phone'];
                         continue;
                     }
@@ -352,13 +352,13 @@ function reply_table2()
                         continue;
                     }
                     if ($row['target']) $row['content'] = DataSupply::indexToValue($row['target'], $row['content_int']);
-//                $motionInf[iconv('utf-8', 'gb2312//IGNORE', $row['attr_name'])] = iconv('utf-8', 'gb2312//IGNORE', $row['content'] ? $row['content'] : $row['content_int']);
+                $motionInf[iconv('utf-8', 'gb2312//IGNORE', $row['attr_name'])] = iconv('utf-8', 'gb2312//IGNORE', $row['content'] ? $row['content'] : $row['content_int']);
                     $motionInf[$row['attr_name']] = $row['content'] ? $row['content'] : $row['content_int'];
 
                 }
             }
 //        mylog(getArrayInf($motionInf));
-//        if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] = iconv('utf-8', 'gb2312//IGNORE', $motionInf['sub_handle']);
+        if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] = iconv('utf-8', 'gb2312//IGNORE', $motionInf['sub_handle']);
             include 'view/response_table1.html.php';
     }
 
