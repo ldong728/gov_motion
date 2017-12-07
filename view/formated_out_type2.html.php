@@ -1,7 +1,7 @@
 <meta charset = "utf-8">
 <?php
 header("Content-type:application/vnd.ms-excel");
-header("Content-Disposition:filename=".$unitName.'办理件汇总'.".xls");
+header("Content-Disposition:filename=".encodeFileName($unitName.'办理件汇总'.".xls"));
 
 ?>
 <table border=1 style="text-align: center">

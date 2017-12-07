@@ -10,7 +10,7 @@ switch($_SESSION['staffLogin']['category']){
         break;
 }
 header("Content-type:application/vnd.ms-excel");
-header("Content-Disposition:filename=".$name."反馈情况统计".timeUnixToMysql(time()).".xls");
+header("Content-Disposition:filename=".encodeFileName($name."反馈情况统计".timeUnixToMysql(time()).".xls"));
 
 ?>
 <table border=1 style="text-align: center">

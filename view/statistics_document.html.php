@@ -10,7 +10,7 @@ switch ($_SESSION['staffLogin']['category']) {
         break;
 }
 header("Content-Type: application/doc");
-header("Content-Disposition: attachment; filename=" . '政协提案综合统计' . ".doc");
+header("Content-Disposition: attachment; filename=" .encodeFileName( '政协提案综合统计' . ".doc"));
 
 ?>
 <body>

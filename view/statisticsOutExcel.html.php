@@ -1,9 +1,19 @@
 <meta charset = "utf-8">
 <?php
 header("Content-type:application/vnd.ms-excel");
-header("Content-Disposition:filename=".$name."办理情况统计".timeUnixToMysql(time()).".xls");
-
-
+header("Content-Disposition:filename=".encodeFileName($name."办理情况统计".timeUnixToMysql(time()).".xls"));
+$tMainTotal=0;
+$tSubTotal=0;
+$tMainDone=0;
+$tSubDone=0;
+$tWork1=0;
+$tWork2=0;
+$tWork3=0;
+$tWork4=0;
+$tResult1=0;
+$tResult2=0;
+$tResult3=0;
+$tResult4=0;
 ?>
 <table border=1 style="text-align: center">
     <tr><td rowspan="2">单位</td><td colspan="3">办理</td><td colspan="4">办复</td><td colspan="4">办理工作</td><td colspan="4">办理结果</td></tr>
@@ -24,7 +34,18 @@ header("Content-Disposition:filename=".$name."办理情况统计".timeUnixToMysq
         $result['基本满意']=isset($result['基本满意'])?$result['基本满意']:0;
         $result['不满意']=isset($result['不满意'])?$result['不满意']:0;
         $result['未表态']=isset($result['未表态'])?$result['未表态']:0;
-
+        $tMainTotal+=$mainTotal;
+        $tMainDone+=$mainDone;
+        $tSubTotal+=$subTotal;
+        $tMainDone+=$subDone;
+        $tWork1+=$work['满意'];
+        $tWork2+=$work['基本满意'];
+        $tWork3+=$work['不满意'];
+        $tWork4+=$work['未表态'];
+        $tResult1+=$result['满意'];
+        $tResult2+=$result['基本满意'];
+        $tResult3+=$result['不满意'];
+        $tResult4+=$result['未表态'];
         ?>
     <tr>
         <td><?php echo $row['unit_name']?></td>
@@ -43,9 +64,29 @@ header("Content-Disposition:filename=".$name."办理情况统计".timeUnixToMysq
         <td><?php echo $result['基本满意']?></td>
         <td><?php echo $result['不满意']?></td>
         <td><?php echo $result['未表态']?></td>
-        
-
 <!--        <td></td>-->
     </tr>
+
     <?php endforeach?>
+    <tr>
+        <td><?php echo '总计'?></td>
+        <td><?php echo $tMainTotal?></td>
+        <td><?php echo $tSubTotal?></td>
+        <td><?php echo $tMainTotal+$tSubTotal?></td>
+        <td><?php echo $tMainDone?></td>
+        <td><?php echo $tSubDone?></td>
+        <td><?php echo $tSubDone+$tMainDone?></td>
+        <td><?php echo number_format(($tSubDone+$tMainDone)/($tSubTotal+$tMainTotal)*100,2,'.','').'%'?></td>
+        <td><?php echo $tWork1?></td>
+        <td><?php echo $tWork2?></td>
+        <td><?php echo $tWork3?></td>
+        <td><?php echo $tWork4?></td>
+        <td><?php echo $tResult1?></td>
+        <td><?php echo $tResult2?></td>
+        <td><?php echo $tResult3?></td>
+        <td><?php echo $tResult4?></td>
+
+
+        <!--        <td></td>-->
+    </tr>
 </table>

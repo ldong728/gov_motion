@@ -1,90 +1,20 @@
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:是否公开+公开: 372
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:是否公开+不公开: 0
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+: 2
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+工业经济: 34
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+农林水利: 32
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+财贸金融: 38
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+道路交通: 39
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+城建管理: 61
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+环境保护: 16
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+医药卫生: 28
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+科技教育: 39
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+文化体育: 32
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+劳动人事: 27
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+政法统战: 18
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质类别2+其他: 8
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:状态+大会期间: 371
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:状态+闭会期间: 1
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:状态+重新办理: 1
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质+当年: 373
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质+多年重复: 0
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质+重点督办: 6
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质+重点提案: 6
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:性质+重点提案备选: 30
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:提案分类+委员: 335
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:提案分类+党派团体: 27
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:提案分类+联名提案: 10
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:类别标记+A: 84
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:类别标记+B: 251
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:类别标记+C: 22
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:类别标记+D: 0
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:办理工作+满意: 337
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:办理工作+基本满意: 18
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:办理工作+不满意: 0
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:办理工作+未表态: 0
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:办理结果+满意: 325
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:办理结果+基本满意: 29
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:办理结果+不满意: 1
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:办理结果+未表态: 0
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:面商形式+: 34
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:面商形式+召开座谈会: 24
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:面商形式+上门征求意见: 284
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:面商形式+电话联系: 30
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:面商形式+其他: 15
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:面商形式+无沟通联系: 1
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:采纳情况+: 34
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:采纳情况+采纳: 190
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:采纳情况+部分采纳: 145
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:采纳情况+近期不能落实: 16
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:采纳情况+未采纳: 3
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:审核2+立案: 347
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:审核2+并案: 10
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:审核2+不予立案: 15
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:初审+立案: 347
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:初审+并案: 10
-2017.10.23.18:06:29:D:\xampp\htdocs\gov_motion\download.php48:初审+不予立案: 15
-2017.10.23.21:05:03:C:\xampp\htdocs\gov_motion\download.php66:市政府督查室: 322
-2017.10.23.21:05:03:C:\xampp\htdocs\gov_motion\download.php66:市委办督查室: 33
-2017.10.23.21:05:03:C:\xampp\htdocs\gov_motion\download.php66:市政协提案委: 2
-2017.10.23.21:05:03:C:\xampp\htdocs\gov_motion\download.php66:: 17
-2017.10.23.21:11:34:C:\xampp\htdocs\gov_motion\functions.php932:eWqBpc
-2017.10.23.21:19:45:C:\xampp\htdocs\gov_motion\download.php66:5103: 322
-2017.10.23.21:19:45:C:\xampp\htdocs\gov_motion\download.php66:4954: 33
-2017.10.23.21:19:45:C:\xampp\htdocs\gov_motion\download.php66:5154: 2
-2017.10.23.21:19:45:C:\xampp\htdocs\gov_motion\download.php66:: 17
-2017.10.23.21:25:26:C:\xampp\htdocs\gov_motion\download.php66:5103: 322
-2017.10.23.21:25:26:C:\xampp\htdocs\gov_motion\download.php66:4954: 33
-2017.10.23.21:25:26:C:\xampp\htdocs\gov_motion\download.php66:5154: 2
-2017.10.23.21:25:26:C:\xampp\htdocs\gov_motion\download.php66:: 17
-2017.10.23.21:36:18:C:\xampp\htdocs\gov_motion\download.php78:主办：45
-2017.10.23.21:36:18:C:\xampp\htdocs\gov_motion\download.php79:协办：85
-2017.10.23.21:36:18:C:\xampp\htdocs\gov_motion\download.php80:办理：0
-2017.10.23.21:37:31:C:\xampp\htdocs\gov_motion\download.php78:主办：45
-2017.10.23.21:37:31:C:\xampp\htdocs\gov_motion\download.php79:协办：85
-2017.10.23.21:37:31:C:\xampp\htdocs\gov_motion\download.php80:办理：129
-2017.10.23.21:42:18:C:\xampp\htdocs\gov_motion\download.php78:主办：45
-2017.10.23.21:42:18:C:\xampp\htdocs\gov_motion\download.php79:协办：85
-2017.10.23.21:42:18:C:\xampp\htdocs\gov_motion\download.php80:办理：129
-2017.10.23.21:44:07:C:\xampp\htdocs\gov_motion\download.php83:主办：45
-2017.10.23.21:44:07:C:\xampp\htdocs\gov_motion\download.php84:协办：86
-2017.10.23.21:46:17:C:\xampp\htdocs\gov_motion\download.php83:主办：45
-2017.10.23.21:46:17:C:\xampp\htdocs\gov_motion\download.php84:协办：86
-2017.10.24.12:34:59:D:\xampp\htdocs\gov_motion\functions.php932:4aUcFO
-2017.10.24.12:46:31:D:\xampp\htdocs\gov_motion\functions.php932:AAIJgm
-2017.10.24.12:47:18:D:\xampp\htdocs\gov_motion\functions.php932:9Lz9uS
-2017.10.24.12:53:02:D:\xampp\htdocs\gov_motion\functions.php932:VjmwuM
-2017.10.24.14:00:54:D:\xampp\htdocs\gov_motion\functions.php932:hEFUA2
-2017.10.24.14:06:47:D:\xampp\htdocs\gov_motion\functions.php932:UTAywU
-2017.10.24.15:28:22:D:\xampp\htdocs\gov_motion\functions.php932:5a1SFm
-2017.10.25.11:03:32:D:\xampp\htdocs\gov_motion\admin\ajax_request.php42:add
-2017.12.06.15:53:30:D:\xampp\htdocs\gov_motion\download.php139:{}
+2017.12.07.09:25:43:D:\xampp\htdocs\gov_motion\download.php11:applewebkit
+2017.12.07.09:26:17:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.09:27:08:D:\xampp\htdocs\gov_motion\download.php11:firefox
+2017.12.07.09:28:57:D:\xampp\htdocs\gov_motion\download.php11:applewebkit
+2017.12.07.09:32:52:D:\xampp\htdocs\gov_motion\download.php11:applewebkit
+2017.12.07.09:50:11:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.09:51:15:D:\xampp\htdocs\gov_motion\download.php11:applewebkit
+2017.12.07.10:01:28:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.10:01:28:D:\xampp\htdocs\gov_motion\download.php141:{28: {0: 中共界,1: 3,2: 0.78%}29: {0: 侨联界,1: 16,2: 4.15%}30: {0: 共青团青联界,1: 15,2: 3.89%}31: {0: 农业农村界,1: 26,2: 6.74%}32: {0: 医药卫生界,1: 20,2: 5.18%}33: {0: 台联界,1: 11,2: 2.85%}34: {0: 妇联界,1: 12,2: 3.11%}35: {0: 工商联界,1: 25,2: 6.48%}36: {0: 总工会界,1: 11,2: 2.85%}37: {0: 教育界,1: 23,2: 5.96%}38: {0: 文体新闻出版界,1: 17,2: 4.40%}39: {0: 无党派人士界,1: 8,2: 2.07%}40: {0: 民主党派人士界,1: 61,2: 15.80%}41: {0: 民族宗教界,1: 14,2: 3.63%}42: {0: 特邀界,1: 23,2: 5.96%}43: {0: 社会福利和保障界,1: 7,2: 1.81%}44: {0: 社会科学界,1: 8,2: 2.07%}45: {0: 科技科协（人才办）,1: 2,2: 0.52%}46: {0: 科技科协（科协）,1: 11,2: 2.85%}47: {0: 科技科协（科技）,1: 14,2: 3.63%}48: {0: 经济界,1: 46,2: 11.92%}}
+2017.12.07.10:01:35:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.10:01:35:D:\xampp\htdocs\gov_motion\download.php180:{685: {0: 农业农村组,1: 13,2: 3.37%}686: {0: 匡堰镇联络委,1: 9,2: 2.33%}687: {0: 医卫组,1: 20,2: 5.18%}688: {0: 古塘街道联络委,1: 9,2: 2.33%}689: {0: 周巷镇联络委,1: 18,2: 4.66%}690: {0: 坎墩街道联络委,1: 12,2: 3.11%}691: {0: 城交环组,1: 11,2: 2.85%}692: {0: 宗汉街道联络委,1: 12,2: 3.11%}693: {0: 崇寿镇联络委,1: 17,2: 4.40%}694: {0: 庵东镇联络委,1: 16,2: 4.15%}695: {0: 掌起镇联络委,1: 9,2: 2.33%}696: {0: 教育组,1: 21,2: 5.44%}697: {0: 文体新闻组,1: 14,2: 3.63%}698: {0: 新浦镇联络委,1: 11,2: 2.85%}700: {0: 桥头镇联络委,1: 11,2: 2.85%}701: {0: 横河镇联络委,1: 14,2: 3.63%}702: {0: 浒山街道联络委,1: 13,2: 3.37%}703: {0: 港澳台侨组,1: 7,2: 1.81%}704: {0: 白沙路街道联络委,1: 11,2: 2.85%}705: {0: 社会法制组,1: 18,2: 4.66%}706: {0: 经济科技组,1: 14,2: 3.63%}707: {0: 胜山镇联络委,1: 12,2: 3.11%}708: {0: 观海卫镇联络委,1: 13,2: 3.37%}709: {0: 财贸组,1: 14,2: 3.63%}710: {0: 逍林镇联络委,1: 12,2: 3.11%}711: {0: 长河镇联络委,1: 12,2: 3.11%}712: {0: 附海镇联络委,1: 10,2: 2.59%}713: {0: 龙山镇联络委,1: 17,2: 4.40%}}
+2017.12.07.10:01:37:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.10:01:39:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.10:01:41:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.10:01:44:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.10:01:48:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.10:01:52:D:\xampp\htdocs\gov_motion\download.php11:other
+2017.12.07.10:01:52:D:\xampp\htdocs\gov_motion\download.php85:主办：45
+2017.12.07.10:01:52:D:\xampp\htdocs\gov_motion\download.php86:协办：86
+2017.12.07.10:01:56:D:\xampp\htdocs\gov_motion\download.php11:other

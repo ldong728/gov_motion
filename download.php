@@ -616,3 +616,51 @@ function reGroupMotionInfList($motionList,$motionFiled){
 
 }
 
+function getBrowserType(){
+    $userAgent = strtolower ( $_SERVER ["HTTP_USER_AGENT"] );
+    if (strpos ( $userAgent, 'msie' ) !== false) {
+        return "msie";
+    } else if (strpos ( $userAgent, 'firefox' ) !== false) {
+        return "firefox";
+    } else if (strpos ( $userAgent, 'applewebkit' ) !== false) {
+        return "applewebkit";
+    } else if (strpos ( $userAgent, 'opera' ) !== false) {
+        return "opera";
+    } else if (strpos ( $userAgent, 'safari' ) !== false) {
+        return "safari";
+    } else {
+        return "other";
+    }
+}
+function encodeFileName($filename){
+    $broswerType=getBrowserType();
+    $newFileName=$filename;
+    switch ($broswerType) {
+        case "other":
+            $newFileName=urlencode($filename);
+            break;
+        default;
+            break;
+
+//        case "msie" :
+//            return "filename=/urlencode ( $new_filename ) . ".xls/"";
+//    break;
+//        case "opera" :
+//            return "filename*=UTF-8''" . $new_filename . ".xls/"";
+//    break;
+//   case "safari" :
+//    return "filename=/"" . urlencode ( $new_filename ) . ".xls/"";
+//    break;
+//   case "applewebkit" :
+//    return "filename=/"". urlencode ( $new_filename ) ."/"";
+//    break;
+//   case "firefox" :
+//    return "filename*=UTF-8''" . $new_filename . ".xls /"";
+//    break;
+//        default :
+//            return "filename=/"" . urlencode ( $new_filename ) . "ot.xls/"";
+//    break;
+    }
+    return $newFileName;
+}
+

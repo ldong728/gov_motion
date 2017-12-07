@@ -2,7 +2,7 @@
 <?php
 $name=isset($fileName)?$fileName:'output';
 header("Content-type:application/vnd.ms-excel");
-header("Content-Disposition:filename=$name.xls");
+header("Content-Disposition:filename=".encodeFileName($name."xls"));
 
 ?>
 <table border=1 style="text-align: center">
