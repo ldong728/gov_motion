@@ -308,3 +308,31 @@ function suggestion_manage(){
 }
 
 //非sub菜单方法
+//非sub菜单方法
+function motion_temp_list(){
+    global $list;
+    if($_SESSION['operator_id']==-1){
+        $list=pdoQuery('motion_template_tbl',null,null,null)->fetchAll();
+
+        if(!isset($list))$list=array();
+        printAdminView('motion_temp_list.html.php','议案提案管理系统后提');
+    }else{
+        printAdminView('blank.html.php','议案提案管理系统后台');
+    }
+}
+function index_config(){
+    global $getStr;
+    $articleInf=pdoQuery('gd_article',array('art_id'),array('art_channel_id'=>-1),' limit 1');
+    $articleId=$articleInf->fetch();
+    header('location: controller.php?get_editor='.$articleId['art_id'].'&'.$getStr);
+
+}
+function about(){
+    global $getStr;
+    $articleInf=pdoQuery('gd_article_view',array('art_id'),array('cha_code'=>$_GET['sub']),' limit 1');
+    $articleId=$articleInf->fetch();
+    if(!$articleId)$articleId['art_id']=0;
+    header('location: controller.php?get_editor='.$articleId['art_id'].'&'.$getStr);
+}
+
+

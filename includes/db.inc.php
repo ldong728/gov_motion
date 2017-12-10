@@ -345,10 +345,11 @@ function pdoTransReady()
 {
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
     $GLOBALS['pdo']->beginTransaction();
-    if($GLOBALS['syncPublic']){
-        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
-        $GLOBALS['public']->beginTransaction();
-    }
+//    if($GLOBALS['syncPublic']){
+//        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
+//        $GLOBALS['public']->beginTransaction();
+//        mylog();
+//    }
 
 //    mylog('ready');
 }
@@ -357,10 +358,10 @@ function pdoCommit()
 {
     $GLOBALS['pdo']->commit();
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
-    if($GLOBALS['syncPublic']){
-        $GLOBALS['public']->commit();
-        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
-    }
+//    if($GLOBALS['syncPublic']){
+//        $GLOBALS['public']->commit();
+//        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
+//    }
 //    mylog('commit');
 }
 
@@ -368,10 +369,10 @@ function pdoRollBack()
 {
     $GLOBALS['pdo']->rollBack();
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
-    if($GLOBALS['syncPublic']){
-        $GLOBALS['public']->rollBack();
-        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
-    }
+//    if($GLOBALS['syncPublic']){
+//        $GLOBALS['public']->rollBack();
+//        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
+//    }
 
 //    mylog('rollback');
 }

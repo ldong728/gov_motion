@@ -1,1 +1,5 @@
-{"test":"abc","server_status":0}
+{
+    "server_status":0,
+    "lock_timeout":600,
+    "visable_on_lock":true
+}

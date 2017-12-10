@@ -104,17 +104,23 @@
         var protocol = window.location.protocol;
         var host = window.location.host;
         var href = $(this).data('href');
-        try {
-            var openDocObj = new ActiveXObject("sharePoint.OpenDocuments.1") || '';
-            openDocObj.EditDocument(protocol + '//' + host + '/' + href);
-        } catch (err) {
-            console.log(err);
-            if (confirm('编辑插件无法使用，请检查IE设置和已安装的Office软件版本，当前附件将以下载方式保存至您的电脑')) {
-                console.log(window.location);
-                console.log(document.domain);
-                location.href = href;
+        loading();
+        ajaxPost('ajaxCheckFiles',{file:href},function(back){
+            var value=backHandle(back);
+            //if(false!==value){}
+            try {
+                var openDocObj = new ActiveXObject("sharePoint.OpenDocuments.1") || '';
+                openDocObj.EditDocument(protocol + '//' + host + '/' + href);
+            } catch (err) {
+                console.log(err);
+                if (confirm('编辑插件无法使用，请检查IE设置和已安装的Office软件版本，当前附件将以下载方式保存至您的电脑')) {
+                    console.log(window.location);
+                    console.log(document.domain);
+                    location.href = href;
+                }
             }
-        }
+        });
+
 
 
     });
