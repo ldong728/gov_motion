@@ -49,44 +49,53 @@ function multiple_statistics()
     $query = pdoQuery('motion_view', null, ['meeting'=>$meeting], null);
     foreach ($query as $row) {
 
-        if(isset($optionList[$row['attr_name'].'+'.$row['content']])){
-            $optionList[$row['attr_name'].'+'.$row['content']]++;
+        if (isset($optionList[$row['attr_name'] . '+' . $row['content']])) {
+            $optionList[$row['attr_name'] . '+' . $row['content']]++;
         }
-        if('交办单位'==$row['attr_name']){
-            if(isset($unitList[$row['content_int']])){
-                $unitList[$row['content_int']]++;
-            }else{
-                $unitList[$row['content_int']]=1;
+        if ($row['content_int']) {
+
+
+            if ('交办单位' == $row['attr_name']) {
+                if (isset($unitList[$row['content_int']])) {
+                    $unitList[$row['content_int']]++;
+                } else {
+                    $unitList[$row['content_int']] = 1;
+                }
             }
-        }
-        if('主办单位'==$row['attr_name']){
-            if(isset($mainHandleList[$row['content_int']])){
-                $mainHandleList[$row['content_int']]++;
-            }else{
-                $mainHandleList[$row['content_int']]=1;
+            if ('主办单位' == $row['attr_name']) {
+                if (isset($mainHandleList[$row['content_int']])) {
+                    $mainHandleList[$row['content_int']]++;
+                } else {
+                    $mainHandleList[$row['content_int']] = 1;
+                }
+                if (isset($handleList[$row['content_int']])) {
+                    $handleList[$row['content_int']]++;
+                } else {
+                    $handleList[$row['content_int']] = 1;
+                }
             }
-            if(isset($handleList[$row['content_int']])){
-                $handleList[$row['content_int']]++;
-            }else{
-                $handleList[$row['content_int']]=1;
-            }
-        }
-        if('协办单位'==$row['attr_name']){
-            if(isset($handleList[$row['content_int']])){
-                $handleList[$row['content_int']]++;
-            }else{
-                $handleList[$row['content_int']]=1;
+            if ('协办单位' == $row['attr_name']) {
+                if (isset($handleList[$row['content_int']])) {
+                    $handleList[$row['content_int']]++;
+                } else {
+                    $handleList[$row['content_int']] = 1;
+                }
             }
         }
 
     }
-    mylog('主办：'. count($mainHandleList));
-    mylog('协办：'.count($handleList));
+//    foreach ($unitList as $k => $v) {
+//        mylog($k);
+//    }
+
+//    mylog(json_encode($mainHandleList));
+//    mylog('主办：'. count($mainHandleList));
+//    mylog('协办：'.count($handleList));
 //    mylog('办理：'.count(array_merge($mainHandleList,$handleList)));
 
 
-    $name=getMeetingName($meeting);
-    include"view/statistics_document.html.php";
+    $name = getMeetingName($meeting);
+    include "view/statistics_document.html.php";
     exit;
 }
 

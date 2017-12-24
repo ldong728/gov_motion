@@ -583,11 +583,12 @@ function createMotion($data)
     $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $meetingId), ' order by deadline_time desc limit 1')->fetch();
     $emptyMotion = pdoQuery('motion_tbl', array('motion_id'), array('motion_name' => '新建', 'duty' => 0, 'category' => $staff['category'], 'user' => $staff['staffId']), 'and step>0 limit 1')->fetch();
 //    setSyncPublic();
-    pdoTransReady();
+
     if ($emptyMotion) {
         editMotion(array('id' => $emptyMotion['motion_id']));
 
     } else {
+        pdoTransReady();
         try {
             $id = pdoInsert('motion_tbl', array('meeting' => $meetingId, 'category' => $staff['category'], 'motion_name' => '新建', 'motion_template' => $meetingInf['motion_template'], 'step' => 1, 'user' => $staff['staffId']));
             if (2 == $staff['category']) {
@@ -596,7 +597,7 @@ function createMotion($data)
                 pdoInsert('attr_tbl',['motion'=>$id,'motion_attr'=>$zxIdInf['motion_attr'],'attr_template'=>$zxIdInf['attr_template'],'content_int'=>$zx_id,'staff'=>$staff['staffId']]);
             }
             pdoCommit();
-//            mylog('id='.$id);
+            mylog('id='.$id);
             editMotion(array('id' => $id));
         } catch (PDOException $e) {
             mylog($e->getMessage());
@@ -614,14 +615,23 @@ function editMotion($data)
 {
     global $config;
     $id = $data['id'];
-    $_SESSION['staffLogin']['currentMotion'] = $id;
-    $canMainHandler = false;
 
+    $canMainHandler = false;
 //    $attrFilter=array('motion_id'=>$id,'attr_step'=>$_SESSION['staffLogin']['steps']); //只显示当前步骤所需填写的选项
     $attrFilter = array('motion_id' => $id);
     $meetingInf = pdoQuery('motion_inf_view', null, array('motion_id' => $id), ' limit 1')->fetch();
+    //锁定判断
+    $lock=['success'=>true];
+    if(in_array($meetingInf['step'],$_SESSION['staffLogin']['steps'])&&$meetingInf['step']<4){
+        $lock=motionLock($id);
+    }
+    if(!$lock['success']){
+        echo '<script>alert("'.$lock['msg'].'")</script>';
+        return;
+    }
+    $_SESSION['staffLogin']['currentMotion'] = $id;
+
     $hasDispleasure=pdoQuery('displeasure_attr_tbl',['motion'],['motion'=>$id],' limit 1')->fetch();
-//    mylog($hasDispleasure);
     $isDispleasure=false;
 //    mylog();
     //处理政协提案有不同交办单位的情况
@@ -664,7 +674,7 @@ function editMotion($data)
 //    mylog($step4CanEdit);
     $motionQuery = pdoQuery('motion_view', null, $attrFilter, ' order by value_sort desc,motion_attr asc');
     $unitGroupInf = null;
-    unset($_SESSION['staffLogin']['passUnique']);
+    unset($_SESSION['staffLogin']['passUnique']);//$_SESSION['staffLogin']['passUnique']用来记录当前motion已有的案号,更新motion其他属性时用来通过案号唯一性验证
     foreach ($motionQuery as $row) {
         if ('案号' == $row['attr_name'] && $row['content_int'] > 0) $_SESSION['staffLogin']['passUnique'] = $row['content_int'];//获取案号
         $values = $row;
@@ -699,11 +709,6 @@ function editMotion($data)
 //                $values['filter']
             }
 
-            //如果属性属于办理环节，则所有该环节属性放入临时数组，等待下一步判断是否有办理权限,已作废
-//            if(5==$row['attr_step']&&5==$row['step']){
-//                $mainHandler[$row['attr_name']]=$values;
-//                continue;
-//            }
             //如果属性支持多值情况的处理
             if (1 == $values['multiple']) {
 //                mylog('multiple');
@@ -973,37 +978,64 @@ function updateAttr($data)
     $motion = pdoQuery('motion_tbl', null, array('motion_id' => $motionId), ' limit 1')->fetch();
     $currentStep = $motion['step'];
     $attrs = isset($data['data']) ? $data['data'] : array();
-    $uniqueInf = pdoQuery('motion_attr_view', null, array('attr_name' => '案号', 'motion_template' => $motion['motion_template']), 'limit 1')->fetch()['motion_attr_id'];
-    $uniqueQuery = pdoQuery('attr_unique_view', array('content_int as value'), array('motion_attr' => $uniqueInf, 'meeting' => $motion['meeting']), null);
-    $uniqueValues = array();
+
     if($isFoward>-1&&($currentStep>6||!in_array($currentStep,$_SESSION['staffLogin']['steps']))){//防止重复提交
         echo ajaxBack(array('step' => $currentStep, 'id' => $motionId));
         exit;
     }
+    $uniqueJudge=(2==$currentStep&&1==$motion['category'])||(3==$currentStep&&2==$motion['category']);//判断是否要做案号唯一性检查
+    if($uniqueJudge){
+        //案别motion_attr id:90;
+        //案号motion_attr id: 人大：34 政协：26
 
-    foreach ($uniqueQuery as $row) {
-        $uniqueValues[] = $row['value'];
+        if(1==$motion['category']){
+            $uniqueInf=34;
+            $subCate=false;
+            foreach ($attrs as $attrrow) {
+                if(90==$attrrow['motion_attr'])
+                    $subCate=$attrrow['value'];
+            }
+            if(!$subCate)$subCate=pdoQuery('attr_tbl',['content'],['motion'=>$motionId,'motion_attr'=>90],'limit 1')->fetch()['content'];
+            $existMotion=pdoQuery('attr_unique_view',['motion'],['motion_attr'=>90,'content'=>$subCate,'meeting'=>$motion['meeting']],null)->fetchAll();
+            $uniqueQuery = pdoQuery('attr_unique_view', array('content_int as value'), array('motion' => $existMotion, 'meeting' => $motion['meeting']), null);
+//            mylog(json_encode($existMotion));
+        }else{
+            $uniqueInf=26;
+//            $uniqueInf = pdoQuery('motion_attr_view', null, array('attr_name' => '案号', 'motion_template' => $motion['motion_template']), 'limit 1')->fetch()['motion_attr_id'];
+            $uniqueQuery = pdoQuery('attr_unique_view', array('content_int as value'), array('motion_attr' => 26, 'meeting' => $motion['meeting']), null);
+
+        }
+        $uniqueValues = array();
+        foreach ($uniqueQuery as $row) {
+            $uniqueValues[] = $row['value'];
+        }
     }
+
+
+
 //    setSyncPublic();
     pdoTransReady();
     try {
         foreach ($attrs as $row) {
-            if ($uniqueInf == $row['motion_attr']) {
-                if (in_array($row['value'], $uniqueValues)) {
-                    if (!isset($_SESSION['staffLogin']['passUnique'])) {
-                        $e = new PDOException();
-                        $e->errorInfo = "unique";
-                        throw $e;
-                    } else {
-                        if ($_SESSION['staffLogin']['passUnique'] != $row['value']) {
+            if($uniqueJudge){//如需进行案号唯一性检查；
+                if ($uniqueInf == $row['motion_attr']) {
+                    if (in_array($row['value'], $uniqueValues)) {
+                        if (!isset($_SESSION['staffLogin']['passUnique'])) {
                             $e = new PDOException();
                             $e->errorInfo = "unique";
                             throw $e;
+                        } else {
+                            if ($_SESSION['staffLogin']['passUnique'] != $row['value']) {
+                                $e = new PDOException();
+                                $e->errorInfo = "unique";
+                                throw $e;
+                            }
                         }
-                    }
 
+                    }
                 }
             }
+
             $value = array();
             if ((!isset($row['value']) || !$row['value']) && $row['attr_type'] != 'attachment') {//过滤非附件的空值
                 continue;
@@ -1098,7 +1130,6 @@ function updateAttr($data)
         }
 
 //        if($data['step'])exeNew('update motion_tbl set step=step+1 where motion_id='.$motionId);
-        mylog('ok');
         pdoCommit();
         echo ajaxBack(array('step' => $currentStep, 'id' => $motionId));
     } catch (PDOException $e) {
@@ -1355,8 +1386,23 @@ function getMotionStepInf($data)
 function ajaxGetStatistics($data)
 {
     handleStatistics($data['meeting']);
+}
 
-//    echo ajaxBack('ok');
+/**
+ * 判断文件是不是在内网，如果不在，则向外网服务器请求下载；
+ * @param $data
+ */
+function ajaxCheckFiles($data){
+    if(!file_exists($data['file'])){
+        $file=file_get_contents('http://183.136.192.58/motion_public/'.$data['file']);
+        if(file_put_contents($data['file'],$file)){
+            echo ajaxBack('ok');
+        }else{
+            echo ajaxBack(null,'8','netWorkError');
+        }
+    }else{
+        echo ajaxBack('ok');
+    }
 }
 
 /**
@@ -1497,4 +1543,39 @@ function displeasure($motion_id){
     }else{
 
     }
+}
+function motionLock($motionId){
+    $success=false;
+    global $config;
+    $staffId=$_SESSION['staffLogin']['staffId'];
+    $staffName=$_SESSION['staffLogin']['staffName'];
+    pdoTransReady();
+    try{
+        pdoInsert('lock_tbl',['motion'=>$motionId],'ignore');
+        unlockMotion();
+        $lockInf=pdoQuery('lock_tbl',null,['motion'=>$motionId],'limit 1')->fetch();
+
+        if(1==$lockInf['lock_status']||time()>($lockInf['locked_time']+$config['lock_timeout'])){
+            pdoUpdate('lock_tbl',['staff'=>$staffId,'staff_name'=>$staffName,'lock_status'=>2,'locked_time'=>time()],['motion'=>$motionId]);
+            $currentStaff=$staffName;
+            $msg="ok";
+            $success=true;
+        }else{
+            $currentStaff=$lockInf['staff_name'];
+            $msg="被用户 $currentStaff 锁定";
+            $success=false;
+        }
+        pdoCommit();
+        return ['success'=>$success,'currentStaff'=>$currentStaff,'msg'=>$msg];
+    }catch(PDOException $e){
+        pdoRollBack();
+        mylog($e->getMessage());
+        return ['success'=>$success,'currentStaff'=>$staffName,'msg'=>'网络异常'];
+    }
+
+}
+function unlockMotion(){
+    $staffId=$_SESSION['staffLogin']['staffId'];
+    pdoUpdate('lock_tbl',['lock_status'=>1],['staff'=>$staffId]);
+//    unsetCurrentMotion();
 }
