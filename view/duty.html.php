@@ -35,7 +35,7 @@
 <nav class="home-nav">
     <ul class="clearfix">
         <li><a href="index.php">首页</a></li>
-<!--        <li><a href="#" class="search" data-filter="" data-type="int">按姓名</a></li>-->
+        <li><a href="#" class="search" data-filter="" data-type="int">按姓名</a></li>
 
 
     </ul>
@@ -115,6 +115,14 @@
         <button class="search-button inner">在结果中搜索</button>
     </div>
 </div>
+<!--<div class="hide-container">-->
+<!--    <div class="search-mask"></div>-->
+<!--    <div class="input-box">-->
+<!--        <input type="text" class="search-input">-->
+<!--        <button class="search-button">重新搜索</button>-->
+<!--        <button class="search-button inner">在结果中搜索</button>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 </body>

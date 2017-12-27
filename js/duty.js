@@ -63,7 +63,21 @@ $('.search').click(function () {
 //        alert(attrName);
 });
 $(document).on('click','.activity-btn',function(){
-   alert('功能暂时禁用中') ;
+    var id=$(this).attr('id').slice(3);
+    var thisButton=$(this);
+    var activity=parseInt($(this).data('activity'));
+    activity=activity?0:1;
+    var activityName=activity?'启用':'禁用';
+    ajaxPost('ajax_activity_duty',{id:id,activity:activity},function(back){
+       if(backHandle(back)){
+           reflashDutyList();
+          //thisButton.attr('data-activity',activity);
+          // thisButton.text(activityName);
+           //$(this).text(activityName);
+       }
+    });
+    console.log('id:'+id+', activity:'+activity);
+   //alert('功能暂时禁用中') ;
 });
 $(document).on('click','.create-user',function(){
    alert('功能暂时禁用中');

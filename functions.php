@@ -1308,6 +1308,17 @@ function ajaxAltDuty($data){
     echo ajaxBack('ok');
 }
 
+function ajax_activity_duty($data){
+    $activity=$data['activity'];
+    $id=$data['id'];
+    $rows=pdoUpdate('duty_tbl',['activity'=>$activity],['duty_id'=>$id],' limit 1');
+    if($rows){
+        echo ajaxBack('ok');
+    }else{
+        echo ajaxBack(null,109,'数据库错误');
+    }
+}
+
 
 /**
  * 通过ajax获取分组单位列表的方法
