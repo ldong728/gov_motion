@@ -48,6 +48,69 @@ function exeNew($s){
 //        exit();
     }
 }
+function pdoQueryNew($tableName,$fields,$filter,$append){
+    $sql = 'SELECT ';
+    $fieldsCount = count($fields);
+    if ($fieldsCount > 0) {
+        for ($i = 0; $i < $fieldsCount; $i++) {
+            $sql = $sql . $fields[$i];
+            if ($i < $fieldsCount - 1) $sql = $sql . ',';
+        }
+    }else{
+        $sql=$sql.'* ';
+    }
+    $sql = $sql . ' FROM ' . $tableName;
+    $whereCount = count($filter);
+
+    if ($whereCount > 0) {
+        $sql = $sql . ' WHERE ';
+        $j = 0;
+        foreach ($filter as $k => $v) {
+            $content='';
+            if(is_numeric($k)){
+                $strArray=explode(' ',$v);
+                $content=' '.trim($v);
+                if($j>0&&!in_array($strArray[0],['and','or','AND','OR']))$content=' AND'.$content;
+                $j++;
+            }else{
+                if($v===null){
+                    $j++;
+                    continue;
+                }
+
+                if(is_array($v)){
+                    $content=$k.' in(';
+                    foreach ($v as $d) {
+                        $content.='"'.$d.'",';
+                    }
+                    $content=trim($content,',');
+                    $content.=')';
+
+                }else{
+                    $content =$k . '=' . '"' . $v . '"';
+                }
+                if($j>0)$content=' AND '.$content;
+                $j++;
+            }
+            $sql.=$content;
+
+
+        }
+    }
+    if($append!=null){
+        $sql=$sql.' '.$append;
+    }
+    try {
+//        mylog('queryNew:'.$sql);
+        $query = $GLOBALS['pdo']->query($sql);
+        return $query;
+    }catch (PDOException $e) {
+        $error = 'Unable to PDOquery to the database server.' . $e->getMessage();
+        include 'error.html.php';
+//        throw($e);
+        exit();
+    }
+}
 function pdoQuery($tableName, $fields, $where, $append)
 {
     $sql = 'SELECT ';

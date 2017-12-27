@@ -35,22 +35,8 @@
 <nav class="home-nav">
     <ul class="clearfix">
         <li><a href="index.php">首页</a></li>
-        <li><a href="#" class="search" data-filter="" data-type="int">按姓名</a></li>
-        <li><a href="#" class="search" data-filter="案由" data-type="string"></a></li>
-        <?php if (2 == $meetingInf['category']): ?>
-            <li><a href="#" class="search" data-filter="性质" data-type="string">按性质</a></li><?php endif ?>
-        <!--                        <td width="15%"><a href="#" class="search" >按等级时间（序列）</a></li>-->
-        <li><a href="#" class="search" data-filter="性质类别<?php echo $meetingInf['category'] ?>"
-               data-type="string">按性质类别</a></li>
-        <li><a href="#" class="search" data-filter="状态" data-type="string">按状态</a></li>
-        <li><a href="#" class="search" data-filter="<?php echo 1 == $meetingInf['category'] ? '领衔人' : '提案人' ?>"
-               data-type="duty">按<?php echo 1 == $meetingInf['category'] ? '领衔人' : '提案人' ?></a></li>
-        <li><a href="#" class="search" data-filter="主办单位" data-type="unit">按主办单位</a></li>
-        <li><a href="#" class="search" data-filter="协办单位" data-type="unit">按协办单位</a></li>
-        <li><a href="#" class="multiple-search">高级搜索</a></li>
-        <?php if (in_array(3, $_SESSION['staffLogin']['steps'])): ?>
-            <li><a href="#" class="get-statistics-view">统计</a></li>
-        <?php endif ?>
+<!--        <li><a href="#" class="search" data-filter="" data-type="int">按姓名</a></li>-->
+
 
     </ul>
     <div class="nav-right">
@@ -88,10 +74,10 @@
                 </div>
             </div>
             <div class="table-page">
-                <span class="float-left"><button class="list-output all-out">全部导出</button></span>
-                <span class="float-left"><button class="list-output checked-out" >选中项导出</button></span>
+<!--                <span class="float-left"><button class="list-output all-out">全部导出</button></span>-->
+<!--                <span class="float-left"><button class="list-output checked-out" >选中项导出</button></span>-->
                 <?php if (in_array(1, $_SESSION['staffLogin']['steps'])): ?>
-                    <span class="float-left"><button class="create-motion">新建<?php echo 1==$_SESSION['staffLogin']['category']?'建议/议案':'提案'?>
+                    <span class="float-left"><button class="create-user">新建<?php echo 1==$_SESSION['staffLogin']['category']?'代表':'委员'?>
                         </button>
                         </span>
                 <?php endif ?>
@@ -118,8 +104,8 @@
     <p>技术支持 <span>慈溪谷多计算机网络技术有限公司</span></p>
 </footer>
 
-<div class="m-popup popup-container clearfix" style="display: none">
-
+<div class="m-popup popup-container clearfix">
+    abced
 </div>
 <div class="search-container">
     <div class="search-mask"></div>
@@ -129,33 +115,7 @@
         <button class="search-button inner">在结果中搜索</button>
     </div>
 </div>
-<div class="popup-container popup-search field-select" style="display: none">
-    <div class="mask"></div>
-    <div class="term popup-title">
-        <div class="title-h2">
-            <h2>查询条件<i class="icon icon-close close-popup-js"></i></h2>
-        </div>
-        <div class="term-msg">
-            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                <tbody>
-                <tr class="filter-wrap-js">
-                    <td class="light">姓名</td>
-                    <td>曾用名</td>
-                    <td>性别</td>
-                    <td>教职工号</td>
-                    <td>国籍/地区</td>
-                    <td>身份证类型</td>
-                    <td class="light">身份证号</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="term-b">
-            <button type="button" class="termbtn">确定</button>
-            <button type="button" class="termbtn close-popup-js">取消</button>
-        </div>
-    </div>
-</div>
+
 
 </body>
 

@@ -199,7 +199,7 @@ function getIndex($orderBy = 'default')
 
 function getMeetingView($id)
 {
-    global $meetingInf;
+    global $meetingInf,$isCurrent;
     $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $id), 'limit 1')->fetch();
     printView('meeting');
 }
@@ -547,31 +547,6 @@ function ajaxGetDutyInf($data)
 
 }
 
-/**
- * 创建提议案
- * @param $data
- * 已作废
- */
-function createMotion_temp($data)
-{
-    $sessionInf = $_SESSION['staffLogin'];
-    $dutyId = $data['duty_id'];
-    $motionName = ['duty_name'];
-    $meetingInf = pdoQuery('meeting_tbl', null, array('category' => $sessionInf['category']), ' order by deadline_time desc limit 1')->fetch();
-    pdoTransReady();
-    try {
-        $motionId = pdoInsert('motion_tbl', array('motion_name' => $motionName, 'meeting' => $meetingInf['meeting_id'], 'category' => $sessionInf['category'], 'motion_template' => $meetingInf['motion_template'], 'duty' => $dutyId, 'document' => 'none', 'step' => 2, 'document_sha' => 'none'));
-        $attrInf = pdoQuery('motion_view', array('motion_attr', 'attr_template'), array('motion_id' => $motionId, 'attr_name' => "案由"), ' limit 1')->fetch();
-        pdoInsert('attr_tbl', array('motion' => $motionId, 'motion_attr' => $attrInf['motion_attr'], 'attr_template' => $attrInf['attr_template'], 'content' => $motionName));
-        pdoCommit();
-        echo ajaxBack("ok");
-    } catch (PDOException $e) {
-        pdoRollBack();
-        mylog($e->getMessage());
-    }
-    $id = pdoInsert('motion_tbl', array('motion_name' => $data['motion_name'], 'meeting' => $meetingInf['meeting_id'], 'category' => $sessionInf['category'], 'motion_template' => $meetingInf['motion_template'], 'user' => 1, 'document' => 'none', 'step' => 2, 'document_sha' => 'abas'));
-    echo ajaxBack($id);
-}
 
 /**
  * 内网提交新提议案
@@ -582,7 +557,6 @@ function createMotion($data)
     $meetingId=$data['meetingId'];
     $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $meetingId), ' order by deadline_time desc limit 1')->fetch();
     $emptyMotion = pdoQuery('motion_tbl', array('motion_id'), array('motion_name' => '新建', 'duty' => 0, 'category' => $staff['category'], 'user' => $staff['staffId']), 'and step>0 limit 1')->fetch();
-//    setSyncPublic();
 
     if ($emptyMotion) {
         editMotion(array('id' => $emptyMotion['motion_id']));
@@ -1320,6 +1294,18 @@ function ajaxDynamicBackwardHandle($data)
 function unsetCurrentMotion(){
     unset($_SESSION['staffLogin']['currentMotion']);
     echo ajaxBack( 'ok');
+}
+
+
+function ajaxAltDuty($data){
+    $dutyId=$data['duty_id'];
+    $dutyInf=pdoQuery('duty_tbl',null,['duty_id'=>$dutyId],'limit 1')->fetch();
+    if($dutyInf){
+        pdoUpdate('user_tbl',['user_phone'=>$data['user_phone'],'address'=>$data['address']],['user_id'=>$dutyInf['user']],'limit 1');
+        pdoUpdate('duty_tbl',['user_unit'=>$data['user_unit'],'user_group'=>$data['user_group']],['duty_id'=>$dutyId],'limit 1');
+        echo ajaxBack('ok');
+    }
+    echo ajaxBack('ok');
 }
 
 

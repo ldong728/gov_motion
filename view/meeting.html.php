@@ -1,4 +1,4 @@
-<?php global $meetingInf ?>
+<?php global $meetingInf,$isCurrent?>
 <link rel="stylesheet" type="text/css" media="screen" href="stylesheet/newMain.css?v=<?php echo rand(1000, 9999) ?>">
 <script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
