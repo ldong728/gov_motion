@@ -63,9 +63,14 @@ function getArrayInf($array){
 
 function mylog($str='mark'){
     if(DEBUG) {
+        if(is_array($str)){
+            $strFormated="is array: ".getArrayInf($str);
+        }else{
+            $strFormated=$str;
+        }
         $debugInfo=debug_backtrace();
         $message = $debugInfo[0]['file'].$debugInfo[0]['line'];
-        $log = date('Y.m.d.H:i:s', time()) . ':'.$message.':' . $str . "\n";
+        $log = date('Y.m.d.H:i:s', time()) . ':'.$message.':' . $strFormated . "\n";
         file_put_contents($GLOBALS['mypath'].'/log.txt', $log, FILE_APPEND);
     }
 }

@@ -1,4 +1,9 @@
 <?php global $meetingInf ?>
+<?php
+    $nameType=1==$_SESSION['staffLogin']['category']?'代表':'委员';
+    $unitType=1==$_SESSION['staffLogin']['category']?'中心组':'委组';
+    $groupType=1==$_SESSION['staffLogin']['category']?'代表团':'界别';
+?>
 <link rel="stylesheet" type="text/css" media="screen" href="stylesheet/newMain.css?v=<?php echo rand(1000, 9999) ?>">
 <script src="js/edit_motion.js?t=<?php echo rand(1, 9999) ?>"></script>
 <script src="js/ajaxfileupload.js?v=<?php echo rand(1000, 9999) ?>"></script>
@@ -77,7 +82,7 @@
 <!--                <span class="float-left"><button class="list-output all-out">全部导出</button></span>-->
 <!--                <span class="float-left"><button class="list-output checked-out" >选中项导出</button></span>-->
                 <?php if (in_array(1, $_SESSION['staffLogin']['steps'])): ?>
-                    <span class="float-left"><button class="create-user">新建<?php echo 1==$_SESSION['staffLogin']['category']?'代表':'委员'?>
+                    <span class="float-left"><button class="create-user">新建<?=$nameType?>
                         </button>
                         </span>
                 <?php endif ?>
@@ -107,7 +112,7 @@
 <div class="m-popup popup-container clearfix">
     abced
 </div>
-<div class="search-container">
+<div class="search-container search-module">
     <div class="search-mask"></div>
     <div class="input-box">
         <input type="text" class="search-input">
@@ -115,14 +120,28 @@
         <button class="search-button inner">在结果中搜索</button>
     </div>
 </div>
-<!--<div class="hide-container">-->
-<!--    <div class="search-mask"></div>-->
-<!--    <div class="input-box">-->
-<!--        <input type="text" class="search-input">-->
-<!--        <button class="search-button">重新搜索</button>-->
-<!--        <button class="search-button inner">在结果中搜索</button>-->
-<!--    </div>-->
-<!--</div>-->
+<div class="search-container add-duty-module">
+    <div class="search-mask"></div>
+    <div class="add-duty-box">
+        <div class="duty-value-container">
+            请输入<?=$nameType?>姓名:<input type="text" class="duty-inf-input" data-field="user_name" placeholder="请输入姓名">
+        </div>
+        <div class="duty-value-container">
+            请输入<?=$nameType?>电话:<input type="tel" class="duty-inf-input" maxlength="11" data-field="user_phone" placeholder="请输入手机号码">
+        </div>
+        <div class="duty-value-container">
+            请输入<?=$nameType?>详情:<input type="text" class="duty-inf-input" maxlength="11" data-field="address" placeholder="请输入详情">
+        </div>
+        <div class="duty-value-container">
+            <select class="unit-select" ><option value="0" disabled selected>请选择<?=$unitType?></option></select>
+            <select class="group-select"><option value="0" disabled selected>请选择<?=$groupType?></option></select>
+        </div>
+        <div class="duty-value-container">
+            <button class="search-button add-duty-button create-user-submit">添加<?=$nameType?></button>
+        </div>
+
+    </div>
+</div>
 
 
 </body>

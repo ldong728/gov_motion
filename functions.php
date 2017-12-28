@@ -258,6 +258,7 @@ function ajaxMotionList($data)
 
     //乡镇管理员界面筛选
     if (1 == $staffInf['category']&&isset($staffInf['userList'])&&$staffInf['userList']) {
+        mylog($staffInf);
         $totalNumber = 0;
         $motionLimit = array();
         $tempFilter=$staffInf['userList'];
@@ -268,8 +269,8 @@ function ajaxMotionList($data)
             $totalNumber++;
             $motionLimit[] = $row['motion_id'];
         }
-        if(count($motionLimit)>0)$sortFilter['motion_id'] = $motionLimit;
-
+//        if(count($motionLimit)>0)$sortFilter['motion_id'] = $motionLimit;
+        $sortFilter['motion_id'] = $motionLimit;
     }
     //办理单位界面筛选
 //    mylog(getArrayInf($staffInf));
@@ -1319,6 +1320,47 @@ function ajax_activity_duty($data){
     }
 }
 
+/**
+ * 用于人大根据中心组查询代表团
+ * @param $data
+ */
+function ajaxGetGroupFromUnit($data){
+    $inf=pdoQuery('duty_tbl',['user_group'],['category'=>1,'user_unit'=>$data['unit']],'limit 1')->fetch();
+    if($inf){
+        echo ajaxBack($inf['user_group']);
+    }else{
+        echo ajaxBack(null,109,'数据库错误');
+    }
+
+}
+
+function ajaxAddDuty($data){
+    pdoTransReady();
+    $user=$data['user'];
+    $duty=$data['duty'];
+    $dutyId=null;
+    mylog($user);
+    try{
+        $userId=pdoInsert('user_tbl',$user,'update');
+        if($userId){
+            $duty['user']=$userId;
+        }else{
+            $userInf=pdoQuery('user_tbl',['user_id'],$user,'limit 1')->fetch();
+            $duty['user']=$userInf['user_id'];
+        }
+
+        mylog($duty);
+        $dutyId=pdoInsert('duty_tbl',$duty,'update');
+        pdoCommit();
+        echo ajaxBack('ok');
+
+    }catch(PDOException $e){
+        mylog($e->getMessage());
+        echo ajaxBack(null,109,'数据库错误');
+        pdoRollBack();
+    }
+}
+
 
 /**
  * 通过ajax获取分组单位列表的方法
@@ -1422,7 +1464,7 @@ function get_statistics_view($data){
 function get_duty_manager_view($data){
     $meeting=$data['meeting'];
     $category=$data['category'];
-    $dutyWhere=['meeting'=>$meeting,'category'=>$category];
+    $dutyWhere=['meeting'=>$meeting,'category'=>$category,'activity'=>1];
     $unitList=[];
     $groupList=[];
     $dutyFileter=isset($data['duty_filter'])?$data['duty_filter']:null;
@@ -1567,7 +1609,7 @@ function motionLock($motionId){
     }catch(PDOException $e){
         pdoRollBack();
         mylog($e->getMessage());
-        return ['success'=>$success,'currentStaff'=>$staffName,'msg'=>'网络异常'];
+        return ['success'=>$success,'currentStaff'=>$staffName,'msg'=>'此功能将于2018-01-01 00:00:00后开启'];
     }
 
 }
