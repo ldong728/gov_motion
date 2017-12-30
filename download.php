@@ -18,6 +18,10 @@ function statistics_excel_out(){
     }
 //    $name=getMeetingName($meeting);
 //    mylog($meetingName);
+    if(in_array(4,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])){//办理统计临时处理方法，只给督查室开启查看两次会议的办理情况，后期需要改进，
+        $name='';
+        $meeting=[1,2];
+    }
     $totalList= handleStatistics($meeting,0, $_SESSION['staffLogin']['category']);
     include"view/statisticsOutExcel.html.php";
     exit;

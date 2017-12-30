@@ -69,7 +69,6 @@ $(document).on('click','.activity-btn',function(){
     var id=$(this).attr('id').slice(3);
     var name=$('#row'+id).find('.user-name').text();
     if(confirm('确定要删除 '+name+' 资格吗？')){
-
         var thisButton=$(this);
         var activity=parseInt($(this).data('activity'));
         activity=activity?0:1;

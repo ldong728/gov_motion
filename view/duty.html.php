@@ -130,7 +130,7 @@
             请输入<?=$nameType?>电话:<input type="tel" class="duty-inf-input" maxlength="11" data-field="user_phone" placeholder="请输入手机号码">
         </div>
         <div class="duty-value-container">
-            请输入<?=$nameType?>详情:<input type="text" class="duty-inf-input" maxlength="11" data-field="address" placeholder="请输入详情">
+            请输入<?=$nameType?>详情:<input type="text" class="duty-inf-input" data-field="address" placeholder="请输入详情">
         </div>
         <div class="duty-value-container">
             <select class="unit-select" ><option value="0" disabled selected>请选择<?=$unitType?></option></select>

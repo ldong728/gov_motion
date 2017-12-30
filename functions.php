@@ -96,21 +96,22 @@ function getIndex($orderBy = 'default')
             $motionListFilter['step'][] = 4;
         }
     }
-    if(1==$category&&in_array(6, $staff['steps'])){
+
+    //人大乡镇管理员界面
+    if(1==$category&&in_array(6, $staff['steps'])&&in_array(1, $staff['steps'])){
         if(isset($staff['userList'])&&$staff['userList']){
             $motionLimit=array();
             $tempLimit=$staff['userList'];
             $tempLimit['attr_name']="领衔人";
-            $tempLimit['step']=6;
+            $tempLimit['step']=[1,6];
             $query=pdoQuery('s_duty_view',['motion_id'],$tempLimit,'order by meeting desc limit 20');
             foreach ($query as $limitRow) {
                 $motionLimit[]=$limitRow['motion_id'];
             }
             if (count($motionLimit) > 0) {
                 $motionListFilter['motion_id'] = $motionLimit;
-                $motionListFilter['step'][] = 6;
+                $motionListFilter['step'][] = [1,6];
             }
-
         }
     }
     if (count($motionListFilter) > 0) {
@@ -1387,6 +1388,7 @@ function getUnit($data)
  */
 function signOut($data)
 {
+    unlockMotion();
     session_unset();
 //    mylog('unsetted:'.getArrayInf($_SESSION));
     echo ajaxBack('ok');
@@ -1508,8 +1510,13 @@ function handleStatistics($meeting,$unitId = 0, $category = 3)
         foreach ($totalQuery as $row) {
             $totalList[$row['unit_id']]['unit_id'] = $row['unit_id'];
             $totalList[$row['unit_id']]['unit_name'] = $row['unit_name'];
-            if ('主办单位' == $row['handle_name']) $totalList[$row['unit_id']]['main_total'] = $row['number'];
-            else $totalList[$row['unit_id']]['sub_total'] = $row['number'];
+            if ('主办单位' == $row['handle_name']){
+                if(isset($totalList[$row['unit_id']]['main_total']))$totalList[$row['unit_id']]['main_total'] += $row['number'];
+                else $totalList[$row['unit_id']]['main_total'] = $row['number'];
+            }else{
+                if(isset($totalList[$row['unit_id']]['sub_total']))$totalList[$row['unit_id']]['sub_total'] += $row['number'];
+                else $totalList[$row['unit_id']]['sub_total'] = $row['number'];
+            }
         }
         $mainDoneQuery = pdoQuery('main_handle_view', array('unit_id', 'handle_name', 'count(*) as number'), $where, 'group by unit_id,handle_name');
         foreach ($mainDoneQuery as $row) {

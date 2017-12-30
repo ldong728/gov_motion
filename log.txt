@@ -1,0 +1,13 @@
+2017.12.30.08:50:12:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
+2017.12.30.08:50:23:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
+2017.12.30.09:03:50:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 146,staffId: 6735,staffName: 观海卫镇管理员,outId: ,userList: {user_unit: 728}}
+2017.12.30.09:04:22:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
+2017.12.30.09:09:24:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
+2017.12.30.09:13:43:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
+2017.12.30.09:13:45:D:\xampp\htdocs\gov_motion\functions.php575:id=698
+2017.12.30.09:13:59:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 698}
+2017.12.30.09:19:49:D:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:rdtemp,status:
+2017.12.30.09:33:02:D:\xampp\htdocs\gov_motion\functions.php1112:
+2017.12.30.09:33:02:D:\xampp\htdocs\gov_motion\functions.php1113:not a array:unique
+2017.12.30.09:33:02:D:\xampp\htdocs\gov_motion\functions.php1115:出错
+2017.12.30.11:24:45:D:\xampp\htdocs\gov_motion\functions.php921:{id: 699}
