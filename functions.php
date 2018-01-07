@@ -69,6 +69,14 @@ function getIndex($orderBy = 'default')
     $motionList = array();
     $category = $staff['category'];
     $motionListFilter = array();
+    //人大代工委临时处理
+    if(1==$category&&2==count($staff['steps'])&&in_array(1,$staff['steps'])&&in_array(2,$staff['steps'])){
+        $meeting=pdoQuery('meeting_tbl',['meeting_id'],['category'=>1],'order by deadline_time desc')->fetch()['meeting_id'];
+        header('location:index.php?get_meeting='.$meeting);
+        return;
+    }
+
+
     foreach ($staff['steps'] as $step) {
         if(1==$category&&6==$step)continue;
         if (4 == $step) continue;//如果用户有交办权限，则从筛选器中删除4，待下一步处理

@@ -1,13 +1,6 @@
-2017.12.30.08:50:12:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
-2017.12.30.08:50:23:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
-2017.12.30.09:03:50:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 146,staffId: 6735,staffName: 观海卫镇管理员,outId: ,userList: {user_unit: 728}}
-2017.12.30.09:04:22:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
-2017.12.30.09:09:24:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
-2017.12.30.09:13:43:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 697}
-2017.12.30.09:13:45:D:\xampp\htdocs\gov_motion\functions.php575:id=698
-2017.12.30.09:13:59:D:\xampp\htdocs\gov_motion\functions.php261:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 144,staffId: 6736,staffName: 龙山镇管理员,outId: ,userList: {user_unit: 732}currentMotion: 698}
-2017.12.30.09:19:49:D:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:rdtemp,status:
-2017.12.30.09:33:02:D:\xampp\htdocs\gov_motion\functions.php1112:
-2017.12.30.09:33:02:D:\xampp\htdocs\gov_motion\functions.php1113:not a array:unique
-2017.12.30.09:33:02:D:\xampp\htdocs\gov_motion\functions.php1115:出错
-2017.12.30.11:24:45:D:\xampp\htdocs\gov_motion\functions.php921:{id: 699}
+2017.12.27.23:28:45:C:\xampp\htdocs\gov_motion\functions.php574:id=687
+2017.12.27.23:28:45:C:\xampp\htdocs\gov_motion\functions.php1569:SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gov_motion_db.lock_tbl' doesn't exist
+2017.12.27.23:28:51:C:\xampp\htdocs\gov_motion\functions.php1569:SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gov_motion_db.lock_tbl' doesn't exist
+2017.12.27.23:29:27:C:\xampp\htdocs\gov_motion\functions.php1569:SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gov_motion_db.lock_tbl' doesn't exist
+2018.01.07.20:02:33:C:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw1,status:
+2018.01.07.20:03:20:C:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw4,status:
