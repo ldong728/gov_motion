@@ -128,11 +128,17 @@
 
         submitAtrrs(1, function (data) {
             var back = backHandle(data);
-            //console.log($.inArray(String(back.step),staff.steps));
-            //console.log(staff.steps.indexOf(String(back.step)));
-
+            console.log(back);
+            if(2==back.step&&category==1&&$.inArray('3',staff.steps)<0){
+                if('meeting'==place){
+                    $('.close-popup').click();
+                    reflashList(orderby,page,order);
+                }else{
+                    window.location.reload(true);
+                }
+                return;
+            }
             if ($.inArray(String(back.step),staff.steps)>-1&&5!=back.step) {
-            //if (staff.steps.indexOf(String(back.step)) > -1&&5!=back.step) {
                 console.log(staff);
                 ajaxPost('editMotion', {id: back.id}, function (data) {
                     $('.m-popup').html(data);

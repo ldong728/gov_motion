@@ -282,7 +282,6 @@ function ajaxMotionList($data)
         $sortFilter['motion_id'] = $motionLimit;
     }
     //办理单位界面筛选
-//    mylog(getArrayInf($staffInf));
     if (1 == count($staffInf['steps']) && 5 == $staffInf['steps'][0]) {
 //        mylog();
         $motionLimit = array();
@@ -361,6 +360,11 @@ function ajaxMotionList($data)
                 $searchQuery = pdoQuery('motion_view', array('motion_id'), array('attr_name' => $attrName, 'content_int' => $attrValue), null);
                 break;
             case 'duty':
+                if(2==$category&&2==mb_strlen($attrValue)){
+                    $attrValue=mb_substr($attrValue,0,1).'%'.mb_substr($attrValue,1,1);
+                    mylog($attrValue);
+                }
+//                mylog(mb_strlen($attrValue));
                 $searchDuty=pdoQuery('duty_view',array('duty_id'),null,'where user_name like "%'.$attrValue.'%" and activity=1')->fetchAll();
                 $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchDuty,'meeting'=>$meeting),null);
                 break;
@@ -389,7 +393,6 @@ function ajaxMotionList($data)
     }
 
     //综合搜索
-//    mylog(getArrayInf($filter));
     if(isset($filter['multiple_search'])){
 //        mylog(getArrayInf($filter));
         $searchLimit=null;
@@ -479,9 +482,7 @@ function ajaxMotionList($data)
 
 //    mylog(getArrayInf($field));
     $motionDetail = pdoQuery('motion_view', null, array('motion_id' => $motionfilter, 'attr_name' => $field), null);
-    $singleRow = null;
     foreach ($motionDetail as $row) {
-//        if(!$singleRow)$singleRow=$row;
         $content = 'string' == $row['value_type'] ? $row['content'] : $row['content_int'];
         $content = 'attachment' == $row['value_type'] ? $row['attachment'] : $content;
         if ('index' == $row['value_type']) {
@@ -499,10 +500,6 @@ function ajaxMotionList($data)
 //        $sortList[$row['motion_id']]['案别']=2==$row['category']?'建议':'提案';
         $sortList[$row['motion_id']]['当前环节'] = $row['step_name'];
 //        $sortList[$row['motion_id']]['编号'] = $row['zx_motion'];
-    }
-
-    if ($singleRow) {
-
     }
     $motionIdLimit = isset($sortFilter['motion_id']) ? $sortFilter['motion_id'] : null;
     $query=pdoQuery('displeasure_attr_tbl',['motion as motion_id'],null,'where date_add(update_time,INTERVAL 12 month)>now() group by motion');
@@ -581,7 +578,7 @@ function createMotion($data)
                 pdoInsert('attr_tbl',['motion'=>$id,'motion_attr'=>$zxIdInf['motion_attr'],'attr_template'=>$zxIdInf['attr_template'],'content_int'=>$zx_id,'staff'=>$staff['staffId']]);
             }
             pdoCommit();
-            mylog('id='.$id);
+//            mylog('id='.$id);
             editMotion(array('id' => $id));
         } catch (PDOException $e) {
             mylog($e->getMessage());
@@ -976,12 +973,14 @@ function updateAttr($data)
             $uniqueInf=34;
             $subCate=false;
             foreach ($attrs as $attrrow) {
-                if(90==$attrrow['motion_attr'])
+                if(90==$attrrow['motion_attr']){
                     $subCate=$attrrow['value'];
+                }
             }
             if(!$subCate)$subCate=pdoQuery('attr_tbl',['content'],['motion'=>$motionId,'motion_attr'=>90],'limit 1')->fetch()['content'];
             $existMotion=pdoQuery('attr_unique_view',['motion'],['motion_attr'=>90,'content'=>$subCate,'meeting'=>$motion['meeting']],null)->fetchAll();
             $uniqueQuery = pdoQuery('attr_unique_view', array('content_int as value'), array('motion' => $existMotion, 'meeting' => $motion['meeting']), null);
+//            mylog(json_encode($attrs));
 //            mylog(json_encode($existMotion));
         }else{
             $uniqueInf=26;
@@ -1003,6 +1002,10 @@ function updateAttr($data)
         foreach ($attrs as $row) {
             if($uniqueJudge){//如需进行案号唯一性检查；
                 if ($uniqueInf == $row['motion_attr']) {
+//                    mylog(getArrayInf($row));
+                    if(1==$motion['category']){//人大登记阶段，如果是初录入案号，则不进行下一步
+                        if(!$row['attr_id'])$isFoward=0;
+                    }
                     if (in_array($row['value'], $uniqueValues)) {
                         if (!isset($_SESSION['staffLogin']['passUnique'])) {
                             $e = new PDOException();

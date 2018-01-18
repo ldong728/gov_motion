@@ -1,6 +1,27 @@
-2017.12.27.23:28:45:C:\xampp\htdocs\gov_motion\functions.php574:id=687
-2017.12.27.23:28:45:C:\xampp\htdocs\gov_motion\functions.php1569:SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gov_motion_db.lock_tbl' doesn't exist
-2017.12.27.23:28:51:C:\xampp\htdocs\gov_motion\functions.php1569:SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gov_motion_db.lock_tbl' doesn't exist
-2017.12.27.23:29:27:C:\xampp\htdocs\gov_motion\functions.php1569:SQLSTATE[42S02]: Base table or view not found: 1146 Table 'gov_motion_db.lock_tbl' doesn't exist
-2018.01.07.20:02:33:C:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw1,status:
-2018.01.07.20:03:20:C:\xampp\htdocs\gov_motion\functions.php25:outerStaffLogin name:srddgw4,status:
+2018.01.18.13:48:19:D:\xampp\htdocs\gov_motion\functions.php576:id=729
+2018.01.18.13:50:25:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 0,attr_type: int,motion_attr: 34,attr_template: 17,value: 4}
+2018.01.18.13:54:52:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 36465,attr_type: int,motion_attr: 34,attr_template: 17,value: 1}
+2018.01.18.13:54:52:D:\xampp\htdocs\gov_motion\functions.php1118:
+2018.01.18.13:54:52:D:\xampp\htdocs\gov_motion\functions.php1119:not a array:unique
+2018.01.18.13:54:52:D:\xampp\htdocs\gov_motion\functions.php1121:出错
+2018.01.18.13:54:59:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 36465,attr_type: int,motion_attr: 34,attr_template: 17,value: 2}
+2018.01.18.13:57:33:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 36465,attr_type: int,motion_attr: 34,attr_template: 17,value: 2}
+2018.01.18.14:02:17:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 0,attr_type: int,motion_attr: 34,attr_template: 17,value: 7}
+2018.01.18.14:02:40:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 36496,attr_type: int,motion_attr: 34,attr_template: 17,value: 7}
+2018.01.18.14:20:26:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 36451,attr_type: int,motion_attr: 34,attr_template: 17,value: 1}
+2018.01.18.14:27:12:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 0,attr_type: int,motion_attr: 34,attr_template: 17,value: 1}
+2018.01.18.15:02:43:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 0,attr_type: int,motion_attr: 34,attr_template: 17,value: 1}
+2018.01.18.15:02:43:D:\xampp\htdocs\gov_motion\functions.php1118:
+2018.01.18.15:02:43:D:\xampp\htdocs\gov_motion\functions.php1119:not a array:unique
+2018.01.18.15:02:43:D:\xampp\htdocs\gov_motion\functions.php1121:出错
+2018.01.18.15:02:50:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 0,attr_type: int,motion_attr: 34,attr_template: 17,value: 9}
+2018.01.18.15:04:24:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 0,attr_type: int,motion_attr: 34,attr_template: 17,value: 10}
+2018.01.18.15:07:46:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 0,attr_type: int,motion_attr: 34,attr_template: 17,value: 15}
+2018.01.18.15:09:03:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 0,attr_type: int,motion_attr: 34,attr_template: 17,value: 67}
+2018.01.18.15:09:07:D:\xampp\htdocs\gov_motion\functions.php1000:{attr_id: 36554,attr_type: int,motion_attr: 34,attr_template: 17,value: 67}
+2018.01.18.15:09:59:D:\xampp\htdocs\gov_motion\functions.php270:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 163,staffId: 6752,staffName: 坎墩街道管理员,outId: ,userList: {user_unit: 717}}
+2018.01.18.15:10:24:D:\xampp\htdocs\gov_motion\functions.php270:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 163,staffId: 6752,staffName: 坎墩街道管理员,outId: ,userList: {user_unit: 717}currentMotion: 737}
+2018.01.18.15:11:33:D:\xampp\htdocs\gov_motion\functions.php270:is array: {steps: {0: 1,1: 6}category: 1,meeting: 3,unit: 158,staffId: 6747,staffName: 周巷镇管理员,outId: ,userList: {user_unit: 716}}
+2018.01.18.15:27:40:D:\xampp\htdocs\gov_motion\functions.php363:2
+2018.01.18.15:32:03:D:\xampp\htdocs\gov_motion\functions.php365:岳%琴
+2018.01.18.15:37:12:D:\xampp\htdocs\gov_motion\functions.php365:金%莹

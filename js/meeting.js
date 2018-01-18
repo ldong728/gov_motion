@@ -192,6 +192,7 @@ function reflashList(sOrderby, sPage, sOrder) {
             $('.list-head').append('<th>删除</th>')
         }
         var value = backHandle(back);
+        console.log(value);
         $('.list-content').remove();
         var myCount = 1 + (page * count);
         var c = value.list;
@@ -203,6 +204,10 @@ function reflashList(sOrderby, sPage, sOrder) {
             }
             $('#tr'+v).append('<td>'+(myCount++)+'</td><td><input type="checkbox" class="check" value=' + v + '></td>');
 
+            //人大要求（含案号建议在登记环节显示编辑）
+            if(1==category&&c[v]['案号']&&'登记'==c[v]['当前环节']){
+                c[v]['当前环节']='登记（编辑）';
+            }
             $.each(fields,function(name,field){
                 switch(field){
                     case '原文':
