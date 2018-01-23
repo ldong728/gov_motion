@@ -49,7 +49,7 @@
 
     </ul>
     <div class="nav-right">
-        <em><?php echo $_SESSION['userLogin']['user_name'] ?></em>，欢迎您登陆！
+        <em><?= isset($_SESSION['userLogin'])?$_SESSION['userLogin']['user_name']:$_SESSION['staffLogin']['staffName'] ?></em>，欢迎您登陆！
     </div>
 </nav>
 <!--左边-->

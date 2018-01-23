@@ -107,6 +107,7 @@ a{color: inherit;text-decoration: none;}
 .m-home .p-num{width: 30px;height: 20px; text-align: center;}
 .m-home .home-page-l a{margin-left: 30px;height: 40px;}
 .icon{font-size: 20px;vertical-align: middle;}
+/*.close-detail-box{background: url(images/back.png) 100% 100% no-repeat;width: 20px;height: 30px}*/
 .icon-caret-left,.icon-caret-right{font-size: 24px;padding-top: 5px;}
 .m-home .home-page-r{float: left;width:50%;margin: 10px 0;}
 .m-home .home-page-r p{float: right;margin-right: 55px;}

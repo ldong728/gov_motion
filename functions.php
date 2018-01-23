@@ -107,6 +107,10 @@ function getIndex($orderBy = 'default')
 
     //人大乡镇管理员界面
     if(1==$category&&in_array(6, $staff['steps'])&&in_array(1, $staff['steps'])){
+        //临时处理
+        $meeting=pdoQuery('meeting_tbl',['meeting_id'],['category'=>1],'order by deadline_time desc')->fetch()['meeting_id'];
+        header('location:index.php?get_meeting='.$meeting);
+        return;
         if(isset($staff['userList'])&&$staff['userList']){
             $motionLimit=array();
             $tempLimit=$staff['userList'];
@@ -362,7 +366,7 @@ function ajaxMotionList($data)
             case 'duty':
                 if(2==$category&&2==mb_strlen($attrValue)){
                     $attrValue=mb_substr($attrValue,0,1).'%'.mb_substr($attrValue,1,1);
-                    mylog($attrValue);
+//                    mylog($attrValue);
                 }
 //                mylog(mb_strlen($attrValue));
                 $searchDuty=pdoQuery('duty_view',array('duty_id'),null,'where user_name like "%'.$attrValue.'%" and activity=1')->fetchAll();
