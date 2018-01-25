@@ -30,7 +30,11 @@ class DataSupply {
 //                        DataSupply::$data[$targetName][$row['id']]=$row['name'];
 //                        if($index==$row['id'])$content=$row['name'];
 //                    }
-                    $dutyInf=pdoQuery('duty_view',array('duty_id as id','user_name as name'),array('activity'=>1,'duty_id'=>$index),'limit 1')->fetch();
+                    $dutyInf=pdoQuery('duty_view',array('duty_id as id','user_name as name','meeting'),array('activity'=>1,'duty_id'=>$index),'limit 1')->fetch();
+                    $dutyQuery=pdoQuery('duty_view',['duty_id as id','user_name as name'],['activity'=>1,'meeting'=>$dutyInf['meeting']],null);
+                    foreach ($dutyQuery as $row) {
+                        DataSupply::$data[$targetName][$row['id']]=$row['name'];
+                    }
                     if($dutyInf)$content=$dutyInf['name'];
                     break;
                 case 'staff':

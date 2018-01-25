@@ -44,6 +44,23 @@ $('.create-motion').click(function () {
     })
 });
 
+$('.batch-controller').click(function(){
+    var targetStep=$(this).data('step');
+    var motions=[];
+    console.log(targetStep);
+    console.log(category);
+    $.each($('.check'),function(k,v){
+        if($(v).prop('checked'))motions.push(v.value)
+    });
+    if(motions.length<1){
+
+    }
+
+    console.log(motions);
+   alert('批量操作')
+
+});
+
 
 
 $('.target-select').click(function () {

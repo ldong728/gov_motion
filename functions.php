@@ -75,6 +75,11 @@ function getIndex($orderBy = 'default')
         header('location:index.php?get_meeting='.$meeting);
         return;
     }
+    if(1==$category&&1==count($staff['steps'])&&in_array(6,$staff['steps'])){
+        $meeting=pdoQuery('meeting_tbl',['meeting_id'],['category'=>1],'order by deadline_time desc')->fetch()['meeting_id'];
+        header('location:index.php?get_meeting='.$meeting);
+        return;
+    }
 
 
     foreach ($staff['steps'] as $step) {
@@ -137,7 +142,7 @@ function getIndex($orderBy = 'default')
         $motionId[] = $row['motion_id'];
         $motionList[$row['category']][$row['motion_id']] = $row;
     }
-    $meeting = pdoQuery('meeting_tbl', null, $meetingListFilter, 'order by start_time asc');
+    $meeting = pdoQuery('meeting_tbl', null, $meetingListFilter, 'order by start_time desc');
     foreach ($meeting as $row) {
         $meetingList[$row['category']][$row['meeting_id']] = $row;
     }
@@ -214,6 +219,7 @@ function getMeetingView($id)
 {
     global $meetingInf,$isCurrent;
     $meetingInf = pdoQuery('meeting_tbl', null, array('meeting_id' => $id), 'limit 1')->fetch();
+    $isCurrent=$meetingInf['deadline_time']>time();
     printView('meeting');
 }
 function getDutyView($id){

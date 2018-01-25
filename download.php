@@ -27,6 +27,8 @@ function statistics_excel_out(){
     exit;
 }
 
+
+
 /**
  * 综合统计 未完成
  *
@@ -513,6 +515,54 @@ function denied_motion(){
     exit;
 }
 
+function motion_menu(){
+    function mySort($a,$b){
+        return $a[34]>$b[34]?1:-1;
+    }
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    $type=isset($_GET['type']);
+    $isReply=isset($_GET['reply']);
+    $back=getMenu(['meeting'=>$meeting,'category'=>$category]);
+    $totalCount=0;
+    $detail=$back;
+    $name=$type?'议案':'建议';
+//    mylog(getArrayInf($detail));
+    $info=['政治法律'=>['count'=>0],'财政经济'=>['count'=>0],'城建环保'=>['count'=>0],'教科文卫'=>['count'=>0],'农业农村'=>['count'=>0],'其他'=>['count'=>0]];
+    foreach ($detail as $row) {
+        if($type&&'建议'==$row[90]){
+            continue;
+        }else if('议案'==$row[90]){
+            continue;
+        }
+        $totalCount++;
+        if(!$row[83]){
+            $row[83]='无分类';
+        }
+        if(!$row[34])$row[34]='无';
+        if(isset($info[$row[83]])){
+            $info[$row[83]]['count']++;
+            $info[$row[83]]['motions'][]=$row;
+        }else{
+
+            $info[$row[83]]=['count'=>1,'motions'=>[$row]];
+        }
+    }
+    mylog(getArrayInf($info));
+
+    header("Content-Type:text/html; charset=gb2312");
+    header("Content-Type: application/doc");
+    header("Content-Disposition: attachment; filename=menu.doc");
+    if($isReply){
+        include 'view/download_template/rd_menu_view2.html.php';
+    }else{
+        include 'view/download_template/rd_menu_view3.html.php';
+    }
+    exit;
+
+}
+
+
 
 
 
@@ -675,5 +725,36 @@ function encodeFileName($filename){
 //    break;
     }
     return $newFileName;
+}
+
+function getMenu($data){
+    $category=$data['category'];
+    $meeting=$data['meeting'];
+    $attrNameList=[];
+    if(1==$category){
+        $attrNameList=['案别','案号','领衔人','案由','性质类别1'];
+    }else{
+        $attrNameList=['案号','领衔人','案由','性质类别1'];
+    }
+    $query=pdoQuery('motion_view',null,['meeting'=>$meeting,'attr_name'=>$attrNameList],null);
+//    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $result=[];
+//    $totalCount=0;
+    foreach ($query as $row) {
+//        $totalCount++;
+        if('index'==$row['value_type']){
+            $row['content']=DataSupply::indexToValue('duty',$row['content_int']);
+        }
+//        $result[$row['motion_id']][$row['attr_name']]=$row['content']?$row['content']:$row['content_int'];
+        $result[$row['motion_id']][$row['motion_attr']]=$row['content']?$row['content']:$row['content_int'];
+
+    }
+    return $result;
+
+//    foreach ($result as $row) {
+//        mylog(getArrayInf($row));
+//    }
+
+
 }
 

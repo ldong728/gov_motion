@@ -68,7 +68,7 @@
                 <li><p><a href="#" class="list-filter" data-step="5" data-filtertype="can-handle"><i
                                 class="icon icon-angle-right"></i>协办可办<span></span></a></p></li>
             <?php endif ?>
-            <?php if (in_array(3, $_SESSION['staffLogin']['steps'])): ?>
+            <?php if (in_array(3, $_SESSION['staffLogin']['steps'])&&$isCurrent): ?>
                 <li><p><a href="index.php?duty_manager=1&category=<?php echo $_SESSION['staffLogin']['category']?>&meeting=<?php echo $meetingInf['meeting_id'] ?>" data-step="3" data-filtertype="mainhandle" class="duty-manager"><i
                                 class="icon icon-angle-right"></i><?php echo 1 == $_SESSION['staffLogin']['category'] ? '代表名单管理' : '委员名单管理' ?>
                             <span></span></a></p></li>
@@ -102,11 +102,16 @@
             <div class="table-page">
                 <span class="float-left"><button class="list-output all-out">全部导出</button></span>
                 <span class="float-left"><button class="list-output checked-out" >选中项导出</button></span>
-                <?php if (in_array(1, $_SESSION['staffLogin']['steps'])): ?>
+                <?php if (in_array(1, $_SESSION['staffLogin']['steps'])&&$isCurrent): ?>
                     <span class="float-left"><button class="create-motion">新建<?php echo 1==$_SESSION['staffLogin']['category']?'建议/议案':'提案'?>
                     </button>
                         </span>
                 <?php endif ?>
+<!--                --><?php //if(in_array(3,$_SESSION['staffLogin']['steps'])&&2==$_SESSION['staffLogin']['category']):?>
+<!--                    <span class="float-left"><button class="batch-controller" data-step="4">批量交办-->
+<!--                        </button>-->
+<!--                        </span>-->
+<!--                --><?php //endif?>
 
                 <span class="first-page"><i class="icon icon-step-backward"></i></span>
                 <span class="span-i prev-page"><i class="icon icon-caret-left"></i></span>

@@ -1,5 +1,7 @@
 <table id="" width="100%" border="0" cellpadding="0" cellspacing="0" class="">
+    <?php $count=1?>
     <tr>
+        <td>序号</td>
         <td>姓名</td>
         <td>电话</td>
         <td>详情</td>
@@ -9,6 +11,7 @@
     </tr>
     <?php foreach($dutyList as $row):?>
     <tr id="row<?php echo $row['duty_id']?>">
+        <td><?=$count++?></td>
         <td class="user-name"><?php echo $row['user_name']?></td>
         <td  class="can-modify" data-type="value" data-field="user_phone"><?php echo $row['user_phone']?></td>
         <td  class="can-modify" data-type="value" data-field="address"><?php echo $row['address']?></td>

@@ -9,6 +9,15 @@
     <tr>
         <td><a href="?download=response_by_unit_type&meeting=<?php echo $meeting?>&category=1">反馈统计（按中心组分类别）</a></td>
         <td><a href="?download=user_motion_count&meeting=<?php echo $meeting?>&category=1">代表建议数量统计</a></td>
+        <td><a href="?download=motion_menu&meeting=<?php echo $meeting?>&category=1">建议目录</a></td>
+        <td><a href="?download=motion_menu&meeting=<?php echo $meeting?>&category=1&type=1">议案目录</a></td>
+        <td><a href="?download=motion_menu&meeting=<?php echo $meeting?>&category=1&reply=1">建议预审目录</a></td>
+
+
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
         <td></td>
         <td></td>
         <td></td>
