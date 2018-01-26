@@ -107,11 +107,11 @@
                     </button>
                         </span>
                 <?php endif ?>
-<!--                --><?php //if(in_array(3,$_SESSION['staffLogin']['steps'])&&2==$_SESSION['staffLogin']['category']):?>
-<!--                    <span class="float-left"><button class="batch-controller" data-step="4">批量交办-->
-<!--                        </button>-->
-<!--                        </span>-->
-<!--                --><?php //endif?>
+                <?php if(in_array(3,$_SESSION['staffLogin']['steps'])&&2==$_SESSION['staffLogin']['category']):?>
+                    <span class="float-left"><button class="batch-controller" data-step="4">批量交办
+                        </button>
+                        </span>
+                <?php endif?>
 
                 <span class="first-page"><i class="icon icon-step-backward"></i></span>
                 <span class="span-i prev-page"><i class="icon icon-caret-left"></i></span>

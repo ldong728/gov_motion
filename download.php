@@ -528,6 +528,7 @@ function motion_menu(){
     $detail=$back;
     $name=$type?'议案':'建议';
 //    mylog(getArrayInf($detail));
+//    $info=[];
     $info=['政治法律'=>['count'=>0],'财政经济'=>['count'=>0],'城建环保'=>['count'=>0],'教科文卫'=>['count'=>0],'农业农村'=>['count'=>0],'其他'=>['count'=>0]];
     foreach ($detail as $row) {
         if($type&&'建议'==$row[90]){
@@ -548,7 +549,7 @@ function motion_menu(){
             $info[$row[83]]=['count'=>1,'motions'=>[$row]];
         }
     }
-    mylog(getArrayInf($info));
+//    mylog(getArrayInf($info));
 
     header("Content-Type:text/html; charset=gb2312");
     header("Content-Type: application/doc");

@@ -246,7 +246,7 @@ function ajaxMotionList($data)
     $attrOrder = isset($data['attr_order']) ? $data['attr_order'] : 'desc';
     $page = isset($data['page']) ? $data['page'] : 0;
     $filter = isset($data['filter']) ? $data['filter'] : null;
-    $orderStr = 'order by content_int ' . $attrOrder . ',content ' . $attrOrder;
+    $orderStr = 'order by -content_int ' . $attrOrder . ',content ' . $attrOrder;
     $sortFilter = array('meeting' => $meeting, 'attr_name' => trim($attrOrderBy));
     $dutyList = array();
     $countFilter = array('meeting' => $meeting);
@@ -1015,6 +1015,7 @@ function updateAttr($data)
 //                    mylog(getArrayInf($row));
                     if(1==$motion['category']){//人大登记阶段，如果是初录入案号，则不进行下一步
                         if(!$row['attr_id'])$isFoward=0;
+
                     }
                     if (in_array($row['value'], $uniqueValues)) {
                         if (!isset($_SESSION['staffLogin']['passUnique'])) {
@@ -1030,6 +1031,11 @@ function updateAttr($data)
                         }
 
                     }
+                }
+            }
+            if(1==$motion['category']){
+                if(83==$row['motion_attr']&&(!$row['attr_id'])){
+                    $isFoward=0;
                 }
             }
 
@@ -1279,7 +1285,7 @@ function ajaxGetSingleDutyId($data)
         mylog($name);
         $where['user_name'] = $name;
         if (isset($_SESSION['staffLogin']['userList'])) $where = array_merge($where, $_SESSION['staffLogin']['userList']);
-        $inf = pdoQuery('duty_view', array('duty_id'), $where, 'limit 1')->fetch();
+        $inf = pdoQuery('duty_view', array('duty_id'), $where, 'order by duty_id desc limit 1')->fetch();
         if ($inf) {
             echo ajaxBack($inf['duty_id']);
             return;
@@ -1465,6 +1471,26 @@ function ajaxCheckFiles($data){
     }else{
         echo ajaxBack('ok');
     }
+}
+
+/**
+ * 政协批量交办功能
+ * @param $data
+ */
+function ajaxBatchStap4($data){
+    mylog(getArrayInf($data));
+    $motions=pdoQuery('motion_tbl',['motion_id'],['motion_id'=>$data,'category'=>2,'step'=>3],null);
+
+    $value1=['motion_attr'=>24,'attr_template'=>15,'content_int'=>5103,'staff'=>$_SESSION['staffLogin']['staffId']];//交办单位的attr_tbl 内容 交办单位
+    $varlue2=['motion_attr'=>85,'attr_template'=>42,'content'=>'立案','staff'=>$_SESSION['staffLogin']['staffId']];//交办单位的attr_tbl 内容 审核
+    $attrValue=[];
+    foreach ($motions as $row) {
+//        $attrValue[]
+    }
+
+
+    echo ajaxBack('暂时无法使用');
+
 }
 
 /**

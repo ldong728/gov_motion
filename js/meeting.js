@@ -53,11 +53,27 @@ $('.batch-controller').click(function(){
         if($(v).prop('checked'))motions.push(v.value)
     });
     if(motions.length<1){
+        alert('请先勾选需要交办的件');
+    }else{
+        switch(targetStep){
+            case 4:
+                if(confirm('确认要将选中件将交办至市政府督查室？点击确定前请先确认所有选中提案的原件都已审核')){
+                    ajaxPost('ajaxBatchStap4',motions,function(back){
+                        alert(backHandle(back));
+                        reflashList(orderby, page, order);
+                    })
+                }
+                break;
+            default :
+
+                break;
+        }
 
     }
 
-    console.log(motions);
-   alert('批量操作')
+    //console.log(motions);
+
+   //alert('批量操作')
 
 });
 
@@ -191,7 +207,7 @@ function reflashList(sOrderby, sPage, sOrder) {
         category: category,
         meeting: meetingId,
         attr_order_by: sOrderby || orderby,
-        attr_order: sOrder ? 'asc' : 'desc',
+        attr_order: sOrder ? 'desc' : 'asc',
         page: sPage || page,
         filter: filter,
         count: count,
@@ -222,7 +238,7 @@ function reflashList(sOrderby, sPage, sOrder) {
             $('#tr'+v).append('<td>'+(myCount++)+'</td><td><input type="checkbox" class="check" value=' + v + '></td>');
 
             //人大要求（含案号建议在登记环节显示编辑）
-            if(1==category&&c[v]['案号']&&'登记'==c[v]['当前环节']){
+            if(1==category&&c[v]['案号']&&'登记'==c[v]['当前环节']&&c[v]['性质类别1']){
                 c[v]['当前环节']='登记（编辑）';
             }
             $.each(fields,function(name,field){
