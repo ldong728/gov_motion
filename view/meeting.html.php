@@ -46,6 +46,9 @@
         <?php if (in_array(3, $_SESSION['staffLogin']['steps'])): ?>
             <li><a href="#" class="get-statistics-view">统计</a></li>
         <?php endif ?>
+        <?php if (1==$meetingInf['category']&&in_array(6,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])):?>
+            <li><a href="?download=motion_menu&meeting=<?php echo $meetingInf['meeting_id']?>&category=1&reply=1">预审目录</a></li>
+        <?php endif ?>
 
     </ul>
     <div class="nav-right">

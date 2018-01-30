@@ -408,7 +408,6 @@ function ajaxMotionList($data)
         $searchLimit=null;
 //        $multipleSearchFilter=null;
         $multipleSearchTempFilter=array('meeting'=>$meeting);
-        $multipleSearchMotionLimit=null;
         $filterDetail=$filter['multiple_search'];
         if(isset($filterDetail['user_unit'])){
             $multipleSearchTempFilter['user_unit']=$filterDetail['user_unit']['value'];
@@ -422,9 +421,11 @@ function ajaxMotionList($data)
             $attrName=1==$category?"领衔人":"提案人";
             $multipleDutyList=pdoQuery('duty_tbl',array('duty_id'),$multipleSearchTempFilter,null)->fetchAll();
             $multipleSearchMotionLimit=pdoQuery('motion_view',['motion_id'],['attr_name'=>$attrName,'content_int'=>$multipleDutyList,'meeting'=>$meeting],null);
-            foreach ($multipleSearchMotionLimit as $row) {
-                $searchLimit[]=$row['motion_id'];
-            }
+        }else{
+            $multipleSearchMotionLimit=pdoQuery('motion_tbl',['motion_id'],$multipleSearchTempFilter,' and step>0');
+        }
+        foreach ($multipleSearchMotionLimit as $row) {
+            $searchLimit[]=$row['motion_id'];
         }
 
 
@@ -473,8 +474,6 @@ function ajaxMotionList($data)
             $sortFilter['motion_id']=$searchLimit;
         }
         $totalNumber=count($sortFilter['motion_id']);
-
-
 
     }
 
