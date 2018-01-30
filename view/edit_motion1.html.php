@@ -510,6 +510,14 @@
         getFuyiCount();
         decodeDate( $('.encoded-data'));
         meetingId=<?php echo $meetingInf['meeting']?>;
+        if(2==category){
+            if($('.judged-value').find('select').length>0){
+                if('党派团体'==$('.judged-value').find('select').val())$('.union-conecter').show();
+            }else if('党派团体'==($('.judged-value').text().trim())){
+//            $('.union-conecter').show();
+            }
+        }
+
 //    });
 </script>
 

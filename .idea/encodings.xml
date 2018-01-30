@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
-    <file url="file://$PROJECT_DIR$/view/download_template/rd_menu_view.html.php" charset="GBK" />
     <file url="file://$PROJECT_DIR$/view/download_template/rd_menu_view2.html.php" charset="GBK" />
     <file url="file://$PROJECT_DIR$/view/download_template/rd_menu_view3.html.php" charset="GBK" />
     <file url="file://$PROJECT_DIR$/view/response_table1.html.php" charset="GBK" />

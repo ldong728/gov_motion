@@ -156,19 +156,26 @@ function getIndex($orderBy = 'default')
 
     }
 
-
+    //办理单位界面
     if (in_array(5, $staff['steps']) && 1 == count($staff['steps']) && isset($motionId)) {
         global $mainCount1, $mainCount2, $count1, $count2;
         $mainCount1 = 0;
         $mainCount2 = 0;
         $count1 = 0;
         $count2 = 0;
-        $mainCountQuery = pdoQuery('motion_view', array('category', 'meeting', 'count(*) as count'), array('attr_name' => '主办单位', 'content_int' => $staff['unit']), 'group by meeting order by meeting desc limit 2');
+        $meetingFilter=[];
+        $meetingList=[];
+        $meetingQuery=pdoQuery('meeting_tbl',null,null,' order by end_time desc limit 2');
+        foreach($meetingQuery as $row){
+            $meetingList[$row['category']][$row['meeting_id']] = $row;
+            $meetingFilter[]=$row['meeting_id'];
+        }
+        $mainCountQuery = pdoQuery('motion_view', array('category', 'meeting', 'count(*) as count'), array('meeting'=>$meetingFilter,'attr_name' => '主办单位', 'content_int' => $staff['unit']), 'group by meeting order by meeting desc limit 2');
         foreach ($mainCountQuery as $row) {
             if (1 == $row['category']) $mainCount1 = $row['count'];
             else $mainCount2 = $row['count'];
         }
-        $countQuery = pdoQuery('motion_handler_inf_view', array('count(*) as count', 'meeting', 'category'), array('unit' => $staff['unit'], 'status' => array(1, 9)), 'group by meeting order by meeting desc limit 2');
+        $countQuery = pdoQuery('motion_handler_inf_view', array('count(*) as count', 'meeting', 'category'), array('meeting'=>$meetingFilter,'unit' => $staff['unit'], 'status' => array(1, 9)), 'group by meeting order by meeting desc limit 2');
         foreach ($countQuery as $row) {
             if (1 == $row['category']) $count1 = $row['count'];
             else $count2 = $row['count'];
@@ -520,6 +527,8 @@ function ajaxMotionList($data)
     echo ajaxBack(array('list' => $sortList, 'sort' => $sort, 'totalCount' => $totalNumber, 'mainHandleCount' => $mainHandleCount, 'handleCount' => $handleCount, 'motionIdLimit' => $motionIdLimit,'displeasureList'=>$displeasureList));
 }
 
+
+
 /**
  * 删除提议案属性
  * @param $data ：包含属性ID
@@ -787,6 +796,16 @@ function editMotion($data)
 //    mylog(getArrayInf($motion));
     include '/view/edit_motion1.html.php';
     return;
+}
+
+
+/**
+ * 界面上打印办理单功能
+ * @param $data
+ */
+function ajaxPrintMotion($data){
+    $motionId=$data['id'];
+
 }
 
 /**

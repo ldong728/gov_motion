@@ -239,3 +239,822 @@
 2018.01.30.14:02:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("-1000000") group by motion_id order by zx_motion desc limit 0,20
 2018.01.30.14:02:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
 2018.01.30.14:02:32:D:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:51:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM staff_tbl WHERE staff_name="rdtemp" limit 1
+2018.01.30.16:51:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="1" order by deadline_time desc limit 1
+2018.01.30.16:51:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="1" order by category asc limit 20
+2018.01.30.16:51:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="1" order by start_time desc
+2018.01.30.16:51:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="3" limit 1
+2018.01.30.16:51:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:51:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:51:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" group by motion_id order by -content_int desc,content desc limit 0,20
+2018.01.30.16:51:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("731","732","798","735","734","780","781","749","782","733","805","786","764","821","837","804","784","836","820","803") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:51:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:51:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:51:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:51:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" group by motion_id order by -content_int desc,content desc limit 20,20
+2018.01.30.16:51:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("878","806","787","865","773","963","838","910","823","895","941","927","912","877","940","864","926","851","911","876") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:51:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:51:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:51:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:51:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" group by motion_id order by -content_int desc,content desc limit 40,20
+2018.01.30.16:51:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("939","863","925","850","888","835","849","748","909","924","862","783","937","875","892","847","745","860","935","801") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:51:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:51:35:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:51:35:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:51:35:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" group by motion_id order by -content_int desc,content desc limit 60,20
+2018.01.30.16:51:35:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("950","873","818","887","908","834","848","747","923","861","936","802","874","819","922","933","799","871","816","884") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:51:35:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:51:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="873" limit 1
+2018.01.30.16:51:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="873" limit 1
+2018.01.30.16:51:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="873" limit 1
+2018.01.30.16:51:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="873" order by value_sort desc,motion_attr asc
+2018.01.30.16:51:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="886" limit 1
+2018.01.30.16:51:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="3"
+2018.01.30.16:51:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="886" limit 1
+2018.01.30.16:54:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="834" limit 1
+2018.01.30.16:54:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="834" limit 1
+2018.01.30.16:54:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="834" limit 1
+2018.01.30.16:54:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="834" order by value_sort desc,motion_attr asc
+2018.01.30.16:54:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="836" limit 1
+2018.01.30.16:54:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="3"
+2018.01.30.16:54:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="836" limit 1
+2018.01.30.16:54:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="834" limit 1
+2018.01.30.16:54:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM attr_unique_view WHERE motion_attr="90" AND content="建议" AND meeting="3"
+2018.01.30.16:54:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int as value FROM attr_unique_view WHERE motion in("731","732","733","734","735","736","738","743","744","745","747","748","749","764","773","774","775","776","777","778","779","780","781","782","783","784","786","787","788","792","796","797","798","799","800","801","802","803","804","805","806","807","808","813","814","815","816","817","818","819","820","821","823","825","826","827","828","830","831","832","833","834","835","836","837","838","839","840","841","842","843","844","845","847","848","849","850","851","853","854","855","856","857","858","859","860","861","862","863","864","865","866","867","868","869","870","871","872","873","874","875","876","877","878","879","880","881","882","883","884","886","887","888","892","895","896","897","898","901","903","904","905","906","908","909","910","911","912","913","914","915","916","918","919","920","922","923","924","925","926","927","928","929","930","931","932","933","935","936","937","939","940","941","942","943","944","945","946","947","949","950","951","952","953","963","964","969","970","975","976","977","978","979","980","981","982","984","986","987","988","997","998","1000","1002","1003","1005","1025","1026","1060","1062","1063","1070","1074","1076","1077","1078","1079","1080","1081","1082","1083","1094","1100","1101","1117","1120","1121","1122","1123","1124","1125","1126","1127","1128","1129","1131","1132","1133") AND meeting="3"
+2018.01.30.16:54:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="834" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.16:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="834" limit 1
+2018.01.30.16:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="834" limit 1
+2018.01.30.16:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="834" limit 1
+2018.01.30.16:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="834" order by value_sort desc,motion_attr asc
+2018.01.30.16:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="836" limit 1
+2018.01.30.16:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="3"
+2018.01.30.16:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="836" limit 1
+2018.01.30.16:55:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:55:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:55:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" group by motion_id order by step desc limit 60,20
+2018.01.30.16:55:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("808","881","977","780","860","937","1128","731","837","913","1074","813","882","978","781","861","939","1129","732","838") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:55:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:55:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:55:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:55:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" group by motion_id order by step asc limit 60,20
+2018.01.30.16:55:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("881","977","780","860","937","1128","731","837","913","1074","813","882","978","781","861","939","1129","732","838","914") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:55:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:55:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:55:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:55:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" group by motion_id order by step desc limit 60,20
+2018.01.30.16:55:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("808","881","977","780","860","937","1128","731","837","913","1074","813","882","978","781","861","939","1129","732","838") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:55:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:55:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="3" limit 1
+2018.01.30.16:55:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="1"
+2018.01.30.16:55:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="1"
+2018.01.30.16:55:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="1"
+2018.01.30.16:55:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:55:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:55:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" group by motion_id order by step asc limit 60,20
+2018.01.30.16:55:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("881","977","780","860","937","1128","731","837","913","1074","813","882","978","781","861","939","1129","732","838","914") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:55:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:55:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:55:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:55:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" group by motion_id order by -content_int desc,content desc limit 60,20
+2018.01.30.16:55:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("950","873","818","887","908","834","848","747","923","861","936","802","874","819","922","933","799","871","816","884") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:55:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:55:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="873" limit 1
+2018.01.30.16:55:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="873" limit 1
+2018.01.30.16:55:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="873" limit 1
+2018.01.30.16:55:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="873" order by value_sort desc,motion_attr asc
+2018.01.30.16:55:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="886" limit 1
+2018.01.30.16:55:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="3"
+2018.01.30.16:55:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="886" limit 1
+2018.01.30.16:56:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="873" limit 1
+2018.01.30.16:56:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM attr_unique_view WHERE motion_attr="90" AND content="建议" AND meeting="3"
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int as value FROM attr_unique_view WHERE motion in("731","732","733","734","735","736","738","743","744","745","747","748","749","764","773","774","775","776","777","778","779","780","781","782","783","784","786","787","788","792","796","797","798","799","800","801","802","803","804","805","806","807","808","813","814","815","816","817","818","819","820","821","823","825","826","827","828","830","831","832","833","834","835","836","837","838","839","840","841","842","843","844","845","847","848","849","850","851","853","854","855","856","857","858","859","860","861","862","863","864","865","866","867","868","869","870","871","872","873","874","875","876","877","878","879","880","881","882","883","884","886","887","888","892","895","896","897","898","901","903","904","905","906","908","909","910","911","912","913","914","915","916","918","919","920","922","923","924","925","926","927","928","929","930","931","932","933","935","936","937","939","940","941","942","943","944","945","946","947","949","950","951","952","953","963","964","969","970","975","976","977","978","979","980","981","982","984","986","987","988","997","998","1000","1002","1003","1005","1025","1026","1060","1062","1063","1070","1074","1076","1077","1078","1079","1080","1081","1082","1083","1094","1100","1101","1117","1120","1121","1122","1123","1124","1125","1126","1127","1128","1129","1131","1132","1133") AND meeting="3"
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="873" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="873" limit 1
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="873" limit 1
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="873" limit 1
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="873" order by value_sort desc,motion_attr asc
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="886" limit 1
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="3"
+2018.01.30.16:56:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="886" limit 1
+2018.01.30.16:56:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:56:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:56:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" group by motion_id order by step desc limit 60,20
+2018.01.30.16:56:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1070","808","881","977","780","860","937","1128","731","837","913","1074","813","882","978","781","861","939","1129","732") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:56:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:56:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:56:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:56:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" group by motion_id order by step asc limit 60,20
+2018.01.30.16:56:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("881","977","780","860","937","1128","731","837","913","1074","813","882","978","781","861","939","1129","732","838","914") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:56:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:56:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:56:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:56:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" group by motion_id order by -content_int desc,content desc limit 60,20
+2018.01.30.16:56:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("950","873","818","887","908","834","848","747","923","861","936","802","874","819","922","933","799","871","816","884") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:56:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:56:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:56:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:56:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" group by motion_id order by -content_int desc,content desc limit 0,20
+2018.01.30.16:56:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("731","732","798","735","734","780","781","749","782","733","805","786","764","821","837","804","784","836","820","803") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:56:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:56:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.16:56:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.16:56:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" group by motion_id order by step desc limit 0,20
+2018.01.30.16:56:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("834","873","802","875","963","774","854","930","1122","831","906","1025","803","876","964","775","855","931","1123","832") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.16:56:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.16:56:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="873" limit 1
+2018.01.30.16:56:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="873" limit 1
+2018.01.30.16:56:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="873" limit 1
+2018.01.30.16:56:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="873" order by value_sort desc,motion_attr asc
+2018.01.30.16:56:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="886" limit 1
+2018.01.30.16:56:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="3"
+2018.01.30.16:56:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="886" limit 1
+2018.01.30.17:11:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM staff_tbl WHERE staff_name="zxtemp" limit 1
+2018.01.30.17:11:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="2" order by deadline_time desc limit 1
+2018.01.30.17:11:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="2" order by category asc limit 20
+2018.01.30.17:11:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="2" order by start_time desc
+2018.01.30.17:12:01:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.17:12:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.17:12:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.17:12:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.17:12:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.17:12:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.17:12:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.17:12:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.17:12:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.17:12:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.17:12:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.17:12:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.17:12:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.17:12:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.17:12:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.17:12:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.17:12:22:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.17:12:22:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1095" limit 1
+2018.01.30.17:12:22:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.17:12:22:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.17:12:22:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.17:12:22:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:12:22:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1095" limit 1
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="1095" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1095" limit 1
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:12:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1095" limit 1
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="1095" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1095" limit 1
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:12:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.17:13:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.17:13:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id FROM duty_view where user_name like "%逍%林%" and activity=1
+2018.01.30.17:13:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("803","1557") AND meeting="4"
+2018.01.30.17:13:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.17:13:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.17:13:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.17:13:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1023" limit 1
+2018.01.30.17:13:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1023" limit 1
+2018.01.30.17:13:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1023" limit 1
+2018.01.30.17:13:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1023" order by value_sort desc,motion_attr asc
+2018.01.30.17:13:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1557" limit 1
+2018.01.30.17:13:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:13:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1557" limit 1
+2018.01.30.17:13:17:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE meeting="4" AND activity="1" and activity=1
+2018.01.30.17:13:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM attr_tbl WHERE attr_id="38857" limit 1
+2018.01.30.17:13:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1557" limit 1
+2018.01.30.17:13:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1023" limit 1
+2018.01.30.17:13:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="1023" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.17:13:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.17:13:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id FROM duty_view where user_name like "%逍%林%" and activity=1
+2018.01.30.17:13:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE attr_name="提案人" AND content_int in("803","1557") AND meeting="4"
+2018.01.30.17:13:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.17:13:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.17:13:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.17:13:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1023" limit 1
+2018.01.30.17:13:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1023" limit 1
+2018.01.30.17:13:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1023" limit 1
+2018.01.30.17:13:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1023" order by value_sort desc,motion_attr asc
+2018.01.30.17:13:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1557" limit 1
+2018.01.30.17:13:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:13:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1557" limit 1
+2018.01.30.17:13:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.17:13:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.17:13:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.17:13:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.17:14:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.17:14:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.17:14:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.17:14:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.17:14:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.17:14:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.17:14:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.17:14:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1095" limit 1
+2018.01.30.17:14:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.17:14:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.17:14:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.17:14:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:14:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.17:14:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.17:14:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.17:14:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.17:14:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.17:14:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.17:14:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:14:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.17:14:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE meeting="4" AND activity="1" and activity=1
+2018.01.30.17:14:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM attr_tbl WHERE attr_id="39481" limit 1
+2018.01.30.17:14:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.17:14:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.17:14:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.17:14:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.17:14:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.17:14:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.17:14:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:14:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.17:14:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE meeting="4" AND activity="1" and activity=1
+2018.01.30.17:14:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM attr_tbl WHERE attr_id="39481" limit 1
+2018.01.30.17:14:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.17:14:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1092" limit 1
+2018.01.30.17:14:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="1092" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.17:14:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.17:14:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.17:14:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.17:14:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.17:14:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.17:14:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.17:14:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.17:14:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.17:14:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.17:14:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.17:14:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.17:14:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.17:14:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.18:10:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.18:10:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1095" limit 1
+2018.01.30.18:10:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.18:10:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.18:10:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.18:10:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:10:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.18:10:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1095" limit 1
+2018.01.30.18:10:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM staff_admin_view where steps like "%4%"
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1095" limit 1
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int as value FROM attr_unique_view WHERE motion_attr="26" AND meeting="4"
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content FROM attr_view WHERE motion="1095" AND attr_name="审核2" limit 1
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:10:46:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:11:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.18:11:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.18:11:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.18:11:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.18:11:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.18:11:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:11:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.18:11:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:11:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM staff_tbl WHERE staff_name="dcstemp" limit 1
+2018.01.30.18:11:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="3" order by deadline_time desc limit 1
+2018.01.30.18:11:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id,motion_name,step_name,category,content_int FROM motion_view WHERE category="1" AND step="4" AND attr_name="交办单位" and(content_int=6726 or content_int is null or content_int=5103 )  limit 10
+2018.01.30.18:11:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id,motion_name,step_name,category,content_int FROM motion_view WHERE category="2" AND step="4" AND attr_name="交办单位" and(content_int=6726 or content_int is null or content_int=5103 )  limit 10
+2018.01.30.18:11:31:C:\xampp\htdocs\gov_motion\functions.php107:limit > 0
+2018.01.30.18:11:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE motion_id in("1095") AND step in("4") order by category asc limit 20
+2018.01.30.18:11:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by start_time desc
+2018.01.30.18:11:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.18:11:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.18:11:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6726" AND attr_name="交办单位" limit 1
+2018.01.30.18:11:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.18:11:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.18:11:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:11:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.18:11:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1095" limit 1
+2018.01.30.18:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM unit_tbl where steps like "%5%"
+2018.01.30.18:12:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1095" limit 1
+2018.01.30.18:12:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM attr_view WHERE motion="1095" AND attr_name="协办单位"
+2018.01.30.18:12:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id,motion_name,step_name,category,content_int FROM motion_view WHERE category="1" AND step="4" AND attr_name="交办单位" and(content_int=6726 or content_int is null or content_int=5103 )  limit 10
+2018.01.30.18:12:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id,motion_name,step_name,category,content_int FROM motion_view WHERE category="2" AND step="4" AND attr_name="交办单位" and(content_int=6726 or content_int is null or content_int=5103 )  limit 10
+2018.01.30.18:12:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by start_time desc
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM staff_tbl WHERE staff_name="jyjtemp" limit 1
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="3" order by deadline_time desc limit 1
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("5") order by category asc limit 20
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by start_time desc
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT category,meeting,count(*) as count FROM motion_view WHERE attr_name="主办单位" AND content_int="43" group by meeting order by meeting desc limit 2
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count,meeting,category FROM motion_handler_inf_view WHERE unit="43" AND status in("1","9") group by meeting order by meeting desc limit 2
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE step="5" AND attr_name="主办单位" AND content_int="43" order by upload_time asc limit 10
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM motion_handler_inf_view WHERE step="5" AND status="1" AND unit="43" limit 10
+2018.01.30.18:12:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE motion_id in("1095")
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6733" AND attr_name="交办单位" limit 1
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="43" AND attr_name="主办单位" limit 1
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_handler_id FROM motion_handler_tbl WHERE motion="1095" AND status in("1","3") limit 1
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:12:43:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.18:13:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT attr_name,content_int FROM motion_view WHERE motion_id="1095" AND target="duty" limit 10
+2018.01.30.18:13:20:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id in("1541") limit 1
+2018.01.30.18:28:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM staff_tbl WHERE staff_name="zxtemp" limit 1
+2018.01.30.18:28:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="2" order by deadline_time desc limit 1
+2018.01.30.18:28:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="2" order by category asc limit 20
+2018.01.30.18:28:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="2" order by start_time desc
+2018.01.30.18:28:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.18:28:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:28:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:28:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:28:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:28:13:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:28:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1115" limit 1
+2018.01.30.18:28:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1115" limit 1
+2018.01.30.18:28:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1115" limit 1
+2018.01.30.18:28:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1115" order by value_sort desc,motion_attr asc
+2018.01.30.18:28:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1436" limit 1
+2018.01.30.18:28:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:28:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1436" limit 1
+2018.01.30.18:28:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1116" limit 1
+2018.01.30.18:28:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1116" limit 1
+2018.01.30.18:28:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1116" limit 1
+2018.01.30.18:28:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1116" order by value_sort desc,motion_attr asc
+2018.01.30.18:28:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1303" limit 1
+2018.01.30.18:28:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:28:19:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1303" limit 1
+2018.01.30.18:28:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.18:28:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.18:28:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.18:28:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.18:28:29:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:28:29:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:28:29:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.18:28:29:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:28:29:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:28:29:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:28:29:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:28:29:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:28:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.18:28:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.18:28:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.18:28:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.18:28:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.18:28:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:28:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:29:31:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.18:40:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:40:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:40:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:40:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:40:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:40:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1113" limit 1
+2018.01.30.18:40:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1113" limit 1
+2018.01.30.18:40:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1113" limit 1
+2018.01.30.18:40:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1113" order by value_sort desc,motion_attr asc
+2018.01.30.18:40:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1518" limit 1
+2018.01.30.18:40:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:40:03:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1518" limit 1
+2018.01.30.18:40:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE meeting="4" AND activity="1" and activity=1
+2018.01.30.18:40:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM attr_tbl WHERE attr_id="39626" limit 1
+2018.01.30.18:40:34:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1518" limit 1
+2018.01.30.18:47:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.18:47:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.18:47:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.18:47:33:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.18:47:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:47:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:47:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.18:47:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:47:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:47:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:47:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:47:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:47:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.18:47:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.18:47:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.18:47:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.18:47:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.18:47:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:47:42:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.18:47:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1023" limit 1
+2018.01.30.18:47:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1023" limit 1
+2018.01.30.18:47:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1023" limit 1
+2018.01.30.18:47:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1023" order by value_sort desc,motion_attr asc
+2018.01.30.18:47:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1557" limit 1
+2018.01.30.18:47:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:47:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1557" limit 1
+2018.01.30.18:48:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1023" limit 1
+2018.01.30.18:48:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="1023" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.18:48:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1023" limit 1
+2018.01.30.18:48:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1023" limit 1
+2018.01.30.18:48:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1023" limit 1
+2018.01.30.18:48:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1023" order by value_sort desc,motion_attr asc
+2018.01.30.18:48:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1557" limit 1
+2018.01.30.18:48:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:48:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1557" limit 1
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1023" limit 1
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="1023" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1023" limit 1
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1023" limit 1
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1023" limit 1
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1023" order by value_sort desc,motion_attr asc
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1557" limit 1
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:48:23:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1557" limit 1
+2018.01.30.18:50:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:50:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:50:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:50:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:50:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:50:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1113" limit 1
+2018.01.30.18:50:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1113" limit 1
+2018.01.30.18:50:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1113" limit 1
+2018.01.30.18:50:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1113" order by value_sort desc,motion_attr asc
+2018.01.30.18:50:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1518" limit 1
+2018.01.30.18:50:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:50:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1518" limit 1
+2018.01.30.18:52:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.18:52:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.18:52:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.18:52:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.18:52:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:52:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:52:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.18:52:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:52:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:52:52:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:52:53:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:52:53:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:53:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.18:54:00:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.18:54:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:54:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:54:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:54:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:54:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:54:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.18:54:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.18:54:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.18:54:04:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.18:54:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:54:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:54:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.18:54:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:54:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:54:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:54:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:54:09:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:54:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.18:54:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.18:54:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.18:54:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.18:54:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.18:54:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:54:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.18:54:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:54:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:54:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.18:54:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.18:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:54:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.18:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.18:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.18:54:27:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.18:54:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.18:54:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.18:54:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.18:54:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.18:54:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.18:54:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:54:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:54:30:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.18:54:32:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.19:29:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.19:29:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.19:29:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.19:29:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.19:29:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.19:29:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:29:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.19:29:16:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.19:29:55:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.19:29:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.19:29:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.19:29:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.19:29:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.19:29:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.19:29:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1119" limit 1
+2018.01.30.19:29:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1119" limit 1
+2018.01.30.19:29:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1119" limit 1
+2018.01.30.19:29:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1119" order by value_sort desc,motion_attr asc
+2018.01.30.19:29:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1380" limit 1
+2018.01.30.19:29:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:29:59:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1380" limit 1
+2018.01.30.19:30:38:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.19:30:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.19:30:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.19:30:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.19:30:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.19:30:40:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.19:30:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1115" limit 1
+2018.01.30.19:30:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1115" limit 1
+2018.01.30.19:30:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1115" limit 1
+2018.01.30.19:30:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1115" order by value_sort desc,motion_attr asc
+2018.01.30.19:30:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1436" limit 1
+2018.01.30.19:30:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:30:41:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1436" limit 1
+2018.01.30.19:30:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.19:30:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.19:30:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.19:30:48:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.19:30:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.19:30:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.19:30:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.19:30:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.19:30:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.19:30:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.19:30:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.19:30:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.19:30:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.19:30:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.19:30:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.19:30:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.19:30:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.19:30:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:30:58:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.19:31:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.19:32:06:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE meeting="4" AND activity="1" and activity=1
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.19:32:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.19:32:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.19:32:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.19:32:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.19:32:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.19:32:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.19:32:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:32:54:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:32:56:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE meeting="4" AND activity="1" and activity=1
+2018.01.30.19:33:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM attr_tbl WHERE attr_id="39481" limit 1
+2018.01.30.19:33:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_tbl WHERE motion_id="1092" limit 1
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content,content_int FROM attr_view WHERE motion="1092" AND attr_name in("案由","领衔人","提案人") order by attr_name asc
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:33:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:33:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT attr_name,content_int FROM motion_view WHERE motion_id="1092" AND target="duty" limit 10
+2018.01.30.19:33:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id in("1547","1273") limit 2
+2018.01.30.19:34:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.19:34:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.19:34:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.19:34:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.19:34:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1130","1119","1116","1115","1114","1113","1112","1111","1110","1109","1108","1107","1106","1105","1104","1103","1102","1099","1098","1097") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.19:34:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.19:34:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_name FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.19:34:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_attr_view WHERE motion_template="2"
+2018.01.30.19:34:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_group_id,user_group_name FROM user_group_tbl WHERE category="2"
+2018.01.30.19:34:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT user_unit_id,user_unit_name FROM user_unit_tbl WHERE category="2"
+2018.01.30.19:34:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.19:34:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_tbl WHERE meeting="4" and step>0
+2018.01.30.19:34:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM attr_tbl WHERE motion_attr="25" AND motion in("706","707","708","710","712","713","714","715","717","718","719","720","721","722","723","724","725","726","727","728","730","741","742","751","753","754","756","757","758","759","762","767","768","770","772","812","822","889","890","938","958","959","960","961","971","972","974","983","989","990","991","992","993","995","996","999","1004","1006","1007","1008","1009","1010","1011","1012","1013","1014","1015","1016","1017","1018","1019","1020","1021","1022","1023","1024","1027","1028","1029","1030","1031","1032","1033","1034","1035","1038","1039","1040","1041","1042","1043","1044","1045","1046","1048","1049","1050","1051","1052","1053","1054","1055","1056","1057","1058","1059","1061","1064","1065","1066","1067","1068","1069","1072","1075","1084","1085","1086","1088","1089","1090","1091","1092","1093","1095","1096","1097","1098","1099","1102","1103","1104","1105","1106","1107","1108","1109","1110","1111","1112","1113","1114","1115","1116","1119","1130") AND content="党派团体"
+2018.01.30.19:34:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND motion_id in("1023","1092","1095") group by motion_id order by zx_motion desc limit 0,20
+2018.01.30.19:34:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095","1092","1023") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.19:34:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.19:34:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.19:34:18:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.19:34:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.19:34:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.19:34:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.19:34:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.19:34:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.19:34:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:34:21:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:34:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1023" limit 1
+2018.01.30.19:34:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1023" limit 1
+2018.01.30.19:34:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1023" limit 1
+2018.01.30.19:34:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1023" order by value_sort desc,motion_attr asc
+2018.01.30.19:34:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1557" limit 1
+2018.01.30.19:34:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:34:28:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1557" limit 1
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.19:41:25:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.19:42:24:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6725" AND attr_name="交办单位" limit 1
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.19:43:47:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.19:43:51:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE meeting="4" AND activity="1" and activity=1
+2018.01.30.19:44:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1023" limit 1
+2018.01.30.19:44:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1023" limit 1
+2018.01.30.19:44:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1023" limit 1
+2018.01.30.19:44:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1023" order by value_sort desc,motion_attr asc
+2018.01.30.19:44:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1557" limit 1
+2018.01.30.19:44:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:44:02:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1557" limit 1
+2018.01.30.19:44:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.19:44:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.19:44:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.19:44:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.19:44:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.19:44:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:44:05:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:44:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE meeting="4" AND activity="1" and activity=1
+2018.01.30.19:44:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM attr_tbl WHERE attr_id="39481" limit 1
+2018.01.30.19:44:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:44:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.19:44:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.19:44:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.19:44:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.19:44:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1547" limit 1
+2018.01.30.19:44:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:44:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1547" limit 1
+2018.01.30.19:44:46:C:\xampp\htdocs\gov_motion\functions.php537:{id: 39481}
+2018.01.30.19:44:55:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1092" limit 1
+2018.01.30.19:44:55:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="1092" limit 1
+2018.01.30.19:44:55:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1092" limit 1
+2018.01.30.19:44:55:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1092" order by value_sort desc,motion_attr asc
+2018.01.30.19:44:55:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id in("-1000000") limit 1
+2018.01.30.19:44:55:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1273" limit 1
+2018.01.30.19:44:55:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.19:47:07:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM staff_tbl WHERE staff_name="rdtemp" limit 1
+2018.01.30.19:47:07:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="1" order by deadline_time desc limit 1
+2018.01.30.19:47:07:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("1","2","3") AND category="1" order by category asc limit 20
+2018.01.30.19:47:07:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="1" order by start_time desc
+2018.01.30.19:47:11:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="3" limit 1
+2018.01.30.19:47:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.19:47:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count FROM motion_tbl WHERE meeting="3" and step>0
+2018.01.30.19:47:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" group by motion_id order by -content_int desc,content desc limit 0,20
+2018.01.30.19:47:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("731","732","798","735","734","780","781","749","782","733","805","786","764","821","837","804","784","836","820","803") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.19:47:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.19:47:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="732" limit 1
+2018.01.30.19:47:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM lock_tbl WHERE motion="732" limit 1
+2018.01.30.19:47:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="732" limit 1
+2018.01.30.19:47:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="732" order by value_sort desc,motion_attr asc
+2018.01.30.19:47:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="919" limit 1
+2018.01.30.19:47:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="3"
+2018.01.30.19:47:14:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="919" limit 1
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM staff_tbl WHERE staff_name="jyjtemp" limit 1
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE category="3" order by deadline_time desc limit 1
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("5") order by category asc limit 20
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by start_time desc
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT meeting_id FROM meeting_tbl order by end_time desc limit 2
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT category,meeting,count(*) as count FROM motion_view WHERE meeting in("3","4") AND attr_name="主办单位" AND content_int="43" group by meeting order by meeting desc limit 2
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count,meeting,category FROM motion_handler_inf_view WHERE meeting in("3","4") AND unit="43" AND status in("1","9") group by meeting order by meeting desc limit 2
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE step="5" AND attr_name="主办单位" AND content_int="43" order by upload_time asc limit 10
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM motion_handler_inf_view WHERE step="5" AND status="1" AND unit="43" limit 10
+2018.01.30.20:11:37:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE motion_id in("1095")
+2018.01.30.20:11:49:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="3" limit 1
+2018.01.30.20:11:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="3"
+2018.01.30.20:11:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id,step FROM attr_view WHERE meeting="3" AND attr_name="主办单位" AND content_int="43"
+2018.01.30.20:11:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id,status,step FROM motion_handler_inf_view WHERE meeting="3" AND unit="43" AND status in("1","3","9")
+2018.01.30.20:11:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="3" AND attr_name="案号" AND motion_id in("-1000000") group by motion_id order by -content_int desc,content desc limit 0,20
+2018.01.30.20:11:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("-1000000") AND attr_name in("案号","领衔人","案别","案由","性质类别1","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.20:11:50:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.20:15:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("5") order by category asc limit 20
+2018.01.30.20:15:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by start_time desc
+2018.01.30.20:15:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by end_time desc limit 2
+2018.01.30.20:15:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT category,meeting,count(*) as count FROM motion_view WHERE meeting in("3","4") AND attr_name="主办单位" AND content_int="43" group by meeting order by meeting desc limit 2
+2018.01.30.20:15:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count,meeting,category FROM motion_handler_inf_view WHERE meeting in("3","4") AND unit="43" AND status in("1","9") group by meeting order by meeting desc limit 2
+2018.01.30.20:15:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE step="5" AND attr_name="主办单位" AND content_int="43" order by upload_time asc limit 10
+2018.01.30.20:15:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM motion_handler_inf_view WHERE step="5" AND status="1" AND unit="43" limit 10
+2018.01.30.20:15:36:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE motion_id in("1095")
+2018.01.30.20:15:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("5") order by category asc limit 20
+2018.01.30.20:15:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by start_time desc
+2018.01.30.20:15:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by end_time desc limit 2
+2018.01.30.20:15:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT category,meeting,count(*) as count FROM motion_view WHERE meeting in("3","4") AND attr_name="主办单位" AND content_int="43" group by meeting order by meeting desc limit 2
+2018.01.30.20:15:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count,meeting,category FROM motion_handler_inf_view WHERE meeting in("3","4") AND unit="43" AND status in("1","9") group by meeting order by meeting desc limit 2
+2018.01.30.20:15:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE step="5" AND attr_name="主办单位" AND content_int="43" order by upload_time asc limit 10
+2018.01.30.20:15:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM motion_handler_inf_view WHERE step="5" AND status="1" AND unit="43" limit 10
+2018.01.30.20:15:39:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE motion_id in("1095")
+2018.01.30.20:16:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("5") order by category asc limit 20
+2018.01.30.20:16:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by start_time desc
+2018.01.30.20:16:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by end_time desc limit 2
+2018.01.30.20:16:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT category,meeting,count(*) as count FROM motion_view WHERE meeting in("3","4") AND attr_name="主办单位" AND content_int="43" group by meeting order by meeting desc limit 2
+2018.01.30.20:16:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count,meeting,category FROM motion_handler_inf_view WHERE meeting in("3","4") AND unit="43" AND status in("1","9") group by meeting order by meeting desc limit 2
+2018.01.30.20:16:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE step="5" AND attr_name="主办单位" AND content_int="43" order by upload_time asc limit 10
+2018.01.30.20:16:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM motion_handler_inf_view WHERE step="5" AND status="1" AND unit="43" limit 10
+2018.01.30.20:16:15:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE motion_id in("1095")
+2018.01.30.20:16:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE step in("5") order by category asc limit 20
+2018.01.30.20:16:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by start_time desc
+2018.01.30.20:16:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl order by end_time desc limit 2
+2018.01.30.20:16:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT category,meeting,count(*) as count FROM motion_view WHERE meeting in("3","4") AND attr_name="主办单位" AND content_int="43" group by meeting order by meeting desc limit 2
+2018.01.30.20:16:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT count(*) as count,meeting,category FROM motion_handler_inf_view WHERE meeting in("3","4") AND unit="43" AND status in("1","9") group by meeting order by meeting desc limit 2
+2018.01.30.20:16:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE step="5" AND attr_name="主办单位" AND content_int="43" order by upload_time asc limit 10
+2018.01.30.20:16:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM motion_handler_inf_view WHERE step="5" AND status="1" AND unit="43" limit 10
+2018.01.30.20:16:57:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_for_index_view WHERE motion_id in("1095")
+2018.01.30.20:17:08:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM meeting_tbl WHERE meeting_id="4" limit 1
+2018.01.30.20:17:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id,user_name,user_unit_name,user_unit,user_group,user_group_name FROM duty_view WHERE meeting="4"
+2018.01.30.20:17:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id,step FROM attr_view WHERE meeting="4" AND attr_name="主办单位" AND content_int="43"
+2018.01.30.20:17:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id,status,step FROM motion_handler_inf_view WHERE meeting="4" AND unit="43" AND status in("1","3","9")
+2018.01.30.20:17:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_id FROM motion_view WHERE meeting="4" AND attr_name="案号" AND motion_id in("1095") group by motion_id order by -content_int desc,content desc limit 0,20
+2018.01.30.20:17:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id in("1095") AND attr_name in("登记号","案号","提案人","案由","性质类别2","原文","类别标记","当前环节","交办单位","主办单位","协办单位")
+2018.01.30.20:17:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.20:17:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.20:17:10:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion as motion_id FROM displeasure_attr_tbl where date_add(update_time,INTERVAL 12 month)>now() group by motion
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_inf_view WHERE motion_id="1095" limit 1
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion FROM displeasure_attr_tbl WHERE motion="1095" limit 1
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="6733" AND attr_name="交办单位" limit 1
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT content_int FROM motion_view WHERE motion_id="1095" AND content_int="43" AND attr_name="主办单位" limit 1
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT motion_handler_id FROM motion_handler_tbl WHERE motion="1095" AND status in("1","3") limit 1
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_view WHERE motion_id="1095" order by value_sort desc,motion_attr asc
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name,meeting FROM duty_view WHERE activity="1" AND duty_id="1541" limit 1
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT duty_id as id,user_name as name FROM duty_view WHERE activity="1" AND meeting="4"
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id="1541" limit 1
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT unit_id as id,unit_name as name FROM unit_tbl
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT staff_id as id,full_name as name FROM staff_tbl WHERE staff_id="6726" limit 1
+2018.01.30.20:17:12:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM motion_handler_view WHERE motion="1095" AND status in("1","3","9")
+2018.01.30.20:17:26:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT attr_name,content_int FROM motion_view WHERE motion_id="1095" AND target="duty" limit 10
+2018.01.30.20:17:26:C:\xampp\htdocs\gov_motion\includes\db.inc.php162:query:SELECT *  FROM duty_view WHERE duty_id in("1541") limit 1
