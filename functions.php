@@ -801,11 +801,101 @@ function editMotion($data)
 
 /**
  * 界面上打印办理单功能
+ * 未完成
  * @param $data
  */
-function ajaxPrintMotion($data){
-    $motionId=$data['id'];
+function ajaxPrintMotion($data)
+{
+    $id = $_SESSION['staffLogin']['currentMotion'];
+    $canMainHandler = false;
+    $attrFilter = array('motion_id' => $id);
+    $meetingInf = pdoQuery('motion_inf_view', null, array('motion_id' => $id), ' limit 1')->fetch();
+    //处理主办单位是否可办理的情况
+    $motionQuery = pdoQuery('motion_view', null, $attrFilter, ' order by value_sort desc,motion_attr asc');
+    $unitGroupInf = null;
+    unset($_SESSION['staffLogin']['passUnique']);//$_SESSION['staffLogin']['passUnique']用来记录当前motion已有的案号,更新motion其他属性时用来通过案号唯一性验证
+    foreach ($motionQuery as $row) {
+        if ('案号' == $row['attr_name'] && $row['content_int'] > 0) $_SESSION['staffLogin']['passUnique'] = $row['content_int'];//获取案号
+        $values = $row;
+        $optionArray = json_decode($row['option'], true);
+        $values['edit'] = false;
+        //将attr数据转化为可为用户观看的内容
+        $values['content'] = setAttrValue($row);
+        if (1 == $values['multiple']) {
+            if (isset($motion[$row['attr_name']])) {
+                if ($row['attachment']) {
+                    $motion[$row['attr_name']]['content'][] = array('content' => $values['content'], 'attachment' => $values['attachment']);
+                } else {
+                    $tContent = $motion[$row['attr_name']]['content'] . ',' . $values['content'];
+                    $tContent = trim($tContent, ',');
+                    $motion[$row['attr_name']]['content'] = $tContent;
+                }
+            } else {
+                if ($row['attachment']) {
+                    $motion[$row['attr_name']] = $values;
+                    $motion[$row['attr_name']]['content'] = array();
+                    $motion[$row['attr_name']]['content'][] = array('content' => $values['content'], 'attachment' => $values['attachment']);
+                } else {
+                    $motion[$row['attr_name']] = $values;
+                }
+            }
 
+
+        } else {
+            $motion[$row['attr_name']] = $values;
+        }
+
+        //获取领衔人信息
+        if ('领衔人' == $row['attr_name'] || '提案人' == $row['attr_name']) {
+            $query = pdoQuery('duty_view', null, array('duty_id' => $row['content_int']), 'limit 1')->fetch();
+            $unitGroupInf = array('unit' => $query['user_unit_name'], 'group' => $query['user_group_name']);
+        }
+    }
+    $currentStep = current($motion)['step'];
+    switch ($currentStep) {
+        case 1:
+
+            break;
+        case 2:
+
+            break;
+        case 3:
+
+            break;
+
+        case 4:
+
+            break;
+        default:
+            $unit = $_SESSION['staffLogin']['unit'];
+            $handlerQuery = pdoQuery('motion_handler_view', null, array('motion' => $id, 'status' => array('1', '3', '9')), null);
+            $handlerDisplay = array();
+            $handlerEdit = array();
+            foreach ($handlerQuery as $row) {
+                if ($row['unit'] == $unit && 1 == $row['status'] && in_array(5, $_SESSION['staffLogin']['steps'])) {
+                    $handlerEdit = $row;
+                } else {
+                    $handlerDisplay[] = $row;
+                }
+            }
+            break;
+    }
+    mylog(getArrayInf($motion));
+    include '/view/print_template/print_motion.html.php';
+    return;
+
+}
+
+function ajaxPrintMotionDetail(){
+    $id = $_SESSION['staffLogin']['currentMotion'];
+    $motionQuery=pdoQuery('motion_view',['attr_name','content_int','content'],['motion_id'=>$id],null);
+    $motion=[];
+    foreach ($motionQuery as $row) {
+        $motion[$row['attr_name']]=$row['content']?$row['content']:$row['content_int'];
+    }
+    $userInf=pdoQuery('duty_view',null,['duty_id'=>$motion['提案人']],'limit 1')->fetch();
+    include '/view/print_template/print_motion_detail2.html.php';
+    return;
 }
 
 /**

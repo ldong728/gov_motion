@@ -1,0 +1,91 @@
+@page
+{
+    size: auto;   /* auto is the initial value */
+    margin: 0mm 10mm 0mm 10mm;  /* this affects the margin in the printer settings 最关键的还是这个*/
+}
+body
+{
+    font-family: """黑体", Arial, sans-serif;
+    background-color:#FFFFFF;
+    margin: 0mm;  /* this affects the margin on the content before sending to printer */
+}
+
+.main-container{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+
+}
+.pre-title{
+    letter-spacing: 5px;
+    font-size: 15px;
+    margin-top: 10px;
+}
+.time-block{
+    text-align: right;
+}
+.index-number{
+    float: right;
+}
+.main-title{
+    text-align: center;
+    margin-top: 30px;
+    align-content: center;
+    font-family: "宋体";
+    font-size: 25px;
+}
+.main-title .title-content{
+    margin-top: 6px;
+    /*margin:auto;*/
+}
+.static-title{
+    margin-top: 30px;
+    font-family: "宋体";
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+    letter-spacing: 40px;
+    margin-bottom: 40px;
+}
+.motion-name{
+    /*margin-top: 40px;*/
+    font-size: 18px;
+    line-height: 24px;
+    width: 100%;
+    min-height: 30px;
+    font-weight: 600;
+    /*border-bottom: dotted 1px;*/
+    padding-bottom: 3px;
+    margin-bottom: 10px;
+}
+
+.motion-name .motion-name-title{
+    float: left;
+    width: 19%;
+}
+.motion-name .motion-name-content{
+    float:left;
+    width: 80%;
+}
+.content-table{
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    border-top: solid 3px;
+    border-left: none;
+    border-right: 0;
+}
+.content-table td{
+    text-align: center;
+}
+.content-table .table-title{
+    text-align: center;
+    padding: 5px;
+    height: 40px;
+}
+
+.tips-container{
+    font-size: 15px;
+    margin-top: 30px;
+}
+

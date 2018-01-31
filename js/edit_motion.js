@@ -507,11 +507,25 @@
         }
     });
     $(document).on('click','.print-motion',function(){
+        //ajaxPost('ajaxPrintMotion',{},function(back){
+        //    console.log(back);
+        //    $(back).jqprint({debug: false,importCSS:true});
+        //});
        $('.table-list').jqprint({debug: true,importCSS:true});
        // $('.table-list').msoPrintArea();
     });
     $(document).on('click','.print-motion-detail',function(){
-       alert('功能暂未开放，请点击全文对应链接，下载全文后打印');
+        var file=$(this).data('file');
+        ajaxPost('ajaxPrintMotionDetail',{},function(back){
+            var data=jQuery.parseHTML(back,document);
+            $(data).jqprint({debug: false,importCSS:true});
+            ajaxPost('ajaxCheckFiles',{file:file},function(back){
+                location.href=file;
+            });
+        });
+
+
+       //alert('功能暂未开放，请点击全文对应链接，下载全文后打印');
     });
     $(document).on('click','.displeasure-motion',function(){
         ajaxPost('getDispleasureMotion',{},function(data){
