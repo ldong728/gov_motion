@@ -18,6 +18,7 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
             $fileName=md5_file($_FILES[$k]['tmp_name']);
             $uploader->upFile($fileName);
             $inf=$uploader->getFileInfo();
+            mylog(getArrayInf($inf));
             if('SUCCESS'==$inf['state']){
 //                    uploadFileByCurl('')
                     $value=array('motion'=>$_SESSION['staffLogin']['currentMotion'],'motion_attr'=>$_GET['ma'],'attr_template'=>$_GET['at'],'content'=>addslashes($inf['originalName']),'attachment'=>addslashes($inf['url']),'staff'=>$_SESSION['staffLogin']['staffId']);

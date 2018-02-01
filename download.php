@@ -562,6 +562,27 @@ function motion_menu(){
     exit;
 
 }
+function getCover(){
+    $id = $_SESSION['staffLogin']['currentMotion'];
+    if($id){
+        $motionQuery=pdoQuery('motion_view',['motion_attr','content_int','content'],['motion_id'=>$id],null);
+        $motion=[];
+        foreach ($motionQuery as $row) {
+            $motion[$row['motion_attr']]=$row['content']?$row['content']:$row['content_int'];
+        }
+        $userInf=pdoQuery('duty_view',null,['duty_id'=>$motion[84]],'limit 1')->fetch();
+
+        header("Content-Type:text/html; charset=gb2312");
+        header("Content-Type: application/doc");
+        header("Content-Disposition: attachment; filename=menu.doc");
+
+        include "/view/download_template/cover.mht";
+        exit;
+    }
+    echo 'error';
+    exit;
+
+}
 
 
 
