@@ -244,7 +244,7 @@ function reflashList(sOrderby, sPage, sOrder) {
             $.each(fields,function(name,field){
                 switch(field){
                     case '原文':
-                        $('#tr'+v).append('<td><a href="' + (c[v][field] || '#') + '">附件</a></td>');
+                        $('#tr'+v).append('<td><a href="?download=getFile&id='+v+'&field=' + (c[v][field] || '#') + '">附件</a></td>');
                         break;
                     case '案由':
                         $('#tr'+v).append('<td class="motion-select" id="' + v + '"><a href="#">' + c[v]['案由'] + '</a></td>');

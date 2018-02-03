@@ -15,11 +15,16 @@
     .main-sub{
         text-align: center;
     }
+
+
     td {
         text-align: center;
         font-size: 12pt;
         font-family: "¿¬Ìå";
         height: 16pt;
+    }
+    .content-td{
+        padding-left: 20px;
     }
 
 </style>
@@ -41,7 +46,7 @@
     <tr>
                 <td><?= iconv('utf-8', 'gb2312//IGNORE', $motions[34])?></td>
                 <td><?= iconv('utf-8', 'gb2312//IGNORE', $motions[6])?></td>
-                <td><?= iconv('utf-8', 'gb2312//IGNORE', $motions[61])?></td>
+                <td  class="content-td"><?= iconv('utf-8', 'gb2312//IGNORE', $motions[61])?></td>
     </tr>
             <?php endforeach ?>
     <?php endforeach ?>

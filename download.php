@@ -583,6 +583,44 @@ function getCover(){
     exit;
 
 }
+function getCover1(){
+    $id = $_SESSION['staffLogin']['currentMotion'];
+    if($id){
+        $motionQuery=pdoQuery('motion_view',['motion_attr','content_int','content'],['motion_id'=>$id],null);
+        $motion=[];
+        foreach ($motionQuery as $row) {
+            $motion[$row['motion_attr']]=$row['content']?$row['content']:$row['content_int'];
+        }
+        $userInf=pdoQuery('duty_view',null,['duty_id'=>$motion[84]],'limit 1')->fetch();
+
+        header("Content-Type:text/html; charset=gb2312");
+        header("Content-Type: application/doc");
+        header("Content-Disposition: attachment; filename=menu.doc");
+
+        include "/view/download_template/cover1.xml";
+        exit;
+    }
+    echo 'error';
+    exit;
+
+}
+
+
+function getFile(){
+
+//    mylog($_GET['field']);
+//    mylog($_GET['id']);
+    $id=$_GET['id'];
+    $path=$_GET['field'];
+    $file=pdoQuery('attr_tbl',null,['motion'=>$id,'attachment'=>$path],'limit 1')->fetch();
+    $name=$file['content'];
+    header("Content-Type:text/html; charset=gb2312");
+    header("Content-Type: application/doc");
+    header("Content-Disposition: attachment; filename=".iconv("utf-8","gb2312",$name));
+
+    include $path;
+    exit;
+}
 
 
 

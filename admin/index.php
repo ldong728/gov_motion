@@ -174,6 +174,9 @@ function step_manage(){
     $meeting=pdoQuery('meeting_tbl',null,null,null);
     printAdminView('step_manage.html.php','提案建议管理');
 }
+function auto_pre_handle(){
+    printAdminView("auto_pre_handle",'批量交办');
+}
 function user_manage(){
 //    $zxQuery=pdoQuery('zx_motion_tbl',null,null,null);
 //    $zxInf=[];

@@ -10,78 +10,51 @@ session_start();
 
 if (isset($_SESSION['login']) && DOMAIN == $_SESSION['login']) {
     if (isset($_GET['menu']) && array_key_exists($_GET['menu'], $_SESSION['pms'])) {
-        if(isset($_GET['get_editor'])){
-            $channel = pdoQuery('gd_channel',array('cha_id'),array('cha_code'=>$_GET['sub']),' limit 1');
-            if($channelId=$channel->fetch()){
-                $_GET['cha_id']=$channelId['cha_id'];
+        if(isset($_GET['auto_set'])){
+            include_once '../libs/PHPExcel.php';
+            $excelReader=new PHPExcel_Reader_Excel2007();
+            $excelWriter=new PHPExcel();
+            $notInput=array();
+            if(!$excelReader->canRead($_FILES['excel-file']['tmp_name'])){
+                $excelReader=new PHPExcel_Reader_Excel5();
+                if(!$excelReader->canRead($_FILES['excel-file']['tmp_name'])){
+                    mylog('can\'t read');
+                }
+                $myExcel=$excelReader->load($_FILES['auto-file']['tmp_name']);
+                $currentSheet=$myExcel->getSheet();
+                $totalRow=$currentSheet->getHighestRow();
+                for($i=1;$i<$totalRow+1;$i++){
+                    $name=$currentSheet->getCell('A'.$i);
+                    if($name instanceof PHPExcel_RichText){
+                        $name=$name->__toString();
+                        mylog('name is richText');
+                    }
+                    $phone=$currentSheet->getCell('D'.$i);
+                    if($phone instanceof PHPExcel_RichText){
+                        $phone=$phone->__toString();
+                    }
+                    $address=$currentSheet->getCell('B'.$i);
+                    if($address instanceof PHPExcel_RichText){
+                        $address=$address->__toString();
+                    }
+                    if($name&&$phone){
+                        $updateSuccess=pdoUpdate('user_tbl',array('address'=>$address),array('user_phone'=>$phone,'category'=>1),'limit 1');
+
+                        if(!$updateSuccess){
+                            $notInput[]=array('name'=>$name,'phone'=>$phone);
+                            mylog($name.': '.$phone);
+                        }
+                    }
+
+
+                }
+                if(count($notInput)>0){
+
+                }
+
             }
-            $articleId=$_GET['get_editor'];
-            if($articleId){
-                $articleInf=pdoQuery('gd_article',null,array('art_id'=>$articleId),' limit 1');
-                $articleInf=$articleInf->fetch();
-            }else{
-                $articleInf=null;
-            }
-//            alert('ok');
-            printAdminView('admin/view/editor.html.php','编辑');
-            exit;
-        }
-        if(isset($_GET['get_goods_editor'])){
-            $channel = pdoQuery('gd_channel',array('cha_id'),array('cha_code'=>$_GET['sub']),' limit 1');
-            if($channelId=$channel->fetch()){
-                $_GET['cha_id']=$channelId['cha_id'];
-            }
-            $articleId=$_GET['get_goods_editor'];
-            if($articleId){
-                $articleInf=pdoQuery('gd_article',null,array('art_id'=>$articleId),' limit 1');
-                $articleInf=$articleInf->fetch();
-                $imgList=explode(',',$articleInf['art_more_img']);
-                if(!$imgList)$imgList=array();
-            }else{
-                $articleInf=null;
-                $imgList=array();
-            }
-//            alert('ok');
-            printAdminView('admin/view/goods_editor.html.php','编辑');
-            exit;
-        }
-        if(isset($_GET['get_activities_editor'])){
-            $channel = pdoQuery('gd_channel',array('cha_id'),array('cha_code'=>$_GET['sub']),' limit 1');
-            if($channelId=$channel->fetch()){
-                $_GET['cha_id']=$channelId['cha_id'];
-            }
-            $articleId=$_GET['get_activities_editor'];
-            if($articleId){
-                $articleInf=pdoQuery('gd_article',null,array('art_id'=>$articleId),' limit 1');
-                $articleInf=$articleInf->fetch();
-                $imgList=explode(',',$articleInf['art_more_img']);
-                if(!$imgList)$imgList=array();
-            }else{
-                $articleInf=null;
-                $imgList=array();
-            }
-//            alert('ok');
-            printAdminView('admin/view/activities_edit.html.php','编辑');
-            exit;
-        }
-        if(isset($_GET['edit_article'])){
-            mylog('get get:'.getArrayInf($_GET));
-            mylog('get post'.getArrayInf($_POST));
-            foreach ($_POST as $k => $v) {
-                if('art_more_img'==$k)$v=trim($v,',');
-                $value[$k]=addslashes($v);
-            }
-            $value['art_add_time']=time();
-            $id=pdoInsert('gd_article',$value,'update');
-            $value['art_id']=$id;
-            $articleInf=$value;
-            if($_GET['rediract']){
-                mylog('header to');
-                header('location: index.php?menu='.$_GET['menu'].'&sub='.$_GET['sub']);
-                exit;
-            }
-            printAdminView('admin/view/editor.html.php','编辑');
-            exit;
+            mylog('excel-file-uploaded');
+            echo array('status'=>'SUCCESS');
         }
     }
     //公众号操作

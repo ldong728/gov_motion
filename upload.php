@@ -19,9 +19,11 @@ if(isset($_SESSION['staffLogin'])&&$_SESSION['staffLogin']['currentMotion']){
             $uploader->upFile($fileName);
             $inf=$uploader->getFileInfo();
             mylog(getArrayInf($inf));
+//            mylog(getArrayInf($_GET));
             if('SUCCESS'==$inf['state']){
 //                    uploadFileByCurl('')
                     $value=array('motion'=>$_SESSION['staffLogin']['currentMotion'],'motion_attr'=>$_GET['ma'],'attr_template'=>$_GET['at'],'content'=>addslashes($inf['originalName']),'attachment'=>addslashes($inf['url']),'staff'=>$_SESSION['staffLogin']['staffId']);
+//                    mylog(getArrayInf($value));
                     try{
                         if($_GET['a']>0&&!$_GET['mul']){
                             $value['attr_id']=$_GET['a'];
