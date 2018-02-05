@@ -422,7 +422,7 @@ function non_motion_user(){
     $attrname=1==$category?'领衔人':'提案人';
     $unit=1==$category?'中心组':'委组';
     $group=1==$category?'代表团':'界别';
-    $query=pdoQuery('duty_view',['user_name','user_phone','address','user_unit_name','user_group_name','duty_id'],['meeting'=>$meeting,'category'=>$category],null);
+    $query=pdoQuery('duty_view',['user_name','user_phone','address','user_unit_name','user_group_name','duty_id'],['meeting'=>$meeting,'category'=>$category,'activity'=>1],null);
 
     foreach ($query as $row) {
         $dutyList[$row['duty_id']]=$row;
@@ -444,7 +444,7 @@ function user_motion_count(){
     $attrname=1==$category?'领衔人':'提案人';
     $unit=1==$category?'中心组':'委组';
     $group=1==$category?'代表团':'界别';
-    $query=pdoQuery('duty_view',['user_name','user_phone','address','user_unit_name','user_group_name','duty_id'],['meeting'=>$meeting,'category'=>$category],null);
+    $query=pdoQuery('duty_view',['user_name','user_phone','address','user_unit_name','user_group_name','duty_id'],['meeting'=>$meeting,'category'=>$category,'activity'=>1],null);
 
     foreach ($query as $row) {
         $dutyList[$row['duty_id']]=$row;
@@ -560,8 +560,39 @@ function motion_menu(){
         include 'view/download_template/rd_menu_view3.html.php';
     }
     exit;
+}
+
+/**
+ * 按性质类别统计
+ */
+function statistics_by_category(){
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    $attr_name="性质类别".$category;
+    $query=pdoQuery('motion_view',['content','count(*) as number'],['meeting'=>$meeting,'attr_name'=>$attr_name],' group by content order by number desc');
+    $total=0;
+    $preList=[];
+    $listQuery=[];
+    foreach ($query as $row) {
+        mylog(getArrayInf($row));
+        $total+=$row['number'];
+        $preList[]=$row;;
+    }
+    foreach ($preList as $row) {
+        $listQuery[]=[$row['content'],$row['number'],sprintf("%.2f", $row[1] / $total * 100)."%"];
+    }
+    $listQuery[]=['合计',$total,'100%'];
+
+
+    $title = "<tr><td>性质类别</td><td>件数</td><td>百分比</td></tr>";
+    $fieldCount=3;
+    $fileName='性质类别统计';
+    include 'view/formated_out.html.php';
+    exit;
 
 }
+
+
 function getCover(){
     $id = $_SESSION['staffLogin']['currentMotion'];
     if($id){
@@ -571,6 +602,11 @@ function getCover(){
             $motion[$row['motion_attr']]=$row['content']?$row['content']:$row['content_int'];
         }
         $userInf=pdoQuery('duty_view',null,['duty_id'=>$motion[84]],'limit 1')->fetch();
+        if($motion[91]){
+            $contectInf=pdoQuery('duty_view',null,['duty_id'=>$motion[91]],'limit 1')->fetch();
+            $userInf['user_phone']=$contectInf['user_phone'];
+        }
+        if('123456'==$userInf['user_phone'])$userInf['user_phone']='';
 
         header("Content-Type:text/html; charset=gb2312");
         header("Content-Type: application/doc");

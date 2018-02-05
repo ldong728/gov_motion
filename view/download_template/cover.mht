@@ -674,17 +674,15 @@ dowtext .5pt;
   </td>
  </tr>
  <tr style=3D'mso-yfti-irow:1'>
-  <td width=3D114 style=3D'width:85.2pt;border-top:none;border-left:none;
-  border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
-  mso-border-top-alt:solid windowtext .5pt;mso-border-top-alt:solid windowt=
-ext .5pt;
-  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid wi=
-ndowtext .5pt;
-  padding:0cm 5.4pt 0cm 5.4pt'><a name=3DapplyPeople></a>
-  <p class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span lan=
-g=3DEN-US
-  style=3D'font-size:14.0pt;font-family:ËÎÌו'><o:p><?=iconv('utf-8', 'gb2312//IGNORE', $userInf['user_name'])?></o:p></span></p>
-  </td>
+  <td width=3D114 style=3D'width:73.2pt;border-top:none;border-left:none;bor=
+      der-bottom:
+      solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top=
+     -alt:
+     solid windowtext .5pt;mso-borde=
+     r-alt:
+     solid windowtext .5pt;padding:0cm 5.4pt 0cm 5.4pt'><a name=3DapplyPeople></a>
+     <p class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span lan=g=3DEN-US style=3D'font-size:12.0pt;font-family:ËÎÌו'><o:p><?=iconv('utf-8', 'gb2312//IGNORE', $userInf['user_name'])?></o:p></span></p>
+     </td>
   <td width=3D98 style=3D'width:73.2pt;border-top:none;border-left:none;bor=
 der-bottom:
   solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;mso-border-top=

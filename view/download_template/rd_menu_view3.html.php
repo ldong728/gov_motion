@@ -39,7 +39,7 @@
     </tr>
     <?php foreach($info as $k=>$row):?>
     <tr>
-        <td class="sub-title" colspan="3" style="text-align: left"><?= iconv('utf-8', 'gb2312//IGNORE', $k) ?>(共<?=$row['count']?>共)</td>
+        <td class="sub-title" colspan="3" style="text-align: left"><?= iconv('utf-8', 'gb2312//IGNORE', $k) ?>(共<?=$row['count']?>件)</td>
     </tr>
         <?php usort($row['motions'],'mySort');?>
         <?php foreach($row['motions'] as $motions):?>

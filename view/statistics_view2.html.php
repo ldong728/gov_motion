@@ -12,6 +12,11 @@
         <td><a href="?download=multiple_statistics&meeting=<?php echo $meeting?>&category=2">综合统计</a></td>
     </tr>
     <tr>
-        <td colspan="4"><a href="?download=statistics_excel_out&meeting=<?php echo $meeting?>&category=2">各单位办理进度及反馈情况统计</a></td>
+        <td><a href="?download=statistics_by_category&meeting=<?php echo $meeting?>&category=2">按性质类别统计</a></td>
+        <td><a href="?download=statistics_excel_out&meeting=<?php echo $meeting?>&category=2">各单位办理进度及反馈情况统计</a></td>
+        <td></td>
+        <td></td>
+
+
     </tr>
     </table>

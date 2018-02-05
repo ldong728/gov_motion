@@ -24,11 +24,7 @@ if (isset($_SESSION['login']) && DOMAIN == $_SESSION['login']) {
                 $currentSheet=$myExcel->getSheet();
                 $totalRow=$currentSheet->getHighestRow();
                 for($i=1;$i<$totalRow+1;$i++){
-                    $name=$currentSheet->getCell('A'.$i);
-                    if($name instanceof PHPExcel_RichText){
-                        $name=$name->__toString();
-                        mylog('name is richText');
-                    }
+                    $name=getFromCell($currentSheet,'a',$i);
                     $phone=$currentSheet->getCell('D'.$i);
                     if($phone instanceof PHPExcel_RichText){
                         $phone=$phone->__toString();
@@ -65,4 +61,11 @@ if (isset($_SESSION['login']) && DOMAIN == $_SESSION['login']) {
 header('location:index.php');
 
 exit;
+function getFromCell($currentSheet,$colName,$rowId){
+    $value=$currentSheet->getCell($colName.$rowId);
+    if($value instanceof PHPExcel_RichText){
+        $$value=$value->__toString();
+    }
+    return $value;
+}
 

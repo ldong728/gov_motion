@@ -16,7 +16,7 @@
 
     </tr>
     <tr>
-        <td></td>
+        <td><a href="?download=statistics_by_category&meeting=<?php echo $meeting?>&category=1">按性质类别统计</a></td>
         <td></td>
         <td></td>
         <td></td>
