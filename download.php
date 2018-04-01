@@ -605,6 +605,7 @@ function getCover(){
         if($motion[91]){
             $contectInf=pdoQuery('duty_view',null,['duty_id'=>$motion[91]],'limit 1')->fetch();
             $userInf['user_phone']=$contectInf['user_phone'];
+            $contact=$contectInf['user_name'];
         }
         if('123456'==$userInf['user_phone'])$userInf['user_phone']='';
 

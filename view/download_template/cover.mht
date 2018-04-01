@@ -703,7 +703,7 @@ text .5pt;
   name=3DundertakeTerm></a>
   <p class=3DMsoNormal align=3Dcenter style=3D'text-align:center'><span lan=
 g=3DEN-US
-  style=3D'font-size:12.0pt;font-family:ËÎÌו'><o:p>&nbsp;</o:p></span></p>
+  style=3D'font-size:12.0pt;font-family:ËÎÌו'><o:p><?php echo isset($contact)?iconv('utf-8', 'gb2312//IGNORE',$contact):''?></o:p></span></p>
   </td>
   <td width=3D132 style=3D'width:99.0pt;border-top:none;border-left:none;
   border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
