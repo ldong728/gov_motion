@@ -309,6 +309,42 @@ function suggestion_manage(){
     printAdminView('suggestion_manage.html.php','提案线索审核');
 
 }
+function excel_encode(){
+//    $motionList=pdoQuery('zx_motion_tbl',['motion'],null,null)->fetchAll();
+////    echo getArrayInf($motionList);
+////    exit;
+//    $query=pdoQuery('motion_view',['motion_id','motion_attr','attr_name','content','content_int','attachment'],['motion_id'=>$motionList,'motion_attr'=>['15','21','26']],null);
+//    $List=[];
+//    foreach ($query as $row) {
+//        if(15==$row['motion_attr'])$List[$row['motion_id']]['type']=$row['content'];
+//        if(21==$row['motion_attr']){
+//            $List[$row['motion_id']]['file']=$row['attachment'];
+//        }
+//        if(26==$row['motion_attr'])$List[$row['motion_id']]['id']=$row['content_int'];
+//    }
+//    foreach ($List as $row) {
+//        if(is_file('../'.$row['file'])){
+//            $file=file_get_contents('../'.$row['file']);
+//            $ex=explode('.',$row['file']);
+//            if(isset($ex[1])&&$ex[1]){
+//                $ext=$ex[1];
+//                echo $ext.'</br>';
+//            }else{
+//                echo "no name";
+//                $ext='docx';
+//            }
+//            file_put_contents('../download_files/'.$row['id'].'.'.$ext,$file);
+////            echo "ok";
+//        }
+//    }
+//    echo 'ok';
+
+//    echo getArrayInf($List);
+    printAdminView('sync_info.html.php','提案线索审核');
+
+}
+
+
 
 //非sub菜单方法
 //非sub菜单方法

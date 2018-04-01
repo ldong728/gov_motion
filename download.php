@@ -236,7 +236,7 @@ function ajax_downLoad(){
     if(1==$category){
         $field=array('案号'=>'案号', '领衔人'=>'领衔人', '案由'=>'案由', '性质类别'=>'性质类别1', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位');
     }else{
-        $field=array('案号'=>'案号','性质'=>'性质','提案分类'=>'提案分类', '提案人'=>'提案人',
+        $field=array('登记号'=>'登记号','案号'=>'案号','性质'=>'性质','提案分类'=>'提案分类', '提案人'=>'提案人',
             '附议人'=>'附议人','委组'=>'委组','界别'=>'界别', '案由'=>'案由', '性质类别'=>'性质类别2',
             '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位',
             '主办答复时间'=>'主办答复时间','文号'=>'文号','签发人'=>'主办签发人',
@@ -605,6 +605,7 @@ function getCover(){
         if($motion[91]){
             $contectInf=pdoQuery('duty_view',null,['duty_id'=>$motion[91]],'limit 1')->fetch();
             $userInf['user_phone']=$contectInf['user_phone'];
+            $contact=$contectInf['user_name'];
         }
         if('123456'==$userInf['user_phone'])$userInf['user_phone']='';
 

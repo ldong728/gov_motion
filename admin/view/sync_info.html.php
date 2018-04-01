@@ -17,7 +17,7 @@
                 <tr>
                     <td>
                         <button class="button upload-excel">解析excel</button>
-                        <input type="file" class="upload" id="excel-file" name="excel-file" style="display: none">
+                        <input type="file" class="upload" id="handle_file" name="handle_file" style="display: none">
                     </td>
                     <td>
                         <button class="button get-unit-user-inf">获取</button>
@@ -38,14 +38,14 @@
             })
         });
         $('.upload-excel').click(function(){
-            $('#excel-file').click();
+            $('#handle_file').click();
         });
-        $('#excel-file').change(function(){
-            var url='upload.php?excel_file=1';
+        $('#handle_file').change(function(){
+            var url='upload.php?batch_handle_file=1';
             var uploadData = {
                 url: url,
                 secureuri: false,
-                fileElementId: 'excel-file', //文件上传域的ID
+                fileElementId: 'handle_file', //文件上传域的ID
                 dataType: 'json', //返回值类型 一般设置为json
                 success: function (v, status) {
                     console.log(v.status);

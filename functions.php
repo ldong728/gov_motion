@@ -1187,7 +1187,7 @@ function updateAttr($data)
 
                 foreach ($handlerList as $row) {
                     pdoInsert('motion_handler_tbl', array('motion' => $motionId, 'attr' => $row['attr_id'], 'unit' => $row['content_int']), 'update');
-                    pdoUpdate('motion_handler_tbl', array('status' => 1), array('unit' => $row['content_int'], 'status' => 7), ' limit 1');
+                    pdoUpdate('motion_handler_tbl', array('status' => 1), array('unit' => $row['content_int'], 'motion'=>$motionId,'status' => 7), ' limit 1');
                 }
 
 
