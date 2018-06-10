@@ -167,8 +167,12 @@ function getIndex($orderBy = 'default')
         $meetingList=[];
         $meetingQuery=pdoQuery('meeting_tbl',null,null,' order by end_time desc limit 2');
         foreach($meetingQuery as $row){
-            $meetingList[$row['category']][$row['meeting_id']] = $row;
+//            $meetingList[$row['category']][$row['meeting_id']] = $row;
             $meetingFilter[]=$row['meeting_id'];
+        }
+        $meetingListQuery=pdoQuery('meeting_tbl',null,null,' order by end_time desc');
+        foreach($meetingListQuery as $row){
+            $meetingList[$row['category']][$row['meeting_id']] = $row;
         }
         $mainCountQuery = pdoQuery('motion_view', array('category', 'meeting', 'count(*) as count'), array('meeting'=>$meetingFilter,'attr_name' => '主办单位', 'content_int' => $staff['unit']), 'group by meeting order by meeting desc limit 2');
         foreach ($mainCountQuery as $row) {
@@ -647,12 +651,12 @@ function editMotion($data)
             if ($step4Inf['content_int'] == $staffId) {
                 $step4CanEdit = true;
             } else {
-//                if ('5103' == $staffId || '6726' == $staffId){
-//                    $step4CanEdit = true;
-//                }
-//                else {
+                if ('5103' == $staffId || '6726' == $staffId){
+                    $step4CanEdit = true;
+                }
+                else {
                     $step4CanEdit = false;
-//                }
+                }
             }
         }
     } else {
@@ -1187,7 +1191,7 @@ function updateAttr($data)
 
                 foreach ($handlerList as $row) {
                     pdoInsert('motion_handler_tbl', array('motion' => $motionId, 'attr' => $row['attr_id'], 'unit' => $row['content_int']), 'update');
-                    pdoUpdate('motion_handler_tbl', array('status' => 1), array('unit' => $row['content_int'], 'status' => 7), ' limit 1');
+                    pdoUpdate('motion_handler_tbl', array('status' => 1), array('unit' => $row['content_int'], 'motion'=>$motionId,'status' => 7), ' limit 1');
                 }
 
 

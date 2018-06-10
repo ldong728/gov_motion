@@ -1,51 +1,31 @@
 <?php
 /*20160512 支持事务操作
- *20161220
- * 20170315 修复空数组查询报错
- * 20160323 修改记录时输入空数组则返回空值
+ *20180208 insert操作使用预处理方式
+ *20180522 BatchInsert优化
+ * 
  */
 
 
-$syncPublic=false;
-$public=null;
+global $pdo;
 try {
     $pdo = new PDO('mysql:host='.DB_IP.';dbname=' . DB_NAME, DB_USER,DB_PSW);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->exec('SET NAMES "utf8"');
-
-
-//    $pdo->q
 } catch (PDOException $e) {
     $error = 'Unable to connect to the database server.' . $e->getMessage();
     include 'error.html.php';
     exit();
 }
-function setSyncPublic(){
+
+
+
+function exeNew($s) {
     try{
-        $GLOBALS['syncPublic']=true;
-        $GLOBALS['public'] = new PDO('mysql:host='.OUT_DB_IP.';dbname=' . OUT_DB_NAME, OUT_DB_USER,OUT_DB_PSW);
-        $GLOBALS['public']->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $GLOBALS['public']->exec('SET NAMES "utf8"');
-    }catch(PDOException $e){
-        $error = 'Unable to connect to the database server.' . $e->getMessage();
-        include 'error.html.php';
-        exit();
-    }
-
-}
-
-
-function exeNew($s){
-    try{
+//        mylog($s);
         $GLOBALS['pdo']->exec($s);
-        if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($s);
         return $GLOBALS['pdo']->lastInsertId();
     }catch(PDOException $e){
-//        echo $e->getMessage();
         throw $e;
-//        $error = 'exeError' . $e->getMessage();
-//        include 'error.html.php';
-//        exit();
     }
 }
 function pdoQueryNew($tableName,$fields,$filter,$append){
@@ -111,7 +91,10 @@ function pdoQueryNew($tableName,$fields,$filter,$append){
         exit();
     }
 }
-function pdoQuery($tableName, $fields, $where, $append)
+function pdoQuery($tableName,$fields,$filter,$append){
+    return pdoQueryNew($tableName,$fields,$filter,$append);
+}
+function pdoQueryOld($tableName, $fields, $where, $append)
 {
     $sql = 'SELECT ';
     $fieldsCount = count($fields);
@@ -129,25 +112,19 @@ function pdoQuery($tableName, $fields, $where, $append)
         $sql = $sql . ' WHERE ';
         $j = 0;
         foreach ($where as $k => $v) {
-            if($v===null){
+            if($v==null){
                 $sql.=$k.' in("-1000000")';
                 $j++;
                 continue;
             }
 
             if(is_array($v)){
-                if(count($v)>0){
-                    $sql.=$k.' in(';
-                    foreach ($v as $d) {
-                        $val=$d;
-                        if(is_array($d))$val=$d[0];
-                        $sql.='"'.$val.'",';
-                    }
-                    $sql=trim($sql,',');
-                    $sql.=')';
-                }else{
-                    $sql.=$k.' in("-1000000")';
+                $sql.=$k.' in(';
+                foreach ($v as $d) {
+                    $sql.='"'.$d.'",';
                 }
+                $sql=trim($sql,',');
+                $sql.=')';
             }else{
                 $sql = $sql . $k . '=' . '"' . $v . '"';
             }
@@ -156,7 +133,7 @@ function pdoQuery($tableName, $fields, $where, $append)
         }
     }
     if($append!=null){
-        $sql=$sql.' '.trim($append);
+        $sql=$sql.' '.$append;
     }
     try {
 //        mylog('query:'.$sql);
@@ -165,7 +142,8 @@ function pdoQuery($tableName, $fields, $where, $append)
     }catch (PDOException $e) {
         $error = 'Unable to PDOquery to the database server.' . $e->getMessage();
         include 'error.html.php';
-        return null;
+//        throw($e);
+        exit();
     }
 }
 
@@ -192,16 +170,20 @@ function joinQuery($joinType,$fields,$tables,$joinField,$where,$group){
     }
 
 }
+
+/**
+ * 插入数据，已作废
+ * @param $tableName
+ * @param $value
+ * @param string $str
+ */
 function pdoInsert($tableName,$value,$str=''){
     $sql='INSERT INTO '.$tableName.' SET ';
-    $j = 0;
-    $valueCount=count($value);
     $data='';
     foreach ($value as $k => $v) {
-       $data .= $k . '=' . '"' . $v . '"';
-        if ($j < $valueCount - 1) $data = $data . ',';
-        $j++;
+        $data.="$k=:$k,";
     }
+    $data=trim($data,',');
     if(trim($str)=='ignore'){
         $sql=preg_replace('/INTO/',$str,$sql);
         $sql.=$data;
@@ -211,24 +193,60 @@ function pdoInsert($tableName,$value,$str=''){
         $sql=$sql.$data.$str;
     }
 //    mylog($sql);
-    try {
-        $GLOBALS['pdo']->exec($sql);
-        if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($sql);
-        return $GLOBALS['pdo']->lastInsertId();
-
-    }catch (PDOException $e) {
-//        $error = 'Unable to insert to the database server.' . $e->getMessage();
-//        return $error;
-//        exit();
-        throw $e;
-    }
-
+    $p=$GLOBALS['pdo']->prepare($sql);
+    $p->execute($value);
+    return $GLOBALS['pdo']->lastInsertId();
 }
+function pdoBatchInsert($tableName,array $value,$str=''){
+    $sql='INSERT INTO '.$tableName.' SET ';
+    $j = 0;
+    $v1=reset($value);
+    $data='';
+    foreach ($v1 as $k => $v) {
+        $data.="$k=:$k,";
+    }
+    $data=trim($data,',');
+    if(trim($str)=='ignore'){
+        $sql=preg_replace('/INTO/',$str,$sql);
+        $sql.=$data;
+    }elseif(trim($str)=='update'){
+        $sql.=$data.' on DUPLICATE KEY update '.$data;
+    }else{
+        $sql=$sql.$data.$str;
+    }
+    $p=$GLOBALS['pdo']->prepare($sql);
+    foreach ($value as $row) {
+        $p->execute($row);
+    }
+}
+function pdoBatchInsertOld($tableName,array $value,$str=''){
+    $sql='INSERT INTO '.$tableName.' SET ';
+    $j = 0;
+    $v1=reset($value);
+    $valueCount=count($v1);
+    foreach ($v1 as $k => $v) {
+        $sql = $sql . $k . '=' . ':' . $k ;
+        if ($j < $valueCount - 1) $sql = $sql . ',';
+        $j++;
+    }
+    if($str=='ignore'){
+        $sql=preg_replace('/INTO/',$str,$sql);
+    }else{
+        $sql=$sql.$str;
+    }
+    $p=$GLOBALS['pdo']->prepare($sql);
+    foreach ($value as $data) {
+        foreach ($data as $k=>$v) {
+            $p->bindValue($k,$v);
+        }
+        $p->execute();
+    }
+}
+
 function pdoUpdate($tableName,array $value,array $where,$str=''){
     $sql='UPDATE '.$tableName.' SET ';
     $j = 0;
     $valueCount=count($value);
-    if($valueCount<1)return null;
     foreach ($value as $k => $v) {
         $sql = $sql . $k . '=' . '"' . $v . '"';
         if ($j < $valueCount - 1) $sql = $sql . ',';
@@ -260,17 +278,20 @@ function pdoUpdate($tableName,array $value,array $where,$str=''){
     }
     $sql=$sql.$str;
 //    mylog($sql);
+//    echo $sql;
+//    exit;
     try {
         $rows=$GLOBALS['pdo']->exec($sql);
-        if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($sql);
         return $rows;
 
     }catch (PDOException $e) {
-        throw $e;
-//        $error = 'Unable to insert to the database server.' . $e->getMessage();
-//        include 'error.html.php';
-//        exit();
+        $error = 'Unable to insert to the database server.' . $e->getMessage();
+        include 'error.html.php';
+        exit();
     }
+
+}
+function pdoBatchUpdate($tableName,array $valueAndWhere,$str=''){
 
 }
 function pdoDelete($tableName,array $where,$str=''){
@@ -298,7 +319,6 @@ function pdoDelete($tableName,array $where,$str=''){
 //    mylog($sql);
     try {
         $GLOBALS['pdo']->exec($sql);
-        if($GLOBALS['syncPublic'])$GLOBALS['public']->exec($sql);
         return $GLOBALS['pdo']->lastInsertId();
 
     }catch (PDOException $e) {
@@ -371,49 +391,11 @@ function outerJoinQuery($joinType,$fields,$tables,$joinField,$where,$group){
     }
 
 }
-function pdoBatchInsert($tableName,array $value,$str=''){
-    $sql='INSERT INTO '.$tableName.' SET ';
-    $j = 0;
-    $v1=reset($value);
-    $valueCount=count($v1);
-    foreach ($v1 as $k => $v) {
-        $sql = $sql . $k . '=' . ':' . $k ;
-        if ($j < $valueCount - 1) $sql = $sql . ',';
-        $j++;
-    }
-    if($str=='ignore'){
-        $sql=preg_replace('/INTO/',$str,$sql);
-    }else{
-        $sql=$sql.$str;
-    }
-    $p=$GLOBALS['pdo']->prepare($sql);
-    if($GLOBALS['syncPublic'])$pub=$GLOBALS['public']->prepare($sql);
-    try{
-        foreach ($value as $data) {
-            foreach ($data as $k=>$v) {
-                $p->bindValue($k,$v);
-                if(isset($pub)&&$pub)$pub->bindValue($k,$v);
-            }
-            $p->execute();
-            if(isset($pub)&&$pub)$pub->execute();
-        }
-    }catch(PDOException $e){
-        throw $e;
-    }
 
-
-
-}
 function pdoTransReady()
 {
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
     $GLOBALS['pdo']->beginTransaction();
-//    if($GLOBALS['syncPublic']){
-//        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
-//        $GLOBALS['public']->beginTransaction();
-//        mylog();
-//    }
-
 //    mylog('ready');
 }
 
@@ -421,10 +403,6 @@ function pdoCommit()
 {
     $GLOBALS['pdo']->commit();
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
-//    if($GLOBALS['syncPublic']){
-//        $GLOBALS['public']->commit();
-//        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
-//    }
 //    mylog('commit');
 }
 
@@ -432,11 +410,6 @@ function pdoRollBack()
 {
     $GLOBALS['pdo']->rollBack();
     $GLOBALS['pdo']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
-//    if($GLOBALS['syncPublic']){
-//        $GLOBALS['public']->rollBack();
-//        $GLOBALS['public']->setAttribute(PDO::ATTR_AUTOCOMMIT, 1);
-//    }
-
 //    mylog('rollback');
 }
 

@@ -20,7 +20,7 @@ function statistics_excel_out(){
 //    mylog($meetingName);
     if(in_array(4,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])){//办理统计临时处理方法，只给督查室开启查看两次会议的办理情况，后期需要改进，
         $name='';
-        $meeting=[1,2];
+        $meeting=[3,4];
     }
     $totalList= handleStatistics($meeting,0, $_SESSION['staffLogin']['category']);
     include"view/statisticsOutExcel.html.php";
@@ -49,9 +49,6 @@ function multiple_statistics()
             }
         }
     }
-
-
-
     $query = pdoQuery('motion_view', null, ['meeting'=>$meeting], null);
     foreach ($query as $row) {
 
@@ -59,8 +56,6 @@ function multiple_statistics()
             $optionList[$row['attr_name'] . '+' . $row['content']]++;
         }
         if ($row['content_int']) {
-
-
             if ('交办单位' == $row['attr_name']) {
                 if (isset($unitList[$row['content_int']])) {
                     $unitList[$row['content_int']]++;
@@ -90,14 +85,94 @@ function multiple_statistics()
         }
 
     }
-//    foreach ($unitList as $k => $v) {
-//        mylog($k);
-//    }
+    $allUserList=[];//委员表
+    $allGroupList=[];//委组表
+    $userQuery=pdoQuery('duty_view',null,['meeting'=>$meeting,'activity'=>1],null);
+    $userQuery->setFetchMode(PDO::FETCH_ASSOC);
+    foreach ($userQuery as $row) {
+        if(0==$row['user_unit']||0==$row['user_group']){
+            $allGroupList[]=$row['duty_id'];
+        }else{
+            $allUserList[]=$row['duty_id'];
+        }
+    }
+    $dutyHaveMotionList=[];
+    $groupHaveMotionList=[];
+    $totalMotionNumber=pdoQuery('motion_tbl',['count(0) as count'],['meeting'=>$meeting,'step>0'],'limit 1')->fetch()['count'];
+    $allValue=pdoQuery('motion_view',null,['meeting'=>$meeting,'attr_name'=>['提案人','性质类别2','初审','性质']],null);
+    $passedMotionList=[];
+    $totalNotPassMotion=0;
+    $importent=0;
+    $count1=0;
+    $count2=0;
+    $count3=0;
+    $count4=0;
+    foreach ($allValue as $row) {
+        $content_int=$row['content_int'];
+        $content=$row['content'];
+        $motion=$row['motion_id'];
+        switch($row['attr_name']){
+            case '提案人':
+                $duty=$row['content_int'];
+                if(in_array($duty,$allUserList)){
+                    $dutyHaveMotionList[$content_int]=$content_int;
+                }
+                if(in_array($duty,$allGroupList)){
+                    $groupHaveMotionList[$motion]=$content_int;
+                }
+                break;
+            case '性质类别2':
 
-//    mylog(json_encode($mainHandleList));
-//    mylog('主办：'. count($mainHandleList));
-//    mylog('协办：'.count($handleList));
-//    mylog('办理：'.count(array_merge($mainHandleList,$handleList)));
+                if(in_array($content,["工业经济","农林水利","财贸金融"])){
+                    $count1++;
+                }
+                if(in_array($content,["道路交通","城建管理","环境保护"]))$count2++;
+                if(in_array($content,["医药卫生","科技教育","文化体育"]))$count3++;
+                if(in_array($content,["劳动人事","政法统战","其他"]))$count4++;
+                break;
+            case '初审':
+                if($content=='立案'||'并案'==$content&&$row['step']>3){
+                    $passedMotionList[$motion]=$motion;
+                }else{
+                    $totalNotPassMotion++;
+                }
+                break;
+            case '性质':
+                if('重点提案'==$content)$importent++;
+                break;
+        }
+    }
+    $totalPassedMotion=count($passedMotionList);
+    $passedValue=pdoQuery('motion_view',null,['meeting'=>$meeting,'motion_id'=>$passedMotionList,'attr_name'=>['提案人','性质类别2','初审']],null);
+    $count11=0;
+    $count22=0;
+    $count33=0;
+    $count44=0;
+    foreach ($passedValue as $row) {
+        $content_int=$row['content_int'];
+        $content=$row['content'];
+        $motion=$row['motion_id'];
+        switch($row['attr_name']){
+            case '提案人':
+                $duty=$row['content_int'];
+                if(in_array($duty,$allUserList)){
+                    $dutyHaveMotionList[$content_int]=$content_int;
+                }
+                if(in_array($duty,$allGroupList)){
+                    $groupHaveMotionList[]=$content_int;
+                }
+                break;
+            case '性质类别2':
+
+                if(in_array($content,["工业经济","农林水利","财贸金融"])){
+                    $count11++;
+                }
+                if(in_array($content,["道路交通","城建管理","环境保护"]))$count22++;
+                if(in_array($content,["医药卫生","科技教育","文化体育"]))$count33++;
+                if(in_array($content,["劳动人事","政法统战","其他"]))$count44++;
+                break;
+        }
+    }
 
 
     $name = getMeetingName($meeting);

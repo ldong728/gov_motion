@@ -16,11 +16,19 @@
             <table class="table sheet">
                 <tr>
                     <td>
-                        <button class="button upload-excel">解析excel</button>
+                        <button class="button upload-excel" data-category="1">人大批量交办</button>
                         <input type="file" class="upload" id="handle_file" name="handle_file" style="display: none">
                     </td>
                     <td>
                         <button class="button get-unit-user-inf">获取</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="button upload-excel" data-category="2">政协批量交办</button>
+                    </td>
+                    <td>
+
                     </td>
                 </tr>
             </table>
@@ -29,6 +37,7 @@
     </div>
     <script type="text/javascript" src="../js/ajaxfileupload.js"></script>
     <script>
+        var category=0;
         $('.sync-button').click(function(){
             var type=$(this).attr('id');
             loading();
@@ -38,10 +47,11 @@
             })
         });
         $('.upload-excel').click(function(){
+            category=$(this).data('category');
             $('#handle_file').click();
         });
         $('#handle_file').change(function(){
-            var url='upload.php?batch_handle_file=1';
+            var url='upload.php?batch_handle_file=1&category='+category;
             var uploadData = {
                 url: url,
                 secureuri: false,
@@ -49,6 +59,7 @@
                 dataType: 'json', //返回值类型 一般设置为json
                 success: function (v, status) {
                     console.log(v.status);
+                    location.href='../download_files/test.xls';
                 },//服务器成功响应处理函数
                 error: function (d) {
 
