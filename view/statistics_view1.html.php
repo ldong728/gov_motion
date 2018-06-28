@@ -17,7 +17,7 @@
     </tr>
     <tr>
         <td><a href="?download=statistics_by_category&meeting=<?php echo $meeting?>&category=1">按性质类别统计</a></td>
-        <td></td>
+        <td><a href="?download=statistics_by_unit_type&meeting=<?php echo $meeting?>&category=1">按主办单位类别标记统计</a></td>
         <td></td>
         <td></td>
         <td></td>

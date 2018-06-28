@@ -288,7 +288,7 @@ function ajaxMotionList($data)
 
     //乡镇管理员界面筛选
     if (1 == $staffInf['category']&&isset($staffInf['userList'])&&$staffInf['userList']) {
-        mylog($staffInf);
+//        mylog($staffInf);
         $totalNumber = 0;
         $motionLimit = array();
         $tempFilter=$staffInf['userList'];
@@ -391,6 +391,7 @@ function ajaxMotionList($data)
                 break;
             case 'unit':
                 $searchUnit=pdoQuery('unit_tbl',array('unit_id'),null,'where unit_name like "%'.$attrValue.'%"')->fetchAll();
+                mylog($searchUnit);
                 $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchUnit,'meeting'=>$meeting),null);
                 break;
             default:

@@ -36,6 +36,7 @@ $(document).on('click','.order-by-attr',function(){
 $('.create-motion').click(function () {
     var maskHeight = $(document.body).height();
     ajaxPost('createMotion', {meetingId:meetingId}, function (data) {
+        //console.log(data);
         $('.m-popup').html(data);
         $('.m-popup').show();
         $('.mask').show();

@@ -18,9 +18,10 @@ function statistics_excel_out(){
     }
 //    $name=getMeetingName($meeting);
 //    mylog($meetingName);
-    if(in_array(4,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])){//办理统计临时处理方法，只给督查室开启查看两次会议的办理情况，后期需要改进，
-        $name='';
-        $meeting=[3,4];
+    if(in_array(4,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])){
+        $meeting=pdoQuery('meeting_tbl',['meeting_id'],null,'order by end_time desc limit 2')->fetchAll();
+        $name="人大政协建议提案";
+//        $meeting=[3,4];
     }
     $totalList= handleStatistics($meeting,0, $_SESSION['staffLogin']['category']);
     include"view/statisticsOutExcel.html.php";
@@ -309,7 +310,7 @@ function ajax_downLoad(){
         exit;
     }
     if(1==$category){
-        $field=array('案号'=>'案号', '领衔人'=>'领衔人', '案由'=>'案由', '性质类别'=>'性质类别1', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位');
+        $field=array('案号'=>'案号', '领衔人'=>'领衔人', '案由'=>'案由', '性质类别'=>'性质类别1', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位','类别标记'=>'类别标记');
     }else{
         $field=array('登记号'=>'登记号','案号'=>'案号','性质'=>'性质','提案分类'=>'提案分类', '提案人'=>'提案人',
             '附议人'=>'附议人','委组'=>'委组','界别'=>'界别', '案由'=>'案由', '性质类别'=>'性质类别2',
@@ -376,6 +377,46 @@ function response_by_unit_type(){//人大需求
 //    include"view/temp.html.php";
     include"view/response_by_unit_type.html.php";
     exit;
+}
+
+/**
+ * 20180619新需求
+ */
+function statistics_by_unit_type(){
+    $meeting=$_GET['meeting'];
+    $name="主办单位类别标记统计";
+    if(in_array(4,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])){
+        $meeting=pdoQuery('meeting_tbl',['meeting_id'],null,'order by end_time desc limit 2')->fetchAll();
+        $name="人大政协建议提案主办单位类别标记统计";
+//        $meeting=[3,4];
+    }
+    $baseMotions=pdoQuery('motion_view',['motion_id','content'],['meeting'=>$meeting,'attr_template'=>21,'content is not null'],null);
+    $motionList=[];
+    $typeList=[];
+    foreach ($baseMotions as $row) {
+        $typeList[$row['motion_id']]=$row['content'];
+        $motionList[]=$row['motion_id'];
+    }
+    $unitQuery=pdoQuery('motion_view',['motion_id','content_int'],['motion_id'=>$motionList,'attr_template'=>13],null);
+    $unitList=[];
+    foreach ($unitQuery as $row) {
+        $type=$typeList[$row['motion_id']];
+        if(!isset($unitList[$row['content_int']])){
+            $unitName=DataSupply::indexToValue('unit',$row['content_int']);
+            $unitList[$row['content_int']]=['name'=>$unitName,'list'=>[]];
+            $unitList[$row['content_int']]['list'][$type]=1;
+        }else{
+            if(!isset($unitList[$row['content_int']]['list'][$type]))$unitList[$row['content_int']]['list'][$type]=1;
+            else $unitList[$row['content_int']]['list'][$type]++;
+        }
+    }
+    $totalA=0;
+    $totalB=0;
+    $totalC=0;
+    $totalD=0;
+    include"view/statistic_by_unit_type.html.php";
+    exit;
+
 }
 
 function reply_table2()

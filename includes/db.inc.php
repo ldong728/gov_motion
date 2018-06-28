@@ -54,13 +54,16 @@ function pdoQueryNew($tableName,$fields,$filter,$append){
                 $j++;
             }else{
                 if($v===null){
+                    $content =$k.' is null';
                     $j++;
+                    $sql.=$content;
                     continue;
                 }
 
-                if(is_array($v)){
+                if(is_array($v)&&count($v)>0){
                     $content=$k.' in(';
                     foreach ($v as $d) {
+                        $d=is_array($d)?current($d):$d;
                         $content.='"'.$d.'",';
                     }
                     $content=trim($content,',');
@@ -81,7 +84,7 @@ function pdoQueryNew($tableName,$fields,$filter,$append){
         $sql=$sql.' '.$append;
     }
     try {
-//        mylog('queryNew:'.$sql);
+        mylog('queryNew:'.$sql);
         $query = $GLOBALS['pdo']->query($sql);
         return $query;
     }catch (PDOException $e) {
