@@ -71,7 +71,8 @@ function mylog($str='mark'){
         $debugInfo=debug_backtrace();
         $message = $debugInfo[0]['file'].$debugInfo[0]['line'];
         $log = date('Y.m.d.H:i:s', time()) . ':'.$message.':' . $strFormated . "\n";
-        file_put_contents($GLOBALS['mypath'].'/log.txt', $log, FILE_APPEND);
+        $filePath=$GLOBALS['mypath'].'/log/'.date('Y-m-d',time()).'.log';
+        file_put_contents($filePath, $log, FILE_APPEND);
     }
 }
 

@@ -84,7 +84,7 @@ function pdoQueryNew($tableName,$fields,$filter,$append){
         $sql=$sql.' '.$append;
     }
     try {
-        mylog('queryNew:'.$sql);
+//        mylog('queryNew:'.$sql);
         $query = $GLOBALS['pdo']->query($sql);
         return $query;
     }catch (PDOException $e) {

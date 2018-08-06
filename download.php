@@ -416,8 +416,46 @@ function statistics_by_unit_type(){
     $totalD=0;
     include"view/statistic_by_unit_type.html.php";
     exit;
+}
+
+/**
+ * 20180806人大新需求
+ */
+function response_statistics(){
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    $attrName=1==$category?['案号','案由','主办单位','类别标记','面商人1','协商形式1','问题解决情况1','意见采纳情况1','办理工作','办理结果']:['案号','案由'];
+    $query=pdoQuery('motion_view',null,['meeting'=>$meeting,'step'=>7,'attr_name'=>$attrName],null);
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $info=[];
+    $count=[];
+    foreach ($query as $row) {
+        $value=$row['content']?$row['content']:$row['content_int'];
+        if('unit'==$row['target'])$value=DataSupply::indexToValue('unit',$value);
+        if(isset($info[$row['motion_id']])){
+            $info[$row['motion_id']][$row['attr_name']]=$value;
+        }else{
+            $info[$row['motion_id']]=[$row['attr_name']=>$value];
+        }
+        if(!isset($count[$value]))$count[$value]=1;
+        else $count[$value]++;
+        if('办理工作'==$row['attr_name']){
+            if(!isset($count['办理工作'][$value]))$count['办理工作'][$value]=1;
+            else $count['办理工作'][$value]++;
+        }
+        if('办理结果'==$row['attr_name']){
+            if(!isset($count['办理结果'][$value]))$count['办理结果'][$value]=1;
+            else $count['办理结果'][$value]++;
+        }
+    }
+    $total=count($info);
+//    mylog(json_encode($info,JSON_UNESCAPED_UNICODE));
+
+    include 'view/response_statistics1.html.php';
+    exit;
 
 }
+
 
 function reply_table2()
 {
@@ -490,7 +528,8 @@ function reply_table2()
             }
 //        mylog(getArrayInf($motionInf));
         if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] = iconv('utf-8', 'gb2312//IGNORE', $motionInf['sub_handle']);
-            include 'view/response_table1.html.php';
+//            include 'view/response_table1.html.php';
+        include 'view/new_response1.html.php';
     }
 
 
@@ -853,13 +892,14 @@ function getMeetingName($meetingId)
 }
 
 function reGroupMotionInfList($motionList,$motionFiled){
-    $motionQuery=pdoQuery('motion_view',['motion_id','attr_name','step_name','meeting','category','content','content_int','target','value_type','attachment'],['motion_id'=>$motionList],null);
+    $motionQuery=pdoQuery('motion_view',['motion_id','attr_name','step_name','meeting','category','content','content_int','target','value_type','attachment','step'],['motion_id'=>$motionList],null);
     $dutyList=null;
     $sortList=array();
 
 //    mylog(getArrayInf($dutyList));
 
     foreach ($motionQuery as $row) {
+        $stepList=[1=>'提交',2=>'登记',3=>'审核',4=>'交办',5=>'办理',6=>'反馈',7=>'完成'];
         if(!$dutyList){
             $dutyInf=pdoQuery('duty_view',['duty_id','user_name','user_phone','user_unit_name','user_group_name'],['category'=>$row['category'],'meeting'=>$row['meeting']],null);
             foreach ($dutyInf as $v) {
@@ -883,6 +923,7 @@ function reGroupMotionInfList($motionList,$motionFiled){
 
             if (!isset($sortList[$row['motion_id']][$row['attr_name']])) $sortList[$row['motion_id']][$row['attr_name']] = $content;
             else $sortList[$row['motion_id']][$row['attr_name']] .= ',' . $content;
+            if(!isset($sortList[$row['motion_id']]['当前环节']))$sortList[$row['motion_id']]['当前环节']=$stepList[$row['step']];
             $sortList[$row['motion_id']]['category']=$row['category'];
         }else{
 

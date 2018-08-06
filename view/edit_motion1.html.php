@@ -359,21 +359,27 @@
                         </td>
                     </tr>
                         <?php else: ?>
+
                         <tr>
                             <th rowspan="2" style="border-right: 1px solid #f08300">反馈意见</th>
-                            <th colspan="2">办理面商形式</th>
-                            <td colspan="2"  class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['面商形式'], JSON_UNESCAPED_UNICODE) ?></span>
-                            </td>
-                            <th>采纳情况</th>
-                            <td colspan="2"  class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['采纳情况'], JSON_UNESCAPED_UNICODE) ?></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th colspan="2">办理工作</th>
-                            <td colspan="2"  class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['办理工作'], JSON_UNESCAPED_UNICODE) ?></span>
+                            <th>办理工作</th>
+                            <td  class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['办理工作'], JSON_UNESCAPED_UNICODE) ?></span>
                             </td>
                             <th>办理结果</th>
-                            <td colspan="2" class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['办理结果'], JSON_UNESCAPED_UNICODE) ?></span>
+                            <td  class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['办理结果'], JSON_UNESCAPED_UNICODE) ?></span>
+                            </td>
+                            <th>办理面商形式</th>
+                            <td colspan="2"><span class="encoded-data"><?php echo json_encode($motion['协商形式1'], JSON_UNESCAPED_UNICODE) ?></span>
+                            </td>
+                        </tr>
+                        <tr><th>面商人</th>
+                            <td><span class="encoded-data"><?php echo json_encode($motion['面商人1'], JSON_UNESCAPED_UNICODE) ?></span>
+                            </td>
+                            <th>问题解决情况</th>
+                            <td  class="verify-value"><span class="encoded-data"><?php echo json_encode($motion['问题解决情况1'], JSON_UNESCAPED_UNICODE) ?></span>
+                            </td>
+                            <th>意见采纳情况</th>
+                            <td colspan="2" ><span class="encoded-data"><?php echo json_encode($motion['意见采纳情况1'], JSON_UNESCAPED_UNICODE) ?></span>
                             </td>
                         </tr>
                         <tr>
