@@ -426,6 +426,8 @@ function response_statistics(){
     $category=$_GET['category'];
     $attrName=1==$category?['案号','案由','主办单位','类别标记','面商人1','协商形式1','问题解决情况1','意见采纳情况1','办理工作','办理结果']:['案号','案由'];
     $query=pdoQuery('motion_view',null,['meeting'=>$meeting,'step'=>7,'attr_name'=>$attrName],null);
+    $displeasureQuery=pdoQuery('displeasure_motion_view',null,['meeting'=>$meeting,'attr_name'=>$attrName,'motion_id in (select motion from displeasure_attr_tbl)'],null);
+    $displeasureQuery->setFetchMode(PDO::FETCH_ASSOC);
     $query->setFetchMode(PDO::FETCH_ASSOC);
     $info=[];
     $count=[];
@@ -449,10 +451,39 @@ function response_statistics(){
         }
     }
     $total=count($info);
-//    mylog(json_encode($info,JSON_UNESCAPED_UNICODE));
+    foreach($displeasureQuery as $row){
+        $value=$row['content']?$row['content']:$row['content_int'];
+        if('unit'==$row['target'])$value=DataSupply::indexToValue('unit',$value);
+        if(isset($info[$row['motion_id'].'(存档)'])){
+            $info[$row['motion_id'].'(存档)'][$row['attr_name']]=$value;
+        }else{
+            $info[$row['motion_id'].'(存档)']=[$row['attr_name']=>$value];
+        }
+
+    }
+    function compare($element1,$element2){
+        if($element1['案号']>$element2['案号'])return 1;
+        else return -1;
+    }
+    usort($info,'compare');
+
+    mylog(json_encode($info,JSON_UNESCAPED_UNICODE));
 
     include 'view/response_statistics1.html.php';
     exit;
+
+}
+
+
+/**
+ * 20180926人大新需求
+ */
+function response_statistics_unit(){
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    $attrName=1==$category?['主办单位','类别标记','面商人1','协商形式1','问题解决情况1','意见采纳情况1','办理工作','办理结果']:['案号','案由'];
+
+    $query=pdoQuery('motion_view',null,['meeting'=>$meeting,'step'=>7,'attr_name'=>$attrName],null);
 
 }
 
