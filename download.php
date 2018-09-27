@@ -481,10 +481,49 @@ function response_statistics(){
 function response_statistics_unit(){
     $meeting=$_GET['meeting'];
     $category=$_GET['category'];
-    $attrName=1==$category?['主办单位','类别标记','面商人1','协商形式1','问题解决情况1','意见采纳情况1','办理工作','办理结果']:['案号','案由'];
+    if(2==$category){
 
+        exit;
+    }
+    $attrName=1==$category?['案号','主办单位','类别标记','面商人1','协商形式1','问题解决情况1','意见采纳情况1','办理工作','办理结果']:['案号','案由'];
+    $module=1==$category?['案号'=>0,'主办单位'=>0,'类别标记'=>0,'面商人1'=>0,'协商形式1'=>0,'问题解决情况1'=>0,'意见采纳情况1'=>0,'办理工作'=>0,'办理结果'=>0]:['案号'=>0,'案由'=>0];
     $query=pdoQuery('motion_view',null,['meeting'=>$meeting,'step'=>7,'attr_name'=>$attrName],null);
+    $formatMotionList=[];
+    foreach ($query as $row) {
+        $content=null!=$row['content']?$row['content']:$row['content_int'];
+        if('主办单位'==$row['attr_name'])$content=DataSupply::indexToValue('unit',$content);
+        if(!isset($formatMotionList[$row['motion_id']])){
+           $formatMotionList[$row['motion_id']]=$module;
+        }
+        $formatMotionList[$row['motion_id']][$row['attr_name']]=$content;
+    }
+    $statisticsList=[];
+    foreach ($formatMotionList as $row) {
+        if(!isset($statisticsList[$row['主办单位']]))$statisticsList[$row['主办单位']]=['主办单位'=>$row['主办单位'],'count'=>0,'类别标记'=>[],'面商人1'=>[],'协商形式1'=>[],'问题解决情况1'=>[],'意见采纳情况1'=>[],'办理工作'=>[],'办理结果'=>[]];
+        foreach ($row as $k=>$v) {
+            if(!in_array($k,['案号','主办单位'])){
+                if(!isset($statisticsList[$row['主办单位']][$k][$v])){
+                    $statisticsList[$row['主办单位']][$k][$v]=1;
+                    $statisticsList[$row['主办单位']][$k]['sub_total']=0;
+                }
+                else {
+                    $statisticsList[$row['主办单位']][$k][$v]++;
+                }
+                $statisticsList[$row['主办单位']][$k]['sub_total']++;
+            }
+        }
+        $statisticsList[$row['主办单位']]['count']++;
+    }
 
+    function mySort($a,$b){
+        return $a['count']>$b['count']? -1:1;
+    }
+    usort($statisticsList,'mySort');
+    foreach ($statisticsList as $row) {
+        mylog($row);
+    }
+    include 'view/response_statistics_unit.html.php';
+    exit;
 }
 
 
