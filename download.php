@@ -498,6 +498,7 @@ function response_statistics_unit(){
         $formatMotionList[$row['motion_id']][$row['attr_name']]=$content;
     }
     $statisticsList=[];
+    $total=['count'=>0,'类别标记'=>[],'面商人1'=>[],'协商形式1'=>[],'问题解决情况1'=>[],'意见采纳情况1'=>[],'办理工作'=>[],'办理结果'=>[]];
     foreach ($formatMotionList as $row) {
         if(!isset($statisticsList[$row['主办单位']]))$statisticsList[$row['主办单位']]=['主办单位'=>$row['主办单位'],'count'=>0,'类别标记'=>[],'面商人1'=>[],'协商形式1'=>[],'问题解决情况1'=>[],'意见采纳情况1'=>[],'办理工作'=>[],'办理结果'=>[]];
         foreach ($row as $k=>$v) {
@@ -509,19 +510,28 @@ function response_statistics_unit(){
                 else {
                     $statisticsList[$row['主办单位']][$k][$v]++;
                 }
+                if(!isset($total[$k][$v])){
+                    $total[$k][$v]=1;
+                    $total[$k]['sub_total']=0;
+                }else{
+                    $total[$k][$v]++;
+                }
                 $statisticsList[$row['主办单位']][$k]['sub_total']++;
+                $total[$k]['sub_total']++;
             }
         }
         $statisticsList[$row['主办单位']]['count']++;
+        $total['count']++;
     }
 
     function mySort($a,$b){
         return $a['count']>$b['count']? -1:1;
     }
     usort($statisticsList,'mySort');
-    foreach ($statisticsList as $row) {
-        mylog($row);
-    }
+//    foreach ($statisticsList as $row) {
+//        mylog($row);
+//    }
+    mylog($total);
     include 'view/response_statistics_unit.html.php';
     exit;
 }
