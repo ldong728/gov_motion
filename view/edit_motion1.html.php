@@ -34,7 +34,10 @@
         <a href="#" class="print-motion">办理单打印</a>
 <!--        --><?php //if(1 == $meetingInf['category']):?><!--<a href="?download=getCover1">建议议案封面</a>--><?php //endif?>
 <!--        --><?php //if(2 == $meetingInf['category']):?><!--<a class="print-motion-detail" href="#" data-file="--><?//=$meetingInf['document_sha']?><!--">提案打印</a>--><?php //endif?>
-        <?php if(2 == $meetingInf['category']):?><a href="?download=getCover">提案封面</a><?php endif?>
+        <?php if(2 == $meetingInf['category']):?><a href="?download=getCover&category=2">提案封面</a>
+            <?php else:?>
+            <a href="?download=getCover1">封面打印</a>
+        <?php endif?>
         <a href="<?php echo 'original_'.$meetingInf['document_sha']?>">全文原始稿</a>
         <?php if(3==current($motion)['step']):?><a class="attachment-file" href="#" data-href="<?php echo $motion['原文']['attachment']?>">附件修改</a><?php endif?>
         <?php if(current($motion)['step']>4):?><a href="?download=reply_table2&motion_id=<?php echo current($motion)['motion_id']?>&category=<?php echo current($motion)['category']?>&meeting_name=<?php echo $meetingInf['meeting_name']?>">下载反馈表</a><?php endif?>
