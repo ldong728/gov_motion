@@ -18,9 +18,10 @@ function statistics_excel_out(){
     }
 //    $name=getMeetingName($meeting);
 //    mylog($meetingName);
-    if(in_array(4,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])){//办理统计临时处理方法，只给督查室开启查看两次会议的办理情况，后期需要改进，
-        $name='';
-        $meeting=[1,2];
+    if(in_array(4,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])){
+        $meeting=pdoQuery('meeting_tbl',['meeting_id'],null,'order by end_time desc limit 2')->fetchAll();
+        $name="人大政协建议提案";
+//        $meeting=[3,4];
     }
     $totalList= handleStatistics($meeting,0, $_SESSION['staffLogin']['category']);
     include"view/statisticsOutExcel.html.php";
@@ -49,9 +50,6 @@ function multiple_statistics()
             }
         }
     }
-
-
-
     $query = pdoQuery('motion_view', null, ['meeting'=>$meeting], null);
     foreach ($query as $row) {
 
@@ -59,8 +57,6 @@ function multiple_statistics()
             $optionList[$row['attr_name'] . '+' . $row['content']]++;
         }
         if ($row['content_int']) {
-
-
             if ('交办单位' == $row['attr_name']) {
                 if (isset($unitList[$row['content_int']])) {
                     $unitList[$row['content_int']]++;
@@ -90,14 +86,94 @@ function multiple_statistics()
         }
 
     }
-//    foreach ($unitList as $k => $v) {
-//        mylog($k);
-//    }
+    $allUserList=[];//委员表
+    $allGroupList=[];//委组表
+    $userQuery=pdoQuery('duty_view',null,['meeting'=>$meeting,'activity'=>1],null);
+    $userQuery->setFetchMode(PDO::FETCH_ASSOC);
+    foreach ($userQuery as $row) {
+        if(0==$row['user_unit']||0==$row['user_group']){
+            $allGroupList[]=$row['duty_id'];
+        }else{
+            $allUserList[]=$row['duty_id'];
+        }
+    }
+    $dutyHaveMotionList=[];
+    $groupHaveMotionList=[];
+    $totalMotionNumber=pdoQuery('motion_tbl',['count(0) as count'],['meeting'=>$meeting,'step>0'],'limit 1')->fetch()['count'];
+    $allValue=pdoQuery('motion_view',null,['meeting'=>$meeting,'attr_name'=>['提案人','性质类别2','初审','性质']],null);
+    $passedMotionList=[];
+    $totalNotPassMotion=0;
+    $importent=0;
+    $count1=0;
+    $count2=0;
+    $count3=0;
+    $count4=0;
+    foreach ($allValue as $row) {
+        $content_int=$row['content_int'];
+        $content=$row['content'];
+        $motion=$row['motion_id'];
+        switch($row['attr_name']){
+            case '提案人':
+                $duty=$row['content_int'];
+                if(in_array($duty,$allUserList)){
+                    $dutyHaveMotionList[$content_int]=$content_int;
+                }
+                if(in_array($duty,$allGroupList)){
+                    $groupHaveMotionList[$motion]=$content_int;
+                }
+                break;
+            case '性质类别2':
 
-//    mylog(json_encode($mainHandleList));
-//    mylog('主办：'. count($mainHandleList));
-//    mylog('协办：'.count($handleList));
-//    mylog('办理：'.count(array_merge($mainHandleList,$handleList)));
+                if(in_array($content,["工业经济","农林水利","财贸金融"])){
+                    $count1++;
+                }
+                if(in_array($content,["道路交通","城建管理","环境保护"]))$count2++;
+                if(in_array($content,["医药卫生","科技教育","文化体育"]))$count3++;
+                if(in_array($content,["劳动人事","政法统战","其他"]))$count4++;
+                break;
+            case '初审':
+                if($content=='立案'||'并案'==$content&&$row['step']>3){
+                    $passedMotionList[$motion]=$motion;
+                }else{
+                    $totalNotPassMotion++;
+                }
+                break;
+            case '性质':
+                if('重点提案'==$content)$importent++;
+                break;
+        }
+    }
+    $totalPassedMotion=count($passedMotionList);
+    $passedValue=pdoQuery('motion_view',null,['meeting'=>$meeting,'motion_id'=>$passedMotionList,'attr_name'=>['提案人','性质类别2','初审']],null);
+    $count11=0;
+    $count22=0;
+    $count33=0;
+    $count44=0;
+    foreach ($passedValue as $row) {
+        $content_int=$row['content_int'];
+        $content=$row['content'];
+        $motion=$row['motion_id'];
+        switch($row['attr_name']){
+            case '提案人':
+                $duty=$row['content_int'];
+                if(in_array($duty,$allUserList)){
+                    $dutyHaveMotionList[$content_int]=$content_int;
+                }
+                if(in_array($duty,$allGroupList)){
+                    $groupHaveMotionList[]=$content_int;
+                }
+                break;
+            case '性质类别2':
+
+                if(in_array($content,["工业经济","农林水利","财贸金融"])){
+                    $count11++;
+                }
+                if(in_array($content,["道路交通","城建管理","环境保护"]))$count22++;
+                if(in_array($content,["医药卫生","科技教育","文化体育"]))$count33++;
+                if(in_array($content,["劳动人事","政法统战","其他"]))$count44++;
+                break;
+        }
+    }
 
 
     $name = getMeetingName($meeting);
@@ -234,7 +310,7 @@ function ajax_downLoad(){
         exit;
     }
     if(1==$category){
-        $field=array('案号'=>'案号', '领衔人'=>'领衔人', '案由'=>'案由', '性质类别'=>'性质类别1', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位');
+        $field=array('案号'=>'案号', '领衔人'=>'领衔人', '案由'=>'案由', '性质类别'=>'性质类别1', '当前环节'=>'当前环节', '交办单位'=>'交办单位', '主办单位'=>'主办单位', '协办单位'=>'协办单位','类别标记'=>'类别标记');
     }else{
         $field=array('登记号'=>'登记号','案号'=>'案号','性质'=>'性质','提案分类'=>'提案分类', '提案人'=>'提案人',
             '附议人'=>'附议人','委组'=>'委组','界别'=>'界别', '案由'=>'案由', '性质类别'=>'性质类别2',
@@ -302,6 +378,270 @@ function response_by_unit_type(){//人大需求
     include"view/response_by_unit_type.html.php";
     exit;
 }
+
+/**
+ * 20180619新需求
+ */
+function statistics_by_unit_type(){
+    $meeting=$_GET['meeting'];
+    $name="主办单位类别标记统计";
+    if(in_array(4,$_SESSION['staffLogin']['steps'])&&1==count($_SESSION['staffLogin']['steps'])){
+        $meeting=pdoQuery('meeting_tbl',['meeting_id'],null,'order by end_time desc limit 2')->fetchAll();
+        $name="人大政协建议提案主办单位类别标记统计";
+//        $meeting=[3,4];
+    }
+    $baseMotions=pdoQuery('motion_view',['motion_id','content'],['meeting'=>$meeting,'attr_template'=>21,'content is not null'],null);
+    $motionList=[];
+    $typeList=[];
+    foreach ($baseMotions as $row) {
+        $typeList[$row['motion_id']]=$row['content'];
+        $motionList[]=$row['motion_id'];
+    }
+    $unitQuery=pdoQuery('motion_view',['motion_id','content_int'],['motion_id'=>$motionList,'attr_template'=>13],null);
+    $unitList=[];
+    foreach ($unitQuery as $row) {
+        $type=$typeList[$row['motion_id']];
+        if(!isset($unitList[$row['content_int']])){
+            $unitName=DataSupply::indexToValue('unit',$row['content_int']);
+            $unitList[$row['content_int']]=['name'=>$unitName,'list'=>[]];
+            $unitList[$row['content_int']]['list'][$type]=1;
+        }else{
+            if(!isset($unitList[$row['content_int']]['list'][$type]))$unitList[$row['content_int']]['list'][$type]=1;
+            else $unitList[$row['content_int']]['list'][$type]++;
+        }
+    }
+    $totalA=0;
+    $totalB=0;
+    $totalC=0;
+    $totalD=0;
+    include"view/statistic_by_unit_type.html.php";
+    exit;
+}
+
+/**
+ * 20180806人大新需求
+ */
+function response_statistics(){
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    $attrName=1==$category?['案号','案由','主办单位','类别标记','面商人1','协商形式1','问题解决情况1','意见采纳情况1','办理工作','办理结果']:['案号','案由'];
+    $query=pdoQuery('motion_view',null,['meeting'=>$meeting,'step'=>7,'attr_name'=>$attrName],null);
+    $displeasureQuery=pdoQuery('displeasure_motion_view',null,['meeting'=>$meeting,'attr_name'=>$attrName,'motion_id in (select motion from displeasure_attr_tbl)'],null);
+    $displeasureQuery->setFetchMode(PDO::FETCH_ASSOC);
+    $query->setFetchMode(PDO::FETCH_ASSOC);
+    $info=[];
+    $count=[];
+    foreach ($query as $row) {
+        $value=$row['content']?$row['content']:$row['content_int'];
+        if('unit'==$row['target'])$value=DataSupply::indexToValue('unit',$value);
+        if(isset($info[$row['motion_id']])){
+            $info[$row['motion_id']][$row['attr_name']]=$value;
+        }else{
+            $info[$row['motion_id']]=[$row['attr_name']=>$value];
+        }
+        if(!isset($count[$value]))$count[$value]=1;
+        else $count[$value]++;
+        if('办理工作'==$row['attr_name']){
+            if(!isset($count['办理工作'][$value]))$count['办理工作'][$value]=1;
+            else $count['办理工作'][$value]++;
+        }
+        if('办理结果'==$row['attr_name']){
+            if(!isset($count['办理结果'][$value]))$count['办理结果'][$value]=1;
+            else $count['办理结果'][$value]++;
+        }
+    }
+    $total=count($info);
+    foreach($displeasureQuery as $row){
+        $value=$row['content']?$row['content']:$row['content_int'];
+        if('unit'==$row['target'])$value=DataSupply::indexToValue('unit',$value);
+        if(isset($info[$row['motion_id'].'(存档)'])){
+            $info[$row['motion_id'].'(存档)'][$row['attr_name']]=$value;
+        }else{
+            $info[$row['motion_id'].'(存档)']=[$row['attr_name']=>$value];
+        }
+
+    }
+    function compare($element1,$element2){
+        if($element1['案号']>$element2['案号'])return 1;
+        else return -1;
+    }
+    usort($info,'compare');
+
+    mylog(json_encode($info,JSON_UNESCAPED_UNICODE));
+
+    include 'view/response_statistics1.html.php';
+    exit;
+
+}
+
+
+/**
+ * 20180926人大新需求
+ * 办理情况评估 按单位
+ */
+function response_statistics_unit(){
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    if(2==$category){
+
+        exit;
+    }
+    $attrName=1==$category?['案号','主办单位','类别标记','面商人1','协商形式1','问题解决情况1','意见采纳情况1','办理工作','办理结果']:['案号','案由'];
+    $module=1==$category?['案号'=>0,'主办单位'=>0,'类别标记'=>0,'面商人1'=>0,'协商形式1'=>0,'问题解决情况1'=>0,'意见采纳情况1'=>0,'办理工作'=>0,'办理结果'=>0]:['案号'=>0,'案由'=>0];
+    $query=pdoQuery('motion_view',null,['meeting'=>$meeting,'step'=>7,'attr_name'=>$attrName],null);
+    $displeasureQuery=pdoQuery('displeasure_motion_view',null,['meeting'=>$meeting,'attr_name'=>$attrName,'attr_id is not null'],null);
+    $formatMotionList=[];
+    foreach ($query as $row) {
+        $content=null!=$row['content']?$row['content']:$row['content_int'];
+        if('主办单位'==$row['attr_name'])$content=DataSupply::indexToValue('unit',$content);
+        if(!isset($formatMotionList[$row['motion_id']])){
+           $formatMotionList[$row['motion_id']]=$module;
+        }
+        $formatMotionList[$row['motion_id']][$row['attr_name']]=$content;
+    }
+    foreach ($displeasureQuery as $row) {
+        $content=null!=$row['content']?$row['content']:$row['content_int'];
+        if('主办单位'==$row['attr_name'])$content=DataSupply::indexToValue('unit',$content);
+        if(!isset($formatMotionList[$row['motion_id']])){
+            $formatMotionList[$row['motion_id']]=$module;
+        }
+        $formatMotionList[$row['motion_id']][$row['attr_name']]=$content;
+    }
+
+    $statisticsList=[];
+    $total=['count'=>0,'类别标记'=>[],'面商人1'=>[],'协商形式1'=>[],'问题解决情况1'=>[],'意见采纳情况1'=>[],'办理工作'=>[],'办理结果'=>[]];
+    foreach ($formatMotionList as $row) {
+        if(!isset($statisticsList[$row['主办单位']]))$statisticsList[$row['主办单位']]=['主办单位'=>$row['主办单位'],'count'=>0,'类别标记'=>[],'面商人1'=>[],'协商形式1'=>[],'问题解决情况1'=>[],'意见采纳情况1'=>[],'办理工作'=>[],'办理结果'=>[]];
+        foreach ($row as $k=>$v) {
+            if(!in_array($k,['案号','主办单位'])){
+                if(!isset($statisticsList[$row['主办单位']][$k][$v])){
+                    $statisticsList[$row['主办单位']][$k][$v]=1;
+                    $statisticsList[$row['主办单位']][$k]['sub_total']=0;
+                }
+                else {
+                    $statisticsList[$row['主办单位']][$k][$v]++;
+                }
+                if(!isset($total[$k][$v])){
+                    $total[$k][$v]=1;
+                    $total[$k]['sub_total']=0;
+                }else{
+                    $total[$k][$v]++;
+                }
+                $statisticsList[$row['主办单位']][$k]['sub_total']++;
+                $total[$k]['sub_total']++;
+            }
+        }
+        $statisticsList[$row['主办单位']]['count']++;
+        $total['count']++;
+    }
+
+    function mySort($a,$b){
+        return $a['count']>$b['count']? -1:1;
+    }
+    usort($statisticsList,'mySort');
+//    foreach ($statisticsList as $row) {
+//        mylog($row);
+//    }
+    mylog($total);
+    include 'view/response_statistics_unit.html.php';
+    exit;
+}
+
+/**
+ * 20180926人大新需求
+ * 办理情况评估 按中心组
+ */
+function response_statistics_user_unit(){
+    $meeting=$_GET['meeting'];
+    $category=$_GET['category'];
+    if(2==$category){
+        exit;
+    }
+    $attrName=1==$category?['案号','领衔人','类别标记','面商人1','协商形式1','问题解决情况1','意见采纳情况1','办理工作','办理结果']:['案号','案由'];
+    $module=1==$category?['案号'=>0,'主办单位'=>0,'类别标记'=>0,'面商人1'=>0,'协商形式1'=>0,'问题解决情况1'=>0,'意见采纳情况1'=>0,'办理工作'=>0,'办理结果'=>0]:['案号'=>0,'案由'=>0];
+    $query=pdoQuery('motion_view',null,['meeting'=>$meeting,'step'=>7,'attr_name'=>$attrName],null);
+    $displeasureQuery=pdoQuery('displeasure_motion_view',null,['meeting'=>$meeting,'attr_name'=>$attrName,'attr_id is not null'],null);
+    $dutyQuery=pdoQuery('duty_view',['duty_id','user_unit_name'],['meeting'=>$meeting,'activity'=>1],null);
+    $dutyCount=[];
+    $dutyList=[];
+    $totalDutyCount=0;
+    $formatMotionList=[];
+    foreach ($dutyQuery as $row) {
+        $dutyList[$row['duty_id']]=$row['user_unit_name'];
+        if(!isset($dutyCount[$row['user_unit_name']]))$dutyCount[$row['user_unit_name']]=1;
+        else $dutyCount[$row['user_unit_name']]++;
+        $totalDutyCount++;
+    }
+//    mylog($dutyCount);
+    foreach ($query as $row) {
+        $content=null!=$row['content']?$row['content']:$row['content_int'];
+        if('领衔人'==$row['attr_name']){
+            $formatMotionList[$row['motion_id']]['中心组']=$dutyList[$content];
+        }
+        if(!isset($formatMotionList[$row['motion_id']])){
+            $formatMotionList[$row['motion_id']]=$module;
+        }
+        $formatMotionList[$row['motion_id']][$row['attr_name']]=$content;
+    }
+    foreach ($displeasureQuery as $row) {
+        $content=null!=$row['content']?$row['content']:$row['content_int'];
+//        mylog($row['attr_name'].':'.$content);
+        if('领衔人'==$row['attr_name']){
+            $formatMotionList[$row['motion_id']]['中心组']=$dutyList[$content];
+        }
+
+        if(!isset($formatMotionList[$row['motion_id']])){
+//            mylog($row);
+            $formatMotionList[$row['motion_id']]=$module;
+        }else{
+//            mylog($formatMotionList[$row['motion_id']]);
+        }
+        $formatMotionList[$row['motion_id']][$row['attr_name']]=$content;
+    }
+
+    $statisticsList=[];
+    $total=['count'=>0,'类别标记'=>[],'面商人1'=>[],'协商形式1'=>[],'问题解决情况1'=>[],'意见采纳情况1'=>[],'办理工作'=>[],'办理结果'=>[]];
+    foreach ($formatMotionList as $row) {
+//        if($row['办理结果']=='不满意')mylog($row);
+        if(!isset($statisticsList[$row['中心组']]))$statisticsList[$row['中心组']]=['中心组'=>$row['中心组'],'count'=>0,'类别标记'=>[],'面商人1'=>[],'协商形式1'=>[],'问题解决情况1'=>[],'意见采纳情况1'=>[],'办理工作'=>[],'办理结果'=>[]];
+        foreach ($row as $k=>$v) {
+            if(!in_array($k,['案号','中心组'])){
+                if(!isset($statisticsList[$row['中心组']][$k][$v])){
+                    $statisticsList[$row['中心组']][$k][$v]=1;
+                    $statisticsList[$row['中心组']][$k]['sub_total']=0;
+                }
+                else {
+                    $statisticsList[$row['中心组']][$k][$v]++;
+                }
+                if(!isset($total[$k][$v])){
+                    $total[$k][$v]=0;
+                    $total[$k]['sub_total']=0;
+                }else{
+//                    $total[$k][$v]++;
+                }
+
+                $statisticsList[$row['中心组']][$k]['sub_total']++;
+                $total[$k][$v]++;
+                $total[$k]['sub_total']++;
+            }
+//            if('不满意'==$v&&'办理结果'==$k)mylog( $statisticsList[$row['中心组']]);
+        }
+        $statisticsList[$row['中心组']]['count']++;
+        $total['count']++;
+    }
+
+    function mySort($a,$b){
+        return $a['count']>$b['count']? -1:1;
+    }
+    usort($statisticsList,'mySort');
+//    foreach ($statisticsList as $row) {
+//        mylog($row);
+//    }
+//    mylog($total);
+    include 'view/response_statistics_user_unit.html.php';
+    exit;
+}
+
 
 function reply_table2()
 {
@@ -374,7 +714,8 @@ function reply_table2()
             }
 //        mylog(getArrayInf($motionInf));
         if (isset($motionInf['sub_handle'])) $motionInf['sub_handle'] = iconv('utf-8', 'gb2312//IGNORE', $motionInf['sub_handle']);
-            include 'view/response_table1.html.php';
+//            include 'view/response_table1.html.php';
+        include 'view/new_response1.html.php';
     }
 
 
@@ -620,19 +961,29 @@ function getCover(){
     exit;
 
 }
-function getCover1(){
+function getCover1(){//人大建议
     $id = $_SESSION['staffLogin']['currentMotion'];
     if($id){
         $motionQuery=pdoQuery('motion_view',['motion_attr','content_int','content'],['motion_id'=>$id],null);
         $motion=[];
         foreach ($motionQuery as $row) {
+            if(7==$row['motion_attr']&&$row['content_int']>0)$motion[$row['motion_attr']][]=$row['content_int'];//附议代表放入数组
+            else
             $motion[$row['motion_attr']]=$row['content']?$row['content']:$row['content_int'];
+
         }
-        $userInf=pdoQuery('duty_view',null,['duty_id'=>$motion[84]],'limit 1')->fetch();
+        $userInf=pdoQuery('duty_view',null,['duty_id'=>$motion[6]],'limit 1')->fetch();
+        if($motion[7]){
+//            $contectInf=pdoQuery('duty_view',null,['duty_id'=>$motion[7]],'limit 1')->fetch();
+//            $userInf['user_phone']=$contectInf['user_phone'];
+//            $userInf['user_name']=$contectInf['user_name'];
+//            $contact=$contectInf['user_name'];
+        }
+        if('123456'==$userInf['user_phone'])$userInf['user_phone']='';
 
         header("Content-Type:text/html; charset=gb2312");
         header("Content-Type: application/doc");
-        header("Content-Disposition: attachment; filename=menu.doc");
+        header("Content-Disposition: attachment; filename=".iconv("utf-8","gb2312",$motion['34'].'号建议封面').".doc");
 
         include "/view/download_template/cover1.xml";
         exit;
@@ -737,13 +1088,14 @@ function getMeetingName($meetingId)
 }
 
 function reGroupMotionInfList($motionList,$motionFiled){
-    $motionQuery=pdoQuery('motion_view',['motion_id','attr_name','step_name','meeting','category','content','content_int','target','value_type','attachment'],['motion_id'=>$motionList],null);
+    $motionQuery=pdoQuery('motion_view',['motion_id','attr_name','step_name','meeting','category','content','content_int','target','value_type','attachment','step'],['motion_id'=>$motionList],null);
     $dutyList=null;
     $sortList=array();
 
 //    mylog(getArrayInf($dutyList));
 
     foreach ($motionQuery as $row) {
+        $stepList=[1=>'提交',2=>'登记',3=>'审核',4=>'交办',5=>'办理',6=>'反馈',7=>'完成'];
         if(!$dutyList){
             $dutyInf=pdoQuery('duty_view',['duty_id','user_name','user_phone','user_unit_name','user_group_name'],['category'=>$row['category'],'meeting'=>$row['meeting']],null);
             foreach ($dutyInf as $v) {
@@ -767,6 +1119,7 @@ function reGroupMotionInfList($motionList,$motionFiled){
 
             if (!isset($sortList[$row['motion_id']][$row['attr_name']])) $sortList[$row['motion_id']][$row['attr_name']] = $content;
             else $sortList[$row['motion_id']][$row['attr_name']] .= ',' . $content;
+            if(!isset($sortList[$row['motion_id']]['当前环节']))$sortList[$row['motion_id']]['当前环节']=$stepList[$row['step']];
             $sortList[$row['motion_id']]['category']=$row['category'];
         }else{
 

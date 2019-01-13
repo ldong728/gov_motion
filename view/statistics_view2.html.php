@@ -13,8 +13,8 @@
     </tr>
     <tr>
         <td><a href="?download=statistics_by_category&meeting=<?php echo $meeting?>&category=2">按性质类别统计</a></td>
+        <td><a href="?download=statistics_by_unit_type&meeting=<?php echo $meeting?>&category=2">按主办单位类别标记统计</a></td>
         <td><a href="?download=statistics_excel_out&meeting=<?php echo $meeting?>&category=2">各单位办理进度及反馈情况统计</a></td>
-        <td></td>
         <td></td>
 
 

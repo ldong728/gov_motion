@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <!--<html lang="cn">-->
 <head>
+    <meta name="renderer" content="webkit"/>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title><?php echo $title ?></title>
+    <script type="text/javascript" src="js/fuck.js"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/jquery-migrate-1.2.0.js"></script>
     <script type="text/javascript" src="js/jquery.jqprint-0.3.js"></script>

@@ -190,6 +190,7 @@
             class="encoded-search-data verify-value"><?php echo json_encode($motion['主办签发人'], JSON_UNESCAPED_UNICODE) ?></span>
     </td>
 </tr>
+<?php if(2==$meetingInf['category']):?>
 <tr>
     <th rowspan="2" style="border-right: 1px solid #f08300">反馈意见</th>
     <th>办理工作</th>
@@ -212,6 +213,31 @@
     <td><span class="encoded-search-data"><?php echo json_encode($motion['落实情况'], JSON_UNESCAPED_UNICODE) ?></span>
     </td>
 </tr>
+<?php else: ?>
+    <tr>
+        <th rowspan="2" style="border-right: 1px solid #f08300">反馈意见</th>
+        <th>办理工作</th>
+        <td><span class="encoded-search-data"><?php echo json_encode($motion['办理工作'], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+        <th>办理结果</th>
+        <td><span class="encoded-search-data"><?php echo json_encode($motion['办理结果'], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+        <th colspan="1">办理面商形式</th>
+        <td colspan="2"><span class="encoded-search-data"><?php echo json_encode($motion['协商形式1'], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+    </tr>
+    <tr>
+        <th>面商人</th>
+        <td><span class="encoded-search-data"><?php echo json_encode($motion['面商人1'], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+        <th>解决情况</th>
+        <td  colspan="2"><span class="encoded-search-data"><?php echo json_encode($motion['问题解决情况1'], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+        <th>采纳情况</th>
+        <td><span class="encoded-search-data"><?php echo json_encode($motion['意见采纳情况1'], JSON_UNESCAPED_UNICODE) ?></span>
+        </td>
+    </tr>
+<?php endif ?>
 
 
 

@@ -1,23 +1,14 @@
-var browser=navigator.appName;
-var b_version=navigator.appVersion;
-console.log(navigator);
-console.log('browser name: '+browser);
-console.log('browser version: '+parseInt(b_version.slice(0,1)));
 
-if('Microsoft Internet Explorer'==browser){
-    if(parseInt(b_version.slice(0,1))<5){
-        if(confirm('您当前的浏览器版本过低，运行时可能导致不可预知的错误，请使用IE9.0以上浏览器、火狐浏览器（firefox）或谷歌浏览器（chrome），点击确定将下载最新版火狐')){
-            location.href="http://download.firefox.com.cn/releases-sha2/stub/official/zh-CN/Firefox-latest.exe";
-        }else{
-
-        }
-    }
-}
+//if(window.external&&window.external.twGetRunPath&&window.external.twGetRunPath().toLowerCase().indexOf("360se")>-1){
+//    alert('本站不支持360浏览器访问，请更换其他浏览器！');
+//}else{
+//    alert('非360');
+//}
 
 function showToast(str){
     $('.toast').empty();
-    $('.toast').append(str)
-    $('.toast').fadeIn('fast')
+    $('.toast').append(str);
+    $('.toast').fadeIn('fast');
     var t = setTimeout('$(".toast").fadeOut("slow")', 800);
 }
 function loading(){

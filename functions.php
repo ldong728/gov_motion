@@ -167,8 +167,12 @@ function getIndex($orderBy = 'default')
         $meetingList=[];
         $meetingQuery=pdoQuery('meeting_tbl',null,null,' order by end_time desc limit 2');
         foreach($meetingQuery as $row){
-            $meetingList[$row['category']][$row['meeting_id']] = $row;
+//            $meetingList[$row['category']][$row['meeting_id']] = $row;
             $meetingFilter[]=$row['meeting_id'];
+        }
+        $meetingListQuery=pdoQuery('meeting_tbl',null,null,' order by end_time desc');
+        foreach($meetingListQuery as $row){
+            $meetingList[$row['category']][$row['meeting_id']] = $row;
         }
         $mainCountQuery = pdoQuery('motion_view', array('category', 'meeting', 'count(*) as count'), array('meeting'=>$meetingFilter,'attr_name' => '主办单位', 'content_int' => $staff['unit']), 'group by meeting order by meeting desc limit 2');
         foreach ($mainCountQuery as $row) {
@@ -284,7 +288,7 @@ function ajaxMotionList($data)
 
     //乡镇管理员界面筛选
     if (1 == $staffInf['category']&&isset($staffInf['userList'])&&$staffInf['userList']) {
-        mylog($staffInf);
+//        mylog($staffInf);
         $totalNumber = 0;
         $motionLimit = array();
         $tempFilter=$staffInf['userList'];
@@ -387,6 +391,7 @@ function ajaxMotionList($data)
                 break;
             case 'unit':
                 $searchUnit=pdoQuery('unit_tbl',array('unit_id'),null,'where unit_name like "%'.$attrValue.'%"')->fetchAll();
+                mylog($searchUnit);
                 $searchQuery=pdoQuery('motion_view',array('motion_id'),array('attr_name'=>$attrName,'content_int'=>$searchUnit,'meeting'=>$meeting),null);
                 break;
             default:
@@ -647,12 +652,12 @@ function editMotion($data)
             if ($step4Inf['content_int'] == $staffId) {
                 $step4CanEdit = true;
             } else {
-//                if ('5103' == $staffId || '6726' == $staffId){
-//                    $step4CanEdit = true;
-//                }
-//                else {
+                if ('5103' == $staffId || '6726' == $staffId){
+                    $step4CanEdit = true;
+                }
+                else {
                     $step4CanEdit = false;
-//                }
+                }
             }
         }
     } else {
