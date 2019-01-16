@@ -186,6 +186,32 @@ $(document).on('click','.atta-file',function(){
     $(this).css('color','red');
 })
 
+$(document).on('click','.motion-select a',function(){
+    var idList=sessionStorage.getItem('clicked');
+    if(idList){
+        idList=JSON.parse(idList);
+    }else{
+        idList=[];
+    }
+    var id=$(this).parent().attr('id');
+    idList.push(id);
+    sessionStorage.setItem('clicked',JSON.stringify(idList));
+    $(this).css('color','#239f8e');
+});
+
+function clickedMark(){
+    var idList=sessionStorage.getItem('clicked');
+    if(idList){
+        idList=JSON.parse(idList);
+        for(var key in idList){
+            console.log('mark');
+            $('#'+idList[key]).children('a').css('color','#239f8e');
+        }
+    }else{
+        return;
+    }
+}
+
 function pageJump(element, event) {
 //        console.log(event.keyCode);
     if (13 == event.keyCode) {
@@ -271,7 +297,7 @@ function reflashList(sOrderby, sPage, sOrder) {
         if(!motionIdLimit||motionIdLimit.length<1)$('.all-out').attr('disabled','disabled');
         else $('.all-out').removeAttr('disabled');
 
-
+        clickedMark();
     });
 }
 function reCalculate(totalCount) {

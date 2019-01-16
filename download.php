@@ -892,7 +892,7 @@ function motion_menu(){
     }
 //    mylog(getArrayInf($info));
 
-    header("Content-Type:text/html; charset=gb2312");
+//    header("Content-Type:text/html; charset=gb2312");
     header("Content-Type: application/doc");
     header("Content-Disposition: attachment; filename=menu.doc");
     if($isReply){
@@ -1005,7 +1005,6 @@ function getFile(){
     header("Content-Type:text/html; charset=gb2312");
     header("Content-Type: application/doc");
     header("Content-Disposition: attachment; filename=".iconv("utf-8","gb2312",$name));
-
     include $path;
     exit;
 }
