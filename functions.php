@@ -1576,8 +1576,10 @@ function ajaxGetStatistics($data)
 function ajaxCheckFiles($data){
     if(!file_exists($data['file'])){
         $file=file_get_contents('http://183.136.192.58/motion_public/'.$data['file']);
+//        $original_file=file_get_contents('http://183.136.192.58/motion_public/original_'.$data['file']);
         if(file_put_contents($data['file'],$file)){
             echo ajaxBack('ok');
+            file_put_contents('original_'.$data['file'],$file);
         }else{
             echo ajaxBack(null,'8','netWorkError');
         }

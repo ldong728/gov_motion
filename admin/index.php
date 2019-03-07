@@ -309,38 +309,52 @@ function suggestion_manage(){
     printAdminView('suggestion_manage.html.php','提案线索审核');
 
 }
-function excel_encode(){
-//    $motionList=pdoQuery('zx_motion_tbl',['motion'],null,null)->fetchAll();
-////    echo getArrayInf($motionList);
-////    exit;
-//    $query=pdoQuery('motion_view',['motion_id','motion_attr','attr_name','content','content_int','attachment'],['motion_id'=>$motionList,'motion_attr'=>['15','21','26']],null);
-//    $List=[];
-//    foreach ($query as $row) {
-//        if(15==$row['motion_attr'])$List[$row['motion_id']]['type']=$row['content'];
-//        if(21==$row['motion_attr']){
-//            $List[$row['motion_id']]['file']=$row['attachment'];
-//        }
-//        if(26==$row['motion_attr'])$List[$row['motion_id']]['id']=$row['content_int'];
-//    }
-//    foreach ($List as $row) {
-//        if(is_file('../'.$row['file'])){
-//            $file=file_get_contents('../'.$row['file']);
-//            $ex=explode('.',$row['file']);
-//            if(isset($ex[1])&&$ex[1]){
-//                $ext=$ex[1];
-//                echo $ext.'</br>';
-//            }else{
-//                echo "no name";
-//                $ext='docx';
-//            }
-//            file_put_contents('../download_files/'.$row['id'].'.'.$ext,$file);
-////            echo "ok";
-//        }
-//    }
-//    echo 'ok';
+function excel_encode(){//暂时用于按登记号重新命名附件并保存至download_files目录
+    $motionListQuery=pdoQuery('zx_motion_tbl',['zx_motion','motion'],null,null)->fetchAll();
+    $motionList=[];
+    $zxList=[];
+    foreach ($motionListQuery as $item) {
+        $motionList[]=$item['motion'];
+        $zxList[$item['motion']]=$item['zx_motion'];
+    }
+//    echo getArrayInf($motionList);
+//    exit;
+    $query=pdoQuery('motion_view',['motion_id','motion_attr','attr_name','content','content_int','attachment'],['motion_id'=>$motionList,'motion_attr'=>['15','21','26']],null);
+    $List=[];
+    foreach ($query as $row) {
+        echo $row['motion_attr'].'</br>';
+        if(15==$row['motion_attr']){
+            $List[$row['motion_id']]['type']=$row['content'];
+
+        }
+        if(21==$row['motion_attr']){
+            $List[$row['motion_id']]['file']=$row['attachment'];
+
+        }
+        if(26==$row['motion_attr']){
+            $name=$row['content_int']? 'ah'.$row['content_int']:'djh'.$zxList[$row['motion_id']];
+            $List[$row['motion_id']]['id']=$name;
+        }
+    }
+    foreach ($List as $row) {
+
+        if(is_file('../'.$row['file'])){
+            $file=file_get_contents('../'.$row['file']);
+            $ex=explode('.',$row['file']);
+            if(isset($ex[1])&&$ex[1]){
+                $ext=$ex[1];
+                echo $ext.'</br>';
+            }else{
+                echo "no name";
+                $ext='docx';
+            }
+            file_put_contents('../download_files/'.$row['id'].'.'.$ext,$file);
+        }
+    }
+    echo 'ok';
 
 //    echo getArrayInf($List);
-    printAdminView('sync_info.html.php','提案线索审核');
+//    printAdminView('sync_info.html.php','提案线索审核');
 
 }
 
